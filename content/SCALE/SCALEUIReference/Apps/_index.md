@@ -178,12 +178,6 @@ Use to resolve issues where apps experience issues where the TrueNAS device is n
 Select the network option, or add additional options to resolve the network connection issues.
 {{< /hint >}}
 
-**Install NVIDIA Drivers** shows if the system has an NVIDIA GPU installed.
-Select to enable TrueNAS to manually install drivers for this device.
-When the TrueNAS Debug Kernel is enabled, NVIDIA drivers are disabled.
-
-Systems with non-NVIDIA GPU devices do not show this option, but these GPUs are selectable in the app installation wizards in the **Resources Configuration** section for the app.
-
 **Check for docker image updates** sets TrueNAS to check for docker image updates (default setting).
 
 ## Applications Table
