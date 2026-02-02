@@ -179,71 +179,10 @@ The **Environment** settings configure optional environment variables to run on 
 
 {{< include file="/static/includes/InstanceEnvironmentSettings.md" >}}
 
-### Disks
-
-The **Disks** settings allow mounting storage volumes to a container.
-Container options include creating a new dataset or using an existing one.
-
-**Add** displays a set of fields to create or mount a disk.
-
-{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksVM.png" alt="Disks - VM" id="Disks - VM" >}}
-
-{{< expand "Disks Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Source** | (Required) Displays after clicking **Add** in **Disks**. Define an existing dataset or create a new dataset using the **Create Dataset** option. Creating a dataset requires entering a path or browsing to select a parent dataset from the dropdown list of datasets on the system. Enter a name for the new dataset in the **Create Dataset** window. **Create** adds the dataset. |
-| **Destination** | (Required) Specifies the file system path to mount the disk in the container, for example */media* or */var/lib/data*. |
-{{< /truetable >}}
-{{< /expand >}}
-
-### Proxies
-
-The **Proxies** settings allow you to forward network connections between the host and the container.
-This routes traffic from a specific address on the host to an address inside the container, or vice versa, allowing the container to connect externally through the host.
-
-**Add** displays a set of proxy configuration settings.
-
-{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
-
-{{< expand "Proxies Settings" "v" >}}
-{{< include file="/static/includes/InstanceProxySettings.md" >}}
-{{< /expand >}}
-
-### Network
-
-The **Network settings** configure how the container connects to the host and external networks.
-Options include the default network bridge, an existing bridge interface, or a MACVLAN.
-
-See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information.
-
-{{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
-
-{{< expand "Network Settings" "v" >}}
-
-{{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Non-Default Network Settings" id="Non-Default Network Settings" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Use default network settings** | Select to use default network settings to connect the container to the host using the automatic bridge defined in [Global Settings](#global-settings). Selected by default. Disable to display the **Bridged NICs** (if available) and **Macvlan NICs** settings. |
-| **Bridged NICs** | Select an existing bridge on the TrueNAS host to connect to the container. Displays when one or more existing bridge interface(s) are available. |
-| **Macvlan NICs** | Select an existing interface to create a virtual network interface based on it, assigning a unique MAC address so the container appears as a separate device on the network. |
-{{< /truetable >}}
-{{< include file="/static/includes/MacvlanHost.md" >}}
-{{< /expand >}}
-
-### USB Devices
-
-**USB Devices** displays a list of available devices to attach to a container, allowing the device to function as if physically connected.
-
-{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceUSB.png" alt="USB Devices" id="USB Devices" >}}
-
-### GPU Devices
-
-**GPU Devices** displays available GPU devices to attach to a container, enabling it to utilize hardware acceleration for graphics or computation tasks.
-
-{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceGPU.png" alt="GPU Devices" id="GPU Devices" >}}
+{{< hint type=note >}}
+Device configuration (network interfaces, USB devices, GPU devices, and filesystem mounts) is performed after container creation using the detail widgets on the **Containers** screen.
+See [Containers Widgets](#containers-widgets) for information on configuring devices.
+{{< /hint >}}
 
 ## Containers Table
 
@@ -297,15 +236,51 @@ The **Delete** dialog asks for confirmation to delete the selected container.
 **Confirm** activates the **Continue** button.
 **Continue** starts the delete operation.
 
-### Devices Widget
+### USB Devices Widget
 
-The **Devices** widget displays all USB, GPU, Trusted Platform Module (TPM), and PCI Passthrough devices attached to the container.
+The **USB Devices** widget displays USB devices attached to the container, allowing hardware passthrough for USB peripherals.
 
-{{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="Devices Widget" id="Devices Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="USB Devices Widget" id="USB Devices Widget" >}}
 
-**Add** opens a list of available **USB Devices**, **GPUs**, **TPM**, and **PCI Passthrough** devices.
+**Add** opens a list of available USB devices to attach to the container.
 
-**Add Device** under **PCI Passthrough** opens the [**Add PCI Passthrough Device**](#add-pci-passthrough-device-screen) screen.
+### GPU Devices Widget
+
+The **GPU Devices** widget displays GPU hardware attached to the container for graphics or computation acceleration.
+
+TrueNAS supports GPU passthrough for containers with the following GPU vendors:
+
+{{< truetable >}}
+| GPU Vendor | Driver Requirements | Notes |
+|------------|---------------------|-------|
+| **NVIDIA** | Manual installation required | Supports Turing architecture and later. Install drivers via **System > Advanced Settings**. See [Advanced Settings Screen]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#nvidia-drivers-widget" >}}) for details. |
+| **Intel** | Native support | No additional driver installation required. |
+| **AMD** | Native support | No additional driver installation required. |
+{{< /truetable >}}
+
+**Add** opens a list of available GPU devices.
+GPU devices appear in the list only if:
+- The physical GPU hardware is installed and detected by TrueNAS
+- For NVIDIA GPUs, drivers are installed via **System > Advanced Settings**
+- The GPU device is not currently allocated to another container or VM
+
+### Filesystem Devices Widget
+
+The **Filesystem Devices** widget displays filesystem mounts that provide the container with access to host directories and datasets.
+Filesystem devices allow containers to read and write data to TrueNAS datasets or host paths.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Source** | Host source path for the filesystem. Enter or browse to select an existing host directory or dataset path. |
+| **Destination** | Mount path inside the container where the filesystem appears. Enter the container path, for example */mnt/data* or */var/lib/data*. |
+{{< /truetable >}}
+
+**Add** opens fields to configure a new filesystem device mount.
+
+For existing filesystem devices, the <span class="material-icons">more_vert</span> actions menu includes options to **Edit** or **Delete** the filesystem device.
+
+See [Configuring Filesystem Devices]({{< relref "/SCALE/SCALETutorials/Containers/_index.md#configuring-filesystem-devices" >}}) in the Containers tutorial for configuration procedures.
 
 ### Disks Widget
 
@@ -381,6 +356,17 @@ The **Change Root Disk Setup** dialog allows you to configure the size of the di
 The **NIC Widget** displays the network interfaces (NICs) attached to the container, along with their names and types.
 It allows you to add new NICs and manage existing ones.
 
+{{< enterprise >}}
+{{< hint type=warning title="High Availability Configuration" >}}
+Containers in High Availability (HA) environments require a static IP address configured in the container operating system.
+
+Without a static IP, containers lose network connectivity after a controller failover.
+Configure the static IP inside the container OS, not in TrueNAS network settings.
+
+See [Containers in High Availability Environments]({{< relref "/SCALE/SCALETutorials/Containers/_index.md#containers-in-high-availability-environments" >}}) for detailed guidance.
+{{< /hint >}}
+{{< /enterprise >}}
+
 {{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Widget" id="NIC Widget" >}}
 
 **Add** opens a menu with available NIC choices, allowing you to select and attach a new NIC to the container.
@@ -395,50 +381,6 @@ The **Delete Item** dialog asks for confirmation to delete the selected NIC.
 
 **Confirm** activates the **Continue** button.
 **Continue** starts the delete operation.
-
-### Proxies Widget
-
-The **Proxies** widget displays the network proxy settings configured for the container.
-It allows you to manage these settings, including adding, editing, or removing proxies.
-
-{{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
-
-**Add** opens the [**Add Proxy**](#addedit-proxy-screen) screen to configure a new proxy for the container.
-
-For existing proxies, the <span class="material-icons">more_vert</span> actions menu includes options to [**Edit**](#addedit-proxy-screen) or [**Delete**](#delete-proxies) the proxy.
-
-#### Add/Edit Proxy Screen
-
-The **Add/Edit Proxy** screen allows you to configure or modify a proxy setting attached to a container.
-
-{{< trueimage src="/images/SCALE/Virtualization/AddProxyScreen.png" alt="Add Proxy Screen" id="Add Proxy Screen" >}}
-
-{{< include file="/static/includes/InstanceProxySettings.md" >}}
-
-**Save** applies changes.
-
-#### Delete Proxies
-
-The **Delete Item** dialog asks for confirmation to delete the selected proxy configuration.
-
-{{< trueimage src="/images/SCALE/Virtualization/DeleteProxyDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
-
-**Confirm** activates the **Continue** button.
-**Continue** starts the delete operation.
-
-### Idmap Widget
-
-The **Idmap** widget shows the user ID (UID) and group ID (GID) mappings used by the container to translate IDs between the host and the container.
-It provides details such as the **Host ID**, **Maprange**, and **NS ID** for both UIDs and GIDs.
-
-{{< trueimage src="/images/SCALE/Virtualization/IdmapWidget.png" alt="Idmap Widget" id="Idmap Widget" >}}
-
-* **Host ID** shows the starting ID used by the host for mapping to the container IDs.
-* **Maprange** indicates the range of IDs that the host allocates for the container.
-* **NS ID** represents the namespace ID used for the mapping.
-
-For example, if the **Host ID** is `2147000001` and the **Maprange** is `458752`, the container UID 0 (root) is mapped to the host UID `2147000001`.
-This ensures proper isolation and user/group identity management between the host and the container.
 
 ### Tools Widget
 
@@ -455,17 +397,9 @@ You can open a shell, console, or VNC session directly from this widget.
 It uses a VNC URL scheme (for example, `vnc://hostname.domain.com:5930`) to launch the session directly in the application.
 If your environment does not support VNC URLs, you can manually connect using a VNC client by entering the host name or IP address followed by the port number without `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).
 
-### Metrics Widget
-
-The **Metrics** widget displays real-time graphs that monitor container performance, including CPU usage, memory usage, and disk I/O pressure.
-
-{{< trueimage src="/images/SCALE/Virtualization/MetricsWidget.png" alt="Metrics Widget" id="Metrics Widget" >}}
-
-**CPU (%)** shows the percentage of CPU usage over time.
-  
-**Memory (MiB)** displays the memory usage in MiB over time.
-
-**Disk I/O Full Pressure (%)** tracks the disk input/output pressure as a percentage over time.
+**Logs** opens the **Container Logs** viewer showing real-time log output from the container.
+The log viewer includes an **Auto-scroll** checkbox that automatically scrolls to display new log entries as they appear.
+Enable auto-scroll to follow live log output or disable it to review specific log entries without automatic scrolling.
 
 ## Edit Container Screen
 
@@ -481,6 +415,20 @@ The **Container Configuration** settings on the **Edit** screen allow you to mod
 {{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Container Configuration" id="Edit Container Configuration" >}}
 
 **Autostart** automatically starts the container when the system boots.
+
+When enabled, TrueNAS starts the container during the system boot sequence after the containers service initializes.
+This ensures containers are available immediately after system startup without manual intervention.
+
+During system shutdown, containers with autostart enabled receive a graceful shutdown signal, allowing applications inside the container to close properly and save data before the container stops.
+The system waits for the container to shut down gracefully before continuing the shutdown process.
+
+{{< enterprise >}}
+{{< hint type=note title="Autostart in HA Environments" >}}
+In High Availability configurations, containers with autostart enabled automatically restart on the new active controller after a failover.
+Ensure containers have static IP addresses configured to maintain network connectivity after failover.
+See [Containers in High Availability Environments]({{< relref "/SCALE/SCALETutorials/Containers/_index.md#containers-in-high-availability-environments" >}}) for details.
+{{< /hint >}}
+{{< /enterprise >}}
 
 ### Edit CPU and Memory Settings
 
@@ -500,6 +448,107 @@ These settings configure optional environment variables for the container.
 {{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
 
 {{< include file="/static/includes/InstanceEnvironmentSettings.md" >}}
+
+### Advanced Configuration Options
+
+The **Edit Container** screen includes advanced configuration options accessible by clicking **Advanced Options** to expand additional settings.
+These options provide fine-grained control over container behavior, security, and resource allocation.
+
+#### Capabilities Policy
+
+The **Capabilities Policy** setting controls Linux capabilities available to the container, affecting what privileged operations the container can perform.
+
+{{< truetable >}}
+| Policy | Description | Use Case |
+|--------|-------------|----------|
+| **DEFAULT** | Drops dangerous capabilities (sys_module, sys_time, mknod, audit_control, mac_admin) while keeping common capabilities. | Recommended for most containers. Provides security while allowing standard operations. |
+| **ALLOW** | Keeps all capabilities except those explicitly disabled. | Use when containers need broader system access. Reduces security isolation. |
+| **DENY** | Drops all capabilities except those explicitly enabled. | Maximum security isolation. Use for untrusted containers or security-sensitive environments. |
+{{< /truetable >}}
+
+Linux capabilities control specific privileged operations without granting full root access.
+The DEFAULT policy provides secure operation for most use cases.
+
+#### Time Configuration
+
+The **Time Configuration** setting determines the time reference used inside the container.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **LOCAL** | (Default) Container uses the system local time. |
+| **UTC** | Container uses Coordinated Universal Time. |
+{{< /truetable >}}
+
+Use UTC for containers running distributed systems or applications that handle timestamps across time zones.
+Use LOCAL for containers running location-specific applications.
+
+#### Shutdown Timeout
+
+The **Shutdown Timeout** setting specifies how long TrueNAS waits for a container to shut down gracefully before forcing termination.
+
+**Range**: 5-300 seconds
+**Default**: 90 seconds
+
+During system shutdown or when manually stopping a container, TrueNAS sends a graceful shutdown signal and waits for the specified timeout period.
+If the container does not stop within the timeout, TrueNAS forces termination.
+
+Increase the timeout for containers running applications that require extended shutdown procedures (database flushing, connection cleanup, etc.).
+Decrease the timeout for lightweight containers that shut down quickly.
+
+#### Init Process Configuration
+
+The **Init Process Configuration** settings control the container initialization process, which starts as PID 1 inside the container.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Init Command** | Command line for the init process. Default: `/sbin/init`. **Cannot be changed after container creation.** |
+| **Init Working Directory** | Working directory for the init process. Enter a path inside the container. |
+| **Init User** | Username to run the init process as. Enter a username that exists in the container OS. |
+| **Init Group** | Group name to run the init process as. Enter a group name that exists in the container OS. |
+{{< /truetable >}}
+
+Most containers use the default init process.
+Configure custom init settings when:
+- Running containers with custom initialization systems
+- Executing containers as non-root users for security
+- Starting containers with specific working directories for application requirements
+
+{{< hint type=warning >}}
+The **Init Command** cannot be modified after container creation.
+Plan your init command carefully before creating the container.
+{{< /hint >}}
+
+#### CPU Set (CPU Affinity)
+
+The **CPU Set** setting pins the container to specific physical CPU cores, limiting which CPU cores the container can use.
+
+**Format**: Numeric set notation
+- Range: `0-3` (CPUs 0 through 3)
+- List: `1,2,3` (CPUs 1, 2, and 3)
+- Combined: `0-3,5,7` (CPUs 0-3, 5, and 7)
+
+Use CPU pinning when:
+- Running performance-sensitive containers that benefit from CPU cache locality
+- Isolating container workloads from system processes
+- Testing applications with specific CPU core counts
+- Running NUMA-aware applications
+
+Leave empty to allow the container to use all available CPU cores (default).
+
+#### ID Mapping (Security)
+
+TrueNAS automatically configures secure ID mapping for containers using the DEFAULT idmap mode.
+This mode maps container UID 0 (root) to host UID 2147000001, ensuring containers run unprivileged on the host system.
+
+This security feature provides isolation between containers and the host:
+- Container root (UID 0) does not have root privileges on the host
+- Each container operates with a distinct UID range on the host
+- Container processes cannot access host files owned by actual root
+
+No configuration is required.
+TrueNAS handles ID mapping automatically to ensure secure container operation.
 
 ## Add PCI Passthrough Device Screen
 
