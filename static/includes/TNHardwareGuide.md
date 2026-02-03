@@ -2,7 +2,7 @@
 
 [TrueNAS Enterprise systems](https://www.truenas.com/truenas-enterprise/) use components that are qualified and tested by the TrueNAS team to offer the best storage and performance with TrueNAS Enterprise Edition.
 
-This guide will go over the minimum hardware requirements and offer suggestions for TrueNAS Community Edition users.
+This guide goes over the minimum hardware requirements and offer suggestions for TrueNAS Community Edition users.
 
 ## Minimum Hardware Requirements
 
