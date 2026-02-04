@@ -475,12 +475,15 @@ Earlier architectures (Pascal, Maxwell, Volta) are not compatible.
 
 ### NVIDIA Drivers Configuration Screen
 
-The **NVIDIA Drivers** configuration screen allows you to install or remove NVIDIA GPU drivers on your system.
+The **NVIDIA Drivers** configuration screen controls the installation and removal of NVIDIA GPU drivers on the system.
 
 {{< trueimage src="/images/SCALE/SystemSettings/NVIDIADriversConfigScreen.png" alt="NVIDIA Drivers Configuration Screen" id="NVIDIA Drivers Configuration Screen" >}}
 
-**Install NVIDIA Drivers** installs the NVIDIA GPU drivers on the system.
-Select this option to enable NVIDIA GPU support for containers.
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Install NVIDIA Drivers** | Installs or removes NVIDIA GPU drivers. Select to install drivers and enable NVIDIA GPU support for containers. Deselect to remove installed drivers. Containers using NVIDIA GPUs cannot start after driver removal. |
+{{< /truetable >}}
 
 {{< hint type=warning >}}
 Installing NVIDIA drivers requires the system to use the production kernel.
@@ -489,10 +492,8 @@ See [Debug Kernel](#debug-kernel) for more information.
 {{< /hint >}}
 
 After installation completes, NVIDIA GPU devices become available for assignment to containers.
-To verify installation, check that your GPU devices appear in the container GPU device selection list.
 
-**Uninstall** removes the NVIDIA GPU drivers from the system.
-Containers using NVIDIA GPUs cannot start after driver removal.
+See [Installing NVIDIA Drivers]({{< relref "/SCALE/SCALETutorials/SystemSettings/Advanced/_index.md#installing-nvidia-drivers" >}}) in the Advanced Settings tutorial for step-by-step instructions.
 
 ## Global Two Factor Authentication Widget
 
