@@ -228,7 +228,7 @@ Click **Create New Container** to open the **Add Container** configuration wizar
 
 ### Creating a Container
 
-The **Add Container** form displays basic configuration fields and an **Advanced Options** toggle for additional settings.
+The **Add Container** form displays basic configuration fields and an **Advanced Options** button for additional settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddContainerBasic.png" alt="Add Container Basic Settings" id="Add Container Basic Settings" >}}
 
@@ -263,7 +263,7 @@ To create a new container:
 
    - Use **Time Configuration** to set the container time zone (Local or UTC) and shutdown timeout (how long to wait for graceful shutdown before forcing termination).
 
-   - Use **Init Process** to configure the init command, working directory, and user/group for the container's PID 1 process.
+   - Use **Init Process** to configure the init command, working directory, and user/group for the container's PID 1 process. The default init command is `/sbin/init`.
      Note: The init command cannot be changed after creation, but working directory, user, and group remain editable.
 
    - Use **Environment Variables** to define environment variables that will be available inside the container.
@@ -320,7 +320,7 @@ Click **Edit** to open the **Edit Container: *Container*** screen.
 
 The Edit screen allows you to modify container settings after creation. You can change **Name**, **Description**, **Autostart**, and all **Advanced Options** settings.
 
-{{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Container Screen" id="Edit Container Screen" >}}
+{{< trueimage src="/images/SCALE/Virtualization/EditContainerBasic.png" alt="Edit Container Screen" id="Edit Container Screen" >}}
 
 **Settings you cannot change after creation:**
 - **Image**: The container operating system image is fixed at creation

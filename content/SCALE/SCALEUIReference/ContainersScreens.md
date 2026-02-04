@@ -43,9 +43,9 @@ If no preferred pool is set, TrueNAS prompts for pool selection when creating ea
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Bridge** | Specifies the network bridge.  **Automatic** uses the default network bridge for communication between containers and the TrueNAS host. The dropdown list option shows existing bridges. See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information. |
-| **IPv4 Network** | Specifies the IPv4 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv4 address and subnet (e.g., *192.168.1.0*/*24*) for the containers to use or leave empty to allow TrueNAS to use the default address. |
-| **IPv6 Network** | Specifies the IPv6 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1*/*64*) for the containers to use or leave empty to allow TrueNAS to use the default address. |
+| **Bridge** | Specifies the network bridge. Select from the dropdown list. **Automatic** uses the default network bridge for communication between containers and the TrueNAS host. Additional options show existing configured bridges. See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/SCALETutorials/Network/ContainerNASBridge" >}}) for more information. |
+| **IPv4 Network** | (Displayed only when **Bridge** is set to **Automatic**) Specifies the IPv4 address and subnet for the automatic bridge (e.g., *192.168.1.0*/*24*). Leave empty to use the default address. At least one network (IPv4 or IPv6) must be specified. |
+| **IPv6 Network** | (Displayed only when **Bridge** is set to **Automatic**) Specifies the IPv6 address and subnet for the automatic bridge (e.g., *fd42:96dd:aef2:483c::1*/*64*). Leave empty to use the default address. At least one network (IPv4 or IPv6) must be specified. |
 {{< /truetable >}}
 
 <!--
@@ -84,7 +84,7 @@ Changes take effect immediately, but containers might require a restart to refle
 
 ## Add Container Form
 
-The **Add Container** form displays basic configuration fields and an **Advanced Options** toggle for additional settings.
+The **Add Container** form displays basic configuration fields and an **Advanced Options** button for additional settings.
 
 ### Basic Settings
 
@@ -98,7 +98,7 @@ The basic settings are always visible and configure essential container properti
 | **Name** | Required. Enter an alphanumeric name for the container. |
 | **Description** | Optional. Enter a description for the container. |
 | **Autostart** | Optional. Select to automatically start the container when the system boots. |
-| **Image** | Required. Click **Browse Catalog** to open the **Select Image** screen with available Linux image choices from [linuxcontainers.org](https://linuxcontainers.org/). Search or browse to locate your desired image and click **Select**. |
+| **Image** | Required. Click **Browse Catalog** to open the **Select Image** screen with available Linux image choices. Search or browse to locate your desired image and click **Select**. |
 | **Pool** | (Conditional) Select a storage pool for the container. This field appears when no preferred pool is configured in [Settings](#settings-panel). |
 {{< /truetable >}}
 
@@ -128,7 +128,7 @@ The **Time Configuration** settings control container time zone and shutdown beh
 | Setting | Description |
 |---------|-------------|
 | **Container Time** | Select the time zone for the container. **Local** uses the host system time. **UTC** uses Coordinated Universal Time. |
-| **Shutdown Timeout** | Specify the number of seconds to wait for the container to shut down gracefully before forcing termination. Default is 60 seconds. |
+| **Shutdown Timeout** | Specify the number of seconds to wait for the container to shut down gracefully before forcing termination. Default is 30 seconds. |
 {{< /truetable >}}
 
 #### Init Process
@@ -138,7 +138,7 @@ The **Init Process** settings configure the container's initialization process.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Init Process** | Optional. Specify the path to the init process executable inside the container. |
+| **Init Process** | Optional. Specify the init process command line. Default is `/sbin/init`. |
 | **Init Working Directory** | Optional. Specify the working directory for the init process. |
 | **Init User** | Optional. Specify the user to run the init process as. |
 | **Init Group** | Optional. Specify the group to run the init process as. |
@@ -188,7 +188,11 @@ The **Details for *Container*** [widgets](#containers-widgets) show information 
 
 The <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> button restarts or the <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> button stops a running container.
 
-The **Stop Options** window defines when the container stops, immediately or after one of 30 seconds, 1 minute, or 5 minutes occurs.
+The **Stop Options** window defines how the container stops:
+
+- **Wait for graceful stop** - Sends a shutdown signal and waits indefinitely for the container to stop gracefully. Does not force kill the container.
+- **Wait for graceful stop, then force** - Sends a shutdown signal and waits for the container's shutdown timeout (default 30 seconds). Force kills the container if still running after the timeout expires.
+- **Force stop immediately** - Immediately force kills the container without attempting graceful shutdown.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstanceStopOptions.png" alt="Container Stop Options" id="Container Stop Options" >}}
 
@@ -211,7 +215,7 @@ The **Details for *Container*** widgets display information and configuration op
 
 ### General Info Widget
 
-The **General Info** widget displays the container status, autostart setting, base image, CPU, memory, and secure boot configuration.
+The **General Info** widget displays container configuration details including **Description**, **Autostart**, **Dataset**, **CPU Set**, **Container Time**, **Shutdown Timeout**, **Init Process** command, and **Capabilities Policy**. **Init Working Directory**, **Init User**, and **Init Group** also display when configured.
 It includes the **Edit** and **Delete** buttons for the container.
 
 {{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
@@ -286,14 +290,14 @@ See [Configuring Filesystem Devices]({{< relref "/SCALE/SCALETutorials/Container
 The **NIC Devices** widget displays network interfaces (NICs) attached to the container.
 
 {{< enterprise >}}
-{{< hint type=warning title="High Availability Configuration" >}}
+**High Availability Configuration**
+
 Containers in High Availability (HA) environments require a static IP address configured in the container operating system.
 
 Without a static IP, containers lose network connectivity after a controller failover.
 Configure the static IP inside the container OS, not in TrueNAS network settings.
 
 See [Containers in High Availability Environments]({{< relref "/SCALE/SCALETutorials/Containers/_index.md#containers-in-high-availability-environments" >}}) for detailed guidance.
-{{< /hint >}}
 {{< /enterprise >}}
 
 {{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Devices Widget" id="NIC Devices Widget" >}}
@@ -319,8 +323,8 @@ The **Add/Edit NIC Device** dialog configures network interface settings for the
 | Setting | Description |
 |---------|-------------|
 | **NIC Type** | Select the NIC type (virtio, macvlan, ipvlan, etc.). |
-| **Use Default Mac Address** | (Create mode only) Select to automatically assign a MAC address. |
-| **Mac Address** | Enter a custom MAC address. When editing, leave empty to use the default MAC address. |
+| **Use Default Mac Address** | (While adding only) Select to automatically assign a MAC address. |
+| **Mac Address** | Enter a custom MAC address. While adding, this field appears when **Use Default Mac Address** is deselected. While editing, leave empty to use the default MAC address. |
 | **Trust Guest RX Filters** | (virtio type only) Enable to trust guest OS receive filter settings for better performance. |
 {{< /truetable >}}
 
@@ -335,22 +339,11 @@ If the container is running, stop it before editing or deleting NICs.
 
 ### Tools Widget
 
-The **Tools** widget provides quick access to various tools and utilities for managing your container.
-You can open a shell, console, or VNC session directly from this widget.
+The **Tools** widget provides quick access to the container shell.
 
 {{< trueimage src="/images/SCALE/Virtualization/ContainersToolsWidget.png" alt="Tools Widget" id="Tools Widget" >}}
 
-**Shell** opens an **Container Shell** session for command-line interaction with the container.
-  
-**Serial Console** (VM only) opens an **Container Console** session to access the system console for the container.
-
-**VNC** (VM only) opens a VNC connection using your preferred client.
-It uses a VNC URL scheme (for example, `vnc://hostname.domain.com:5930`) to launch the session directly in the application.
-If your environment does not support VNC URLs, you can manually connect using a VNC client by entering the host name or IP address followed by the port number without `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).
-
-**Logs** opens the **Container Logs** viewer showing real-time log output from the container.
-The log viewer includes an **Auto-scroll** checkbox that automatically scrolls to display new log entries as they appear.
-Enable auto-scroll to follow live log output or disable it to review specific log entries without automatic scrolling.
+**Shell** opens a **Container Shell** session for command-line interaction with the container. The shell is only available when the container is running.
 
 ## Edit Container Screen
 
@@ -358,159 +351,20 @@ The **Edit Container: *Container*** screen includes most settings from the **[Ad
 
 Settings available in Edit mode include **Name**, **Description**, **Autostart**, and all **Advanced Options** (CPU Configuration, Time Configuration, Init Process, Environment Variables, and Capabilities).
 
-Note that the **Init Process** command line field cannot be changed after creation, but Init Working Directory, Init User, and Init Group remain editable.
+Note that the **Init Process** command line field cannot be changed after creation, but **Init Working Directory**, **Init User**, and **Init Group** remain editable.
 
 To edit device, disk, network, or proxy settings, use the [Containers Widgets](#containers-widgets) on the **Containers** screen.
 
-### Edit Container Configuration Settings
+{{< trueimage src="/images/SCALE/Virtualization/EditContainerBasic.png" alt="Edit Container Screen" id="Edit Container Screen" >}}
 
-The **Container Configuration** settings on the **Edit** screen allow you to modify basic parameters for the container, such as startup behavior.
+The form has **Basic** settings (Name, Description, Autostart) visible by default, with an **Advanced Options** button to expand additional configuration sections.
 
-{{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Container Configuration" id="Edit Container Configuration" >}}
-
-**Autostart** automatically starts the container when the system boots.
-
-When enabled, TrueNAS starts the container during the system boot sequence after the containers service initializes.
-This ensures containers are available immediately after system startup without manual intervention.
-
-During system shutdown, containers with autostart enabled receive a graceful shutdown signal, allowing applications inside the container to close properly and save data before the container stops.
-The system waits for the container to shut down gracefully before continuing the shutdown process.
+For detailed field descriptions, see the **[Add Container Form](#add-container-form)** section. The Edit form uses the same fields except **Image**, **Pool**, and **Init Process** command (which cannot be changed after creation).
 
 {{< enterprise >}}
-{{< hint type=note title="Autostart in HA Environments" >}}
+**Autostart in HA Environments**
+
 In High Availability configurations, containers with autostart enabled automatically restart on the new active controller after a failover.
 Ensure containers have static IP addresses configured to maintain network connectivity after failover.
 See [Containers in High Availability Environments]({{< relref "/SCALE/SCALETutorials/Containers/_index.md#containers-in-high-availability-environments" >}}) for details.
-{{< /hint >}}
 {{< /enterprise >}}
-
-### Edit CPU and Memory Settings
-
-The **CPU & Memory** settings on the **Edit** screen are the same as those in the **Add Container** wizard.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
-
-{{< include file="/static/includes/ContainerCPUandMemorySettings.md" >}}
-
-### Edit Environment Settings  
-
-The **Environment** settings on the **Edit** screen are the same as those in the **Add Container** wizard.
-These settings configure optional environment variables for the container.
-
-**Add** displays a set of environment fields.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
-
-{{< include file="/static/includes/InstanceEnvironmentSettings.md" >}}
-
-### Advanced Configuration Options
-
-The **Edit Container** screen includes advanced configuration options accessible by clicking **Advanced Options** to expand additional settings.
-These options provide fine-grained control over container behavior, security, and resource allocation.
-
-#### Capabilities Policy
-
-The **Capabilities Policy** setting controls Linux capabilities available to the container, affecting what privileged operations the container can perform.
-
-{{< truetable >}}
-| Policy | Description | Use Case |
-|--------|-------------|----------|
-| **DEFAULT** | Drops dangerous capabilities (sys_module, sys_time, mknod, audit_control, mac_admin) while keeping common capabilities. | Recommended for most containers. Provides security while allowing standard operations. |
-| **ALLOW** | Keeps all capabilities except those explicitly disabled. | Use when containers need broader system access. Reduces security isolation. |
-| **DENY** | Drops all capabilities except those explicitly enabled. | Maximum security isolation. Use for untrusted containers or security-sensitive environments. |
-{{< /truetable >}}
-
-Linux capabilities control specific privileged operations without granting full root access.
-The DEFAULT policy provides secure operation for most use cases.
-
-#### Time Configuration
-
-The **Time Configuration** setting determines the time reference used inside the container.
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **LOCAL** | (Default) Container uses the system local time. |
-| **UTC** | Container uses Coordinated Universal Time. |
-{{< /truetable >}}
-
-Use UTC for containers running distributed systems or applications that handle timestamps across time zones.
-Use LOCAL for containers running location-specific applications.
-
-#### Shutdown Timeout
-
-The **Shutdown Timeout** setting specifies how long TrueNAS waits for a container to shut down gracefully before forcing termination.
-
-**Range**: 5-300 seconds
-**Default**: 90 seconds
-
-During system shutdown or when manually stopping a container, TrueNAS sends a graceful shutdown signal and waits for the specified timeout period.
-If the container does not stop within the timeout, TrueNAS forces termination.
-
-Increase the timeout for containers running applications that require extended shutdown procedures (database flushing, connection cleanup, etc.).
-Decrease the timeout for lightweight containers that shut down quickly.
-
-#### Init Process Configuration
-
-The **Init Process Configuration** settings control the container initialization process, which starts as PID 1 inside the container.
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Init Command** | Command line for the init process. Default: `/sbin/init`. **Cannot be changed after container creation.** |
-| **Init Working Directory** | Working directory for the init process. Enter a path inside the container. |
-| **Init User** | Username to run the init process as. Enter a username that exists in the container OS. |
-| **Init Group** | Group name to run the init process as. Enter a group name that exists in the container OS. |
-{{< /truetable >}}
-
-Most containers use the default init process.
-Configure custom init settings when:
-- Running containers with custom initialization systems
-- Executing containers as non-root users for security
-- Starting containers with specific working directories for application requirements
-
-{{< hint type=warning >}}
-The **Init Command** cannot be modified after container creation.
-Plan your init command carefully before creating the container.
-{{< /hint >}}
-
-#### CPU Set (CPU Affinity)
-
-The **CPU Set** setting pins the container to specific physical CPU cores, limiting which CPU cores the container can use.
-
-**Format**: Numeric set notation
-- Range: `0-3` (CPUs 0 through 3)
-- List: `1,2,3` (CPUs 1, 2, and 3)
-- Combined: `0-3,5,7` (CPUs 0-3, 5, and 7)
-
-Use CPU pinning when:
-- Running performance-sensitive containers that benefit from CPU cache locality
-- Isolating container workloads from system processes
-- Testing applications with specific CPU core counts
-- Running NUMA-aware applications
-
-Leave empty to allow the container to use all available CPU cores (default).
-
-#### ID Mapping (Security)
-
-TrueNAS automatically configures secure ID mapping for containers using the DEFAULT idmap mode.
-This mode maps container UID 0 (root) to host UID 2147000001, ensuring containers run unprivileged on the host system.
-
-This security feature provides isolation between containers and the host:
-- Container root (UID 0) does not have root privileges on the host
-- Each container operates with a distinct UID range on the host
-- Container processes cannot access host files owned by actual root
-
-No configuration is required.
-TrueNAS handles ID mapping automatically to ensure secure container operation.
-
-## Add PCI Passthrough Device Screen
-
-The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to a container.
-
-{{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
-
-Use **Search Devices** or the **Type** dropdown to filter available devices.
-The selected PCI device(s) must not be in use by the host or share an IOMMU group with any device the host requires.
-
-**Select** attaches the selected device.
