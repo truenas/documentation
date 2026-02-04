@@ -10,48 +10,31 @@ tags:
  - instances
 ---
 
-{{< include file="/static/includes/25.04Virtualization.md" >}}
-
 ## Containers Screen
 
 The **Containers** screen allows users to add, edit, or manage Linux containers.
 
-
-The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
-See [**Global Settings**](#global-settings) for more information.
-
-{{< trueimage src="/images/SCALE/Virtualization/InstancesPoolNotSelected.png" alt="Pool Is Not Selected" id="Pool Is Not Selected" >}}
-
-After setting the pool, <i class="fa fa-check" aria-hidden="true" title="Check"></i> **Initialized** shows on the screen header.
-
 The **Containers** screen displays **No Containers** before you create the first container.
 
-{{< trueimage src="/images/SCALE/Virtualization/InstancesScreenNoInstances.png" alt="Containers Screen No Containers" id="Containers Screen No Containers" >}}
+{{< trueimage src="/images/SCALE/Virtualization/ContainersScreenNoContainers.png" alt="Containers Screen No Containers" id="Containers Screen No Containers" >}}
 
-The **Configuration** dropdown menu includes **[Global Settings](#global-settings)**, **[Manage Volumes](#manage-volumes)**, and [**Map User/Group IDs**](#map-user-and-group-ids) options.
+The **Settings** button opens the [**Settings**](#settings-panel) panel to configure global container options.
 
-**Create New Container** at the top right of the screen opens the **[Create Container](#create-container-wizard-screens)** wizard.
+**Create New Container** at the top right of the screen opens the **[Add Container](#add-container-form)** form.
 
-## Configuration Menu
+## Settings Panel
 
-**Configuration** on the **Containers** screen header displays service-level settings that apply to all containers.
+**Settings** opens the **Settings** screen showing global options that apply to all containers.
+Use this panel to configure an optional preferred storage pool for containers and default network settings.
 
-* **Global Settings** opens the **[Global Settings](#global-settings)** screen.
-* **Manage Volumes** opens the [**Volumes**](#manage-volumes) screen.
-* **Map User/Group IDs** opens the [**Map User And Group IDs**](#map-user-and-group-ids) screen.
+{{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Settings Panel" id="Settings Panel" >}}
 
-### Global Settings
+### Preferred Pool
 
-**Global Settings** opens the **Global Settings** screen showing global options that apply to all containers, including selecting the storage pool for containers and network settings.
-
-{{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Global Settings Screen" id="Global Settings Screen" >}}
-
-#### Storage Settings
-
-Use the **Enable Containers** toggle to activate or deactivate containers.
-The **Pools** dropdown list shows a list of available pools on the system for container storage.
-
-The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
+**Preferred Pool** specifies a default storage pool for container data.
+This setting is optional.
+Select a pool from the dropdown list to use it as the default when creating containers.
+If no preferred pool is set, TrueNAS prompts for pool selection when creating each container.
 
 #### Default Network Settings
 
@@ -65,55 +48,11 @@ The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool
 | **IPv6 Network** | Specifies the IPv6 address for the bridge specified when **Bridge** is set to **Automatic**. Enter the IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1*/*64*) for the containers to use or leave empty to allow TrueNAS to use the default address. |
 {{< /truetable >}}
 
-### Manage Volumes
-
-The **Volumes** screen lists all volumes currently configured for the containers service.
-
-{{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
-
-**Create Volume** opens the [**Create New Volume**](#create-volumes) dialog to configure a new containers volume.
-
-**Import Zvols** opens the [**Import Zvol**](#import-zvol) dialog to import an existing Zvol as a containers volume.
-
-
-#### Create Volumes
-
-**Create Volume** on the **Volumes** screen opens the **Create New Volume** dialog.
-
-{{< trueimage src="/images/SCALE/Virtualization/InstancesCreateVolume.png" alt="Create New Volume Dialog" id="Create New Volume Dialog" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|-----------|-------------|
-| **Name** | Name of the volume. Enter a name for the volume. |
-| **Size** | Size of the volume. Enter a size for the volume, for example *1 GiB*. |
-{{< /truetable >}}
-
-**Create** creates the new volume.
-
-#### Import Zvol
-
-**Import Zvols** on the **Volumes** screen opens the **Import Zvol** dialog.
-
-{{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|-----------|-------------|
-| **Select Zvols** | Specifies the Zvol to import. Enter or browse to select an existing Zvol. |
-| **Clone** | Clones and promotes a temporary snapshot of the zvol into a custom storage volume. This option retains the original zvol while creating an identical copy as a containers volume. |
-| **Move** | Relocates the existing zvol to the ix-virt dataset as a volume. |
-{{< /truetable >}}
-
-#### Delete Volumes
-
-**<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on an image row deletes that image.
-A **Delete volume** dialog displays.
-
-{{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
-
-**Confirm** and then **Continue** deletes the image.
-Delete is disabled for active images.
+<!--
+TODO: Map User And Group IDs section removed - No UI exists in webui for IDMAP management.
+Backend API supports IDMAP via container.create() with idmap parameter (DEFAULT/ISOLATE D/None modes).
+WebUI bug filed: [INSERT BUG NUMBER]
+Restore this section once webui implements the IDMAP management UI.
 
 ### Map User And Group IDs
 
@@ -141,43 +80,97 @@ Existing mappings are shown in a table containing the group or user name, host I
 
 **Set** creates the mapping.
 Changes take effect immediately, but containers might require a restart to reflect the changes.
+-->
 
-## Create Container Wizard
+## Add Container Form
 
-The **Create Container** configuration wizard displays all settings to set up a new container.
+The **Add Container** form displays basic configuration fields and an **Advanced Options** toggle for additional settings.
 
-### Container Configuration
+### Basic Settings
 
-The **Container Configuration** settings specify the container name and operating system image.
+The basic settings are always visible and configure essential container properties.
 
-{{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Container Configuration" id="Container Configuration" >}}
+{{< trueimage src="/images/SCALE/Virtualization/AddContainerBasic.png" alt="Add Container Basic Settings" id="Add Container Basic Settings" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter an alphanumeric name for the container. |
-| **Image** | **Browse Catalog** opens the **Select Image** screen with available Linux image choices from [linuxcontainers.org](https://linuxcontainers.org/). Search or browse to locate your desired image and click **Select**. |
+| **Description** | Optional. Enter a description for the container. |
+| **Autostart** | Optional. Select to automatically start the container when the system boots. |
+| **Image** | Required. Click **Browse Catalog** to open the **Select Image** screen with available Linux image choices from [linuxcontainers.org](https://linuxcontainers.org/). Search or browse to locate your desired image and click **Select**. |
+| **Pool** | (Conditional) Select a storage pool for the container. This field appears when no preferred pool is configured in [Settings](#settings-panel). |
 {{< /truetable >}}
 
 {{< include file="/static/includes/InstanceNameRequirements.md" >}}
 
-### CPU & Memory
+### Advanced Options
 
-The **CPU & Memory** settings specify the number of virtual CPU cores to allocate to the container and memory size.
+Click **Advanced Options** to display additional configuration settings.
 
-{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory" id="CPU & Memory" >}}
+{{< trueimage src="/images/SCALE/Virtualization/AddContainerAdvanced1.png" alt="Add Container Advanced Options - Part 1" id="Add Container Advanced Options - Part 1" >}}
 
-{{< include file="/static/includes/ContainerCPUandMemorySettings.md" >}}
+#### CPU Configuration
 
-### Environment
+The **CPU Configuration** settings bind the container to specific CPU cores.
 
-The **Environment** settings configure optional environment variables to run on boot or execute.
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **CPU Set** | Optional. Specify CPU core numbers to allocate to the container (e.g., *0,1,2* or *0-3*). Leave blank to allow the container access to all host CPU cores. |
+{{< /truetable >}}
 
-**Add** displays a set of environment fields.
+#### Time Configuration
 
-{{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
+The **Time Configuration** settings control container time zone and shutdown behavior.
 
-{{< include file="/static/includes/InstanceEnvironmentSettings.md" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Container Time** | Select the time zone for the container. **Local** uses the host system time. **UTC** uses Coordinated Universal Time. |
+| **Shutdown Timeout** | Specify the number of seconds to wait for the container to shut down gracefully before forcing termination. Default is 60 seconds. |
+{{< /truetable >}}
+
+#### Init Process
+
+The **Init Process** settings configure the container's initialization process.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Init Process** | Optional. Specify the path to the init process executable inside the container. |
+| **Init Working Directory** | Optional. Specify the working directory for the init process. |
+| **Init User** | Optional. Specify the user to run the init process as. |
+| **Init Group** | Optional. Specify the group to run the init process as. |
+{{< /truetable >}}
+
+{{< trueimage src="/images/SCALE/Virtualization/AddContainerAdvanced2.png" alt="Add Container Advanced Options - Part 2" id="Add Container Advanced Options - Part 2" >}}
+
+#### Environment Variables
+
+The **Environment Variables** settings configure optional environment variables to run on boot or execute.
+
+Click **Add** to display a set of environment variable fields.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Name** | Enter the environment variable name (e.g., *PATH*, *HOME*). |
+| **Value** | Enter the value for the environment variable. |
+{{< /truetable >}}
+
+Click **Add** again to configure additional environment variables.
+
+#### Capabilities
+
+The **Capabilities** settings control Linux capabilities, which are special permissions that divide root privileges into distinct units.
+This allows containers to perform specific privileged operations without granting full root access.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Capabilities Policy** | Select the default policy for container capabilities:<br><br>**DEFAULT** (Recommended): Keeps most capabilities but drops dangerous ones (sys_module, sys_time, mknod, audit_control, mac_admin). Provides security while allowing normal container operations.<br><br>**ALLOW**: Grants all capabilities. Use when containers need broad system access, but reduces security isolation.<br><br>**DENY**: Drops all capabilities. Provides maximum security isolation for untrusted containers. |
+{{< /truetable >}}
 
 {{< hint type=note >}}
 Device configuration (network interfaces, USB devices, GPU devices, and filesystem mounts) is performed after container creation using the detail widgets on the **Containers** screen.
@@ -248,6 +241,8 @@ The **USB Devices** widget displays USB devices attached to the container, allow
 
 The **GPU Devices** widget displays GPU hardware attached to the container for graphics or computation acceleration.
 
+{{< trueimage src="/images/SCALE/Virtualization/GPUDevices.png" alt="GPU Devices Widget" id="GPU Devices Widget" >}}
+
 TrueNAS supports GPU passthrough for containers with the following GPU vendors:
 
 {{< truetable >}}
@@ -269,92 +264,26 @@ GPU devices appear in the list only if:
 The **Filesystem Devices** widget displays filesystem mounts that provide the container with access to host directories and datasets.
 Filesystem devices allow containers to read and write data to TrueNAS datasets or host paths.
 
+{{< trueimage src="/images/SCALE/Virtualization/FilesystemDevicesWidget.png" alt="Filesystem Devices Widget" id="Filesystem Devices Widget" >}}
+
+**Add** opens fields to configure a new filesystem device mount.
+
+{{< trueimage src="/images/SCALE/Virtualization/AddFilesystemDevice.png" alt="Add Filesystem Device" id="Add Filesystem Device" >}}
+
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Source** | Host source path for the filesystem. Enter or browse to select an existing host directory or dataset path. |
-| **Destination** | Mount path inside the container where the filesystem appears. Enter the container path, for example */mnt/data* or */var/lib/data*. |
+| **Host Directory Source** | Host source path for the filesystem. Enter or browse to select an existing host directory or dataset path. |
+| **Container Mount Path** | Mount path inside the container where the filesystem appears. Enter the container path, for example */mnt/data* or */var/lib/data*. |
 {{< /truetable >}}
-
-**Add** opens fields to configure a new filesystem device mount.
 
 For existing filesystem devices, the <span class="material-icons">more_vert</span> actions menu includes options to **Edit** or **Delete** the filesystem device.
 
 See [Configuring Filesystem Devices]({{< relref "/SCALE/SCALETutorials/Containers/_index.md#configuring-filesystem-devices" >}}) in the Containers tutorial for configuration procedures.
 
-### Disks Widget
+### NIC Devices Widget
 
-The **Disks** widget shows the storage devices attached to the container, along with their associated paths.
-It allows you to manage the disks, including adding new ones or modifying existing ones.
-
-{{< trueimage src="/images/SCALE/Virtualization/DisksWidget.png" alt="Disks Widget" id="Disks Widget" >}}
-
-**Add** opens the [**Add Disk**](#addedit-disk-screen) screen for adding new disks to the container.
-
-For existing disks, the <span class="material-icons">more_vert</span> actions include options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disk-mounts) the disk mount.
-
-For VMs, the widget displays the current root disk size.
-The root disk stores the OS and serves as the boot disk for the VM.
-**Change** opens the [**Change Root Disk Setup**](#change-root-disk-setup) dialog.
-
-#### Add/Edit Disk Screen
-
-The **Add/Edit Disk** screen allows you to configure a new disk or modify an existing one attached to a container.
-
-{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreenVM.png" alt="Add Disk Screen - VM" id="Add Disk Screen - VM" >}}
-
-{{< expand "Add/Edit Disk Settings - VM" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|-----------|-------------|
-| **Volume** | **Select Volume** opens the [**Volumes**](#manage-volumes) screen to create or select a volume to attach. |
-| **Boot Priority** | Sets the order in which to boot disks. By default, the root disk is set to 1, which is the highest priority. |
-| **I/O Bus** | Sets the I/O bus for the disk. Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**. |
-{{< /truetable >}}
-{{< /expand >}}
-
-{{< expand "Add/Edit Disk Settings" "v" >}}
-{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen" id="Add Disk Screen" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Source** | Enter or browse to select the host source path for the disk. For a new dataset, enter or browse to select the parent path. |
-| **Destination**| Enter the destination path to mount the disk in the container. |
-{{< /truetable >}}
-{{< /expand >}}
-
-**Save** applies changes.
-
-#### Delete Disk Mounts
-
-The **Delete Item** dialog asks for confirmation to delete the selected disk mount.
-
-{{< trueimage src="/images/SCALE/Virtualization/DeleteDiskDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
-
-**Confirm** activates the **Continue** button.
-**Continue** starts the delete operation.
-
-#### Change Root Disk Setup
-
-The **Change Root Disk Setup** dialog allows you to configure the size of the disk a VM stores its OS on and boots from, and change the root disk I/O bus.
-
-{{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|-----------|-------------|
-| **Root Disk Size (in GiB)** | Increases the size of the VM root disk. Enter a new root disk size in GiB, such as *20*. |
-| **Root Disk I/O Bus** | Sets the communication pathway type for the root disk. Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**. |
-{{< /truetable >}}
-
-
-**Save** applies changes.
-
-### NIC Widget
-
-The **NIC Widget** displays the network interfaces (NICs) attached to the container, along with their names and types.
-It allows you to add new NICs and manage existing ones.
+The **NIC Devices** widget displays network interfaces (NICs) attached to the container.
 
 {{< enterprise >}}
 {{< hint type=warning title="High Availability Configuration" >}}
@@ -367,27 +296,49 @@ See [Containers in High Availability Environments]({{< relref "/SCALE/SCALETutor
 {{< /hint >}}
 {{< /enterprise >}}
 
-{{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Widget" id="NIC Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Devices Widget" id="NIC Devices Widget" >}}
 
-**Add** opens a menu with available NIC choices, allowing you to select and attach a new NIC to the container.
+Each NIC displays the network interface name and MAC address in the format: `{interface_name} ({mac_address})`.
+Example: `br0 (aa:bb:cc:dd:ee:ff)` or `br0 (Default Mac Address)`.
 
-For existing NICs, the <span class="material-icons">more_vert</span> actions menu allows you to [delete](#delete-nics) the NIC.
+{{< hint type=important >}}
+NIC modifications are restricted when there are pending network interface changes on the TrueNAS system.
+If the widget displays a warning about pending changes, apply or revert those network changes before modifying container NICs.
+{{< /hint >}}
 
-#### Delete NICs
+**Add** opens a menu with available network interfaces grouped by type.
+Select a NIC from the menu to open the configuration dialog.
 
-The **Delete Item** dialog asks for confirmation to delete the selected NIC.
+#### Add/Edit NIC Device Dialog
 
-{{< trueimage src="/images/SCALE/Virtualization/DeleteNicDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
+The **Add/Edit NIC Device** dialog configures network interface settings for the container.
 
-**Confirm** activates the **Continue** button.
-**Continue** starts the delete operation.
+{{< trueimage src="/images/SCALE/Virtualization/AddContainerNICDevice.png" alt="Add NIC Device" id="Add NIC Device" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **NIC Type** | Select the NIC type (virtio, macvlan, ipvlan, etc.). |
+| **Use Default Mac Address** | (Create mode only) Select to automatically assign a MAC address. |
+| **Mac Address** | Enter a custom MAC address. When editing, leave empty to use the default MAC address. |
+| **Trust Guest RX Filters** | (virtio type only) Enable to trust guest OS receive filter settings for better performance. |
+{{< /truetable >}}
+
+**Add** or **Update** applies the NIC configuration.
+
+For existing NICs, the <span class="material-icons">more_vert</span> actions menu provides options to **Edit** or **Delete** the NIC.
+
+{{< hint type=note >}}
+NICs can only be modified when the container is stopped.
+If the container is running, stop it before editing or deleting NICs.
+{{< /hint >}}
 
 ### Tools Widget
 
 The **Tools** widget provides quick access to various tools and utilities for managing your container.
 You can open a shell, console, or VNC session directly from this widget.
 
-{{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Widget - VM" id="Tools Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/ContainersToolsWidget.png" alt="Tools Widget" id="Tools Widget" >}}
 
 **Shell** opens an **Container Shell** session for command-line interaction with the container.
   
@@ -403,9 +354,12 @@ Enable auto-scroll to follow live log output or disable it to review specific lo
 
 ## Edit Container Screen
 
-The **Edit Container: *Container*** screen settings are a subset of those found on the **[Create Container Wizard](#create-container-wizard)** screens.
-It includes the general **Container Configuration** and **CPU and Memory** settings for containers.
-Additionally, containers include **Environment** settings.
+The **Edit Container: *Container*** screen includes most settings from the **[Add Container Form](#add-container-form)** except **Image** and **Pool**.
+
+Settings available in Edit mode include **Name**, **Description**, **Autostart**, and all **Advanced Options** (CPU Configuration, Time Configuration, Init Process, Environment Variables, and Capabilities).
+
+Note that the **Init Process** command line field cannot be changed after creation, but Init Working Directory, Init User, and Init Group remain editable.
+
 To edit device, disk, network, or proxy settings, use the [Containers Widgets](#containers-widgets) on the **Containers** screen.
 
 ### Edit Container Configuration Settings
@@ -432,7 +386,7 @@ See [Containers in High Availability Environments]({{< relref "/SCALE/SCALETutor
 
 ### Edit CPU and Memory Settings
 
-The **CPU & Memory** settings on the **Edit** screen are the same as those in the **Create Container** wizard.
+The **CPU & Memory** settings on the **Edit** screen are the same as those in the **Add Container** wizard.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
 
@@ -440,7 +394,7 @@ The **CPU & Memory** settings on the **Edit** screen are the same as those in th
 
 ### Edit Environment Settings  
 
-The **Environment** settings on the **Edit** screen are the same as those in the **Create Container** wizard.
+The **Environment** settings on the **Edit** screen are the same as those in the **Add Container** wizard.
 These settings configure optional environment variables for the container.
 
 **Add** displays a set of environment fields.
