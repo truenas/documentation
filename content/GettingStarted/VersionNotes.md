@@ -36,15 +36,54 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.2" data-tab-label="25.10.2">
 
-February ##, 2026
+February 17, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.2!
 
 **Notable changes:**
 
-* [Placeholder - Notable changes will be added based on ticket list]
+* Fixes critical upgrade failure preventing TrueNAS 25.04 to 25.10 upgrades ([NAS-139541](https://ixsystems.atlassian.net/browse/NAS-139541)).
+  Resolves "Could not prepare Boot variable: No space left on device" error that caused systems to become unbootable after failed upgrade attempts.
+* Fixes SMB service startup failure after upgrading from older TrueNAS versions with legacy ACL configurations ([NAS-139076](https://ixsystems.atlassian.net/browse/NAS-139076)).
+  Systems with legacy SMB share permission strings stored in their configuration database could not start the SMB service after upgrading to 25.10.1. This update automatically converts legacy permission formats to the current binary format during service initialization.
+* Improves NFS performance for NFSv4 clients ([NAS-139128](https://ixsystems.atlassian.net/browse/NAS-139128)).
+  Adds support for STATX_CHANGE_COOKIE to properly surface ZFS sequence numbers to NFS clients via knfsd. This ensures the NFS change_info4 structure accurately tracks directory and file changes, improving client attribute cache invalidation and reducing unnecessary server requests. Previously, the system synthesized change IDs algorithmically based on ctime, which could fail to increment consistently due to kernel timer coarseness.
+* Improves ZFS pool import performance and write operation responsiveness ([NAS-138879](https://ixsystems.atlassian.net/browse/NAS-138879)).
+  Limits the time async destroy operations can run per transaction group, preventing these operations from blocking pool imports and other write operations. Pool imports that previously took extended time due to prolonged async destroy operations will complete more quickly.
+* Fixes disk replacement validation incorrectly rejecting identical capacity drives ([NAS-138678](https://ixsystems.atlassian.net/browse/NAS-138678)).
+  Resolves "device is too small" error when attempting to replace failed drives with identical capacity models. The system now correctly validates replacement drive capacity and allows legitimate disk replacements to proceed.
+* Reduces excessive API calls during user and group selection in the web interface ([NAS-139459](https://ixsystems.atlassian.net/browse/NAS-139459)).
+  Implements longer debounce period for autocomplete fields to prevent the system from making API requests for every keystroke. This reduces system load and eliminates logs filled with failed requests during routine typing.
+* Reduces background CPU usage when running containerized applications ([NAS-139089](https://ixsystems.atlassian.net/browse/NAS-139089)).
+  Optimizes YAML processing and Docker stats collection to reduce asyncio_loop CPU usage caused by repeated container inspection operations holding the Global Interpreter Lock.
+* Fixes Dashboard storage widget displaying "Unknown" for used and free space ([NAS-138705](https://ixsystems.atlassian.net/browse/NAS-138705)).
+  Resolves issue where secondary storage pools showed no capacity metrics in the Dashboard widget, preventing visibility into actual storage usage and availability.
+* Fixes network configuration lockout caused by invalid IPv6 routes ([NAS-139575](https://ixsystems.atlassian.net/browse/NAS-139575)).
+  Resolves issue where unusual IPv6 route entries in the routing table prevented access to network settings, app management, and bug reporting. The system now gracefully handles invalid route entries instead of becoming unresponsive.
+* Fixes network bridge creation validation errors ([NAS-139196](https://ixsystems.atlassian.net/browse/NAS-139196)).
+  Resolves Pydantic validation failures that prevented users from creating network bridges through the standard workflow of removing IPs from an interface, creating a bridge, and reassigning those IPs.
+* Adds **Hosts Allow** and **Hosts Deny** network access controls to SMB shares ([NAS-138814](https://ixsystems.atlassian.net/browse/NAS-138814)).
+  Provides IP-based access restrictions for SMB shares across all relevant purpose presets. Also adds ability to synchronize Kerberos keytab Service Principal Names (SPNs) with Active Directory updates for improved multiprotocol share management.
+* Improves Users page default filter to include Directory Services users ([NAS-139073](https://ixsystems.atlassian.net/browse/NAS-139073)).
+  Directory Services users now appear in the default view without requiring manual filter adjustment. This improves discoverability of directory service accounts in the user management interface.
+* Fixes SSH access removal for user accounts ([NAS-139130](https://ixsystems.atlassian.net/browse/NAS-139130)).
+  Resolves issue where unchecking the SSH Access option appeared to save without error, but the SSH indicator persisted in the user list. Users can now properly disable SSH access through the web interface.
+* Fixes session expiry settings not being respected ([NAS-138467](https://ixsystems.atlassian.net/browse/NAS-138467)).
+  Resolves issues where users were logged out unexpectedly during active operations despite configured session timeout settings, and where page refresh (F5) triggered the login screen despite an active session. Session expiration now functions as configured.
+* Fixes certificate management for certificates with large Distinguished Names ([NAS-139056](https://ixsystems.atlassian.net/browse/NAS-139056)).
+  Certificates with DNs exceeding 1024 characters (typically those with many Subject Alternative Names) can now be properly imported and managed. Previously, these certificates would upload successfully but fail during subsequent listing operations.
+* Fixes Cloud Sync tasks becoming invisible after upgrading from TrueNAS CORE to SCALE ([NAS-138886](https://ixsystems.atlassian.net/browse/NAS-138886)).
+  Resolves data inconsistency where the `bwlimit` field contained empty objects instead of empty arrays, preventing the UI from displaying cloud sync tasks. Tasks remained functional via command-line but were not visible in the web interface.
+* Improves S3 endpoint URI validation for Cloud Sync tasks ([NAS-138903](https://ixsystems.atlassian.net/browse/NAS-138903)).
+  Adds upfront validation to ensure S3 endpoints include the required `https://` protocol prefix. Previously, omitting the protocol resulted in an unhelpful "Invalid endpoint" error. The system now provides clearer guidance during configuration.
+* Fixes iSCSI extent wizard hanging when adding second extent to a target ([NAS-138856](https://ixsystems.atlassian.net/browse/NAS-138856)).
+  Resolves issue where an unsaved changes popup appeared unexpectedly after saving, followed by duplicate item errors. The wizard pane now closes automatically as expected, though the extent is added successfully despite the confusing error messages.
+* Fixes error notifications displaying placeholder text ([NAS-139010](https://ixsystems.atlassian.net/browse/NAS-139010)).
+  Resolves formatting bug where error notifications showed "%(err)s Warning" instead of descriptive error messages.
+* Improves error dialog usability for long error messages ([NAS-138424](https://ixsystems.atlassian.net/browse/NAS-138424)).
+  Adds proper scrolling to error dialogs with lengthy content. Previously, users had to zoom out to 50% to see action buttons when error messages (such as those listing numerous dependent clones) extended beyond the visible area.
 
-<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=XXXXX" target="_blank">TrueNAS 25.10.2 (Goldeye) Changelog</a> in Jira.
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13831" target="_blank">TrueNAS 25.10.2 (Goldeye) Changelog</a> in Jira.
 
   </div>
   <div data-tab-id="25.10.1" data-tab-label="25.10.1">
@@ -401,7 +440,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Improvements to Kerberized NFS functionality, Kerberos keytab synchronization for Active Directory, and restoration of SMB host access controls to all share purposes are actively being developed and tested for inclusion in TrueNAS 25.10.2.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=13698" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=13830" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
