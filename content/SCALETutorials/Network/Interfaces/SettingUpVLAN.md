@@ -12,9 +12,19 @@ Click [here](https://www.ieee802.org/1/pages/802.1Q-2014.html) for more informat
 
 TrueNAS uses [vlan(4)](https://man.cx/vlan(4)) to manage VLANs.
 
+
+## Before You Begin
+
 Before you begin, make sure you have an Ethernet card connected to a switch port and configured for your VLAN.
 Ensure that you have also preconfigured the VLAN tag in the switched network.
 Consult with your IT department to obtain this VLAN tag if you are not the network administrator for your systems.
+
+{{< include file="/static/includes/InterfaceBeforeYouBegin.md" >}}
+{{< include file="/static/includes/BeforeYouBridge.md" >}}
+
+{{< include file="/static/includes/TestingNetworkChanges.md" >}}
+
+## Adding a VLAN Interface
 
 To set up a VLAN interface, go to **Network**, click **Add** on the **Interfaces** widget to open the **Add Interface** screen, then:
 
