@@ -174,7 +174,7 @@ To use the UI to change an interface from DHCP to a static IP address, go to **S
 
 6. Click **Save**.
 
-7. Click **Test Changes** when prompted. Follow the procedure above to test nework changes.
+7. Click **Test Changes** when prompted. Follow the procedure above to test network changes.
 
 ### Returning to a DHCP-Assigned IP Address
 
