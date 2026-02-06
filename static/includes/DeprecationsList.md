@@ -1,18 +1,18 @@
 &NewLine;
 
 {{< hint type="important" title="Deprecation Notice" >}}
-This section tracks features removed in 26.04 and features deprecated in 26.04 for future removal.
+This section tracks features removed in 26 and features deprecated in 26 for future removal.
 Plan migrations immediately to avoid disruptions during upgrades.
 {{< /hint >}}
 
-## Features Removed in 26.04
+## Features Removed in 26
 
 <!-- Uncomment this line when there are no features removed in this version -->
 <!-- *No features are removed in this version.* -->
 
 ### REST API
 
-{{< deprecation-status deprecated="25.04" removed="26.04" >}}
+{{< deprecation-status deprecated="25.04" removed="26" >}}
 
 {{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
 
@@ -24,10 +24,10 @@ Migration Path:
 2. Review the [Websocket API documentation](https://api.truenas.com/) to identify replacement endpoints.
 3. Update all scripts and integrations to use Websocket API endpoints.
 4. Test thoroughly in a non-production environment.
-5. Deploy updated integrations before upgrading to 26.04.
+5. Deploy updated integrations before upgrading to 26.
 
-Impact: Systems still using the REST API must migrate to the Websocket API before upgrading to 26.04.
-REST API endpoints do not function in 26.04 and later.
+Impact: Systems still using the REST API must migrate to the Websocket API before upgrading to 26.
+REST API endpoints do not function in 26 and later.
 
 See Also:
 
