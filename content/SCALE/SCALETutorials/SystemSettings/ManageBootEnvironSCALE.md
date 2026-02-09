@@ -35,6 +35,22 @@ Read, write, or checksum errors show for the pool.
 
 {{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatusListingSCALE.png" alt="Boot Pool Status" id="Boot Pool Status" >}}
 
+### Managing Boot Environments
+
+  TrueNAS automatically saves the previous release during upgrades and keeps the last two boot environments by default. TrueNAS recommends
+  keeping three to four boot environments for production systems.
+
+  Industry best practices recommend keeping the current running release and one to two previous stable releases for quick rollback if necessary.
+   Remove older boot environments unless there is a specific rollback reason.
+
+  Consider the following when deciding whether to remove boot environments:
+
+  * Keep older releases for 30 to 90 days until you have confidence in the current release.
+  * Remove older releases when boot pool space is limited (<20% free remaining).
+    Each boot environment typically uses 2-5GB.
+    Consider setting up a system alert when boot pool capacity reaches 70-80%.
+  * Remove releases that no longer receive security updates. Keep the most recent version with security patches.
+
 ### Replace Device
 
 Click the <span class="material-icons">more_vert</span> to open the **Actions** options.
