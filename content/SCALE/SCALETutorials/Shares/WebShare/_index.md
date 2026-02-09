@@ -61,7 +61,7 @@ After configuring the service, create a WebShare to provide access to a specific
 
 3. Select the **Path** to the directory you want to share.
    The path must be under /mnt/*poolname*/.
-   All subdirectories within the selected path are accessible to authorized users based on their filesystem permissions.
+   All subdirectories within the selected path are accessible to authorized users based on their file system permissions.
 
 4. Enter a **Name** for the WebShare.
    The name must contain only letters, numbers, hyphens, and underscores.
