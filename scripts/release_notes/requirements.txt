@@ -1,0 +1,10 @@
+# Requirements for TrueNAS Release Notes Automation
+
+# Required for all scripts
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+
+# Optional: for Claude API integration (generate_notable_changes.py)
+# Only needed if using --api mode instead of --manual mode
+anthropic>=0.40.0
