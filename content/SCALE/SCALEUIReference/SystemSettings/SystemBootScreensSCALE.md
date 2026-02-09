@@ -55,7 +55,7 @@ It includes the current status, the path, and the number of read, write, and che
 The vertical ellipsis <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> next to a device displays two options, **Attach** or **Replace**.
 
 Each boot pool environment listed expands to show the disk name where the environment resides.
-The <span class="material-symbols-outlined">more_vert</span> shows two options, **Replace** and **Attach**.
+The <span class="material-icons">more_vert</span> shows two options, **Replace** and **Attach**.
 
 **Replace** opens the [**Replace** window](#replace-screen).
 
