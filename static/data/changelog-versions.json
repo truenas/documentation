@@ -14,6 +14,7 @@
     "label": "25.10 (Goldeye)",
     "versions": [
       { "value": "all", "label": "25.10 (All)", "filename": "25.10-changelog.csv" },
+      { "value": "25.10.2", "label": "25.10.2", "filename": "25.10.2-changelog.csv" },
       { "value": "25.10.1", "label": "25.10.1", "filename": "25.10.1-changelog.csv" },
       { "value": "25.10.0.1", "label": "25.10.0.1", "filename": "25.10.0.1-changelog.csv" },
       { "value": "25.10.0", "label": "25.10.0", "filename": "25.10.0-changelog.csv" },
