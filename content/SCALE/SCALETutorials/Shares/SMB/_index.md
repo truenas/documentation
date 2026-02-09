@@ -412,6 +412,10 @@ Toggle **Start Automatically** on if you want the service to activate when TrueN
 Configure the SMB service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Windows (SMB) Shares** widget header or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
 Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
 
+## Enabling Spotlight Search for macOS
+
+{{< include file="/static/includes/SMBSpotlightSearch.md" >}}
+
 ## Mounting the SMB Share
 
 The instructions in this section cover mounting the SMB share on a system with the following operating systems.
