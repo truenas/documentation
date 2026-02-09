@@ -16,7 +16,7 @@ Unlike SMB or NFS shares that require mounting on client systems, WebShare allow
 WebShare requires TrueNAS Connect to be configured and active.
 {{< /hint >}}
 
-The **WebShare** card displays **Open WebShare** and **Add** buttons, and a <span class="material-icons">more_vert</span> icon for accessing service options.
+The **WebShare** widget displays **Open WebShare** and **Add** buttons, and a <span class="material-icons">more_vert</span> icon for accessing service options.
 Each configured WebShare displays as a row showing the share name, path, and action icons to open the share in a new browser tab, edit the share, or delete the share.
 
 ## Prerequisites
@@ -31,9 +31,9 @@ Before configuring WebShare, ensure the following:
 
 Configure the WebShare service before creating shares.
 
-{{< trueimage src="/images/SCALE/Shares/WebShareCard.png" alt="WebShare Card" id="WebShare Card" >}}
+{{< trueimage src="/images/SCALE/Shares/WebShareCard.png" alt="WebShare Widget" id="WebShare Widget" >}}
 
-1. Go to **Shares** and locate the **WebShare** card.
+1. Go to **Shares** and locate the **WebShare** widget.
 
 2. Click the <span class="material-icons">more_vert</span> icon and select **Config Service**.
 
@@ -55,7 +55,7 @@ After configuring the service, create a WebShare to provide access to a specific
 
 {{< trueimage src="/images/SCALE/Shares/AddWebShare.png" alt="Add WebShare" id="Add WebShare" >}}
 
-1. Go to **Shares** and locate the **WebShare** card.
+1. Go to **Shares** and locate the **WebShare** widget.
 
 2. Click **Add**.
 
@@ -101,7 +101,7 @@ Users must have WebShare access enabled to connect.
 
 After configuring the service, creating a share, and enabling user access:
 
-1. Click **Open WebShare** on the **WebShare** card in the Shares dashboard.
+1. Click **Open WebShare** on the **WebShare** widget in the **Shares** dashboard.
    Alternatively, access WebShare directly using your TrueNAS Connect URL on port 755.
 
 2. Log in with the credentials for a TrueNAS user account that has **WebShare Access** enabled.
