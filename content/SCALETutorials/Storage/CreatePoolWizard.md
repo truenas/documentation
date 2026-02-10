@@ -24,15 +24,10 @@ ZFS and TrueNAS periodically review and *heal* when discovering a bad block in a
 {{< /expand >}}
 
 ## Reviewing Storage Needs
-We strongly recommend that you review your available system resources and plan your storage use case before creating a storage pool. Consider the following:
+We strongly recommend that you review your available system resources and plan your storage use case before creating a storage pool. Considerations:
 * Allocating more drives to a pool increases redundancy when storing critical information.
 * Maximizing total available storage at the expense of redundancy or performance entails allocating large-volume disks and configuring a pool for minimal redundancy.
 * Maximizing pool performance entails installing and allocating high-speed SSD drives to a pool.
-
-Security requirements can mean the pool must be created with [ZFS encryption]({{< ref "EncryptionSCALE" >}}).
-However, we recommend that users create pools as unencrypted and then encrypt some or all of of the child datasets, as needed.
-
-{{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
 RAIDz pool layouts are well-suited for general use cases and especially smaller (<10) data VDEVS or storage scenarios that involve storing multitudes of small data blocks.
 
@@ -43,6 +38,12 @@ TrueNAS recommends defaulting to a RAIDz layout generally and whenever a dRAID v
 Determining your specific storage requirements is a critical step before creating a pool.
 The [ZFS](https://www.truenas.com/docs/references/zfsprimer/) and [dRAID](https://www.truenas.com/docs/references/draidprimer/) primers provide a starting point to learn about the strengths and costs of different storage pool layouts.
 You can also use the [ZFS Capacity Calculator](https://www.truenas.com/docs/references/zfscapacitycalculator/) and [ZFS Capacity Graph](https://www.truenas.com/docs/references/zfscapacitygraph/) to compare configuration options.
+
+### Data Encryption
+Security requirements can mean the data must be protected with additional [encryption]({{< ref "EncryptionSCALE" >}}).
+However, we recommend that users create unencrypted storage pools, then add encryption on individual datasets or zvols.
+
+{{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
 ## Creating a Pool
 
