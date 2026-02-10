@@ -82,6 +82,8 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2!
   Resolves formatting bug where error notifications showed "%(err)s Warning" instead of descriptive error messages.
 * Improves error dialog usability for long error messages ([NAS-138424](https://ixsystems.atlassian.net/browse/NAS-138424)).
   Adds proper scrolling to error dialogs with lengthy content. Previously, users had to zoom out to 50% to see action buttons when error messages (such as those listing numerous dependent clones) extended beyond the visible area.
+* Restricts root account group membership to preserve system stability.
+  The root account group membership is now locked to the builtin_administrators group and cannot be modified through the UI. This prevents accidental removal of required privileges that could cause scheduled tasks, cloud sync operations, cron jobs, and other system functions to fail. To disable root account access to the TrueNAS UI, use the **Disable Password** option in **Credentials > Local Users** instead of modifying group membership.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13831" target="_blank">TrueNAS 25.10.2 (Goldeye) Changelog</a> in Jira.
 
@@ -390,8 +392,19 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
-* SMB service - string indices must be integers, not 'str' shown for some legacy ACLs
-  Storing ACLs as raw security descriptor bytes results in old share ACLs failing to be properly flushed to disk, leading to SMB service failures, AD startup failures, and non-responsiveness.
+{{< enterprise >}}
+* UI login delays during High Availability failover with STIG configuration changes.
+  When toggling STIG settings in **System > Advanced > System Security** that require a system reboot, UI login authentication can experience extended delays (over 2 minutes) during failover when one controller is rebooting.
+
+  Workaround: Wait 2-3 minutes for authentication timeout to complete.
+
+* High Availability STIG configuration changes can cause system failure if active controller is rebooted prematurely.
+  When enabling or disabling STIG in **System > Advanced > System Security**, the system automatically reboots the standby controller in the background. A dialog appears immediately after saving that offers options to reboot controllers, but selecting any reboot action at this point can cause HA system failure.
+
+  Workaround: Do not reboot any controller when the initial dialog appears. Wait for the dialog to change (typically 5-10 minutes), which indicates the standby controller has completed its automatic reboot. Only then is it safe to reboot the active controller.
+
+  This issue is resolved in TrueNAS 26.
+{{< /enterprise >}}
 
 * Apps using SMB/NFS storage can experience race condition during boot.
   When apps are configured to use SMB or NFS shares as storage passthroughs, there can be an occasional race condition during TrueNAS boot where the app startup conflicts with the sharing services startup.
@@ -405,15 +418,6 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
   Workaround: Run `zfs set aclmode=passthrough dataset_name` via CLI (replacing `dataset_name` with the actual dataset path), then reboot the system.
 
   Error messaging improvements for this issue are included in TrueNAS 25.10.1 to help identify affected datasets.
-
-* Removing RBAC roles from the root account can cause scheduled tasks to fail.
-  The 25.10 UI allows modification of the role assignments for the root account. Removing the **FULL_ADMIN** role from the root account can cause cloud sync tasks, cron jobs, and other scheduled operations to fail.
-
-  To disable root account access to the TrueNAS UI, use the **Disable Password** option in Credentials > Local Users instead of removing RBAC roles.
-
-  Workaround: If scheduled tasks are not running after modifying root account roles, re-add the **FULL_ADMIN** role to the root account in Credentials > Local Users. If needed, use **Disable Password** to prevent root UI access while maintaining proper system operation.
-
-  Future TrueNAS releases are planned to include additional validation to prevent removal of required root account privileges.
 
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
@@ -432,13 +436,6 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
   After locking the dataset, you can re-enable the share if needed.
 
   This issue will be resolved in a future TrueNAS release.
-
-* Kerberized NFS and SMB host access control improvements in progress ([NAS-138814](https://ixsystems.atlassian.net/browse/NAS-138814)).
-  TrueNAS 25.10.0 and 25.10.1 users should exercise caution when using Kerberized NFS, particularly in high-availability configurations with Active Directory or FreeIPA.
-  Known issues include potential failover scenarios where NFS service restart might not properly restore client connectivity.
-  Additionally, SMB **hosts allow** and **hosts deny** host access controls were limited to legacy share purposes in 25.10.0.
-
-  Improvements to Kerberized NFS functionality, Kerberos keytab synchronization for Active Directory, and restoration of SMB host access controls to all share purposes are actively being developed and tested for inclusion in TrueNAS 25.10.2.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=13830" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
