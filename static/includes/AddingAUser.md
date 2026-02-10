@@ -19,6 +19,8 @@ To manually add a new user, click **Credentials > Users**, and then click **Add*
 2. Set the level of access given to this user.
 
    **SMB Access** is selected by default.
+   Select **WebShare** to give this user access to a [WebShare]({{< ref "/SCALE/SCALETutorials/Shares/WebShare/_index.md" >}}).
+
    Select **TrueNAS Access**, then select the administration role from the dropdown list that shows after selecting the **TrueNAS Access** option.
 
    - To create an administrator with full access, select **Full Admin**.
