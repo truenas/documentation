@@ -51,6 +51,8 @@ Configure the WebShare service before creating shares.
 
 ## Creating a WebShare
 
+{{< include file="/static/includes/WebShare-SMBWarning.md" >}}
+
 After configuring the service, create a WebShare to provide access to a specific directory.
 
 {{< trueimage src="/images/SCALE/Shares/AddWebShare.png" alt="Add WebShare" id="Add WebShare" >}}
