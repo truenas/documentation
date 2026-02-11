@@ -30,7 +30,7 @@ majorVersions:
       - name: "25.10.2"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.2"
-        releaseDate: "2026-02-17"
+        releaseDate: "2026-02-19"
         latest: true
       - name: "25.10 Nightlies"
         type: "Experimental"
