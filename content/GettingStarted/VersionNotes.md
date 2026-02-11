@@ -64,6 +64,8 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2!
   Resolves Pydantic validation failures that prevented users from creating network bridges through the standard workflow of removing IPs from an interface, creating a bridge, and reassigning those IPs.
 * Adds **Hosts Allow** and **Hosts Deny** network access controls to SMB shares ([NAS-138814](https://ixsystems.atlassian.net/browse/NAS-138814)).
   Provides IP-based access restrictions for SMB shares across all relevant purpose presets. Also adds ability to synchronize Kerberos keytab Service Principal Names (SPNs) with Active Directory updates for improved multiprotocol share management.
+* Fixes IPv6 address formatting in Kerberos configuration for Active Directory ([NAS-139734](https://ixsystems.atlassian.net/browse/NAS-139734)).
+  Resolves Active Directory authentication failures when using IPv6 addresses for Kerberos Distribution Centers (KDCs). The system now properly formats IPv6 addresses with square brackets in krb5.conf, preventing "Invalid argument while getting initial credentials" errors.
 * Improves Users page default filter to include Directory Services users ([NAS-139073](https://ixsystems.atlassian.net/browse/NAS-139073)).
   Directory Services users now appear in the default view without requiring manual filter adjustment. This improves discoverability of directory service accounts in the user management interface.
 * Fixes SSH access removal for user accounts ([NAS-139130](https://ixsystems.atlassian.net/browse/NAS-139130)).
