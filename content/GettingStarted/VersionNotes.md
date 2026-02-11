@@ -42,8 +42,8 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2!
 
 **Notable changes:**
 
-* Fixes critical upgrade failure preventing TrueNAS 25.04 to 25.10 upgrades ([NAS-139541](https://ixsystems.atlassian.net/browse/NAS-139541)).
-  Resolves "Could not prepare Boot variable: No space left on device" error that caused systems to become unbootable after failed upgrade attempts.
+* Fixes critical upgrade failure affecting some systems upgrading from TrueNAS 25.04 to 25.10 ([NAS-139541](https://ixsystems.atlassian.net/browse/NAS-139541)).
+  Resolves "Could not prepare Boot variable: No space left on device" error that caused affected systems to become unbootable after failed upgrade attempts.
 * Fixes SMB service startup failure after upgrading from older TrueNAS versions with legacy ACL configurations ([NAS-139076](https://ixsystems.atlassian.net/browse/NAS-139076)).
   Systems with legacy SMB share permission strings stored in their configuration database could not start the SMB service after upgrading to 25.10.1. This update automatically converts legacy permission formats to the current binary format during service initialization.
 * Improves NFS performance for NFSv4 clients ([NAS-139128](https://ixsystems.atlassian.net/browse/NAS-139128)).
