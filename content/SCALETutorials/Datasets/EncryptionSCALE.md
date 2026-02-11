@@ -29,21 +29,20 @@ TrueNAS includes the [Key Management Interface Protocol (KMIP)](https://docs.oas
 
 ## Pool and Dataset Encryption
 
-{{< include file="/static/includes/EncryptionWarning.md" >}}
+Encryption is for users storing sensitive data.
+It does not apply encryption to the storage vdev or the disks in the pool.
 
-TrueNAS automatically generates a root dataset when you create a pool.
-Select **Encryption** on the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})** screen when you create the pool to encrypt the root dataset.
-TrueNAS forces encryption of all child datasets and zvols within an encrypted root or parent dataset created using the TrueNAS UI.
+{{< include file="/static/includes/EncryptionRootLevel.md" >}}
+
+Leave **Encryption** unselected on the **Pool Creation Wizard** screen to create a pool with an unencrypted root dataset.
+You can create both encrypted and unencrypted datasets within an unencrypted pool.
+
 By default, child datasets inherit encryption settings from the parent.
-Disabling **Inherit (encrypted)** under **Advanced Options** allows modifying the encryption configuration for a child dataset but you cannot change a child dataset of an encrypted parent dataset to unencrypted.
+Disabling **Inherit** under **Advanced Options** allows modifying the encryption configuration for a child dataset.
 
-As of TrueNAS 22.12.3 or later, the TrueNAS UI does not allow you to create unencrypted datasets within an encrypted pool or parent dataset.
+You cannot change a child dataset of an encrypted parent dataset to unencrypted.
 However, datasets created outside the UI, such as those created programmatically or manually via shell access, might not inherit encryption unless properly configured.
 For example, the [ix-apps dataset](https://www.truenas.com/docs/truenasapps/) on the pool selected for applications does not inherit encryption settings.
-
-If the system has only one pool, we recommend that you do not use pool-level encryption for this pool.
-Leave **Encryption** unselected on the **Pool Creation Wizard** screen to create a pool with an unencrypted root dataset.
-You can create unencrypted and encrypted datasets within an unencrypted pool (root dataset).
 
 {{< expand "Can I change dataset encryption?" "v" >}}
 Before saving a new dataset, you can change the type of encryption of an encrypted dataset to key to passphrase.
