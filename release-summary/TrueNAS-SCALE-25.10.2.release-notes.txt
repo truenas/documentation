@@ -1,0 +1,15 @@
+## TrueNAS 25.10.2
+
+This maintenance release resolves critical upgrade failures, enhances SMB and network functionality, and improves system performance and stability.
+
+- **Critical Bug Fixes:** Fixes critical upgrade failure affecting some systems upgrading from 25.04 to 25.10, SMB service startup with legacy ACL configurations, disk replacement validation errors, and network lockouts from invalid IPv6 routes.
+- **Performance Improvements:** Enhanced NFS performance for NFSv4 clients, faster ZFS pool imports and write operations, reduced CPU usage for containerized applications, and optimized API calls in user/group selection fields.
+- **SMB Enhancements:** Adds Hosts Allow/Deny network access controls, improved legacy ACL handling, and Kerberos keytab synchronization for Active Directory.
+- **Networking Improvements:** Resolves network bridge creation validation errors and IPv6 routing table issues that prevented access to network settings.
+- **User Interface:** Fixes Dashboard storage widget displaying "Unknown" capacity, session expiry settings not being respected, SSH access removal for user accounts, and error dialogs with long messages.
+- **System Security:** Restricts root account group membership to preserve system stability and prevent accidental privilege removal.
+- **Additional Fixes:** Cloud Sync task visibility after CORE to SCALE migration, S3 endpoint validation improvements, iSCSI extent wizard hanging, certificate management for large Distinguished Names, and error notification placeholder text.
+
+**Pre-Update Actions:** None required when updating from 25.10.1.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.2)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
