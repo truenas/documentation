@@ -41,7 +41,6 @@ You can also use the [ZFS Capacity Calculator](https://www.truenas.com/docs/refe
 
 ### Data Encryption
 Security requirements can mean the data must be protected with additional [encryption]({{< ref "EncryptionSCALE" >}}).
-However, we recommend that users create unencrypted storage pools, then add encryption on individual datasets or zvols.
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
