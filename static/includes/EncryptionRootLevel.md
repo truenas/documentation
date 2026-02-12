@@ -4,6 +4,8 @@
 Encrypting the root dataset (pool-level encryption) creates a single point of failure.
 Losing one key makes the entire pool inaccessible.
 
-**Best practice:** Create an unencrypted pool with individually encrypted datasets.
-Benefits: independent key management, selective unlock, isolated failures, simplified recovery.
+**Best practice**
+Do not enable encryption during pool creation.
+Instead, create an unencrypted pool with individually encrypted datasets and zvols.
+This allows independent key management, selective unlock, isolated failures, and simplified recovery.
 {{< /hint >}}
