@@ -30,13 +30,8 @@ majorVersions:
       - name: "25.10.2"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.2"
-        releaseDate: "2026-02-TBD"
+        releaseDate: "2026-02-19"
         latest: true
-      - name: "25.10.2"
-        type: "Maintenance"
-        link: ""
-        releaseDate: "TBD"
-        latest: false
   - lifecycle: "26.04"
     name: "TrueNAS 26.04 - Halfmoon"
     releaseName: "Halfmoon"
