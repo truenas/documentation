@@ -338,6 +338,9 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
 ### Current Known Issues
 
+* SMB service - string indices must be integers, not 'str' shown for some legacy ACLs
+  Storing ACLs as raw security descriptor bytes results in old share ACLs failing to be properly flushed to disk, leading to SMB service failures, AD startup failures, and non-responsiveness.
+
 * Apps using SMB/NFS storage can experience race condition during boot.
   When apps are configured to use SMB or NFS shares as storage passthroughs, there can be an occasional race condition during TrueNAS boot where the app startup conflicts with the sharing services startup.
   This causes affected apps to not fully start and show a "crashed" status.

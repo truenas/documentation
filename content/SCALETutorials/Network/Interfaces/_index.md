@@ -9,16 +9,16 @@ tags:
  - interfaces
 ---
 
-TrueNAS supports configuring different network interface types as part of the various backup, sharing, and virtualization features in TrueNAS.
-The tutorials in this section guide you through each type of configuration.
-
-The **Network** screen provides access interface and other network settings.
-This article covers adding new or changing existing network interfaces, and configuring static routes, and alias IPv4 addresses.
-For information on configuring IPv6 addresses, see [Configuring IPv6]({{< ref "ConfigureIPv6" >}}).
+TrueNAS supports configuring different types of network interfaces such as a standard interface, network bridge, LAGG, and VLAN interfaces to use as part of the various backup, sharing, and virtualization features in TrueNAS.
+The tutorials in this section guide you through each of the various network interface configurations.
 
 {{< expand "Why should I use different interface types?" "v" >}}
 {{< include file="/static/includes/NetworkInterfaceTypes.md" >}}
 {{< /expand >}}
+
+The **Network** screen shows network settings for interfaces, global network settings, adding static routes, and IPMI connections.
+This article describes adding new or changing existing network interfaces.
+For information on configuring IPv6 addresses, see [Configuring IPv6]({{< ref "ConfigureIPv6" >}}).
 
 You must know the DNS name server and default gateway addresses for your IP address.
 
@@ -30,165 +30,151 @@ This choice can be made if TrueNAS is deployed on a system that does not allow D
 In all deployments, only one interface can be set up for DHCP, which is typically the primary network interface configured during the installation process.
 Any additional interfaces must be manually configured with one or more static IP addresses.
 {{< /expand >}}
-{{< hint type=warning >}}
-**Disruptive Change!**
-
-You can lose your TrueNAS connection if you change the network interface that the web interface uses!
-
-Command line knowledge and physical access to the TrueNAS system are often required to fix misconfigured network settings.
-{{< /hint >}}
 
 ## Before You Begin
 
-Have the DNS name server addresses, the default gateway for the new IP address, and any static IP addresses on hand to prevent lost communication with the server while making and testing network changes.
-You have only 60 seconds to change and test these network settings before they revert back to the current settings, for example back to DHCP assigned if moving from DHCP to a static IP.
-
-Back up your system to preserve your data and system settings. Save the system configuration file and a system debug.
-
-As a precaution, grab a screenshot of your current settings in the **Global Configuration** widget.
-
-If your network changes result in lost communication with the network and you need to return to the DHCP configuration, you can refer to this information to restore communication with your server.
-Lost communication might require reconfiguring your network settings using the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}).
-
+{{< include file="/static/includes/InterfaceBeforeYouBegin.md" >}}
 {{< include file="/static/includes/BeforeYouBridge.md" >}}
 
 ## Adding an Interface
 
 {{< hint type=tip >}}
-DHCP provides the IP address for only one network interface.
 TrueNAS uses DHCP to assign an IP address to the primary network interface during installation to provide access to the web UI.
-You can change this to a static, or fixed IP address [using the Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) before accessing the web UI or after logging into the UI from the **Network** screen.
-We recommend using the UI to make network changes because of the safeguards in place to prevent you from losing access to the system due to incorrectly configured interfaces.
+DHCP provides the IP address for only one network interface.
 
-To add another network interface, go to **System > Network** and click **Add** on the **Interfaces** widget to open the **Add Interface** screen.
-Select the **Define Static IP Addresses** option, then click **Add** to the right of **Static IP Addresses** to show the IP address and netmask (CIDR) fields.
-Click **Add** for each IP address you want to associate with the interface.
+After initially installing TrueNAS, you can change the DHCP-assigned IP address to a static IP address by:
+* Using the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}})
+* Logging into the UI using the DHCP-assigned IP address, and going to the **Network** screen and editing the interface
+
+We recommend using the UI to make network changes as it has safeguards in place to prevent you from losing access to the system due to incorrectly configured interfaces.
 {{< /hint>}}
+
+To add another network interface in the UI, go to **System > Network** and click **Add** on the **Interfaces** widget to open the **Add Interface** screen.
+
+{{< trueimage src="/images/SCALE/Network/AddInterfaceScreen.png" alt="Add Interface Screen" id="Add Interface Screen" >}}
 
 You must specify the type of interface to create.
 Select the interface type from the **Type** dropdown options: **Bridge**, **Link Aggregation** (LAGG), or **VLAN** (virtual LAN).
 The interface type cannot be changed after clicking **Save**.
-To change the interface type, select the interface, then click **Reset Configuration** on the <span class="material-icons">more_vert</span> dropdown list to clear the interface configuration, then you can add a new settings to the interface.
 
-Each interface type displays new fields on the **Add Interface** screen.
+To revert the interface to default network settings, select **Reset Configuration** on the <span class="material-icons">more_vert</span> for the interface.
+This resets the interface from a static IP address to a DHCP-assigned address and resets the domain to the TrueNAS default **local**.
 
-### Testing Network Interface Changes
+Enter a name for the interface using the format that corresponds to the type of interface you are adding. Naming differs between physical and virtual interfaces.
+The name assigned to the primary physical network interface on your system is based on the systemd predictable naming scheme, and reflects the hardware type and location. The names vary based on your hardware configuration.
+For example, *eno1* for onboard NICs, *ens3* for PCIe slot NICs, and you might see *eno1np0*, which is an onboard NIC with more than one port on the NIC.
 
-If you have only one active network interface the system protects your connection to the interface by displaying the **Test Changes** dialog.
+When selecting a virtual interface type, enter a name based on the type.
+For example, **bond*X***, **vlan*X***, or **br*X*** and where *X* is a number.
 
-After adding a new or changing an existing interface that can impact access to the UI, TrueNAS displays the **Test Changes** and **Revert Changes** button.
-**Test Changes** is intended to prevent changes that can break access to the UI. You have 60 seconds to test and save a change.
-**Revert Changes** discards any changes made to the interface within the same 60 second period.
+To allow DHCP to assign the interface IP address, select **Get IP address Automatically from DHCP**.
 
-{{< trueimage src="/images/SCALE/Network/TestNetworkChanges.png" alt="Test Network Changes" id="Test Network Changes" >}}
+To use a fixed (static) IP address, select the **Define Static IP Addresses**, and then click **Add** to the right of **Static IP Addresses** to show the IP address and netmask (CIDR) fields. Enter the assigned IP address and select the netmask from the dropdown list.
 
-To test the change:
+Click **Add** for each IP address you want to associate with the interface.
 
-1. Click **Test Changes**. You have 60 seconds to test the network change.
+If adding an IPv6 IP address, refer to [Configuring IPv6]({{< ref "ConfigureIpv6" >}}) for details on this type of network configuration.
 
-2. Open a new browser window while keeping current the browser session open.
+Click **Save** when you are certain of your configuration. You cannot change the interface type or name after clicking **Save**!
 
-3. Enter the IP address in the browser URL field of the new window and press <kbd>Enter</kbd>.
-   The TrueNAS login screen displays.
-
-4. Enter the administrator login credentials to access the system.
-
-5. Go to **Network** and click **Save Changes**.
-
-If you cannot access the UI, return to the original browser session and click **Revert Changes** on the **Network** screen.
-Click **Test Changes** to verify the change does not interfere with UI access, or **Revert Changes** to discard the changes.
+{{< include file="/static/includes/TestingNetworkChanges.md" >}}
 
 ## Editing an Interface
 
-To change an existing interface, select the existing interface listed on the **Interfaces** widget and click **Edit** to open the **Edit Interface** screen.
+To change an existing interface, click on the <span class="material-icons">more_vert</span> icon at the right of the interface, and then click **Edit** to open the **Edit Interface** screen.
 
-The **Edit Interface** and **Add Interface** settings are identical, but the **Type** and **Name** fields are not editable after saving an interface.
-**Name** shows on the **Edit Interface** screen, but you cannot change the name.
-**Type** only shows on the **Add Interface** screen.
-To correct a mistake with either the type or name, reset the configuration for the interface and start over.
+The **Edit Interface** and **Add Interface** screen settings are identical, but the **Type** and **Name** fields are not editable for an existing interface.
+If you created the wrong type of virtual interface (i.e., a bridge, vlan, lagg), delete the interface and add a new interface with the correct type.
 
-If changing from a DHCP-provided IP address to a static IP, you must add the new default gateway and DNS name servers that work with the new IP address to the global configuration.
+When changing from a DHCP-provided IP address to a static IP, first verify your current default gateway and name servers work with the new IP address.
+You must add the new default gateway and DNS name servers that work with the new IP address to the global configuration.
+If you need to change these settings, do this before you change the interface so you can test the interface change.
 
 Click **Save** after making all changes.
 
-Test the change as described  above in [Testing Network Interface Changes](#testing-network-interface-changes).
+Test the change as described  above in **Testing Network Interface Changes**.
 
-## Resetting an Interface Configuration
+### Resetting an Interface Configuration
 
 {{< hint type=warning >}}
-Resetting the configuration for the primary network interface can result in lost access to the TrueNAS UI and losing the connection to TrueNAS!
+Resetting the configuration for a network interface can result in lost access to the TrueNAS UI and losing the connection to TrueNAS!
 
-If saved changes cause lost access to the UI, you might need command line knowledge and/or physical access to the TrueNAS system to fix misconfigured network settings.
-If you have an IPMI connection and interface you can reset network settings using this tool.
+Clicking **Reset Configuration** resets the domain name back to the default value, and changes the static IP address to DHCP-assigned.
 
-Do not delete the primary network interface!
+When saved, changes cause lost access to the UI. You might need command line knowledge, and either IPMI or physical access to the TrueNAS system to fix misconfigured network settings.
+If using IPMI or a physical connect to the system, you can change network and interface settings through the Console Setup menu.
+
+The TrueNAS UI does not offer a way to delete the interface. Do not delete the primary network interface in the CLI!
 {{< /hint >}}
 
-Select the interface, then click **Reset Configuration** on the <span class="material-icons">more_vert</span> dropdown list to clear the interface configuration, then you can add a new settings to the interface.
+Click on the <span class="material-icons">more_vert</span> dropdown list for the interface, then select **Reset Configuration**.
+The current IP address resets to a DHCP-assigned IP address and the domain name reverts to the default setting.
 
 {{< trueimage src="/images/SCALE/Network/RefreshConfigurationDialog.png" alt="Refresh Configuration Dialog" id="Refresh Configuration Dialog" >}}
 
 **Confirm** validates the reset activity and activates the **Reset** button.
 
-**Reset** resets the configuration for that interface. Resetting the configuration shows the [test change](#testing-network-interface-changes) options to prevent losing access to that interface and the TrueNAS system.
-
-## Adding Static IP Addresses
-
-TrueNAS allows assigning static IP addresses to an interface when not using a DHCP-assigned address, and adding static IP addresses.
-Static IP addresses set a fixed address for an interface that external devices or websites need to access or remember, such as for VPN access.
-You can add an additional IP address as an *alias* for a network interface configured with another primary IP address.
-
-From the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}), select option 1 to configure network settings or add alias IP addresses.
-
-{{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
-
-To configure a static IP address:
-
-1. Go to **System > Network**, select the interface and click **Edit** to open the **Edit Interface**.
-
-   {{< trueimage src="/images/SCALE/Network/EditInterfaceAddAlias.png" alt="Define Static IP Addresses" id="Define Static IP Addresses" >}}
-
-2. Select the **Define Static IP Addresses** option, then click **Add** to the right of **Static IP Addresses** to show the IP address and netmask (CIDR) fields.
-
-3. Click **Add** for each static IP address you want to add to this interface. Enter the IP address and netmask values for each address.
-
-4. Click **Save**.
-
-5. Click [**Test Changes**](#testing-network-interface-changes) when prompted.
+**Reset** clears the configuration for that interface.
+After making the changes and clicking **Save**, the [test change](#testing-network-interface-changes) options show on the **Network** screen. 
+Follow the procedure above to test your changes and validate you still have access to the UI and the TrueNAS system.
 
 ### Changing from DHCP to a Static IP Address
 
-To change an interface from using DHCP to a static IP address:
+TrueNAS allows assigning static IP addresses to an interface when not using a DHCP-assigned address.
+Static IP addresses set a fixed address for an interface that external devices or websites need to access or remember, such as for VPN access.
+You can add an additional IP address for a network interface configured with another primary IP address.
 
-1. Click on the **Edit** icon for the interface on the **Interfaces** widget to open the **Edit Interface** screen, then select **Define Static IP Addresses**.
+Verify the default gateway and nameservers for the DHCP-assigned address and new static IP address are the same before making a change.
+If not the same, edit the global network settings before changing the interface so you can properly test the change.
 
-   {{< trueimage src="/images/SCALE/Network/EditInterfaceAddAlias.png" alt="Edit Interface screen" id="Edit Interface Screen" >}}
+{{< expand "Changing the Global Network Settings" "v" >}}
 
-2. Click **Add** to the right of **Static IP Addresses** to show the IP address fields, then enter the new static IP and select the netmask number from the dropdown list.
+Go to **System > Network**:
 
+1. Check the name servers and default router information in the **Global Information** widget.
+   If the current settings are not on the same network, click **Settings** and modify each setting as needed to allow the static IP to communicate over the network.
+
+2. Enter the IP addresses for the DNS name servers in the **Primary**, **Secondary**, and the optional **Tertiary** fields.
+
+   {{< trueimage src="/images/SCALE/Network/EditGlobalConfiguration.png" alt="Edit Global Configuration" id="Add Name Server and Default Gateway" >}}
+
+   For home users, enter **8.8.8.8** for a DNS name server address so you can communicate with external networks.
+
+3. Enter the IP address for the default gateway in the appropriate field.
+   If the static network is IPv4 enter the gateway in **IPv4 Default Gateway**, if the static network is IPv6 use **IPv6 Default Gateway**.
+
+4. Click **Save**.
+{{< /expand >}}
+
+If in an IPMI session, you can use the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) to change settings.
+Enter 2 to configure general network settings like the default gateway and name servers.
+
+{{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
+
+To use the UI to change an interface from DHCP to a static IP address, go to **System > Network**: 
+
+1. Verify the default gateway and name servers work with the new static IP address.
+   If not, click the link above and follow the instructions to update the global network settings.
+
+2. Click on the <span class="material-icons">more_vert</span> icon for the interface, and then click **Edit** to open the **Edit Interface** screen.
+
+   {{< trueimage src="/images/SCALE/Network/EditInterfaceScreen.png" alt="Adding a Static IP Address" id="Adding a Static IP Address" >}}
+
+3. Select the **Define Static IP Addresses** option.
+
+4. Click **Add** to the right of **Static IP Addresses** to show the IP address and netmask (CIDR) fields.
+   Click **Add** for each static IP address you want to add to this interface.
+
+5. Enter the IP address and select the netmask value for each static address you add.
    Multiple interfaces cannot be members of the same subnet!
 
    {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
    If an error displays or the **Save** button remains inactive when setting the IP addresses on multiple interfaces, check the subnet and ensure the netmask (CIDR) numbers are different.
-  
-3. Click **Save**.
 
-4. Check the name servers and default router information in the **Global Information** widget.
-   If the current settings are not on the same network, click **Settings** and modify each setting as needed to allow the static IP to communicate over the network.
+6. Click **Save**.
 
-   Enter the IP addresses for the DNS name servers in the **Nameserver 1**, **Nameserver 2**, and **Nameserver 3** fields.
-
-   {{< trueimage src="/images/SCALE/Network/EditGlobalConfiguration.png" alt="Edit Global Configuration" id="Add Name Server and Default Gateway" >}}
-
-   For home users, use **8.8.8.8** for a DNS name server address so you can communicate with external networks.
-
-   Enter the IP address for the default gateway in the appropriate field.
-   If the static network is IPv4 enter the gateway in **IPv4 Default Gateway**, if the static network is IPv6 use **IPv6 Default Gateway**.
-
-   Click **Save**.
-
-5. Click [**Test Changes**](#testing-network-interface-changes) to verify the change does not interfere with UI access
+7. Click **Test Changes** when prompted. Follow the procedure above to test network changes.
 
 ### Returning to a DHCP-Assigned IP Address
 
@@ -197,26 +183,21 @@ If you do not have an existing network interface set to use DHCP you can convert
 
 To switch back to using DHCP:
 
-1. Click **Settings** on the **Global Configuration** widget.
+1. Click on the <span class="material-icons">more_vert</span> icon for the interface, and then click **Edit** to open the **Edit Interface** screen.
 
-2. Clear the name server fields and the default gateway, and then click **Save**.
+2. Select **Get IP Address Automatically from DHCP**.
 
-3. Click on the **Edit** icon for the interface to display the **Edit Interface** screen.
+3. Click **Save**.
 
-4. Select **Get IP Address Automatically from DHCP**.
+4. Verify the current default gateway and name servers work with the new DHCP-assigned IP address.
+   If yes, test the network change. Click on **60** above the **Test Changes** button to extend the number of seconds you have to test the network change.
 
-5. Delete the static IP address in the **IP Address** fields.
+   If the current settings do not work with the new DHCP-assigned IP address, click the link in the [Changing from DHCP to a static IP Address](#changing-from-dhcp-to-a-static-ip-address) section, and follow the directions to change these settings.
 
-6. Click **Save**.
+5. Click [test the network change](#testing-network-interface-changes)
 
-7. Click **Settings** on the **Global Configuration** widget to open the **Global Configuration** screen, enter the name server and default gateway addresses for the new DHCP-provided IP address, then click **Save**.
-
-   Home users can enter 8.8.8.8 in the **Primary** field under **DNS Servers**.
-
-8. Click [test the network change](#testing-network-interface-changes)
-
-   If the test network operation fails or the system times out, your system returns to the network settings before you attempted the change.
-   Verify the name server and default gateway information to try again.
+If the test network operation fails or the system times out, your system returns to the network settings before you attempted the change.
+Edit the global network settings and click save, then edit the interface and click save. Test the network changes again.
 
 <div class="noprint">
 
