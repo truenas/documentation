@@ -12,6 +12,8 @@ TrueNAS uses [lagg(4)](https://wiki.debian.org/BridgeNetworkConnections) to mana
 
 {{< include file="/static/includes/BeforeYouBridge.md" >}}
 
+If configuring an LACP link aggregation, configure a port-channel or link aggregation group on your network switch before creating the LAGG interface in TrueNAS. The switch ports connected to your TrueNAS interfaces must be configured for LACP (IEEE 802.3ad) and active before TrueNAS can successfully negotiate the link aggregation. Consult your switch documentation for specific configuration steps.
+
 To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget to open the **Add Interface** screen, then:
 
 1. Select **Link Aggregation** from the **Type** dropdown list. You cannot change the **Type** field value after you click **Save**.
@@ -34,7 +36,7 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
    {{< expand "LACP" "v" >}}
    **LACP** is the most common protocol for LAGG interfaces based on [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf).
 
-   In LACP mode, the interfaces negotiate with the network switch to form a group of ports that are all active once.
+   In LACP mode, the interfaces negotiate with the network switch to form a group of ports that are all active at once.
    The network switch must support LACP for this option to function.
 
    a. Select the hash policy from the **Transmit Hash Policy** dropdown list. **LAYER2+3** is the default selection.
@@ -43,7 +45,7 @@ To set up a LAGG, go to **Network**, click **Add** on the **Interfaces** widget 
 
    **SLOW** (default) sets the heartbeat request to every second and the timeout to a three-consecutive heartbeat loss that is three seconds.
 
-   **FAST** sets the timeout rate at one per second even after synchronization. **FAST** allows for rapid detection of faults.
+   **FAST** sets the timeout rate at one per second, even after synchronization. **FAST** allows for rapid detection of faults.
    {{< /expand >}}
    {{< expand "FAILOVER" "v" >}}
    Select **FAILOVER** to send traffic through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the LAGG.
