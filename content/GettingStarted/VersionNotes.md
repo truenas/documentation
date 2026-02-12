@@ -49,7 +49,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2!
 * Improves NFS performance for NFSv4 clients ([NAS-139128](https://ixsystems.atlassian.net/browse/NAS-139128)).
   Adds support for STATX_CHANGE_COOKIE to properly surface ZFS sequence numbers to NFS clients via knfsd. This ensures the NFS change_info4 structure accurately tracks directory and file changes, improving client attribute cache invalidation and reducing unnecessary server requests. Previously, the system synthesized change IDs algorithmically based on ctime, which could fail to increment consistently due to kernel timer coarseness.
 * Improves ZFS pool import performance and write operation responsiveness ([NAS-138879](https://ixsystems.atlassian.net/browse/NAS-138879)).
-  Limits the time async destroy operations can run per transaction group, preventing these operations from blocking pool imports and other write operations. Pool imports that previously took extended time due to prolonged async destroy operations will complete more quickly.
+  Limits the time async destroy operations can run per transaction group, preventing these operations from blocking pool imports and other write operations. Pool imports that previously took extended time due to prolonged async destroy operations complete more quickly.
 * Fixes disk replacement validation incorrectly rejecting identical capacity drives ([NAS-138678](https://ixsystems.atlassian.net/browse/NAS-138678)).
   Resolves "device is too small" error when attempting to replace failed drives with identical capacity models. The system now correctly validates replacement drive capacity and allows legitimate disk replacements to proceed.
 * Reduces excessive API calls during user and group selection in the web interface ([NAS-139459](https://ixsystems.atlassian.net/browse/NAS-139459)).
@@ -69,7 +69,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2!
 * Improves Users page default filter to include Directory Services users ([NAS-139073](https://ixsystems.atlassian.net/browse/NAS-139073)).
   Directory Services users now appear in the default view without requiring manual filter adjustment. This improves discoverability of directory service accounts in the user management interface.
 * Fixes SSH access removal for user accounts ([NAS-139130](https://ixsystems.atlassian.net/browse/NAS-139130)).
-  Resolves issue where unchecking the SSH Access option appeared to save without error, but the SSH indicator persisted in the user list. Users can now properly disable SSH access through the web interface.
+  Resolves issue where clearing the SSH Access option appeared to save without error, but the SSH indicator persisted in the user list. Users can now properly disable SSH access through the web interface.
 * Fixes session expiry settings not being respected ([NAS-138467](https://ixsystems.atlassian.net/browse/NAS-138467)).
   Resolves issues where users were logged out unexpectedly during active operations despite configured session timeout settings, and where page refresh (F5) triggered the login screen despite an active session. Session expiration now functions as configured.
 * Fixes certificate management for certificates with large Distinguished Names ([NAS-139056](https://ixsystems.atlassian.net/browse/NAS-139056)).
@@ -85,7 +85,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2!
 * Improves error dialog usability for long error messages ([NAS-138424](https://ixsystems.atlassian.net/browse/NAS-138424)).
   Adds proper scrolling to error dialogs with lengthy content. Previously, users had to zoom out to 50% to see action buttons when error messages (such as those listing numerous dependent clones) extended beyond the visible area.
 * Restricts root account group membership to preserve system stability.
-  The root account group membership is now locked to the builtin_administrators group and cannot be modified through the UI. This prevents accidental removal of required privileges that could cause scheduled tasks, cloud sync operations, cron jobs, and other system functions to fail. To disable root account access to the TrueNAS UI, use the **Disable Password** option in **Credentials > Local Users** instead of modifying group membership.
+  The system now locks root account group membership to the builtin_administrators group and prevents modification through the UI. This prevents accidental removal of required privileges that could cause scheduled tasks, cloud sync operations, cron jobs, and other system functions to fail. To disable root account access to the TrueNAS UI, use the **Disable Password** option in **Credentials > Local Users** instead of modifying group membership.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13831" target="_blank">TrueNAS 25.10.2 (Goldeye) Changelog</a> in Jira.
 
@@ -105,13 +105,13 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
 * Adds automatic validation for SMB share audit logging configurations.
   TrueNAS 25.10.1 automatically disables SMB shares when auditing is enabled and watch or ignore lists contain invalid groups (deleted/renamed groups or groups that are no longer SMB-type). This protective measure prevents auditing misconfigurations that could cause security or compliance issues. The system generates alerts identifying affected shares and problematic groups. See [Configuring SMB Auditing](ManageSMBShares#configuring-smb-auditing) for configuration details and troubleshooting steps.
 * Adds REST API usage monitoring alert.
-  TrueNAS now displays a daily alert when deprecated REST API endpoints are accessed, helping identify integrations that need migration. The REST API was deprecated in TrueNAS 25.04. Full removal is planned for TrueNAS 26. For more information about the JSON-RPC 2.0 over WebSocket API, see the [API documentation](https://api.truenas.com/v25.10/jsonrpc.html).
+  TrueNAS now displays a daily alert when deprecated REST API endpoints are accessed, helping identify integrations that need migration. TrueNAS deprecated the REST API in version 25.04. Full removal is planned for TrueNAS 26. For more information about the JSON-RPC 2.0 over WebSocket API, see the [API documentation](https://api.truenas.com/v25.10/jsonrpc.html).
 * Adds **Clear Config** button to the directory services configuration form.
   This button allows users to easily remove existing directory service configurations. This is useful for troubleshooting, reconfiguration, or switching between directory service types.
 * Updates Samba from 4.22.5 to 4.22.6 ([NAS-138644](https://ixsystems.atlassian.net/browse/NAS-138644)).
   Includes upstream fix for Time Machine backup failures on newer macOS versions. Resolves an issue where Time Machine backups failed on macOS 15.2 (Tahoe) and later due to a Samba 4.22 behavioral change affecting directory rename operations for open files. TrueNAS 25.04 releases are unaffected.
 * Fixes Windows 11 virtual machine Trusted Platform Module (TPM) persistence ([NAS-138165](https://ixsystems.atlassian.net/browse/NAS-138165)).
-  Resolves issue where BitLocker PINs and other TPM data reset after every VM restart. Users need to reset their PIN once after upgrading, after which persistence functions normally.
+  Resolves issue where BitLocker PINs and other TPM data reset after every VM restart. Users need to reset their PIN after upgrading, after which persistence functions normally.
 * Fixes Secure Boot for virtual machines ([NAS-137898](https://ixsystems.atlassian.net/browse/NAS-137898)).
   Resolves issue where VMs with Secure Boot enabled failed to boot signed operating systems like Windows 11 due to missing Microsoft keys in OVMF firmware.
 * Fixes VM image file upload default location ([NAS-138502](https://ixsystems.atlassian.net/browse/NAS-138502)).
@@ -131,7 +131,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
 * Restores HDD temperature data via SNMP ([NAS-138433](https://ixsystems.atlassian.net/browse/NAS-138433)).
   Resolves issue where SNMP queries for disk temperature (OID .1.3.6.1.4.1.50536.3) returned no data after upgrading to 25.10.0.
 * Fixes issue disabling SSH and Shell access for user accounts ([NAS-138307](https://ixsystems.atlassian.net/browse/NAS-138307)).
-  The **Save** button no longer becomes disabled when clearing these access options.
+  The **Save** button no longer disables when clearing these access options.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13697" target="_blank">TrueNAS 25.10.1 (Goldeye) Changelog</a> in Jira.
 
