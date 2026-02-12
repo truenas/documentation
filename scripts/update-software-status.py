@@ -275,15 +275,22 @@ def main():
                 is_nightly = 'nightly' in train.lower() or release_info.get('profile') == 'DEVELOPER'
 
                 if is_nightly:
-                    # Generate nightly download link
+                    # Generate nightly download link and version display
+                    # Extract major version from version string for display (e.g., "26.04-BETA.1" -> "26")
+                    version_major = str(major)
+                    version_display = f"{version_major} Nightly"
+
+                    # URL construction: Try to extract codename from train name for URL
+                    # (Build infrastructure determines actual URL structure)
                     codename_match = re.search(r'TrueNAS-SCALE-([A-Za-z]+)', train)
                     if codename_match:
                         codename = codename_match.group(1).lower()
                         doc_link = f"https://download.truenas.com/truenas-scale-{codename}-nightly/"
-                        version_display = f"{codename_match.group(1)} Nightly"
                     else:
-                        doc_link = "https://download.truenas.com/truenas-scale-goldeye-nightly/"
-                        version_display = "Nightly"
+                        # TODO: Update this fallback when new URL structure is determined
+                        # Currently falls back to goldeye, but this should be updated based on
+                        # build team's URL structure for versions without codenames
+                        doc_link = f"https://download.truenas.com/truenas-scale-goldeye-nightly/"
                 else:
                     # Generate FQDN release notes link
                     # ========== LEGACY: Remove path logic after 25.04 EOL ==========
