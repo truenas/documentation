@@ -28,7 +28,7 @@ The header is a link that opens the [**Sharing > WebShare** screen](#webshare-sc
 **Add** opens the [**Add Webshare**](#add-and-edit-webshare-screens) screen.
 
 The <span class="material-icons">more_vert</span> dropdown list shows two options available to WebShare shares in general:
-* **Turn Off/ON Service** toggles to **Turn Off Service** when the WebShare service is enabled, and to **Turn On Service** when the WebService service is disabled.
+* **Turn Off/ON Service** toggles to **Turn Off Service** when the WebShare service is enabled, and to **Turn On Service** when the WebShare service is disabled.
 * **Config Service** opens the [**WebShare**]({{< ref "WebShareServiceScreen" >}}) service configuration screen.
 
 ## WebShare Table
