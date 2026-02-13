@@ -11,13 +11,13 @@ tags:
 
 
 The **Credentials > Users** screen shows a table with all users created on the system. A set of widgets shows for the selected user row (the first row is selected by default).
-The root user is the first user row, and it therefore shows by default when you first access the screen.
+The truenas_admin user is the first user row, and it therefore shows by default when you first access the screen.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreen.png" alt="Users screen showing user table and widgets" id="Users Screen" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreen.png" alt="Users screen" id="Users Screen" >}}
 
 **Add** opens the **[Add User](#add-or-edit-user-screens)** screen.
 
-**Edit** opens the **[Edit user](#add-or-edit-user-screens)** screen.
+**Edit** opens the **[Edit user](#add-or-edit-user-screens)** screen for the selected or default user row.
 <!-- no delete option
 **Delete** opens the **[Delete User](#)** dialog.
 -->
@@ -25,7 +25,7 @@ The root user is the first user row, and it therefore shows by default when you 
 
 The **Users** screen search is set to the basic, or simple search option by default. It accepts any word entered, such as a username, user type, or role.
 
-{{< trueimage src="/images/SCALE/Credentials/UsersScreenBasicSearch.png" alt="Users screen basic search interface" id="Users Screen Basic Search" >}}
+{{< trueimage src="/images/SCALE/Credentials/UsersScreenBasicSearch.png" alt="Users Screen Basic search" id="Users Screen Basic Search" >}}
 
 **Switch to Advanced** link shows in the search field when in basic search mode.
 
@@ -46,7 +46,9 @@ Each user row also shows an icon showing the level of access given to the user.
 |------|-------------|
 | ![UserTruenasAccessIcon](/images/SCALE/credentials/UserTruenasAccessIcon.png "TrueNAS Access Icon") | Indicates the user has TrueNAS Access. |
 | ![DatasetRolesSMBShareIcon](/images/SCALE/Datasets/DatasetRolesSMBShareIcon.png " SMB Share Access Icon") | Indicates the user has SMB access. |
+| <span class="material-icons">share</span> | Indicates the user has WebShare access. |
 | <span class="material-icons">power</span> | Indicates the user has an API key. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 9c-.6 0-1 .5-1 1v1.75c0 .5.4 1 1 1H7v.75H3.5V15h4c.6 0 1-.5 1-1v-1.75c0-.5-.4-1-1-1H5v-.75h3.5V9zm6 0c-.6 0-1 .5-1 1v1.75c0 .5.4 1 1 1H13v.75H9.5V15h4c.6 0 1-.5 1-1v-1.75c0-.5-.4-1-1-1H11v-.75h3.5V9zm5 0v6H17v-2.5h2V15h1.5V9H19v2h-2V9z"/></svg> | Indicates the user has SSH access. |
 {{< /truetable >}}
 
 By default, only local users show in the user table. The **Filter by Type** dropdown list has three options to show all users in the system:
@@ -124,11 +126,12 @@ The following table legend shows the icons found on the **Access** widget:
 | Icon | Description |
 |------|-------------|
 | <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 18v4h-4v-3h-3v-3h-3l-2.26-2.26c-.55.17-1.13.26-1.74.26a6 6 0 0 1-6-6a6 6 0 0 1 6-6a6 6 0 0 1 6 6c0 .61-.09 1.19-.26 1.74zM7 5a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2"/></svg> | Indicates user has a password. |
-| ![UserTruenasAccessIcon](/images/SCALE/credentials/UserTruenasAccessIcon.png "TrueNAS Access Icon") | Indicates the user has TrueNAS Access. |
+| ![UserTruenasAccessIcon](/images/SCALE/credentials/UserTruenasAccessIcon.png "TrueNAS Access Icon")  | Indicates the user has TrueNAS Access. |
 | ![DatasetRolesSMBShareIcon](/images/SCALE/Datasets/DatasetRolesSMBShareIcon.png " SMB Share Access Icon") | Indicates the user has SMB access. |
+| <span class="material-icons">share</span> | Indicates the user has WebShare access. |
 | <span class="material-icons">power</span> | Indicates the user has an API key. |
- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 9c-.6 0-1 .5-1 1v1.75c0 .5.4 1 1 1H7v.75H3.5V15h4c.6 0 1-.5 1-1v-1.75c0-.5-.4-1-1-1H5v-.75h3.5V9zm6 0c-.6 0-1 .5-1 1v1.75c0 .5.4 1 1 1H13v.75H9.5V15h4c.6 0 1-.5 1-1v-1.75c0-.5-.4-1-1-1H11v-.75h3.5V9zm5 0v6H17v-2.5h2V15h1.5V9H19v2h-2V9z"/></svg> | Indicates the user has SSH access. |
- | <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M30.906 4.104c.76 0 1.234.615 1.057 1.38l-4.88 21.307c-.172.76-.927 1.38-1.682 1.38H1.094c-.76 0-1.234-.62-1.057-1.38l4.88-21.307c.172-.766.927-1.38 1.682-1.38zM19.74 16.563c.339-.526.302-1.208-.12-1.656l-7.458-7.938c-.505-.536-1.38-.542-1.953-.005c-.573.542-.625 1.411-.12 1.948l6.219 6.615v.146L6.412 22.84c-.599.432-.708 1.302-.25 1.938c.464.635 1.323.797 1.922.359l10.974-7.88c.37-.26.583-.49.682-.693zm-3.724 5.864a1.24 1.24 0 0 0-1.25 1.229a1.24 1.24 0 0 0 1.25 1.234h5.906a1.24 1.24 0 0 0 1.25-1.234a1.24 1.24 0 0 0-1.25-1.229z"/></svg> | Indicates the user has shell access. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 9c-.6 0-1 .5-1 1v1.75c0 .5.4 1 1 1H7v.75H3.5V15h4c.6 0 1-.5 1-1v-1.75c0-.5-.4-1-1-1H5v-.75h3.5V9zm6 0c-.6 0-1 .5-1 1v1.75c0 .5.4 1 1 1H13v.75H9.5V15h4c.6 0 1-.5 1-1v-1.75c0-.5-.4-1-1-1H11v-.75h3.5V9zm5 0v6H17v-2.5h2V15h1.5V9H19v2h-2V9z"/></svg> | Indicates the user has SSH access. |
+| <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="currentColor" d="M30.906 4.104c.76 0 1.234.615 1.057 1.38l-4.88 21.307c-.172.76-.927 1.38-1.682 1.38H1.094c-.76 0-1.234-.62-1.057-1.38l4.88-21.307c.172-.766.927-1.38 1.682-1.38zM19.74 16.563c.339-.526.302-1.208-.12-1.656l-7.458-7.938c-.505-.536-1.38-.542-1.953-.005c-.573.542-.625 1.411-.12 1.948l6.219 6.615v.146L6.412 22.84c-.599.432-.708 1.302-.25 1.938c.464.635 1.323.797 1.922.359l10.974-7.88c.37-.26.583-.49.682-.693zm-3.724 5.864a1.24 1.24 0 0 0-1.25 1.229a1.24 1.24 0 0 0 1.25 1.234h5.906a1.24 1.24 0 0 0 1.25-1.234a1.24 1.24 0 0 0-1.25-1.229z"/></svg> | Indicates the user has shell access. |
 {{< /truetable >}}
     
 **See Logs** opens the **Audit** screen showing log details for activity associated with that user.
@@ -168,7 +171,7 @@ Each access option changes the settings shown in other sections of the **Add Use
 | Setting | Description |
 |---------|-------------|
 | **Username** | (Required) Text entry field that accepts manual or copy/paste entry of a name for the user. A user name consists of up to 32 characters. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Names should not begin with a hyphen (-), include a space, tab, or these special characters: comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parenthesis ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater or less than symbols (<)(>), or equal (=). |
-| **Allow Access** | Specifies the access granted to the user account. Each option shows different settings. Access options are: <br><li>**SMB Access** - The default option is pre-selected. <br><li>**TrueNAS Access** - Shows the **Select Role** dropdown and the **custom roles** link that opens the TrueNAS documentation article on pre-defined administrator roles.<br><li>**Shell Access** - Adds the **Shell** and **Sudo Commands** options to the [**Additional Details**](#additional-details) section. <br><li>**SSH Access** - Deactivates the **Shell Access** option, but shows the **Shell** and **Sudo Commands** options found with **Shell Access**. Shows the **Allow SSH Login with Password (not recommended)** option, and the **Public SSH Key** field.</li> |
+| **Allow Access** | Specifies the access granted to the user account. Each option shows different settings. Access options are: <br><li>**SMB Access** - The default option is pre-selected.<br><li>**WebShare Access** - Adds WebShare access for the user.<br><li>**TrueNAS Access** - Shows the **Select Role** dropdown and the **custom roles** link that opens the TrueNAS documentation article on pre-defined administrator roles.<br><li>**Shell Access** - Adds the **Shell** and **Sudo Commands** options to the [**Additional Details**](#additional-details) section. <br><li>**SSH Access** - Deactivates the **Shell Access** option, but shows the **Shell** and **Sudo Commands** options found with **Shell Access**. Shows the **Allow SSH Login with Password (not recommended)** option, and the **Public SSH Key** field.</li> |
 | **Select Role** | Shows after selecting **TrueNAS Access**. Each role adds the appropriate group to the **Groups** option under [**Additional Details**](#additional-details). |
 {{< /truetable >}}
 

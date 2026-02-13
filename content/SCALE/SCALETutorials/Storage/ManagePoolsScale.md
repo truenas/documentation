@@ -25,7 +25,9 @@ This article provides instructions on pool management functions available in the
 ## Setting Up Auto TRIM
 
 Select **Storage** on the main navigation panel to open the **Storage Dashboard**.
-Locate the **Storage Health** widget for the pool, then click the **Edit Auto TRIM**. The **Pool Options for *poolname*** dialog opens.
+To see if the AutoTRIM function is enabled, locate the **Storage Health** widget for the pool.
+
+To enable or disable the function, click on the <span class="material-icons">more_vert</span> dropdown menu and select **AuotTRIM** to open the **Pool Options for *poolname*** dialog.
 
 {{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
 
@@ -38,25 +40,39 @@ Auto TRIM can impact pool performance, so the default setting is disabled.
 
 For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
 
-## Exporting/Disconnecting or Deleting a Pool
+## Exporting or Deleting a Pool
 
-Use the **Export/Disconnect** button to disconnect a pool and transfer drives to a new system where you can import the pool.
-It also lets you completely delete the pool and any data stored on it.
+Use the **Disconnect** button to delete or export a pool and transfer drives to a new system where you can import the pool.
+Deleting the pool also deletes any data stored on it.
 
-Click on **Export/Disconnect** on the **Storage Dashboard**.
+Backup critical data stored in the pool you intend to export or delete before performing these procedures!
 
-{{< trueimage src="/images/SCALE/Storage/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
+Click on **Disconnect** for the pool on the **Storage Dashboard** to open the **Disconnect *poolname** window.
 
-A dialog displays showing any system services affected by exporting the pool, and options based on services configured on the system.
+### Exporting a Pool
 
-To delete the pool and erase all the data on the pool, select **Destroy data on this pool**.
-The pool name field displays at the bottom of the window. Type the pool name into this field. To export the pool, do not select this option.
+After backing up critical data stored in the pool you plan to export, click **Disconnect** for the pool.
 
-Select **Delete saved configurations from TrueNAS?** to delete shares and saved configurations on this pool.
+Click **Export Pool** in the **Disconnect *poolname** window.
 
-Select **Confirm Export/Disconnect**
+{{< trueimage src="/images/SCALE/Storage/Disconnect-ExportPoolWindow.png" alt="Export Pool Window" id="Export Pool Window" >}}
 
-Click **Export/Disconnect**. A confirmation dialog displays when the export/disconnect completes.
+Leave **Delete saved configuration from TrueNAS?** option selected and then select the **Confirm Export Pool** option to activate the **Disconnect** button.
+
+Click **Disconnect** to begin the export.
+
+### Deleting a Pool
+
+After backing up critical data stored in the pool you plan to export, click **Disconnect** for the pool.
+
+Click **Delete Pool** in the **Disconnect *poolname** window.
+
+{{< trueimage src="/images/SCALE/Storage/Diconnect-DeletePoolWindow.png" alt="Delete Pool Window" id="Delete Pool Window" >}}
+
+To delete the pool and erase all the data on the pool, leave **Remove all releated configurations** selected, and then select **Confirm Delete Pool**.
+Enter the pool name in the confirmation text field, to activate the **Disconnect** button.
+
+Click **Disconnect** to delete the pool. A confirmation dialog opens when the delete operation completes.
 
 ## Upgrading a Pool
 
@@ -77,17 +93,17 @@ It is not necessary to stop sharing services to upgrade the pool.
 
 ## Running a Pool Data Integrity Check (Scrub)
 
+{{< hint type=note >}}
+A scrub is a data integrity check of your pool. Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
+{{< /hint >}}
+
 Use **Scrub Now** on the **Storage Health** pool widget to start a pool data integrity check.
 
 {{< trueimage src="/images/SCALE/Storage/StorageHealthWidget.png" alt="Storage Health Widget" id="Storage Health Widget" >}}
 
 Click **Scrub Now** to open the **Scrub Pool** dialog, then click **Start Scrub** to begin the process.
 
-If TrueNAS detects problems during the scrub operation, it either corrects them or generates an [alert]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Alerts" >}}) in the web interface.
-
-{{< hint type=note >}}
-A scrub is a data integrity check of your pool. Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
-{{< /hint >}}
+If TrueNAS detects problems during the scrub operation, it corrects them or generates an [alert]({{< ref "/SCALE/SCALEUIReference/TopToolbar/Alerts" >}}) in the web interface.
 
 ### Scheduling Scrub Tasks
 
@@ -139,7 +155,7 @@ When you use one of the above methods, TrueNAS does not automatically expand the
 
 To expand an existing pool:
 
-1. Navigate to **Storage** and click **Expand Pool** above the **Usage** widget.  
+1. Navigate to **Storage**, click on the <span class="material-icons">more_vert</span> dropdown menu, and select **Expand Pool**.  
 2. Select **Confirm** in the **Expand Pool** pop-up screen.  
 3. Click **Continue** to initiate the pool expansion process.  
 
@@ -184,7 +200,7 @@ You can use the [RAIDZ Extension Calculator]({{< ref "/References/ExtensionCalcu
 
 {{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 
-For more information, see [Jim Salter's article](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
+For more information, read the [article written by Jim Salter](https://arstechnica.com/gadgets/2021/06/raidz-expansion-code-lands-in-openzfs-master/) at Ars Technica and the upstream [RAIDZ extension](https://github.com/openzfs/zfs/pull/15022) PR, sponsored by iXsystems, at OpenZFS.
 See also ["ZFS RAIDZ Expansion Is Awesome but Has a Small Caveat"](https://louwrentius.com/zfs-raidz-expansion-is-awesome-but-has-a-small-caveat.html) by Louwrentius for an in-depth discussion of lost capacity and recovering overhead.
 {{< /expand >}}
 
@@ -227,11 +243,14 @@ To add a VDEV to an existing pool, you can:
 
   {{< trueimage src="/images/SCALE/Storage/AddToPoolExistingPoolWindow.png" alt="Add To Pool - Existing Pool" id="Add To Pool - Existing Pool" >}}
 
+or
+
 * Click **View VDEVs** on the **VDEVs** widget to open the ***Poolname* VDEVs** screen, then click **Add VDEV** to open the **Add Vdevs to Pool** wizard.
 
   {{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Wizard" id="Add VDEVs to Pool Screen" >}}
 
 Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< ref "CreatePoolWizard" >}}).
+
 Click on the type of vdev you want to add. For example, to add a spare, click on **Spare** to show the vdev spare options.
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareScreen.png" alt="Add VDEVs to Pool Spare Example" id="Add VDEVs to Pool Spare Example" >}}
@@ -347,12 +366,26 @@ Removing these devices does not impact data integrity but can significantly impa
 In addition, you can remove a data VDEV from an existing pool under specific circumstances.
 This process preserves data integrity but has multiple requirements:
 
-* The pool must be upgraded to a ZFS version with the `device_removal` feature flag.
+* Upgrade the pool with the `device_removal` zfs feature flag.
+
+  The pool must be upgraded to a ZFS version with the `device_removal` feature flag.
   The system shows the [**Upgrade** button](#upgrading-a-pool) after upgrading TrueNAS when new ZFS feature flags are available.
-* All top-level VDEVs in the pool must be *only* mirrors or stripes.
-* Special VDEVs cannot be removed when RAIDZ data VDEVs are present.
-* All top-level VDEVs in the pool must use the same basic allocation unit size (`ashift`).
-* The remaining data VDEVs must contain sufficient free space to hold all data from the removed VDEV.
+
+* Use mirror or stripe VDEVs.
+  
+  All top-level VDEVs in the pool must be *only* mirrors or stripes.
+
+* Keep special VDEVs in RAIDz data VDEVs.
+  
+  Special VDEVs cannot be removed when RAIDZ data VDEVs are present.
+
+* Use the same basice allocation unit size.
+  
+  All top-level VDEVs in the pool must use the same basic allocation unit size (`ashift`).
+
+* Maintain sufficient free space in the data VDEV for removed data.
+  
+  The remaining data VDEVs must contain sufficient free space to hold all data from the removed VDEV.
 
 It is generally not possible to remove a device when a RAIDZ data VDEV is present.
 
