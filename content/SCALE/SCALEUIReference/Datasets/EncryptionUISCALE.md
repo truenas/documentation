@@ -20,7 +20,7 @@ Datasets, root, non-root parent, and child, or zvols with encryption include the
 
 ## Dataset Encryption
 
-The **Encryption** option on the **[Pool Manager]({{< ref "PoolCreateWizardScreens" >}})** screen sets encryption for the pool and root dataset.
+The **Encryption** option on the **[Pool Manager]({{< ref "PoolCreateWizardScreens" >}})** screen sets encryption for the entire pool.
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
