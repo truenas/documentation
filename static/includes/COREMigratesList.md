@@ -5,7 +5,7 @@ These are the items that do not migrate:
 
 * Microsoft OneDrive Cloud Sync credentials and tasks. OneDrive compatibility is not available in TrueNAS.
 * FreeBSD GELI encryption.
-  If you have GELI-encrypted pools on your system that you plan to import, you must migrate your data from the GELI pool to a non-GELI encrypted pool *before* migrating.
+  If you have GELI-encrypted pools on your system that you plan to import, you must migrate your data from the GELI pool to a non-GELI encrypted dataset or zvol *before* migrating.
 * Malformed certificates.
   TrueNAS validates the system certificates when a system migrates.
   When a malformed certificate is found, TrueNAS generates a new self-signed certificate to ensure system accessibility.
