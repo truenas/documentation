@@ -110,6 +110,8 @@ Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or la
 
 ## Adding an SMB Share and Dataset
 
+{{< include file="/static/includes/WebShare-SMBWarning.md" >}}
+
 You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) or create a dataset and the share using the **Add SMB** share screen.
 This article covers adding the dataset using the **Add SMB** share screen.
 

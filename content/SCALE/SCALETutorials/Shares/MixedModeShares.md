@@ -31,6 +31,8 @@ It is also important that NFS clients preserve extended attributes when copying 
 Multi-protocol shares are not compatible with APPL extensions such as Time Machine that rely on SMB3/3 lease support, which is no longer available in multi-protocol shares.
 Choosing to configure a multi-protocol share disables options to enable AAPL extensions globally.
 
+{{< include file="/static/includes/WebShare-SMBWarning.md" >}}
+
 ## First Steps
 
 Before adding a multi-protocol SMB and NFS share to your system:
