@@ -33,25 +33,24 @@ TrueNAS includes the [Key Management Interface Protocol (KMIP)](https://docs.oas
 
 ## Pool and Dataset Encryption
 
-{{< include file="/static/includes/EncryptionWarning.md" >}}
+Encryption is for users storing sensitive data.
+It does not apply encryption to the storage vdev or the disks in the pool.
 
-TrueNAS automatically generates a root dataset when you create a pool.
-Select **Encryption** on the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})** screen when you create the pool to encrypt the root dataset.
-TrueNAS forces encryption of all child datasets and zvols within an encrypted root or parent dataset created using the TrueNAS UI.
+{{< include file="/static/includes/EncryptionRootLevel.md" >}}
+
+Leave **Encryption** unselected on the **Pool Creation Wizard** screen to create a pool with an unencrypted root dataset.
+You can create both encrypted and unencrypted datasets within an unencrypted pool.
+
 By default, child datasets inherit encryption settings from the parent.
-Disabling **Inherit (encrypted)** under **Advanced Options** allows modifying the encryption configuration for a child dataset but you cannot change a child dataset of an encrypted parent dataset to unencrypted.
+Disabling **Inherit** under **Advanced Options** allows modifying the encryption configuration for a child dataset.
 
-As of TrueNAS 22.12.3 or later, the TrueNAS UI does not allow you to create unencrypted datasets within an encrypted pool or parent dataset.
+You cannot change a child dataset of an encrypted parent dataset to unencrypted.
 However, datasets created outside the UI, such as those created programmatically or manually via shell access, might not inherit encryption unless properly configured.
 For example, the [ix-apps dataset](https://apps.truenas.com/getting-started/app-storage/#ix-apps-dataset) on the pool selected for applications does not inherit encryption settings.
 
-If the system has only one pool, we recommend that you do not use pool-level encryption for this pool.
-Leave **Encryption** unselected on the **Pool Creation Wizard** screen to create a pool with an unencrypted root dataset.
-You can create unencrypted and encrypted datasets within an unencrypted pool (root dataset).
-
 {{< expand "Can I change dataset encryption?" "v" >}}
 Before saving a new dataset, you can change the type of encryption of an encrypted dataset to key to passphrase.
-After saving a dataset with encryption applied you cannot change the dataset to unencrypted.
+After saving a dataset with encryption applied, you cannot change the dataset to unencrypted.
 
 {{< /expand >}}
 {{< expand "Can I unencrypt my data?" "v" >}}
@@ -117,7 +116,7 @@ Add the VDEVs to the pool you want to include, then click **Save** to create the
 
 To add an encrypted dataset, go to **Datasets**.
 
-Select a dataset on the tree table where you want to add a new dataset.
+Select a dataset in the tree table where you want to add a new dataset.
 The default dataset selected when you open the **Datasets** screen is the root dataset of the first pool on the tree table list.
 If you have more than one pool and want to create a dataset in a pool other than the default, select the root dataset for that pool or any dataset under the root where you want to add the new dataset.
 
@@ -128,7 +127,7 @@ Select the **Dataset Preset** option you want to use. Options are:
 
 Click **Advanced Options**.
 To add encryption to a dataset, scroll down to **Encryption Options** and select the inherit checkbox to clear the checkmark and show the **Encryption** option. Clear this checkbox to show the default settings for key type encryption.
-If the parent dataset is unencrypted and you want to encrypt the dataset select the **Inherit (non-encrypted)** checkbox to clear it and show the **Encryption** option.
+If the parent dataset is unencrypted and you want to encrypt the dataset, select the **Inherit (non-encrypted)** checkbox to clear it and show the **Encryption** option.
 If the parent dataset is encrypted and you want to change the type, select **Inherit (encrypted)** to show the encryption configuration options.
 To keep the dataset encryption settings from the parent, leave inherit selected.
 

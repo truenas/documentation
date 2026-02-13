@@ -110,6 +110,8 @@ Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or la
 
 ## Adding an SMB Share and Dataset
 
+{{< include file="/static/includes/WebShare-SMBWarning.md" >}}
+
 You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) or create a dataset and the share using the **Add SMB** share screen.
 This article covers adding the dataset using the **Add SMB** share screen.
 
@@ -411,6 +413,10 @@ Toggle **Start Automatically** on if you want the service to activate when TrueN
 
 Configure the SMB service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Windows (SMB) Shares** widget header or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
 Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
+
+## Enabling Spotlight Search for macOS
+
+{{< include file="/static/includes/SMBSpotlightSearch.md" >}}
 
 ## Mounting the SMB Share
 
