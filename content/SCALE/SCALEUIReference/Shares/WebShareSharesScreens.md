@@ -20,7 +20,7 @@ After adding an WebShare share, it is listed in the table on the widget.
 
 {{< trueimage src="/images/SCALE/Shares/WebShareWidgetWithShare.png" alt="WebShare Share Widget with Shares" id="WebShare Share Widget with Shares" >}}
 
-The **WebShare <span class="material-icons">launch</span>** header shows the status of the WebShare service as either **Stopped** (red) or **Runnig** (green).
+The **WebShare <span class="material-icons">launch</span>** header shows the status of the WebShare service as either **Stopped** (red) or **Running** (green).
 Before adding the first share, the **Stopped** status displays in the default color.
 The header is a link that opens the [**Sharing > WebShare** screen](#webshare-screen).
 
