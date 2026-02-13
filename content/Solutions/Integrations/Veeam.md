@@ -43,9 +43,12 @@ When deploying TrueNAS with Veeam, prepare the following:
 * Backup proxies as defined by Veeam - these can be virtual or physical machines or the backup server itself for low workloads
 * TrueNAS appliance configured with an S3 credential to use Veeam immutability and harden the server.
 
-Update the TrueNAS systems to the latest version before beginning deployment.
+{{< hint type=warning >}}
+Veeam appliances, software, and infrastructure only works with TrueNAS 25.10 or later releases.
+{{< /hint >}}
 
-This ensures the appliance has the latest bug fixes, security updates, and software enhancements to ensure maximum performance and security.
+Update your TrueNAS to 25.10 or later before deployment.
+Updating the TrueNAS release ensures the appliance has the latest bug fixes, security updates, and software enhancements to ensure maximum performance and security.
 If deploying on a closed network (LAN) without access to the Internet, users can also obtain and apply an update manually.
 For assistance, please contact TrueNAS support.
 
