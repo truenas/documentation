@@ -1,0 +1,169 @@
+# Configuration for TrueNAS Release Notes Automation
+# Copy this file to config.yaml and customize as needed
+
+# Jira Configuration
+jira:
+  base_url: "https://ixsystems.atlassian.net"
+  xml_api_template: "{base}/si/jira.issueviews:issue-xml/{key}/{key}.xml"
+
+  # Cache settings
+  cache:
+    enabled: true
+    directory: "/tmp/jira_cache"
+    ttl_hours: 24  # How long to keep cached XML files
+
+# Triage Configuration
+triage:
+  # Components that indicate user-facing changes
+  user_facing_components:
+    - "SMB"
+    - "NFS"
+    - "WebUI"
+    - "Apps"
+    - "Certificates"
+    - "iSCSI"
+    - "Sharing"
+    - "Storage"
+    - "System"
+    - "Network"
+    - "Replication"
+
+  # Keywords indicating critical issues
+  critical_keywords:
+    - "critical"
+    - "failure"
+    - "unable to"
+    - "blocks"
+    - "crash"
+    - "data loss"
+    - "corruption"
+    - "security"
+    - "panic"
+    - "deadlock"
+
+  # Patterns indicating backend-only changes (exclude from notable changes)
+  backend_patterns:
+    - "^API documentation"
+    - "^test:"
+    - "^ci:"
+    - "^refactor:"
+    - "^internal:"
+    - "type:\\s*Infrastructure"
+
+  # Severity scoring
+  severity_scores:
+    priority:
+      Critical: 10
+      High: 5
+      Medium: 2
+      Low: 0
+
+    labels:
+      release_notes_mention: 5
+      perf_impact: 3
+      breaking_change: 8
+
+    component_match: 2  # Points for matching user-facing component
+    critical_keyword_match: 3  # Points for critical keyword in summary
+
+# Claude API Configuration
+claude:
+  model: "claude-sonnet-4-5-20250929"
+  max_tokens: 8000
+  temperature: 1.0  # Default temperature for balanced creativity/consistency
+
+  # API key (can also be set via ANTHROPIC_API_KEY environment variable)
+  # api_key: "your-key-here"
+
+# Output Configuration
+output:
+  # Default output directory for generated files
+  default_directory: "."
+
+  # File naming patterns (use {version} as placeholder)
+  patterns:
+    tickets_json: "{version}-tickets.json"
+    tickets_markdown: "{version}-tickets.md"
+    notable_changes: "{version}-notable-changes.md"
+    excluded_tickets: "{version}-excluded-tickets.md"
+    prompt_file: "{version}-prompt.txt"
+
+  # Version slug format (how to transform version for filenames)
+  # Options: "underscores" (25.10.2 -> 25_10_2), "dashes" (25.10.2 -> 25-10-2)
+  version_slug_format: "underscores"
+
+# Style Guidelines
+style:
+  # Action verbs for notable changes (in order of preference)
+  action_verbs:
+    - "Fixes"
+    - "Improves"
+    - "Adds"
+    - "Updates"
+    - "Resolves"
+    - "Removes"
+    - "Enhances"
+
+  # Writing rules
+  rules:
+    - "Use present tense, active voice"
+    - "Write at 5th-grade reading level"
+    - "No gerunds (-ing words)"
+    - "No semicolons"
+    - "Bold UI elements: **Button Name**"
+    - "Use backticks for code: `field_name`"
+
+  # Markdown formatting
+  formatting:
+    indent_spaces: 2  # Indentation for detailed explanations
+    bullet_character: "*"  # Bullet point character
+    link_format: "[{key}]({url})"  # Format for Jira links
+
+# VersionNotes.md Configuration
+version_notes:
+  # Common locations to search for VersionNotes.md
+  search_paths:
+    - "../../VersionNotes.md"
+    - "../../content/VersionNotes.md"
+    - "./VersionNotes.md"
+
+  # Placeholder patterns to recognize
+  placeholders:
+    - "\\[\\s*Placeholder\\s*-\\s*Notable changes will be added based on ticket list\\s*\\]"
+    - "\\*\\s*\\[\\s*Notable changes coming soon\\s*\\]"
+    - "\\*\\s*TBD"
+    - "<!-- Notable changes placeholder -->"
+
+  # Backup settings
+  backup:
+    enabled: true
+    suffix: ".backup"
+    keep_multiple: false  # If true, add timestamp to backup filename
+
+# Logging Configuration
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+
+  # Log file (optional, leave empty for console only)
+  file: ""
+
+# Advanced Settings
+advanced:
+  # Request timeout for HTTP calls (seconds)
+  http_timeout: 10
+
+  # Retry settings for failed HTTP requests
+  retry:
+    max_attempts: 3
+    backoff_factor: 2  # Exponential backoff multiplier
+
+  # Concurrent processing
+  parallel:
+    enabled: false  # Not yet implemented
+    max_workers: 5
+
+  # Rate limiting
+  rate_limit:
+    enabled: true
+    requests_per_second: 2  # To avoid overwhelming Jira

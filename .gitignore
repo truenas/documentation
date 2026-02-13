@@ -6,3 +6,15 @@ node_modules/
 tech-doc-hugo
 .vscode
 *.lock
+
+# Release notes automation
+scripts/release_notes/output/
+scripts/release_notes/config.yaml
+*.backup
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
