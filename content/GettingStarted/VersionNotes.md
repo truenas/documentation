@@ -400,10 +400,10 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: Wait 2-3 minutes for authentication timeout to complete.
 
-* High Availability STIG configuration changes can cause system failure if active controller is rebooted prematurely.
-  When enabling or disabling STIG in **System > Advanced > System Security**, the system automatically reboots the standby controller in the background. A dialog appears immediately after saving that offers options to reboot controllers, but selecting any reboot action at this point can cause HA system failure.
+* High Availability STIG configuration changes can cause production downtime if active controller is rebooted prematurely.
+  When enabling or disabling STIG in **System > Advanced > System Security**, the system automatically reboots the standby controller in the background. Both controllers must reboot to complete the configuration change.
 
-  Workaround: Do not reboot any controller when the initial dialog appears. Wait for the dialog to change (typically 5-10 minutes), which indicates the standby controller has completed its automatic reboot. Only then is it safe to reboot the active controller.
+  Workaround: After saving STIG settings, wait until the standby controller is fully online before rebooting the active controller. Rebooting the active controller while the standby is still booting can cause disrupt production.
 
   This issue is resolved in TrueNAS 26.
 {{< /enterprise >}}
