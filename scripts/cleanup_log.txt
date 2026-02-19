@@ -1,3 +1,32 @@
+Process time: 2026-02-11 16:26:52
+Initiated by: Dan Pizappi
+
+1250 files reviewed.
+21 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\ActiveDirectoryAdvancedOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\ActiveDirectoryBasicOptionsEditScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendAD.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendAUTORIDSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendLDAPOptionsSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendLDAPSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendNSSSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendRFC2307Options.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendTDBSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapDefaultScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapSMBPrimaryDomainScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\IdmapSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\IdmapScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\IPAFinalConfigOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\LDAPAdvancedOptionsSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\TrustedDomainsConfiguration.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\CreateCustomACL.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\SelectAPresetNFSv4ACL.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\AddPrivateSMBShare.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\SetUserHomeDirectoryToPrivate.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SystemGeneralSettingsSupportWidget.png
+
+----------------------------------------
 Process time: 2025-12-08 14:14:27
 Initiated by: Dan Pizappi
 

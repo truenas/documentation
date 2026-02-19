@@ -2425,5 +2425,14 @@ misconfigurations
 Kerberized
 EBUSY
 FCPShare
+unbootable
+knfsd
+algorithmically
+async
+debounce
+autocomplete
+multiprotocol
+DNs
+ctime
 str
 

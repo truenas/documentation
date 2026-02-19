@@ -272,6 +272,10 @@ See the [smb.conf](https://www.samba.org/samba/docs/current/man-html/smb.conf.5.
 {{< /expand >}}
 
 {{< expand "Host Allow and Host Deny" "v" >}}
+{{< hint type=note >}}
+Hosts Allow and Hosts Deny settings are available for all share presets except **External Share**.
+{{< /hint >}}
+
 Use the **Host Allow** and **Host Deny** options to allow or deny specific host names and IP addresses.
 
 Use the **Hosts Allow** field to enter a list of allowed IP addresses.
@@ -292,9 +296,12 @@ Use the **Hosts Deny** field to enter a list of denied host names or IP addresse
 {{< /expand >}}
 
 {{< expand "Legacy Share Preset (Upgraded Shares Only)" "v" >}}
+What is a legacy share?
 
 When you upgrade to TrueNAS SCALE 25.10 from an earlier release, existing shares that used the **No Preset** option are automatically migrated to the **Legacy Share** preset.
 This preset provides access to configuration options that are no longer available for new shares.
+
+Why can I not create a new legacy share?
 
 The **Add SMB** screen does not include **Legacy Share** as an option. This preset only appears in the **Edit SMB** screen for shares created before 25.10.
 TrueNAS removed these options from new shares due to:
@@ -311,8 +318,6 @@ In the **Access** section:
 
 * **Enable ACL** - Configure additional ACL entries for custom access controls
 * **Allow Guest Access** - Enable anonymous access without credentials (not recommended)
-* **Hosts Allow** - Restrict access to specific IP addresses or host names
-* **Hosts Deny** - Block access from specific IP addresses or host names
 
 In the **Other Options** section:
 
