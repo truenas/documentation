@@ -24,6 +24,15 @@ Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> on the 
 
 {{< trueimage src="/images/SCALE/Network/IPMIConfigurationScreen.png" alt="IPMI Configuration Screen" id="IPMI Configuration Screen." >}}
 
+{{< enterprise >}}
+On TrueNAS Enterprise High Availability (HA) systems, the **IPMI** configuration screen includes a **Remote Controller** section that allows you to select which controller to configure.
+
+{{< trueimage src="/images/SCALE/Network/IPMIConfigurationRemoteController.png" alt="IPMI Remote Controller Selection" id="IPMI Remote Controller Selection for HA systems" >}}
+
+Select the controller you want to configure IPMI settings for or use the identify light feature on.
+All IPMI configuration changes and the identify light feature apply only to the selected controller.
+{{< /enterprise >}}
+
 To configure a static IPv4 connection for IPMI, do not select **DHCP**.
 
 Enter the IPv4 address for the IPMI web interface.
