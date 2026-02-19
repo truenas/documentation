@@ -6,7 +6,7 @@ You can then upgrade directly from the latest maintenance release to the latest 
 {{< hint type=note >}}
 This chart shows the basic upgrade paths between TrueNAS major versions.
 Depending on your use case and risk tolerance, you may prefer to delay upgrading to allow additional time for testing and stability.
-See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from Developer to Mission Critical.
+See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from developer to mission critical.
 {{< /hint >}}
 
 <div class="section-box" id="tn-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
@@ -76,10 +76,10 @@ Permitted upgrade methods are:
 
 * **update**: Apply updates using the **Update** screen in the TrueNAS UI or install a manual update file.
   Not all upgrade paths support automatic updates (see chart).
-* **ISO install**: Save your TrueNAS configuration file, perform a fresh install using an .iso file for the target version, then upload the saved configuration.
+* **ISO install**: Save your TrueNAS configuration file, perform a fresh install using an <file>.iso</file> file for the target version, then upload the saved configuration.
 
 You can skip major versions using a fresh installation with configuration file restore.
-Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that may affect your configuration.
+Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that might affect your configuration.
 Consider upgrading incrementally through major versions with significant changes, or be prepared to manually reconfigure any incompatibilities after upgrading directly to the target version.
 
 <style>
@@ -275,7 +275,7 @@ You can then upgrade directly from the latest maintenance release to the latest 
 {{< hint type=note >}}
 This chart shows the basic upgrade paths between TrueNAS major versions.
 Depending on your use case and risk tolerance, you might prefer to delay upgrading to allow additional time for testing and stability.
-See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from Developer to Mission Critical.
+See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from developer to mission critical.
 {{< /hint >}}
 
 <div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
