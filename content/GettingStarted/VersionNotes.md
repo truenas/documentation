@@ -46,8 +46,9 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2!
   Resolves "Could not prepare Boot variable: No space left on device" error that caused affected systems to become unbootable after failed upgrade attempts.
 * Fixes SMB service startup failure after upgrading from older TrueNAS versions with legacy ACL configurations ([NAS-139076](https://ixsystems.atlassian.net/browse/NAS-139076)).
   Systems with legacy SMB share permission strings stored in their configuration database could not start the SMB service after upgrading to 25.10.1. This update automatically converts legacy permission formats to the current binary format during service initialization.
-* Improves NFS performance for NFSv4 clients ([NAS-139128](https://ixsystems.atlassian.net/browse/NAS-139128)).
-  Adds support for STATX_CHANGE_COOKIE to properly surface ZFS sequence numbers to NFS clients via knfsd. This ensures the NFS change_info4 structure accurately tracks directory and file changes, improving client attribute cache invalidation and reducing unnecessary server requests. Previously, the system synthesized change IDs algorithmically based on ctime, which could fail to increment consistently due to kernel timer coarseness.
+* ~~Improves NFS performance for NFSv4 clients ([NAS-139128](https://ixsystems.atlassian.net/browse/NAS-139128)).~~
+  This item was included in the 25.10.2 release notes in a clerical error. The improvement is planned for a future release. See [Known Issues](#known-issues) for details. 
+  <!--Adds support for STATX_CHANGE_COOKIE to properly surface ZFS sequence numbers to NFS clients via knfsd. This ensures the NFS change_info4 structure accurately tracks directory and file changes, improving client attribute cache invalidation and reducing unnecessary server requests. Previously, the system synthesized change IDs algorithmically based on ctime, which could fail to increment consistently due to kernel timer coarseness.-->
 * Improves ZFS pool import performance and write operation responsiveness ([NAS-138879](https://ixsystems.atlassian.net/browse/NAS-138879)).
   Limits the time async destroy operations can run per transaction group, preventing these operations from blocking pool imports and other write operations. Pool imports that previously took extended time due to prolonged async destroy operations complete more quickly.
 * Fixes disk replacement validation incorrectly rejecting identical capacity drives ([NAS-138678](https://ixsystems.atlassian.net/browse/NAS-138678)).
@@ -407,6 +408,15 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   This issue is resolved in TrueNAS 26.
 {{< /enterprise >}}
+
+* SMB legacy shares with unsupported path suffix variable substitutions fail validation in 25.10.2 ([NAS-139892](https://ixsystems.atlassian.net/browse/NAS-139892)).
+  SMB shares using the **Legacy Share** preset with a `path_suffix` containing variable substitutions other than `%D`, `%G`, or `%U` fail middleware validation introduced in 25.10.
+  This is a regression from pre-25.10 behavior, which applied no validation to `path_suffix` values.
+  A fix is planned for a future release.
+
+* NFS STATX_CHANGE_COOKIE improvement not included in 25.10.2 (documentation correction).
+  [NAS-139128](https://ixsystems.atlassian.net/browse/NAS-139128), which adds STATX_CHANGE_COOKIE support to improve NFSv4 client performance and change tracking, was incorrectly listed in the 25.10.2 release notes due to a clerical error.
+  This improvement is planned for a future release. 
 
 * Apps using SMB/NFS storage can experience race condition during boot.
   When apps are configured to use SMB or NFS shares as storage passthroughs, there can be an occasional race condition during TrueNAS boot where the app startup conflicts with the sharing services startup.
