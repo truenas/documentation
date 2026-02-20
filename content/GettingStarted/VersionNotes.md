@@ -409,6 +409,11 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
   This issue is resolved in TrueNAS 26.
 {{< /enterprise >}}
 
+* SMB legacy shares with unsupported path suffix variable substitutions fail validation in 25.10.2 ([NAS-139892](https://ixsystems.atlassian.net/browse/NAS-139892)).
+  SMB shares using the **Legacy Share** preset with a `path_suffix` containing variable substitutions other than `%D`, `%G`, or `%U` fail middleware validation introduced in 25.10.
+  This is a regression from pre-25.10 behavior, which applied no validation to `path_suffix` values.
+  A fix is planned for a future release.
+
 * NFS STATX_CHANGE_COOKIE improvement not included in 25.10.2 (documentation correction).
   [NAS-139128](https://ixsystems.atlassian.net/browse/NAS-139128), which adds STATX_CHANGE_COOKIE support to improve NFSv4 client performance and change tracking, was incorrectly listed in the 25.10.2 release notes due to a clerical error.
   This improvement is planned for a future release. 
