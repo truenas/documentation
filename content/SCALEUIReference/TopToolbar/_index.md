@@ -2,10 +2,9 @@
 title: Top Toolbar
 description: "All the icons and options contained in the TrueNAS top toolbar."
 geekdocCollapseSection: true
-tags:
-- tasks
 weight: 3
 tags:
+- tasks
 - toolbar
 - keywords:
 - nas storage software
