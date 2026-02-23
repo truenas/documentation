@@ -1,5 +1,5 @@
 ---
-title: "General Settings"
+title: "Configuring General Settings"
 description: "Tutorials for configuring many general TrueNAS settings."
 geekdocCollapseSection: true
 weight: 20

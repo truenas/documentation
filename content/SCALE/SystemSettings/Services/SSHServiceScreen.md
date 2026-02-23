@@ -1,7 +1,7 @@
 ---
 title: "SSH Service Screen"
 description: "Provides information on the SSH service screens and settings."
-weight: 60
+weight: 70
 aliases: 
  - /scale/scaleuireference/systemsettings/services/sshservicescreenscale/
  - /scale/scaleclireference/service/clissh/

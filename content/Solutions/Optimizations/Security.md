@@ -23,7 +23,7 @@ Follow these best practices to administer TrueNAS securely.
 * Disable any network services when not in use.
 * Restrict the TrueNAS web UI, IPMI, and any other management interfaces to private subnets away from untrusted users, or keep them disconnected when not in active use.
 * Configure **Syslog** settings to send logs to an external server ([CORE](https://www.truenas.com/docs/core/13.0/uireference/system/advanced/) | [SCALE]({{< ref "ManageSysLogs" >}})).
-* In TrueNAS 24.04 (Dragonfish) or later, locally [monitor and review audit logs]({{< ref "/SCALE/SystemSettings/Auditing" >}}) using the **Audit** screen.
+* In TrueNAS 24.04 (Dragonfish) or later, locally [monitor and review audit logs]({{< ref "/SCALE/SystemSettings/Audit/Auditing" >}}) using the **Audit** screen.
 * In the **System > Advanced Settings**, always keep **Show Text Console without Password Prompt** set to **Disabled**.
 
 {{<include file="/static/includes/CustomScriptWarning.md">}}

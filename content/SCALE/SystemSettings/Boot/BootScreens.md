@@ -1,7 +1,7 @@
 ---
-title: "Boot"
+title: "Boot Screens"
 description: "Provides reference descriptions of the boot environment screens and settings."
-weight: 40
+weight: 50
 aliases:
  - /scale/scaleuireference/systemsettings/systembootscreensscale/
  - /scale/scaleclireference/system/cliboot/

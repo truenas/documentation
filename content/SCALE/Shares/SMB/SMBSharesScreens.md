@@ -37,7 +37,7 @@ The <span class="material-icons">more_vert</span> dropdown list shows four optio
 * **Turn Off/ON Service** toggles to **Turn Off Service** when the SMB service is enabled, and to **Turn On Service** when the SMB service is disabled.
 * **Config Service** opens the [**SMB**]({{< ref "SMBServicesScreen" >}}) configuration screen.
 * **SMB Sessions** opens the **SMB Status** screen with showing **Sessions**.
-* **Audit Logs** opens the [**Audit** screen]({{< ref "/SCALE/SystemSettings/Auditing" >}}) with a predefined filter applied to show the SMB logs.
+* **Audit Logs** opens the [**Audit** screen]({{< ref "/SCALE/SystemSettings/Audit/Auditing" >}}) with a predefined filter applied to show the SMB logs.
 
 The widget shows a table listing SMB shares created in TrueNAS.
 Each SMB share row on the **Windows (SMB) Shares** widget shows the path to the shared dataset, a description if one is entered when the share is added, an **Enabled** toggle that allows you to enable or disable the share, and indicates if audit logging is turned on/off.
@@ -173,7 +173,7 @@ See [Legacy Share Settings](#legacy-share-settings) for complete details on thes
 
 The **Audit Logging** settings enable the auditing function for the SMB share. Configure a watch list to audit specific groups, or an ignore list to audit all groups except those specified. At least one list (watch or ignore) must contain entries for auditing to function. All share options listed in the **Purpose** dropdown show these settings.
 
-For detailed information about group validation and troubleshooting disabled shares, see [Configuring SMB Auditing]({{< relref "/SCALE/SystemSettings/Auditing#configuring-smb-auditing" >}}).
+For detailed information about group validation and troubleshooting disabled shares, see [Configuring SMB Auditing]({{< relref "/SCALE/SystemSettings/Audit/Auditing#configuring-smb-auditing" >}}).
 
 {{< trueimage src="/images/SCALE/Shares/AddSMBAdvancedAuditLoggingSettings.png" alt="SMB Audit Logging" id="SMB Audit Logging" >}}
 

@@ -1,7 +1,7 @@
 ---
 title: "NFS Services Screen"
 description: "Provides information on NFS service screen and settings."
-weight: 25
+weight: 40
 aliases:
  - /scale/systemsettings/services/nfsservicescreen/
  - /scale/shares/iscsi/nfs/nfsservicescreen/

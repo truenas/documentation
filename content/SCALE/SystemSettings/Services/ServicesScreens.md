@@ -1,8 +1,8 @@
 ---
-title: "Services"
+title: "Services Screens"
 description: "Information on the Services screen and individual service articles in the Services area."
 geekdocCollapseSection: true
-weight: 50
+weight: 10
 aliases: 
  - /scale/scaleuireference/systemsettings/servicesscale/
  - /scale/scaleuireference/systemsettings/services/lldpservicesscreenscale/

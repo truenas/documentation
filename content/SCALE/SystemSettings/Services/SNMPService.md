@@ -1,5 +1,5 @@
 ---
-title: "SNMP"
+title: "Configuring SNMP Service"
 description: "Provides information on configuring SNMP service in TrueNAS."
 weight: 55
 aliases: 

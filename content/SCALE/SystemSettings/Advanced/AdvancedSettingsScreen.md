@@ -1,7 +1,7 @@
 ---
 title: "Advanced Settings Screen"
 description: "Provides information on the System Settings > Advanced screen, widgets, and configuration screen settings."
-weight: 30
+weight: 50
 aliases:
  - /scale/scaleuireference/systemsettings/advancedsettingsscreen/
  - /scale/scaleuireference/systemsettings/advancedsettings/
@@ -169,7 +169,7 @@ The **Audit** widget displays the current audit storage and retention policy set
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "/SCALE/SystemSettings/Auditing#configuring-audit-storage-and-retention-policies" >}})
+Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "/SCALE/SystemSettings/Audit/Auditing#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Widget
 

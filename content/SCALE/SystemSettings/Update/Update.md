@@ -1,7 +1,7 @@
 ---
 title: "Updating TrueNAS"
 description: "Provides instructions on updating TrueNAS releases in the UI."
-weight: 10
+weight: 20
 aliases: /scale/scaleuireference/systemsettings/updatescale/
 tags:
 - update

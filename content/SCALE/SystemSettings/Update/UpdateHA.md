@@ -1,7 +1,7 @@
 ---
 title: "Updating TrueNAS Enterprise HA"
 description: "Provides instructions on how to update TrueNAS releases on Enterprise (HA) systems."
-weight: 15
+weight: 30
 aliases:
  - /scale/scaletutorials/systemsettings/updatehascale/
 tags:

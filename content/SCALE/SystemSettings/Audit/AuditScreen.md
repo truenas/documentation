@@ -1,7 +1,7 @@
 ---
 title: "Audit Screen"
 description: "Provides information on the TrueNAS Audit screens and settings."
-weight: 90
+weight: 50
 aliases: 
  - /scale/scaleuireference/systemsettings/auditscreen/
 tags:

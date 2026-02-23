@@ -173,7 +173,7 @@ Go to **System > General Settings** and click **Settings** on the **GUI** widget
 #### System Auditing
 
 To customize the system auditing retention period, specify how long the TrueNAS retains auditing records.
-See [Audit Logs]({{< ref "/SCALE/SystemSettings/Auditing" >}}) for more information on TrueNAS audit logs and configuring auditing settings.
+See [Audit Logs]({{< ref "/SCALE/SystemSettings/Audit/Auditing" >}}) for more information on TrueNAS audit logs and configuring auditing settings.
 
 To keep audit log records beyond the retention period, use the **Export** button to download a copy of the audit database.
 Move the file to a remote backup server to retain a copy of the log based on your data security policies.

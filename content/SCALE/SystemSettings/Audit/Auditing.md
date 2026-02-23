@@ -1,7 +1,7 @@
 ---
 title: "Audit Logs"
 description: "Provides information on the System and SMB Share auditing screens and function in TrueNAS."
-weight: 90
+weight: 20
 aliases:
  - /scale/scaletutorials/systemsettings/auditing/
 tags:
@@ -217,7 +217,7 @@ The <i class="material-icons" aria-hidden="true" title="Copy to Clipboard">assig
 
 ## Configuring Audit Storage and Retention Policies
 
-To configure Audit storage and retention settings, click **Audit Settings** on the **Audit** screen or go to **System > Advanced Settings**, then click **Configure** on the [**Audit**]({{< ref "/SCALE/SystemSettings/AdvancedSettingsScreen#audit-widget" >}}) widget.
+To configure Audit storage and retention settings, click **Audit Settings** on the **Audit** screen or go to **System > Advanced Settings**, then click **Configure** on the [**Audit**]({{< ref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen#audit-widget" >}}) widget.
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 

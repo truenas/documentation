@@ -1,5 +1,5 @@
 ---
-title: "Advanced Settings"
+title: "Configuring Advanced Settings"
 description: "Tutorials for configuring advanced system settings in TrueNAS."
 geekdocCollapseSection: true
 weight: 30
@@ -53,7 +53,7 @@ The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit 
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [to manage storage and retention policies for audit logs]({{< ref "/SCALE/SystemSettings/Auditing#configuring-audit-storage-and-retention-policies" >}}).
+Click **Configure** to open the **Audit** configuration screen and [to manage storage and retention policies for audit logs]({{< ref "/SCALE/SystemSettings/Audit/Auditing#configuring-audit-storage-and-retention-policies" >}}).
 
 ## Managing Sysctl Variables
 
