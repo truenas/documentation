@@ -7,8 +7,8 @@ The iSCSI wizard **Extent** screen shows settings to name the target, set the ty
 <--->
 {{< trueimage src="/images/SCALE/Shares/iSCSIWizardExtendFileType.png" alt="iSCSI Wizard Extent Screen File Settings" id="iSCSI Wizard Extent Screen File Settings" >}}
 {{< /columns >}}
-
-{{< expand "Wizard Extent Settings" "v" >}}
+<!-- only found the filesize setting in the yaml. need to do more checking on Monday. -->
+{{< expand "Wizard Extent Settings" "v" >}} {id="iscsi_wizard_Extent"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

@@ -14,17 +14,17 @@ tags:
 ---
 
 
-## Block (iSCSI) Shares Targets Widget
+## Block (iSCSI) Shares Targets Card
 
-If you have not added iSCSI shares to the system, the iSCSI widget shows text stating general information about the block (iSCSI) share targets until a share is added.
+If you have not added iSCSI shares to the system, the iSCSI card shows text stating general information about the block (iSCSI) share targets until a share is added.
 
-{{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidgetNoShares.png" alt="Block (iSCSI) Share Target Widget without Shares" id="Block (iSCSI) Share Target Widget without Shares" >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidgetNoShares.png" alt="Block (iSCSI) Share Target Card without Shares" id="Block (iSCSI) Share Target Card without Shares" >}}
 
-After adding a share, the widget lists them in a table.
+After adding a share, the card lists them in a table.
 
-{{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidget.png" alt="Block (iSCSI) Share Target Widget without Shares" id="Block (iSCSI) Share Target Widget without Shares" >}}
+{{< trueimage src="/images/SCALE/Shares/iSCSIBlockSharesWidget.png" alt="Block (iSCSI) Share Target Card without Shares" id="Block (iSCSI) Share Target Card without Shares" >}}
 
-The **Block (iSCSI) Shares Targets** widget header shows the status of the iSCSI service as  **STOPPED** (red) or **RUNNING** (green).
+The **Block (iSCSI) Shares Targets** card header shows the status of the iSCSI service as  **STOPPED** (red) or **RUNNING** (green).
 Before adding the first share, the **STOPPED** status displays in the default color.
 The header includes the **Wizard** button and the <span class="material-icons">more_vert</span> dropdown list of iSCSI share and service options. 
 The header is a link that opens the [**iSCSI**]() screen.
@@ -43,7 +43,7 @@ The <span class="material-icons">more_vert</span> dropdown list for each target 
 
 The **Start iSCSI Service** dialog shows after adding the first share.
 It includes an **Enable this service to start automatically** toggle and two buttons: **Start** and **No**.
-**Start** starts the service and changes the status on the iSCSI widget toolbar from **STOPPED** (in red)  to **RUNNING** (in blue).
+**Start** starts the service and changes the status on the iSCSI card toolbar from **STOPPED** (in red)  to **RUNNING** (in blue).
 
 {{< trueimage src="/images/SCALE/Shares/StartiCSIServicedialog.png" alt="Start iSCSI Service Dialog" id="Start iSCSI Service Dialog" >}}
 
@@ -67,7 +67,7 @@ The wizard steps you through creating an iSCSI target, adding the extent for the
 
 {{< include file="/static/include/FibreChannelEnterpriseScreen.md" >}}
 
-Alternatively, you can use the [individual iSCSI screens](#iscsi-screens), accessible by clicking on the iSCSI widget header, to manually configure targets, extents, portals, etc.
+Alternatively, you can use the [individual iSCSI screens](#iscsi-screens), accessible by clicking on the iSCSI card header, to manually configure targets, extents, portals, etc.
 The **Targets** screen opens by default.
 For more information on iSCSI screens and settings, see [**iSCSI Screens**](#iscsi-screens) below.
 
@@ -94,7 +94,7 @@ The iSCSI wizard **Protocol Options** screen shows settings to add a portal and 
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIWizardProtocolOptionsCreateNewPortal.png" alt="iSCSI Wizard Protocol Options Screen Settings" id="iSCSI Wizard Protocol Options Screen Settings" >}}
 
-{{< expand "Wizard Protocol Options Settings" "v" >}}
+{{< expand "Wizard Protocol Options Settings" "v" >}} {id="iscsi_wizard_Protocol"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -112,7 +112,7 @@ The **iSCSI** screen opens with the **Targets** tab selected by default.
 
 {{< include file="/static/include/FibreChannelEnterpriseScreen.md" >}}
 
-The **Block (iSCSI) Shares Targets** widget header opens the **iSCSI** screens.
+The **Block (iSCSI) Shares Targets** card header opens the **iSCSI** screens.
 
 **Global Target Configuration** opens the [iSCSI service configuration](#iscsi-global-configuration-screen) screen.
 
@@ -133,7 +133,7 @@ The **Target** tab shows by default when opening the **iSCSI** screen. Use it to
 The **Targets** table lists all targets added to the system. It shows the target name and alias if one is configured for it.
 The first row of the table is selected by default.
 
-Each target shows three **Details for *targetname*** widgets:
+Each target shows three **Details for *targetname*** cards:
 * **iSCSI Authorized Networks** shows networks added on the [**Add** or **Edit iSCSI Target**](#add-and-edit-iscsi-target-screens) screens.
 * **iSCSI Connections** shows active connections between an authorized client and the target.
   Connections show the IQN and IP address of the client connecting to the target.
@@ -145,9 +145,9 @@ Each target shows three **Details for *targetname*** widgets:
 
 **Delete** opens the [**Delete Target**](#delete-target-dialog) dialog.
 
-#### Target Detail Widgets
+#### Target Detail Cards
 
-The screen shows three widgets on the right side of the screen for the selected target:
+The screen shows three cards on the right side of the screen for the selected target:
 * **Extents**- Shows a list of LUNs, and includes two options:
   * [**Associate** button](#associate-dialog)
   * [**Remove Extent Association**](#remove-extent-association) <span class="material-icons">link_off</span> icon.
@@ -160,7 +160,7 @@ The screen shows three widgets on the right side of the screen for the selected 
 
 {{< include file="/static/includes/iSCSIRemoveExtentAssociation.md" >}}
 
-#### Associate Dialog
+#### Associate Dialog {id="iscsi_target_associate-dialog"}
 
 {{< include file="/static/includes/iSCSITargetAssociate.md" >}}
 
@@ -174,18 +174,20 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 {{< trueimage src="/images/SCALE/Shares/EditISCSITargetScreen.png" alt="Edit iSCSI Target Screen" id="Edit iSCSI Target Screen" >}}
 {{< /columns >}}
 
-{{< expand "Target Basic Info Settings" "v" >}}
+{{< expand "Target Basic Info Settings" "v" >}} {id="iscsi_add_target_basic"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Target Name** | The name of the target, consisting of a maximum of 64 lowercase alphanumeric and special characters. Allowed characters are dot (.), dash (-), and colon (:). A name longer than 64 characters is not allowed. See the “Constructing iSCSI names using the iqn.format” section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). The base name (from Target Global Configuration) is automatically prepended if the target name does not start with iqn. |
 | **Target Alias** | An alternative, optional user-friendly name for the target. |
 | **Authorized Networks** | Networks authorized or allowed to communicate between initiators (client computers) and iSCSI targets (storage devices) over the IP network. **Add** shows the **Network** field. |
-| **Network** | Network addresses for authorized networks. Shows after clicking **Add** to the right of **Authorized Networks**. Enter the IP address for the network and select the netmask (CIDR) from the dropdown list. Address must be a public address. Adds the network address to the **iSCSI Authorized Network** widget. |
+| **Network** | Network addresses for authorized networks. Shows after clicking **Add** to the right of **Authorized Networks**. Enter the IP address for the network and select the netmask (CIDR) from the dropdown list. Address must be a public address. Adds the network address to the **iSCSI Authorized Network** card. |
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< include file="/static/includes/TargetiSCSIGroupSettings.md" >}}
+**Add Groups** shows the settings that allow adding a collection of network interfaces, IP addresses, and TCP ports, on a storage device that an iSCSI initiator can connect to. Groups are also known as target portal groups. **Add** shows a group configuration field each time it is clicked.
+
+{{< include file="/static/includes/TargetiSCSIGroupSettings.md" >}} {id=""}
 
 ### Extents Screens
 
@@ -196,15 +198,15 @@ The **Extents** screen shows a table listing extents configured on the system. E
 **Add** and **Edit** open the configuration screen for the selected target.
 **Delete** opens a dialog with delete options.
 
-#### Delete Extent Dialog
+#### Delete Extent Dialog  {id=""}
 
 {{< include file="/static/includes/iSCSIDeleteExtent.md" >}}
 
-#### Add or Edit Extent Screens
+#### Add or Edit Extent Screens  {id=""}
 
 {{< include file="/static/includes/iSCSIAddEditExtentSettings.md" >}}
 
-### Initiators Groups Screen
+### Initiators Groups Screen  {id=""}
 
 The **Initators Groups** screen manages iSCSI initiator groups for targets.
 *Initiator groups* are a logical grouping of iSCSI initiators (clients), identified by their iSCSI qualified name (IQN), that control access to iSCSI targets they are associated with, and define what operations clients can perform on storage for those targets.
@@ -217,15 +219,15 @@ The **Initiators Groups** screen shows after clicking the **Initiator** tab. The
 **Edit** opens a version of the **Add Initiator** screen with only two fields.
 **Delete** opens a dialog to delete an initiator group.
 
-#### Add Initiator Screen
+#### Add Initiator Screen  {id=""}
 
 {{< include file="/static/includes/iSCSIAddInitiatorSettings.md" >}}
 
-#### Edit Initiator Screen
+#### Edit Initiator Screen  {id=""}
 
 {{< include file="/static/includes/iSCSIEditInitiatorSettings.md" >}}
 
-### Portals Screens
+### Portals Screens 
 
 The **Portals** screen manages iSCSI portal groups for the target.
 A *portal group* is a set of network portals (IP addresses and port combinations) within an iSCSI node that collectively supports the coordination of an iSCSI session.
@@ -266,6 +268,6 @@ The <span class="material-icons">more_vert</span> dropdown list for each group I
 
 The **Add** and **Edit** screens display the same settings. Both screens have the same setting options.
 
-#### Add or Edit Authorized Access Screens
+#### Add or Edit Authorized Access Screens 
 
 {{< include file="/static/includes/iSCSIAddEditAuthorizedAccesssScreens.md" >}}

@@ -8,7 +8,7 @@ The **Add Extent** and **Edit Extent** screens show the same configuration setti
 {{< trueimage src="/images/SCALE/Shares/AddExtentScreenFileType.png" alt="Edit iSCSI Extent File Type" id="Edit iSCSI Extent File type" >}}
 {{< /columns >}}
 
-{{< expand "Extent Basic Info Settings" "v" >}}
+{{< expand "Extent Basic Info Settings" "v" >}} {id="iscsi_extent_add-basic"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -18,7 +18,7 @@ The **Add Extent** and **Edit Extent** screens show the same configuration setti
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Extent Compatibility Settings" "v" >}}
+{{< expand "Extent Compatibility Settings" "v" >}} {id="iscsi_extent_add-compat"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -29,7 +29,7 @@ The **Add Extent** and **Edit Extent** screens show the same configuration setti
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Extent Type Settings" "v" >}}
+{{< expand "Extent Type Settings" "v" >}} {id="iscsi_extent_add-type"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

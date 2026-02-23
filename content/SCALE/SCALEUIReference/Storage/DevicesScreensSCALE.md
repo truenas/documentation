@@ -1,6 +1,6 @@
 ---
 title: "VDEVs"
-description: "Provides information on settings and functions found on the VDEVs screens and widget."
+description: "Provides information on settings and functions found on the VDEVs screens and cards."
 weight: 35
 aliases:
  - /scale/scaleuireference/storage/pools/devicesscreensscale/
@@ -10,43 +10,44 @@ tags:
 ---
 
 The **VDEVs** screen lists VDEVS and disks configured for the selected pool.
-Go to **Storage** and click on **View VDEVs** on the **VDEVs** widget to view the **VDEVs** screen.
+Go to **Storage** and click on **View VDEVs** on the **VDEVs** card to view the **VDEVs** screen.
 
-Click anywhere on the VDEV to see the drives in it and the **ZFS Info** widget for that VDEV.
+Click anywhere on the VDEV to see the drives in it and the **ZFS Info** card for that VDEV.
 
 {{< trueimage src="/images/SCALE/Storage/VDEVScreenExpanded.png" alt="Devices RAIDZ2 VDEV Expanded" id="Devices RAIDZ2 VDEV Expanded" >}}
 
-Click anywhere on a drive to see the [drive widgets](#disk-widgets).
+Click anywhere on a drive to see the [drive cards](#disk-cards).
 
 **Add VDEV** opens the **Add a VDEVs to Pool** screen with the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})** for the selected pool.
-For example, find the **VDEVS** widget for a pool and click **View VDEVs**.
+For example, find the **VDEVS** card for a pool and click **View VDEVs**.
 This opens the **Pool Creation Wizard** with *tank* prepopulated but not editable.
 
-## ZFS Info Widget
-The **ZFS Info** widget for the VDEV shows a count of read, write, and checksum errors for that VDEV. It can show the **Remove** or **Offline** buttons, and the **Extend** and **Remove** options.
+## ZFS Info Card {id="storage_vdevs_extend"}
+
+The **ZFS Info** card for the VDEV shows a count of read, write, and checksum errors for that VDEV. It can show the **Remove** or **Offline** buttons, and the **Extend** and **Remove** options.
 
 **Extend** opens the **Extend VDEV** dialog, where you select a disk from the **New Disk** dropdown to add a new disk to the VDEV.
 
 {{< trueimage src="/images/SCALE/Storage/DataVdevExpanded.png" alt="Data VDEV Expanded" id="Data VDEV Expanded" >}}
 
 **Remove** opens the **Remove device** dialog, where you confirm you want to remove the selected VDEV.
-To remove a drive from the VDEV, select the drive, then select **Detach** on the **[ZFS Info](#zfs-info-widget-drives)** widget to remove the drive from the VDEV (pool).
+To remove a drive from the VDEV, select the drive, then select **Detach** on the **[ZFS Info](#zfs-info-card-drives)** card to remove the drive from the VDEV (pool).
 
-## DiskWidgets
+## Disk Cards
 
-Each disk in a VDEV has two widgets that show information for that disk: **ZFS Info** and **Disk Info**.
-After selecting a disk, the widgets show on the right side of the screen in the **Details for *diskname*** area of the screen.
+Each disk in a VDEV has two cards that show information for that disk: **ZFS Info** and **Disk Info**.
+After selecting a disk, the cards show on the right side of the screen in the **Details for *diskname*** area of the screen.
 
-{{< trueimage src="/images/SCALE/Storage/VDEVDiskWidgets.png" alt="VDEV Screen Disk Widgets" id="Vdev Screen Disk Widgets" >}}
+{{< trueimage src="/images/SCALE/Storage/VDEVDiskWidgets.png" alt="VDEV Screen Disk Cards" id="Vdev Screen Disk Cards" >}}
 
-### ZFS Info Widget (Drives)
+### ZFS Info Card (Drives)
 
-The **ZFS Info** widget for each device (disk drive) in the VDEV shows the name of the VDEV (**Parent**), the read, write, and checksum errors for that drive, and the **Detach** and **Offline** options.
+The **ZFS Info** card for each device (disk drive) in the VDEV shows the name of the VDEV (**Parent**), the read, write, and checksum errors for that drive, and the **Detach** and **Offline** options.
 
 {{< columns >}}
-{{< trueimage src="/images/SCALE/Storage/ZvolInfoWidget.png" alt="ZFS Info Widget" id="ZFS Info Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/ZvolInfoWidget.png" alt="ZFS Info Card" id="ZFS Info Card" >}}
 <--->
-{{< trueimage src="/images/SCALE/Storage/ZFSInfoWidgetWithExtendRemove.png" alt="ZFS Info Widget With Extend and Remove" id="ZFS Info Widget with Extend and Remove" >}}
+{{< trueimage src="/images/SCALE/Storage/ZFSInfoWidgetWithExtendRemove.png" alt="ZFS Info Card With Extend and Remove" id="ZFS Info Card with Extend and Remove" >}}
 {{< /columns >}}
 
 **Detach** opens a confirmation dialog and removes the selected drive from the parent VDEV.
@@ -59,32 +60,32 @@ After taking a drive offline, you can remove or replace the physical drive.
 
 {{< trueimage src="/images/SCALE/Storage/DeviceDiskOfflineDialog.png" alt="Devices Disk Offline Dialog" id="Devices Disk Offline Dialog" >}}
 
-### Disk Info Widget
+### Disk Info Card
 
-The **Disk Info** widget shows the disk size, transfer mode, the serial and model numbers for the drive, type of drive, HDD standby setting, and a description associated with the selected drive.
+The **Disk Info** card shows the disk size, transfer mode, the serial and model numbers for the drive, type of drive, HDD standby setting, and a description associated with the selected drive.
 
-{{< trueimage src="/images/SCALE/Storage/DiskInfoWidget.png" alt="Disk Info Widget" id="Disk Info Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/DiskInfoWidget.png" alt="Disk Info Card" id="Disk Info Card" >}}
 
 **Replace** opens the **Replacing disk *diskname*** dialog, where *diskname* is the name of the selected disk.
 
-### Hardware Disk Encryption Widget
+### Hardware Disk Encryption Card
 {{< enterprise >}}
-The **Hardware Disk Encryption** widget only shows on Enterprise-licensed systems.
+The **Hardware Disk Encryption** card only shows on Enterprise-licensed systems.
 {{< /enterprise >}}
 
-The **Hardware Disk Encryption** widget shows drive information, like whether the SED password is set or not.
+The **Hardware Disk Encryption** card shows drive information, like whether the SED password is set or not.
 It might show on non-enterprise systems with self-encrypting drives, but not all configuration options show in the UI. Community users should use the SED utilities to manage these drives.
 
 The **Manage SED Password** link opens a **Manage SED Password** dialog, where you can enter a disk SED password to set the disk encryption password.
 
-{{< trueimage src="/images/SCALE/Storage/DevicesDiskHardwareDiskEncryptionWidget.png" alt="Devices Disk Hardware Disk Encryption Widget" id="Devices Disk Hardware Disk Encryption Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/DevicesDiskHardwareDiskEncryptionWidget.png" alt="Devices Disk Hardware Disk Encryption Card" id="Devices Disk Hardware Disk Encryption Card" >}}
 
 {{< trueimage src="/images/SCALE/Storage/ManageSEDPasswordDialog.png" alt="Manage Disk SED Encryption Password" id="Manage Disk SED Encryption Password" >}}
 
 **Global SED Password** shows the status as set or not set.
 The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< ref "AdvancedSettingsScreen" >}})** screen, where you can change the global SED password that overrides the disk passwords.
 
-#### Replacing Disk Dialog
+#### Replacing Disk Dialog {id="storage_vdev_replace-disk"}
 
 The **Replacing disk *diskname** dialog allows replacing the selected disk with a new disk selected from the **Member Disk** dropdown list.
 

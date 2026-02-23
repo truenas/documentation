@@ -4,7 +4,7 @@
 
 {{< trueimage src="/images/SCALE/Shares/AddInitiatorScreen.png" alt="Add Initiator Screen" id="Add Initiator Screen" >}}
 
-{{< expand "Add Initiator Group Settings" "v" >}}
+{{< expand "Add Initiator Group Settings" "v" >}} {id="iscsi_initiator_add"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

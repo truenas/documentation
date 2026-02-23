@@ -34,7 +34,7 @@ Click **Manual Disk Selection** to open the **[Manual Selection](#manual-selecti
 **Reset Step** clears the VDEV settings for the VDEV type selected. For example, **Data** VDEV configuration.
 **Save And Go To Review** saves the current selections and goes directly to the **Review** wizard screen.
 
-### General Info
+### General Info {id="pool_create_general"}
 The **General Info** area includes two default settings, **Name** and **Encryption**.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
@@ -74,7 +74,7 @@ The **Data** wizard screen shows the disks as available.
 **Don't Allow** does not permit using disks with non-unique serial numbers.
 
 {{< enterprise >}}
-### Enclosure Options
+### Enclosure Options {id="pool_create_enclosure"}
 
 The **Enclosure Options** wizard screen shows if the Enterprise system has one or more expansion shelves.
 
@@ -170,7 +170,7 @@ The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
-### Manual Selection Screen
+### Manual Selection Screen {id="pool_create_manual"}
 
 The **Manual Selection** screen shows settings to add a **Data** VDEV **Layout** and the individual disks available to add to the new VDEV.
 You can filter disks by type or size.
@@ -192,8 +192,9 @@ Drag disks to the VDEV to add them.
 | **Search** | Enter the disk name or other details to search for disks matching the specified value to filter available disks in the system. |
 | **Filter by Disk Type** | Resets the available disks listed to show only the selected type (HDD or SSD). |
 | **Filter by Disk Size** | Resets the available disks listed to show only disks matching the selected size. |
-| TrueNAS System | Click to expand and show the list of available disks in the system. Filter options change disks displayed on this list. |
 {{< /truetable >}}
+
+The TrueNAS System expands and show the list of available disks in the system. Filter options change disks displayed on this list.
 
 ### Review
 

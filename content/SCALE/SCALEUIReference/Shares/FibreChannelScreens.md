@@ -19,10 +19,10 @@ Enterprise systems with fibre channel hardware can access fibre channel settings
 
 ## iSCSI Wizard Screens - Fibre Channel.
 
-The **Block (iSCSI) Shares Targets** widget shows iSCSI shares configured for fibre channels.
+The **Block (iSCSI) Shares Targets** card shows iSCSI shares configured for fibre channels.
 The **Wizard** button on the header opens the **Wizard iSCSI** wizard on the **Target** screen. See [Target Screens - Fibre Channel](#iscsi-wizard-target-screen---fibre-channel) below.
 
-{{< trueimage src="/images/SCALE/Shares/SharesScreenFC.png" alt="Block (iSCSI) Shares Targets Widget with Fibre Channel" id="Block (iSCSI) Shares Targets Widget with Fibre Channel" >}}
+{{< trueimage src="/images/SCALE/Shares/SharesScreenFC.png" alt="Block (iSCSI) Shares Targets Card with Fibre Channel" id="Block (iSCSI) Shares Targets Card with Fibre Channel" >}}
 
 The <span class="material-icons">more_vert</span> icon button shows two options: a toggle for **Turn On Service**/**Turn Off Service** and **Config Service**.
 **Config Service** opens the **[iSCSI Global Configuration]({{< ref "iSCSISharesScreens/#iscsi-global-configuration-screen" >}})** screen. 
@@ -35,7 +35,7 @@ The **Wizard** button opens the iSCSI wizard on the **Targets** screen with the 
 * **Extent**
 * **Protocol Options**
 
-To access the individual iSCSI screens click on the iSCSI widget header.
+To access the individual iSCSI screens click on the iSCSI card header.
 The **Targets** screen opens by default.
 For more information on iSCSI screens and settings, see [**iSCSI Screens - Fibre Channel**](#iscsi-share-screens---fibre-channel) below.
 
@@ -71,7 +71,7 @@ The iSCSI wizard **Protocol Options** screen for fibre channel shows three setti
 
 ## iSCSI Share Screens - Fibre Channel
 
-Clicking on the iSCSI widget header opens the iSCSI share screens.
+Clicking on the iSCSI card header opens the iSCSI share screens.
 
 **Global Target Configuration** opens the iSCSI service configuration screen.
 
@@ -97,7 +97,7 @@ The **iSCSI Targets** screen shows a list of targets configured in the system an
 
 #### Details for Target
 
-The screen shows four widgets on the right side of the screen for the selected target: **Fibre Channel Port**, **Fibre Channel Connections**, **Extents**, and **iSCSI Connections**.
+The screen shows four cards on the right side of the screen for the selected target: **Fibre Channel Port**, **Fibre Channel Connections**, **Extents**, and **iSCSI Connections**.
 
 **Fibre Channel Port** shows the fibre channel port showing the two HA assignments configured on the system, one for the HA primary controller and the other for the standby controller. These are created when you add the targets for an HA system or migrate existing from an earlier TrueNAS (13.0 or 13.3) release to the latest release.
 
@@ -129,7 +129,7 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 {{< trueimage src="/images/SCALE/Shares/EditiSCSITargetFC.png" alt="Edit iSCSI Target Screen - Fibre Channel" id="Edit iSCSI Target Screen - Fibre Channel" >}}
 {{< /columns >}}
 
-{{< expand "Target Basic Info Settings" "v" >}}
+{{< expand "Target Basic Info Settings" "v" >}} {id="iscsi_add_target-basic-fc"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -138,7 +138,7 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 | **Mode** | **Mode** shows three options for a target:<br><li>**iSCSI** - Select to create a standard iSCSI share target.<br><li>**Fibre Channel** - Select to configure an iSCSI target that includes fibre channel.<br><li>**Both** - Select to use both modes.</li> |
 | **Authorized Networks** | Authorized networks allow communication between initiators (client computers) and iSCSI targets (storage devices) over the IP network. **Add** shows the **Network** field. |
 | **Network** | Shows after clicking **Add** to the right of **Authorized Networks**. Enter the IP address for the network and select the netmask (CIDR) from the dropdown list. Adds the network address to the authorized network list. |
-| **Do not connect to a fibre channel port** | Select to create an iSCSI share and target withoug fibre channel. |
+| **Do not connect to a fibre channel port** | Select to create an iSCSI share and target without fibre channel. |
 | **Use an existing port** | Select to use an existing iSCSI port(s) already configured on the system. Select when migrating an existing TrueNAS FreeBSD-based iSCSI fibre channel configuration to a later TruenNAS Debian Linux-based release. Shows a dropdown list with existing ports. |
 | **Create new virtual port** | Select to create a new virtual iSCSI port for fibre channel configuration. Use when setting up a new iSCSI share target and fibre channel ports. Shows the **Create a new virtual port** field. Select from the options on the dropdown list. |
 {{< /truetable >}}
@@ -227,7 +227,7 @@ Ports are configured while setting up targets and extents. When migrating from e
 
 The **Edit** icon opens the **Change Number of Virtual Ports** dialog.
 
-#### Change Number of Virtual Ports Dialog
+#### Change Number of Virtual Ports Dialog {id="iscsi_fiber-channel-ports"}
 
 The **Change Number of Virtual Ports** dialog shows the **Virtual Ports** field where you enter a numeric value to specify the number of ports for the selected fibre channel.
 

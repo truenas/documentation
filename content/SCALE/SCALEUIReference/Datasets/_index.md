@@ -18,14 +18,14 @@ tags:
 ---
 
 
-The **Datasets** screen and widgets show information about datasets and zvols, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show encryption status, and list permissions for datasets.
+The **Datasets** screen and cards show information about datasets and zvols, provide access to data management functions, indicate the dataset roles, list the services using the dataset, show encryption status, and list permissions for datasets.
 The screen focuses on managing data storage, including user and group quotas, snapshots, and other data protection measures.
 
 ## Datasets Screen
 
 The **Datasets** screen shows **No Datasets** and a **Create Pool** button until you add a pool and the first root dataset.
 
-After creating a dataset, the screen shows the dataset tree table on the left and the **Details for *datasetname*** [dataset widgets](#dataset-widgets) on the right.
+After creating a dataset, the screen shows the dataset tree table on the left and the **Details for *datasetname*** [dataset cards](#dataset-cards) on the right.
 The tree table with multiple datasets lists parent and child datasets (or zvols) on the system. Icons representing the storage type or a service, such as SMB share or the system dataset, show at the right of a row.
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetsScreen.png" alt="Datasets Screen" id="Datasets Screen" >}}
@@ -45,7 +45,7 @@ Begin typing the name of a dataset in the **Search** field to filter datasets to
 
 The datasets tree table shows an expandable hierarchical structure, starting with the root dataset, then each non-parent or parent and child datasets, with the child datasets nested under each parent dataset.
 
-The top row of the tree table is selected by default when you go to the **Datasets** screen. The widgets on the right show information for the selected dataset.
+The top row of the tree table is selected by default when you go to the **Datasets** screen. The cards on the right show information for the selected dataset.
 
 Click on any parent dataset to expand the tree table to show nested child datasets.
 
@@ -64,12 +64,12 @@ The <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 
 
 {{< expand "Tree Table Usage Icons" "v" >}} 
 The dataset tree table shows icons representing the service type. Hover over the icons to view the description or icon label.
-Usage in the dataset tree corresponds to the **[Usage widget](#usage-widget)**.
+Usage in the dataset tree corresponds to the **[Usage card](#usage-card)**.
 A dataset with an active task includes an activity spinner when that task is in progress.
 {{< truetable >}}
 | Usage | Icon | Description |
 |------|------|-------------|
-| System dataset | ![DatasetRolesSystemDatasetIcon](/images/SCALE/Datasets/DatasetRolesSystemDatasetIcon.png "Roles System Dataset Icon") | Indicates the parent (root) dataset designated as the system dataset. To change the system dataset, go to **System > Advanced Settings** and edit the **System Dataset Pool** on the **Storage** widget. |
+| System dataset | ![DatasetRolesSystemDatasetIcon](/images/SCALE/Datasets/DatasetRolesSystemDatasetIcon.png "Roles System Dataset Icon") | Indicates the parent (root) dataset designated as the system dataset. To change the system dataset, go to **System > Advanced Settings** and edit the **System Dataset Pool** on the **Storage** card. |
 | Share | ![DatasetRolesShareGenericIcon](/images/SCALE/Datasets/DatasetRolesShareGenericIcon.png "Roles Dataset Share Icon") | Indicates the dataset is used by a share or that child datasets of the parent are used by a share. |
 | SMB share | ![DatasetRolesSMBShareIcon](/images/SCALE/Datasets/DatasetRolesSMBShareIcon.png "Roles Dataset SMB Share Icon") | Indicates the dataset is used by an SMB share. |
 | VM | ![DatasetRolesVMIcon](/images/SCALE/Datasets/DatasetRolesVMIcon.png "Roles Dataset VM Icon") | Indicates the dataset is used by a virtual machine (VM). |
@@ -77,27 +77,27 @@ A dataset with an active task includes an activity spinner when that task is in 
 {{< /truetable >}}
 {{< /expand >}}
 
-## Dataset Details Widgets
+## Dataset Details Cards
 
-Each dataset has a set of information cards (widgets) in the **Details for *datasetname*** area of the screen. 
-These widgets and information is grouped by functional areas. 
-The widgets for a root or parent dataset differ from a child dataset, or a dataset used by another service or with encryption.
+Each dataset has a set of information cards (cards) in the **Details for *datasetname*** area of the screen. 
+These cards and information is grouped by functional areas. 
+The cards for a root or parent dataset differ from a child dataset, or a dataset used by another service or with encryption.
 
-Dataset widgets are:
-* **[Details](#details-widget)** 
-* **[Dataset Space Management](#dataset-space-management-widget)**
-* **[Data Protection](#data-protection-widget)**
-* **[Permissions](#permissions-widget)**
-* **[Usage](#usage-widget)**
-* **[ZFS Encryption](#zfs-encryption-widget)**
+Dataset cards are:
+* **[Details](#details-card)** 
+* **[Dataset Space Management](#dataset-space-management-card)**
+* **[Data Protection](#data-protection-card)**
+* **[Permissions](#permissions-card)**
+* **[Usage](#usage-card)**
+* **[ZFS Encryption](#zfs-encryption-card)**
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetWidgetsSystemDataset.png" alt="Dataset Details Widgets System Dataset" id="Dataset Details Widgets System Dataset" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetWidgetsSystemDataset.png" alt="Dataset Details Cards System Dataset" id="Dataset Details Cards System Dataset" >}}
 
-### Details Widget
+### Details Card
 
-The **Details** widget shows information about the dataset that allows you to manage an existing dataset.
+The **Details** card shows information about the dataset that allows you to manage an existing dataset.
 
-{{< trueimage src="/images/SCALE/Datasets/DetailsWidgetRootSystemDataset.png" alt="Details Widget System Dataset" id="Details Widget System Dataset" >}}
+{{< trueimage src="/images/SCALE/Datasets/DetailsWidgetRootSystemDataset.png" alt="Details Card System Dataset" id="Details Card System Dataset" >}}
 
 Information includes:
 * **Sync** - Shows the type of dataset.
@@ -114,12 +114,12 @@ When managing your TrueNAS system, it is generally best practice to create dedic
 
 **Edit** opens the **[Edit Dataset](#add-and-edit-dataset-screens)** screen for the selected dataset.
 
-**[Delete](#delete-dataset)** shows on the **Details** widget for non-root datasets.
+**[Delete](#delete-dataset)** shows on the **Details** card for non-root datasets.
 Use the **Disconnect/Export** option on the **[Storage Dashboard]({{< ref "/SCALE/SCALEUIReference/Storage" >}})** screen to deleate a root dataset.
 
 **Delete** opens a [**Delete dataset**](#delete-window) window with information about other options or services using the dataset, for example, a parent to other datasets, the services child datasets of a parent dataset uses, shares like SMB and/or NFS, or a multiprotocol share, and the path to the datasets the shares use.
 
-**Promote** shows on the **Details** widget for a dataset created by cloning a snapshot on the dataset tree table.
+**Promote** shows on the **Details** card for a dataset created by cloning a snapshot on the dataset tree table.
 It promotes the cloned child dataset and allows users to delete the parent volume that created the clone.
 Otherwise, you cannot delete a clone while the original volume still exists.
 See [zfs-promote.8](https://openzfs.github.io/openzfs-docs/man/8/zfs-promote.8.html).
@@ -136,14 +136,14 @@ The window includes a field where you enter the path to the dataset.
 **Confirm** activate the **Delete Dataset** button.
 **Delete Dataset** deletes the dataset and all data it contains.
 
-### Space Management Widget
+### Space Management Card
 
-The **Space Management** widget shows the total space allocation (data written, children of the dataset, available space).
-The widget shows if an encrypted dataset is unlocked. After locking the dataset, this widget disappears until you unlock the dataset.
+The **Space Management** card shows the total space allocation (data written, children of the dataset, available space).
+The card shows if an encrypted dataset is unlocked. After locking the dataset, this card disappears until you unlock the dataset.
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetsSpaceManagementWidget.png" alt="Space Management Widget" id="Space Management Widget" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetsSpaceManagementWidget.png" alt="Space Management Card" id="Space Management Card" >}}
 
-The donut graph on the widget provides at-a-glance information and numeric values for the space allocated and used in the selected dataset.
+The donut graph on the card provides at-a-glance information and numeric values for the space allocated and used in the selected dataset.
 This includes data written and space allocated to child datasets of this dataset. It shows the available space in the dataset.
 
 **Manage User Quota** opens the [**User Quotas**]({{< relref "QuotaScreens.md" >}}) screen.
@@ -151,11 +151,11 @@ This includes data written and space allocated to child datasets of this dataset
 
 **Edit** opens the **[Capacity Settings]({{< ref "CapacitySettingsSCALE" >}})** screen where you can set quotas for the dataset.
 
-### Data Protection Widget
+### Data Protection Card
 
-The **Data Protection** widget shows snapshot and backup task information for the dataset.
+The **Data Protection** card shows snapshot and backup task information for the dataset.
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetsDataProtectionWidget.png" alt="Data Protection Widget" id="Data Protection Widget" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetsDataProtectionWidget.png" alt="Data Protection Card" id="Data Protection Card" >}}
 
 **Take Snapshot** opens the **[Add Snapshot]({{< ref "SnapshotsScreens" >}})** screen.
 
@@ -164,47 +164,47 @@ The **Data Protection** widget shows snapshot and backup task information for th
 **No Backup Tasks** shows when no data protection backup tasks are created. 
 **Go to Backups** opens the **[Data Protection]({{< ref "/SCALE/SCALEUIReference/DataProtection" >}})** screen, where you can manage scheduled replication, rsync, and other data protection tasks.
 
-### Permissions Widget
+### Permissions Card
 
-The **Permissions** widget shows the type of ACL permissions applied to the dataset.
+The **Permissions** card shows the type of ACL permissions applied to the dataset.
 ACL types can be **NFSv4** or **Unix Permissions** (POSIX), and each lists access control user or group entries, and the owner and group for the dataset.
 
-The widget shows the owner and type of access control list (ACL) and ACL Entries (ACEs) for the dataset in the lower portion of the widget.
+The card shows the owner and type of access control list (ACL) and ACL Entries (ACEs) for the dataset in the lower portion of the card.
 **Owner** shows both the onwer user and group on one line, formatted as *owner:group*. For example, **Owner: *root:root***.
 
-The permission screen and widget options vary based on the ACL type.
+The permission screen and card options vary based on the ACL type.
 Root datasets have POSIX permissions, and the entries are not editable. 
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetPermissionsWidgetRoot.png" alt="Permissions Widget for Root Dataset" id="Permissions Widget for Root Dataset" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetPermissionsWidgetRoot.png" alt="Permissions Card for Root Dataset" id="Permissions Card for Root Dataset" >}}
 
 Non-root dataset can be POSIX or NFSv4 based on the Dataset Preset selected when you create the dataset.
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetPermissionsWidgetNFSv4.png" alt="Permissions Widget NFSv4 ACL" id="PPermissions Widget NFSv4 ACL" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetPermissionsWidgetNFSv4.png" alt="Permissions Card NFSv4 ACL" id="PPermissions Card NFSv4 ACL" >}}
 
-NFSv4 ACL type (the default ACL type) shows the user and group entries on the **Permissions** widget as buttons that show selectable options to change selectable **Permissions Advanced** and **Flags Advanced** options for that entry on the **Permissions** widget.
+NFSv4 ACL type (the default ACL type) shows the user and group entries on the **Permissions** card as buttons that show selectable options to change selectable **Permissions Advanced** and **Flags Advanced** options for that entry on the **Permissions** card.
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetPermissionsNFSv4EditOptions.png" alt="Permissions Widget NFSv4 Selectable Options" id="Permissions Widget NFSv4 Selectable Options" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetPermissionsNFSv4EditOptions.png" alt="Permissions Card NFSv4 Selectable Options" id="Permissions Card NFSv4 Selectable Options" >}}
 
 **Edit** for a POSIX ACL opens the **Unix Permissions Editor** screen. Root datasets do not show the **Edit** button.
 
 **Edit** for an NFSv4 ACL opens the [**Edit ACL**]({{< ref "EditACLScreens" >}}) screen.
 
-### Usage Widget
+### Usage Card
 
-The **Usage** widget shows the dataset role or services that use it (i.e., a share, application, virtual machine, or the system dataset).
+The **Usage** card shows the dataset role or services that use it (i.e., a share, application, virtual machine, or the system dataset).
 It shows an icon for and information about the service using the dataset. A corresponding icon shows on the row for the dataset in the dataset tree table.
 
 The **Manage Advanced Settings** shows for the system dataset, and opens the **Advanced Settings** screen. 
 If the dataset is associated with a share, a **Manage *SMB* Share** link shows. where *SMB* is the share type and opens the corresponding share screen.
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetsUsageWidgetSystemDataset.png" alt="Usage Widget System Dataset" id="Usage Widget System Dataset" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetsUsageWidgetSystemDataset.png" alt="Usage Card System Dataset" id="Usage Card System Dataset" >}}
 
 It shows **Not Shared** if the dataset is configured with a share preset like **SMB** but does not have a share created.
-The **Usage** widget shows two links: **Create SMB Share** that opens the [**Add SMB** screen]({{< relref "SMBSharesScreens.md" >}}) and **Create NFS Share** that opens the [**Add NFS** screen]({{< relref "NFSSharesScreens.md" >}}).
+The **Usage** card shows two links: **Create SMB Share** that opens the [**Add SMB** screen]({{< relref "SMBSharesScreens.md" >}}) and **Create NFS Share** that opens the [**Add NFS** screen]({{< relref "NFSSharesScreens.md" >}}).
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetUsageWidgetNotShared.png" alt="Usage Widget Not Shared" id="Usage Widget Not Shared" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetUsageWidgetNotShared.png" alt="Usage Card Not Shared" id="Usage Card Not Shared" >}}
 
-The **Usage** widget for a parent dataset with child datasets with shares shows this, but does not link to other screens.
+The **Usage** card for a parent dataset with child datasets with shares shows this, but does not link to other screens.
 
 {{< truetable >}}
 | Usage | Link Included | Description |
@@ -217,22 +217,22 @@ The **Usage** widget for a parent dataset with child datasets with shares shows 
 | Multiprotocol share | [Manage SMB Shares]({{< ref "SMBSharesScreens" >}})<br>[Manage NFS Shares]({{< ref "NFSSharesScreens" >}}) | Shows the name of the SMB and NFS share using the dataset. Each link opens the **Sharing SMB** or **Sharing NFS** screens. Click on the share to edit it. |
 {{< /truetable >}}
 
-### Encryption Widget
+### Encryption Card
 
-The **Encryption** widget only shows for encrypted datasets.
-Options shown in the widget vary based on the type of dataset (root, non-root parent, or child dataset), and whether the dataset is a encrypted parent or an encrypted child dataset that inherits settings from the parent.
+The **Encryption** card only shows for encrypted datasets.
+Options shown in the card vary based on the type of dataset (root, non-root parent, or child dataset), and whether the dataset is a encrypted parent or an encrypted child dataset that inherits settings from the parent.
 It includes the current state of the dataset encryption, the encryption root, and the type.
 
 {{< columns >}}
-{{< trueimage src="/images/SCALE/Datasets/DatasetEncryptionWidget.png" alt="Encryption Widget" id="Encryption Widget" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetEncryptionWidget.png" alt="Encryption Card" id="Encryption Card" >}}
 <--->
-{{< trueimage src="/images/SCALE/Datasets/EncryptionWidgetInherit.png" alt="Encryption Widget Inherit from Parent" id="Encryption Widget Inherit from Parent" >}}
+{{< trueimage src="/images/SCALE/Datasets/EncryptionWidgetInherit.png" alt="Encryption Card Inherit from Parent" id="Encryption Card Inherit from Parent" >}}
 {{< /columns >}}
 
-The **Encryption** widget shows **Lock** when the dataset is unlocked or **Unlock** when the dataset is locked.
-These are not available on the widget for the root dataset. The dataset table also shows **Locked** or **Unlocked by Parent**.
+The **Encryption** card shows **Lock** when the dataset is unlocked or **Unlock** when the dataset is locked.
+These are not available on the card for the root dataset. The dataset table also shows **Locked** or **Unlocked by Parent**.
 
-The **Encryption** widget shows **Export Key** when the encryption type is set to key.
+The **Encryption** card shows **Export Key** when the encryption type is set to key.
 **Export Key** downloads the system-generated encryption key to a JSON file. You can find this in your Windows **Downloads** folder.
 
 **Edit** opens the **Edit Encryption Options for *datasetname*** window. A root dataset does not include the **Edit** button.
@@ -244,10 +244,10 @@ For more details on encryption windows and functions, see [Encryption Settings](
 The **Add Dataset** and **Edit Dataset** screens allow admin users with full control access to create and manage datasets.
 Both screens include the same **Advanced Options** settings but you cannot change the dataset name, **Dataset Preset** selection, or the **Case Sensitivity** settings on the **Advanced Options** screen after clicking **Save** on the **Add Dataset** screen. 
 
-**Edit** on the **Dataset Details** widget opens the **Edit Dataset** screen.
+**Edit** on the **Dataset Details** card opens the **Edit Dataset** screen.
 
-**Edit** on the **Encryption** widget opens an encryption edit window. The **Encryption** widget only shows if a dataset is encrypted.
-**Edit** on the **Permissions** widget opens the **Edit ACL** screen to edit dataset NFSv4 permissions.
+**Edit** on the **Encryption** card opens an encryption edit window. The **Encryption** card only shows if a dataset is encrypted.
+**Edit** on the **Permissions** card opens the **Edit ACL** screen to edit dataset NFSv4 permissions.
 POSIX ACLs open the **Unix Permissions Editor** screen.
 
 **Add Dataset** and **Edit Dataset** screens include the **Basic Options** and **Advanced Options**.
@@ -264,17 +264,17 @@ The **Basic Options** show on the **Advanced Options** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetScreenBasicOptions.png" alt="Add Dataset Basic Options" id="Add Dataset Basic Options" >}}
 
-{{< expand "Basic Option Settings" "v" >}}
+{{< expand "Basic Option Settings" "v" >}} {id="dataset_add_basic"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Parent Path** | A read-only field populated with the full dataset path, from the pool root dataset down to the dataset. Adds the name of the dataset after it is entered in **Name**. For example, *tank/shares/smbshare1*. The dataset name and parent path name are combined and limited to a 200-character maximum length. The maximum nested directory level names in a path are limited to 50. You cannot create a dataset at the 51st level in the directory hierarchy after you account for the nested levels in the parent path. |
-| **Name** | Text entry field that accepts manual or copy/paste entry of a unique identifier for the dataset. Names can consist of upper and lower case letters, numbers, and the dash (-) or underscore (_) special characters. Names cannot have trailing spaces after the dataset name. The dataset name and parent path name are combined and limited to a 200 character maximum length. The maximum nested directory level names in a path are limited to 50. You cannot create a dataset at the 51st level in the directory  hierarchy after you account for the nested levels in the parent path. You cannot change the dataset name after clicking **Save**. The **Name** field on the **Edit Dataset** screen shows the path but is not editable. |
+| **Name** | Text entry field that accepts manual or copy/paste entry of a unique identifier for the dataset. Names can consist of upper and lower case letters, numbers, and the dash (-) or underscore (_) special characters. Names cannot have trailing spaces after the dataset name. The dataset name and parent path name are combined and limited to a 200 character maximum length. The maximum nested directory level names in a path are limited to 50. You cannot create a dataset at the 51st level in the directory hierarchy after you account for the nested levels in the parent path. You cannot change the dataset name after clicking **Save**. The **Name** field on the **Edit Dataset** screen shows the path but is not editable. |
 | **Dataset Preset** | Presets configure dataset settings and permissions based on the type of data sharing the dataset uses, for example, SMB/NFS shares, apps, or generic storage. The options optimize the dataset for a sharing protocol or app, and set the ACL type (NFSv4 or POSIX) best suited to the dataset purpose. Options are: <br><li>**Generic** - Use for general storage datasets that are not associated with SMB, NFS, or multi-protocol shares, or apps. Created with a POSIX ACL.<br><li>**SMB** - Optimizes the dataset for SMB shares. Preselects the **Create SMB Share** option and populates the **SMB Name** field with the value entered in **Name**. Created with an NFSv4 ACL. <br><li> **Apps** - Optimize for use by any application. Created with an NFSv4 ACL. If planning to deploy container applications, the system automatically creates the **ix-apps** dataset for Docker storage for application data. For data storage for individual apps, create separate datasets. <br><li>**Multiprotocol** - Optimized for multi-protocol or mixed-mode NFS and SMB sharing protocols, or to create only an NFS share. Allows clients to use either protocol to access the same data. The **Create NFS Share** and **Create SMB Share** options are pre-selected, and the **SMB Name** field populates with the value entered in **Name**. See [Multiprotcol Shares]({{< ref "MixedModeShares" >}}) for more information. Created with an NFSv4 ACL.<br></li>This setting cannot be edited after saving the dataset. |
 {{< /truetable >}}
 {{< /expand >}}
 
-### Advanced Options
+### Advanced Options 
 
 The **Add Dataset** and **Edit Dataset** screens show the **Advanced Options** button.
 **Advanced Options** show:
@@ -289,7 +289,7 @@ You can reserve a defined amount of pool space to prevent automatically-generate
 You can configure quotas for only the new dataset or include all child datasets in the quota.
 
 Quota management settings on the **Advanced Options** screen set quotas for the selected dataset, and can set the quota for the child datasets of the selected dataset.
-The **Edit** button on the dataset **Space Management** widget opens the **Capacity Setting** 
+The **Edit** button on the dataset **Space Management** card opens the **Capacity Setting** 
 Options for user or group levels can be accessed from the **Storage Dashboard** screen.
 
 The quota management settings options:
@@ -300,7 +300,7 @@ These settings also display on the **[Capacity Settings]({{< ref "CapacitySettin
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetQuotasManagement.png" alt="Add Dataset Quota Options" id="Add Dataset Advanced Quota Options" >}}
 
-{{< expand "Quota Settings" "v" >}}
+{{< expand "Quota Settings" "v" >}} {id="dataset_add_quota-mgmt"}
 
 {{< include file="/static/includes/DatasetQuotaSettings.md" >}}
 
@@ -310,7 +310,7 @@ These settings also display on the **[Capacity Settings]({{< ref "CapacitySettin
 
 Encryption settings apply key or passphrase type encryption to the selected dataset, and encrypt any child datasets of an encrypted parent.
 Encryption settings show on in the **Advanced Options** screen for the **Add Dataset** screen, but not on the **Edit Dataset** screen.
-**Edit** on the [**Encryption** widget](#zfs-encryption-widget) opens the **Edit Encryption Options for *datasetName*** window, showing the current encryption settings for the selected dataset and allowing you to change the encryption type settings.
+**Edit** on the [**Encryption** card](#zfs-encryption-card) opens the **Edit Encryption Options for *datasetName*** window, showing the current encryption settings for the selected dataset and allowing you to change the encryption type settings.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetBasicEncryptionAndOtherOptions.png" alt="Add Dataset Encryption Options Key" id="Add Dataset Encryption Options Key" >}}
 
@@ -324,7 +324,7 @@ The **Encryption** option (pre-selected), when selected, shows the key type encr
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetEncryptionPassphrase.png" alt="Add Dataset Encryption Options - Passphrase" id="Add Dataset Encryption Options - Passphrase" >}}
 
-{{< expand "Encryption Settings" "v" >}}
+{{< expand "Encryption Settings" "v" >}} {id="dataset_add_encryption"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -340,7 +340,7 @@ The **Other Options** section tunes the dataset for specific data-sharing protoc
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetOtherOptionsAdvanced1.png" alt="Dataset Advanced Other Options" id="Dataset Advanced Other Options" >}}
 
-{{< expand "Other Options Settings" "v" >}}
+{{< expand "Other Options Settings" "v" >}} {id="dataset_add_advance-other"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

@@ -4,7 +4,7 @@ The **iSCSI Global Configuration** screen opens when you click **Edit** on the *
 
 {{< trueimage src="/images/SCALE/Shares/iSCSIGlobalConfigurationScreen.png" alt="iSCSI Global Configuration Screen" id="iSCSI Global Configuration Screen" >}}
 
-{{< expand "Global Configuration Settings" "v" >}}
+{{< expand "Global Configuration Settings" "v" >}} {id="iscsi_global_config"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

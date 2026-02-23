@@ -2,14 +2,16 @@
 
 The **Add Alert Service** and **Edit Alert Service** screens show the same settings.
 
-Use **Add** to create a new alert service using the **Add Alert Service** screen. The **Type** settings for **AWS SNS** display by default.
+**Add** opens the **Add Alert Service** screen where you can create a new alert service.
+
+The **Type** settings for **AWS SNS** display by default.
 To add an alert service for another option, use the **Type** dropdown list. Only the **Authentication Settings** change for each option.
 
-Use the **Edit Alert Service** screen to modify settings for a service. Select the <span class="material-icons">more_vert</span> icon for the service, and then click **Edit** to display the **Edit Alert Service** screen.
+The **Edit Alert Service** screen settings allow you to modify a service. Select the <span class="material-icons">more_vert</span> icon for the service, and then click **Edit** to display the **Edit Alert Service** screen.
 
 ![AddAlertServiceScreen](/images/SCALE/SystemSettings/AddAlertServiceScreen.png "Add Alert Service")
 
-### Name and Type Settings
+### Name and Type Settings {id="alert_serv_config"}
 
 {{< truetable >}}
 | Setting | Description |

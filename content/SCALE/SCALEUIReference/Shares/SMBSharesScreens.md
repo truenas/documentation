@@ -13,17 +13,17 @@ tags:
 - data sharing
 ---
 
-## Windows (SMB) Shares Widget
+## Windows (SMB) Shares Card
 
-If you have not added SMB shares to the system, the SMB widget shows text stating general information about the Windows (SMB) Shares until a share is added.
+If you have not added SMB shares to the system, the SMB card shows text stating general information about the Windows (SMB) Shares until a share is added.
 
-{{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Windows (SMB) Share Widget without Shares" id="Windows (SMB) Share Widget without Shares" >}}
+{{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidgetNoShares.png" alt="Windows (SMB) Share Card without Shares" id="Windows (SMB) Share Card without Shares" >}}
 
-**Add** at the top right of the widget opens the [**Add SMB** screen](#add-and-edit-smb-screens) where you configure SMB shares.
+**Add** at the top right of the card opens the [**Add SMB** screen](#add-and-edit-smb-screens) where you configure SMB shares.
 
-After adding an SMB share, it is listed in the table on the widget.
+After adding an SMB share, it is listed in the table on the card.
 
-{{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidget.png" alt="Windows (SMB) Share Widget with Shares" id="Windows (SMB) Share Widget with Shares" >}}
+{{< trueimage src="/images/SCALE/Shares/WindowsSMBShareWidget.png" alt="Windows (SMB) Share Card with Shares" id="Windows (SMB) Share Card with Shares" >}}
 
 The **Windows (SMB) Shares <span class="material-icons">launch</span>** header shows the status of the SMB service as either **STOPPED** (red) or **RUNNING** (green). Before adding the first share, the **STOPPED** status displays in the default color.
 The header is a link that opens the [**Sharing > SMB** screen](#smb-screen).
@@ -35,8 +35,8 @@ The <span class="material-icons">more_vert</span> dropdown list shows four optio
 * **SMB Sessions** opens the **SMB Status** screen with showing **Sessions**.
 * **Audit Logs** opens the [**Audit** screen]({{< ref "AuditingSCALE" >}}) with a predefined filter applied to show the SMB logs.
 
-The widget shows a table listing SMB shares created in TrueNAS.
-Each SMB share row on the **Windows (SMB) Shares** widget shows the path to the shared dataset, a description if one is entered when the share is added, an **Enabled** toggle that allows you to enable or disable the share, and indicates if audit logging is turned on/off.
+The card shows a table listing SMB shares created in TrueNAS.
+Each SMB share row on the **Windows (SMB) Shares** card shows the path to the shared dataset, a description if one is entered when the share is added, an **Enabled** toggle that allows you to enable or disable the share, and indicates if audit logging is turned on/off.
 
 The <span class="material-icons">more_vert</span> dropdown list for each share shows four options:
 * **<span class="material-icons">edit</span> Edit** opens the [**Edit SMB** screen](#add-and-edit-smb-screens).
@@ -54,7 +54,7 @@ Select **Confirm** to activate the **Delete** button.
 
 ## SMB Screen
 
-The **Shares > SMB** screen shows an expanded presentation of the table on the **Windows (SMB) Shares** widget.
+The **Shares > SMB** screen shows an expanded presentation of the table on the **Windows (SMB) Shares** card.
 
 {{< trueimage src="/images/SCALE/Shares/SharesSMBScreen.png" alt="Shares SMB Screen" id="Shares SMB Screen" >}}
 
@@ -89,13 +89,13 @@ The two SMB share configuration screens, **Add SMB** and **Edit SMB**, have the 
 The **Create Dataset** option becomes active after selecting a parent dataset in the **Path** file browse field.
 It opens the [**Create Dataset**](#create-dataset) dialog.
 
-**Save** creates the share (or saves an existing one) and adds it to the **Windows (SMB) Shares** widget and the **SMB** table on the **SMB** screen.
+**Save** creates the share (or saves an existing one) and adds it to the **Windows (SMB) Shares** card and the **SMB** table on the **SMB** screen.
 
 **Enable Now** appears on both the Add SMB and Edit SMB screens after selecting the **Time Machine Share** option in **Purpose** if the **Enable SMB2/3 Protocol** option is not already enabled in the **Advanced Options** section of the [**SMB** service screen]({{< ref "SMBServicesScreen.md" >}}).
 
 **Enable Now** also appears on both the **Add SMB** and **Edit SMB** screens after selecting the **Final Cut Pro Storage Share** option in **Purpose** if the **Enable Apple SMB2/3 Protocol Extensions** option is not already enabled in the **Advanced Options** section of the [**SMB** service screen]({{< ref "SMBServicesScreen.md" >}}). When this requirement is not met, an inline requirement error message appears below the **Purpose** field stating: *This parameter requires Apple SMB2/3 protocol extension support to be enabled in SMB service.* Click **Enable Now** to enable the required setting. The service updates automatically.
 
-### Basic Settings
+### Basic Settings {id="smb_add_basic"}
 
 The **Basic Options** settings show by default on the **Add** and **Edit SMB** screens. Basic settings show for all share options in the **Purpose** dropdown list; only the **External Share** option shows the **Remote Path** setting.
 
@@ -111,7 +111,7 @@ The **Basic Options** settings show by default on the **Add** and **Edit SMB** s
 | **Name** | Sets the name for the share. This text entry field accepts manual entry or copy/paste of a name for the share that does not exceed 80 characters. A name must not exceed 80 characters because of how the SMB protocol uses the name. A name cannot have invalid characters as specified in Microsoft documentation MS-FSCC section 2.1.6. <br>**Name** is automatically populated with the name of the dataset when you use **Create Dataset**. If not supplied, the share name becomes the last component of the path. This forms part of the full share path name when SMB clients perform and SMB tree connect. <br>If changing the name, follow the naming conventions for [files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions) or [share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea). |
 | **Purpose** | Sets the share type to one selected on the dropdown list. Options are: <br><li>**Default Share** - The SMB share uses standard configuration with default settings suitable for general-purpose file sharing. This is the recommended option when you do not need specialized share functionality. <br><li>**Time Machine Share** - The SMB share is optimized for Apple Time Machine backups. This option configures the share to serve as a backup destination for macOS devices. It requires SMB2/3 protocol support enabled in the SMB service configuration. <br><li>**Final Cut Pro Storage Share** - Available in TrueNAS 25.10.1 and later. The SMB share is optimized for Final Cut Pro workflows. This option requires Apple SMB2/3 protocol extensions enabled in the SMB service configuration and forcibly enables Apple name mangling for proper media file handling. **Warning**: Name mangling can cause unexpected behavior for existing data written without this feature enabled. See [Setting Up Final Cut Pro SMB Shares]({{< ref "FCPShare.md" >}}) for details.<br><li>**Multi-Protocol Share** - The SMB share is configured for multi-protocol (SMB and NFS) access. Set this if the path is shared through NFS, FTP, or used by containers or apps. Note: This setting can reduce SMB share performance because it turns off some SMB features for safer interoperability with external processes.<br><li>**Time Locked Share** - The SMB share makes files read-only through the SMB protocol after the set grace period ends. <br>**WARNINGS**: This setting does not work if the path is accessed locally or if another SMB share without the **Time Locked Share** purpose uses the same path.<br>This setting might not meet regulatory requirements for write-once storage.<br><li>**Private Datasets Share** - The server creates a new ZFS dataset for each user when the client connects, using the specified dataset naming schema in options. The server uses this dataset as the share path during the SMB session. This provides isolated storage spaces for individual users.<br><li>**External Share** - The SMB share is a DFS proxy to a share hosted on an external SMB server. Use this option to redirect users to shares on other servers.</li> The selected option applies predetermined settings and changes the settings shown in [**Other Options**](#other-options-settings) when showing advanced options. |
 | **Remote Path** | Sets the path to a remote server and share. Each server entry must include a full domain name or IP address and the share name. Separate the server and share name with the `\` characters. Example: *192.168.0.200\SHARE*. This text entry field accepts copy/paste of a path to the external server and share. Shows when **Purpose** is set to **External Share**. |
-| **Description** | A text-entry field for a brief description or notes about how this share is used. The description entered shows in the **Description** column on the **Windows (SMB) Shares** widget on the **Shares** dashboard and the **SMB** table on the **SMB** screen. |
+| **Description** | A text-entry field for a brief description or notes about how this share is used. The description entered shows in the **Description** column on the **Windows (SMB) Shares** card on the **Shares** dashboard and the **SMB** table on the **SMB** screen. |
 | **Enabled** | A toggle that shows the status of the share and allows enabling or disabling the share. This does not enable or disable the SMB service. **Enabled** is the default setting. |
 {{< /truetable >}}
 
@@ -125,7 +125,7 @@ The **Basic Options** settings show by default on the **Add** and **Edit SMB** s
 **Access** and **Audit Logging** settings show for all share options in the **Purpose** dropdown list.
 The **Other Options** settings change based on the share option selected in the **Purpose** dropdown list.
 
-#### Access Settings
+#### Access Settings {id="smb_add_advanced-access"}
 
 **Access** settings customize access to the share and files, and specify allowed or denied access for host names or IP addresses.
 All share options listed in the **Purpose** dropdown show these settings.
@@ -165,7 +165,7 @@ Shares with **Purpose** set to **Legacy Share** display additional access contro
 See [Legacy Share Settings](#legacy-share-settings) for complete details on these options.
 {{< /hint >}}
 
-#### Audit Logging
+#### Audit Logging {id="smb_add_advanced-audit"}
 
 The **Audit Logging** settings enable the auditing function for the SMB share. Configure a watch list to audit specific groups, or an ignore list to audit all groups except those specified. At least one list (watch or ignore) must contain entries for auditing to function. All share options listed in the **Purpose** dropdown show these settings.
 
@@ -181,8 +181,8 @@ For detailed information about group validation and troubleshooting disabled sha
 | **Ignore List** | Specifies groups to exclude from auditing. Click the field to display the dropdown list of group options. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence and operations are audited. |
 {{< /truetable >}}
 
-#### Other Options Settings
-
+#### Other Options Settings {id="smb_add_advanced-other"}
+<!-- Tabs might case issues with the tagging. Do a dry run on this article to verify what if any issues need to be addresed in the tables below -->
 The **Other Options** settings vary based on the option selected on the **Purpose** dropdown list.
 
 {{< tabs "Settings by Purpose Type" >}}
@@ -254,7 +254,7 @@ When **Purpose** is set to **Final Cut Pro Storage Share**, the following settin
 {{< include file="/static/includes/SMBVFSConfigurationWarning.md" >}}
 
 #### Legacy Share Settings
-
+<!-- the duplication of settings in the table might cause issues with tagging. After dry run verify what changes need to be made to fix issues. -->
 The **Edit SMB** screen sets **Purpose** to **Legacy Share** after upgrading to 25.10 when shares created in a release before 25.10 have **Purpose** set to **No Preset**. The **Advanced Options > Other Options** settings selected in the existing share show the same options in the upgraded share.
 
 The **Add SMB** screen does not include the **Legacy Share** option on the list of **Purpose** presets.
@@ -279,7 +279,7 @@ Legacy Access Options (shown in Advanced Options > Access section) modify how cl
 
 Legacy Other Options (shown in Advanced Options > Other Options section) enable deprecated features for compatibility with pre-25.10 configurations.
 
-##### Legacy Access Options
+##### Legacy Access Options {id="smb_add_advanced-access-legacy"}
 
 These settings only show on the **Edit SMB** screen for shares with **Purpose** set to **Legacy Share**.
 
@@ -290,7 +290,7 @@ These settings only show on the **Edit SMB** screen for shares with **Purpose** 
 | **Allow Guest Access** | Allows anonymous access to the share without requiring user credentials. The privileges granted are the same as those for a guest account. Windows 10 version 1709 and Windows Server 2019 and later disable guest access by default and require additional client-side configuration. Not recommended due to security vulnerabilities. Only shows for **Legacy Share** preset. |
 {{< /truetable >}}
 
-##### Legacy Other Options
+##### Legacy Other Options {id="smb_add_advanced-legacy"}
 
 These settings only show on the **Edit SMB** screen after upgrading from an earlier release with an existing SMB share configured with them, unless indicated otherwise.
 Do not confuse these settings with those listed in the [**Settings by Purpose**](#other-options-settings) tabbed area in the section above.
@@ -318,14 +318,14 @@ The **Create Dataset** dialog adds a new dataset under the parent dataset select
 
 {{< trueimage src="/images/SCALE/Shares/CreateDatasetDialog.png" alt="Create Dataset Dialog" id="Create Dataset Dialog" >}}
 
-## Edit Share ACL Screen
+## Edit Share ACL Screen {id="smb_share-acl"}
 
 The **Share ACL for *sharename*** screen edits permissions at the share level for the selected share.
 Settings configure new ACL entries for the selected SMB share and apply them at the entire SMB share level, but do not apply to the dataset.
 It is separate from file system permissions.
 To configure dataset permissions, use the **Edit Filesystem ACL** option.
 
-The **Share ACL for *sharename*** screen opens after clicking on the <i class="material-icons" aria-hidden="true" title="share">share</i> **Edit Share ACL** icon on the **Windows (SMB) Shares** widget or the <span class="material-icons">more_vert</span> on the [**Sharing SMB** details screen](#sharing-smb-details-screen).
+The **Share ACL for *sharename*** screen opens after clicking on the <i class="material-icons" aria-hidden="true" title="share">share</i> **Edit Share ACL** icon on the **Windows (SMB) Shares** card or the <span class="material-icons">more_vert</span> on the [**Sharing SMB** details screen](#sharing-smb-details-screen).
 
 {{< trueimage src="/images/SCALE/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
 
@@ -340,7 +340,7 @@ The **Share ACL for *sharename*** screen opens after clicking on the <i class="m
 |---------|-------------|
 | **SID** | Shows the security identifier (SID) trustee value or to whom this ACL entry (ACE) applies. SID is a unique value of variable length that identifies the trustee. Shown as a [Windows Security Identifier](https://docs.microsoft.com/en-us/windows/win32/secauthz/security-identifiers). **Save** and re-open **Edit Share ACL** to update. |
 | **Who** | Sets permissions to apply to the ACL entry for the domain for the selected account (who). Options are:<br><li>**User** - Select to show the **User** field. Enter or select a user (who) from the dropdown list to apply the permissions for this ACL entry, which is shown as a username.<br><li>**Group** - Select to show the **Group** field. Enter or select a group (who) from the dropdown to apply the permissions for this ACL entry, which is shown as a group name.<br><li>**everyone** - Select to apply the ACL entry permissions to everyone.</li> |
-| **Permission** |Sets the level of access to a selected predefined permission combination from the dropdown list. Options are: <br><li>**FULL** - Grants read access, execute permission, write access, delete objects, change permissions, and take ownership (RXWDPO) permissions. <br><li>**CHANGE** - Grants read access, execute permission, write access, and delete object (RXWD) permissions. <br><li>**READ** - Grants read access and execute permission on the object (RX). For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html).</li> |
+| **Permission** | Sets the level of access to a selected predefined permission combination from the dropdown list. Options are: <br><li>**FULL** - Grants read access, execute permission, write access, delete objects, change permissions, and take ownership (RXWDPO) permissions. <br><li>**CHANGE** - Grants read access, execute permission, write access, and delete object (RXWD) permissions. <br><li>**READ** - Grants read access and execute permission on the object (RX). For more details, see [smbacls(1)](https://www.samba.org/samba/docs/current/man-html/smbcacls.1.html).</li> |
 | **Type** | Sets how TrueNAS applies permissions to the share to the selected option on the dropdown list. Options are: <br><li>**ALLOWED** - Denies all permissions by default, except manually defined permissions. <br><li>**DENIED** - Allows all permissions by default, except manually defined permissions.</li> |
 {{< /truetable >}}
 
@@ -357,7 +357,7 @@ See [Permissions]({{< ref "PermissionsSCALE" >}}) for more information on config
 ## SMB Status Screens
 
 The **SMB Status** screen shows a table of SMB session IDs from the audit logs for SMB share sessions.
-It opens after clicking **SMB** on the <i class="material-icons" aria-hidden="true" title="list">list</i> icon on the **System > Services** screen, or after clicking **SMB Sessions** on the <span class="material-icons">more_vert</span> dropdown list on the **Windows (SMB) Shares** widget.
+It opens after clicking **SMB** on the <i class="material-icons" aria-hidden="true" title="list">list</i> icon on the **System > Services** screen, or after clicking **SMB Sessions** on the <span class="material-icons">more_vert</span> dropdown list on the **Windows (SMB) Shares** card.
 
 {{< trueimage src="/images/SCALE/Shares/SMBStatusScreenSessionsTab.png" alt="SMB Status Sessions Tab" id="SMB Status Sessions Tab" >}}
 

@@ -4,7 +4,7 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 
 {{< trueimage src="/images/SCALE/Shares/AddAuthorizedAccessScreen.png" alt="Add Authorized Access Screen" id="Add Authorized Access Screen" >}}
 
-{{< expand "Authentication Method and Group Settings" "v" >}}
+{{< expand "Authentication Method and Group Settings" "v" >}} {id="iscsi_authaccess_add-method-group"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -13,7 +13,7 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "User Settings" "v" >}}
+{{< expand "User Settings" "v" >}} {id="iscsi_authaccess_add-user"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -23,7 +23,7 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Peer Settings" "v" >}}
+{{< expand "Peer Settings" "v" >}} {id="iscsi_authaccess_add-peer"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
