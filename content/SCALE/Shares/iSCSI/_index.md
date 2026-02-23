@@ -2,7 +2,7 @@
 title: "Block Shares (iSCSI)"
 description: "Describes the iSCSI protocol and has tutorials for various configuration scenarios."
 geekdocCollapseSection: true
-weight: 30
+weight: 40
 aliases: 
  - /scale/scaleuireference/shares/iscsi/
  - /scale/scaletutorials/shares/iscsi/

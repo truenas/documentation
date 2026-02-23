@@ -1,7 +1,7 @@
 ---
 title: "Migrating AFP Shares"
 description: "Provides information on migrating AFP shares from FreeBSD- to Linux-based TrueNAS versions."
-weight: 10
+weight: 70
 aliases:
  - /scale/scaletutorials/shares/afpmigration/
  - /scale/scaleuireference/shares/afpmigration/
