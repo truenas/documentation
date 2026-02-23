@@ -2,7 +2,7 @@
 title: "Credentials"
 description: "TrueNAS credential management tutorials and UI reference for users, groups, backup credentials, certificates, directory services, and API keys."
 geekdocCollapseSection: true
-weight: 70
+weight: 10
 related: false
 aliases:
  - /scale/scaleuireference/credentials/

@@ -1,5 +1,5 @@
 ---
-title: "Interface Configurations"
+title: "Interface Configuration"
 description: "Tutorials about configuring the various types of network interfaces available in TrueNAS."
 geekdocCollapseSection: true
 weight: 10

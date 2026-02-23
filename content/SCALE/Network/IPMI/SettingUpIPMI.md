@@ -1,9 +1,10 @@
 ---
 title: "Setting Up IPMI"
 description: "Guides you through setting up Intelligent Platform Management Interface (IPMI) on TrueNAS."
-weight: 50
+weight: 20
 aliases:
  - /scale/scaletutorials/network/settingupipmi/
+ - /scale/network/settingupipmi/
 tags:
 - network
 - ipmi
