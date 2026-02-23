@@ -2,7 +2,7 @@
 title: "WebShare"
 description: "Tutorials for configuring WebShare, a web-based file sharing feature in TrueNAS."
 geekdocCollapseSection: true
-weight: 50
+weight: 40
 tags:
 - webshare
 - shares

@@ -93,7 +93,7 @@ To create a dataset and share from the **Add Dataset** screen:
    You can also set permissions for the share from the **Shares** screen by selecting the share, then selecting the option to **Edit Filesystem ACL** for SMB, or set up NFS share permissions from the **Add NFS** share screen.
 
 To create a dataset while adding the share, see [Setting Up Sharing]({{< ref "SetupSharing" >}}) which covers the process of setting up the share and creating the dataset at the same time from the **Shares** screen.
-See [Manage SMB Shares]({{< ref "ManageSMBShares" >}}) or [Manage NFS Shares]({{< ref "AddingNFSShares" >}}) for more information on adding and managing SMB or NFS shares.
+See [Adding and Managing SMB Shares]({{< ref "AddManageSMBShares" >}}) or [Manage NFS Shares]({{< ref "AddingNFSShares" >}}) for more information on adding and managing SMB or NFS shares.
 
 ## Taking the Next Step
 After you finish creating your initial pool and the datasets or zvols, you can continue building and organizing your TrueNAS pools and datasets or move on to configuring how the system [shares data]({{< ref "SetUpSharing" >}}).

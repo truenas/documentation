@@ -146,7 +146,7 @@ After creating the share, configure dataset permissions to grant access to media
 
 4. Click **Save Access Control List**.
 
-See [Managing SMB Shares]({{< ref "ManageSMBShares.md" >}}) for detailed information on configuring ACL permissions.
+See [Adding and Managing SMB Shares]({{< ref "AddManageSMBShares" >}}) for detailed information on configuring ACL permissions.
 
 ### Start the SMB Service and Mount the Share
 

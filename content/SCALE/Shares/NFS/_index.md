@@ -2,7 +2,7 @@
 title: "NFS Shares"
 description: "Configuration tutorials and UI reference for Unix (NFS) shares in TrueNAS."
 geekdocCollapseSection: true
-weight: 30
+weight: 20
 tags:
 - nfs
 - shares

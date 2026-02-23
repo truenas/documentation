@@ -1,49 +1,22 @@
 ---
-title: "Windows Shares (SMB)"
-description: "Provides information on SMB shares and instructions on creating a basic share and setting up various specific configurations of SMB shares."
-geekdocCollapseSection: true
-weight: 50
-related: false
+title: "Adding and Managing SMB Shares"
+description: "Provides instructions on creating and managing SMB shares, configuring advanced options, and managing ACL permissions."
+weight: 20
 aliases:
  - /scale/scaletutorials/shares/smb/addsmbshares/
+ - /scale/scaletutorials/shares/smb/managesmbshares/
+ - /scale/shares/smb/smbshares/
+ - /scale/shares/smb/managesmbshares/
 tags:
 - smb
 - afp
+- acl
 - shares
 doctype: tutorial
 ---
 
 
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
-
-## About Windows (SMB) Shares
-
-SMB (also known as CIFS) is the native file-sharing system in Windows.
-SMB shares can connect to most operating systems, including Windows, Mac OS, and Linux.
-TrueNAS can use SMB to share files among single or multiple users or devices.
-
-SMB supports a wide range of permissions, security settings, and advanced permissions (ACLs) on Windows and other systems, as well as Windows Alternate Streams and Extended Metadata.
-SMB is suitable for managing and administering large or small pools of data.
-
-TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
-The SMB protocol has multiple versions. During the SMB session negotiation, a typical SMB client can negotiate the highest supported SMB protocol.
-Industry-wide, SMB1 protocol (sometimes referred to as NT1) use is deprecated for security reasons.
-
-{{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
-
-However, most SMB clients support SMB 2 or 3 protocols even when they are not the default.
-
-{{< hint type=note >}}
-Legacy SMB clients rely on NetBIOS name resolution to discover SMB servers on a network.
-TrueNAS disables the NetBIOS name server (nmbd) by default. Enable it on the **Network > Global Settings** screen if this functionality is required.
-
-Mac OS clients use mDNS to discover SMB servers present on the network. TrueNAS enables the mDNS server (avahi) by default.
-
-Windows clients use [WS-Discovery](https://docs.oasis-open.org/ws-dd/ns/discovery/2009/01) to discover the presence of an SMB server.
-You can disable network discovery by default depending on the Windows client version.
-
-Discoverability through broadcast protocols is a convenience feature and is not required to access an SMB server.
-{{< /hint >}}
 
 ## Sharing Administrator Access
 
@@ -363,18 +336,35 @@ See [Setting Up SMB Home Shares]({{< ref "SMBPrivateDatasetShare" >}}) for more 
 {{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
 {{< /expand >}}
 
-## Tuning ACLs for SMB Shares
+## Managing SMB Shares
 
-There are two levels to set SMB share permissions: at the share or for the dataset associated with the share.
-See [Managing SMB Shares]({{< ref "ManageSMBShares" >}}) for more information on these options.
+To manage an SMB share, click <span class="material-icons">more_vert</span> dropdown list to the right of each share to see the options for the share you want to manage. Options are:
 
-See [Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}) for more information on dataset permissions.
+* **Edit** opens the **Edit SMB** screen where you can change settings for the share.
+* **Edit Share ACL** opens the **Share ACL** screen, where you can [add or edit ACL entries](#configuring-smb-share-acl).
+* **Edit Filesystem ACL** opens the **Edit ACL** screen, where you can edit the dataset permissions for the share.
+  The **Dataset Preset** option determines the ACL type and the type of **ACL Editor** screen that opens (POSIX or NSFv4).
+* **Delete** opens a delete confirmation dialog. Use this to delete the share and remove it from the system. Delete does not affect shared data.
 
-### Tuning the Share ACL
+## Configuring SMB Auditing
+
+{{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}
+
+## Modifying ACL Permissions for SMB Shares
+
+{{< include file="/static/includes/ShareACLDialogs.md" >}}
+
+You have two options that modify ACL permissions for SMB shares:
+* **Edit Share ACL** modifies ACL permissions that apply to the SMB share.
+* **Edit Filesystem ACL** modifies ACL permissions at the share dataset level.
+
+See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< ref "/SCALE/Datasets/Permissions/Permissions" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< ref "EditACLScreens" >}}) for more information on the dataset ACL editor screens and setting options.
+
+### Configuring the SMB Share ACL
 
 {{< include file="/static/includes/ShareACLPermissions.md" >}}
 
-### Tuning the Dataset (Filesystem) Permissions
+### Configuring Dataset File System ACL
 
 {{< include file="/static/includes/FilesystemACLPermissions.md" >}}
 
@@ -511,13 +501,3 @@ Add descriptions to each share that identify the purpose of the share.
 The description shows on the **Windows (SMB) Shares** widget and the **SMB** screen.
 
 **Save** changes made to the share.
-
-<div class="noprint">
-
-## SMB Shares Contents
-
-These tutorials describe creating and managing various specific configurations of SMB shares.
-
-{{< children depth="2" description="true" >}}
-
-</div>

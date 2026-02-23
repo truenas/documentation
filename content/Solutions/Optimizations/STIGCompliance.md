@@ -240,7 +240,7 @@ Check share advanced options and share service configurations for invalid networ
 
 To increase network, consider configuring allowed domains on the [**Network > Global Configuration** screen]({{< ref "ManagingGlobalConfig" >}}).
 
-To increase share security, configure allowed host names or IP addresses for [SMB shares]({{< ref "/scale/shares/smb/smbshares/#configuring-share-advanced-options-settings" >}}) or [NFS shares]({{< ref "/SCALE/Shares/NFS/AddingNFSShares/#adding-nfs-share-networks-and-hosts" >}}).
+To increase share security, configure allowed host names or IP addresses for [SMB shares]({{< ref "/SCALE/Shares/SMB/AddManageSMBShares/#configuring-share-advanced-options-settings" >}}) or [NFS shares]({{< ref "/SCALE/Shares/NFS/AddingNFSShares/#adding-nfs-share-networks-and-hosts" >}}).
 
 ### Data Security
 

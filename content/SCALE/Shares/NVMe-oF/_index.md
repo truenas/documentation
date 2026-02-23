@@ -2,7 +2,7 @@
 title: "NVMe-oF Subsystems"
 description: "Provides information on NVMe-oF subsystems and instruction on creating a subsystem and setting up enterprise configurations of subsystems."
 geekdocCollapseSection: true
-weight: 90
+weight: 50
 related: false
 aliases:
  - /scale/scaleuireference/shares/nvme-of/

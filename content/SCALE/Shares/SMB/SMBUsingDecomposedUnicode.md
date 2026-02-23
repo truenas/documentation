@@ -1,6 +1,6 @@
 ---
-title: "SMB Share MacOS Client Limitations When Using Decomposed Unicode Characters"
-description: "Provides information on SMB share MacOS client limitation when using decomposed unicode characters."
+title: "Using SMB Shares with macOS Decomposed Unicode"
+description: "Provides information on SMB share macOS client limitations when using decomposed unicode characters."
 weight: 50
 aliases:
  - /scale/scaletutorials/shares/smb/smbusingdecomposedunicode/
