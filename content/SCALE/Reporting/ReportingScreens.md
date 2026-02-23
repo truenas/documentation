@@ -1,7 +1,7 @@
 ---
-title: "Reporting"
+title: "Reporting Screens"
 description: "Provides information on TrueNAS reporting graph screens and settings."
-weight: 110
+weight: 50
 aliases:
  - /scale/scaleuireference/reportingscreensscale/
  - /scale/scaleuireference/reporting/

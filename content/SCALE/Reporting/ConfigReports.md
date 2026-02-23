@@ -1,7 +1,7 @@
 ---
-title: "Reporting"
+title: "Configuring Reports"
 description: "Provides information on changing settings that control how TrueNAS displays report graphs, how to interact with graphs, and configuring reporting exporters."
-weight: 13
+weight: 20
 aliases:
  - /scale/scaletutorials/configreportsscale/
  - /scale/scaletutorials/reporting/configreportsscale/
