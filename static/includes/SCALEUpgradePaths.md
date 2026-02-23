@@ -29,8 +29,8 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
               F["23.10.2 (Cobia)"] -->|update| G
               G["24.04.2.5 (Dragonfish)"] -->|update| H
               H["24.10.2.4 (Electric Eel)"] -->|update| I
-              I["25.04.2.6 (Fangtooth)"] -->|"update"| J
-            J["25.10.1 (Goldeye)"]
+              I["25.04.2.6 (Fangtooth)"] -->|update| J
+              J["25.10.2 (Goldeye)"]
             {{< /mermaid >}}
           </div>
         </div>
@@ -59,7 +59,7 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
               E["24.04.2.5 (Dragonfish)"]  -->|update| F
               F["24.10.2.4 (Electric Eel)"] -->|update| G
               G["25.04.2.6 (Fangtooth)"] -->|update| H
-            H["25.10.1 (Goldeye)"]
+              H["25.10.2 (Goldeye)"]
             {{< /mermaid >}}
           </div>
         </div>
@@ -76,10 +76,10 @@ Permitted upgrade methods are:
 
 * **update**: Apply updates using the **Update** screen in the TrueNAS UI or install a manual update file.
   Not all upgrade paths support automatic updates (see chart).
-* **ISO install**: Save your TrueNAS configuration file, perform a fresh install using an .iso file for the target version, then upload the saved configuration.
+* **ISO install**: Save your TrueNAS configuration file, perform a fresh install using an <file>.iso</file> file for the target version, then upload the saved configuration.
 
 You can skip major versions using a fresh installation with configuration file restore.
-Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that may affect your configuration.
+Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that might affect your configuration.
 Consider upgrading incrementally through major versions with significant changes, or be prepared to manually reconfigure any incompatibilities after upgrading directly to the target version.
 
 <style>
