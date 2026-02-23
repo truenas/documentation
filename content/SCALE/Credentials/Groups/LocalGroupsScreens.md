@@ -1,7 +1,7 @@
 ---
 title: "Groups Screens"
 description: "Provides information on the Groups screens and settings."
-weight: 20
+weight: 50
 aliases:
  - /scale/credentials/localgroupsscreens/
  - /scale/scaleclireference/account/cligroup/

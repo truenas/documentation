@@ -1,7 +1,7 @@
 ---
 title: "Configuring IPA"
 description: "Provides instructions on configuring and managing IPA configurations in TrueNAS."
-weight: 20
+weight: 50
 aliases:
  - /scale/scaletutorials/credentials/directoryservices/configipascale/
 tags:

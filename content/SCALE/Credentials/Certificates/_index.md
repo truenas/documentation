@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/credentials/certificates/
  - /scale/scaleclireference/system/clicertificate/
  - /scale/scaleuireference/credentials/certificates/
-weight: 50
+weight: 80
 tags:
  - certificates
 related: false

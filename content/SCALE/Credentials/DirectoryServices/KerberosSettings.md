@@ -1,7 +1,7 @@
 ---
 title: "Kerberos Settings Screen"
 description: "Provides information on the **Kerberos Settings** widget and configuration screen settings."
-weight: 40
+weight: 80
 aliases:
  - /scale/scaleuireference/credentials/directoryservices/kerberossettings/
  - /scale/credentials/directoryservices/activedirectoryscale/

@@ -2,7 +2,7 @@
 title: "Directory Services Screens"
 description: "Describes the screens and fields in the TrueNAS Directory Services section."
 geekdocCollapseSection: true
-weight: 30
+weight: 95
 aliases:
  - /scale/scaleuireference/credentials/directoryservices/
  - /scale/credentials/directoryservices/activedirectoryscale/

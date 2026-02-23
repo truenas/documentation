@@ -1,7 +1,7 @@
 ---
 title: "Cloud Credentials Screens"
 description: "Provides information on the Cloud Credentials screens and settings."
-weight: 10
+weight: 20
 aliases: 
  - /scale/scaleuireference/credentials/backupcredentials/cloudcredentialscreens/
  - /scale/scaleclireference/task/cloudsync/clicredential/

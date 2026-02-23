@@ -1,7 +1,7 @@
 ---
 title: "KMIP Screen"
 description: "Describes the fields in the KMIP Key Status screen on TrueNAS Enterprise."
-weight: 75
+weight: 50
 aliases:
  - /scale/scaleuireference/credentials/kmipscale/
  - /scale/scaleclireference/system/clikmip/

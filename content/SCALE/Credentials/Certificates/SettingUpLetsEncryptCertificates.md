@@ -2,7 +2,7 @@
 title: "Creating ACME Certificates"
 description: "Provides information on generating ACME certificates in TrueNAS using Let's Encrypt."
 geekdocCollapseSection: true
-weight: 50
+weight: 70
 tags:
 - certificates
 - acme

@@ -1,7 +1,7 @@
 ---
 title: "Certificates Screens"
 description: "Provides information on the Certificates screens and settings."
-weight: 10
+weight: 20
 aliases:
  - /scale/scaleuireference/credentials/certificates/certificatesscreensscale/
  - /scale/scaleclireference/system/clicertificate/

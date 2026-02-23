@@ -1,8 +1,8 @@
 ---
-title: "Setting Up Directory Services"
+title: "Directory Services"
 description: "Tutorials for configuring the various directory service credentials."
 geekdocCollapseSection: true
-weight: 30
+weight: 60
 aliases:
  - /scale/scaletutorials/credentials/directoryservices/
  - /scale/credentials/directoryservices/activedirectoryscale/

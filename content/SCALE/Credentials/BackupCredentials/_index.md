@@ -2,7 +2,7 @@
 title: "Backup Credentials"
 geekdocCollapseSection: true
 description: "Backup credential tutorials for integrating TrueNAS with cloud storage providers by setting up SSH connections and keypairs."
-weight: 40
+weight: 70
 aliases:
  - /scale/scaletutorials/credentials/backupcredentials/
  - /scale/credentials/backupcredentials/cloudcredentialsscale/
