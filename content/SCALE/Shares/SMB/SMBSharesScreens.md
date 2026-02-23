@@ -1,7 +1,7 @@
 ---
 title: "SMB Shares Screens"
 description: "Provides information on SMB share screens and settings."
-weight: 50
+weight: 80
 aliases:
  - /scale/scaleuireference/shares/smbsharesscreens/
  - /scale/scaleuireference/shares/smb/smbsharesscreens/

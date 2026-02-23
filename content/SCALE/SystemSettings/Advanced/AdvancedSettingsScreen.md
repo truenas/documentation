@@ -1,7 +1,7 @@
 ---
 title: "Advanced Settings Screen"
 description: "Provides information on the System Settings > Advanced screen, widgets, and configuration screen settings."
-weight: 50
+weight: 110
 aliases:
  - /scale/scaleuireference/systemsettings/advancedsettingsscreen/
  - /scale/scaleuireference/systemsettings/advancedsettings/

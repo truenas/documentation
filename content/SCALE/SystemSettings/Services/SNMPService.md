@@ -1,7 +1,7 @@
 ---
 title: "Configuring SNMP Service"
 description: "Provides information on configuring SNMP service in TrueNAS."
-weight: 55
+weight: 40
 aliases: 
  - /scale/scaletutorials/systemsettings/services/snmpservicescale/
 tags:

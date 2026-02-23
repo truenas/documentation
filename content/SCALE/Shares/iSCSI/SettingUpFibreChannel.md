@@ -1,7 +1,7 @@
 ---
 title: "Setting Up Fibre Channel"
 description: "Provides instructions on setting up Fibre Channel on TrueNAS."
-weight: 40
+weight: 20
 tags:
 - fibre channel
 - iSCSI

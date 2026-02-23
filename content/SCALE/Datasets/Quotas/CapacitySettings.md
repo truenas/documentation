@@ -1,7 +1,7 @@
 ---
 title: "Capacity Settings Screen"
 description: "Provides information on the quota settings and functions found on the Capacity Settings screen."
-weight: 30
+weight: 50
 aliases:
  - /scale/scaleuireference/datasets/capacitysettingsscale/
  - /scale/scaleuireference/storage/datasets/capacitysettingsscale/

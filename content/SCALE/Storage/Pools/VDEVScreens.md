@@ -1,7 +1,7 @@
 ---
 title: "VDEV Screens"
 description: "Provides information on settings and functions found on the VDEVs screens and widget."
-weight: 45
+weight: 60
 aliases:
  - /scale/scaleuireference/storage/devicesscreensscale/
  - /scale/scaleuireference/storage/pools/devicesscreensscale/

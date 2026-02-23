@@ -1,7 +1,7 @@
 ---
 title: "Network Configuration Screens"
 description: "The Network Configuration widget shows the general TrueNAS network settings not specific to any interface."
-weight: 50
+weight: 40
 aliases:
  - /scale/scaleuireference/network/globalconfigurationscreens/
  - /scale/network/globalconfigurationscreens/

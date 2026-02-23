@@ -11,7 +11,7 @@ aliases:
  - /scale/scaleuireference/toptoolbar/
  - /scale/scaleuireference/scaletopbar/
  - /contributing/issuereporting/prereleaseuserfeedback/
-weight: 3
+weight: 40
 doctype: reference
 ---
 

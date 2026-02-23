@@ -1,7 +1,7 @@
 ---
 title: "Datasets Screens"
 description: "Provides information on the Datasets screens and settings."
-weight: 15
+weight: 70
 aliases:
  - /scale/storage/storagedashboardscreens/datasets/importdatascreenscale/
  - /scale/storage/storagedashboardscreens/datasets/

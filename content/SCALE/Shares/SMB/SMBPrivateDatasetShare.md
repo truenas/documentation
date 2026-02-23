@@ -1,7 +1,7 @@
 ---
 title: "Setting Up SMB Private Dataset Shares"
 description: "Provides instructions on using SMB Private Datasets Share as an alternative to legacy SMB Home Shares."
-weight: 40
+weight: 50
 aliases: 
  - /scale/shares/smb/smbprivatedatasetshare/
  - /scale/shares/smb/smbshares/addsmbhomeshare

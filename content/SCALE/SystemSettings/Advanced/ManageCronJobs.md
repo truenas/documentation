@@ -1,7 +1,7 @@
 ---
 title: "Managing Cron Jobs"
 description: "Provides information on adding or modifying cron jobs in TrueNAS."
-weight: 10
+weight: 30
 aliases:
  - /scale/scaletutorials/systemsettings/advanced/managecronjobsscale/
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "NFS Shares Screens"
 description: "Provides information on NFS Shares screens and settings."
-weight: 30
+weight: 50
 aliases:
  - /scale/scaleuireference/shares/nfssharesscreens/
  - /scale/scaleuireference/shares/nfs/nfssharesscreens/

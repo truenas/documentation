@@ -1,7 +1,7 @@
 ---
 title: "Creating Fusion Pools"
 description: "Provides information on setting up and using fusion pools."
-weight: 35
+weight: 30
 aliases:
  - /scale/scaletutorials/storage/fusionpoolsscale/
  - /scale/scaleuireference/storage/pools/fusionpoolsscale/

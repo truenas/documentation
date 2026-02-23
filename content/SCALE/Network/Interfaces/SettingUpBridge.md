@@ -1,7 +1,7 @@
 ---
 title: "Setting Up a Network Bridge"
 description: "Provides instructions on setting up a network bridge interface."
-weight: 20
+weight: 10
 aliases:
  - /scale/scaletutorials/network/interfaces/settingupbridge/
 tags:

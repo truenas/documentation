@@ -1,7 +1,7 @@
 ---
 title: "LDAP Screens"
 description: "Provides information on the **LDAP** screen and widget settings."
-weight: 40
+weight: 60
 aliases:
  - /scale/credentials/directoryservices/directoryservicesscreens/ldap/
  - /scale/credentials/directoryservices/activedirectoryscale/

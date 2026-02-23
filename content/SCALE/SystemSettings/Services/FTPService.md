@@ -1,7 +1,7 @@
 ---
 title: "Configuring FTP Service"
 description: "Provides instructions on configuring the FTP service including storage, user, and access permissions."
-weight: 20
+weight: 10
 aliases: 
  - /scale/scaletutorials/systemsettings/services/ftpservicescale/
 tags:

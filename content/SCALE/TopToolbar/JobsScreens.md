@@ -1,7 +1,7 @@
 ---
 title: Jobs Screens
 description: "Describes the TrueNAS jobs manager and how to use it to view failed jobs and logs."
-weight: 40
+weight: 50
 tags:
 - tasks
 aliases:

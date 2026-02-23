@@ -1,7 +1,7 @@
 ---
 title: "Managing System Logging"
 description: "Provides information on setting up or changing syslog server settings, the level of logging, the information included in the logs, and using TLS as the transport protocol."
-weight: 20
+weight: 40
 aliases:
  - /scale/scaletutorials/systemsettings/advanced/managesyslogsscale/
 tags:

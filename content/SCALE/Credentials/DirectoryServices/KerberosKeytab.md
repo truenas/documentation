@@ -1,7 +1,7 @@
 ---
 title: "Kerberos Keytab Screens"
 description: "Provides information on the **Kerberos Keytabs** screen and widget settings."
-weight: 90
+weight: 100
 aliases:
  - /scale/scaleuireference/credentials/directoryservices/kerberoskeytab/
  - /scale/credentials/directoryservices/activedirectoryscale/

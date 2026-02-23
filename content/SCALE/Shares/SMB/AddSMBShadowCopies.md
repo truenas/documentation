@@ -1,7 +1,7 @@
 ---
 title: "Using SMB Shadow Copy"
 description: "Provides information on SMB share shadow copies, enabling shadow copies, and resolving an issue with Microsoft Windows 10 v2004 release."
-weight: 30
+weight: 40
 aliases: 
  - /scale/scaletutorials/shares/smb/addsmbshadowcopies/
 tags:

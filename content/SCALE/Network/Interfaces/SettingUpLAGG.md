@@ -1,7 +1,7 @@
 ---
 title: "Setting Up a Link Aggregation"
 description: "Provides instructions on setting up a network link aggregation (LAGG) interface."
-weight: 25
+weight: 20
 aliases:
  - /scale/scaletutorials/network/interfaces/settinguplagg/
 tags:

@@ -2,7 +2,7 @@
 title: "Disks Screen"
 description: "Describes UI screens and dialogs related to disk operations."
 geekdocCollapseSection: true
-weight: 20
+weight: 50
 aliases:
  - /scale/scaleuireference/storage/disksscreen/
  - /scaleuireference/storage/pools/disks/disksscreensscale/

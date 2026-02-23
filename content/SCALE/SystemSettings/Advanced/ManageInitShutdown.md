@@ -1,7 +1,7 @@
 ---
 title: "Managing Init/Shutdown Scripts"
 description: "Provides information on adding or modifying init/shutdown scripts in TrueNAS."
-weight: 50
+weight: 60
 aliases:
  - /scale/scaletutorials/systemsettings/advanced/manageinitshutdownscale/
 tags:

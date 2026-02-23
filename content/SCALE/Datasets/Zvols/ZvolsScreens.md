@@ -1,7 +1,7 @@
 ---
 title: "Zvols Screen"
 description: "Provides information on the settings and functions found on the Zvol screens and widgets."
-weight: 20
+weight: 50
 aliases:
  - /scale/scaleuireference/datasets/zvolsscreensscale/
  - /scale/scaleuireference/storage/datasets/zvolsscreensscale/

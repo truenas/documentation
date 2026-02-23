@@ -1,7 +1,7 @@
 ---
 title: "Adding iSCSI Block Shares"
 description: "Provides instructions on setting up iSCSI block shares manually or using the wizard and starting the service."
-weight: 30
+weight: 10
 tags:
 - iscsi
 - shares

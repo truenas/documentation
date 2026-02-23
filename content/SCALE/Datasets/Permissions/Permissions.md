@@ -1,7 +1,7 @@
 ---
 title: "Configuring ACL Permissions"
 description: "Provides general information on ACLs, and instructions on editing and viewing ACL permissions using the ACL editor screens."
-weight: 55
+weight: 20
 aliases:
  - /scale/scaletutorials/datasets/permissionsscale/
  - /scale/scaleuireference/storage/pools/permissionsscale

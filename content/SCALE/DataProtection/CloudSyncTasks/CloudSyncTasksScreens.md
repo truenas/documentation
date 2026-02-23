@@ -1,7 +1,7 @@
 ---
 title: "Cloud Sync Tasks Screens"
 description: "Provides information on the Cloud Sync task screens and settings."
-weight: 20
+weight: 50
 aliases:
  - /scale/dataprotection/cloudsynctasks/cloudsynctasksscreens/
  - /scale/dataprotection/cloudsynctasks/cloud-sync-tasks/

@@ -1,7 +1,7 @@
 ---
 title: "Storage Dashboard Screens"
 description: "Provides information on the Storage Dashboard widgets and options for pools, devices, and disks listed on this screen."
-weight: 30 
+weight: 40 
 aliases:
  - /scale/scaleuireference/storage/pools/
  - /scale/scaleclireference/storage/

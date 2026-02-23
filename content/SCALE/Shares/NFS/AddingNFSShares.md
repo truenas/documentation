@@ -1,7 +1,7 @@
 ---
 title: "Adding NFS Shares"
 description: "Provides instructions on adding NFS shares, starting NFS service, and accessing the share."
-weight: 30
+weight: 20
 aliases:
  - /scale/shares/nfs/addingnfsshares/
  - /scale/shares/nfs/addingnfsshares/

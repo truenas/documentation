@@ -1,7 +1,7 @@
 ---
 title: "Configuring UPS Service"
 description: "Provides information on configuring UPS service in TrueNAS."
-weight: 75
+weight: 60
 aliases: 
  - /scale/scaletutorials/systemsettings/services/upsservicesscale/
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Managing Network Configurations"
 description: "Provides instructions on configuring or managing global network configuration settings."
-weight: 20
+weight: 10
 aliases:
  - /scale/scaletutorials/network/managingglobalconfig/
  - /scale/scaletutorials/network/addingglobalconf/

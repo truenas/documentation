@@ -1,7 +1,7 @@
 ---
 title: Shutting Down TrueNAS Enterprise HA
 description: "Describes the procedure for shutting down an Enterprise HA system in TrueNAS."
-weight: 50
+weight: 30
 aliases:
  - /scale/scaletutorials/toptoolbar/shutdownscaleha/
 tags:
