@@ -1,8 +1,8 @@
 ---
-title: "Virtual Machines"
+title: "Creating and Managing Virtual Machines"
 description: "Tutorials for configuring TrueNAS SCALE virtualization features and creating virtual machines."
 geekdocCollapseSection: true
-weight: 12
+weight: 20
 aliases:
  - /scale/scaletutorials/virtualmachines/
  - /scale/scaletutorials/virtualization/

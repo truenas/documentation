@@ -1,7 +1,7 @@
 ---
 title: "Adding and Managing VM Devices"
 description: "Provides instructions on adding or managing devices used by VMs."
-weight: 12
+weight: 30
 tags:
  - vm
  - gpu
