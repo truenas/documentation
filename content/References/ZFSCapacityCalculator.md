@@ -8,7 +8,7 @@ tags:
 - storage
 ---
 
-Use this calculator to plan your TrueNAS storage configuration before [creating pools]({{< relref "/SCALE/SCALETutorials/Storage/CreatePoolWizard.md" >}}). Enter your total disk count and compare different RAID types to see usable capacity after accounting for redundancy and ZFS overhead.
+Use this calculator to plan your TrueNAS storage configuration before [creating pools]({{< relref "/SCALE/Storage/Pools/CreatingPools" >}}). Enter your total disk count and compare different RAID types to see usable capacity after accounting for redundancy and ZFS overhead.
 
 ## Quick Configuration Guide
 

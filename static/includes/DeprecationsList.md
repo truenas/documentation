@@ -32,7 +32,7 @@ REST API endpoints do not function in 26 and later.
 See Also:
 
 - [Websocket API Documentation](https://api.truenas.com/)
-- [Managing API Keys]({{< ref "/SCALE/SCALETutorials/TopToolbar/ManagingAPIKeys.md" >}})
+- [Managing API Keys]({{< ref "/SCALE/TopToolbar/ManagingAPIKeys.md" >}})
 
 ---
 

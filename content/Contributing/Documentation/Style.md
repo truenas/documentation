@@ -64,7 +64,7 @@ You can also link directly just by typing the URL with no additional markup: `ww
 HTML linking syntax is also allowed: `<a href="www.example.com">Example Site</a>`
 
 You can also use the `ref` shortcode to link to documents on the TrueNAS Documentation Hub website.
-For example, linking to an existing article such as a TrueNAS tutorial [Dashboard]({{ ref "/SCALE/SCALETutorials/Dashboard.md" }}).
+For example, linking to an existing article such as a TrueNAS tutorial [Dashboard]({{ ref "/SCALE/Dashboard/CustomizingDashboard.md" }}).
 
 To link to another section of the **same** article, use an anchor (`#`) to refer to that section header.
 The header title needs to be in lower case and spaces replaced with dashes (-): `[Escape Characters](#escape-characters)`
@@ -166,7 +166,7 @@ Internal references use the `ref` shortcode to look up a file by name, or the `r
 If linking to file names that are not unique, you must also include the path to that file. For example:
 
 ```
-[Creating a new Dataset]({{\< ref "/SCALETutorials/Storage/Datasets/datasetsScale" >}})
+[Creating a new Dataset]({{\< ref "/SCALE/Datasets/Datasets" >}})
 ```
 
 Linking to the index file of an article bundle requires using the generic linking syntax to point to the article location:

@@ -18,7 +18,7 @@ Now that you are logged in to the web interface, it is time to set up TrueNAS st
 These instructions describe a simple *mirrored* pool setup, where half the selected disks are used for storage and the other half for data protection.
 However, there are many configuration possibilities for your storage environment!
 
-You can read more about these options in [Creating Storage Pools]({{< ref "CreatePoolWizard" >}}).
+You can read more about these options in [Creating Storage Pools]({{< ref "CreatingPools" >}}).
 You can also use the [ZFS Capacity Calculator]({{< ref "/References/ZFSCapacityCalculator" >}}) and [ZFS Capacity Graph]({{< ref "/References/ZFSCapacityGraph" >}}) to compare configuration options.
 
 ## Minimum Storage Requirements
@@ -39,7 +39,7 @@ Log in to TrueNAS.
 
 Begin by configuring your first storage pool.
 
-See [Creating Storage Pools]({{< ref "CreatePoolWizard" >}}) for more information on how to plan for and create pools in TrueNAS.
+See [Creating Storage Pools]({{< ref "CreatingPools" >}}) for more information on how to plan for and create pools in TrueNAS.
 If you want to create additional pools with other disks not assigned to a pool, you can do that now or as you have a need for them.
 
 ### Creating a Storage Pool
@@ -62,7 +62,7 @@ To create a dataset or zvol, you can click **Datasets** on the main navigation p
 
 Organize the pool with as many datasets or zvols you need according to your access and data sharing requirements before moving data into the pool.
 
-See [Adding or Managing Datasets]({{< ref "DatasetsSCALE" >}}) for more information on configuring datasets, or [Adding or Managing Zvols]({{< ref "AddManageZvols" >}}) for more information on zvols.
+See [Adding or Managing Datasets]({{< ref "/SCALE/Datasets/Datasets" >}}) for more information on configuring datasets, or [Adding or Managing Zvols]({{< ref "AddManageZvols" >}}) for more information on zvols.
 
 #### Adding a Dataset and Share
 TrueNAS provides the option to create the dataset and share at the same time.
@@ -88,7 +88,7 @@ To create a dataset and share from the **Add Dataset** screen:
 
 5. Configure permissions for the share. If you have created the share user, set up the share ACL permissions when prompted.
    If you are not ready to configure the share permissions, exit to the main **Datasets** screen.
-   You can modify share dataset permissions later after adding the share user(s) by either selecting the dataset row, then clicking **Edit** on the **Permissions** widget. See [Editing Permissions]({{< ref "PermissionsSCALE" >}}) for more information.
+   You can modify share dataset permissions later after adding the share user(s) by either selecting the dataset row, then clicking **Edit** on the **Permissions** widget. See [Editing Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}) for more information.
    
    You can also set permissions for the share from the **Shares** screen by selecting the share, then selecting the option to **Edit Filesystem ACL** for SMB, or set up NFS share permissions from the **Add NFS** share screen.
 

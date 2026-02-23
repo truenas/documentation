@@ -24,7 +24,7 @@ If using the [Add TrueCloud Backup Task]({{< ref "truecloudbackuptasksscreen" >}
 4. Continue to configure the TrueCloud backup task, then click **Save**.
    TrueNAS creates the task and remote bucket on Storj.
 
-If using the [Cloud Sync Task Wizard]({{< ref "cloudsynctasksscreensscale" >}}):
+If using the [Cloud Sync Task Wizard]({{< ref "CloudSyncTasksScreens" >}}):
 
 1. Select the stored Storj cloud credential from the **Provider > Credentials** dropdown.
  Do this as part of setting up a task or use the wizard to create the bucket without saving a configured task.

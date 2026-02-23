@@ -70,7 +70,7 @@ To migrate to TrueNAS 24.04 using the UI **Update** screen and **Train** selecto
 
 3. Review the TrueNAS migrations warning and verify the system is ready to migrate before confirming and continuing.
 
-4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating TrueNAS]({{< ref "UpdateSCALE.md#performing-an-automatic-update" >}}).
+4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating TrueNAS]({{< ref "/SCALE/SystemSettings/Update#performing-an-automatic-update" >}}).
    It is strongly recommended to download the system configuration backup prior to starting the update.
 
 5. After the system installs the update and restarts, log in and review the system configuration to ensure the migration was successful.

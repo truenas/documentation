@@ -185,7 +185,7 @@ Enter **5** in the Console Setup menu, then enter <kbd>y</kbd> to reset the syst
 
 After setting up network requirements, log into the web UI to complete your system setup by:
 
-* [Completing network configuration] ({{< ref "/SCALE/SCALETutorials/Network" >}}) if not already set up using the Console Setup menu.
+* [Completing network configuration] ({{< ref "/SCALE/Network" >}}) if not already set up using the Console Setup menu.
 * [Setting up storage]({{< ref "SetUpStorageSCALE" >}})
 * [Setting up sharing]({{< ref "SetUpSharing" >}})
 * [Backing Up your configuration]({{< ref "SetUpBackupSCALE" >}})

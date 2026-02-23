@@ -1,0 +1,153 @@
+---
+title: "Managing Users"
+description: "Provides instructions on adding and managing administrator and user accounts."
+weight: 10
+aliases:
+ - /scale/credentials/manageusers/
+ - /scale/credentials/credentialsoverview/managelocalusersscale/
+tags:
+- users
+- accounts
+keywords:
+- enterprise storage solution
+- nas storage
+doctype: tutorial
+---
+
+
+In TrueNAS, user accounts allow flexibility for accessing shared data.
+Typically, administrators create users and assign them to [groups]({{< ref "ManageLocalGroups" >}}).
+Doing so makes tuning permissions for large numbers of users more efficient.
+
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< ref "/SCALE/Credentials/DirectoryServices" >}}).
+
+Using [Active Directory]({{< ref "/SCALE/Credentials/DirectoryServices" >}}) requires setting Windows user passwords in Windows.
+
+To see user accounts, go to **Credentials > Users**.
+
+{{< trueimage src="/images/SCALE/Credentials/UsersScreen.png" alt="User Screen" id="User Screen" >}}
+
+TrueNAS hides all built-in users (except root) by default.
+Click the down arrow in the **Filter by Type** dropdown field to see all user options, including **Built-In**, **Local** (default option), and **Directory Services**.
+You can select any or all options to show all users configured in TrueNAS.
+To filter the user table, click the header column name to sort in ascending/descending order. You can also use the advanced search option to select the search criteria you want to use for a user or type of user.
+
+{{<include file="/static/includes/addcolumnorganizer.md">}}
+
+## Creating an Administrator User Account
+
+{{< include file="/static/includes/AddAdminUserAccount.md" >}}
+
+### Assigning Administrative Group Privileges
+
+TrueNAS 24.04 or newer supports administrator privileges for role-based administrator accounts.
+Users can create new administrator accounts with limited privileges based on their needs.
+Predefined administrator roles are read-only, share admin, and the default full access administrator account.
+See [Using Administrator Logins]({{< ref "adminroles" >}}) for more information.
+
+{{< include file="/static/includes/AddAdminGroup.md" >}}
+
+## Creating User Accounts
+
+{{< include file="/static/includes/AddingAUser.md" >}}
+
+### Disabling a Password
+
+To disable a password, select the user, click **Edit**, and then select **Disable Password**.
+Note that **Disable Password** is not available when **SMB Access** is enabled.
+Setting **Disable Password** hides the **Password** widget, and TrueNAS removes any existing password from the account.
+TrueNAS restricts the account from password-based logins for services like SMB shares and SSH sessions.
+
+To disable all password-based functionality for the account, select the **Lock User** option on the **Access** widget.
+This toggles to **Unlock User** when locked.
+
+### Adding Home Directories
+
+You can add a home directory to a new or an existing user account.
+You can create a dataset to use for user home directories if one does not exist before you add or edit a user. You can also create one while adding or editing the user.
+
+To add a home directory to an existing user, go to **Credentials > Users**, click on the user row, and then click **Edit** to open the **Edit User** screen.
+Scroll down to the **Home Directory** option, click in the field to show the settings.
+
+Select **Create Home Directory**, then enter or browse to select the path to the dataset for home directories in **Home Directory**. For example, change **/var/empty/** to the path to a new dataset.For example, */tank/homedirs*.
+
+Accept the default permissions or clear the checkmark to select the level of permissions you want to apply.
+We recommend leaving the default selections, **Read/Write/Execute** selected for the user home directory.
+
+Click **Save**. TrueNAS creates a new home directory for the user.
+
+## Editing User Accounts
+
+To edit an existing user account, go to **Credentials > Users**.
+Click anywhere on the user row, then click **Edit** to open the **Edit User** configuration screen.
+See [Users Screen]({{< ref "UsersScreen" >}}) for details on all settings.
+
+## Setting Up and Using API Keys
+
+To view API keys that are linked to different user accounts, go to the **Settings** icon on the top toolbar and select **My API Keys**. 
+
+You can also go to **Credentials > Users**, select the user row, and then click the **View API Keys** link on the **Access** widget to open the **User API Keys** screen.
+
+If a key does not exist for the user, click on the **Add API Key** link to open the **Add API Key** screen.
+
+The **Users API Keys** screen shows a table of all API keys linked to user accounts on your TrueNAS.
+
+You can edit or delete your API keys in the **User API Keys** screen.
+Click <i class="material-icons" aria-hidden="true" title="Edit">edit</i> **Edit** to open the **Edit API Key** screen.
+Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> **Delete** to delete an API key.
+
+### Adding an API Key
+
+To add an API key for a user, select the user row on the **Users** table, and then click **Add API Key** to open the **Add API Key** screen.
+Enter a name for the key, select the user in the **Username** dropdown list field if not already populated with the correct username, and click **Save**.
+
+To set the API key to expire, clear the checkmark in **Non-expiring**, then select the date using the calendar option in the field to set when this key expires.
+
+{{< trueimage src="/images/SCALE/Credentials/AddAPIKeyExpiration.png" alt="Set API Key Expiration" id="Set API Key Expiration" >}}
+
+After setting the date, click **Save**. The **Access** widget for this user shows the API Key icon and the **View API Keys** link.
+
+## Clearing Two-Factor Authentication for a User
+
+Administrators can clear two-factor authentication (2FA) for a user from the **Users** screen. This is typically necessary when:
+
+- A user has lost access to their authenticator device (lost phone, broken device, etc.)
+- A user cannot generate valid 2FA codes due to device time synchronization issues
+- A user needs to switch to a different authenticator app or device
+- Troubleshooting 2FA-related login problems
+
+{{< hint type=important >}}
+Clearing 2FA should only be done when necessary, as it temporarily reduces account security. When Global 2FA is enabled, users are prompted to reconfigure 2FA on their next login.
+{{< /hint >}}
+
+To clear 2FA for a user:
+
+1. Go to **Credentials > Users**.
+
+2. Click on the user row to select the user whose 2FA needs to be cleared.
+
+3. On the **Access** widget, click **Clear Two-Factor Authentication**.
+
+   {{< trueimage src="/images/SCALE/Credentials/UsersScreenAccessWidgetWithAPIKey.png" alt="Access Widget with Clear 2FA Button" id="Access Widget with Clear 2FA Button" >}}
+
+   {{< hint type=note >}}
+   The **Clear Two-Factor Authentication** button only appears for users who have 2FA configured. Users without 2FA configured do not show this button.
+   {{< /hint >}}
+
+4. A confirmation dialog appears asking if you want to clear two-factor authentication settings for this user.
+
+   {{< trueimage src="/images/SCALE/Credentials/Clear2FADialog.png" alt="Clear Two-Factor Authentication Dialog" id="Clear Two-Factor Authentication Dialog" >}}
+
+5. Click **Clear** to confirm, or **Cancel** to abort the operation.
+
+After clearing, the user can log in without 2FA codes. If Global 2FA is enabled on the system, the user is prompted to set up 2FA again on their next login.
+
+### User Self-Clearing vs Admin Clearing
+
+Users can also remove their own 2FA configuration using the **Settings** menu:
+
+- User self-clearing: The logged-in user accesses **Settings > Two-Factor Authentication** and clicks **Unset 2FA Secret**. This allows users to manage their own 2FA settings.
+
+- Admin clearing: Administrators use **Credentials > Users > Access Widget > Clear Two-Factor Authentication** to clear 2FA for another user. This is specifically for helping users who cannot access their accounts.
+
+For more information on 2FA configuration and management, see [Managing Global 2FA]({{< ref "ManageGlobal2FA" >}}).
