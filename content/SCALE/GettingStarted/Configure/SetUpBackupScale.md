@@ -77,7 +77,7 @@ Snapshot technology typically uses less storage than full file backups and has m
 {{< expand "Setting Up a Simple Replication Task" "v" >}}
 To create a simple replication task with the TrueNAS replication wizard:
 
-Replication needs an existing [periodic snapshot task]({{< ref "PeriodicSnapshotTasks" >}})** to run before the replication task runs or the replication task fails.
+Replication needs an existing [periodic snapshot task]({{< ref "AddingPeriodicSnapshotTasks" >}})** to run before the replication task runs or the replication task fails.
 You can define a periodic snapshot before manually configuring the replication task, or let the system create the snapshot task by selecting the replication wizard **Replicate Custom Snapshots** option. When using the wizard, TrueNAS automatically creates the periodic snapshot task and then runs the replication task.
 
 1. Create a periodic snapshot task using the replication wizard **Replicate Custom Snapshots** replication option.

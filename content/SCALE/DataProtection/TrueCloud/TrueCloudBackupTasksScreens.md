@@ -1,7 +1,7 @@
 ---
 title: "TrueCloud Backup Tasks Screens"
 description: "Provides information on the TrueCloud Backup Tasks screens and settings."
-weight: 5
+weight: 50
 tags:
 - TrueCloud
 - cloud
@@ -13,6 +13,7 @@ keywords:
 doctype: reference
 aliases:
  - /scale/scaleuireference/dataprotection/truecloudbackuptasksscreen/
+ - /scale/dataprotection/truecloudbackuptasksscreen/
 ---
 
 

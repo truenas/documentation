@@ -1,10 +1,11 @@
 ---
 title: "Rsync Tasks Screens"
 description: "Provides information on the Rsync Tasks screens and settings."
-weight: 30
+weight: 50
 aliases:
  - /scale/scaleuireference/dataprotection/rsynctasksscreensscale/
  - /scale/scaleclireference/task/clirsync/
+ - /scale/dataprotection/rsynctasksscreens/
 tags:
  - rsync
  - ssh

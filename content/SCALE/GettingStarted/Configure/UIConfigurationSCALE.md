@@ -187,7 +187,7 @@ After saving system configuration and debug files, we recommend setting up data 
 * Setting up replication to another system (remote replication)
 * Adding a cloud storage provider service and setting up a cloud sync task
 
-You can take single [snapshots]({{< ref "CreatingSnapshots" >}}) or [schedule periodic snapshot tasks]({{< ref "PeriodicSnapshotTasks" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< ref "/SCALE/DataProtection/Replication" >}}) TrueNAS provides.
+You can take single [snapshots]({{< ref "CreatingSnapshots" >}}) or [schedule periodic snapshot tasks]({{< ref "AddingPeriodicSnapshotTasks" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< ref "/SCALE/DataProtection/Replication" >}}) TrueNAS provides.
 
 Another option is to create a cloud storage service provider account and then let TrueNAS manage the backups to that account.
 Use the **Backup Credentials** screen [**Cloud Credentials**]({{< ref "AddCloudCredentials" >}}) to add authentication credentials for a supported cloud service provider, and go to **Data Protection** to schedule a [**Cloud Sync Tasks**]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}}) that regularly backs up your storage data to the cloud.

@@ -1,10 +1,11 @@
 ---
 title: "Creating VMWare Snapshots"
 description: "Provides instructions for creating ZFS snapshots when using TrueNAS as a VMWare datastore."
-weight: 55 
+weight: 20
 aliases:
  - /scale/scaletutorials/dataprotection/creatingvmwaresnapshots/
  - /scale/scaletutorials/storage/creatingvmwaresnapshots/
+ - /scale/dataprotection/creatingvmwaresnapshots/
 tags:
 - vm
 - snapshots
@@ -125,7 +126,7 @@ If you click in *ZFS Filestore** or **Datastores** before you click **Fetch Data
 
     **State** indicates the current status of the VMware connection as **PENDING**, **SUCCESS**, or **ERROR**.
 
-7. [Create a new periodic snapshot task]({{< ref "PeriodicSnapshotTasks" >}}) for the zvol or a parent dataset.
+7. [Create a new periodic snapshot task]({{< ref "AddingPeriodicSnapshotTasks" >}}) for the zvol or a parent dataset.
     If there is an existing snapshot task for the zvol or a parent dataset, VMWare snapshots are automatically integrated with any snapshots created after the VMWare snapshot is configured.
 
     Expand the configured task on the **Periodic Snapshot Tasks** screen and ensure that **VMware Sync** is true.

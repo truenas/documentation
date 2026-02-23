@@ -10,7 +10,7 @@ To create a Storj bucket from the TrueNAS UI:
 Go to **Data Protection**.
 Click **Add** on either the **TrueCloud Backup Tasks** or **Cloud Sync Tasks** widget.
 
-If using the [Add TrueCloud Backup Task]({{< ref "truecloudbackuptasksscreen" >}}) screen:
+If using the [Add TrueCloud Backup Task]({{< ref "TrueCloudBackupTasksScreens" >}}) screen:
 
 1. Select the stored Storj cloud credential from the **Credentials** dropdown.
    Do this as part of setting up a task.

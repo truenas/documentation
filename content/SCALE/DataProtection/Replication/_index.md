@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 aliases:
  - /scale/scaletutorials/dataprotection/addreplicationscale/
  - /scale/scaletutorials/dataprotection/replication/addreplicationscale/
-weight: 100
+weight: 50
 related: false
 keywords:
 - enterprise data storage 

@@ -1,7 +1,7 @@
 ---
 title: "Managing TrueCloud Backup Tasks"
 description: "Provides instructions on setting up a TrueCloud backup task and configuring a Storj iX account to work with TrueNAS."
-weight: 5
+weight: 20
 tags:
 - TrueCloud
 - cloud
@@ -13,6 +13,7 @@ keywords:
 aliases:
  - /scale/scaletutorials/dataprotection/truecloudtasks/
  - /scale/dataprotection/cloudsynctasks/addstorjcloudsynctask/
+ - /scale/dataprotection/truecloudtasks/
 doctype: tutorial
 ---
 
@@ -115,11 +116,11 @@ Select **Use Snapshot** to create and use a snapshot to back up or synchronize t
 Advanced users can write scripts that run immediately before or after the TrueCloud backup task.
 Enter environment variables in either the **Pre-script** or **Post-script** fields.
 The **Post-script** field only runs when the TrueCloud backup task succeeds.
-See [TrueCloud Backup Tasks Screens]({{< ref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for information on available environment variables.
+See [TrueCloud Backup Tasks Screens]({{< ref "TrueCloudBackupTasksScreens/#advanced-options-settings" >}}) for information on available environment variables.
 
 Use **Exclude** to enter a list of files and directories to exclude from sync.
 Press <kbd>Enter</kbd> to separate entries.
-See [TrueCloud Backup Tasks Screens]({{< ref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for syntax examples.
+See [TrueCloud Backup Tasks Screens]({{< ref "TrueCloudBackupTasksScreens/#advanced-options-settings" >}}) for syntax examples.
 
 Use **Transfer Settings** to prevent excess resource consumption by setting the pack size and read concurrency.
 
@@ -131,7 +132,7 @@ To run a scheduled task before the defined time, click the vertical ellipses <sp
 
 To delete a task, click the vertical ellipses <span class="material-icons">more_vert</span> on the task and select **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** for the task to delete. 
 
-See [TrueCloud Backup Tasks Screens]({{< ref "truecloudbackuptasksscreen/#advanced-options-settings" >}}) for more information on TrueCloud Backup Task screens.
+See [TrueCloud Backup Tasks Screens]({{< ref "TrueCloudBackupTasksScreens/#advanced-options-settings" >}}) for more information on TrueCloud Backup Task screens.
 
 ### Restoring Data from TrueCloud Snapshots
 To restore data from a TrueCloud backup, locate an existing snapshot on the **Snapshots widget**.
@@ -143,7 +144,7 @@ Click the vertical ellipses <span class="material-icons">more_vert</span> on the
 {{< trueimage src="/images/SCALE/DataProtection/TrueCloudRestore.png" alt="Restore from Snapshot" id="Restore from Snapshot" >}}
 
 Select **Include Everything** to restore all data, or exclude some data using **Include from subfolder**, **Select paths to exclude**, or **Exclude by pattern**.
-See [TrueCloud Backup Tasks Screens]({{< ref "TrueCloudBackupTasksScreen" >}}) for more information.
+See [TrueCloud Backup Tasks Screens]({{< ref "TrueCloudBackupTasksScreens" >}}) for more information.
 
 Set the local **Target** to the target dataset of the backup task.
 Click **Save** to restore data from the snapshot.

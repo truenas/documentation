@@ -34,7 +34,7 @@ After creating the share, start or restart the SMB service.
 
 When accessing from a Windows client, having more than 512 snapshots on the TrueNAS box can lead to performance issues, as the Windows client often attempts to load all snapshots into the Windows **Previous Versions** tab.
 To avoid this, users should maintain fewer than 512 snapshots or consider accessing from a non-Windows client.
-Alternatively, configure snapshot lifetimes or create an automatic deletion policy via the [Periodic Snapshot Tasks screen]({{< ref "PeriodicSnapshotTasks" >}}). This screen helps users manage the snapshot count more effectively.
+Alternatively, configure snapshot lifetimes or create an automatic deletion policy via the [Periodic Snapshot Tasks screen]({{< ref "AddingPeriodicSnapshotTasks" >}}). This screen helps users manage the snapshot count more effectively.
 
 The latest maintained Mac OS versions allow setting the maximum Time Machine backup size from the Mac OS UI.
 Setting this from the client side is generally recommended for better share flexibility and Mac OS coordination.

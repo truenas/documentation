@@ -5,6 +5,7 @@ weight: 50
 aliases:
  - /scale/scaleuireference/dataprotection/periodicsnapshotTasksscreensscale/
  - /scale/scaleclireference/task/clisnapshottask/
+ - /scale/dataprotection/periodicsnapshottasksscreens/
 tags:
 - snapshots
 - replication
