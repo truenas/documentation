@@ -1,7 +1,7 @@
 ---
 title: "Custom App Screens"
 description: "Provides information on the Install Custom App screen and configuration settings."
-weight: 25
+weight: 50
 aliases:
  - /scale/scaleuireference/apps/installcustomappscreens/
  - /scale/scaleuireference/apps/launchdockerimagescreens/
@@ -12,15 +12,17 @@ tags:
 doctype: reference
 ---
 
-**Custom App** on the [**Discover**]({{< ref "SCALE/Apps" >}}) screen opens the **[Install iX App](#install-ix-app-screen)** guided installation wizard.
+{{< include file="/static/includes/apps/AppsMarket.md" >}}
+
+**Custom App** on the [**Discover**]({{< ref "SCALE/Apps" >}}) screen opens the **[Install Custom App](#install-custom-app-screen)** guided installation wizard.
 <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **[Add Custom App](#add-custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
-## Install iX App Screen
+## Install Custom App Screen
 
-The **Install iX App** screen allows you to configure third-party applications using Docker settings.
+The **Install Custom App** screen allows you to configure third-party applications using Docker settings.
 Use the wizard to configure applications not included in the official catalog.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install iX App Screen" id="Install iX App Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install Custom App Screen" id="Install Custom App Screen" >}}
 
 The panel on the right of the screen links to each setting area.
 Click on a heading or setting to jump to that area of the screen.

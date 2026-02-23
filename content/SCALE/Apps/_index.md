@@ -2,14 +2,18 @@
 title: "Apps"
 description: "Tutorials and UI reference for managing applications in TrueNAS."
 geekdocCollapseSection: true
-weight: 100
+weight: 13
 tags:
 - apps
 related: false
 ---
 
 TrueNAS includes an application catalog for deploying and managing containerized applications.
-Use the **Apps** section to install, configure, and manage applications from the official TrueNAS catalog or custom Docker images.
+
+{{< include file="/static/includes/apps/AppsMarket.md" >}}
+
+The [TrueNAS Applications Market](https://apps.truenas.com/) is the primary resource for app management tutorials and individual app deployment guides.
+This section contains UI reference documentation for the TrueNAS **Apps** screens and settings.
 
 <div class="noprint">
 

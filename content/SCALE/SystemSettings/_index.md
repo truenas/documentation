@@ -2,7 +2,7 @@
 title: "System Settings"
 description: "TrueNAS system settings tutorials and UI reference for General, Advanced, Services, and system management options."
 geekdocCollapseSection: true
-weight: 14
+weight: 15
 related: false
 aliases:
  - /scale/scaletutorials/systemsettings/
