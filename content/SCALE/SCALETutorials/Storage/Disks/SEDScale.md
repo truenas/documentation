@@ -47,6 +47,10 @@ A password-protected SED protects the data stored on the device when the device 
 This allows secure disposal of the device without having to first wipe the contents.
 Repurposing a SED on another system requires the SED password or a full cryptographic erase with [PSID revert](https://github.com/truenas/sedutil/blob/22ecc4f56e84239f780856b56185267e4b225d43/docs/sedutil-cli.8#L68).
 
+{{< enterprise >}}
+{{< include file="/static/includes/SEDEnterprise.md" >}}
+{{< /enterprise >}}
+
 ## Deploying SEDs
 
 TrueNAS supports setting a global password for all detected SEDs or setting individual passwords for each SED.
@@ -73,15 +77,15 @@ Devices without a device-specific password are unlocked using the global passwor
 ## Managing SED Disks and Data
 
 {{< hint type=warning >}}
-Improper use of the sedutil-cli can be destructive to data and passwords.
+Improper use of the <code>sedutil-cli</code> can be destructive to data and passwords.
 Keep backups and use with caution.
 {{< /hint >}}
 
-Additional SED management options are available using a shell session and the sedutil-cli utility.
+Additional SED management options are available using a shell session and the <code>sedutil-cli</code> utility.
 Enter `sedutil-cli -h` or see [the sedutil-cli.8 man page](https://github.com/truenas/sedutil/blob/master/docs/sedutil-cli.8) for more information.
 
 {{< enterprise >}}
-TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assistance with the initial setup and management of SEDs using sedutil-cli.
+TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assistance with the initial setup and management of SEDs using <code>sedutil-cli</code>.
 
 {{< expand "Contacting TrueNAS Enterprise Support" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}

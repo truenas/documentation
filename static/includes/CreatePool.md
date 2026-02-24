@@ -2,27 +2,37 @@
 
 Click **Create Pool** to open the **Pool Creation Wizard**.
 
-{{< expand "Pool Creation Wizard" "v" >}}
-{{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
-{{< /expand >}}
-
-**Enclosure Option** only shows for TrueNAS Enterprise systems with connected expansion shelves.
-
-{{< hint type=info >}}
-You can rename your enclosure on the [Enclosure screen]({{< ref "EnclosureScreensSCALE" >}}) to include the rack and U number in the name, which helps identify the physical location while in the pool creation screen.
-{{< /hint >}}
-
-1. Enter a name of up to 50 lowercase alpha-numeric characters.
+1. Enter a name of up to 50 lowercase alpha-numeric characters. The pool name contributes to the maximum character length for datasets, so it is limited to 50 characters.
    Use only the permitted special characters that conform to [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html).
-   The pool name contributes to the maximum character length for datasets, so it is limited to 50 characters.
+   Names can have upper or lowercase alphanumeric characters, but use lower-case alpha characters to avoid potential problems with sharing protocols.
+   Nanes can have special characters such as underscore (_), hyphen (-), colon (:), or a period (.), but do not begin a pool name with a special character.
+
+   {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
 
    {{< hint type=important >}}
    You cannot change the pool name after creation.
    {{< /hint >}}
 
+   Select the encryption option for the pool. Select **None** to create an unencrypted pool. We recommend not encrypting the pool root dataset or the system dataset.
+   If creating a second pool on your system and you want to encrypt this pool, select **Software Encryption (ZFS)**. All datasets created with this option selected are also encrypted by default.
+   {{< enterprise >}}
+   If your Enterprise system is licensed for and has SED drives, you can select **Self-Encrypting Drives (SED)** to create a pool with SED drives and encryption.
+   The drives you can select are only SED drives.
+
+   {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfoSED.png" alt="Pool Creation Wizard General Info - SED" id="Pool Creation Wizard General Info - SED" >}}
+
+   Enter and confirm the globla SED password. This applies to all SED drives in the system.
+ 
 2. (Enterprise systems only) Select the **Enclosure Option** to apply the dispersal strategy of your choice.
-   This option only shows for TrueNAS Enterprise systems with connected expansion shelves.
-   The dispersal strategy sets how the system adds disks by size and type to the pool VDEVs created using the **Automated Disk Selection** option. Enclosures mentioned in the options below refer to the disk enclosures in the expansion shelves and main system chassis.
+   
+   **Enclosure Option** only shows for TrueNAS Enterprise systems with connected expansion shelves.
+
+   {{< hint type=info >}}
+   You can rename your enclosure on the [Enclosure screen]({{< ref "EnclosureScreensSCALE" >}}) to include the rack and U number in the name, which helps identify the physical location while in the pool creation screen.
+   {{< /hint >}}
+
+   The dispersal strategy sets how the system adds disks by size and type to the pool VDEVs created using the **Automated Disk Selection** option.
+   Enclosures mentioned in the options below refer to the disk enclosures in the expansion shelves and main system chassis.
 
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsScreen.png" alt="Pool Creation Wizard Enclosure Options" id="Pool Creation Wizard Enclosure Options" >}}
 
@@ -38,8 +48,12 @@ You can rename your enclosure on the [Enclosure screen]({{< ref "EnclosureScreen
    Disks added to the pool VDEVs are spread across the enclosure disks that align with the selection in **Enclosure**.
   
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsLimitedToSingleEnclosure.png" alt="Enclosure Option Limit Pool to a Single Enclosure" id="Enclosure Option Limit Pool to a Single Enclosure" >}}
-
+   {{< /enterprise >}}
 3. Create the required data VDEV.
+   
+   {{< expand "Pool Creation Wizard Data VDEV" "v" >}}
+   {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
+   {{< /expand >}}
 
    Select the layout from the **Layout** dropdown list, then use the **Automated Disk Selection** fields to select and add the disks, or click **Manual Disk Selection** to add specific disks to the chosen **Layout**.
 
