@@ -1,0 +1,12 @@
+## TrueNAS 25.10.2.1
+
+This maintenance release delivers the NFS performance improvement for NFSv4 clients originally announced for 25.10.2, and resolves NIC bonding disruptions, SMB Legacy Share validation errors, and API error handling issues introduced in 25.10.2.
+
+- **NFS Performance:** Adds STATX_CHANGE_COOKIE support to improve NFSv4 client attribute cache invalidation and reduce unnecessary server requests.
+- **Networking:** Fixes NIC bond configurations breaking after a 25.10.2 update, which could cause network connectivity loss on systems using bonded interfaces.
+- **SMB Fixes:** Resolves SMB Legacy Share validation errors that caused share management forms to become unusable in the web interface.
+- **API Stability:** Fixes unhandled Pydantic validation errors during API result serialization and SSL certificate connection failure handling that surfaced secondary errors instead of the original failure message.
+
+**Pre-Update Actions:** None required when updating from 25.10.2.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.2.1)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
