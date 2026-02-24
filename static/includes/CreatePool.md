@@ -5,7 +5,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
 1. Enter a name of up to 50 lowercase alpha-numeric characters. The pool name contributes to the maximum character length for datasets, so it is limited to 50 characters.
    Use only the permitted special characters that conform to [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html).
    Names can have upper or lowercase alphanumeric characters, but use lower-case alpha characters to avoid potential problems with sharing protocols.
-   Nanes can have special characters such as underscore (_), hyphen (-), colon (:), or a period (.), but do not begin a pool name with a special character.
+   Names can have special characters such as underscore (_), hyphen (-), colon (:), or a period (.), but do not begin a pool name with a special character.
 
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
 
@@ -21,7 +21,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
 
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfoSED.png" alt="Pool Creation Wizard General Info - SED" id="Pool Creation Wizard General Info - SED" >}}
 
-   Enter and confirm the globla SED password. This applies to all SED drives in the system.
+   Enter and confirm the global SED password. This applies to all SED drives in the system.
  
 2. (Enterprise systems only) Select the **Enclosure Option** to apply the dispersal strategy of your choice.
    
@@ -49,6 +49,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
   
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsLimitedToSingleEnclosure.png" alt="Enclosure Option Limit Pool to a Single Enclosure" id="Enclosure Option Limit Pool to a Single Enclosure" >}}
    {{< /enterprise >}}
+
 3. Create the required data VDEV.
    
    {{< expand "Pool Creation Wizard Data VDEV" "v" >}}
