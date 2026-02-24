@@ -9,6 +9,7 @@ aliases:
  - /scale/scaleuireference/systemsettings/
  - /scale/scaleclireference/system/
  - /scale/scaleclireference/service/clictdb/
+ - /scale/scaleclireference/system/clicore/
  - /scale/systemsettings/
  - /scale/scaletutorials/systemsettings/overview/
 ---

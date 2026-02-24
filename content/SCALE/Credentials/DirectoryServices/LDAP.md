@@ -48,7 +48,7 @@ The **Directory Services Configuration** screen organizes settings into multiple
 
 The **Directory Services Configuration** screen is used to configure one of three directory services: Active Directory, IPA, or LDAP. The configuration sections and settings change based on the **Configuration Type** selected.
 
-The screen includes a **Clear Config** button that removes the entire directory service configuration after confirmation. See [Removing LDAP from TrueNAS]({{< relref "ConfigLDAPSCALE.md#removing-ldap-from-truenas" >}}) for details.
+The screen includes a **Clear Config** button that removes the entire directory service configuration after confirmation. See [Removing LDAP from TrueNAS]({{< relref "ConfigLDAP.md#removing-ldap-from-truenas" >}}) for details.
 
 ### LDAP Basic Configuration Section
 
