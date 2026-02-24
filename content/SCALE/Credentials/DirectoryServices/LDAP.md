@@ -34,7 +34,11 @@ The widget includes **Status**, and the **Hostname**, **Base DN**, and **Bind DN
 
 ![LDAPwidgett](/images/SCALE/Credentials/LDAPwidget.png "LDAP Widget")
 
-**Settings** opens the **LDAP** configuration screen.
+**Settings** opens the **Directory Services Configuration** screen where you can modify your LDAP settings.
+
+**Clear Config** removes the LDAP directory service configuration. A confirmation dialog appears before clearing the configuration.
+
+{{< trueimage src="/images/SCALE/Credentials/ClearDirectoryServices.png" alt="Clear Directory Services Configuration" id="Clear Directory Services Configuration Dialog" >}}
 
 **Rebuild Directory Service Cache** resyncs the cache if it gets out of sync or there are fewer users than expected available in the permissions editors.
 
@@ -43,6 +47,8 @@ The widget includes **Status**, and the **Hostname**, **Base DN**, and **Bind DN
 The **Directory Services Configuration** screen organizes settings into multiple sections: **Basic Configuration**, **Credential Configuration**, and **LDAP Configuration** (with subsections for **Auxiliary Parameters**, **Search Bases**, and **Attribute Maps**).
 
 The **Directory Services Configuration** screen is used to configure one of three directory services: Active Directory, IPA, or LDAP. The configuration sections and settings change based on the **Configuration Type** selected.
+
+The screen includes a **Clear Config** button that removes the entire directory service configuration after confirmation. See [Removing LDAP from TrueNAS]({{< relref "ConfigLDAPSCALE.md#removing-ldap-from-truenas" >}}) for details.
 
 ### LDAP Basic Configuration Section
 

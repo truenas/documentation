@@ -76,6 +76,24 @@ The keytab must correspond to the computer account created during the domain joi
 
 To configure LDAP to use a keytab principal, click **Settings** in the **LDAP** widget and select the keytab using the **Kerberos Principal** dropdown list.
 
+### Synchronizing Keytabs with Active Directory
+
+When TrueNAS is joined to Active Directory, you can synchronize Kerberos keytabs with Active Directory to ensure keytab data remains current.
+
+To synchronize keytabs:
+
+1. Go to **Credentials > Directory Services** and click **Show** in **Advanced Settings**, then click **Continue** on the warning dialog.
+
+2. Click **Sync** in the **Kerberos Keytabs** widget header to open the synchronization confirmation dialog.
+
+   {{< trueimage src="/images/SCALE/Credentials/SyncKeytabDialog.png" alt="Sync Keytab Confirmation" id="Sync Keytab Confirmation Dialog" >}}
+
+3. Click **Sync** to synchronize the keytabs with Active Directory.
+
+{{< hint type=note >}}
+The **Sync** button only appears when the system is joined to Active Directory.
+{{< /hint >}}
+
 ### Kerberos Settings
 
 {{< include file="/static/includes/KerberosWarning.md" >}}

@@ -1,3 +1,44 @@
+Process time: 2026-02-12 09:59:58
+Initiated by: Dan Pizappi
+
+1467 files reviewed.
+33 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\26.04FeatureList.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\26.04UpgradeMethods.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\TNHardwareGuide.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\ExpansionShelves\ES102BSG.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\HSeries\HSeriesHANetworking.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\Hardware\MSeries\MSeriesHANetworking1.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\2FAScreenDisabled.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\ActiveDirectoryAdvancedOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\ActiveDirectoryBasicOptionsEditScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendAD.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendAUTORIDSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendLDAPOptionsSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendLDAPSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendNSSSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendRFC2307Options.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapBackendTDBSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapDefaultScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\AddIdmapSMBPrimaryDomainScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\IdmapSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\IdmapScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\IPAFinalConfigOptions.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\LDAPAdvancedOptionsSettings.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\TrustedDomainsConfiguration.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Credentials\Unset2FA.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\CreateCustomACL.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Datasets\SelectAPresetNFSv4ACL.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\EditInterfaceAddAlias.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Network\NetworkInterfacesSCALE.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\AddPrivateSMBShare.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\SetUserHomeDirectoryToPrivate.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Shares\WebShareConfigService.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\2FAScreenEnabled.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\SystemGeneralSettingsSupportWidget.png
+
+----------------------------------------
 Process time: 2025-12-08 15:02:12
 Initiated by: Dan Pizappi
 
