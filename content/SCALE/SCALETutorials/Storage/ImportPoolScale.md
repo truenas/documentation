@@ -44,6 +44,21 @@ TrueNAS detects the pools that are present but not connected and adds them to th
 
 Select a pool from the **Pool** dropdown list, then click **Import**.
 
+{{< expand "Importing SED Drives" "v" >}}
+{{< enterprise >}}
+When importing SED drives into a pool, TrueNAS automatically detects locked SED disks before the import, shows information about locked drives, and provides the option to unlock or skip a listed drive.
+
+{{< trueimage src="/images/SCALE/Storage/ImportPoolwithSEDDisks.png" alt="Import Pool with SED Disks" id="Import Pool with SED Disks" >}}
+
+Use the individual disk SED password if the disk is locked by an indivisual password, otherwise use the global SED password to unlock it. After clicking **Unlock** the **Import Pool** shows you the global password field and gives you the option to unlock disks.
+
+{{< trueimage src="/images/SCALE/Storage/UnlockDiskOnImportPoolScreen.png" alt="Unlocking SED Disks" id="Unlocking SED Disks" >}}
+
+**Skip** proceeds with the import with only the unlocked disk.
+
+{{< /enterprise >}}
+{{< /expand >}}
+
 {{< expand "Can I import GELI-encrypted pools?" "v" >}}
 GELI encryption is specific to FreeBSD so Linux-based TrueNAS cannot import GELI-encrypted pools.
 See the **GELI Pool Migrations** section in the TrueNAS 13.0 [Storage Encryption](https://www.truenas.com/docs/core/13.0/coretutorials/storage/pools/storageencryption/#geli-pool-migrations) article.
