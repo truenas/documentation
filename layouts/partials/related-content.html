@@ -1,13 +1,11 @@
 {{ $currentPermalink := .RelPermalink }}
 {{ $currentTags := .Params.tags }}
-{{ $currentBook := .Params.book }}
-{{ $currentVolume := .Params.volume }}
 {{ $relatedContent := where site.Pages "Params.tags" "intersect" $currentTags }}
 
 {{ $books := slice
   (dict "name" "SCALEGettingStarted" "title" "Getting Started" "volume" "SCALE, Appendices, True")
-  (dict "name" "SCALETutorials" "title" "Tutorials" "volume" "SCALE, Appendices, True")
-  (dict "name" "SCALEUIReference" "title" "UI Reference" "volume" "SCALE, Appendices, True")
+  (dict "name" "SCALETutorials" "title" "Tutorial" "volume" "SCALE, Appendices, True" "doctype" "tutorial")
+  (dict "name" "SCALEUIReference" "title" "Reference" "volume" "SCALE, Appendices, True" "doctype" "reference")
   (dict "name" "TrueNASApps" "title" "Apps" "volume" "SCALE, Appendices")
   (dict "name" "COREGettingStarted" "title" "CORE Getting Started" "volume" "CORE, Appendices, True")
   (dict "name" "CORETutorials" "title" "CORE Tutorials" "volume" "CORE, Appendices, True")
@@ -19,6 +17,22 @@
   (dict "name" "Contributing" "title" "Contributing" "volume" "Appendices")
   (dict "name" "Solutions" "title" "Solutions" "volume" "Appendices, CORE, SCALE, True")
 }}
+
+{{/* Resolve effective book — fall back to doctype for tutorial/reference SCALE pages */}}
+{{ $currentBook := .Params.book }}
+{{ if not $currentBook }}
+  {{ if eq .Params.doctype "tutorial" }}{{ $currentBook = "SCALETutorials" }}
+  {{ else if eq .Params.doctype "reference" }}{{ $currentBook = "SCALEUIReference" }}
+  {{ end }}
+{{ end }}
+
+{{/* Resolve effective volume — SCALE doctype pages have no volume param */}}
+{{ $currentVolume := .Params.volume }}
+{{ if not $currentVolume }}
+  {{ if or (eq .Params.doctype "tutorial") (eq .Params.doctype "reference") }}
+    {{ $currentVolume = "SCALE" }}
+  {{ end }}
+{{ end }}
 
 <style>
   .columns {
@@ -48,6 +62,9 @@
 
 {{ $columnCount := 0 }}
 {{ $currentBookContent := where $relatedContent "Params.book" $currentBook }}
+{{ if .Params.doctype }}
+  {{ $currentBookContent = where $relatedContent "Params.doctype" .Params.doctype }}
+{{ end }}
 
 {{ if gt (len $currentBookContent) 1 }}
   <h2>Related Content</h2>
@@ -74,6 +91,9 @@
     {{ $title := .title }}
     {{ $volume := .volume }}
     {{ $content := where $relatedContent "Params.book" $book }}
+    {{ if .doctype }}
+      {{ $content = where $relatedContent "Params.doctype" .doctype }}
+    {{ end }}
     {{ $count := 0 }}
     {{ if and (in $volume $currentVolume) (gt (len $content) 0) }}
       {{ $hasRelatedTagsInCurrentBook := false }}
