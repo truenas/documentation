@@ -1,6 +1,6 @@
 ---
 title: "Quotas"
-description: "Tutorials and UI reference for configuring dataset capacity settings and user or group quotas in TrueNAS."
+description: "Tutorials and UI reference to configure dataset capacity settings and user or group quotas in TrueNAS."
 geekdocCollapseSection: true
 weight: 40
 related: false

@@ -9,10 +9,10 @@ aliases:
  - /scale/scaletutorials/credentials/
 ---
 
-TrueNAS credential options are organized into screens for managing local users and groups, backup credentials (cloud and SSH), certificates, and directory services.
+TrueNAS credential options are organized into screens to manage local users and groups, backup credentials (cloud and SSH), certificates, and directory services.
 
 * **Users** allows those with permissions to add, configure, and delete users on the system.
-  There are options to search for keywords in usernames, view or edit user characteristics, and a dropdown to select whether the screen shows built-in, local, and/or directory services users.
+  There are options to search for keywords in usernames, view or edit user characteristics, and a dropdown to select whether the screen shows built-in, local, or directory services users.
 
 * **Groups** allows those with permissions to add, configure, and delete user groups on the system.
   There are options to search for keywords in group names, display or hide group characteristics, and toggle whether the screen shows built-in groups.

@@ -1,6 +1,6 @@
 ---
 title: "Apps"
-description: "Tutorials and UI reference for managing applications in TrueNAS."
+description: "Tutorials and UI reference to manage applications in TrueNAS."
 geekdocCollapseSection: true
 weight: 13
 tags:

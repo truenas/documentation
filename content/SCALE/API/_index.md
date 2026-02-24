@@ -16,9 +16,9 @@ related: false
 
 {{< include file="/static/includes/APIDocs.md" >}}
 
-### Viewing API Documenation
+### Viewing API Documentation
 
-There are several ways to view TrueNAS API documentation:
+TrueNAS API documentation is available in several ways:
 
 * In the web interface, click <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
    Click **API Docs** on the **User API Keys** or **User** screen to access the TrueNAS API documentation built into the system.
@@ -33,7 +33,7 @@ There are several ways to view TrueNAS API documentation:
 ## API Access
 
 User-linked API access keys allow administrators to configure per-user access to the TrueNAS API.
-Keys are revocable and can be configured to automatically expire on a preset date.
+Keys are revocable and expire automatically on a preset date when configured to do so.
   
 {{< include file="/static/includes/API_AD.md" >}}
 

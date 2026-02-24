@@ -15,7 +15,6 @@ keywords:
 - nas storage
 ---
 
-
 Use the **Credentials > Certificates** screen to manage certificates, certificate signing requests (CSRs), and DNS authenticators with the **Certificates**, **Certificate Signing Requests** (CSRs), and **ACME DNS-Authenticators** widgets.
 
 {{< trueimage src="/images/SCALE/Credentials/CredentialsCertificatesScreen.png" alt="Credentials Certificates Screen" id="Credentials Certificates Screen" >}}

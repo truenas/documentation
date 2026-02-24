@@ -1,6 +1,6 @@
 ---
 title: "Advanced Replication Tasks"
-description: "Provides instructions on configuring advanced ZFS snapshot replication tasks in TrueNAS."
+description: "Instructions to configure advanced ZFS snapshot replication tasks in TrueNAS."
 geekdocCollapseSection: true
 aliases:
  - /scale/dataprotection/replication/useadvancedreplicationscale/
@@ -16,7 +16,6 @@ keywords:
 - data protection
 - data backup and recovery
 ---
-
 
 TrueNAS advanced replication allows users to create one-time or regularly scheduled snapshots of data stored in pools, datasets, or zvols on their TrueNAS system as a way to back up stored data.
 When properly configured and scheduled, local or remote replication using the **Advanced Replication Creation** option takes regular snapshots of storage pools or datasets and saves them in the destination location on the same or another system.
@@ -41,7 +40,7 @@ You can also:
 * Replicate specific snapshots that match a defined creation time.
 * Prevent the snapshot retention policy from removing source system snapshots that failed
 
-With the implementation of the local administrator user to replace the root login, there are a few differences between setting up replication tasks as an admin user than with setting up replication tasks when logged in as root.
+With the implementation of the local administrator user to replace the root login, setting up replication tasks as an admin user differs from setting up replication tasks when logged in as root.
 Setting up remote replication while logged in as the admin user requires selecting **Use Sudo For ZFS Commands**.
 
 {{< include file="/static/includes/ReplicationIntroSCALE.md" >}}
@@ -80,7 +79,7 @@ The **Add Replication Task** configuration screen opens.
    To create a new connection to use for replication from a destination to this local system, select **newpullssh**.
 
    Select **Use Sudo for Zfs Commands** to control whether the user for SSH/SSH+NETCAT replication has passwordless sudo enabled to execute zfs commands on the remote host.
-   If not selected, you must enter `zfs allow` on the remote system to to grant non-user permissions to perform ZFS tasks.
+   If not selected, you must enter `zfs allow` on the remote system to grant non-user permissions to perform ZFS tasks.
 
 4. Specify the source and destination paths. Destination paths allow adding /*name* to the end of the path to create a new dataset in that location.
    Click the arrow to the left of each folder or dataset name to expand the options and browse to the dataset, then click on the dataset to populate the **Source**.
@@ -92,7 +91,7 @@ The **Add Replication Task** configuration screen opens.
    Define how long to keep snapshots in the destination.
 
    Remote sources require defining a snapshot naming schema to identify the snapshots to replicate.
-   Local sources are replicated by snapshots that were generated from a periodic snapshot task and/or from a defined naming schema that matches manually created snapshots.
+   Local sources are replicated by snapshots generated from a periodic snapshot task or from a defined naming schema that matches manually created snapshots.
 
    {{< hint type=important >}}
    *DO NOT* use zvols as remote destinations.
@@ -162,13 +161,13 @@ List any existing dataset properties to remove from the replicated files in **Pr
 
 ### Saving Pending Snapshots
 
-When a replication task is having difficulty completing, it is a good idea to select **Save Pending Snapshots**.
+When a replication task has difficulty completing, select **Save Pending Snapshots**.
 This prevents the source TrueNAS from automatically deleting any snapshots that failed to replicate to the destination system.
 
 ### Changing Destination Dataset from Read-Only
 
-By default, the destination dataset is set to be read-only after the replication completes.
-You can change the **Destination Dataset Read-only Policy** to only start replication when the destination is read-only (set to **REQUIRE**) or to disable it by setting it to **IGNORE**.
+By default, TrueNAS sets the destination dataset to read-only after the replication completes.
+You can change the **Destination Dataset Read-only Policy** to only start replication when the destination is read-only (set to **REQUIRE**) or to disable it (set to **IGNORE**).
 
 ### Adding Transfer Encryption
 
@@ -188,7 +187,7 @@ Make sure that any snapshots deleted from the destination are obsolete or otherw
 
 ### Defining Snapshot Retention
 
-Defining the **Snapshot Retention Policy** is generally recommended to prevent cluttering the system with obsolete snapshots.
+We recommend defining the **Snapshot Retention Policy** to prevent cluttering the system with obsolete snapshots.
 Choosing **Same as Source** keeps the snapshots on the destination system for the same amount of time as the defined **Snapshot Lifetime** from the source system periodic snapshot task.
 
 {{< hint type=note title="Snapshot Preservation" >}}

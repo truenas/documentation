@@ -1,6 +1,6 @@
 ---
 title: "Zvols"
-description: "Tutorials and UI reference for creating and managing zvols in TrueNAS."
+description: "Tutorials and UI reference to create and manage zvols in TrueNAS."
 geekdocCollapseSection: true
 weight: 60
 related: false

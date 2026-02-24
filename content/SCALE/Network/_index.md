@@ -1,6 +1,6 @@
 ---
 title: "Network"
-description: "Tutorials for configuring network interfaces and connections in TrueNAS."
+description: "Tutorials to configure network interfaces and connections in TrueNAS."
 geekdocCollapseSection: true
 weight: 9
 aliases:
@@ -11,9 +11,8 @@ aliases:
 related: false
 ---
 
-
-The **System > Network** menu option has several screens that enable configuring network interfaces and general system-level network settings.
-The tutorials in this section guide with the various screens and configuration forms contained within this menu item.
+The **System > Network** menu option has several screens for network interface configuration and general system-level network settings.
+The tutorials in this section cover the various screens and configuration forms within this menu item.
 
 {{< enterprise >}}
 iXsystems TrueNAS Enterprise customers should contact TrueNAS Enterprise Support to receive additional guidance on system configuration.

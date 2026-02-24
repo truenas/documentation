@@ -1,6 +1,6 @@
 ---
 title: "Shares"
-description: "Tutorials for configuring the various data sharing features in TrueNAS."
+description: "Tutorials to configure the various data sharing features in TrueNAS."
 geekdocCollapseSection: true
 aliases:
  - /scale/scaleclireference/sharing/
@@ -13,10 +13,8 @@ tags:
 related: false
 ---
 
-
-
 File sharing is one of the primary benefits of a NAS. TrueNAS helps foster collaboration between users through network shares.  
-TrueNAS allows users to create and configure Windows SMB shares, Unix (NFS) shares, and block (iSCSI) shares targets.
+TrueNAS allows users to create and configure Windows SMB shares, Unix (NFS) shares, and block (iSCSI) share targets.
 
 {{< hint type=note >}}
 When creating zvols for shares, avoid giving them names with capital letters or spaces since they can cause problems and failures with iSCSI and NFS shares.

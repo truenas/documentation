@@ -1,6 +1,6 @@
 ---
 title: "Permissions"
-description: "Tutorials and UI reference for configuring dataset ACL permissions in TrueNAS."
+description: "Tutorials and UI reference to configure dataset ACL permissions in TrueNAS."
 geekdocCollapseSection: true
 weight: 30
 related: false

@@ -1,6 +1,6 @@
 ---
 title: "WebShare"
-description: "Tutorials for configuring WebShare, a web-based file sharing feature in TrueNAS."
+description: "Tutorials to configure WebShare, a web-based file sharing feature in TrueNAS."
 geekdocCollapseSection: true
 weight: 60
 tags:
@@ -11,8 +11,6 @@ aliases:
  - /scale/scaleuireference/shares/webshare/
  - /scale/scaletutorials/shares/webshare/
 ---
-
-
 
 WebShare provides web-based file access to authorized users through a browser interface.
 Unlike SMB or NFS shares that require mounting on client systems, WebShare allows users to browse, upload, download, and search files directly from a web browser.
@@ -88,7 +86,7 @@ The **Edit WebShare** screen allows you to change the path, name, and home share
 ## Deleting a WebShare
 
 To delete a WebShare, click the <span class="material-icons">delete</span> icon on the share row.
-A confirmation dialog displays before the WebShare is removed.
+A confirmation dialog displays before TrueNAS removes the WebShare.
 
 {{< trueimage src="/images/SCALE/Shares/DeleteWebShareDialogue.png" alt="Delete WebShare Dialog" id="Delete WebShare Dialog" >}}
 

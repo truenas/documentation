@@ -1,6 +1,6 @@
 ---
 title: "Virtual Machines"
-description: "Tutorials and UI reference for creating and managing virtual machines in TrueNAS."
+description: "Tutorials and UI reference to create and manage virtual machines in TrueNAS."
 geekdocCollapseSection: true
 weight: 12
 tags:

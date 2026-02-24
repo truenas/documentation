@@ -1,6 +1,6 @@
 ---
 title: "Encryption"
-description: "Tutorials and UI reference for configuring dataset and zvol encryption in TrueNAS."
+description: "Tutorials and UI reference to configure dataset and zvol encryption in TrueNAS."
 geekdocCollapseSection: true
 weight: 20
 related: false

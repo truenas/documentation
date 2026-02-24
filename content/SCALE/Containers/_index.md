@@ -1,6 +1,6 @@
 ---
 title: "Containers"
-description: "Tutorials and UI reference for configuring Linux containers in TrueNAS."
+description: "Tutorials and UI reference to configure Linux containers in TrueNAS."
 geekdocCollapseSection: true
 weight: 11
 tags:

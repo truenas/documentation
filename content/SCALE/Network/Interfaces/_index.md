@@ -1,6 +1,6 @@
 ---
 title: "Interface Configuration"
-description: "Tutorials about configuring the various types of network interfaces available in TrueNAS."
+description: "Tutorials to configure the various types of network interfaces available in TrueNAS."
 geekdocCollapseSection: true
 weight: 10
 aliases:
@@ -88,7 +88,7 @@ Click **Save** when you are certain of your configuration. You cannot change the
 To change an existing interface, click on the <span class="material-icons">more_vert</span> icon at the right of the interface, and then click **Edit** to open the **Edit Interface** screen.
 
 The **Edit Interface** and **Add Interface** screen settings are identical, but the **Type** and **Name** fields are not editable for an existing interface.
-If you created the wrong type of virtual interface (i.e., a bridge, vlan, lagg), delete the interface and add a new interface with the correct type.
+If you created the wrong type of virtual interface (for example, a bridge, vlan, or lagg), delete the interface and add a new interface with the correct type.
 
 When changing from a DHCP-provided IP address to a static IP, first verify your current default gateway and name servers work with the new IP address.
 You must add the new default gateway and DNS name servers that work with the new IP address to the global configuration.

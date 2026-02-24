@@ -1,6 +1,6 @@
 ---
 title: "Cloud Sync Tasks"
-description: "Tutorials for configuring and managing data backups to from TrueNAS to various 3rd party Cloud Service Providers."
+description: "Tutorials to configure and manage data backups from TrueNAS to various third-party cloud service providers."
 geekdocCollapseSection: true
 aliases:
  - /scale/dataprotection/cloudsynctasks/cloudsynctasks/
@@ -17,9 +17,7 @@ keywords:
 - data backup and recovery
 ---
 
-
-
-This section has tutorials for configuring and managing data backups to from TrueNAS to various 3rd party cloud service providers.
+This section has tutorials to configure and manage data backups from TrueNAS to various third-party cloud service providers.
 This article provides instructions on adding a cloud sync task, configuring environment variables, running an unscheduled sync task, creating a copy of a task with a reversed transfer mode, and troubleshooting common issues with some cloud storage providers.
 
 TrueNAS can send, receive, or synchronize data with a cloud storage provider.
@@ -58,7 +56,7 @@ This also requires entering the same password to encrypt data in both **Encrypti
 
 {{< include file="/static/includes/FilenameEncryption.md" >}}
 
-When selecting **Filename Encryption** transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes).
+When **Filename Encryption** is selected, transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes).
 The original directory structure of the files is preserved.
 When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, use sub-paths, and copy single files.
 When enabled, file names are encrypted, file names are limited to 143 characters, the directory structure is visible, and files with identical names have identical uploaded names.
@@ -77,7 +75,7 @@ Instead, files are tagged with a version number or moved to a hidden state.
 To automatically delete old or unwanted files from the bucket, adjust the [Backblaze B2 Lifecycle Rules](https://www.backblaze.com/blog/backblaze-b2-lifecycle-rules/).
 
 {{< hint type=note >}}
-A directory, deleted in BackBlaze B2 and notated with an asterisk, do not display in the TrueNAS UI.
+A directory deleted in BackBlaze B2 and notated with an asterisk does not display in the TrueNAS UI.
 These folders are essentially empty directories and Backblaze API restricts them so they do not display.
 {{< /hint >}}
 #### Amazon S3 Issues
@@ -114,7 +112,7 @@ Click **Restore**.
 
 TrueNAS saves the restored cloud sync as another entry in **Data protection > Cloud Sync Tasks**.
 
-If you set the restore destination to the source dataset, TrueNAS may alter ownership of the restored files to **root**.
+If you set the restore destination to the source dataset, TrueNAS might alter ownership of the restored files to **root**.
 If root did not create the original files and you need them to have a different owner, you can recursively reset their ACL permissions through the GUI.
 
 <div class="noprint">

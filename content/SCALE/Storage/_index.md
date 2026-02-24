@@ -1,6 +1,6 @@
 ---
 title: "Storage"
-description: "Tutorials and UI reference for configuring TrueNAS storage, including pools, datasets, zvols, and disks."
+description: "Tutorials and UI reference to configure TrueNAS storage, including pools, datasets, zvols, and disks."
 geekdocCollapseSection: true
 weight: 5
 aliases:

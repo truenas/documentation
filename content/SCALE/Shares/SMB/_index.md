@@ -18,7 +18,7 @@ SMB shares can connect to most operating systems, including Windows, Mac OS, and
 TrueNAS can use SMB to share files among single or multiple users or devices.
 
 SMB supports a wide range of permissions, security settings, and advanced permissions (ACLs) on Windows and other systems, as well as Windows Alternate Streams and Extended Metadata.
-SMB is suitable for managing and administering large or small pools of data.
+SMB is suitable to manage and administer large or small pools of data.
 
 TrueNAS uses [Samba](https://www.samba.org/) to provide SMB services.
 The SMB protocol has multiple versions. During the SMB session negotiation, a typical SMB client can negotiate the highest supported SMB protocol.

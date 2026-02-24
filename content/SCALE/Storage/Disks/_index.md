@@ -1,6 +1,6 @@
 ---
 title: "Disks"
-description: "Articles with instructions for managing, replacing, and wiping disks."
+description: "Articles with instructions to manage, replace, and wipe disks."
 geekdocCollapseSection: true
 weight: 30
 aliases:
@@ -14,7 +14,7 @@ keywords:
 - nas data storage
 ---
 
-TrueNAS provides tools for managing, replacing, and wiping the physical drives installed in your system.
+TrueNAS provides tools to manage, replace, and wipe the physical drives installed in your system.
 
 <div class="noprint">
 

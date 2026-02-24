@@ -1,5 +1,5 @@
 ---
-title: Alerts
+title: "Alerts"
 description: "Describes the TrueNAS alert system."
 geekdocCollapseSection: true
 weight: 2

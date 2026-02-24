@@ -1,6 +1,6 @@
 ---
 title: "Snapshots"
-description: "Tutorials and UI reference for creating and managing dataset snapshots in TrueNAS."
+description: "Tutorials and UI reference to create and manage dataset snapshots in TrueNAS."
 geekdocCollapseSection: true
 weight: 50
 related: false
