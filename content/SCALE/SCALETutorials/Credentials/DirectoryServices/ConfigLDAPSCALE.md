@@ -106,5 +106,9 @@ To enable LDAP again, click **Configure Directory Services** to open the **Direc
 
 ## Removing LDAP from TrueNAS
 
-To remove the LDAP configuration, click **Settings** to open the **LDAP** screen.
-Clear all settings and click **Save**.
+To remove the LDAP configuration, click **Settings** on the **LDAP** widget to open the **Directory Services Configuration** screen.
+Click **Clear Config** to open the confirmation dialog.
+
+{{< trueimage src="/images/SCALE/Credentials/ClearDirectoryServices.png" alt="Clear Directory Services Configuration" id="Clear Directory Services Configuration Dialog" >}}
+
+Click **Confirm** to remove the LDAP configuration. The main **Directory Services** screen returns to the default view showing the option to configure directory services.

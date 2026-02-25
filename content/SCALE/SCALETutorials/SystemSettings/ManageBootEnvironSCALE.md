@@ -15,54 +15,6 @@ keywords:
 
 The **Boot Environment** screen has options that monitor and manage the ZFS boot pool and devices that store the TrueNAS operating system.
 
-## Changing the Scrub Interval
-
-The **Stats/Settings** option shows current system statistics. It also allows you to change the scrub interval or how often the system runs a data integrity check on the operating system device.
-
-Go to the **System > Boot Environment** screen and click **Stats/Settings**.
-The **Stats/Settings** window shows statistics for the operating system device: **Boot Pool Condition** as **Online** or **Offline**, **Size** in GiB, the consumed space in **Used**, and **Last Scrub Run** with the date and time of the most recent scrub task.
-By default, the operating system device is scrubbed every seven days.
-
-{{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatsSettingsSCALE.png" alt="Boot Environment Stats/Settings" id="Boot Environment Stats/Settings" >}}
-
-To change the default scrub interval, input a different number in **Scrub interval (in days)** and click **Update Interval**.
-
-## Boot Pool Device Management
-
-From the **Boot Environment** screen, click **Boot Pool Status** to open the **Boot Pool Status** screen.
-This screen shows the **boot-pool**. Expand it to show the devices allocated to that pool.
-Read, write, or checksum errors show for the pool.
-
-{{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatusListingSCALE.png" alt="Boot Pool Status" id="Boot Pool Status" >}}
-
-### Replace Device
-
-Click the <span class="material-icons">more_vert</span> to open the **Actions** options.
-Click **Replace**, select the device from the **Member Disk** dropdown, and then click **Save**.
-
-{{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatusReplaceDiskSCALE.png" alt="Boot Pool Status" id="Boot Pool Status" >}}
-
-### Attach Device
-
-Click the <span class="material-icons">more_vert</span> to open the **Actions** options for a device.
-
-Click **Attach**, then select a device from the **Member Disk** dropdown.
-
-{{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatusAttachDiskSCALE.png" alt="Boot Pool Status" id="Boot Pool Status" >}}
-
-Select **Use all disk space** to use the entire capacity of the new device.
-
-Click **Save**.
-
-## Scrubbing a Boot Pool
-You can initiate a manual data integrity check (scrub) of the operating system device at any time.
-
-On the **System > Boot** screen, click **Scrub Boot Pool** to open the **Scrub** dialog.
-
-{{< trueimage src="/images/SCALE/SystemSettings/ScrubBootPoolNowSCALE.png" alt="Boot Pool Scrub" id="Boot Pool Scrub" >}}
-
-Click **Confirm** and then **Start Scrub**.
-
 ## Boot Environments
 
 TrueNAS supports a ZFS feature known as boot environments.
@@ -82,21 +34,37 @@ TrueNAS [applications](https://apps.truenas.com) also use separate upgrade and c
 To view the list of boot environments on the system, go to **System > Boot**.
 Each boot environment entry contains this information:
 
-* **Name**: the name of the boot entry as it appears in the boot menu.
-* **Active**: indicates which entry boots by default if a boot environment is not active.
-* **Date Created**: indicates the boot environment creation date and time.
-* **Space**: shows boot environment size.
-* **Keep**: indicates whether or not TrueNAS deletes this boot environment when a system update does not have enough space to proceed.
+* **Name** - Shows the name of the boot entry as it appears in the boot menu.
+* **Active** - Indicates which entry boots by default if a boot environment is not active.
+* **Date Created** - Indicates the boot environment creation date and time.
+* **Space** - Shows boot environment size.
+* **Keep** - Indicates whether or not TrueNAS deletes this boot environment when a system update does not have enough space to proceed.
 
 Use the icons row to take different actions for a boot environment.
 
 ### Following Best Practices
 
-Boot environments do not share all system information. TrueNAS carries over central database and configuration elements into a new environment during an update, but other state changes made in one environment do not appear in another.
+Boot environments do not share all system information. TrueNAS carries over the central database and configuration elements into a new environment during an update, but other state changes made in one environment do not appear in another.
 
-Changes in a new boot environment do not exist in older environments. Similarly, changes made while booted into an old environment do not propagate forward into new boot environments. 
+Changes in a new boot environment do not exist in older environments.
+Similarly, changes made while booted into an old environment do not propagate forward into new boot environments. 
 
-The isolation among different boot environments means that frequent switching between environments can lead configuration divergence and missing audit information. Because of this, it is only recommended to revert a boot pool upgrade if the new version introduces a problem or to recover from a broken configuration if the system console or IPMI is unavailable.
+The isolation among different boot environments means that frequent switching between environments can lead to configuration divergence and missing audit information.
+Because of this, we recommend that you only revert a boot pool upgrade if the new version introduces a problem or to recover from a broken configuration if the system console or IPMI is unavailable.
+
+TrueNAS automatically saves the previous release during upgrades and keeps the last two boot environments by default.
+TrueNAS recommends keeping three to four boot environments for production systems.
+
+Industry best practices recommend keeping the current running release and one to two previous stable releases for quick rollback if necessary.
+Remove older boot environments unless there is a specific rollback reason.
+
+Consider the following when deciding whether to remove boot environments:
+
+  * Keep older releases for 30 to 90 days until you have confidence in the current release.
+  * Remove older releases when boot pool space is limited (<20% free remaining).
+    Each boot environment typically uses 2-5GB.
+    Consider setting up a system alert when boot pool capacity reaches 70-80%.
+  * Remove releases that no longer receive security updates. Keep the most recent version with security patches.
 
 ### Activating a Boot Environment
 
@@ -163,3 +131,50 @@ This makes the boot environment subject to automatic deletion if the TrueNAS upd
 
 {{< include file="/static/includes/BootPoolRecoveryProcess.md" >}}
 
+## Changing the Scrub Interval
+
+The **Stats/Settings** option shows current system statistics. It also allows you to change the scrub interval or how often the system runs a data integrity check on the operating system device.
+
+Go to the **System > Boot Environment** screen and click **Stats/Settings**.
+The **Stats/Settings** window shows statistics for the operating system device: **Boot Pool Condition** as **Online** or **Offline**, **Size** in GiB, the consumed space in **Used**, and **Last Scrub Run** with the date and time of the most recent scrub task.
+By default, the operating system device is scrubbed every seven days.
+
+{{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatsSettingsSCALE.png" alt="Boot Environment Stats/Settings" id="Boot Environment Stats/Settings" >}}
+
+To change the default scrub interval, input a different number in **Scrub interval (in days)** and click **Update Interval**.
+
+## Boot Pool Device Management
+
+From the **Boot Environment** screen, click **Boot Pool Status** to open the **Boot Pool Status** screen.
+This screen shows the **boot-pool**. Expand it to show the devices allocated to that pool.
+Read, write, or checksum errors show for the pool.
+
+{{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatusListingSCALE.png" alt="Boot Pool Status" id="Boot Pool Status" >}}
+
+### Replace Device
+
+Click the <span class="material-icons">more_vert</span> to open the **Actions** options.
+Click **Replace**, select the device from the **Member Disk** dropdown, and then click **Save**.
+
+{{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatusReplaceDiskSCALE.png" alt="Boot Pool Status" id="Boot Pool Status" >}}
+
+### Attach Device
+
+Click the <span class="material-icons">more_vert</span> to open the **Actions** options for a device.
+
+Click **Attach**, then select a device from the **Member Disk** dropdown.
+
+{{< trueimage src="/images/SCALE/SystemSettings/BootPoolStatusAttachDiskSCALE.png" alt="Boot Pool Status" id="Boot Pool Status" >}}
+
+Select **Use all disk space** to use the entire capacity of the new device.
+
+Click **Save**.
+
+## Scrubbing a Boot Pool
+You can initiate a manual data integrity check (scrub) of the operating system device at any time.
+
+On the **System > Boot** screen, click **Scrub Boot Pool** to open the **Scrub** dialog.
+
+{{< trueimage src="/images/SCALE/SystemSettings/ScrubBootPoolNowSCALE.png" alt="Boot Pool Scrub" id="Boot Pool Scrub" >}}
+
+Click **Confirm** and then **Start Scrub**.

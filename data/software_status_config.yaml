@@ -4,15 +4,15 @@ table_data:
       version: Not Available
       link: null
     community:
-      version: Halfmoon Nightly
+      version: 26 Nightly
       link: https://download.truenas.com/truenas-scale-halfmoon-nightly/
   early_adopter:
     enterprise:
       version: Not Available
       link: null
     community:
-      version: 25.10.1
-      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.1
+      version: 25.10.2
+      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.2
   general:
     enterprise:
       version: 25.10.1
@@ -33,27 +33,6 @@ api_config:
   additional_trains:
     TrueNAS-SCALE-Fangtooth:
       description: TrueNAS SCALE Fangtooth 25.04 [release]
-doc_patterns:
-  scale_release: /docs/scale/{major_minor}/gettingstarted/scalereleasenotes/#{version_anchor}
-nightly_patterns:
-  base_url: https://download.truenas.com/
-  pattern: truenas-scale-{codename}-nightly/
-version_rules:
-  major_minor_regex: ^(\d+\.\d+)
-  codename_regex: TrueNAS-SCALE-([A-Za-z]+)
-  codename_mapping:
-    Goldeye: goldeye
-    Fangtooth: fangtooth
-    Halfmoon: halfmoon
-products:
-  enterprise:
-    scale:
-    - TrueNAS-SCALE-24.10-ENTERPRISE
-  community:
-    scale:
-    - TrueNAS-SCALE-Goldeye-BETA
-    - TrueNAS-SCALE-GoldEye-Nightlies
-    - TrueNAS-SCALE-Halfmoon-Nightlies
 profiles:
   developer: DEVELOPER
   early_adopter: EARLY_ADOPTER

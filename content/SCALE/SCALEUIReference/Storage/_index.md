@@ -32,6 +32,10 @@ The **Create Pool** button in the center of the screen opens the **[Pool Creatio
 
 ## Storage Dashboard
 
+After adding pools, the dashboard shows the [pool widgets](#pool-widgets), the **Update** and **Disconnect** buttons, and a <span class="material-icons">more_vert</span> dropdown menu with more options: **Expand Pool** and **AutoTrim**.
+
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
+
 The buttons at the top right of the **Storage Dashboard** screen provide access to pool and disk functions:
 
 * {{< expand "Import Pool" "v" >}}
@@ -50,41 +54,55 @@ TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 * **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.
 * **Create Pool** opens the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})**.
 
-After adding pools, the dashboard shows the [pool widgets](#pool-widgets) and additional buttons.
+* {{< expand "Disconnect Button" "v" >}}
+The **Disconnect** button opens a **Disconnect Pool: *poolname*** window with two options: **Export Pool** and **Delete Pool**.
+Each option changes what shows in this window.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
+The **Disconnect Pool** window shows a different warning statement below the delete and export options.
+The **Delete Pool** warning states all data is deleted from the pool, and instructs users to back up critical data before deleting the pool.
+The **Export Pool** warning states you lose access to data in the exported pool until you import the pool, and instructs users to back up criical data before exporting the pool.
 
-* {{< expand "Export/Disconnect" "v" >}}
-**Export/Disconnect** opens the **Export/disconnect pool: *poolname*** window where users can export, disconnect, or delete a pool.
-
-The **Export/disconnect pool** window includes a warning stating that data becomes unavailable after export and that selecting **Destroy Data on this pool** destroys data on the pool disks.
+Expand the **System dataset will be moved off this pool** message to shows the full statement about the system dataset.
 
 {{< hint type=important >}}
-Exporting/disconnecting can be a destructive process!
+Exporting/deleting can be a destructive process!
 Back up all data before performing this operation. You might not be able to recover data lost through this operation.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/Storage/ExportDisconnectPoolWindow.png" alt="Export/Disconnect Pool Window" id="Export/Disconnect Pool Window" >}}
+<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+  <figure style="margin: 0; flex: 1; max-width: 600px; text-align: center;">
+    <img src="/images/SCALE/Storage/Diconnect-DeletePoolWindow.png" alt="Disconnect Delete Pool Window" style="width: 100%; height: auto; display: block;">
+    <figcaption style="margin-top: 8px; font-style: bold; color: #555; text-align: left;">
+      <b>Figure 3: Disconnect Delete Pool Window</b>
+    </figcaption>
+  </figure>
 
-This window displays the share type (i.e., SMB share, etc.) affected by the export/disconnect operation if a share uses the pool.
+  <figure style="margin: 0; flex: 1; max-width: 600px; text-align: center;">
+    <img src="/images/SCALE/Storage/Disconnect-ExportPoolWindow.png" alt="Disconnect Export Pool Window" style="width: 100%; height: auto; display: block;">
+    <figcaption style="margin-top: 8px; font-style: bold; color: #555; text-align: left;">
+      <b>Figure 4: Disconnect Export Pool Window</b>
+    </figcaption>
+  </figure>
+</div>
 
-Disks in an exported pool become available to use in a new pool but remain marked as used by an exported pool.
+The **Remove all related configurations** and **Confirm Delete Pool** shows at the bottom of the window after selecting **Delete Pool**.
+The text field below shows after selecting the **Remove all related configuration** option.
+This field accepts typed or copy/paste of the pool name.
+
+**Deleted Saved Configurations from TrueNAS** and **Confirm Export Pool** shows at the bottom of the window after selecting **Export Pool**.
+A text field below these options shows after selecting **Confirm Export Pool**.
+This field accepts typed or copy/paste of the pool name.
+
+**Disconnect** activates after entering the pool name in the confirmation field.
+
+Disks in an exported pool become available for use in a new pool but remain marked as used by an exported pool.
 If you select a disk used by an exported pool for use in a new pool, the system displays a warning message about the disk.
 
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Destroy data on this pool?** | Select to erase all data on the pool. A field displays where you enter the pool name to confirm the operation before the **Export/Disconnect** button activates. |
-| **Delete configuration of shares that use this pool** | Enabled by default to remove the share connection to this pool. Exporting or disconnecting the pool deletes the configuration of shares using this pool. You must reconfigure the shares affected by this operation. |
-| **Confirm Export/Disconnect** | (Required) Select to confirm the operation and accept the warnings displayed. Activates the **Export/Disconnect** button. |
-{{< /truetable >}}
-
-**Export/Disconnect** executes the process and begins the pool export or disconnect.
 A status window shows progress. When complete, a final dialog states that the export/disconnect completed successfully.
 {{< /expand >}}
 
 * {{< expand "Expand Pool" "v" >}}
-Select **Expand Pool** to increase the pool size to match all available disk space.
+Select **Expand Pool** on the <span class="material-icons">more_vert</span> dropdown menu to increase the pool size to match all available disk space.
 Users with pools using virtual disks use this option to resize these virtual disks apart from TrueNAS.
 
 {{< trueimage src="/images/SCALE/Storage/ExpandPoolDialog.png" alt="Expand Pool Dialog" id="Expand Pool Dialog" >}}
@@ -92,7 +110,35 @@ Users with pools using virtual disks use this option to resize these virtual dis
 **Confirm** activates the **Continue** button.
  {{< /expand >}}
 
-* **[Upgrade](#upgrade-dialog)**
+* {{< expand "AutoTrim" "v" >}}
+
+The **Auto TRIM** option on the <span class="material-icons">more_vert</span> dropdown menu opens the **AutoTRIM** dialog.
+The **ZFS Health** widget shows whether this function is set to on.
+
+{{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Option Auto TRIM" id="Pool Option Auto TRIM" >}}
+
+When enabled, **Auto TRIM** allows TrueNAS to periodically review data blocks and identify which empty blocks of obsolete blocks it can delete.
+Leave unselected to incorporate day block overwrites when a device write is started (default).
+Select **Confirm** to activate **Save**.
+
+For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
+  {{< /expand >}}
+
+* {{< expand "Upgrade" "v" >}}
+
+The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< ref "VersionNotes.md#component-versions" >}}).
+Newly created pools are always up-to-date with the OpenZFS feature flags in the installed TrueNAS release.
+
+{{< include file="/static/includes/UpgradePools.md" >}}
+
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmation.png" alt="Upgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
+
+The upgrade only takes a few seconds and is non-disruptive. However, it is best to upgrade when the pool is not in heavy use.
+
+The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
+
+It is not necessary to stop any sharing services to upgrade the pool.
+{{< /expand >}}
 
 ## Storage Dashboard Widgets
 
@@ -100,14 +146,13 @@ After adding a pool, the screen displays storage and pool widgets.
 
 The set of four pool widgets and the **Export/Disconnect** and **Expand** buttons show for each pool created on the system.
 
-
 Each set of pool widgets provides access to screens for disks, datasets, VDEVs, snapshots, quotas, and pool ZFS functions for the pool.
 For example, **Manage Devices** on the **Topology** widget opens the **Devices** screen with the VDEVs configured for only that pool.
 
-### Unassigned Disks Widget
+### Unassigned Disks and Disks with exported pools Widgets
 
 The **Unassigned Disks** widget at the top of the **Storage Dashboard** shows when disks are available to add to a new or existing pool.
-If the system has disks available and that are associated with exported pools, the **Disks with Exported pools** shows instead.
+If the system has disks available and that are associated with exported pools, the **Disks with exported pools** shows instead.
 The number of available disks shows, and the **Add to Pool** button.
 The pool with the system dataset, and the state of the pool, shows in the dialog.
 
@@ -195,7 +240,7 @@ The **Storage Health** widget shows health-of-the-pool information.
 Possible widget details include:
 * Pool status shows the pool status as** Online, no errors** or **Offline**, **Degraded no errors**.
 * **Scheduled Scrub** shows the time based on a 24-hour clock and frequency of a scheduled scrub (the day the task runs).
-* **Auto TRIM** shows the auto trim feature as on or off.
+* **Auto TRIM** shows when the auto trim feature is on or off.
 * **Last Scan** shows the date and time of the last completed scrub.
 * **Last Scan Errors** shows the number of errors detected during the last scrub.
 * **Last Scan Duration** shows the time, in minutes and seconds, that the last scrub ran.
@@ -245,18 +290,6 @@ Using a multiple of *seven* ensures the scrub always occurs on the same weekday.
 Starting in TrueNAS 25.10, resilver priority settings are now located in **System Settings > Advanced Settings** on the **Storage** widget.
 {{< /hint >}}
 
-#### Auto TRIM Dialog
-
-The **Edit Auto TRIM** option on the **ZFS Health** widget opens a dialog to set **Auto TRIM**.
-
-{{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Option Auto TRIM" id="Pool Option Auto TRIM" >}}
-
-When enabled, **Auto TRIM** allows TrueNAS to periodically review data blocks and identify which empty blocks of obsolete blocks it can delete.
-Leave unselected to incorporate day block overwrites when a device write is started (default).
-Select **Confirm** to activate **Save**.
-
-For more details about TRIM in ZFS, see the `autotrim` property description in [zpool.8](https://zfsonlinux.org/manpages/0.8.1/man8/zpool.8.html).
-
 #### Prune Deduplication Table Dialog
 
 The **Prune Deduplication Table** dialog shows pruning measurement options the system should use when pruning the deduplication table (DDT).
@@ -303,21 +336,6 @@ TrueNAS complies with SAS/SATA specifications and reports temperatures in Celsiu
 **View Disks** opens the **Storage > [Disk]({{< ref "DisksScreen" >}})** screen.
 
 **View Reports** opens the **Report** screen for the disks in the selected pool.
-
-## Upgrade Dialog
-
-The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< ref "VersionNotes.md#component-versions" >}}).
-Newly created pools are always up-to-date with the OpenZFS feature flags in the installed TrueNAS release.
-
-{{< include file="/static/includes/UpgradePools.md" >}}
-
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmation.png" alt="Upgrade Pool Dialog" id="Upgrade Pool Dialog" >}}
-
-The upgrade only takes a few seconds and is non-disruptive. However, it is best to upgrade when the pool is not in heavy use.
-
-The upgrade process suspends I/O for a short period but is nearly instantaneous on a quiet pool.
-
-It is not necessary to stop any sharing services to upgrade the pool.
 
 <div class="noprint">
 

@@ -1,5 +1,5 @@
 ---
-title: "26 (Halfmoon) Development Notes"
+title: "TrueNAS 26 Development Notes"
 description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
 weight: 10
 related: false
@@ -39,8 +39,8 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-{{< hint type="tip" title="26 Nightly Development Documentation" >}}
-This page tracks the latest development roadmap and notes for the future TrueNAS major version 26 (Halfmoon).
+{{< hint type="tip" title="TrueNAS 26 Nightly Development Documentation" >}}
+This page tracks the latest development roadmap and notes for TrueNAS 26, the next major version of TrueNAS.
 
 See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or pre-release [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) release notes for information relating to those versions.
 {{< /hint >}}
@@ -56,7 +56,7 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-TrueNAS 26 (Halfmoon) is currently in active development.
+TrueNAS 26 is currently in active development.
 
 Check back for more information.
 

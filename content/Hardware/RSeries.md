@@ -44,7 +44,7 @@ descr="BIOS configuration instructions for TrueNAS R20 and R50 systems." >}}
 descr="Download R20 and R50 stencils to diagram your TrueNAS hardware configuration." >}}
 
 {{< imagecard image="/images/Hardware/RSeries/R20BSOV.png" title="R20B Statement of Volatility" link="https://www.truenas.com/docs/files/R20BSOV.pdf"
-descr="iXsystems official Statement of Volatility for the R20B system." >}}
+descr="TrueNAS official Statement of Volatility for the R20B system." >}}
 
 </div>
 
@@ -75,6 +75,9 @@ descr="Notice about reliability issues with some 1300W power supplies used with 
 
 {{< imagecard-lang image="/images/Hardware/RSeries/R60PUM.png" title="R60 User Manual" link="https://www.truenas.com/docs/files/RSeriesPUM/R60/R60PUM.pdf"
 descr="User Manual for the TrueNAS R60." >}}
+
+{{< imagecard image="/images/Hardware/RSeries/R20BSOV.png" title="R60 Statement of Volatility" link="https://www.truenas.com/docs/files/R60SOV25091.pdf"
+descr="TrueNAS official Statement of Volatility for the R60 system." >}}
 
 {{< imagecard image="/images/Hardware/RSeries/RSeriesStencil.png" title="Hardware Stencils" link="https://www.truenas.com/docs/files/r60_stencil_pack.vssx"
 descr="Download R60 stencils to diagram your TrueNAS hardware configuration." >}}

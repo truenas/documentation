@@ -44,6 +44,13 @@ Note the primary group assigned to that user.
 
 {{< include file="/static/includes/AddAdminGroup.md" >}}
 
+{{< hint type=important title="Root Account Group Restrictions" >}}
+The root account group membership cannot be modified and is permanently assigned to the builtin_administrators group (gid 544).
+This restriction prevents accidental removal of required privileges that could cause system functions like scheduled tasks, cloud sync operations, and cron jobs to fail.
+
+To disable root account access to the TrueNAS UI while maintaining proper system functionality, use the **Disable Password** option in **Credentials > Local Users** instead of modifying group membership.
+{{< /hint >}}
+
 ### Allowing Sudo Commands
 
 As a security hardening feature, administrator accounts in Linux-based TrueNAS releases (22.12.0 or newer) cannot execute certain root-level commands in a shell or SSH session by default.
