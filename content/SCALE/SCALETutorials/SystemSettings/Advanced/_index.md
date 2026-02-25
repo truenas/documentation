@@ -44,47 +44,66 @@ Enterprise-licensed systems include configuration options for STIG and FIPS secu
 
 ## Configuring System Auditing
 
-The **Audit** widget displays the current audit storage and retention policy settings.
+The **Audit** card displays the current audit storage and retention policy settings.
 The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Card" id="Advanced System Setting Audit Card" >}}
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
 Click **Configure** to open the **Audit** configuration screen and [to manage storage and retention policies for audit logs]({{< ref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}}).
 
-## Managing Sysctl Variables
+## Managing Tunable Variables
 
-Use **Add** on the **Sysctl** widget to add a tunable that configures a kernel module parameter at runtime.
+Use **Add** on the **Tunable** card to add a tunable that configures a kernel module parameter at runtime.
 
-![AdvancedSysctlWidgetNoSysctl](/images/SCALE/SystemSettings/AdvancedSysctlWidget.png "TrueNAS Advanced Settings Sysctl Widget")
+![AdvancedSettingsTunableCard](/images/SCALE/SystemSettings/AdvancedSettingsTunableCard.png "Tunable Card")
 
-The **Add Sysctl** or **Edit Sysctl** configuration screens display the settings.
+The **Add Tunable** screen shows the settings.
 
-![AddSysctlConfigScreens](/images/SCALE/SystemSettings/AddSysctlConfigScreen.png "TrueNAS Add Sysctl Screen")
+![AddTunableScreen](/images/SCALE/SystemSettings/AddTunableScreen.png "Add Tunable Screen")
 
-Enter the sysctl variable name in **Variable**. Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately.
+Select the tunable type from the **Type** dropdown list.
+There are three options: 
+ * **SYSCTL** - Linux kernel parameters (called sysctl variables) that tune low-level kernel behavior across networking, memory management, virtual memory, file descriptors, security hardening and more that affect the entire system. Best used for general system performance, network stack, memory pressure, security hardening (e.g., against SYN floods: `net.ipv4.tcp_syncookies=1`). Variables persist across system remboots if set in config files.Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) loader value in **Value**.
+ * **UDEV** - UDEV rules, which are dynamic device manager configurations that run with when the kernel detects hardware events (e.g, disk plugged in, USB device attached, block device created). Variables are applied per device or per subsystem. They are ideal for hardware-specific tuning, especially disks/SSDs in ZFS pools e.g., forcing consistent I/O scheduler, readahead, or queue depth on pool drives to avoid defaults that hurt ZFS performance.They are permanent when the rule file exists, and rules re-apply automatically on device add/remove operations.
+ * **ZFS** - OpenZFS module parameters for the ZFS kernel module on Linux. They control ZFS-specific behavior like ARC caching, compression, I/O scheduling, prefetching, recordsize limits and more. Use for fine-tuning ZFS performance, memory usage (AREC/L2ARC), compression, dedup, scrub/resilver behavior, and I/O patterns. They only apply to ZFS filesystem/modules. Runtime changes are lost on reboot or module reloads.
 
-Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value for the loader in **Value**.
+Enter the variable name in **Variable**, the value for the variable in **Value**, and a short descritpion in **Description**. See examples below for each tunable type.<br>
 
-Enter a description and then select **Enabled**. To disable but not delete the variable, clear the **Enabled** checkbox.
+**Type: SYSCTL** (Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately.)<br>
+**Varialbe:** *net.core.somaxconn*<br>
+**Value**: *1024*<br>
+**Description**: *Increase max pending connections for better network handling under load.*<br>
+
+**Type:** **UDEV**<br>
+**Variable**: *ACTION=="add|change", KERNEL=="sd[a-z]"*<br>
+**Value**:*1*<br>
+**Description**: *Set I/O scheduler to deadline on all rotational disks.*<br>
+
+**Type:** **ZFS**<br>
+**Varialbe**: *zfs_arc_max*<br>
+**Value**: *17179869184* (that is 16 GiB in bytes; caluclate as deseired RAM cap x 1024<sup>3</sup>)<br>
+**Description**: *Cap ZFS ARC at 16 GiB to leave headroom for apps/VMs.*<br>
+
+Select **Enabled**. Disabling the tunable does not delete the variable.
 
 Click **Save**.
 
 ## Adding NTP Servers
 
-The **NTP Servers** widget allows users to add Network Time Protocol (NTP) servers.
+The **NTP Servers** card allows users to add Network Time Protocol (NTP) servers.
 These sync the local system time with an accurate external reference.
 By default, new installations use several existing NTP servers. TrueNAS supports adding custom NTP servers.
 
 ## Managing the System Dataset
 
-**Storage** widget shows the pool configured as the system dataset pool and allows users to select a different storage pool to hold the system dataset.
+**Storage** card shows the pool configured as the system dataset pool and allows users to select a different storage pool to hold the system dataset.
 The system dataset stores core files for debugging and keys for encrypted pools.
 It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 It also includes the reslivering priority setting.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png" alt="Storage Widget" id="Storage Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png" alt="Storage Card" id="Storage Card" >}}
 
 **Configure** opens the **Storage Settings** configuration screen.
 
@@ -110,9 +129,9 @@ To return to the default resilver prioirty, clear the checkbox and click **Save*
 
 ## Setting the Number of Replication Tasks
 
-The **Replication** widget displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can execute simultaneously.
+The **Replication** card displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can execute simultaneously.
 
-![SystemAdvancedSettingsReplicationWidget](/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png "TrueNAS Advanced Settings Replication Widget")
+![SystemAdvancedSettingsReplicationWidget](/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png "TrueNAS Advanced Settings Replication Card")
 
 Click **Configure** to open the **Replication** configuration screen.
 
@@ -134,7 +153,7 @@ Entering an IP address limits access to the system to only the address(es) enter
 
 ## Security Settings
 {{< enterprise >}}
-Only Enterprise-licensed systems show the **Security** widget and have access to the STIG and FIPS settings.
+Only Enterprise-licensed systems show the **Security** card and have access to the STIG and FIPS settings.
 
 Administrators considering enabling STIG and FIPS security settings should contact TrueNAS Support before making any changes.
 
@@ -188,7 +207,7 @@ When STIG (and FIPS) are enabled, auditing includes these events:
 
 To set up FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
 
-After configuring two-factor authentication, go to **System > Advanced Settings** and locate the **Security** widget.
+After configuring two-factor authentication, go to **System > Advanced Settings** and locate the **Security** card.
 
 Click **Settings** to open the **System Security** configuration screen.
 
