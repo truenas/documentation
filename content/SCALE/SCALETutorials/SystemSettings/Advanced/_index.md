@@ -19,7 +19,7 @@ keywords:
 - software storage solutions
 ---
 
-**Advanced Settings** provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
+**Advanced Settings** provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), NVIDIA drivers, self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
 
 {{< enterprise >}}
 Enterprise-licensed system administrators have additional options to configure security-related settings, such as FIPS and STIG compatibility and Self-Encrypting Drive (SED) configuration.
@@ -131,6 +131,40 @@ Entering an IP address limits access to the system to only the address(es) enter
 {{< include file="/static/includes/AccessWidget.md" >}}
 
 {{< include file="/static/includes/ConfigureAccessSettings.md" >}}
+
+## Installing NVIDIA Drivers
+
+The **NVIDIA Drivers** widget allows you to install or remove NVIDIA GPU drivers on your system.
+NVIDIA GPU support is required for containers that use NVIDIA GPUs for graphics acceleration or computation.
+
+{{< trueimage src="/images/SCALE/SystemSettings/NVIDIADriversWidget.png" alt="NVIDIA Drivers Widget" id="NVIDIA Drivers Widget" >}}
+
+Click **Configure** to open the **NVIDIA Drivers** configuration screen.
+
+{{< trueimage src="/images/SCALE/SystemSettings/NVIDIADriversConfigScreen.png" alt="NVIDIA Drivers Configuration Screen" id="NVIDIA Drivers Configuration Screen" >}}
+
+To install NVIDIA drivers:
+
+1. Select **Install NVIDIA Drivers**.
+2. Click **Save**.
+
+{{< hint type=warning >}}
+Installing NVIDIA drivers requires the system to use the production kernel.
+If **Enable Debug Kernel** is selected, NVIDIA driver installation fails.
+Disable the debug kernel before installing NVIDIA drivers.
+{{< /hint >}}
+
+After installation completes, NVIDIA GPU devices become available for assignment to containers.
+To verify installation, check that your GPU devices appear in the container GPU device selection list.
+
+To uninstall the drivers:
+
+1. Deselect **Install NVIDIA Drivers**.
+2. Click **Save**.
+
+Containers using NVIDIA GPUs cannot start after driver removal.
+
+See [NVIDIA Drivers Widget]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#nvidia-drivers-widget" >}}) in the UI Reference for detailed field descriptions.
 
 ## Security Settings
 {{< enterprise >}}

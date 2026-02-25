@@ -62,8 +62,6 @@ For LDAP best practices see [Configuring LDAP]({{< ref "ConfigLDAPSCALE" >}}).
 
 ## Virtual Machine and Container Configuration
 
-{{< include file="/static/includes/25.04Virtualization.md" >}}
-
 TrueNAS includes built-in virtualization capabilities that enable you to run multiple operating systems and containerized applications on a single system, maximizing hardware utilization and consolidating workloads.
 
 ### Virtual Machines
