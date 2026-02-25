@@ -6,7 +6,7 @@
 
 <!--BETA/RC-->
 
-## TrueNAS <XX.XX.XX-BETA/RC.X>
+## TrueNAS <XX-BETA/RC.X>
 ===This a <BETA/RC> release of software available to early adopters who wish to evaluate new features===
 <Concise change summary for this release.>
 ==**Breaking Changes:** <List any compatibility changes that require user action>==
@@ -21,7 +21,7 @@
 
 
 <!-- .1/.2/.3 -->
-## TrueNAS <XX.XX.X>
+## TrueNAS <XX.X>
 <Concise change summary for this release.>
 ==**Breaking Changes:** <List any compatibility changes that require user action>==
 - **New Features:** <summary of primary addition>
@@ -35,7 +35,7 @@
 
 
 <!-- HOTFIX -->
-## TrueNAS <XX.XX.X.X>
+## TrueNAS <XX.X.X>
 <Concise change summary for this release.>
 - **Critical Bug Fixes:** <Brief description of major stability improvements>
 === **Key Known Issues:** <summary of any high visibility or high impact open issues> ===

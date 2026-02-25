@@ -1,4 +1,4 @@
-## TrueNAS 26.0.0-BETA.1
+## TrueNAS 26-BETA.1
 ===This is a BETA release of software available to early adopters who wish to evaluate new features===
 [PLACEHOLDER] Concise change summary for Halfmoon (26.0.0-BETA.1).
 - ==**Breaking Changes:** [PLACEHOLDER]==
