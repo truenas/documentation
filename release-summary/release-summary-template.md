@@ -1,7 +1,12 @@
 
+<!-- NAMING CONVENTION
+     25.10 and earlier: TrueNAS-SCALE-<VERSION>.release-notes.txt
+     26 and later:      TrueNAS-<VERSION>.release-notes.txt
+-->
+
 <!--BETA/RC-->
 
-## TrueNAS <XX.XX-BETA/RC.X>
+## TrueNAS <XX.XX.XX-BETA/RC.X>
 ===This a <BETA/RC> release of software available to early adopters who wish to evaluate new features===
 <Concise change summary for this release.>
 ==**Breaking Changes:** <List any compatibility changes that require user action>==
