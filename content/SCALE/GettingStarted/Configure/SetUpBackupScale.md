@@ -38,7 +38,7 @@ Downloading and storing the initial system debug after completing the system con
 
 ## Create a Boot Environment
 
-After installing and completing your system configuration, [create a boot environment]({{< ref "ManageBootEnvironSCALE" >}}) to use as a restore point.
+After installing and completing your system configuration, [create a boot environment]({{< ref "ManageBootEnviron" >}}) to use as a restore point.
 
 If you lose access to the TrueNAS UI, you can establish an SSH session and restore it from the boot environment.
 You can clone the boot environment listed after the **initial-install** environment and rename the clone to something you recognize, such as the release number with date and time.
@@ -48,9 +48,9 @@ You can clone the boot environment listed after the **initial-install** environm
 TrueNAS has several options that allow you to back up data:
 
 * [TrueCloud backup tasks](#using-truecloud-backup-or-cloud-sync)
-* [Cloud sync tasks]({{< ref "/Scale/ScaleTutorials/DataProtection/CloudSyncTasks" >}})
+* [Cloud sync tasks]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}})
 * [Replication tasks](#using-replication)
-* [Rsync tasks]({{< ref "RsyncTasksSCALE" >}})
+* [Rsync tasks]({{< ref "RsyncTasks" >}})
 
 TrueCloud backup and cloud sync tasks require setting up a cloud service provider account and adding the credentials in TrueNAS before configuring and scheduling the tasks.
 
@@ -69,7 +69,7 @@ Cloud sync and TrueCloud backup tasks can be configured to send, receive, or syn
 The simplest way to set up a TrueCloud backup task is using a Storj iX account.
 See [Managing TrueCloud Backup Tasks]({{< ref "TrueCloudTasks" >}}) for a full tutorial.
 
-See [Adding Cloud Credentials]({{< ref "/SCALE/SCALETutorials/Credentials/BackupCredentials/AddCloudCredentials" >}}) for information on connecting TrueNAS to other cloud storage providers.
+See [Adding Cloud Credentials]({{< ref "/SCALE/Credentials/BackupCredentials/AddCloudCredentials" >}}) for information on connecting TrueNAS to other cloud storage providers.
 
 ### Using Replication
 Replication takes a moment-in-time snapshot of data and then copies that snapshot to another location.
@@ -77,7 +77,7 @@ Snapshot technology typically uses less storage than full file backups and has m
 {{< expand "Setting Up a Simple Replication Task" "v" >}}
 To create a simple replication task with the TrueNAS replication wizard:
 
-Replication needs an existing [periodic snapshot task]({{< ref "PeriodicSnapshotTasksSCALE" >}})** to run before the replication task runs or the replication task fails.
+Replication needs an existing [periodic snapshot task]({{< ref "AddingPeriodicSnapshotTasks" >}})** to run before the replication task runs or the replication task fails.
 You can define a periodic snapshot before manually configuring the replication task, or let the system create the snapshot task by selecting the replication wizard **Replicate Custom Snapshots** option. When using the wizard, TrueNAS automatically creates the periodic snapshot task and then runs the replication task.
 
 1. Create a periodic snapshot task using the replication wizard **Replicate Custom Snapshots** replication option.

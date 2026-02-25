@@ -150,7 +150,7 @@ It is recommended to use SSDs that do not rely on a limited amount of fast cache
 Most SSD performance (latency) drops when the onboard cache is fully used and more writes occur.
 Always review the steady state performance for 4K random mixed read/write.
 
-[Special vdev]({{< ref "SCALE/SCALETutorials/Storage/FusionPoolsScale" >}}) SSDs receive continuous, heavy I/O.
+[Special vdev]({{< ref "/SCALE/Storage/Pools/CreatingFusionPools" >}}) SSDs receive continuous, heavy I/O.
 HDDs and many common SSDs are inadequate.
 As of 2021, some recommended SSDs for deduplicated ZFS include Intel Optane 900p, 905p, P48xx, and better devices.
 Lower-cost solutions are high-quality consumer SSDs such as the Samsung EVO and PRO models.
@@ -195,7 +195,7 @@ If deduplication is used in an inadequately built system, these symptoms might b
 * **Cause**: When ZFS has fast, special vdev SSD disks, sufficient RAM, and is not limited by disk I/O, then the hash calculation becomes the next bottleneck.
  Most of the ZFS CPU consumption is from attempting to keep hashing up to date with disk I/O.
  When the CPU is overburdened, the console becomes unresponsive and the web UI fails to connect. Other tasks might not run properly because of timeouts.
- This is often encountered with [pool scrubs]({{< ref "SCALE/SCALETutorials/Storage/ManagePoolsScale" >}}) and it can be necessary to pause the scrub temporarily when other tasks are a priority.
+ This is often encountered with [pool scrubs]({{< ref "/SCALE/Storage/Pools/ManagePools" >}}) and it can be necessary to pause the scrub temporarily when other tasks are a priority.
 * **Diagnose**: An easily seen symptom is that console logins or prompts take several seconds to display.
  Generally, multiple entries with command <code>kernel {z_rd_int_[<i>NUMBER</i>]}</code> can be seen using the CPU capacity, and the CPU is heavily (98%+) used with almost no idle.
 * **Solutions**: Changing to a higher-performance CPU can help but might have limited benefits. 40-core CPUs have been observed to struggle as much as 4- or 8-core CPUs.

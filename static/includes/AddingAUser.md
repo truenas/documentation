@@ -1,6 +1,6 @@
 &NewLine;
 
-**SMB Access** is the default user access type that allows using the account credentials to access data shared with [SMB]({{< ref "/SCALE/SCALEUIReference/Shares" >}}).
+**SMB Access** is the default user access type that allows using the account credentials to access data shared with [SMB]({{< ref "/SCALE/Shares/SMB" >}}).
 
 When creating a user, you must:
 
@@ -19,7 +19,7 @@ To manually add a new user, click **Credentials > Users**, and then click **Add*
 2. Set the level of access given to this user.
 
    **SMB Access** is selected by default.
-   Select **WebShare** to give this user access to a [WebShare]({{< ref "/SCALE/SCALETutorials/Shares/WebShare/_index.md" >}}).
+   Select **WebShare** to give this user access to a [WebShare]({{< ref "/SCALE/Shares/WebShare/_index.md" >}}).
 
    Select **TrueNAS Access**, then select the administration role from the dropdown list that shows after selecting the **TrueNAS Access** option.
 

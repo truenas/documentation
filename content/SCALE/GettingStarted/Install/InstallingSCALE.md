@@ -308,7 +308,7 @@ One disk is for the boot environment the other for data storage.
 
 Repeat this process until enough disks are available for TrueNAS to create ideal storage pools.
 This depends on your specific TrueNAS use case.
-See [Pool Creation]({{< ref "CreatePoolWizard" >}}) for descriptions of the various pool ("vdev") types and layouts.
+See [Pool Creation]({{< ref "CreatingPools" >}}) for descriptions of the various pool ("vdev") types and layouts.
 {{< /expand >}}
 
 #### Using the TrueNAS Installer
