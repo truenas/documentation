@@ -268,7 +268,6 @@ The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users se
 {{< /truetable >}}
 {{< /expand >}}
 
-
 ## Adding NTP Servers
 
 The **NTP Servers** widget allows users to add Network Time Protocol (NTP) servers.
@@ -409,13 +408,13 @@ You can add as many addresses as needed.
 A **Restart Web Service** dialog opens.
 **Confirm** activates **Continue**. and **Continue** restarts the web UI and applies changes.
 
-## Self-Encrypting Drive Widget
+## Self-Encrypting Drive Card
 
 {{< include file="/static/includes/SEDEnterpriseAdmonition.md" >}}
 
-The **Self-Encrypting Drive** (SED) widget shows when the system has self-encrypting drives, and shows the system ATA security user and password.
+The **Self-Encrypting Drive** (SED) card shows when the system has self-encrypting drives and is licensed for SED.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="Self-Encrypting Drive Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsSelfEncryptingDriveCard.png" alt="Self-Encrypting Drive Card" id="Self-Encrypting Drive Card" >}}
 
 **Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
 
@@ -425,11 +424,10 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Config Screen" id="Self-Encrypting Drive Config Screen" >}}
 
-{{< expand "Self-Encrypting Drive Settings" "v" >}}
+{{< expand "Self-Encrypting Drive Settings" "v" >}} <!-- tag for ui ref setting automation {id="system_advanced_sed-config"} -->
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **ATA Security User** | Select the user to unlock SEDs from the dropdown list. Options are **USER** or **MASTER**. |
 | **SED Password** | Enter the global password to unlock SEDs. |
 | **Confirm SED Password** | Re-enter the global password to unlock SEDs. |
 {{< /truetable >}}

@@ -249,6 +249,11 @@ or
 
   {{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Wizard" id="Add VDEVs to Pool Screen" >}}
 
+{{< enterprise >}}
+Enterprise systems licensed for SED and with SED drives, see a message about SED encryption and that indicates only SED-capable dikds are available for seletion when a pool with SED encryption is selected.
+Pools that are not SED encrypted do not see this message.
+{{< /enterprise >}}
+
 Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< ref "CreatePoolWizard" >}}).
 
 Click on the type of vdev you want to add. For example, to add a spare, click on **Spare** to show the vdev spare options.
