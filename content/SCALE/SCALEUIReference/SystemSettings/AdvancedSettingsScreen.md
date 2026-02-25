@@ -257,7 +257,7 @@ The **Add Tunable** configuration screen allows setting up tunables to configure
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddTunableScreen.png" alt="Add Tunable Screen" id="Add Tunable Screen" >}}
 
-{{< expand "Sysctl Settings" "v" >}} <!-- commenting out automation tag {id="system_advanced_tunables"} -->
+{{< expand "Tunable Settings" "v" >}} <!-- commenting out automation tag {id="system_advanced_tunables"} -->
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|

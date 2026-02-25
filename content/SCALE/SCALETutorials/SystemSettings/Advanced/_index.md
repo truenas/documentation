@@ -69,11 +69,24 @@ There are three options:
  * **UDEV** - UDEV rules, which are dynamic device manager configurations that run with when the kernel detects hardware events (e.g, disk plugged in, USB device attached, block device created). Variables are applied per device or per subsystem. They are ideal for hardware-specific tuning, especially disks/SSDs in ZFS pools e.g., forcing consistent I/O scheduler, readahead, or queue depth on pool drives to avoid defaults that hurt ZFS performance.They are permanent when the rule file exists, and rules re-apply automatically on device add/remove operations.
  * **ZFS** - OpenZFS module parameters for the ZFS kernel module on Linux. They control ZFS-specific behavior like ARC caching, compression, I/O scheduling, prefetching, recordsize limits and more. Use for fine-tuning ZFS performance, memory usage (AREC/L2ARC), compression, dedup, scrub/resilver behavior, and I/O patterns. They only apply to ZFS filesystem/modules. Runtime changes are lost on reboot or module reloads.
 
-Enter the variable name in **Variable**. Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately.
+Enter the variable name in **Variable**, the value for the variable in **Value**, and a short descritpion in **Description**. See examples below for each tunable type.<br>
 
-Enter a value in **Value**.
+**Type: SYSCTL** (Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately.)<br>
+**Varialbe:** *net.core.somaxconn*<br>
+**Value**: *1024*<br>
+**Description**: *Increase max pending connections for better network handling under load.*<br>
 
-Enter a description and then select **Enabled**. Disabling the tunable does not delete the variable.
+**Type:** **UDEV**<br>
+**Variable**: *ACTION=="add|change", KERNEL=="sd[a-z]"*<br>
+**Value**:*1*<br>
+**Description**: *Set I/O scheduler to deadline on all rotational disks.*<br>
+
+**Type:** **ZFS**<br>
+**Varialbe**: *zfs_arc_max*<br>
+**Value**: *17179869184* (that is 16 GiB in bytes; caluclate as deseired RAM cap x 1024<sup>3</sup>)<br>
+**Description**: *Cap ZFS ARC at 16 GiB to leave headroom for apps/VMs.*<br>
+
+Select **Enabled**. Disabling the tunable does not delete the variable.
 
 Click **Save**.
 
