@@ -1,6 +1,6 @@
 ---
 title: "Advanced Settings Screen"
-description: "Provides information on the System Settings > Advanced screen, widgets, and configuration screen settings."
+description: "Provides information on the System Settings > Advanced screen, cards, and configuration screen settings."
 weight: 30
 aliases:
  - /scale/scaleuireference/systemsettings/advancedsettings/
@@ -99,11 +99,11 @@ Save the current system configuration with the _Download File_ option before res
 Not saving the system configuration before resetting it can result in losing data that is not backed up and losing the ability to revert to the previous configuration.
 {{< /hint >}}
 
-## Console Widget
+## Console Card
 
-The **Console** widget shows the current console settings for TrueNAS, which cover setting a password prompt for the text console, enabling/disabling the serial console, the current serial port number and speed, and any banner text entered in the **MOTD Banner** field.
+The **Console** card shows the current console settings for TrueNAS, which cover setting a password prompt for the text console, enabling/disabling the serial console, the current serial port number and speed, and any banner text entered in the **MOTD Banner** field.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsConsoleWidget.png" alt="Console Widget" id="Console Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsConsoleWidget.png" alt="Console Card" id="Console Card" >}}
 
 **Configure** opens the **[Console](#console-configuration-screen)** configuration screen.
 
@@ -125,12 +125,12 @@ The **Console** widget shows the current console settings for TrueNAS, which cov
 {{< /truetable >}}
 {{< /expand >}}
 
-## Syslog Widget
+## Syslog Card
 
-The **Syslog** widget displays the existing system logging settings that specify how and when the system sends log messages to system log (syslog) servers.
+The **Syslog** card displays the existing system logging settings that specify how and when the system sends log messages to system log (syslog) servers.
 TrueNAS allows configuring an array of two syslog servers. Each server can have its own host, transport, and TSL certificate setting.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsSyslogWidget.png" alt="Syslog Widget" id="Syslog Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsSyslogWidget.png" alt="Syslog Card" id="Syslog Card" >}}
 
 **Configure** opens the **[Syslog](#syslog-configuration-screen)** configuration screen.
 
@@ -151,16 +151,16 @@ There is also an option to configure a remote syslog server for recording system
 | **Syslog Server** | Enter the remote syslog server DNS hostname or IP address. Add a colon and the port number to the hostname to use non-standard port numbers, like *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. **Add Syslog Server** shows a block of settings to configure a syslog server. Allows adding two servers. |
 | **Host** | **Syslog Server** setting. Sets the remote syslog server DNS host name or IP address. Allows using non-standard port numbers by adding a colon and the port number to the host name, like *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. | 
 | **Transport** | **Syslog Server** setting. Sets the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecting Transport Layer Security (TLS) shows the **TLS Certificate** field. This setting requires pre-configuring the server system certificate if not using the **Truenas_default** certificate. |
-| **TLS Certificate** | **Syslog Server** setting that shows after selecting **TLS** in **Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select the default or import a certificate using the **Credentials > Certificates** screen, **Certificates** widget. |
+| **TLS Certificate** | **Syslog Server** setting that shows after selecting **TLS** in **Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select the default or import a certificate using the **Credentials > Certificates** screen, **Certificates** card. |
 | **Include Audit Logs** | Select to enable audit logging. |
 {{< /truetable >}}
 {{< /expand >}}
 
-## Audit Widget
+## Audit Card
 
-The **Audit** widget displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The **Audit** card displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Widget" id="Advanced System Setting Audit Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Card" id="Advanced System Setting Audit Card" >}}
 
 ### Configure Auditing
 
@@ -168,11 +168,11 @@ The **Audit** widget displays the current audit storage and retention policy set
 
 Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "AuditingSCALE.md#configuring-audit-storage-and-retention-policies" >}})
 
-## Kernel Widget
+## Kernel Card
 
-The **Kernel** widget shows options for configuring the Linux kernel installed with TrueNAS.
+The **Kernel** card shows options for configuring the Linux kernel installed with TrueNAS.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAdvancedKernel.png" alt="Kernel Widget" id="Kernel Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAdvancedKernel.png" alt="Kernel Card" id="Kernel Card" >}}
 
 {{< expand "Kernel Settings" "v" >}}
 {{< truetable >}}
@@ -182,15 +182,15 @@ The **Kernel** widget shows options for configuring the Linux kernel installed w
 {{< /truetable >}}
 {{< /expand >}}
 
-## Cron Jobs Widget
+## Cron Jobs Card
 
-The **Cron Jobs** widget displays **No Cron Jobs configured** until you add a cron job, and then it shows the information on the cron job(s) configured on the system.
+The **Cron Jobs** card displays **No Cron Jobs configured** until you add a cron job, and then it shows the information on the cron job(s) configured on the system.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsCronJobWidget.png" alt="Cron Job Widget" id="Cron Job Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsCronJobWidget.png" alt="Cron Job Card" id="Cron Job Card" >}}
 
 **Add** opens the **[Add Cron Job](#add-or-edit-cron-job-configuration-screen)** configuration screen.
 
-Click on any job listed in the widget to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen)** configuration screen populated with the settings for that cron job.
+Click on any job listed in the card to open the **[Edit Cron Jobs](#add-or-edit-cron-job-configuration-screen)** configuration screen populated with the settings for that cron job.
 
 ### Add or Edit Cron Job Configuration Screen
 
@@ -214,11 +214,11 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 {{< /truetable >}}
 {{< /expand >}}
 
-## Init/Shutdown Scripts Widget
+## Init/Shutdown Scripts Card
 
-The **Init/Shutdown Scripts** widget displays **No Init/Shutdown Scripts configured** until you add either a command or script; then the widget lists the scripts configured on the system.
+The **Init/Shutdown Scripts** card displays **No Init/Shutdown Scripts configured** until you add either a command or script; then the card lists the scripts configured on the system.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Widget" id="Init/Shutdown Scripts Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsInitShutdownScriptWidget.png" alt="Init/Shutdown Scripts Card" id="Init/Shutdown Scripts Card" >}}
 
 **Add** opens the **[Add Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen.
 Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or-edit-initshutdown-script-configuration-screens)** configuration screen populated with the settings for that script.
@@ -243,46 +243,46 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 {{< /truetable >}}
 {{< /expand >}}
 
-## Sysctl Widget
+## Tunable Card
 
-The **Sysctl** widget displays either **No Sysctl configured** or the existing sysctl settings on the system.
+The **Tunable** card shows the existing sysctl settings on the system.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSysctlWidget.png" alt="Sysctl Widget" id="Sysctl Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsTunableCard.png" alt="Tunable Card" id="Tunable Card" >}}
 
 **Add** to add a tunable that configures a kernel module parameter at runtime.
 
-### Add or Edit Sysctl Configuration Screen
+### Add Tunable Screen
 
-The **Add Sysctl** or **Edit Sysctl** configuration screen settings let users set up tunables to configure kernel parameters at runtime.
+The **Add Tunable** configuration screen allows setting up tunables to configure Linux kernel parameters at runtim, UDEV rules for detected hardware, or ZFS module parameters for the ZFS kernel modlue on Linux.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AddSysctlConfigScreen.png" alt="Sysctl Config Screen" id="Sysctl Config Screen" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AddTunableScreen.png" alt="Add Tunable Screen" id="Add Tunable Screen" >}}
 
-{{< expand "Sysctl Settings" "v" >}}
+{{< expand "Sysctl Settings" "v" >}} <!-- commenting out automation tag {id="system_advanced_tunables"} -->
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Variable** | Enter the name of the sysctl variable to configure. Sysctl tunables configure kernel parameters while the system runs and generally take effect immediately. |
-| **Value** | Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value to use for the loader, **sysctl** variable. |
+| **Type** | Sets the type of tunable to configure. Shows three options: <br><li>**SYSCTL** - Linux kernel parameters (called sysctl variables) that tune low-level kernel behavior across networking, memory management, virtual memory, file descriptors, security hardening and more that affect the entire system. Best used for general system performance, network stack, memory pressure, security hardening (e.g., against SYN floods: `net.ipv4.tcp_syncookies=1`). They are written to <file>/proc/sys/</file> at runtime via `sysctl -w` and are made persistent via files in <file>/etc/sysctl.d/</file> or <file>/etc/sysctl.confM/file>. Variables persist across system remboots if set in config files. <br><li>**UDEV** - UDEV rules, which are dynamic device manager configurations that run with when the kernel detects hardware events (e.g, disk plugged in, USB device attached, block device created). Variables are applied per device or per subsystem. They are ideal for hardware-specific tuning, especially disks/SSDs in ZFS pools (e.g., forcing consistent I/O scheduler, readahead, or queue depth) on pool drives to avoid defaults that hurt ZFS performance. They are applied when the rules files ending in `.rules` in <file>/etc/udev/rules.d</file>. The udev daemon (udevd) parses them on device events. They are permanent when the rule file exists, and rules re-apply automatically on device add/remove operations. <br><li>**ZFS** - OpenZFS module parameters for the ZFS kernel module on Linux. They control ZFS-specific behavior like ARC caching, compression, I/O scheduling, prefetching, recordsize limits and more. Use for fine-tuning ZFS performance, memory usage (AREC/L2ARC), compression, dedup, scrub/resilver behavior, and I/O patterns. They only apply to ZFS filesystem/modules, and are applied when written to <file>/sys/module/zfs/parameters/</file> at runtime (after module load). Runtime changes are lost on reboot or module reloads. Use modprobe config for boot-time persistence.</li> |
+| **Variable** | Enter the name of the variable to configure. Tunables configure sustem parameters while the system is runing, and they generally take effect immediately. |
+| **Value** | Enter a value for the tunable. For a **SYSCTL** tunable, enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) value to use for the loader, **sysctl** variable. |
 | **Description** | Enter a description for the tunable. |
 | **Enabled** | Select to enable this tunable. Leave clear to disable this tunable without deleting it. |
 {{< /truetable >}}
 {{< /expand >}}
 
-
 ## Adding NTP Servers
 
-The **NTP Servers** widget allows users to add Network Time Protocol (NTP) servers.
+The **NTP Servers** card allows users to add Network Time Protocol (NTP) servers.
 These sync the local system time with an accurate external reference.
 By default, new installations use several existing NTP servers. TrueNAS supports adding custom NTP servers.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsNTPServersWidget.png" alt="NTP Servers Widget" id="NTP Servers Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsNTPServersWidget.png" alt="NTP Servers Card" id="NTP Servers Card" >}}
 
 ### Add NTP Server Screen
 
 The **Add NTP Server** screen shows Network Time Protocol (NTP) server settings that sync the local TrueNAS system with an accurate external reference.
 By default, new installations use several existing NTP servers. TrueNAS supports adding custom NTP servers.
 
-**Add** on the **NTP Servers** widget opens the **Add NTP Server** screen.
+**Add** on the **NTP Servers** card opens the **Add NTP Server** screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddNPTServerScreen.png" alt="Add NTP Servers Screen" id="Add NTP Server Screen" >}}
 
@@ -300,12 +300,12 @@ By default, new installations use several existing NTP servers. TrueNAS supports
 {{< /truetable >}}
 {{< /expand >}}
 
-## Storage Widget
+## Storage Card
 
-**Storage** widget shows the pool configured as the system dataset pool, and allows users to select the storage pool they want to hold the system dataset.
+**Storage** card shows the pool configured as the system dataset pool, and allows users to select the storage pool they want to hold the system dataset.
 The system dataset stores core files for debugging and keys for encrypted pools. It also stores Samba4 metadata, such as the user and group cache and share-level permissions.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png" alt="Storage Widget" id="Storage Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemStorageWidget.png" alt="Storage Card" id="Storage Card" >}}
 
 It also shows the resilivering priority setting.
 
@@ -331,11 +331,11 @@ You cannot move the system dataset to an encrypted pool with a passphrase set.
 
 **Save** implements setting changes.
 
-## Replication Widget
+## Replication Card
 
-The **Replication** widget displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
+The **Replication** card displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png" alt="Replication Widget" id="Replication Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSettingsReplicationWidget.png" alt="Replication Card" id="Replication Card" >}}
 
 Click **Configure** to open the **Replication** configuration screen.
 
@@ -343,7 +343,7 @@ Click **Configure** to open the **Replication** configuration screen.
 
 Enter a number for the maximum number of simultaneous replication tasks you want to allow the system to process and click **Save**.
 
-## Access Widget
+## Access Card
 
 {{< include file="/static/includes/AccessWidget.md" >}}
 
@@ -383,12 +383,12 @@ Enterprise-licensed systems include the **Allow Directory Service users to acces
 After enabling this option, TrueNAS automatically creates a new entry, named as the domain admin group, in the **Privileges** screen table. For example, if the domain is *ad03.mydomain.net*, then you should see a group of that name listed as well as any of the groups AD creates on the system.
 {{< /enterprise >}}
 
-## Allowed IP Addresses Widget
+## Allowed IP Addresses Card
 
-The **Allowed IP Addresses** widget displays IP addresses and networks added to the system that are allowed to use the API and UI.
+The **Allowed IP Addresses** card displays IP addresses and networks added to the system that are allowed to use the API and UI.
 If this list is empty, then all IP addresses are allowed to use the API and UI.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemAllowedIPAddressesWidget.png" alt="Allowed IP Addresses Widget" id="Allowed IP Addresses Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemAllowedIPAddressesWidget.png" alt="Allowed IP Addresses Card" id="Allowed IP Addresses Card" >}}
 
 **Configure** opens the **Allowed IP Addresses** configuration screen.
 
@@ -409,13 +409,13 @@ You can add as many addresses as needed.
 A **Restart Web Service** dialog opens.
 **Confirm** activates **Continue**. and **Continue** restarts the web UI and applies changes.
 
-## Self-Encrypting Drive Widget
+## Self-Encrypting Drive Card
 
 {{< include file="/static/includes/SEDEnterpriseAdmonition.md" >}}
 
-The **Self-Encrypting Drive** (SED) widget shows when the system has self-encrypting drives, and shows the system ATA security user and password.
+The **Self-Encrypting Drive** (SED) card shows when the system has self-encrypting drives, and shows the system ATA security user and password.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="Self-Encrypting Drive Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Card" id="Self-Encrypting Drive Card" >}}
 
 **Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
 
@@ -435,17 +435,17 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 {{< /truetable >}}
 {{< /expand >}}
 
-## Isolated GPU Device(s) Widget
+## Isolated GPU Device(s) Card
 
-The **Isolated GPU Device(s)** widget displays any isolated graphics processing unit (GPU) device(s) configured on your system.
+The **Isolated GPU Device(s)** card displays any isolated graphics processing unit (GPU) device(s) configured on your system.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device Widget" id="Isolated GPU Device Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingIsolatedGPUDeviceWidget.png" alt="Isolated GPU Device Card" id="Isolated GPU Device Card" >}}
 
 **Configure** opens the **Isolated GPU PCI Ids** screen, which allows users to isolate additional GPU devices.
 
 ### Isolated GPU PCI IDs Configuration Screen
 
-The **Isolate GPU PCI IDs** widget shows GPU devices added in TrueNAS.
+The **Isolate GPU PCI IDs** card shows GPU devices added in TrueNAS.
 **Configure** opens the configuration screen and allows you to isolate GPU devices for a virtual machine (VM).
 
 To isolate a GPU, you must have at least two in your system; one allocated to the host system for system functions and/or applications, and the other available to isolate for use by a VM.
@@ -459,11 +459,11 @@ Isolated GPU devices are reserved for use by configured applications or a VM.
 To allocate an isolated GPU device, select it while creating or editing the VM configuration.
 When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM, and it becomes unavailable for any other allocations.
 
-## Global Two Factor Authentication Widget
+## Global Two Factor Authentication Card
 
-The **Global Two Factor Authentication** widget shows the status of global two-factor authentication, the tolerance window, and the status of two-factor authentication for SSH sessions. It provides access to the configuration screen that allows you to set up two-factor authentication (2FA) for your system.
+The **Global Two Factor Authentication** card shows the status of global two-factor authentication, the tolerance window, and the status of two-factor authentication for SSH sessions. It provides access to the configuration screen that allows you to set up two-factor authentication (2FA) for your system.
 
-The widget displays the following information:
+The card displays the following information:
 
 {{< truetable >}}
 | Field | Description |
@@ -473,7 +473,7 @@ The widget displays the following information:
 | **Two Factor Authentication for SSH** | Shows whether 2FA for SSH is enabled or disabled. |
 {{< /truetable >}}
 
-{{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationWidget.png" alt="Global Two Factor Authentication Widget" id="Global Two Factor Authentication Settings Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationWidget.png" alt="Global Two Factor Authentication Card" id="Global Two Factor Authentication Settings Card" >}}
 
 **Configure** opens the **Global Two Factor Authentication** configuration screen.
 
@@ -491,15 +491,15 @@ The widget displays the following information:
 {{< /truetable >}}
 {{< /expand >}}
 
-## System Security Widget
+## System Security Card
 
 {{< enterprise >}}
-The **System Security** widget allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, general-purpose OS STIG compliance, and other administrator account rules.
+The **System Security** card allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, general-purpose OS STIG compliance, and other administrator account rules.
 Changing FIPS or STIG settings requires a system restart to apply the setting changes.
 
 High Availability (HA) systems restart the standby controller and then show a prompt to failover and restart the primary controller.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSecurityWidget.png" alt="System Security Widget" id="System Security Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSecurityWidget.png" alt="System Security Card" id="System Security Card" >}}
 
 **Settings** opens the **System Security** configuration screen.
 
@@ -522,14 +522,14 @@ Requires two-factor authentication for an admin user with full permissions befor
 
 {{< /enterprise >}}
 
-## Failover Widget
+## Failover Card
 
 {{< enterprise >}}
 
-The **Failover** widget shows only on Enterprise-licensed HA systems.
+The **Failover** card shows only on Enterprise-licensed HA systems.
 It shows the status of failover, the default controller, and the network timeout before TrueNAS initiates failover.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsFailoverWidget.png" alt="System Failover Widget" id="System Failover Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsFailoverWidget.png" alt="System Failover Card" id="System Failover Card" >}}
 
 **Configure** opens the **Failover** configuration screen.
 
