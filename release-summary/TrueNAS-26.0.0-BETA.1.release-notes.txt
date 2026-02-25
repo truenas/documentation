@@ -1,0 +1,12 @@
+## TrueNAS 26-BETA.1
+===This is a BETA release of software available to early adopters who wish to evaluate new features===
+[PLACEHOLDER] Concise change summary for Halfmoon (26.0.0-BETA.1).
+- ==**Breaking Changes:** [PLACEHOLDER]==
+- **New Features:** [PLACEHOLDER]
+- **Improvements:** [PLACEHOLDER]
+- **Critical Bug Fixes:** This is a WIP Draft
+=== **Key Known Issues:** This is a WIP Draft ===
+
+**Pre-Update Actions:** [PLACEHOLDER]
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes]()** | **[Known Issues]()** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
