@@ -1,28 +1,40 @@
 &NewLine;
 
-**SMB Access** is the default user access type that allows using the account credentials to access data shared with [SMB]({{< ref "/SCALE/SCALEUIReference/Shares" >}}).
+{{< expand "User Access Levels" "v" >}}
+Users are assigned different access levels by TrueNAS administrators. All user accounts are assigned access levels based on their roles or system privileges.
+All users are assigned the **SMB Access** by default.
+
+**SMB Access** is the default user access type assigned to user accounts that require access to SMB shares.
+It uses the user account credentials to access data shared with [SMB]({{< ref "/SCALE/SCALEUIReference/Shares" >}}).and role assigned to the user.
+
+TrueNAS requires other options based on the level of access
+**TrueNAS Access** shows the predefined roles available in TrueNAS. Assigning **TrueNAS Access** requires setting one of the options or roles: **Full Admin**, **Readonly Admin**, or **Sharing Admin**.
+
+Some administration users require access to the TrueNAS shell or might require access using an SSH session.
+These users must be assigned the **Shell** option and or the **SSH Access** options.
+If a user only requires access to the TrueNAS **Shell** screen, assign the user **Shell Access**.
+If the user requires SSH session access, assign the **SSH Access** to the user. This provides access to the **Shell** screen and an SSH session.
+**SSH Access** requires adding an SSH keypair to TrueNAS, and then copying the public key into the **Add User** or **Edit User** screen.
+Turn on the SSH service before establishing an SSH session, and then turn it off when access is no longer required to maintain a security-hardened system.
+{{< /expand >}}
 
 When creating a user, you must:
 
-* Enter a **Full Name** or description for the user, such as a first and last name.
-* Enter a **Username**.
-* Enter a **Password**.
+* Enter a value in **Full Name** or description for the user, such as a first and last name.
+* Enter a value in **Username**.
+* Enter a a value  **Password** and confirm that password.
 * Specify or accept the default user ID (**UID**)
 
-TrueNAS requires other options based on the level of access and role assigned to the user.
-The **Shell** option only shows for users with **Shell Access** or **SSH Access** selected.
-
-To manually add a new user, click **Credentials > Users**, and then click **Add** to open the **Add User** screen.
+To manually add a new user, go to **Credentials > Users**, and then click **Add** to open the **Add User** screen.
 
 1. Enter a username for the user. Names are case sensitive!
 
-2. Set the level of access given to this user.
+2. Set the level of access given to this user from the options provided.   
+   **SMB Access** is selected by default, and required for a user to have access to an SMB share.
 
-   **SMB Access** is selected by default.
    Select **WebShare** to give this user access to a [WebShare]({{< ref "/SCALE/SCALETutorials/Shares/WebShare/_index.md" >}}).
 
-   Select **TrueNAS Access**, then select the administration role from the dropdown list that shows after selecting the **TrueNAS Access** option.
-
+   Select **TrueNAS Access** and then the administration role from the dropdown list that shows after selecting the **TrueNAS Access** option.
    - To create an administrator with full access, select **Full Admin**.
    - To create an administrator with access to manage shares, select **Sharing Admin**.
    - To create an administrator with read-only access, select **Readonly Admin**.
@@ -32,10 +44,10 @@ To manually add a new user, click **Credentials > Users**, and then click **Add*
    Selecting this option also selects the **Shell Access** option by default.
    To limit the user to only Shell access, do not select the **SSH Access** option.
 
-3. Enter a password for the user.
+3. Enter a password for the user, and confirm it.
 
-   {{< expand "Set up SSH authentication." "v" >}}
-   These options only show when you select the **SSH Access** option.
+   {{< expand "Setting up SSH Access" "v" >}}
+   These options only show when you select the **SSH Access** option. Only **Full Admin** users who require SSH session access should be configured with this option.
 
    Select the optional **Allow SSH Login with Password** if you want to allow this user to log in to an SSH session and not be prompted to enter a password.
    This is not recommended as it presents a security vulnerability!
@@ -49,8 +61,10 @@ To manually add a new user, click **Credentials > Users**, and then click **Add*
    Always keep a backup of an SSH public key if you are using one.
    {{< /expand >}}
 
-4. Enter additional details for the user. Setting options change based on the access option selected.
-   **Shell Access** and **SSH Access** show the **Shell** and **Sudo Command** settings.
+4. Enter additional details for the user. Setting options change based on the access option selected in **Allow Access**.
+   If this is an SMB share user, leave the default **SMB Access** selected.
+
+   When **Shell Access** and **SSH Access** are assigned to the user, the **Shell** and **Sudo Command** settings show in the **Additional Details** section.
 
    {{< trueimage src="/images/SCALE/Credentials/AddUserAdditionallDetailsSettings.png" alt="Additional Details Settings" id="Additional Details Settings" >}}
 
@@ -82,7 +96,7 @@ To manually add a new user, click **Credentials > Users**, and then click **Add*
 
    When creating a user, the default home directory path is set to **/var/empty**.
    This directory is an immutable directory shared by service accounts and accounts that should not have a full home directory.
-   If set to this path TrueNAS does not create a home directory for the user. You must change this to the path for the dataset created for home directories.
+   If set to this path, TrueNAS does not create a home directory for the user. You must change this to the path for the dataset created for home directories.
 
    {{< trueimage src="/images/SCALE/Credentials/AddingAHomeDirectory.png" alt="User Home Directory Settings" id="User Home Directory Settings" >}}
 
