@@ -63,6 +63,7 @@ In general, when creating a simple SMB share and dataset, you can use either scr
 When adding a new share and dataset for a private dataset share, we recommend using the **Add SMB** screen to create a new share and dataset for private datasets, or for any other customized SMB share, rather than using the **Add Dataset** screen.
 
 We recommend using the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) when you want to customize the dataset with the advanced setting options. Afterwhich, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
+{{< /expand >}}
 
 {{< include file="/static/includes/ShareACLDialogs.md" >}}
 
