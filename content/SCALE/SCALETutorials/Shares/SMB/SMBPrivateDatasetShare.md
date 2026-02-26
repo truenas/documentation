@@ -163,7 +163,7 @@ The **Edit ACL** screen for the new private share dataset opens. This controls w
 The **Edit Share ACL** option for the share opens the **Share ACL for *rikka-private*** screen where you can mofify who can see or access the share when connecting to it though Windows File Explorer. 
 
 {{< expand "Setting Dataset Permissions" "v" >}}
-First, set the dataset permissions to allow your admin user and the user assigned to the private directory access tou the share.
+First, set the dataset permissions to allow your admin user and the user assigned to the private directory to access the share.
 
 Your admin user must have permissions granted for the parent dataset covered in [Before You Begin](#before-you-begin) and the private dataset covered in this section.
 If you want or need to grant another user access to the private share dataset, other than the private share user or a group of users, add an ACL entry to the dataset on the **Edit ACL** screen, and then grant share ACL to allow access to the private dataset.
