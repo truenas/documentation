@@ -18,9 +18,178 @@ The SMB share **Other Options** in pre-25.10 releases includes a home share lega
 It is for organizations still using the legacy home shares option to add a single SMB share to provide a personal directory for every user account.
 Future TrueNAS releases can introduce instability or require configuration changes affecting this legacy feature.
 This option does not show in 25.10 and later releases unless an existing home share is upgraded to 25.10 or later.
+
+See [Replacing SMB Home Shares](#replacing-smb-home-shares) below for more information.
 {{< /hint >}}
 
+### Adding a Share User
+
+The share user is the individual user account for the private dataset share.
+This user can be manually created as described below or created by a directory server (FreeIPA, LDAP or Active Directory).
+Users that requires access to an SMB share must be created with the **SMB Access** granted.
+TrueNAS assigns this level of access to new users by default but administrators can disable/enable this manually on the **Add User** or **Edit User** screen.
+
+Go to **Credentials > Users** to verify the user for a private dataset exists and is correctly configured. If the user does not exist, create the users.
+If the user exists but does not have **SMB Access** enabled, edit the user to enable this level of access.
+
+{{< expand "How do I create a user?" "v" >}}
+{{< include file="/static/includes/AddingAUser.md" >}}
+{{< /expand >}}
+
+{{< expand "Using AD to Add Users with Private Shares" "v" >}}
+Using AD to Add Users and Private Dataset Shares
+
+You can manually add users and groups in TrueNAS, or configure groups in Active Directory and add users to each group, and then have AD add the users and group to TrueNAS.
+After AD adds users and groups, configure private directories, and if needed for other file system functions not related to private directory shares, configure home directories for the users and group(s).
+See [Managing Users]({{< ref "ManageUsers" >}}) for more information on adding home directories.
+
+Before setting up SMB shares, check system alerts to verify that no errors related to connections to Active Directory are listed.
+Resolve any issues with Active Directory before proceeding. If Active Directory cannot bind with TrueNAS, you cannot start the SMB service after making changes.
+{{< /expand >}}
+
+{{< expand "Adding Share Users with Directory Services" "v" >}}
+You can use Active Directory or LDAP to create the share users.
+
+### Creating the Private Dataset Share
+
+{{< include file="/static/includes/LocalSMBUser.md" >}}
+
+You can edit an use an existing dataset and share to use for a private dataset share, or you can create a new dataset and share. We recommend creating a new dataset and share.
+
+When creating a new share, TrueNAS allows you to use the **Add Dataset** or **Add SMB** screen to create the share and dataset.
+Each method has advantages depending on they type of share you want to create.
+In general, when creating a simple SMB share and dataset, you can use either screen.
+
+When adding a new share and dataset for a private dataset share, we recommend using the **Add SMB** screen to create a new share and dataset for private datasets, or for any other customized SMB share, rather than using the **Add Dataset** screen.
+
+We recommend using the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) when you want to customize the dataset with the advanced setting options. Afterwhich, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
+{{< /expand >}}
+
+{{< include file="/static/includes/ShareACLDialogs.md" >}}
+
+#### Checking Parent Dataset File Permissions
+
+To avoid possible permission issues or error messages when creating the private dataset share, check the file system permissions assigned to the parent dataset for the private share dataset.
+If the admin user who creates the private dataset share and dataset is not listed as the owner or as an ACL entry, the permission issues blocks creating the share dataset.
+The owner and owner group default user is root, which means only the root user can create the private share dataset.
+When set to root, if another logged-in admin user tries to create a new private dataset share nested under the parent, TrueNAS shows an error message and prevents adding the new private dataset share until you correct the permissions issue.
+
+You can change the admin user who is creating the private dataset share dataset to the ACL as the **Owner** and **Owner Group** user. Click apply for both the owner and owner group changes.
+
+Alternatively, leave the **Owner** and **Owner Group** set to the root user and add a new user entry for the admin user who creates the private dataset shares.
+Give that admin user full access permissions.
+For more information on changing permissions, see [Storage Permissions]({{< ref "PermissionsSCALE.md" >}}).
+
+#### Adding the Private Dataset Share and Dataset
+
+To create SMB private dataset share, go to **Shares**, and click **Add** on the **Windows (SMB) Shares** card to open the **Add SMB** screen.
+
+1. Select **Private Dataset Share** on the **Purpose** dropdown list, then click **Advanced Options** to configure additional share setting options.
+
+   {{< trueimage src="/images/SCALE/Shares/AddPrivateSMBShareAdvancedOptions.png" alt="Add Share Advanced Options" id="Add Share Advanced Options" >}}
+
+2. Enter or browse to select the path to the parent dataset for the private share dataset.
+   Click on the dataset where you want to add the private share dataset, then to create a new dataset, click **Create Dataset**. The **Create Dataset** dialog opens.
+
+3. Enter the private dataset name, for example *rikka-private*, then click **Create Dataset**.
+   The dialog closes, and **Path** populates with the full path to the new dataset.
+
+   {{< expand "Modifying an Existing Share" "v" >}}
+   If you created a simple share and dataset using the **Add Dataset** screen, to customize it, go to **Shares**, select it on the **SMB** screen (or card if it shows on the list), then click **Edit**. Verify the path and **Name** field are populated, and change the **Purpose** from **Default Share** to **Private Dataset**.
+   
+   {{< trueimage src="/images/SCALE/Shares/EditPrivateShareDataset.png" alt="Edit Private Share Dataset" id="Edit Private Share Dataset" >}}
+
+   {{< /expand >}}
+
+   Follow naming conventions for:
+   * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
+   * [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea)
+
+   The dataset name populates the share **Name** field and becomes the share name. The **Path** field is updated with the dataset name.
+   The share and dataset must have the same name.
+
+4. (Optional) Click **Advanced**, scroll down to select **Enable Logging** to enable SMB share audit logging.
+   
+5. (Optional) Scroll down to **Other Options** on the **Advanced Options** screen to locate the legacy **Export Recycle Bin** option, which only shows if you select a share created in an earlier TrueNAS release.
+   This option allows moving files deleted in the share to a recycle bin in that dataset.
+
+   Files are renamed to a per-user subdirectory within <file>.recycle</file> directory at the root of the SMB share if the path is the same dataset as the share.
+   If the dataset has a nested dataset, the directory is at the root of the current dataset. If this is the case, there is no automatic deletion based on file size.
+
+6. (Optional) Select any other advanced options that applies to your share needs.
+
+7. Click **Save**.
+
+8. Enable or restart the **SMB** service when prompted and make the share available on your network.
+
+When prompted by the system to configure the dataset ACL, accept the option. The **Edit ACL** screen for the new private share dataset opens.
+
+### Setting ACL Permissions
+
+There are two types of ACL permissions for shares: file system and share permissions.
+The private dataset share requires both the dataset and share ACL permissions to allow or prevent access to the share.
+
+If you did not modify the dataset ACL permissions as described above, when prompted by the system to configure the dataset ACL, accept the option.
+The **Edit ACL** screen for the new private share dataset opens. This controls who can access or modify file system permissions for the dataset the share uses.
+The **Edit Share ACL** option for the share opens the **Share ACL for *rikka-private*** screen where you can mofify who can see or access the share when connecting to it though Windows File Explorer. 
+
+{{< expand "Setting Dataset Permissions" "v" >}}
+First, set the dataset permissions to allow your admin user and the user assigned to the private directory to access the share.
+
+Your admin user must have permissions granted for the parent dataset covered in [Before You Begin](#before-you-begin) and the private dataset covered in this section.
+If you want or need to grant another user access to the private share dataset, other than the private share user or a group of users, add an ACL entry to the dataset on the **Edit ACL** screen, and then grant share ACL to allow access to the private dataset.
+
+Accessing the **Edit ACL** screen with the dataset permissions:
+- From the **Datasets** screen, select the dataset row for the private share dataset.
+  Click **Edit** on the **Permissions** card to open the **Edit ACL** screen.
+  See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) for more information on editing dataset permissions.
+
+- From the **Shares** screen, click the triple dot icon for the share row, then click **Edit Filesystem ACL** to open the **Edit ACL** screen.
+
+Set the permission for the private dataset to allow additional users or a group if others are permitted to access the private directory share.
+
+Click the **Owner** dropdown, select the administration user with full control, and then repeat for **Group**.
+You can set the owning group to your Active Directory domain admins. Click **Apply Owner** and **Apply Group** to apply the changes.
+
+{{< trueimage src="/images/SCALE/Shares/SetACLPresetForPrivateDataset.png" alt="Add Dataset ACL Permissions" id="Add Dataset ACL Permissions" >}}
+
+{{< trueimage src="/images/SCALE/Datasets/GroupDomainAdmins.png" alt="Set the owning group to Domain Admins" id="Set the owning group to Domain Admins" >}}
+
+Click **Use Preset** and choose **NFS4_HOME**. If the dataset has a POSIX ACL, choose **HOME**.
+Click **Continue**.
+
+Next, click **Add Entry** to add user entries for each user that needs access to the dataset.
+To assign required permissions, select **User** in **Who** and locate the user name in the **User** dropdown list.
+Select the required permissions.
+Repeat for each user that needs access.
+Alternatively, if you added users to a group, select, set **Who** to **Group** and locate the group in the dropdown list.
+
+{{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
+
+After adding all users or groups and setting the required permissions for each, click **Save Access Control List**.
+{{< /expand >}}
+
+{{< expand "Setting Share Permissions" "v" >}}
+If the private dataset is nested under a parent dataset that has other private datasets nested under it, you must set the share ACL permission to restrict access to the files in the private share dataset (directory) to prevent other users from accessing the private share.
+Windows File Explorer shows all datasets nested under the share parent but blocks other users not granted access permission from opening and viewing the contents of that folder or directory.
+
+Click the triple dot icon at the right of the private dataset share on the **Shares** screen, then click **Edit Share ACL** to open the **Share ACL for *rikka-private*** screen.
+
+{{< trueimage src="/images/SCALE/Shares/ShareACLForPrivateDatasetShare.png" alt="Set the Share ACL Permissions" id="Set the Share ACL Permissions" >}}
+
+Change **Who** from the default **everyone@** to the private dataset share user. In the example, the user is *rikka* for the *rikka-private* share.
+Leave **Permissions** set to **Full** and **Type** set to **Allowed**.
+Click **Add** to show another **Add entry** group of settings. Change **Who** to the admin user to allow for share maintenance tasks, like moving the directory to a new location if that becomes necessary.
+
+If granting other users in a group to a private share for that group, add an entry for each user and change the level of permissions to what is needed.
+For example, if the group members can read the files but not change them, set **Permission** to **READ** for those users, and grant the user that maintains the documents either **FULL** or **CHANGE** permissions.
+
+Click **Save** when finished.
+{{< /expand >}}
+
 ## Replacing SMB Home Shares
+
+This section applies to users upgrading from earlier releases of TrueNAS where they configured SMB shares for use as home shares.
 
 TrueNAS has removed the **Use as Home Share** option, found in the **Other Options** section of the **Advanced Options** screen for the **Add SMB** and **Edit SMB** screens in earlier releases of TrueNAS.
 The **Private Dataset Share** found as a **Purpose** dropdown list option in 25.10 and later releases replaces home shares, and is the recommended method to provide users with a private personal folder they access through an SMB share.
@@ -70,152 +239,3 @@ This article covers:
 1. Adding the private dataset share user.
 2. Creating the private dataset share and the dataset.
 3. Modifying ACL permissions for the dataset(s) and the share.
-
-### Adding the Share User
-
-{{< include file="/static/includes/AddingAUser.md" >}}
-
-### Using AD to Add Users and Private Dataset Shares
-
-You can manually add users and groups in TrueNAS, or configure groups in Active Directory and add users to each group, and then have AD add the users and group to TrueNAS.
-After AD adds users and groups, configure private directories, and if needed for other file system functions not related to private directory shares, configure home directories for the users and group(s).
-See [Managing Users]({{< ref "ManageUsers" >}}) for more information on adding home directories.
-
-Before setting up SMB shares, check system alerts to verify that no errors related to connections to Active Directory are listed.
-Resolve any issues with Active Directory before proceeding. If Active Directory cannot bind with TrueNAS, you cannot start the SMB service after making changes.
-
-### Creating the Private Dataset Share
-
-{{< include file="/static/includes/LocalSMBUser.md" >}}
-
-You can use an existing dataset or create a new dataset for the share.
-
-We recommend using the **Add SMB** screen to create a new share and dataset for this procedure, and for any customized SMB share, rather than using the **Add Dataset** screen to create the share and dataset.
-In general, when creating a simple SMB share and dataset, you can use either screen.
-We recommend using the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) to access the dataset advanced setting options when you want to customize the dataset, and using the **Add SMB** screen to create and customize an SMB share with presets and advanced options.
-
-{{< include file="/static/includes/ShareACLDialogs.md" >}}
-
-#### Before You Begin
-
-Before creating the private share dataset, go to **Datasets**, select the parent dataset for the private share dataset and check the permissions for that dataset.
-Select the parent dataset on the dataset tree table, then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen for that dataset.
-Change the default in **Owner** and **Owner Group** to the admin user for your system, and click apply for both owner and owner group.
-The owner and owner group default user is root, which means only the root user can create the private share dataset unless you add your admin user to the ACL and give the entry full access permissions.
-When set to root, if another logged-in admin user tries to create a new private dataset share nested under the parent, TrueNAS shows an error message and prevents adding the new private dataset share until you correct the permissions issue.
-You can leave the **Owner** and **Owner Group** set to root, but you must add a user entry for the admin user who creates the private dataset shares. Give that admin user full access permissions.
-
-#### Adding the Private Dataset Share and Dataset
-
-To create SMB private dataset share, go to **Shares**, and click **Add** on the **Windows (SMB) Shares** widget to open the **Add SMB** screen.
-
-1. Select **Private Dataset Share** on the **Purpose** dropdown list, then click **Advanced Options** to configure additional share setting options.
-
-   {{< trueimage src="/images/SCALE/Shares/AddPrivateSMBShareAdvancedOptions.png" alt="Add Share Advanced Options" id="Add Share Advanced Options" >}}
-
-2. Enter or browse to select the path to the parent dataset for the private share dataset, then click **Create Dataset**.
-   The **Create Dataset** dialog opens.
-
-3. Enter the private dataset name, for example *rikka-private*, then click **Create Dataset**.
-   The dialog closes, and **Path** is populated with the full path to the new dataset.
-
-   If you create a simple share and dataset using the **Add Dataset** screen, to customize it, go to **Shares**, select it on the **SMB** screen (or widget if it shows on the list), then click **Edit**. Verify the path and **Name** field are populated, and change the "Purpose" from **Default Share** to **Private Dataset**.
-   
-   {{< trueimage src="/images/SCALE/Shares/EditPrivateShareDataset.png" alt="Edit Private Share Dataset" id="Edit Private Share Dataset" >}}
-
-   Follow naming conventions for:
-   * [Files and directories](https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#naming-conventions)
-   * [Share names](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-fscc/dc9978d7-6299-4c5a-a22d-a039cdc716ea)
-
-   The dataset name populates the share **Name** field and becomes the share name. The **Path** field is updated with the dataset name.
-   The share and dataset must have the same name.
-
-4. (Optional) Click **Advanced**, scroll down to select **Enable Logging** to enable SMB share audit logging.
-   
-5. (Optional) Scroll down to **Other Options** while on the **Advanced Options** screen to locate the legacy **Export Recycle Bin** option, which only shows if you select a share created in an earlier TrueNAS release.
-   This allows moving files deleted in the share to a recycle bin in that dataset.
-
-   Files are renamed to a per-user subdirectory within <file>.recycle</file> directory at the root of the SMB share if the path is the same dataset as the share.
-   If the dataset has a nested dataset, the directory is at the root of the current dataset. If this is the case, there is no automatic deletion based on file size.
-
-6. (Optional) Select any other advanced option that applies to your share needs.
-
-7. Click **Save**.
-
-8. Enable or restart the **SMB** service when prompted and make the share available on your network.
-
-When prompted by the system to configure the dataset ACL, accept the option. The **Edit ACL** screen for the new private share dataset opens.
-
-### Setting ACL Permissions
-
-The private dataset share requires both the dataset and share ACL permissions to allow or prevent access to the share.
-
-Dataset ACL permissions are configured on the **Edit ACL** screen. Share ACL permissions are configured using the **Share ACL for *rikka-private*** screen.
-
-#### Setting Dataset Permissions
-
-First, set the dataset permissions to allow your admin user and the user assigned to the private directory share access.
-Your admin user must have permissions granted for the parent dataset covered in [Before You Begin](#before-you-begin) and the private dataset covered in this section.
-If you want or need to grant another user access to the private share dataset, other than the private share user or a group of users, add an ACL entry to the dataset and share ACL to allow access to the private dataset.
-
-Accessing the **Edit ACL** screen with the dataset permissions:
-- From the **Datasets** screen, select the dataset row for the private share dataset.
-  Click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
-  See [Setting Up Permissions]({{< ref "PermissionsSCALE" >}}) for more information on editing dataset permissions.
-
-- From the **Shares** screen, click the triple dot icon for the share row, then click **Edit Filesystem ACL** to open the **Edit ACL** screen.
-
-Set the permission for the private dataset to allow additional users or a group if others are permitted to access the private directory share.
-
-Click the **Owner** dropdown, select the administration user with full control, and then repeat for **Group**.
-You can set the owning group to your Active Directory domain admins. Click **Apply Owner** and **Apply Group** to apply the changes.
-
-{{< trueimage src="/images/SCALE/Shares/SetACLPresetForPrivateDataset.png" alt="Add Dataset ACL Permissions" id="Add Dataset ACL Permissions" >}}
-
-{{< trueimage src="/images/SCALE/Datasets/GroupDomainAdmins.png" alt="Set the owning group to Domain Admins" id="Set the owning group to Domain Admins" >}}
-
-Click **Use Preset** and choose **NFS4_HOME**. If the dataset has a POSIX ACL, choose **HOME**.
-Click **Continue**.
-
-Next, click **Add Entry** to add user entries for each user that needs access to the dataset.
-To assign required permissions, select **User** in **Who** and locate the user name in the **User** dropdown list.
-Select the required permissions.
-Repeat for each user that needs access.
-Alternatively, if you added users to a group, select, set **Who** to **Group** and locate the group in the dropdown list.
-
-{{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
-
-After adding all users or groups and setting the required permissions for each, click **Save Access Control List**.
-
-#### Setting the Share Permissions
-
-If the private dataset is nested under a parent dataset that also has other private datasets nested under it, you must set the share ACL permission to restrict access to the files in the private share dataset (directory).
-Windows File Explorer shows all datasets nested under the share parent but blocks other users not granted access permission from opening and viewing the contents of that folder or directory.
-
-Click the triple dot icon at the right of the private dataset share on the Shares screen, then click **Edit Share ACL** to open the **Share ACL for *rikka-private*** screen.
-
-{{< trueimage src="/images/SCALE/Shares/ShareACLForPrivateDatasetShare.png" alt="Set the Share ACL Permissions" id="Set the Share ACL Permissions" >}}
-
-Change **Who** from the default **everyone@** to the private dataset share user. In the example, the user is *rikka* for the *rikka-private* share.
-Leave **Permissions** set to **Full** and **Type** set to **Allowed**.
-Click **Add** to show another **Add entry** group of settings. Change **Who** to the admin user to allow for share maintenance tasks, like moving the directory to a new location if that becomes necessary.
-
-If granting other users in a group to a private share for that group, add an entry for each user and change the level of permissions to what is needed. For example, if the group members can read the files but not change them, set **Permission** to **READ** for those users, and grant the user that maintains the documents either **FULL** or **CHANGE** permissions.
-
-Click **Save** when finished.
-
-### Adding Share Users with Directory Services
-
-You can use Active Directory or LDAP to create the share users.
-
-If not already created, add a pool, then join Active Directory.
-
-Go to **Storage** and [create a pool]({{< ref "CreatePoolWizard" >}}).
-
-Next, [set up the Active Directory]({{< ref "/SCALETutorials/credentials/directoryservices/configadscale" >}}) that you want to share resources with over your network.
-
-When creating the share for this dataset, use the **SMB** preset for the dataset, but do not add the share from the **Add Dataset** screen. 
-
-Do not share the root directory!
-
-Go to **Shares** and follow the instructions listed above using the **Private Dataset Share** preset, and then modify the file system permissions of the dataset to use the **NFSv4_HOME** ACL preset.
