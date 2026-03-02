@@ -406,6 +406,26 @@ Toggle **Start Automatically** on if you want the service to activate when TrueN
 Configure the SMB service by clicking **Config Service** from the <span class="material-icons">more_vert</span> dropdown menu on the **Windows (SMB) Shares** widget header or by clicking <i class="material-icons" aria-hidden="true" title="Configure">edit</i> on the **Services** screen.
 Unless you need a specific setting or are configuring a unique network environment, we recommend using the default settings.
 
+## Enabling SMB Stateful Failover
+
+{{< enterprise >}}
+SMB Stateful Failover requires an Enterprise license and a High Availability (HA) configuration.
+When enabled, this setting is incompatible with **Enable SMB1 support** and with any share using the **Multi-Protocol Share** or **Legacy Share** purpose.
+{{< /enterprise >}}
+
+TrueNAS 26 and later supports stateful SMB HA failover for Enterprise systems.
+When enabled, TrueNAS maintains SMB session state across controller failover events so SMB clients can recover existing connections without re-authentication.
+
+### Enabling Stateful Failover
+
+1. Go to **System > Services** and click the <span class="material-icons">edit</span> **Configure** icon on the **SMB** service row to open the **SMB Service** screen.
+
+2. Click **Advanced Settings** to expand the advanced options.
+
+3. Select **Stateful Failover**.
+
+4. Click **Save**.
+
 ## Enabling Spotlight Search for macOS
 
 {{< include file="/static/includes/SMBSpotlightSearch.md" >}}
