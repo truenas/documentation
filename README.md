@@ -20,7 +20,6 @@ Software documentation is released under the Creative Commons license.
 # Install Hugo
 
 1. Download Hugo Extended v0.157.0 from [https://github.com/gohugoio/hugo/releases/](https://github.com/gohugoio/hugo/releases/tag/v0.157.0) and [install](https://gohugo.io/getting-started/installing/ "Install Hugo").
-   See these instructions for manually installing the Hugo extended version in WSL: https://sal.as/post/install-hugo-on-wsl/
 
    > **Important:** Hugo Extended (not standard Hugo) is required to build this site.
    > The repository has been tested against **Hugo Extended v0.157.0**.
@@ -33,7 +32,7 @@ Software documentation is released under the Creative Commons license.
    > **Windows (winget):**
    > `winget install Hugo.Hugo.Extended --version 0.157.0`
    >
-   > **WSL/Linux:** Download `hugo_extended_0.157.0_linux-amd64.tar.gz` from the releases page above and install to your PATH.
+   > **WSL/Linux:** Download `hugo_extended_0.157.0_linux-amd64.tar.gz` from the releases page above and install to your PATH. For step-by-step WSL setup instructions, see https://sal.as/post/install-hugo-on-wsl/
 
 2. Download this repository.
 
