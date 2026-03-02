@@ -3,7 +3,7 @@ title: "Enterprise Migrations"
 description: "Instructions for TrueNAS Enterprise users to migrate from FreeBSD- to Linux-based TrueNAS software."
 weight: 25
 aliases:
-- /scale/gettingstarted/migrate/migratecorehatoscaleha/
+ - /scale/gettingstarted/migrate/migratecorehatoscaleha/
 tags:
 - migrate
 - install
@@ -14,6 +14,7 @@ keywords:
 - nas data storage
 slug: migrate-enterprise
 ---
+
 
 {{< enterprise >}}
 {{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}

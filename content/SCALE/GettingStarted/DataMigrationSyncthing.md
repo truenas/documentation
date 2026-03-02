@@ -5,7 +5,7 @@ weight: 45
 draft: false
 slug: thirdpartymigration
 aliases:
-- /scale/gettingstarted/datamigrationsyncthing/
+ - /scale/gettingstarted/datamigrationsyncthing/
 tags:
 - migrate
 - shares
@@ -16,6 +16,7 @@ keywords:
 - data migration solution
 - Enterprise NAS storage
 ---
+
 
 Users of TrueNAS 24.04 (Dragonfish) or newer can migrate data from a third-party NAS solution onto TrueNAS using the [Syncthing Enterprise application](https://apps.truenas.com/catalog/syncthing_enterprise/).
 The Syncthing Enterprise application can mount remote SMB shares in a manner that preserves relevant metadata.
@@ -139,7 +140,7 @@ The process of setting up data migration from an external NAS to TrueNAS consist
 
    Enter a clear identifying name, such as *INGEST*, and click **Save**.
 
-3. [Create a new dataset]({{< ref "datasetsscale" >}}) on TrueNAS to be the target for the data ingest, for example, */mnt/tank/ingest*.
+3. [Create a new dataset]({{< ref "/SCALE/Datasets/Datasets" >}}) on TrueNAS to be the target for the data ingest, for example, */mnt/tank/ingest*.
 
     Click **Advanced Options** and set **ACL Type** to **SMB/NFSv4**.
     Set **ACL Mode** to **Restricted**.

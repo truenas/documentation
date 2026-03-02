@@ -30,7 +30,7 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
               G["24.04.2.5 (Dragonfish)"] -->|update| H
               H["24.10.2.4 (Electric Eel)"] -->|update| I
               I["25.04.2.6 (Fangtooth)"] -->|update| J
-              J["25.10.2 (Goldeye)"]
+              J["25.10.2.1 (Goldeye)"]
             {{< /mermaid >}}
           </div>
         </div>
@@ -41,7 +41,7 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
         </div>
       </div>
     </div>
-    <div class="enterprise-paths-container">
+    <div class="upgrade-paths-container">
       <img src="/images/truenas-enterprise-logo-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
       <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
       <div class="scroll-wrapper">
@@ -53,13 +53,13 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
             flowchart LR
               A["11.3-U5"] -->|update| B
               B["12.0-U8.1"] -->|update| C
-              C["13.0-U6.8"] -->|ISO install| H
+              C["13.0-U6.8"] -->|ISO install| G
               C -->|update| E
               D["23.10.2 (Cobia)"] -->|update| E
               E["24.04.2.5 (Dragonfish)"]  -->|update| F
               F["24.10.2.4 (Electric Eel)"] -->|update| G
               G["25.04.2.6 (Fangtooth)"] -->|update| H
-              H["25.10.2 (Goldeye)"]
+              H["25.10.2.1 (Goldeye)"]
             {{< /mermaid >}}
           </div>
         </div>
