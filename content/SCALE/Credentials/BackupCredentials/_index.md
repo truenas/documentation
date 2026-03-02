@@ -1,0 +1,28 @@
+---
+title: "Backup Credentials"
+geekdocCollapseSection: true
+description: "Backup credential tutorials to integrate TrueNAS with cloud storage providers through SSH connections and keypairs."
+weight: 70
+aliases:
+ - /scale/scaletutorials/credentials/backupcredentials/
+ - /scale/credentials/backupcredentials/cloudcredentialsscale/
+ - /scale/credentials/backupcredentials/sshconnections/
+ - /scale/credentials/backupcredentials/sshkeypairsscale/
+ - /scale/credentials/backupcredentials/
+related: false
+keywords:
+- enterprise data storage
+- nas data storage
+- cloud backup and recovery
+---
+
+TrueNAS backup credentials store cloud backup services credentials, SSH connections, and SSH keypairs.
+Users can set up backup credentials with cloud and SSH clients to back up data in case of drive failure.
+
+<div class="noprint">
+
+## Contents
+
+{{< children depth="2" description="true" >}}
+
+</div>

@@ -167,11 +167,11 @@ The dashboard includes configurable widgets that include a text-only **Custom** 
 {{< trueimage src="/images/SCALE/Dashboard/DashboardMainScreen.png" alt="TrueNAS Dashboard" id="TrueNAS Dashboard" >}}
 
 TrueNAS Enterprise users with an iXsystems-provided server also see an image of the system in the **System Information** widget.
-Click on the system image to open the **System > [View Enclosure]({{< ref "EnclosureScreensSCALE" >}})** screen.
+Click on the system image to open the **System > [View Enclosure]({{< ref "EnclosureScreens" >}})** screen.
 
 The **Dashboard** for non-Enterprise systems displays the TrueNAS logo on the **System Information** widget.
 
-To [customize the dashboard ]({{< ref "/SCALE/SCALETutorials/Dashboard" >}}), click **Configure** to put the **Dashboard** into configuration mode.
+To [customize the dashboard ]({{< ref "/SCALE/Dashboard" >}}), click **Configure** to put the **Dashboard** into configuration mode.
 Use the drag bar to move widget groups to new positions on the screen.
 Click **Add** to create new widgets or the **Edit** option in the widget group to change the look or information included in a widget.
 

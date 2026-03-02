@@ -257,8 +257,8 @@ The controller 1 and 2 (or a and b) serial numbers display on the **Support** wi
 Create or import a storage pool from a backup. You must have at least one storage pool on controller 1.
 After saving the storage pool, controller 2 automatically restarts. Wait until it comes back online before syncing controller 1 with controller 2.
 
-For more information on how to create a new pool [click here]({{< ref "CreatePoolWizard" >}}).
-For more information on how to import a pool [click here]({{< ref "ImportPoolSCALE" >}}).
+For more information on how to create a new pool [click here]({{< ref "CreatingPools" >}}).
+For more information on how to import a pool [click here]({{< ref "ImportPool" >}}).
 
 ### Syncing Controller 1 and 2
 

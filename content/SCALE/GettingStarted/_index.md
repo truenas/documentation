@@ -2,7 +2,7 @@
 title: "Getting Started"
 description: "This guide provides step-by-step tutorials to install and configure TrueNAS. An additional guide shows how to apply and configure TrueNAS Enterprise licensed systems."
 geekdocCollapseSection: true
-weight: 20
+weight: 1
 cascade:
   - _target:
     book: "SCALEGettingStarted"
