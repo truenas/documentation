@@ -36,7 +36,7 @@ Take a screenshot of the license information found on the **Support** widget on 
 
 {{< hint type=important title="Disable SMB Stateful Failover before updating" >}}
 If **Stateful Failover** is enabled in the SMB service configuration, TrueNAS blocks the update with an error.
-Disable **Stateful Failover** in **System > Services > SMB > Configure > Advanced Settings** before proceeding, then re-enable it after both controllers are updated.
+Go to **System > Services**, click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Configure** on the **SMB** row, expand **Advanced Settings**, and disable **Stateful Failover**. Re-enable it after both controllers are updated.
 See [Enabling SMB Stateful Failover]({{< ref "AddManageSMBShares#enabling-smb-stateful-failover" >}}) for details.
 {{< /hint >}}
 
@@ -96,6 +96,6 @@ After the system sign-in screen shows:
    b. Enter the admin user credentials in the sign-in splash screen.
 
 5. After validating access to the TrueNAS UI using the admin credentials, disable the root user password.
-   Go to **Credentials > User**, select the root user, then click **Edit**. Select **Dissable Password** and click **Save**.
+   Go to **Credentials > User**, select the root user, then click **Edit**. Select **Disable Password** and click **Save**.
 
 Finish the update by saving your updated [system configuration file]({{< ref "SetUpBackUpSCALE" >}}) to a secure location and [create a new boot environment]({{< ref "ManageBootEnviron" >}}) to use as a restore point if it becomes necessary.

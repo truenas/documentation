@@ -15,8 +15,6 @@ tags:
 doctype: reference
 ---
 
-
-
 ## Windows (SMB) Shares Widget
 
 If you have not added SMB shares to the system, the SMB widget shows text stating general information about the Windows (SMB) Shares until a share is added.
@@ -259,7 +257,7 @@ When **Purpose** is set to **Final Cut Pro Storage Share**, the following settin
 
 #### Legacy Share Settings
 
-{{< hint type=note >}}
+{{< hint type=caution >}}
 The **Legacy Share** purpose is incompatible with the **Stateful Failover** SMB service setting.
 {{< /hint >}}
 

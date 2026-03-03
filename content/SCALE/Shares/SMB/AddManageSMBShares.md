@@ -417,9 +417,9 @@ When enabled, this setting is incompatible with:
 {{< /enterprise >}}
 
 TrueNAS 26 and later supports stateful SMB HA failover for Enterprise systems.
-When enabled, TrueNAS maintains SMB session state across controller failover events so SMB clients can recover existing connections without re-authentication.
+When enabled, TrueNAS maintains SMB session state across controller failover events, so SMB clients can recover existing connections without re-authentication.
 
-{{< hint type=important title="Upgrading TrueNAS with Stateful Failover enabled is not supported" >}}
+{{< hint type=important title="Disable Stateful Failover before upgrading" >}}
 TrueNAS blocks updates while this setting is active because the underlying CTDB clustering layer requires matching versions on both controllers.
 
 To upgrade an HA system with Stateful Failover enabled:
@@ -430,11 +430,11 @@ To upgrade an HA system with Stateful Failover enabled:
 
 ### Enabling Stateful Failover
 
-1. Go to **System > Services** and click the <span class="material-icons">edit</span> **Configure** icon on the **SMB** service row to open the **SMB Service** screen.
+1. Go to **System > Services** and click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Configure** icon on the **SMB** service row to open the **SMB Service** screen.
 
 2. Click **Advanced Settings** to expand the advanced options.
 
-3. Select **Stateful Failover**.
+3. Select the **Stateful Failover** checkbox.
 
 4. Click **Save**.
 
