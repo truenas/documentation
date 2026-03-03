@@ -6,6 +6,97 @@ aliases:
 - /truecommand/3.1/tcgettingstarted/tcreleasenotes/
 ---
 
+## TrueCommand 3.3.0
+
+TrueCommand 3.3.0 delivers API compatibility improvements for TrueNAS 25.10, adds support for TrueNAS 26, and includes a range of maintenance updates and bugfixes.
+
+## Obtaining the 3.3.0 Release
+
+TrueCommand is primarily offered as a Software as a Service (SaaS) solution from TrueNAS, but can be self-hosted as a container deployment.
+
+TrueCommand Cloud registrations are available from https://portal.truenas.com.
+A valid email address and credit card is required ([sign up instructions]({{< ref "InstallTCCloud" >}})).
+
+A self-hosted TrueCommand container is available from https://hub.docker.com/r/ixsystems/truecommand/tags under the tag **release-3.3.0** ([deployment instructions]({{< ref "InstallTCDocker" >}})).
+
+## 3.3.0 Upgrade Notes
+
+TrueCommand Cloud deployments are upgraded automatically by TrueNAS. Self-hosted instances must be updated manually by a local TrueCommand administrator.
+
+As a best practice, back up your instance data directory before deploying updates. Self-hosted containers are typically updated by backing up the container volume and pulling the latest available container version. See the [container update tutorial]({{< ref "InstallTCDocker" >}}) for guidance.
+
+This release updates TrueCommand API integration to align with TrueNAS 25.10 and introduces compatibility improvements for TrueNAS 26. It also resolves config backup performance issues and TLS validation errors.
+
+### TrueNAS Compatibility
+
+TrueCommand 3.3.0 is tested and compatible with these TrueNAS versions:
+
+* 13.0
+* 22.12
+* 23.10
+* 24.04
+* 24.10
+* 25.04
+* 25.10
+* 26
+
+### 3.3.0 Paths
+
+Self-hosted Containers:
+```mermaid
+flowchart LR
+A["Legacy (Pre 1.2)"] --> B
+B["1.3"] --> C
+C["2.2.2"] --> D
+D["2.3.3"] --> E
+E["3.0.2"] --> F
+F["3.1.0"] --> G
+G["3.2.0"] --> H
+H["3.3.0"]
+```
+
+## Release Schedule
+
+{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
+
+{{< releaselist name=tc-releases defaultTab=2 >}}
+
+{{< expand "Software Lifecycle" "v" >}}
+{{< include file="/static/includes/LifecycleTable.md" >}}
+{{< include file="/static/includes/SoftwareStatusPage.md" >}}
+{{< /expand >}}
+
+## 3.3.0 Changelog
+
+**[Date TBD]**
+
+The TrueNAS team is pleased to release TrueCommand 3.3.0!
+
+Notable changes:
+
+* Update API names and methods to align with TrueNAS 25.10 ([TC-3328](https://ixsystems.atlassian.net/browse/TC-3328))
+* Prevent configuration backups from running every minute ([TC-3351](https://ixsystems.atlassian.net/browse/TC-3351))
+* Fix TLS domain validation issue with IgnoreHostMismatch enabled ([TC-3350](https://ixsystems.atlassian.net/browse/TC-3350))
+* Fix SMB share creation spinner persisting after successful share creation ([TC-3343](https://ixsystems.atlassian.net/browse/TC-3343))
+* Correct zvol size display inconsistencies between TrueCommand and TrueNAS ([TC-3241](https://ixsystems.atlassian.net/browse/TC-3241))
+* Fix Update button failing silently ([TC-3335](https://ixsystems.atlassian.net/browse/TC-3335))
+* Fix inability to edit saved replication management tasks ([TC-3106](https://ixsystems.atlassian.net/browse/TC-3106))
+* Resolve snapshot API timeout errors ([TC-3078](https://ixsystems.atlassian.net/browse/TC-3078))
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=14097" target="_blank">Click here for the full changelog</a> of completed tickets that are included in the TrueCommand 3.3.0 release.
+
+{{< include file="/static/includes/JiraFilterInstructions.md" >}}
+
+### 3.3.0 Ongoing Issues
+
+{{< enterprise >}}
+We recommend that TrueNAS Enterprise High Availability (HA) systems be updated from the TrueNAS UI.
+
+If TrueCommand 3.3.0 is used to upgrade HA systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
+{{< /enterprise >}}
+
+<a href="https://ixsystems.atlassian.net/issues?filter=14096" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.3.0 that are being resolved in a future TrueCommand release.
+
 ## TrueCommand 3.2.0
 
 TrueCommand 3.2.0 enhances the functionality of prior releases with various bugfixes maintenance efforts. This update ensures that TrueCommand is compatible with TrueNAS 25.10.
@@ -53,17 +144,6 @@ E["3.0.2"] --> F
 F["3.1.0"] --> G
 G["3.2.0"]
 ```
-
-## Release Schedule
-
-{{< include file="/static/includes/ReleaseScheduleWarning.md" >}}
-
-{{< releaselist name=tc-releases defaultTab=2 >}}
-
-{{< expand "Software Lifecycle" "v" >}}
-{{< include file="/static/includes/LifecycleTable.md" >}}
-{{< include file="/static/includes/SoftwareStatusPage.md" >}}
-{{< /expand >}}
 
 ## 3.2.0 Changelog
 
