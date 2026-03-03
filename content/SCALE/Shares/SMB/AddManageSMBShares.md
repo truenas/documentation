@@ -410,11 +410,23 @@ Unless you need a specific setting or are configuring a unique network environme
 
 {{< enterprise >}}
 SMB Stateful Failover requires an Enterprise license and a High Availability (HA) configuration.
-When enabled, this setting is incompatible with **Enable SMB1 support** and with any share using the **Multi-Protocol Share** or **Legacy Share** purpose.
+When enabled, this setting is incompatible with:
+- **Enable SMB1 support**
+- Any share using the **Multi-Protocol Share** or **Legacy Share** purpose
+- Any auxiliary SMB parameters
 {{< /enterprise >}}
 
 TrueNAS 26 and later supports stateful SMB HA failover for Enterprise systems.
 When enabled, TrueNAS maintains SMB session state across controller failover events so SMB clients can recover existing connections without re-authentication.
+
+{{< hint type=important title="Upgrading TrueNAS with Stateful Failover enabled is not supported" >}}
+TrueNAS blocks updates while this setting is active because the underlying CTDB clustering layer requires matching versions on both controllers.
+
+To upgrade an HA system with Stateful Failover enabled:
+1. Disable **Stateful Failover** and click **Save**.
+2. Upgrade both controllers.
+3. Re-enable **Stateful Failover** and click **Save**.
+{{< /hint >}}
 
 ### Enabling Stateful Failover
 
