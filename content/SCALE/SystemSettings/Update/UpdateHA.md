@@ -34,6 +34,12 @@ If the system does not have an administrative user account, [create the admin us
 
 Take a screenshot of the license information found on the **Support** widget on the **System > General Settings** screen. You use this to verify the license after the update.
 
+{{< hint type=important title="Disable SMB Stateful Failover before updating" >}}
+If **Stateful Failover** is enabled in the SMB service configuration, TrueNAS blocks the update with an error.
+Disable **Stateful Failover** in **System > Services > SMB > Configure > Advanced Settings** before proceeding, then re-enable it after both controllers are updated.
+See [Enabling SMB Stateful Failover]({{< ref "AddManageSMBShares#enabling-smb-stateful-failover" >}}) for details.
+{{< /hint >}}
+
 To update your Enterprise (HA) system to the latest TrueNAS release, log into the TrueNAS UI using the virtual IP (VIP) address and then:
 
 1. Check for updates. Go to the main **Dashboard** and click **Check for Updates** on the **System Information** widget for the active controller.
