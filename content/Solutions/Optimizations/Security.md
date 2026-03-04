@@ -178,6 +178,8 @@ SMB service settings are in **Services** after clicking the <span class="iconify
 Do not use **NTLMv1 Auth** with an untrusted network.
 This encryption option is insecure and vulnerable.
 
+{{< include file="/static/includes/MicrosoftNTLMDeprecation.md" >}}
+
 When an administrator group is required, verify the group members are correctly configured.
 Administration group members have full permission to modify or delete the share data.
 
