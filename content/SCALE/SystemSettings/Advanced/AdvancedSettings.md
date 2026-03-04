@@ -2,7 +2,7 @@
 title: "Configuring Advanced Settings"
 description: "Tutorials for configuring advanced system settings in TrueNAS."
 geekdocCollapseSection: true
-weight: 50
+weight: 10
 aliases:
  - /scale/scaletutorials/systemsettings/advanced/advancedsettings/
  - /_includes/createdebugcore/
@@ -66,15 +66,15 @@ The **Add Tunable** screen shows the settings.
 ![AddTunableScreen](/images/SCALE/SystemSettings/AddTunableScreen.png "Add Tunable Screen")
 
 Select the tunable type from the **Type** dropdown list.
-There are three options: 
- * **SYSCTL** - Linux kernel parameters (called sysctl variables) that tune low-level kernel behavior across networking, memory management, virtual memory, file descriptors, security hardening and more that affect the entire system. Best used for general system performance, network stack, memory pressure, security hardening (e.g., against SYN floods: `net.ipv4.tcp_syncookies=1`). Variables persist across system remboots if set in config files.Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) loader value in **Value**.
+There are three options:
+ * **SYSCTL** - Linux kernel parameters (called sysctl variables) that tune low-level kernel behavior across networking, memory management, virtual memory, file descriptors, security hardening and more that affect the entire system. Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately. Best used for general system performance, network stack, memory pressure, security hardening (e.g., against SYN floods: `net.ipv4.tcp_syncookies=1`). Variables persist across system remboots if set in config files.Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) loader value in **Value**.
  * **UDEV** - UDEV rules, which are dynamic device manager configurations that run with when the kernel detects hardware events (e.g, disk plugged in, USB device attached, block device created). Variables are applied per device or per subsystem. They are ideal for hardware-specific tuning, especially disks/SSDs in ZFS pools e.g., forcing consistent I/O scheduler, readahead, or queue depth on pool drives to avoid defaults that hurt ZFS performance.They are permanent when the rule file exists, and rules re-apply automatically on device add/remove operations.
  * **ZFS** - OpenZFS module parameters for the ZFS kernel module on Linux. They control ZFS-specific behavior like ARC caching, compression, I/O scheduling, prefetching, recordsize limits and more. Use for fine-tuning ZFS performance, memory usage (AREC/L2ARC), compression, dedup, scrub/resilver behavior, and I/O patterns. They only apply to ZFS filesystem/modules. Runtime changes are lost on reboot or module reloads.
 
-Enter the variable name in **Variable**, the value for the variable in **Value**, and a short descritpion in **Description**. See examples below for each tunable type.<br>
+Enter the variable name in **Variable**, the value for the variable in **Value**, and a short description in **Description**. See examples below for each tunable type.<br>
 
-**Type: SYSCTL** (Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately.)<br>
-**Varialbe:** *net.core.somaxconn*<br>
+**Type: SYSCTL**<br>
+**Variable:** *net.core.somaxconn*<br>
 **Value**: *1024*<br>
 **Description**: *Increase max pending connections for better network handling under load.*<br>
 
@@ -84,8 +84,8 @@ Enter the variable name in **Variable**, the value for the variable in **Value**
 **Description**: *Set I/O scheduler to deadline on all rotational disks.*<br>
 
 **Type:** **ZFS**<br>
-**Varialbe**: *zfs_arc_max*<br>
-**Value**: *17179869184* (that is 16 GiB in bytes; caluclate as deseired RAM cap x 1024<sup>3</sup>)<br>
+**Variable**: *zfs_arc_max*<br>
+**Value**: *17179869184* (that is 16 GiB in bytes; calculate as desired RAM cap x 1024<sup>3</sup>)<br>
 **Description**: *Cap ZFS ARC at 16 GiB to leave headroom for apps/VMs.*<br>
 
 Select **Enabled**. Disabling the tunable does not delete the variable.
@@ -125,9 +125,9 @@ If the encrypted pool already has a passphrase set, you cannot move the system d
 To set a different resiliver priority, select **Run Resilvering At Higher Priority At Certain Times**.
 Two additional setting options show that allow you to configure the day and time range for resilvering to run.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreenResilverSettings.png" alt="Resilver Prioirty Settings" id="Resilver Prioirty Settings" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreenResilverSettings.png" alt="Resilver Priority Settings" id="Resilver Priority Settings" >}}
 
-To return to the default resilver prioirty, clear the checkbox and click **Save**.
+To return to the default resilver priority, clear the checkbox and click **Save**.
 
 ## Setting the Number of Replication Tasks
 
