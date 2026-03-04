@@ -5,7 +5,7 @@ Users are assigned different access levels by TrueNAS administrators. All user a
 All users are assigned the **SMB Access** by default.
 
 **SMB Access** is the default user access type assigned to user accounts that require access to SMB shares.
-It uses the user account credentials to access data shared with [SMB]({{< ref "/SCALE/SCALEUIReference/Shares" >}}).and role assigned to the user.
+It uses the user account credentials to access data shared with [SMB]({{< ref "/SCALE/Shares/SMB" >}}).and role assigned to the user.
 
 TrueNAS requires other options based on the level of access
 **TrueNAS Access** shows the predefined roles available in TrueNAS. Assigning **TrueNAS Access** requires setting one of the options or roles: **Full Admin**, **Readonly Admin**, or **Sharing Admin**.
@@ -32,7 +32,7 @@ To manually add a new user, go to **Credentials > Users**, and then click **Add*
 2. Set the level of access given to this user from the options provided.   
    **SMB Access** is selected by default, and required for a user to have access to an SMB share.
 
-   Select **WebShare** to give this user access to a [WebShare]({{< ref "/SCALE/SCALETutorials/Shares/WebShare/_index.md" >}}).
+   Select **WebShare** to give this user access to a [WebShare]({{< ref "/SCALE/Shares/WebShare/_index.md" >}}).
 
    Select **TrueNAS Access** and then the administration role from the dropdown list that shows after selecting the **TrueNAS Access** option.
    - To create an administrator with full access, select **Full Admin**.
