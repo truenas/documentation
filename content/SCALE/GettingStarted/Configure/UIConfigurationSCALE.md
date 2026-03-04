@@ -52,7 +52,7 @@ After entering your system license,  the **Proactive Support** option shows on t
 
 {{< include file="/static/includes/UsingConsoleSetupMenuSCALE.md" >}}
 
-If you are unfamiliar with network services, devices, or configurations, you can find more information [here]({{< ref "/SCALE/SCALETutorials/Network" >}}) to help guide you through this important and required configuration area.
+If you are unfamiliar with network services, devices, or configurations, you can find more information [here]({{< ref "/SCALE/Network" >}}) to help guide you through this important and required configuration area.
 {{< enterprise >}}
 You must disable failover in the UI on TrueNAS Enterprise HA systems to [add or change any network setting]({{< ref "InstallEnterpriseHASCALE.md#configure-network-settings" >}}). Complete network changes and test them, then re-enable failover.
 {{< /enterprise >}}
@@ -67,7 +67,7 @@ DHCP is only available for a single interface; all other physical interfaces mus
 TrueNAS allows configuring virtual network interfaces such as a [bridge]({{< ref "SettingUpBridge" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
 
 You can use the Console Setup menu or TrueNAS UI to configure network interfaces.
-We recommend using the web UI **Network** screen to [add or change network interfaces or aliases]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}), set up virtual interfaces such as a link aggregate [LAGG]({{< ref "SettingUpLAGG" >}}) or virtual LAN [VLAN]({{< ref "SettingUpVLAN" >}}), and change or [configure global network settings]({{< ref "ManagingGlobalConfig" >}}).
+We recommend using the web UI **Network** screen to [add or change network interfaces or aliases]({{< ref "/SCALE/Network/Interfaces" >}}), set up virtual interfaces such as a link aggregate [LAGG]({{< ref "SettingUpLAGG" >}}) or virtual LAN [VLAN]({{< ref "SettingUpVLAN" >}}), and change or [configure global network settings]({{< ref "ManagingGlobalConfig" >}}).
 
 ### Adding Aliases or Static IP Addresses
 
@@ -78,7 +78,7 @@ TrueNAS Enterprise HA systems use a virtual IP (VIP) to maintain access to the U
 This VIP address might experience a minor blip at failover, but you do not need to log in with the standby controller IP address to gain access to the UI after a failover.
 {{< /enterprise >}}
 The **Add Interface** screen allows configuring a network interface with a static IP address or adding an alias IP address.
-For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< ref "/SCALE/SCALETutorials/Network/Interfaces" >}}).
+For more information on when to use an alias or a static IP address, see [Managing Interfaces]({{< ref "/SCALE/Network/Interfaces" >}}).
 
 ## Setting Up Storage
 
@@ -92,7 +92,7 @@ Creating your initial storage is [explained here]({{< ref "SetUpStorageScale" >}
 ### Setting the System Dataset
 
 TrueNAS assigns the root (parent) dataset of the first created pool as the system dataset.
-If your system has enough disks to add more pools, you can [change the system dataset]({{< ref "/SCALE/SCALETutorials/SystemSettings/Advanced" >}}) to a root dataset of another pool.
+If your system has enough disks to add more pools, you can [change the system dataset]({{< ref "/SCALE/SystemSettings/Advanced" >}}) to a root dataset of another pool.
 
 ## Setting Up Shares
 
@@ -102,9 +102,9 @@ These articles provide more information on the three built-in share types availa
 {{< truetable >}}
 | Share Type | Purpose |
 |-----------|-------------|
-| [SMB shares]({{< ref "/SCALE/SCALETutorials/Shares/SMB" >}}) | For Windows shares and setting up deprecated AFP sharing. |
+| [SMB shares]({{< ref "/SCALE/Shares/SMB" >}}) | For Windows shares and setting up deprecated AFP sharing. |
 | [NFS shares]({{< ref "AddingNFSShares" >}}) | For Linux-based shares. |
-| [iSCSI shares]({{< ref "/SCALE/SCALETutorials/Shares/iSCSI" >}}) | For block shares. |
+| [iSCSI shares]({{< ref "/SCALE/Shares/iSCSI" >}}) | For block shares. |
 {{< /truetable >}}
 
 ## Configuring System Services
@@ -118,7 +118,7 @@ TrueNAS Enterprise HA systems should enable and configure the failover service.
 {{< expand "Configuring Services" "v" >}}
 Configure and enable these services based on your TrueNAS system needs:
 
-* [SSH service]({{< ref "SSHServiceSCALE" >}})
+* [SSH service]({{< ref "SSHService" >}})
 
 Set the service to allow SSH login for administration users (admin or, if also enabled, the root user) on all TrueNAS systems.
 All TrueNAS systems that need SSH access should enable SSH service as part of the initial UI configuration, but this is an area of security vulnerability.
@@ -155,7 +155,7 @@ After completing your initial system configuration and before beginning day-to-d
 The best practice for critical data is to use more than one solution or method to back up your data in case one method fails. Recommended minimum system backup options:
 
 1. Save the [system configuration file]({{< ref "SetUpBackupSCALE" >}}).
-2. Save or [create a new boot environment]({{< ref "ManageBootEnvironSCALE" >}}) before upgrading the system to create a restore point if system issues cause lost access to the TrueNAS UI.
+2. Save or [create a new boot environment]({{< ref "ManageBootEnviron" >}}) before upgrading the system to create a restore point if system issues cause lost access to the TrueNAS UI.
 3. Download a system debug to capture system information before and after an upgrade or major change for comparison against future debug files.
 
  {{< expand "Downloading System Files" "v" >}}
@@ -187,10 +187,10 @@ After saving system configuration and debug files, we recommend setting up data 
 * Setting up replication to another system (remote replication)
 * Adding a cloud storage provider service and setting up a cloud sync task
 
-You can take single [snapshots]({{< ref "CreatingSnapshots" >}}) or [schedule periodic snapshot tasks]({{< ref "PeriodicSnapshotTasksSCALE" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< ref "/SCALE/SCALETutorials/DataProtection/Replication" >}}) TrueNAS provides.
+You can take single [snapshots]({{< ref "CreatingSnapshots" >}}) or [schedule periodic snapshot tasks]({{< ref "AddingPeriodicSnapshotTasks" >}}) to capture changes to stored data without the storage overhead that comes with backing up through data replication, or you can use one of the [replication options]({{< ref "/SCALE/DataProtection/Replication" >}}) TrueNAS provides.
 
 Another option is to create a cloud storage service provider account and then let TrueNAS manage the backups to that account.
-Use the **Backup Credentials** screen [**Cloud Credentials**]({{< ref "AddCloudCredentials" >}}) to add authentication credentials for a supported cloud service provider, and go to **Data Protection** to schedule a [**Cloud Sync Tasks**]({{< ref "/SCALE/SCALETutorials/DataProtection/CloudSynctasks" >}}) that regularly backs up your storage data to the cloud.
+Use the **Backup Credentials** screen [**Cloud Credentials**]({{< ref "AddCloudCredentials" >}}) to add authentication credentials for a supported cloud service provider, and go to **Data Protection** to schedule a [**Cloud Sync Tasks**]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}}) that regularly backs up your storage data to the cloud.
 
 {{< hint type=warning title="Backing Up Critical Data" >}}
 Having a secondary backup solution for critical data is a best practice!
@@ -202,9 +202,9 @@ When backing up critical data to a cloud service provider, consider backing up t
 You can view system alerts, configure an alert service, and enter an email account to receive alerts from TrueNAS from the **Alerts** screen accessed by clicking the **Alerts** icon on the top toolbar.
 
 {{< expand "Configuring Alerts" "v" >}}
-The alert icon on the [top toolbar]({{< ref "/SCALE/SCALEUIReference/toptoolbar" >}}) shows a red circle with a number in it if TrueNAS encounters a configuration error or exceeds a threshold that you set (such as a temperature or a usage level).
+The alert icon on the [top toolbar]({{< ref "/SCALE/TopToolbar" >}}) shows a red circle with a number in it if TrueNAS encounters a configuration error or exceeds a threshold that you set (such as a temperature or a usage level).
 The number indicates how many new alerts occurred.
-Click on the alert icon to open the **[Alerts]({{< ref "/SCALE/SCALEUIReference/toptoolbar/alerts" >}})** panel.
+Click on the alert icon to open the **[Alerts]({{< ref "/SCALE/TopToolbar/Alerts" >}})** panel.
 
 The **Alerts** panel **Settings** (gear) icon opens the **Alert Settings** screen where you configure the alert types and thresholds. The system email option opens a configuration screen where you enter an address to receive messages for a system event triggered by an alert.
 
@@ -241,7 +241,7 @@ Non-enterprise users can find support for configuring directory services in the 
 
 {{< enterprise >}}
 The TrueNAS main **Dashboard** displays an image of the TrueNAS system server on the **System Information** widget for TrueNAS Enterprise customers with compatible hardware.
-Click on the image to open the **[View Enclosure]({{< ref "EnclosureScreensSCALE" >}})** screen, or select the **System > Enclosure** option on the main menu navigation panel.
+Click on the image to open the **[View Enclosure]({{< ref "EnclosureScreens" >}})** screen, or select the **System > Enclosure** option on the main menu navigation panel.
 
 The **View Enclosure** screen provides details on system disks, pool and VDEV disks, disk hardware details, and disk status.
 Click on a drive to view disk details.
@@ -266,7 +266,7 @@ There are a few ways to find available updates for your instance of TrueNAS:
  Click the update option to open the **System > Updates** screen.
 * Go to **System > Updates** to check if an update is available.
 
-For all update options and procedures using the TrueNAS UI see **[Updating TrueNAS]({{< ref "UpdateSCALE" >}})**.
+For all update options and procedures using the TrueNAS UI see **[Updating TrueNAS]({{< ref "/SCALE/SystemSettings/Update" >}})**.
 
 Always save a system configuration file and a new boot environment for your current release and configuration before updating to a new incremental or full release.
 

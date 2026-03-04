@@ -10,7 +10,7 @@ Setting options change based on the source and destination selections. Replicati
    
    The **Destination** file browser allows you to specify (create) a directory in an existing dataset on a local or remote system, but you cannot create a directory for a dataset selected in the **Source** file browser.
 
-2. Create a [periodic snapshot task]({{< ref "PeriodicSnapshotTasksSCALE" >}}) of the storage locations to back up.
+2. Create a [periodic snapshot task]({{< ref "AddingPeriodicSnapshotTasks" >}}) of the storage locations to back up.
    TrueNAS typically creates a periodic snapshot task right before it performs the replication task if one is not already created for the task.
    You might need to refresh the screen cache to see the task listed in the **Periodic Snapshot Task** widget. 
 
