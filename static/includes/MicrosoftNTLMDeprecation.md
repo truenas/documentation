@@ -20,5 +20,5 @@ Home and workgroup deployments that use local TrueNAS accounts are affected as f
   macOS, Linux, older Windows versions, and network-attached devices such as printers and MFPs are not affected.
   When that change takes effect, re-enabling NTLM in Windows security policy is a temporary workaround.
 
-TrueNAS plans to add local Kerberos (KDC) support for local account authentication in a future release, dependent on upstream development in MIT Kerberos and Samba.
+TrueNAS plans to add improved authentication support for home and workgroup users in a future release, dependent on upstream development in Samba.
 {{< /hint >}}
