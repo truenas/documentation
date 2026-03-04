@@ -87,16 +87,6 @@ Notable changes:
 
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
-### 3.3.0 Ongoing Issues
-
-{{< enterprise >}}
-We recommend that TrueNAS Enterprise High Availability (HA) systems be updated from the TrueNAS UI.
-
-If TrueCommand 3.3.0 is used to upgrade HA systems, the standby controller might fail to activate the updated boot environment, resulting in a version mismatch error between the controllers. If you encounter this issue, manually activate the updated boot environment on the active controller and then failover to complete the upgrade.
-{{< /enterprise >}}
-
-<a href="https://ixsystems.atlassian.net/issues?filter=14096" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.3.0 that are being resolved in a future TrueCommand release.
-
 ## TrueCommand 3.2.0
 
 TrueCommand 3.2.0 enhances the functionality of prior releases with various bugfixes maintenance efforts. This update ensures that TrueCommand is compatible with TrueNAS 25.10.
