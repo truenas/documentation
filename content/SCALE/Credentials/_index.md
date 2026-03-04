@@ -1,0 +1,39 @@
+---
+title: "Credentials"
+description: "TrueNAS credential management tutorials and UI reference for users, groups, backup credentials, certificates, directory services, and API keys."
+geekdocCollapseSection: true
+weight: 10
+related: false
+aliases:
+ - /scale/scaleuireference/credentials/
+ - /scale/scaletutorials/credentials/
+---
+
+TrueNAS credential options are organized into screens to manage local users and groups, backup credentials (cloud and SSH), certificates, and directory services.
+
+* **Users** allows those with permissions to add, configure, and delete users on the system.
+  There are options to search for keywords in usernames, view or edit user characteristics, and a dropdown to select whether the screen shows built-in, local, or directory services users.
+
+* **Groups** allows those with permissions to add, configure, and delete user groups on the system.
+  There are options to search for keywords in group names, display or hide group characteristics, and toggle whether the screen shows built-in groups.
+
+* **Directory Services** contains options to edit directory domain and account settings, set up Idmapping, and configure access and authentication protocols.
+  Specific options include configuring Kerberos realms and key tables (keytab), as well as setting up LDAP validation.
+
+* **Backup Credentials** stores credentials for cloud backup services, SSH Connections, and SSH Keypairs.
+  Users can set up backup credentials with cloud and SSH clients to back up data in case of drive failure.
+
+* **Certificates** contains all the information for certificates, certificate signing requests, certificate authorities, and DNS-authenticators.
+  TrueNAS comes equipped with an internal, self-signed certificate that enables encrypted access to the web interface, but users can make custom certificates for authentication and validation while sharing data.
+
+* **2FA** allows users to set up Two-Factor Authentication for their system.
+  Users can configure individual 2FA secrets and link the system to an authenticator app on a mobile device.
+  When global 2FA is enabled, users with configured 2FA secrets must provide a 2FA code to log in.
+
+<div class="noprint">
+
+## Contents
+
+{{< children depth="2" description="true" >}}
+
+</div>

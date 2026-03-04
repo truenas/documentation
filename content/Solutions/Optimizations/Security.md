@@ -22,8 +22,8 @@ Follow these best practices to administer TrueNAS securely.
 * Upgrade to new major releases promptly consistent with the deployment use case.
 * Disable any network services when not in use.
 * Restrict the TrueNAS web UI, IPMI, and any other management interfaces to private subnets away from untrusted users, or keep them disconnected when not in active use.
-* Configure **Syslog** settings to send logs to an external server ([CORE](https://www.truenas.com/docs/core/13.0/uireference/system/advanced/) | [SCALE]({{< ref "managesyslogsscale" >}})).
-* In TrueNAS 24.04 (Dragonfish) or later, locally [monitor and review audit logs]({{< ref "auditingscale" >}}) using the **Audit** screen.
+* Configure **Syslog** settings to send logs to an external server ([CORE](https://www.truenas.com/docs/core/13.0/uireference/system/advanced/) | [SCALE]({{< ref "ManageSysLogs" >}})).
+* In TrueNAS 24.04 (Dragonfish) or later, locally [monitor and review audit logs]({{< ref "/SCALE/SystemSettings/Audit/Auditing" >}}) using the **Audit** screen.
 * In the **System > Advanced Settings**, always keep **Show Text Console without Password Prompt** set to **Disabled**.
 
 {{<include file="/static/includes/CustomScriptWarning.md">}}
@@ -128,7 +128,7 @@ In TrueNAS 24.04 (Dragonfish) or later, use the **Credentials > Groups > Privile
 Assign users to those groups to grant partial NAS administrative access.
 Members of privileged groups can access the UI but cannot perform administrative tasks outside those defined by their role(s).
 
-Use complex passwords and [Two-Factor Authentication]({{< ref "ManageGlobal2FASCALE" >}}) for all TrueNAS administrator accounts.
+Use complex passwords and [Two-Factor Authentication]({{< ref "ManageGlobal2FA" >}}) for all TrueNAS administrator accounts.
 
 Grant TrueNAS user accounts (local or domain accounts) access to SSH or console shells only if that user is explicitly trusted.
 
@@ -165,7 +165,7 @@ To apply NFS ACLs, click **Advanced Options** on the add or edit NFS share scree
 
 ### SMB
 
-Select a **Purpose** during [SMB share creation]({{< ref "/SCALE/SCALETutorials/Shares" >}}).
+Select a **Purpose** during [SMB share creation]({{< ref "/SCALE/Shares" >}}).
 This changes the share configuration with one click.
 For example, when selecting **Private SMB Datasets and Shares** from the list, TrueNAS adjusts the **Advanced Options** so the share is set up for private use.
 To fully customize the share settings, select **No presets** as the **Purpose**.
@@ -184,7 +184,7 @@ Administration group members have full permission to modify or delete the share 
 ## SSH
 
 Using Secure Shell (SSH) to connect to your TrueNAS is very helpful when issuing commands through the CLI.
-[SSH settings]({{< ref "SSHServiceSCALE" >}}) are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
+[SSH settings]({{< ref "SSHService" >}}) are in **Services** after clicking the <span class="iconify" data-icon="mdi:pencil"></span> (pencil).
 
 For best security, disable all login options for root or admin accounts in the SSH service options.
 Instead, create and exchange SSH keys between client systems and TrueNAS before attempting to connect with SSH.
@@ -223,7 +223,7 @@ SSH key pair overwrites are permanent.
 
 Root account logins using SSH are never recommended.
 Create TrueNAS user accounts with limited permissions and log in to these when using SSH.
-If a critical situation requires root login, first set up two-factor authentication ([CORE](https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/usingtwofactorauthentication/) | [SCALE]({{< ref "ManageGlobal2FASCALE" >}})) as an extra layer of security.
+If a critical situation requires root login, first set up two-factor authentication ([CORE](https://www.truenas.com/docs/core/13.0/coretutorials/systemconfiguration/usingtwofactorauthentication/) | [SCALE]({{< ref "ManageGlobal2FA" >}})) as an extra layer of security.
 Disable the **Log in as Root with Password** setting as soon as the situation is resolved.
 
 Unless required, do not set **Allow TCP Port Forwarding**.
@@ -241,7 +241,7 @@ Block both the **CBC** and **Arcfour** ciphers by going to **Services > SSH > Ed
 Review any application or virtual machine (VM) deployment scenario for additional security exposure or vulnerabilities.
 The TrueNAS team cannot resolve security vulnerabilities introduced from within user-deployed virtualized environments.
 
-After [configuring a VM]({{< ref "/SCALE/SCALETutorials/Containers" >}}), disable any VNC or SPICE virtual machine display devices.
+After [configuring a VM]({{< ref "/SCALE/Containers" >}}), disable any VNC or SPICE virtual machine display devices.
 
 [Update applications](https://apps.truenas.com/managing-apps/managing-installed-apps/#upgrading-apps) regularly.
 TrueNAS monitors connected application catalogs and trains and displays available updates on the **Installed** applications screen.
