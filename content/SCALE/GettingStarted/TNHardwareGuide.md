@@ -178,7 +178,7 @@ For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of met
 
   <div data-tab-id="self-encrypting-drives" data-tab-label="Self Encrypting Drives">
 
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [native ZFS encryption]({{< ref "EncryptionSCALE" >}}) and [self-encrypting drives (SEDs)]({{< ref "SEDScale" >}}).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [native ZFS encryption]({{< ref "/SCALE/Datasets/Encryption" >}}) and [self-encrypting drives (SEDs)]({{< ref "/SCALE/Storage/Disks/SED" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but are not as readily available as non-SED drives (and thus can cost a little more).
 
   </div>
