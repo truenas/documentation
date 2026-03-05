@@ -153,6 +153,6 @@ Shows only for SED disks in an SED-licensed Enterprise system.
 
 {{< trueimage src="/images/SCALE/Storage/EditDiskSEDSettings.png" alt="Edit Disk SED Settings" id="Edit Disk SED Settings" >}}
 
-**SED Password** sets or changes the individual password of this SED disk. When entered, TrueNAS uess this password instead of the global SED password.
+**SED Password** sets or changes the individual password of this SED disk. When entered, TrueNAS uses this password instead of the global SED password.
 
 **Clear SED Password** clears an individual password assigned to the SED disk.
