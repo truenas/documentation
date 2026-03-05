@@ -21,34 +21,37 @@ This automation reduces the process from ~2 hours to ~15 minutes.
 
 ```
 ┌──────────────────────────────────────────────┐
-│ 1. Export CSV from Jira Filter              │
+│ 1. Export CSV from Jira Filter               │
+│    Save as public/data/{version}-changelog.csv│
 │    (Manual step - ~2 minutes)                │
 └────────────────┬─────────────────────────────┘
                  │
                  ▼
 ┌──────────────────────────────────────────────┐
-│ 2. Process CSV with process_jira_export.py  │
-│    - Fetches XML for each ticket             │
-│    - Extracts PR links from comments         │
-│    - Calculates severity scores              │
-│    - Outputs JSON and markdown               │
+│ 2. python release_notes.py prep              │
+│    --version 25.10.X                         │
+│    - Processes CSV, fetches ticket XML        │
+│    - Generates prompt for Claude Code         │
+│    Output: output/25_10_X/                   │
 │    (~5 minutes for 25 tickets)               │
 └────────────────┬─────────────────────────────┘
                  │
                  ▼
 ┌──────────────────────────────────────────────┐
-│ 3. Generate notable changes                  │
-│    Option A: Manual (copy-paste to Claude)   │
-│    Option B: API (generate_notable_changes)  │
+│ 3. Claude Code: complete the prompt          │
+│    "Complete the prompt from                 │
+│     output/25_10_X/prompt.txt"               │
+│    Saves notable-changes.md                  │
 │    (~5 minutes)                              │
 └────────────────┬─────────────────────────────┘
                  │
                  ▼
 ┌──────────────────────────────────────────────┐
-│ 4. Update VersionNotes.md                    │
-│    - Review generated changes                │
-│    - Run update_version_notes.py             │
-│    (~3 minutes)                              │
+│ 4. python release_notes.py apply             │
+│    --version 25.10.X                         │
+│    - Preview diff, confirm, update            │
+│    VersionNotes.md                           │
+│    (~1 minute)                               │
 └──────────────────────────────────────────────┘
 ```
 
@@ -79,135 +82,122 @@ chmod +x update_version_notes.py
 
 ## Usage
 
+### Prerequisites: Two Conventions
+
+**CSV naming convention:**
+Save your Jira export to `documentation/public/data/` named `{version}-changelog.csv`.
+Example: `public/data/25.10.2.2-changelog.csv`
+The `prep` command finds it automatically.
+
+**VersionNotes.md placeholder:**
+The version tab must contain exactly this placeholder before running `apply`:
+```html
+<!-- Notable changes placeholder -->
+```
+See [Adding a New Version Tab](#adding-a-new-version-tab).
+
+---
+
 ### Step 1: Export CSV from Jira
 
-1. Navigate to the Jira filter for your release:
-   - Example: https://ixsystems.atlassian.net/issues/?filter=13831
-2. Click **Export** button → **Export CSV (all fields)**
-3. Save as `{version}-changelog.csv` (e.g., `25.10.2-changelog.csv`)
+1. Navigate to the Jira filter for your release
+2. Click **Export** → **Export CSV (all fields)**
+3. Save as `documentation/public/data/{version}-changelog.csv`
 
-### Step 2: Process Jira Export
+### Step 2: Run prep
 
 ```bash
-# Process CSV and generate JSON + markdown
-./process_jira_export.py \
-  --csv 25.10.2-changelog.csv \
-  --version 25.10.2 \
-  --format both
+python release_notes.py prep --version 25.10.X
+```
 
-# Output files:
-# - 25_10_2-tickets.json (for Claude API)
-# - 25_10_2-tickets.md (for manual review)
+Override the CSV path if needed:
+
+```bash
+python release_notes.py prep --version 25.10.X --csv /path/to/file.csv
 ```
 
 **What this does:**
-- Reads CSV rows (ticket key, summary, priority, components, etc.)
-- For each ticket, fetches XML from public Jira XML API
-- Parses bugclerk bot comments for PR links matching the version
-- Extracts metadata (labels, components, ticket type)
-- Calculates severity scores
-- Determines if ticket is user-facing
-- Outputs structured data in JSON and markdown formats
+- Reads and validates the CSV
+- Fetches XML from the public Jira XML API for each ticket
+- Extracts PR links, severity scores, user-facing flags
+- Generates `output/25_10_X/prompt.txt` for Claude Code
 
-**Options:**
-- `--csv PATH` - Path to Jira CSV export (required)
-- `--version VERSION` - Release version like 25.10.2 (required)
-- `--format {json|markdown|both}` - Output format (default: both)
-- `--output-dir PATH` - Output directory (default: current directory)
-- `--cache-dir PATH` - Cache directory for XML files (default: /tmp/jira_cache)
+**Output directory:** `scripts/release_notes/output/25_10_X/`
+- `tickets.json` — structured ticket data
+- `tickets.md` — human-readable summary
+- `prompt.txt` — prompt for Claude Code
 
-**Output:**
-- `{version}-tickets.json` - Structured ticket data for Claude
-- `{version}-tickets.md` - Human-readable ticket summary
-- XML files cached in `/tmp/jira_cache/` for faster re-runs
+### Step 3: Run Claude Code
 
-### Step 3: Generate Notable Changes
+In your Claude Code session:
 
-You have two options:
-
-#### Option A: Manual Mode (Recommended for First Time)
-
-```bash
-# Generate prompt file for copy-paste
-./generate_notable_changes.py \
-  --ticket-data 25_10_2-tickets.json \
-  --version 25.10.2 \
-  --manual
-
-# This creates: 25_10_2-prompt.txt
+```
+Complete the prompt from output/25_10_X/prompt.txt
 ```
 
-Then:
-1. Open `25_10_2-prompt.txt`
-2. Copy the entire contents
-3. Paste into Claude (claude.ai or claude.ai/code)
-4. Save Claude's response to `25_10_2-notable-changes.md`
+Claude Code will:
+1. Read the prompt and ticket data
+2. Triage tickets by severity and user impact
+3. Write notable changes in TrueNAS style
+4. Save to `output/25_10_X/notable-changes.md`
+5. Save excluded tickets to `output/25_10_X/excluded-tickets.md`
 
-#### Option B: API Mode (Requires API Key)
+### Step 4: Review generated changes
+
+Open and edit before applying:
+- `output/25_10_X/notable-changes.md`
+- `output/25_10_X/excluded-tickets.md`
+
+### Step 5: Run apply
 
 ```bash
-# Set API key
-export ANTHROPIC_API_KEY="your-key-here"
-
-# Generate notable changes using Claude API
-./generate_notable_changes.py \
-  --ticket-data 25_10_2-tickets.json \
-  --version 25.10.2
-
-# Output files:
-# - 25_10_2-notable-changes-full.md (complete response)
-# - 25_10_2-notable-changes.md (just the bullet points)
-# - 25_10_2-excluded-tickets.md (tickets not included with reasons)
+python release_notes.py apply --version 25.10.X
 ```
 
 **What this does:**
-- Loads processed ticket data from JSON
-- Constructs prompt with triage criteria and style guidelines
-- Calls Claude API (or generates prompt for manual use)
-- Parses response into notable changes and excluded tickets
-- Saves formatted output files
+- Locates the `25.10.X` version tab in VersionNotes.md
+- Finds the `<!-- Notable changes placeholder -->` and replaces it
+- Shows a diff preview and asks for confirmation
+- Creates a backup (`VersionNotes.md.backup`) before writing
+- Updates VersionNotes.md
 
-**Options:**
-- `--ticket-data PATH` - Path to JSON from step 2 (required)
-- `--version VERSION` - Release version (required)
-- `--api-key KEY` - Anthropic API key (or use ANTHROPIC_API_KEY env var)
-- `--manual` - Generate prompt file instead of calling API
-- `--output-dir PATH` - Output directory (default: current directory)
+---
 
-### Step 4: Update VersionNotes.md
+### Adding a New Version Tab
 
-```bash
-# Dry run (preview changes)
-./update_version_notes.py \
-  --version 25.10.2 \
-  --notable-changes 25_10_2-notable-changes.md \
-  --dry-run
+Before running `apply`, add the new version tab to VersionNotes.md. Minimum required structure:
 
-# Apply changes
-./update_version_notes.py \
-  --version 25.10.2 \
-  --notable-changes 25_10_2-notable-changes.md
+```html
+<div data-tab-id="25.10.X" data-tab-label="25.10.X">
 
-# Specify custom VersionNotes.md location
-./update_version_notes.py \
-  --version 25.10.2 \
-  --notable-changes 25_10_2-notable-changes.md \
-  --version-notes /path/to/VersionNotes.md
+Month DD, YYYY
+
+The TrueNAS team is pleased to release TrueNAS 25.10.X!
+
+**Notable changes:**
+
+<!-- Notable changes placeholder -->
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=XXXXX" target="_blank">TrueNAS 25.10.X (Goldeye) Changelog</a> in Jira.
+
+</div>
 ```
 
-**What this does:**
-- Locates the version section in VersionNotes.md
-- Finds the placeholder for notable changes
-- Replaces placeholder with generated content
-- Creates backup: `VersionNotes.md.backup`
-- Shows diff of changes
-- Updates file (unless --dry-run)
+Also update the front matter `jump_to_buttons` anchor to point to the new version.
 
-**Options:**
-- `--version VERSION` - Release version (required)
-- `--notable-changes PATH` - Path to notable changes markdown (required)
-- `--version-notes PATH` - Path to VersionNotes.md (auto-detected if not specified)
-- `--dry-run` - Preview changes without writing to file
+> **Important:** The placeholder must be exactly `<!-- Notable changes placeholder -->`. Other text will cause `apply` to warn and fail.
+
+---
+
+### Individual Scripts (Advanced)
+
+The three underlying scripts remain usable standalone for advanced workflows. See their `--help` for options:
+
+```bash
+python process_jira_export.py --help
+python generate_notable_changes.py --help
+python update_version_notes.py --help
+```
 
 ## Triage Criteria
 
@@ -327,16 +317,15 @@ Notable changes must follow TrueNAS documentation standards:
 - Ensure the version section exists in VersionNotes.md first
 - Look for pattern: `data-tab-id="25.10.X"` or `## 25.10.X`
 
-### "No changes detected" in dry-run
+### "Could not find placeholder" / "No changes detected"
 
-**Causes:**
-1. Placeholder already replaced
-2. Version section structure different than expected
+**Cause:** The version tab in VersionNotes.md does not contain the recognized placeholder.
 
-**Solution:**
-- Check VersionNotes.md manually
-- Look for placeholder text: `[Placeholder - Notable changes will be added based on ticket list]`
-- Adjust placeholder pattern in script if needed
+**Solution:** Ensure the tab contains exactly:
+```html
+<!-- Notable changes placeholder -->
+```
+This is the only placeholder `update_version_notes.py` reliably matches for new releases.
 
 ### Claude generates low-quality output
 
@@ -350,15 +339,17 @@ Notable changes must follow TrueNAS documentation standards:
 
 ### Scripts
 
-- **process_jira_export.py** - Process CSV and fetch PR links
-- **generate_notable_changes.py** - Generate notable changes with Claude
-- **update_version_notes.py** - Update VersionNotes.md
+- **release_notes.py** — Unified workflow wrapper (`prep` and `apply` subcommands)
+- **process_jira_export.py** — Process CSV and fetch PR links (called by `prep`)
+- **generate_notable_changes.py** — Generate notable changes with Claude (called by `prep`)
+- **update_version_notes.py** — Update VersionNotes.md (called by `apply`)
 
 ### Supporting Files
 
-- **requirements.txt** - Python dependencies
-- **prompts/notable_changes_prompt.md** - Claude prompt template and guidelines
-- **README.md** - This file
+- **requirements.txt** — Python dependencies
+- **prompts/notable_changes_prompt.md** — Claude prompt template and guidelines
+- **README.md** — This file
+- **QUICKSTART.md** — Quick start guide
 
 ## Advanced Usage
 
