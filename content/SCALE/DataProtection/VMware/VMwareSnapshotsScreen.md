@@ -23,6 +23,8 @@ See [Creating VMWare Snapshots]({{< ref "creatingvmwaresnapshots" >}}) for a det
 
 **Add** opens the **Add VMware Snapshot** screen.
 
+## Add VMware Snapshot {id="vmware_add_snapshot"}
+
 {{< trueimage src="/images/SCALE/DataProtection/emptyvmwaresnapshotadd.png" alt="Add VMware Snapshot Screen" id="Add VMware Snapshot Screen" >}}
 
 {{< truetable >}}

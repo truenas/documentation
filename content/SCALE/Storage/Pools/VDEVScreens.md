@@ -22,7 +22,7 @@ Click anywhere on the VDEV to see the drives in it and the **ZFS Info** card for
 
 Click anywhere on a drive to see the [drive cards](#disk-cards).
 
-**Add VDEV** opens the **Add a VDEVs to Pool** screen with the **[Pool Creation Wizard]({{< ref "PoolCreateWizardScreens" >}})** for the selected pool.
+**Add VDEV** opens the **Add a VDEVs to Pool** screen with the **[Pool Creation Wizard]({{< ref "PoolCreationWizardScreen" >}})** for the selected pool.
 For example, find the **VDEVS** card for a pool and click **View VDEVs**.
 This opens the **Pool Creation Wizard** with *tank* prepopulated but not editable.
 

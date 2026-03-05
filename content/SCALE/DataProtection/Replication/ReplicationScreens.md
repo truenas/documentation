@@ -156,7 +156,7 @@ Setting **Source Location** to **On This System** and **Destination Location** t
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTaskWizardWhatAndWhereAllSettings.png" alt="Replication Task Wizard What and When All Settings" id="Replication Task Wizard What and When All Settings" >}}
 
-{{< expand "What and Where Settings" "v" >}}
+{{< expand "What and Where Settings" "v" >}} {id="replication_wizard_what-where"} <!-- some of these are shared/appear on the Add Replication Task screen -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -173,7 +173,6 @@ Setting **Source Location** to **On This System** and **Destination Location** t
 | **Naming Schema** | Shows after selecting **Naming Schema** under **Also include snapshots with the name**. Enter the pattern of naming custom snapshots to replicate. Enter the name and [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.html) %Y, %m, %d, %H, and %M strings that match the snapshots to include in the replication. Naming schema must include **%Y**, **%m**, **%d**, **%H** and **%M**.  Separate entries by pressing <kbd>Enter</kbd>. The number of snapshots matching the patterns displayed on the screen. |
 | **Snapshot Name Regular Expression** | Shows after selecting **Snapshot Name Regular Expression** under **Also include snapshots with the name**. Enter the regular expression that the replicated snapshot(s) should match. This option replicates all snapshots with names matching the specified regular expression. Performance on systems with large numbers of snapshots is lower as this process reads snapshot metadata to determine snapshot creation order. Naming of regular expressions include name followed this pattern, <code>auto-[0-9-]+\|manual-[0-9]+</code>. |
 | **SSH Transfer Security** | Shows after selecting **Replicate Custom Snapshots**. Applies data transfer security. Shows two options: **Encryption (more secure, but slower)** and **No Encryption (less secure, but faster)**. The connection is authenticated with SSH. Encryption is recommended, but can be disabled for increased speed on secure networks. |
-| **Encryption** | Select to apply an extra layer of encryption on the data transfer when replicating data. For more information on all options, see [Encryption](#encryption-setting-options) below. |
 | **Task Name** | Shows the name the system adds from the source and destination options or enter a different name for this replication configuration to overwrite the automatically populated task name. By default, the system populates **Task Name** with the source-destination names selected or loaded by selecting a task in **Load Previous Replication Tasks**. The system prompts you to change the name if a task uses the name. Changing the name can be as simple as adding an iteration number, such as *2* or *3*, to the default name. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -184,11 +183,11 @@ The **Encryption** option shows additional settings on the **Add Replication Tas
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskEncyptionHexOption.png" alt="Add Replication Task Wizard Hex Encryption" id="Add Replication Task Wizard Hex Encryption" >}}
 
-{{< expand "Encryption Settings" "v" >}}
+{{< expand "Encryption Settings" "v" >}} {id="replication_wizard_encryption"} <!-- some of these are shared/appear on the Add Replication Task screen -->
 {{< truetable >}}
-| Setting | Description |
+| Setting | Description |<!-- Encryption settting is duplicated in the section above, removed from that table -->
 |---------|-------------|
-| **Encryption** | Select to apply an extra layer of encryption when replicating data to a remote server. Shows additional encryption settings **Encryption Key Format** and **Store Encryption key in Sending TrueNAS database** options. |
+| **Encryption** | Select to apply an extra layer of encryption when replicating data to a remote server. Shows additional encryption settings **Encryption Key Format** and **Store Encryption key in Sending TrueNAS database** options. | 
 | **Inherit Encryption** | Select for the target dataset to inherit encryption from its parent dataset. |
 | **Encryption Key Format** | Select the encryption option from the dropdown list. **Hex** (base 16 numeral) or **Passphrase** (alphanumeric) style encryption key. Selecting **Hex** displays the **Generate Encryption Key** option. Selecting **Passphrase** displays the **Passphrase** option. |
 | **Generate Encryption Key** | Displays after selecting **Hex** in **Encryption Key Format**. Selected by default. Clearing the checkbox displays the **Encryption Key** field. |
@@ -199,14 +198,14 @@ The **Encryption** option shows additional settings on the **Add Replication Tas
 {{< /truetable >}}
 {{< /expand >}}
 
-#### New SSH Connection
+#### New SSH Connection 
 
 The **New SSH Connection** window opens after selecting **Create New** in the **SSH Connection** field.
 It allows you to set up a new SSH connection for the remote system.
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationTaskNewSSHConnection.png" alt="New SSH Connection" id="New SSH Connection" >}}
 
-{{< expand "New SSH Connection Settings" "v" >}}
+{{< expand "New SSH Connection Settings" "v" >}} {id="replication_new-ssh-connection"} <!-- some of these are shared/appear on the Add Replication Task screen -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -233,7 +232,7 @@ The **Replication Schedule** options set when to run the task based on the sched
 
 {{< trueimage src="/images/SCALE/DataProtection/ReplicationWizardWhen.png" alt="Add Replication Task When Run on Schedule" id="Add Replication Task When Run on Schedule" >}}
 
-{{< expand "Replication Schedule Settings" "v" >}}
+{{< expand "Replication Schedule Settings" "v" >}} {id="replication_wizard_schedule"} <!-- some of these are shared/appear on the Add Replication Task screen -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -244,9 +243,14 @@ The **Replication Schedule** options set when to run the task based on the sched
 {{< /truetable >}}
 {{< /expand >}}
 
-#### Destination Snapshot Lifetime Options
+#### Destination Snapshot Lifetime Options {id="replication_dest-snapshot-life"}
 
-The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server.  
+The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server. <!-- this option only shows in the wizard, checking with eng if that is correct or a bug - After a GitHub blame search, Claude found these exist in the wizard (replication-when) but the replication-form (Add/Edit Task screen) had no matches for lifetime or retention. Destination Snapshot Lifetime was intentionally kept in the wizard only and maps to  retention_policy in the code. The Add Task screen uses Snapshot Retention Policy instead which is the same concept handled differently. Not a defect  two different implementations of the same concept across wizard vs. advanced screen. Worth documenting the  distinction in the YAML comments. -->
+{{< /expand >}}
+
+#### Destination Snapshot Lifetime Options {id="replication_dest-snapshot-life"}
+
+The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server. <!-- this option only shows in the wizard, checking with eng if that is correct or a bug -->-->
 
 {{< hint type=note title="Snapshot Preservation" >}}
 TrueNAS always preserves the latest snapshot so replication can resume later.
@@ -255,7 +259,7 @@ If you delete a dataset or zvol on the source, you must manually delete the repl
 
 {{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskWhenRunOnceCustomLifetime.png" alt="Add Replication Task When Custom Lifetime" id="Add Replication Task When Custom Lifetime" >}}
 
-{{< expand "Destination Snapshot Lifetime Settings" "v" >}}
+{{< expand "Destination Snapshot Lifetime Settings" "v" >}}  <!-- some of these are shared/appear on the Add Replication Task screen -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -286,7 +290,7 @@ All three **Transport** field options share the two settings displayed for **Loc
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportSSH.png" alt="Advanced Add Replication Task SSH Transport" id="Advanced Add Replication Task SSH Transport" >}}
 
-{{< expand "General Settings" "v" >}}
+{{< expand "General Settings" "v" >}} {id="replication_add_gen-transport"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -306,7 +310,7 @@ These settings display for all three **Transport** options.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportLocal.png" alt="Advanced Add Replication Task Local Transport" id="Advanced Add Replication Task Local Transport" >}}
 
-{{< expand "Local Transport Settings" "v" >}}
+{{< expand "Local Transport Settings" "v" >}}  {id="replication_add_transport"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -321,7 +325,7 @@ When **Transport** is set to **SSH**, the settings listed below show in addition
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportSSH.png" alt="Advanced Add Replication Task SSH Transport" id="Advanced Add Replication Task SSH Transport" >}}
 
-{{< expand "SSH Transport Settings" "v" >}}
+{{< expand "SSH Transport Settings" "v" >}}  {id="replication_add_transport-ssh"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -337,7 +341,7 @@ When **Transport** is set to **SSH+NETCAT**, the settings listed below show in a
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskGeneralTransportSSH+NETCAT.png" alt="Advanced Add Replication Task SSH+NETCAT Transport" id="Advanced Add Replication Task SSH+NETCAT Transport" >}}
 
-{{< expand "SSH+NETCAT Transport Settings" "v" >}}
+{{< expand "SSH+NETCAT Transport Settings" "v" >}}  {id="replication_add_transport-ssh-netcat"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -357,7 +361,7 @@ Selections made in **Recursive** and **Replicate Specific Snapshots** change the
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddRepTaskSourceAndDestination.png" alt="Advanced Add Replication Task Source and Destination" id="Advanced Add Replication Task Source and Destination" >}}
 
-{{< expand "Advanced Source Settings" "v" >}}
+{{< expand "Advanced Source Settings" "v" >}} {id="replication_add_source"} <!-- Source and Recursive are both in the What and Where wizard screen settings -- >
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -378,7 +382,7 @@ Selections made in **Encryption** and **Snapshot Retention Policy** change the d
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskDestinationOptions.png" alt="Advanced Add Replication Task Destination Options" id="Advanced Add Replication Task Destination Options" >}}
 
-{{< expand "Advanced Destination Settings" "v" >}}
+{{< expand "Advanced Destination Settings" "v" >}}  {id="replication_add_destination"} <!-- Destination and Encryption are shared and on the what and where wizard screen -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -398,12 +402,13 @@ The snapshot settings below change options displayed based on selections made.
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskSnapshotOptions.png" alt="Add Replication Task Snapshot" id="Add Replication Task Snapshot" >}}
 
-{{< expand "Snapshot Settings" "v" >}}
+{{< expand "Snapshot Settings" "v" >}}  {id="replication_add_snapshot"}  
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Periodic Snapshot Tasks** | Select the snapshot schedule for this replication task from the dropdown list. Select from previously configured periodic snapshot tasks. This replication task must have the same **Recursive** and **Exclude Child Dataset** values as the selected periodic snapshot task. Selecting a periodic snapshot schedule removes the **Schedule** field. |
 | **Replicate Specific Snapshots** | Select to only replicate snapshots that match a defined creation time. Selecting this option shows the **By snapshot creation time** field. Select the preset schedule or **Custom** to use the advanced scheduler. |
+| **By snapshot creation time** | Sets the time range for specific periodic snapshots to replicate. Select preset options or **Custom**. **Hourly** shows **Begin** and **End** time fields. Only shows when **Replicate Specific Snapshots** is enabled. |
 | **Begin** | Displays after selecting **Hourly** in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created before this selected time are not included in the replication. |
 | **End** | Displays after selecting **Hourly** in **By snapshot creation time**. Select a time range for the specific periodic snapshots to replicate, in 15-minute increments. Periodic Snapshots created after this selected time are not included in the replication. |
 | **Also include snapshots with the name** | These radio buttons change the naming schema setting option below it. See [Snapshot Naming](#snapshot-naming-options) in the wizard section for details on this option and the radio buttons. |
@@ -413,6 +418,7 @@ The snapshot settings below change options displayed based on selections made.
 | **Matching regular expression** | Displays after selecting **Matching regular expression**. Replicates all snapshots that match the specified regular expression. This process reads snapshot metadata to determine the snapshot creation order. This slows regular performance on the systems with a large number of snapshots. |
 | **Save Pending Snapshots** | Prevents source system snapshots that have failed replication from being automatically removed by the **Snapshot Retention Policy**. |
 {{< /truetable >}}
+
 {{< /expand >}}
 
 ### Replication Schedule Advanced Options
@@ -421,7 +427,7 @@ These schedule setting options are common to both the **Replication Task Wizard*
 
 {{< trueimage src="/images/SCALE/DataProtection/AdvancedAddReplicationTaskScheduleOptions.png" alt="Advanced Add Replication Task Schedule" id="Advanced Add Replication Task Schedule" >}}
 
-{{< expand "Advanced Schedule Settings" "v" >}}
+{{< expand "Advanced Schedule Settings" "v" >}}  {id="replication_add_schedule"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

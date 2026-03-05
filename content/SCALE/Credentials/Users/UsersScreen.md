@@ -162,7 +162,7 @@ Built-in users (except the **root** user) do not show the home directory setting
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
-### Username and Allow Access Settings
+### Username and Allow Access Settings {id="user_add"}
 
 The **Username** and **Allow Access** settings specify the username and level of access (privileges granted) given to the user.
 Each access option changes the settings shown in other sections of the **Add User** and **Edit User** screens.
@@ -170,7 +170,6 @@ Each access option changes the settings shown in other sections of the **Add Use
 {{< trueimage src="/images/SCALE/Credentials/AddUsernameAndAccessSettings.png" alt="Username and Allow Access Settings" id="Username and Allow Access Settings" >}}
 
 {{< truetable >}}
-
 | Setting | Description |
 |---------|-------------|
 | **Username** | (Required) Text entry field that accepts manual or copy/paste entry of a name for the user. A user name consists of up to 32 characters. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Names should not begin with a hyphen (-), include a space, tab, or these special characters: comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parenthesis ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater or less than symbols (<)(>), or equal (=). |
@@ -178,7 +177,7 @@ Each access option changes the settings shown in other sections of the **Add Use
 | **Select Role** | Shows after selecting **TrueNAS Access**. Each role adds the appropriate group to the **Groups** option under [**Additional Details**](#additional-details). |
 {{< /truetable >}}
 
-### Authentication Settings
+### Authentication Settings  {id="user_add-auth"}
 
 Authentication settings show after selecting **Shell Access** or **SSH Access** options under **Allow Access**. **Password** shows for all access options.
 
@@ -192,7 +191,7 @@ Authentication settings show after selecting **Shell Access** or **SSH Access** 
 | **Public SSH Key** | Only shows after selecting **SSH Access**. Text entry field that accepts manual or copy/paste entry of the public SSH key for any key-based authentication. Do not paste the private key in this field! |
 {{< /truetable >}}
 
-### Additional Details
+### Additional Details {id="user_add-other"}
 
 The <span class="material-icons">edit</span> edit icon or on the field shows a text entry, dropdown list, or other setting fields.
 Some settings show additional settings, for example, the **Group**, **Home Directory**, and **Sudo Commands**.
@@ -204,11 +203,23 @@ Some settings show additional settings, for example, the **Group**, **Home Direc
 |---------|-------------|
 | **Full Name** | Text entry field that accepts manual entry of the full name (first and last) for the user. |
 | **Email** | Enter the email address of the new user. This email address receives notifications, alerts, and messages based on configured settings. |
-| **Groups** | Shows the **Create New Primary Group** pre-selected by default, and **Auxiliary Groups** settings after clicking the edit icon. <br>**Create New Primary Group** creates a new primary group with the same name entered in **Username**. Disabling **Create New Primary Group** shows a dropdown list with group options. <br>**Auxiliary Group** shows a dropdown list after clicking in the field. This sets the membership auxiliary group. For example, to add **built-in administrator** or **truenas_readonly_administrator** group privileges. |
+| **Groups** | Shows the **Create New Primary Group** pre-selected by default, and **Auxiliary Groups** settings after clicking the edit icon.  |
+| **Create New Primary Group** | Creates a new primary group with the same name entered in **Username**. Disabling shows a dropdown list with group options. |
+| **Auxiliary Groups** | Shows a dropdown list after clicking in the field. Sets the membership auxiliary group. For example, to add **built-in administrator** or **truenas_readonly_administrator** group privileges. |
+| **Primary Group** | Sets the primary group for the user. Only shows when **Create New Primary Group** is cleared. |
 | **UID** | Shows the default **Next Available**. Shows a text entry field that accepts manual entry of a new number for the user ID after clicking edit. Enter a number greater than 1000 for user accounts. System accounts use an ID equal to the default port number used by the service. |
-| **Home Directory** | Sets the home directory for the user. Shows the default **New directory under /var/empty** when not configured. <br><li>**Create Home Directory** is preselected by default, and the **Create Home Directory Under** mount path and file browser fields show after clicking edit. <br>Disabling **Create Home Directory** changes the mount path and browser fields to **Home Directory**. <br>The mount path field allows manual entry of the path to the home directory for this user, or populates with the path selected with the file browser directly below. <br>The file browser allows creating a new dataset after clicking on an existing dataset. If the directory exists and matches the value in **Username**, it is set as the home directory for the user. <br>When the path does not end with a subdirectory matching the username, a new subdirectory is created if the **Create Home Directory** option is selected. <br><li>**Default Permissions** is preselected by default. It sets the home directory ACL permissions to **700 or owner - all, others-none**. <br>Disabling **Default Permissions** shows the **Home Directory Permissions** **Read/Write/Execute** and **User/Group/Other** checkboxes to customize the home directory permissions.</li> |
+| **Create Home Directory** | Shows additional settings to configure a home directory for the user. |
+| **Home Directory** (path) | Sets the path to the home directory. Field label changes based on **Create Home Directory** setting. **Create Home Directory Under** (when enabled) or **Home Directory** (when cleared). Browse to select or enter manually. If the directory exists and matches the username, sets it as home. If the path does not end with a username subdirectory, creates a new subdirectory when **Create Home Directory** is enabled. |
+| **Home Directory** | Sets the home directory for the user. Shows the default **New directory under /var/empty** when not configured. <br><li>**Create Home Directory** is preselected by default, and the **Create Home Directory Under** mount path and file browser fields show after clicking edit. <br>Disabling **Create Home Directory** changes the mount path and browser fields to **Home Directory**. <br>The mount path field allows manual entry of the path to the home directory for this user, or populates with the path selected with the file browser directly below. <br>The file browser allows creating a new dataset after clicking on an existing dataset. If the directory exists and matches the value in **Username**, it is set as the home directory for the user. <br>When the path does not end with a subdirectory matching the username, a new subdirectory is created if the **Create Home Directory** option is selected.</li> |
+| **Default Permissions** | Selected by default. It sets ACL permissions for the home directory to **700 or owner - all, others-none**. Disabling **Default Permissions** shows the **Home Directory Permissions** **Read/Write/Execute** and **User/Group/Other** checkboxes to customize the home directory permissions. |
 | **Shell** | Select the [shell](#shell-options) for local and SSH logins from the dropdown list. Options are **bash** **dash**, **rbash**, **sh**, **tmux**, **TrueNAS CLI**, **TrueNAS Console**, and **zsh**. |
-| **Sudo Commands** | Shows options for entering [`sudo`](https://www.sudo.ws/) commands. Options are: <br><li>**Allowed Sudo Commands** - Limits this user to the specific `sudo` commands entered in the field. Enter allowed commands as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br>Grants limited root-like permissions for this user when using these commands, and prompts the user for their account password. <br><li>**Allow all sudo commands** - Grants the user permission to use all `sudo` commands, but prompts the user to enter their password. <br><li>**Allowed sudo commands with no password** - Limits the `sudo` commands the user can enter without seeing a prompt to enter their password. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. Grants limited root-like permissions for this user when using these commands. <br>Exercise caution when allowing `sudo` commands without password prompts. We recommend limiting this privilege to trusted users and specific commands to minimize security risks. <br><li>**Allow all sudo commands with no password** - Gives this user administrator permissions and the ability to use all `sudo` commands without seeing a prompt to enter their password. This is not recommended!</li> |
+| **Home Directory Permissions** | Shows the **Read/Write/Execute** and **User/Group/Other** checkboxes to customize the home directory permissions. |
+| **Sudo Commands** | Shows options for entering [`sudo`](https://www.sudo.ws/) commands. Options are **Allowed Sudo Commands**, **Allow all sudo commands**, **Allowed sudo commands with no password**, and **Allow all sudo commands with no password**. |
+| **Allowed Sudo Commands** | Limits this user to the specific `sudo` commands entered in the field. Enter allowed commands as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. <br>Grants limited root-like permissions for this user when using these commands, and prompts the user for their account password. |
+| **Allow all sudo commands** |  Grants the user permission to use all `sudo` commands, but prompts the user to enter their password. |
+| **Allowed sudo commands with no password** | Limits the `sudo` commands the user can enter without seeing a prompt to enter their password. Enter each command as an absolute path to the ELF (Executable and Linkable Format) executable file, for example, */usr/bin/nano*. <file>/usr/bin/</file> is the default location for commands. Grants limited root-like permissions for this user when using these commands. <br>Exercise caution when allowing `sudo` commands without password prompts. We recommend limiting this privilege to trusted users and specific commands to minimize security risks. |
+| **Allow all sudo commands with no password** | Gives this user administrator permissions and the ability to use all `sudo` commands without seeing a prompt to enter their password. This is not recommended! |
+|  |  |
 {{< /truetable >}}
 
 {{< expand "Shell Options" "v" >}}

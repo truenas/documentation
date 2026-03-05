@@ -50,12 +50,19 @@ It includes an **Enable this service to start automatically** toggle and two but
 {{< trueimage src="/images/SCALE/Shares/StartiCSIServicedialog.png" alt="Start iSCSI Service Dialog" id="Start iSCSI Service Dialog" >}}
 
 ### Delete Target Dialog
-
+{id="iscsi_target_delete"}
 {{< include file="/static/includes/iSCSITargetDelete.md" >}}
 
 ## iSCSI Global Configuration Screen
-
+{id="iscsi_global_config-hardware"}
 {{< include file="/static/includes/iSCSIGlobalConfigurationScreen.md" >}}
+
+{{< enterprise >}}
+Enterprise High Availability (HA) systems include the **Asymmetric Logical  Unit Access (ALUA)** option. This option also shows for HA systems equipped for Fibre Channel.
+Do not enable ALUA on TrueNAS unless it is also supported by and enabled on the client computers. ALUA only works when enabled on both the client and server.
+
+**Enable iSCSI Extensions for RDMA (iSER)** shows for Enterprise-licensed systems licensed for and equipped with RDMA.
+{{< /enterprise >}}
 
 ## iSCSI Wizard Screens
 
@@ -200,15 +207,18 @@ The **Extents** screen shows a table listing extents configured on the system. E
 **Add** and **Edit** open the configuration screen for the selected target.
 **Delete** opens a dialog with delete options.
 
-#### Delete Extent Dialog  {id=""}
+#### Delete Extent Dialog  
+{id=""}
 
 {{< include file="/static/includes/iSCSIDeleteExtent.md" >}}
 
-#### Add or Edit Extent Screens  {id=""}
+#### Add or Edit Extent Screens  
+{id=""}
 
 {{< include file="/static/includes/iSCSIAddEditExtentSettings.md" >}}
 
-### Initiators Groups Screen  {id=""}
+### Initiators Groups Screen  
+{id=""}
 
 The **Initators Groups** screen manages iSCSI initiator groups for targets.
 *Initiator groups* are a logical grouping of iSCSI initiators (clients), identified by their iSCSI qualified name (IQN), that control access to iSCSI targets they are associated with, and define what operations clients can perform on storage for those targets.

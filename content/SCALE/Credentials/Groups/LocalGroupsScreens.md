@@ -34,7 +34,7 @@ Clicking on the <span class="material-icons">expand_more</span> arrow or anywher
 
 Use [**Members**](#update-members) to manage membership and [**Edit**](#edit-group) or **Delete** to manage the group.
 
-## Add and Edit Group Screens
+## Add and Edit Group Screens {id="group_add"}
 
 The **Add Group** and **Edit Group** screens show the same settings but the GID is not editable after saving changes on the **Add Group** screen.
 **Add** opens the **Add Group** configuration screen.
@@ -79,7 +79,7 @@ The **Privileges** screens show the default administrator groups and roles and d
 
 {{< trueimage src="/images/SCALE/Credentials/PrivilegesScreen.png" alt="Privileges Screen" id="Privileges Screen" >}}
 
-### Add and Edit Privilege Screens
+### Add and Edit Privilege Screens {id="privilege_add"}
 
 The new and edit privilege screens show the same settings but not all settings are editable.
 

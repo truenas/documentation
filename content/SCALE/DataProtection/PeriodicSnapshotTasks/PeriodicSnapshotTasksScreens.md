@@ -14,26 +14,26 @@ doctype: reference
 ---
 
 
-The **Data Protection** screen **Periodic Snapshot Task** widget displays periodic snapshot tasks created on the system. 
+The **Data Protection** screen **Periodic Snapshot Task** card displays periodic snapshot tasks created on the system. 
 A periodic snapshot task allows scheduling the creation of read-only versions of pools and datasets at a given point in time.
 
 Periodic snapshot tasks display the machine time, browser time, or both, depending on individual user timezone settings. Users can update timezone settings by utilizing the [**General Settings**]({{< ref "GeneralSettingsScreens" >}}) screen.
 
-## Periodic Snapshot Task Widget
+## Periodic Snapshot Task Card
 
-The **Periodic Snapshot Task** widget displays a list of tasks configured on the system.
-The widget shows a description of periodic snapshot tasks when a task is not configured.
+The **Periodic Snapshot Task** card displays a list of tasks configured on the system.
+The card shows a description of periodic snapshot tasks when a task is not configured.
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">
     <div style="flex: 1;">
-      <img src="/images/SCALE/DataProtection/PeriodicSnapshotTaskWidgetNoTasks.png" alt="Periodic Snapshot Task Widget without Task" style="width: 100%; max-width: 400px; height: auto;">
+      <img src="/images/SCALE/DataProtection/PeriodicSnapshotTaskWidgetNoTasks.png" alt="Periodic Snapshot Task Card without Task" style="width: 100%; max-width: 400px; height: auto;">
     </div>
     <div style="flex: 1;">
-      <img src="/images/SCALE/DataProtection/PeriodicSnapshotTasksWidget.png" alt="Periodic Snapshot Task Widget with Tasks" style="width: 100%; max-width: 400px; height: auto;">
+      <img src="/images/SCALE/DataProtection/PeriodicSnapshotTasksWidget.png" alt="Periodic Snapshot Task Card with Tasks" style="width: 100%; max-width: 400px; height: auto;">
     </div>
   </div>
 
-The **Periodic Snapshot Task** widget header opens the [**Periodic Snapshot Task**](#periodic-snapshot-task-screen) screen.
+The **Periodic Snapshot Task** card header opens the [**Periodic Snapshot Task**](#periodic-snapshot-task-screen) screen.
 
 **Add** opens the **[Add Periodic Snapshot Task](#add-and-edit-periodic-snapshot-screens)** screen. 
 
@@ -41,7 +41,7 @@ The **Periodic Snapshot Task** widget header opens the [**Periodic Snapshot Task
 
 **Snapshots** opens the **[Snapshots]({{< ref "SnapshotsScreens" >}})** screen.
 
-The vertical ellipses <span class="material-icons">more_vert</span> at the right of the task on the **Periodic Task Widget** opens a dropdown menu with two task options: **Edit** and **Delete**.
+The vertical ellipses <span class="material-icons">more_vert</span> at the right of the task on the **Periodic Task Card** opens a dropdown menu with two task options: **Edit** and **Delete**.
 
 The <span class="material-icons">delete</span> **Delete** opens a delete dialog. **Confirm** activates the **Delete**. **Delete** deletes the saved periodic snapshot task.
 
@@ -57,7 +57,7 @@ The <span class="material-icons">delete</span> **Delete** opens a delete dialog.
 
 ## Periodic Snapshot Task Screen
 
-Periodic snapshot tasks show on both the **Periodic Snapshot Task** widget on the **Data Protection** screen and the **Periodic Snapshot Tasks** screen.
+Periodic snapshot tasks show on both the **Periodic Snapshot Task** card on the **Data Protection** screen and the **Periodic Snapshot Tasks** screen.
 
 ![DataProtectionPeriodicSnapshotTasksList](/images/SCALE/DataProtection/DataProtectionPeriodicSnapshotTasksList.png "Periodic Snapshot Task List")
 
@@ -87,7 +87,7 @@ The **Add Periodic Snapshot Task** and **Edit Periodic Snapshot Task** show the 
 
 ![AddPeriodicSnapshotTaskScreen](/images/SCALE/DataProtection/AddPeriodicSnapshotTaskScreen.png "Add Periodic Snapshot Task")
 
-{{< expand "Dataset Settings" "v" >}}
+{{< expand "Dataset Settings" "v" >}} {id="periodic-snap_add_dataset"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -97,7 +97,7 @@ The **Add Periodic Snapshot Task** and **Edit Periodic Snapshot Task** show the 
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Schedule Settings" "v" >}}
+{{< expand "Schedule Settings" "v" >}} {id="periodic-snap_add_schedule"}
 **Schedule** settings show on both the add and edit configuration screens.
 {{< truetable >}}
 | Setting | Description |
@@ -105,7 +105,7 @@ The **Add Periodic Snapshot Task** and **Edit Periodic Snapshot Task** show the 
 | **Snapshot Lifetime** | Sets the length of time to retain a snapshot on this system. Enter a numeric value and a single lowercase letter for units. Examples: *3h* is three hours, *1m* is one month, and *1y* is one year. Does not accept minute values. After the time expires, the snapshot is removed during the next snapshot scheduled execution finds that the snapshot lifetime is expired. Snapshots replicated to other systems are not affected. |
 | **Naming Schema** | Snapshot name format string. The default is `auto-%Y-%m-%d_%H-%M`. Must include the strings `%Y`, `%m`, `%d`, `%H`, and `%M`, which are replaced with the four-digit year, month, day of month, hour, and minute as defined in [strftime(3)](https://man7.org/linux/man-pages/man3/strftime.3.htmle). For example, snapshots of *pool1* with a Naming Schema of `customsnap-%Y%m%d.%H%M` have names like *pool1@customsnap-20190315.0527*. |
 | **Schedule** | Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
-| **Begin** | Sets the start time for a snapshot. shows when **Schedule** is set to *Hourly*. Enter the hour and minute when the system can begin taking snapshots. |
+| **Begin** | Sets the start time for a snapshot. Shows when **Schedule** is set to **Hourly**. Enter the hour and minute when the system can begin taking snapshots. |
 | **End** | Sets the end time for a snapshot. Shows when **Schedule** is set to *Hourly*. Enter the hour and minute the system must stop creating snapshots. Snapshots already in progress continue until complete. |
 | **Allow Taking Empty Snapshots** | Sets the task to allow taking a snapshot and creating a dataset even when there are no changes to the dataset from the last snapshot. Recommended for long-term restore points, multiple snapshot tasks pointed at the same datasets, or compatibility with snapshot schedules or replications created in TrueNAS 11.2 and earlier.  For example, you can set up a monthly snapshot schedule to take monthly snapshots and still have a daily snapshot task taking snapshots of any changes to the dataset. |
 | **Enabled** | Activates this periodic snapshot schedule. To disable this task without deleting it, leave the checkbox cleared. |

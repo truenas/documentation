@@ -73,7 +73,7 @@ Settings change based on the option (**Module** or **SSH**) set in **Rsync Mode*
 
 {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
-{{< expand "Source and Remote Settings" "v" >}}
+{{< expand "Source and Remote Settings" "v" >}} {id="rsync_add_source-remote"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -99,7 +99,7 @@ The **More Options** specify other settings related to when and how the rsync oc
 
 {{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSchedOpt.png" alt="Rsync Task Schedule and Other Options Settings" id="Rsync Task Schedule and Other Options Settings" >}}
 
-{{< expand "Schedule Settings" "v" >}}
+{{< expand "Schedule Settings" "v" >}} {id="rsync_add_schedule"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -115,7 +115,7 @@ The **More Options** specify other settings related to when and how the rsync oc
 {{< include file="/static/includes/AdvancedScheduler.md" >}}
 {{< /expand >}}
 
-{{< expand "More Options Settings" "v" >}}
+{{< expand "More Options Settings" "v" >}} {id="rsync_add_more-options"}
 
 {{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
 

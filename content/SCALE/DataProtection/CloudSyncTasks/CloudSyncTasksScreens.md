@@ -14,28 +14,28 @@ doctype: reference
 ---
 
 
-The **Cloud Sync Tasks** widget on the **Data Protection** screen shows configured cloud sync tasks, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS and a cloud storage provider.
+The **Cloud Sync Tasks** card on the **Data Protection** screen shows configured cloud sync tasks, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS and a cloud storage provider.
 Cloud sync tasks are an effective data backup method that sends data to a remote location, or when performing cloud-storage-migration through a provider.
 
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
-## Cloud Sync Task Widget
+## Cloud Sync Task Card
 
-The **Cloud Sync Task** widget lists tasks configured on the system.
-The widget shows a description of cloud sync tasks before adding a task.
+The **Cloud Sync Task** card lists tasks configured on the system.
+The card shows a description of cloud sync tasks before adding a task.
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">
     <div style="flex: 1;">
       <img src="/images/SCALE/DataProtection/CloudSyncTaskWidgetNoTasks.png" alt="No Cloud Sync Tasks" style="width: 100%; max-width: 400px; height: auto;">
     </div>
     <div style="flex: 1;">
-      <img src="/images/SCALE/DataProtection/CloudSyncTaskWidget.png" alt="Cloud Sync Task Widget" style="width: 100%; max-width: 400px; height: auto;">
+      <img src="/images/SCALE/DataProtection/CloudSyncTaskWidget.png" alt="Cloud Sync Task Card" style="width: 100%; max-width: 400px; height: auto;">
     </div>
   </div>
 
-The widget header opens the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
+The card header opens the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
 
-**Add** on the widget and the **Cloud Sync Task** screen opens the **[Cloudsync Task Wizard](#cloudync-task-wizard)**.
+**Add** on the card and the **Cloud Sync Task** screen opens the **[Cloudsync Task Wizard](#cloudync-task-wizard)**.
 
 The vertical ellipses <span class="material-icons">more_vert</span> opens a dropdown menu with five options for various functions for each task:
 
@@ -70,7 +70,7 @@ Expand any task to see details on the configured task, such as the cloud sync pr
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTasksScreenTaskDetails.png" alt="Cloud Sync Task Details" id="Cloud Sync Task Details" >}}
 
-Buttons for these task options perform the same functions as the icons on the widget:
+Buttons for these task options perform the same functions as the icons on the card:
 
 * **Run Now** starts the task outside of the scheduled period.
 
@@ -120,7 +120,7 @@ The **What and When** screen sets the direction (push or pull), transfer mode (m
 
 **Manage Credentials** opens the [Backup Credentials]({{< ref "/SCALE/Credentials/BackupCredentials" >}}) screen.
 
-### Transfer Settings
+### Transfer Settings {id="cloud-sync_add_transfer"}
 
 **Transfer** settings change the cloud sync task direction (**PUSH** or **PULL**), set the data transfer method (**COPY**, **MOVE**, or **SYNC**), and set the dataset or directory to use in the task. Selecting the dataset or file populates the **Directory/Files** field.
 
@@ -137,7 +137,8 @@ The **What and When** screen sets the direction (push or pull), transfer mode (m
 | **Directory/Files** | Enter or browse to select the source or receiving dataset or folder. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder to expand and show datasets and directories within that folder. After selecting the dataset or directory location (source) to send to the cloud for push syncs, or as the destination to write to for pull syncs. Be cautious with pull destinations to avoid overwriting existing files. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again to collapse the directory tree. Note: Clear the checkmark to the left of **/mnt**. Not clearing this checkmark can result in an **All selected directories must be at the same level** error message. |
 {{< /truetable >}}
 
-### Remote Settings
+### Remote Settings {id="cloud-sync_add_remote"}
+
 The **Remote** settings specify the cloud sync provider and destination storage locations.
 The option selected in **Credential** changes settings in the **Remote** settings area.
 The **Manage Credentials** link opens the **Backup Credentials** screen, where you can add a new provider credential.
@@ -150,7 +151,7 @@ The **Manage Credentials** link opens the **Backup Credentials** screen, where y
 | **Folder** | Enter or browse to select the dataset. Click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. |
 {{< /truetable >}}
 
-#### Add Bucket Screen
+#### Add Bucket Screen {id="cloud-sync_add_bucket"}
 
 The **Add Bucket** screen opens when **Add New** is selected from the **Bucket** dropdown in **Remote Settings**.
 It is only available for Storj-iX provider credentials.
@@ -165,14 +166,15 @@ It is only available for Storj-iX provider credentials.
 
 Click **Save** on the **Add bucket** screen to create the remote bucket on Storj and then return to the **Cloud Sync Task Wizard**.
 
-### Control Settings
+### Control Settings {id="cloud-sync_add_control"}
+
 **Control** settings establish a schedule for when the cloud sync task occurs.
 
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Schedule** | Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
-| **Enabled** | Enables this cloud sync task. Leave clear to disable the task without deleting it, and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **Cloud Sync Tasks** widget to enable or disable the task. |
+| **Enabled** | Enables this cloud sync task. Leave clear to disable the task without deleting it, and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **Cloud Sync Tasks** card to enable or disable the task. |
 {{< /truetable >}}
 
 {{< include file="/static/includes/SchedulePresetOptions.md" >}}
@@ -181,7 +183,7 @@ Click **Save** on the **Add bucket** screen to create the remote bucket on Storj
 {{< include file="/static/includes/AdvancedScheduler.md" >}}
 {{< /expand >}}
 
-### Advanced Options Settings
+### Advanced Options Settings {id="cloud-sync_add_advanced"}
 
 **Advanced Options** settings are for advanced users.
 Selecting **Push** in **Direction** adds the **Use Snapshot** option.
@@ -198,7 +200,7 @@ Selecting **Push** in **Direction** adds the **Use Snapshot** option.
 | **Exclude** | Sets up a list of files and directories to exclude from sync. Enter one or separate additional entries by pressing <kbd>Enter</kbd>.<br> Examples of proper syntax to exclude files/directories are:<li> `photos</code>` excludes a file named *photos*</li><li> `/photos`> excludes a file named *photos* from root directory (but not subdirectories)</li><li>`photos/` excludes a directory named *photos</li><li>`/photos/` excludes a directory named *photos* from root directory (but not subdirectories).</li></ul> See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option. |
 {{< /truetable >}}
 
-### Advanced Remote Options
+### Advanced Remote Options {id="cloud-sync_add_advanced-remote"}
 
 The **Advanced Remote Options** settings are for advanced users to configure remote encryption (if selected), transfer bandwidth speed, and bandwidth limit.
 The **Edit Cloud Sync Task** screen **Advanced Remote Options** screen has an additional setting not found on the **Add Cloud Sync Task** screen.

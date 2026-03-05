@@ -11,8 +11,9 @@
 | **Allow All Initiators** | Select to allows all initiators. |
 | **Allowed Initiators (IQN)** | Enter initiators allowed access to this system. Enter an [iSCSI Qualified Name (IQN)](https://tools.ietf.org/html/rfc3720#section-3.2.6) and click **+** to add it to the list. Example: *iqn.1994-09.org.freebsd:freenas.local*. |
 | **Description** | Enter any notes about the initiators. |
-| **Connected Initiators** | Shows the list of connected initiators on the system. |
-| **Allowed Initiators** | Shows the list of allowed initiators on the system. |
-| **Refresh** | Updates the screen. |
 {{< /truetable >}}
+**Connected Initiators** shows the list of connected initiators on the system. **Allowed Initiators** shows the list of allowed initiators on the system. 
+
+**Refresh** updates the screen.
+<!-- Connected Initiators and Allowed Initiators are not settings so they won't migrate, and refresh is a button that fits more in the nav/action button categories. We'll pick these up when we do the UI screen migration at phase 3 of this project. -->
 {{< /expand >}}
