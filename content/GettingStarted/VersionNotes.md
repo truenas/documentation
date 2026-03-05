@@ -42,7 +42,17 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
 
 **Notable changes:**
 
-<!-- Notable changes placeholder -->
+* Fixes pool creation errors on systems with a USB boot drive ([NAS-139947](https://ixsystems.atlassian.net/browse/NAS-139947)).
+  Resolves an error that prevented new storage pool creation when the TrueNAS boot pool resided on a USB device. Affected systems could not create additional pools through the web interface.
+
+* Fixes bond status alert check failures caused by a busy Netlink socket ([NAS-140041](https://ixsystems.atlassian.net/browse/NAS-140041)).
+  Resolves an issue where the system could not check network bond status for alerts due to a "Netlink socket busy" error. Bond interface status alerts may not have fired correctly on affected systems.
+
+* Fixes issues with log VDEV removal ([NAS-140080](https://ixsystems.atlassian.net/browse/NAS-140080)).
+  Resolves errors that could occur when removing a log VDEV from a storage pool. Affected systems may have encountered failures during the removal process.
+
+* Fixes a memory handling issue with NTB window allocation during link changes ([NAS-139627](https://ixsystems.atlassian.net/browse/NAS-139627)).
+  Resolves an issue where Non-Transparent Bridge (NTB) window memory was not properly retained during network link state changes. This could cause instability on systems using NTB interconnects, such as High Availability configurations.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14130" target="_blank">TrueNAS 25.10.2.2 (Goldeye) Changelog</a> in Jira.
 
