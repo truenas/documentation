@@ -113,7 +113,7 @@ Reseting the SED is a destructive process and should only be used as a last reso
 
 {{< trueimage src="/images/SCALE/Storage/DiskResetSEDWindowBottom.png" alt="Reset SED Window Bottom" id="Reset SED Window Bottom" >}}
 
-**Physical Security ID (PSID)** requires entering the  PSID from the lable on the drive.
+**Physical Security ID (PSID)** requires entering the  PSID from the label on the drive.
 
 **I understand this will permanently destroy all data on this disk** is required and confirms you understand this is a destructive process before you can proceed.
 
