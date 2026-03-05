@@ -87,6 +87,10 @@ Notable changes:
 
 {{< include file="/static/includes/JiraFilterInstructions.md" >}}
 
+## 3.3.0 Ongoing Issues
+
+<a href="https://ixsystems.atlassian.net/issues/?filter=14096" target="_blank">Click here to see the latest Jira tickets</a> about known issues in 3.3.0 that are being resolved in a future TrueCommand release.
+
 ## TrueCommand 3.2.0
 
 TrueCommand 3.2.0 enhances the functionality of prior releases with various bugfixes maintenance efforts. This update ensures that TrueCommand is compatible with TrueNAS 25.10.
