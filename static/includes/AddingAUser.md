@@ -5,7 +5,7 @@ Users are assigned different access levels by TrueNAS administrators. All user a
 All users are assigned the **SMB Access** by default.
 
 **SMB Access** is the default user access type assigned to user accounts that require access to SMB shares.
-It uses the user account credentials to access data shared with [SMB]({{< ref "/SCALE/Shares/SMB" >}}).and role assigned to the user.
+It uses the user account credentials to access data shared with [SMB]({{< ref "/SCALE/Shares/SMB" >}}).
 
 TrueNAS requires other options based on the level of access
 **TrueNAS Access** shows the predefined roles available in TrueNAS. Assigning **TrueNAS Access** requires setting one of the options or roles: **Full Admin**, **Readonly Admin**, or **Sharing Admin**.
@@ -86,7 +86,7 @@ To manually add a new user, go to **Credentials > Users**, and then click **Add*
    {{< expand "Accept the default UID Setting" "v" >}}
    Accept the default UID setting or enter a new UID.
    TrueNAS suggests a user ID starting at **3000**, but you can change it if you wish.
-   We recommend using an ID  of 3000 or greater for non-built-in users.
+   We recommend using an ID of 3000 or greater for non-built-in users.
    {{< /expand >}}
 
    {{< expand "(Optional) Add a home directory for the user." "v" >}}
