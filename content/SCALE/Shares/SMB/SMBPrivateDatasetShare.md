@@ -87,12 +87,12 @@ Go to **Shares** and follow the instructions listed above using the **Private Da
 You can edit an use an existing dataset and share to use for a private dataset share, or you can create a new dataset and share. We recommend creating a new dataset and share.
 
 When creating a new share, TrueNAS allows you to use the **Add Dataset** or **Add SMB** screen to create the share and dataset.
-Each method has advantages depending on they type of share you want to create.
+Each method has advantages depending on the type of share you want to create.
 In general, when creating a simple SMB share and dataset, you can use either screen.
 
 When adding a new share and dataset for a private dataset share, we recommend using the **Add SMB** screen to create a new share and dataset for private datasets, or for any other customized SMB share, rather than using the **Add Dataset** screen.
 
-We recommend using the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) when you want to customize the dataset with the advanced setting options. Afterwhich, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
+We recommend using the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) when you want to customize the dataset with the advanced setting options. After which, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
 
 {{< include file="/static/includes/ShareACLDialogs.md" >}}
 
@@ -163,7 +163,7 @@ The private dataset share requires both the dataset and share ACL permissions to
 If you did not modify the dataset ACL permissions as described above, when prompted by the system to configure the dataset ACL, accept the option.
 The **Edit ACL** screen for the new private share dataset opens. This controls who can access or modify file system permissions for the dataset the share uses.
 
-The **Edit Share ACL** option for the share opens the **Share ACL for *rikka-private*** screen where you can mofify who can see or access the share when connecting to it though Windows File Explorer. 
+The **Edit Share ACL** option for the share opens the **Share ACL for *rikka-private*** screen where you can modify who can see or access the share when connecting to it though Windows File Explorer. 
 
 {{< expand "Setting Dataset Permissions" "v" >}}
 First, set the dataset permissions to allow your admin user and the user assigned to the private directory to access the share.
