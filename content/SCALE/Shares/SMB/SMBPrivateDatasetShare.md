@@ -84,7 +84,7 @@ Go to **Shares** and follow the instructions listed above using the **Private Da
 
 {{< include file="/static/includes/LocalSMBUser.md" >}}
 
-You can edit an use an existing dataset and share to use for a private dataset share, or you can create a new dataset and share. We recommend creating a new dataset and share.
+You can edit and use an existing dataset and share to use for a private dataset share, or you can create a new dataset and share. We recommend creating a new dataset and share.
 
 When creating a new share, TrueNAS allows you to use the **Add Dataset** or **Add SMB** screen to create the share and dataset.
 Each method has advantages depending on the type of share you want to create.
@@ -163,7 +163,7 @@ The private dataset share requires both the dataset and share ACL permissions to
 If you did not modify the dataset ACL permissions as described above, when prompted by the system to configure the dataset ACL, accept the option.
 The **Edit ACL** screen for the new private share dataset opens. This controls who can access or modify file system permissions for the dataset the share uses.
 
-The **Edit Share ACL** option for the share opens the **Share ACL for *rikka-private*** screen where you can modify who can see or access the share when connecting to it though Windows File Explorer. 
+The **Edit Share ACL** option for the share opens the **Share ACL for *rikka-private*** screen where you can modify who can see or access the share when connecting to it through Windows File Explorer. 
 
 {{< expand "Setting Dataset Permissions" "v" >}}
 First, set the dataset permissions to allow your admin user and the user assigned to the private directory to access the share.
