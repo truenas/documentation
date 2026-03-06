@@ -36,24 +36,10 @@ The **Directory Services Configuration** screen is used to configure one of thre
 
 ### IPA Basic Configuration Section
 
-The **Basic Configuration** section settings control core IPA service settings.
+{{< include file="/static/includes/DirectoryServicesCommonSettings.md" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/IPABasicConfigOptions.png" alt="IPA Basic Configuration" id="IPA Basic Configuration" >}}
-
-{{< expand "Basic Configuration Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |  
-|---------|-------------|  
-| **Configuration Type** | Sets the type of directory service. **IPA** shows Identity, Policy, and Audit directory service integration settings. |
-| **Enable Service** | Activates the IPA configuration. Enabled by default. Clear to disable the configuration without deleting it. Re-enable it later without reconfiguring it. The **[Directory Services]({{< ref "/SCALE/Credentials/DirectoryServices" >}})** screen returns to the default and provides the options to configure AD, LDAP, or IPA. |
-| **Enable Account Cache** | Caches user and group information. Caching makes directory users and groups available in UI dropdown menus. Enabled by default. |
-| **Enable DNS Updates** | Allows the directory service to update DNS records. Enabled by default. |
-| **Timeout (seconds)** | The number of seconds before the directory service connection times out. Valid range is 1-40 seconds. |
-| **Kerberos Realm** | Defines the Kerberos realm for authentication (usually the uppercase version of the domain name, e.g., *EXAMPLE.COM*). This field auto-populates when selecting Active Directory domain. |
-{{< /truetable >}}
-{{< /expand >}}
-
-### IPA Credential Configuration Section
+### IPA Credential Configuration Section {id="dir-services_ipa-cedential-config"} 
+<!--  Credential Type is # PROBLEM: Needs resolution — single record vs duplicate for AD/IPA/LDAP injection. Cannot implement until duplicate strategy is decided. -->
 
 The **Credential Configuration** section settings define authentication methods for IPA access.
 
@@ -67,7 +53,7 @@ The settings on the **IPA Configuration** section settings define the connection
 
 {{< trueimage src="/images/SCALE/Credentials/IPAConfigurationSettings.png" alt="IPA Configuration" id="IPA Configuration" >}}
 
-{{< expand "IPA Configuration Settings" "v" >}}
+{{< expand "IPA Configuration Settings" "v" >}}  {id="dir-services_ipa-config"} 
 {{< truetable >}}
 | Setting | Description |  
 |---------|-------------|  
@@ -85,7 +71,7 @@ The **SMB Domain Configuration** section controls SMB integration settings.
 
 {{< trueimage src="/images/SCALE/Credentials/IPASMBConfig.png" alt="IPA SMB Configuration" id="IPA SMB Configuration" >}}
 
-{{< expand "SMB Domain Configuration Settings" "v" >}}
+{{< expand "SMB Domain Configuration Settings" "v" >}} {id="dir-services_ipa-smb-domain"}
 {{< truetable >}}
 | Setting | Description |  
 |---------|-------------|  

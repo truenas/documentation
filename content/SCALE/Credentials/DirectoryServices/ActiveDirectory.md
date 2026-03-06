@@ -47,22 +47,7 @@ The **Directory Services Configuration** screen is used to configure one of thre
 
 ### Active Directory Basic Configuration Section
 
-The **Basic Configuration** section settings control core Active Directory service settings.
-
-{{< trueimage src="/images/SCALE/Credentials/ADBasicConfig.png" alt="AD Basic Configuration" id="AD Basic Configuration" >}}
-
-{{< expand "Basic Configuration Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Configuration Type** | Sets the type of directory service. **Active Directory** shows Active Directory domain integration settings. |
-| **Enable Service** | Activates the Active Directory configuration. Enabled by default. Clear to disable the configuration without deleting it. Re-enable it later without reconfiguring it. The **[Directory Services]({{< ref "/SCALE/Credentials/DirectoryServices" >}})** screen returns to the default and provides the options to configure AD, LDAP, or IPA. |
-| **Enable Account Cache** | Caches user and group information. Caching makes directory users and groups available in UI dropdown menus. Enabled by default. |
-| **Enable DNS Updates** | Allows the directory service to update DNS records. Enabled by default. |
-| **Timeout (seconds)** | The number of seconds before the directory service connection times out. Valid range is 1-40 seconds. |
-| **Kerberos Realm** | Defines the Kerberos realm for authentication. This field auto-populates after joining the Active Directory domain. |
-{{< /truetable >}}
-{{< /expand >}}
+{{< include file="/static/includes/DirectoryServicesCommonSettings.md" >}}
 
 ### Active Directory Credential Configuration Section
 
@@ -70,7 +55,7 @@ The **Credential Configuration** section settings define authentication methods 
 
 {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesCredentialConfig.png" alt="Credential Configuration" id="Credential Configuration" >}}
 
-{{< expand "Credential Configuration Settings" "v" >}}
+{{< expand "Credential Configuration Settings" "v" >}} {id="dir-services_ad_credential"} {id=""} <!--  Credential Type is # PROBLEM: Needs resolution — single record vs duplicate for AD/IPA/LDAP injection. Cannot implement until duplicate strategy is decided.  Missing records: Directory Services credential settings (Username, Password, and others) not captured by either scrape — need manual addition or targeted re-scrape. -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -86,7 +71,7 @@ The **Active Directory Configuration** section settings define the connection pa
 
 {{< trueimage src="/images/SCALE/Credentials/ActiveDirectoryBasicOptions.png" alt="AD Configuration" id="AD Configuration" >}}
 
-{{< expand "Active Directory Configuration Settings" "v" >}}
+{{< expand "Active Directory Configuration Settings" "v" >}} {id="dir-services_ad-config"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -102,7 +87,7 @@ The **Active Directory Configuration** section settings define the connection pa
 
 The **Trusted Domains Configuration** section controls access for trusted domains.
 
-{{< expand "Trusted Domains Configuration Settings" "v" >}}
+{{< expand "Trusted Domains Configuration Settings" "v" >}} {id="dir-services_ad-domain-config"} <!-- not in the yaml file  Flagging it as needing to be added from webui-26-extraction-fixed.yaml line 6082.-- >
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -120,7 +105,7 @@ The **IDMAP Configuration** section controls identity mapping settings.
 IDMAP (Identity Mapping) ensures that UIDs and GIDs assigned to Active Directory users and groups have consistent values domain-wide. By default, TrueNAS uses an algorithmic method based on the RID component of the user or group SID, which is suitable for most environments. Only administrators experienced with configuring ID mapping should customize IDMAP settings.
 {{< /hint >}}
 
-{{< expand "IDMAP Configuration Settings" "v" >}}
+{{< expand "IDMAP Configuration Settings" "v" >}} {id="dir-services_ad-idmap-config"} <!-- Use TrueNAS Server IDMAP Defauts is in the scrape — use_default_idmap in webui-26-extraction-fixed.yaml line 6442, with a good tooltip. needs to be added to the yaml. -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

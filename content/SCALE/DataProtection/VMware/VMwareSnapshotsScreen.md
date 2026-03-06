@@ -23,17 +23,15 @@ See [Creating VMWare Snapshots]({{< ref "creatingvmwaresnapshots" >}}) for a det
 
 **Add** opens the **Add VMware Snapshot** screen.
 
-## Add VMware Snapshot {id="vmware_add_snapshot"}
-
 {{< trueimage src="/images/SCALE/DataProtection/emptyvmwaresnapshotadd.png" alt="Add VMware Snapshot Screen" id="Add VMware Snapshot Screen" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Hostname** | Enter the IP address or host name of the VMWare host. When clustering, enter the vCenter server for the cluster. |
+| **Hostname** | Enter the IP address or hostname of the VMWare host. When clustering, enter the vCenter server for the cluster. |
 | **Username** | Enter the user on the VMWare host with permission to snapshot virtual machines. |
 | **Password** | Enter the password associated with the user entered in **Username**. |
-| **Datastore** | Select a VMFS datastore to synchronize with the host from the dropdown list of options. Click **Fetch DataStores** to populate this list with options from the VMWare host. You must click **Fetch Datastores** before you click in this field or the creation process fails. Selecting a datastore also selects any mapped datasets. |
+| **Datastore** | Select a VMFS datastore to synchronize with the host from the dropdown list of options. Click **Fetch DataStores** to populate this list with options from the VMWare host. You must click **Fetch Datastores** before you click in this field or the creation process fails. Selecting a datastore also selects any mapped datasets. After entering the Hostname, Username, and Password, click Fetch Datastores and select the datastore to be synchronized. |
 | **ZFS Filesystem** | Select a TrueNAS ZFS dataset from the dropdown list of options. This field does not populate until you click **Fetch Datastores**. You must click **Fetch Datastores** before clicking in this field or the creation process fails. |
 {{< /truetable >}}
 

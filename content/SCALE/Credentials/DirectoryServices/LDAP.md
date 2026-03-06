@@ -1,6 +1,6 @@
 ---
 title: "LDAP Screens"
-description: "Provides information on the **LDAP** screen and widget settings."
+description: "Provides information on the **LDAP** screen and card settings."
 weight: 60
 aliases:
  - /scale/credentials/directoryservices/directoryservicesscreens/ldap/
@@ -27,12 +27,12 @@ The **LDAP** directory service configuration screen shows after selecting **LDAP
 
 For detailed configuration instructions, see [Configuring LDAP]({{< relref "ConfigLDAP" >}}).
 
-## LDAP Widget
+## LDAP Card
 
-The **LDAP** widget displays after configuring TrueNAS settings for your LDAP instance.
-The widget includes **Status**, and the **Hostname**, **Base DN**, and **Bind DN** configured.
+The **LDAP** card displays after configuring TrueNAS settings for your LDAP instance.
+The card includes **Status**, and the **Hostname**, **Base DN**, and **Bind DN** configured.
 
-![LDAPwidgett](/images/SCALE/Credentials/LDAPwidget.png "LDAP Widget")
+![LDAPwidgett](/images/SCALE/Credentials/LDAPwidget.png "LDAP Card")
 
 **Settings** opens the **Directory Services Configuration** screen where you can modify your LDAP settings.
 
@@ -52,28 +52,13 @@ The screen includes a **Clear Config** button that removes the entire directory 
 
 ### LDAP Basic Configuration Section
 
-The **Basic Configuration** section settings control core LDAP service settings.
-
-{{< trueimage src="/images/SCALE/Credentials/LDAPBasicConfig.png" alt="LDAP Basic Configuration" id="LDAP Basic Configuration" >}}
-
-{{< expand "Basic Configuration Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Configuration Type** | Sets the type of directory service. **LDAP** shows LDAP directory service integration settings. |
-| **Enable Service** | Activates the LDAP configuration. Enabled by default. Clear to disable the configuration without deleting it. Re-enable it later without reconfiguring it. The **[Directory Services]({{< ref "/SCALE/Credentials/DirectoryServices" >}})** screen returns to the default and provides the options to configure AD, LDAP, or IPA. |
-| **Enable Account Cache** | Caches user and group information. Caching makes directory users and groups available in UI dropdown menus. Enabled by default. |
-| **Enable DNS Updates** | Allows the directory service to update DNS records. Enabled by default. |
-| **Timeout (seconds)** | The number of seconds before the directory service connection times out. Valid range is 1-40 seconds. |
-| **Kerberos Realm** | Defines the Kerberos realm for authentication (usually the uppercase version of the domain name, for example, *EXAMPLE.COM*). |
-{{< /truetable >}}
-{{< /expand >}}
+{{< include file="/static/includes/DirectoryServicesCommonSettings.md" >}}
 
 ### LDAP Credential Configuration Section
 
 The **Credential Configuration** section settings define authentication methods for LDAP access.
 
-{{< expand "Credential Configuration Settings" "v" >}}
+{{< expand "Credential Configuration Settings" "v" >}} {id="ldap-credential-config"} <!--  Credential Type is # PROBLEM: Needs resolution — single record vs duplicate for AD/IPA/LDAP injection. Cannot implement until duplicate strategy is decided. Client Certificate missing in the yaml, Username and Password not found in the yaml for ldap  -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -93,7 +78,7 @@ The **LDAP Configuration** section settings define the connection parameters and
 
 {{< trueimage src="/images/SCALE/Credentials/LDAPBasicOptionsSettings.png" alt="LDAP Configuration" id="LDAP Configuration" >}}
 
-{{< expand "LDAP Configuration Settings" "v" >}}
+{{< expand "LDAP Configuration Settings" "v" >}} {id="ldap-config"} <!-- Server URLs, settings not in the yaml -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -111,7 +96,7 @@ The **Auxiliary Parameters** subsection allows customization of auxiliary parame
 
 {{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
 
-{{< expand "Auxiliary Parameters Settings" "v" >}}
+{{< expand "Auxiliary Parameters Settings" "v" >}} {id=""} <!-- Use Standard Auxiliary Parameters is missing from the yaml ● It's in the scrape at line 6356 — not in the working YAML yet. Flag it as needing to be added from webui-26-extraction-fixed.yaml. 🏷️-->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -121,7 +106,7 @@ The **Auxiliary Parameters** subsection allows customization of auxiliary parame
 
 #### Search Bases Subsection
 
-The **Search Bases** subsection allows customization of search base DNs.
+The **Search Bases** subsection allows customization of search base DNs. <!-- Not in the working YAML — but we already saw it in the scrape at line 6107 (use_standard_search_bases). Flag it as needing to be added. 🏷️-->
 
 {{< expand "Search Bases Settings" "v" >}}
 {{< truetable >}}
@@ -135,7 +120,7 @@ The **Search Bases** subsection allows customization of search base DNs.
 
 The **Attribute Maps** subsection allows customization of attribute mappings.
 
-{{< expand "Attribute Maps Settings" "v" >}}
+{{< expand "Attribute Maps Settings" "v" >}}    <!-- Not in the working YAML  use_standard_attribute_maps at line 6154 in webui-26-extraction-fixed.yaml. Flag it and move on. -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
