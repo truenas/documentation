@@ -79,7 +79,7 @@ Follow these guidelines:
 3. Write in TrueNAS style: present tense, active voice, simple language
 4. Sort by severity: critical issues first, then features, then minor fixes
 5. Format: * {Action verb} {description} ([TICKET](url)). {detailed impact}
-6. No gerunds (-ing words), no semicolons
+6. No gerunds (-ing words), no semicolons, no "may" (use "might" or "could" instead — "may" implies permission and confuses ESL readers)
 7. Bold UI elements: **Button Name**, code elements: `field_name`
 
 Please provide:

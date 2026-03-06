@@ -269,6 +269,7 @@ Notable changes must follow TrueNAS documentation standards:
    - Second sentence: Impact, previous behavior, new behavior (indented 2 spaces)
 5. **No gerunds** (-ing words like "improving", "adding")
 6. **No semicolons**
+7. **No "may"** (use "might" or "could" instead — "may" implies permission and confuses ESL readers)
 7. **Bold UI elements:** `**Button Name**`, `**Screen Name**`
 8. **Code formatting:** `` `field_name` ``, `` `/path/to/file` ``
 
