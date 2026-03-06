@@ -52,7 +52,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
   Resolves errors that could occur when removing a log VDEV from a storage pool. Affected systems encountered failures during the log VDEV removal process.
 
 * Fixes a memory handling issue with NTB window allocation during link changes ([NAS-139627](https://ixsystems.atlassian.net/browse/NAS-139627)).
-  Resolves an issue where Non-Transparent Bridge (NTB) window memory was not properly retained during network link state changes. This could cause instability on systems using NTB interconnects, such as High Availability configurations.
+  Resolves an issue where Non-Transparent Bridge (NTB) window memory was not properly retained during network link state changes. This could cause instability on systems using NTB interconnects, such as TrueNAS Enterprise High Availability (HA) systems.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14130" target="_blank">TrueNAS 25.10.2.2 (Goldeye) Changelog</a> in Jira.
 
