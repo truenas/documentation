@@ -7,7 +7,7 @@ All users are assigned the **SMB Access** by default.
 **SMB Access** is the default user access type assigned to user accounts that require access to SMB shares.
 It uses the user account credentials to access data shared with [SMB]({{< ref "/SCALE/Shares/SMB" >}}).
 
-TrueNAS requires other options based on the level of access
+TrueNAS requires other options based on the level of access.
 **TrueNAS Access** shows the predefined roles available in TrueNAS. Assigning **TrueNAS Access** requires setting one of the options or roles: **Full Admin**, **Readonly Admin**, or **Sharing Admin**.
 
 Some administration users require access to the TrueNAS shell or might require access using an SSH session.
