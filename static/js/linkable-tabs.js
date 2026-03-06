@@ -324,8 +324,7 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
                     if (this.config.collapsible) {
-                        // In collapsible mode, don't update URL when clicking tabs
-                        this.toggleTab(tab.id, false);
+                        this.toggleTab(tab.id, this.config.urlHashEnabled);
                     } else {
                         this.switchToTab(tab.id, this.config.urlHashEnabled);
                     }
@@ -500,6 +499,17 @@ ${this.config.enableMarkdown ? this.parseMarkdown(cleanContent) : cleanContent}
             
             // Execute any scripts in the newly shown tab content
             this.executeTabScripts(pane);
+        }
+
+        // Update URL to reflect tab state
+        if (updateUrl && this.config.urlHashEnabled) {
+            if (isCurrentlyActive) {
+                // Tab was collapsed — clear the hash
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+            } else {
+                // Tab was expanded — set hash to tab ID
+                history.replaceState(null, null, `#${tabId}`);
+            }
         }
 
         // Dispatch event with current state (after both expand and collapse)
