@@ -5,7 +5,7 @@ table_data:
       link: null
     community:
       version: 26 Nightly
-      link: https://download.truenas.com/truenas-scale-halfmoon-nightly/
+      link: https://download.truenas.com/truenas-scale-goldeye-nightly/
   early_adopter:
     enterprise:
       version: Not Available
