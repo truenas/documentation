@@ -22,7 +22,7 @@ When creating a user, you must:
 
 * Enter a value in **Full Name** or description for the user, such as a first and last name.
 * Enter a value in **Username**.
-* Enter a value  **Password** and confirm that password.
+* Enter a value in **Password** and confirm that password.
 * Specify or accept the default user ID (**UID**)
 
 To manually add a new user, go to **Credentials > Users**, and then click **Add** to open the **Add User** screen.
