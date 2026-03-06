@@ -28,7 +28,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
    **Enclosure Option** only shows for TrueNAS Enterprise systems with connected expansion shelves.
 
    {{< hint type=info >}}
-   You can rename your enclosure on the [Enclosure screen]({{< ref "EnclosureScreensSCALE" >}}) to include the rack and U number in the name, which helps identify the physical location while in the pool creation screen.
+   You can rename your enclosure on the [Enclosure screen]({{< ref "EnclosureScreens" >}}) to include the rack and U number in the name, which helps identify the physical location while in the pool creation screen.
    {{< /hint >}}
 
    The dispersal strategy sets how the system adds disks by size and type to the pool VDEVs created using the **Automated Disk Selection** option.
