@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.2.1"
+    anchor: "25.10.2.2"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,31 +34,27 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="25.10.2.1" data-tab-label="25.10.2.1">
+  <div data-tab-id="25.10.2.2" data-tab-label="25.10.2.2">
 
-February 25, 2026
+March 10, 2026
 
-The TrueNAS team is pleased to release TrueNAS 25.10.2.1!
-This is a small maintenance release to fix NIC bonding disruptions and SMB Legacy Share validation errors after the TrueNAS 25.10.2 release, and includes the NFS performance improvement for NFSv4 clients that was originally announced for 25.10.2.
+The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
 
 **Notable changes:**
 
-* Improves NFS performance for NFSv4 clients ([NAS-139128](https://ixsystems.atlassian.net/browse/NAS-139128)).
-  Adds support for STATX_CHANGE_COOKIE to properly surface ZFS sequence numbers to NFS clients via knfsd. The NFS change_info4 structure now accurately tracks directory and file changes, which reduces unnecessary server requests. Client attribute cache invalidation is also improved. Previously, the system synthesized change IDs based on ctime, which could fail to increment consistently due to kernel timer coarseness.
+* Fixes pool creation errors on systems with a USB boot drive ([NAS-139947](https://ixsystems.atlassian.net/browse/NAS-139947)).
+  Resolves an error that prevented new storage pool creation when the TrueNAS boot pool resided on a USB device. Affected systems could not create additional pools through the web interface. Note that TrueNAS does not recommend USB boot devices. Installing on SATA, SAS, or NVMe flash media is recommended.
 
-* Fixes NIC bonding configuration disrupted after a system update ([NAS-139889](https://ixsystems.atlassian.net/browse/NAS-139889)).
-  Resolves an issue where network interface bond configurations could break after a TrueNAS 25.10.2 update. Affected systems could lose network connectivity on bonded interfaces.
+* Fixes bond status alert check failures caused by a busy Netlink socket ([NAS-140041](https://ixsystems.atlassian.net/browse/NAS-140041)).
+  Resolves an issue where the system could not check network bond status for alerts due to a "Netlink socket busy" error. Bond interface status alerts did not fire correctly on affected systems.
 
-* Fixes SMB Legacy Share validation errors that broke share management UI forms ([NAS-139892](https://ixsystems.atlassian.net/browse/NAS-139892)).
-  Resolves an issue where SMB shares using the **Legacy Share** preset with certain `path_suffix` variable substitutions failed middleware validation. The SMB share configuration forms became unusable in the web interface as a result.
+* Fixes issues with log VDEV removal ([NAS-140080](https://ixsystems.atlassian.net/browse/NAS-140080)).
+  Resolves errors that could occur when removing a log VDEV from a storage pool. Affected systems encountered failures during the log VDEV removal process.
 
-* Fixes API result serialization failures caused by unhandled validation errors ([NAS-139896](https://ixsystems.atlassian.net/browse/NAS-139896)).
-  Resolves an issue where certain Pydantic validation errors were not caught during API result serialization. This caused unexpected errors to appear in the web interface instead of proper error messages.
+* Fixes a memory handling issue with NTB window allocation during link changes ([NAS-139627](https://ixsystems.atlassian.net/browse/NAS-139627)).
+  Resolves an issue where Non-Transparent Bridge (NTB) window memory was not properly retained during network link state changes. This could cause instability on systems using NTB interconnects, such as TrueNAS Enterprise High Availability (HA) systems.
 
-* Fixes SSL certificate connection failure error handling ([NAS-139938](https://ixsystems.atlassian.net/browse/NAS-139938)).
-  Resolves an AttributeError that occurred when an HTTPS connection failed due to a certificate error. Cloud sync tasks, replication, or other SSL-dependent network operations could surface a secondary AttributeError instead of the original connection failure message.
-
-<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14029" target="_blank">TrueNAS 25.10.2.1 (Goldeye) Changelog</a> in Jira.
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14130" target="_blank">TrueNAS 25.10.2.2 (Goldeye) Changelog</a> in Jira.
 
   </div>
   <div data-tab-id="25.10.2" data-tab-label="25.10.2">
@@ -116,6 +112,34 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2!
   The system now locks root account group membership to the builtin_administrators group and prevents modification through the UI. This prevents accidental removal of required privileges that could cause scheduled tasks, cloud sync operations, cron jobs, and other system functions to fail. To disable root account access to the TrueNAS UI, use the **Disable Password** option in **Credentials > Local Users** instead of modifying group membership.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13831" target="_blank">TrueNAS 25.10.2 (Goldeye) Changelog</a> in Jira.
+
+{{< expand "25.10.2.1 Notable Changes" "v" >}}
+
+February 25, 2026
+
+The TrueNAS team is pleased to release TrueNAS 25.10.2.1!
+This is a small maintenance release to fix NIC bonding disruptions and SMB Legacy Share validation errors after the TrueNAS 25.10.2 release, and includes the NFS performance improvement for NFSv4 clients that was originally announced for 25.10.2.
+
+**Notable changes:**
+
+* Improves NFS performance for NFSv4 clients ([NAS-139128](https://ixsystems.atlassian.net/browse/NAS-139128)).
+  Adds support for STATX_CHANGE_COOKIE to properly surface ZFS sequence numbers to NFS clients via knfsd. The NFS change_info4 structure now accurately tracks directory and file changes, which reduces unnecessary server requests. Client attribute cache invalidation is also improved. Previously, the system synthesized change IDs based on ctime, which could fail to increment consistently due to kernel timer coarseness.
+
+* Fixes NIC bonding configuration disrupted after a system update ([NAS-139889](https://ixsystems.atlassian.net/browse/NAS-139889)).
+  Resolves an issue where network interface bond configurations could break after a TrueNAS 25.10.2 update. Affected systems could lose network connectivity on bonded interfaces.
+
+* Fixes SMB Legacy Share validation errors that broke share management UI forms ([NAS-139892](https://ixsystems.atlassian.net/browse/NAS-139892)).
+  Resolves an issue where SMB shares using the **Legacy Share** preset with certain `path_suffix` variable substitutions failed middleware validation. The SMB share configuration forms became unusable in the web interface as a result.
+
+* Fixes API result serialization failures caused by unhandled validation errors ([NAS-139896](https://ixsystems.atlassian.net/browse/NAS-139896)).
+  Resolves an issue where certain Pydantic validation errors were not caught during API result serialization. This caused unexpected errors to appear in the web interface instead of proper error messages.
+
+* Fixes SSL certificate connection failure error handling ([NAS-139938](https://ixsystems.atlassian.net/browse/NAS-139938)).
+  Resolves an AttributeError that occurred when an HTTPS connection failed due to a certificate error. Cloud sync tasks, replication, or other SSL-dependent network operations could surface a secondary AttributeError instead of the original connection failure message.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14029" target="_blank">TrueNAS 25.10.2.1 (Goldeye) Changelog</a> in Jira.
+
+{{< /expand >}}
 
   </div>
   <div data-tab-id="25.10.1" data-tab-label="25.10.1">
@@ -466,7 +490,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   This issue will be resolved in a future TrueNAS release.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=14030" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=14131" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -492,7 +516,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.2.1');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.2.2');
 });
 </script>
 
@@ -589,7 +613,7 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
 
   </div>
 
-  <div data-tab-id="disk-management" data-tab-label="Disk Management">
+  <div data-tab-id="disk-management" data-tab-label="SMART &amp; Disk Management">
 
 ### SMART Monitoring and Disk Management in 25.10 (and Beyond)
 
