@@ -2,12 +2,11 @@
 title: Top Toolbar
 description: "All the icons and options contained in the TrueNAS SCALE top toolbar."
 geekdocCollapseSection: true
-tags:
-- tasks
 weight: 3
 tags:
 - toolbar
-- keywords:
+- tasks
+keywords:
 - nas storage software
 - enterprise storage system
 ---
