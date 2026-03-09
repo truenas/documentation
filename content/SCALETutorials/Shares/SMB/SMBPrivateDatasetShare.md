@@ -29,7 +29,7 @@ This user can be manually created as described below or created by a directory s
 Users that requires access to an SMB share must be created with the **SMB Access** granted.
 TrueNAS assigns this level of access to new users by default but administrators can disable/enable this manually on the **Add User** or **Edit User** screen.
 
-Go to **Credentials > Users** to verify the user for a private dataset exists and is correctly configured. If the user does not exist, create the users.
+Go to **Credentials > Users** to verify the user for a private dataset exists and is correctly configured. If the user does not exist, create the user.
 If the user exists but does not have **SMB Access** enabled, edit the user to enable this level of access.
 
 {{< expand "How do I create a user?" "v" >}}
@@ -238,4 +238,4 @@ Examples of setting up private SMB shares are those for backups, system configur
 This article covers:
 1. Adding the private dataset share user.
 2. Creating the private dataset share and the dataset.
-3. Modifying ACL permissions for the dataset(s) and the share.
+3. Modifying ACL permissions for the dataset(show has accessa to the file system) and the share(who has access to the share).
