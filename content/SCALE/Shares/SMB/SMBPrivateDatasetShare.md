@@ -69,9 +69,9 @@ You can use Active Directory or LDAP to create the share users.
 
 If not already created, add a pool, then join Active Directory.
 
-Go to **Storage** and [create a pool]({{< ref "CreatePoolWizard" >}}).
+Go to **Storage** and [create a pool]({{< ref "CreatingPools" >}}).
 
-Next, [set up the Active Directory]({{< ref "/SCALE/SCALETutorials/credentials/directoryservices/configadscale" >}}) that you want to share resources with over your network.
+Next, [set up the Active Directory]({{< ref "configad" >}}) that you want to share resources with over your network.
 
 When creating the share for this dataset, use the **SMB** preset for the dataset, but do not add the share from the **Add Dataset** screen. 
 
@@ -92,7 +92,7 @@ In general, when creating a simple SMB share and dataset, you can use either scr
 
 When adding a new share and dataset for a private dataset share, we recommend using the **Add SMB** screen to create a new share and dataset for private datasets, or for any other customized SMB share, rather than using the **Add Dataset** screen.
 
-We recommend using the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) when you want to customize the dataset with the advanced setting options. After which, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
+We recommend using the [**Add Dataset** screen]({{< ref "/scale/datasets/Datasets" >}}) when you want to customize the dataset with the advanced setting options. After which, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
 
 {{< include file="/static/includes/ShareACLDialogs.md" >}}
 
@@ -110,7 +110,7 @@ You can change the admin user who is creating the private dataset share dataset 
 
 Alternatively, leave the **Owner** and **Owner Group** set to the root user and add a new user entry for the admin user who creates the private dataset shares.
 Give that admin user full access permissions.
-For more information on changing permissions, see [Storage Permissions]({{< ref "PermissionsSCALE.md" >}}).
+For more information on changing permissions, see [Storage Permissions]({{< ref "scale/datasets/permissions/Permissions.md" >}}).
 
 #### Adding the Private Dataset Share and Dataset
 
@@ -237,7 +237,7 @@ A **Private Dataset Share** is not the same as guest access:
 * **Private Dataset Share** creates per-user isolated datasets - users must authenticate with credentials
 * **Guest Access** (**Legacy Share** only) allows anonymous access without credentials
 
-If you are looking for guest access functionality, see the [Guest Access]({{< relref "/SCALE/SCALETutorials/Shares/SMB/_index.md#guest-access" >}}) section in the main SMB tutorial.
+If you are looking for guest access functionality, see the [Guest Access]({{< relref "/SCALE/Shares/SMB/_index.md#guest-access" >}}) section in the main SMB tutorial.
 {{< /hint >}}
 {{< /expand >}}
 
