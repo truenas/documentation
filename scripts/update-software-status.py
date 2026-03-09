@@ -318,6 +318,19 @@ def main():
                     print(f"  ✓ {train_name} [{cdn_source}]: {len(releases)} releases")
                     profiles_found = set(info.get('profile', 'NO_PROFILE') for info in releases.values())
                     print(f"    Profiles: {sorted(profiles_found)}")
+                elif cdn_source == 'new' and legacy_base_url:
+                    # New CDN listed this train but has no releases.json yet — fall back to legacy CDN
+                    print(f"  ↩ {train_name}: new CDN returned {releases_response.status_code}, trying legacy CDN...")
+                    fallback_url = f'{legacy_base_url}{train_name}/releases.json'
+                    fallback_response = requests.get(fallback_url, timeout=10)
+                    if fallback_response.status_code == 200:
+                        releases = fallback_response.json()
+                        train_releases[train_name] = releases
+                        print(f"  ✓ {train_name} [old-fallback]: {len(releases)} releases")
+                        profiles_found = set(info.get('profile', 'NO_PROFILE') for info in releases.values())
+                        print(f"    Profiles: {sorted(profiles_found)}")
+                    else:
+                        print(f"  ✗ {train_name}: HTTP {fallback_response.status_code} on both CDNs")
                 else:
                     print(f"  ✗ {train_name}: HTTP {releases_response.status_code}")
             except Exception as e:

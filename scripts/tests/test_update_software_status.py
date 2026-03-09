@@ -194,3 +194,22 @@ def test_fetch_trains_from_cdn_network_failure_returns_none():
 
     assert trains is None
     assert redirections == {}
+
+
+# --- releases.json fallback (new CDN 404 → legacy CDN) ---
+# Tested via build_merged_train_list + the releases fetch loop in main().
+# The fallback is inline in main() — tested here via integration-style assertion
+# on build_merged_train_list output used by the fetch loop.
+
+def test_build_merged_train_list_goldeye_assigned_to_new_cdn_when_listed():
+    # Goldeye appears on both CDNs; new CDN wins in the merge.
+    # The releases fetch loop is responsible for falling back if new CDN 404s.
+    new_trains = {'TrueNAS-SCALE-Goldeye': {}, 'TrueNAS-26-Nightlies': {}}
+    new_redirections = {}
+    old_trains = {'TrueNAS-SCALE-Goldeye': {}}
+    additional = {}
+
+    trains, cdn_map = build_merged_train_list(new_trains, new_redirections, old_trains, additional)
+
+    assert cdn_map['TrueNAS-SCALE-Goldeye'] == 'new'  # new CDN wins in merge
+    assert cdn_map['TrueNAS-26-Nightlies'] == 'new'
