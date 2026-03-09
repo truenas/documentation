@@ -51,6 +51,9 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
 * Fixes issues with log VDEV removal ([NAS-140080](https://ixsystems.atlassian.net/browse/NAS-140080)).
   Resolves errors that could occur when removing a log VDEV from a storage pool. Affected systems encountered failures during the log VDEV removal process.
 
+* Fixes link aggregation failover not working out of the box ([NAS-136978](https://ixsystems.atlassian.net/browse/NAS-136978)).
+  Resolves an issue where the MII polling interval was not correctly configured for bonding interfaces using the FAILOVER protocol. The bonding driver could not monitor slave link status, causing failover to fail silently when an interface lost carrier.
+
 * Fixes a memory handling issue with NTB window allocation during link changes ([NAS-139627](https://ixsystems.atlassian.net/browse/NAS-139627)).
   Resolves an issue where Non-Transparent Bridge (NTB) window memory was not properly retained during network link state changes. This could cause instability on systems using NTB interconnects, such as TrueNAS Enterprise High Availability (HA) systems.
 
