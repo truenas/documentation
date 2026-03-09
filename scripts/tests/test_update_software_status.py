@@ -14,6 +14,8 @@ version_to_anchor = _mod.version_to_anchor
 parse_version_for_sorting = _mod.parse_version_for_sorting
 get_doc_url_components = _mod.get_doc_url_components
 build_merged_train_list = _mod.build_merged_train_list
+from unittest.mock import patch, MagicMock
+fetch_trains_from_cdn = _mod.fetch_trains_from_cdn
 
 
 # --- version_to_anchor ---
@@ -156,3 +158,39 @@ def test_build_merged_train_list_old_cdn_skips_redirections_too():
     trains, cdn_map = build_merged_train_list(new_trains, new_redirections, old_trains, additional)
 
     assert 'TrueNAS-SCALE-Halfmoon-Nightlies' not in cdn_map
+
+
+# --- fetch_trains_from_cdn ---
+
+def test_fetch_trains_from_cdn_success():
+    mock_data = {
+        'trains': {'TrueNAS-26-Nightlies': {'description': 'test'}},
+        'trains_redirection': {'old-alias': 'TrueNAS-26-Nightlies'}
+    }
+    mock_response = MagicMock()
+    mock_response.json.return_value = mock_data
+
+    with patch('requests.get', return_value=mock_response):
+        trains, redirections = fetch_trains_from_cdn('https://example.com/', 'trains_v2.json')
+
+    assert 'TrueNAS-26-Nightlies' in trains
+    assert redirections == {'old-alias': 'TrueNAS-26-Nightlies'}
+
+def test_fetch_trains_from_cdn_no_redirection_field():
+    # CDN response without trains_redirection (e.g. old CDN)
+    mock_data = {'trains': {'TrueNAS-SCALE-Goldeye': {}}}
+    mock_response = MagicMock()
+    mock_response.json.return_value = mock_data
+
+    with patch('requests.get', return_value=mock_response):
+        trains, redirections = fetch_trains_from_cdn('https://example.com/', 'trains_v2.json')
+
+    assert 'TrueNAS-SCALE-Goldeye' in trains
+    assert redirections == {}   # empty dict, not an error
+
+def test_fetch_trains_from_cdn_network_failure_returns_none():
+    with patch('requests.get', side_effect=Exception('Connection refused')):
+        trains, redirections = fetch_trains_from_cdn('https://example.com/', 'trains_v2.json')
+
+    assert trains is None
+    assert redirections == {}

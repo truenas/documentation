@@ -203,6 +203,27 @@ def find_versions_with_cascade(available_trains, train_releases, profiles_config
 
     return profile_results
 
+def fetch_trains_from_cdn(base_url, trains_file, label='CDN'):
+    """Fetch trains_v2.json from a CDN base URL.
+
+    Returns (trains_dict, redirections_dict).
+    Returns (None, {}) on any failure so callers can handle partial CDN outages.
+    """
+    try:
+        url = f'{base_url}{trains_file}'
+        response = requests.get(url, timeout=10)
+        data = response.json()
+        trains = data.get('trains', {})
+        redirections = data.get('trains_redirection', {})
+        print(f'  ✓ {label}: {len(trains)} trains found')
+        if redirections:
+            print(f'    {len(redirections)} redirection(s): {list(redirections.keys())}')
+        return trains, redirections
+    except Exception as e:
+        print(f'  ✗ {label}: {e}')
+        return None, {}
+
+
 def build_merged_train_list(new_trains, new_redirections, old_trains, additional_trains):
     """Merge train lists from two CDNs into a single ordered list.
 
