@@ -359,17 +359,14 @@ def main():
                     version_major = str(major)
                     version_display = f"{version_major} Nightly"
 
-                    # URL construction: Try to extract codename from train name for URL
-                    # (Build infrastructure determines actual URL structure)
                     codename_match = re.search(r'TrueNAS-SCALE-([A-Za-z]+)', train)
                     if codename_match:
+                        # Old-style train (TrueNAS-SCALE-{Codename}-Nightlies): download.truenas.com
                         codename = codename_match.group(1).lower()
                         doc_link = f"https://download.truenas.com/truenas-scale-{codename}-nightly/"
                     else:
-                        # TODO: Update this fallback when new URL structure is determined
-                        # Currently falls back to goldeye, but this should be updated based on
-                        # build team's URL structure for versions without codenames
-                        doc_link = f"https://download.truenas.com/truenas-scale-goldeye-nightly/"
+                        # New-style train (TrueNAS-{Major}-Nightlies): iso.sys.truenas.net
+                        doc_link = f"https://iso.sys.truenas.net/{train}/"
                 else:
                     components = get_doc_url_components(version)
                     if components is None:
