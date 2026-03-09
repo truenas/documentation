@@ -203,6 +203,45 @@ def find_versions_with_cascade(available_trains, train_releases, profiles_config
 
     return profile_results
 
+def build_merged_train_list(new_trains, new_redirections, old_trains, additional_trains):
+    """Merge train lists from two CDNs into a single ordered list.
+
+    New CDN takes precedence — any train present on both CDNs is sourced from the new CDN.
+    Trains whose names are keys in new_redirections are skipped on both CDNs (they are
+    aliases pointing to a canonical train name that will already be in the list).
+    Additional trains from config are inserted at position 0 (oldest) so the cascade
+    logic processes them last.
+
+    Returns:
+        available_trains: list of train names ordered oldest-first (reversed in cascade)
+        train_cdn_map: dict mapping train_name -> 'new' | 'old'
+    """
+    redirected_names = set(new_redirections.keys())
+    available_trains = []
+    train_cdn_map = {}
+
+    # New CDN trains first (canonical, skip aliases)
+    for train_name in new_trains:
+        if train_name not in redirected_names:
+            available_trains.append(train_name)
+            train_cdn_map[train_name] = 'new'
+
+    # Old CDN trains (skip aliases and trains already added from new CDN)
+    for train_name in old_trains:
+        if train_name not in redirected_names and train_name not in train_cdn_map:
+            available_trains.append(train_name)
+            train_cdn_map[train_name] = 'old'
+
+    # Additional trains from config (inserted at front = oldest, checked last in cascade)
+    for train_name, train_info in additional_trains.items():
+        if train_name not in train_cdn_map:
+            available_trains.insert(0, train_name)
+            train_cdn_map[train_name] = 'old'
+            print(f"  + {train_name}: {train_info.get('description', 'No description')} (from config)")
+
+    return available_trains, train_cdn_map
+
+
 def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description='Update software status recommendations from TrueNAS API')

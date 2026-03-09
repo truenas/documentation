@@ -13,6 +13,7 @@ _spec.loader.exec_module(_mod)
 version_to_anchor = _mod.version_to_anchor
 parse_version_for_sorting = _mod.parse_version_for_sorting
 get_doc_url_components = _mod.get_doc_url_components
+build_merged_train_list = _mod.build_merged_train_list
 
 
 # --- version_to_anchor ---
@@ -89,3 +90,69 @@ def test_get_doc_url_components_27():
 
 def test_get_doc_url_components_unparseable_returns_none():
     assert get_doc_url_components('nightly') is None
+
+
+# --- build_merged_train_list ---
+
+def test_build_merged_train_list_new_cdn_wins_on_duplicate():
+    new_trains = {'TrueNAS-SCALE-Goldeye': {}, 'TrueNAS-26-Nightlies': {}}
+    new_redirections = {}
+    old_trains = {'TrueNAS-SCALE-Goldeye': {}, 'TrueNAS-SCALE-Fangtooth': {}}
+    additional = {}
+
+    trains, cdn_map = build_merged_train_list(new_trains, new_redirections, old_trains, additional)
+
+    assert cdn_map['TrueNAS-SCALE-Goldeye'] == 'new'
+    assert cdn_map['TrueNAS-SCALE-Fangtooth'] == 'old'
+    assert cdn_map['TrueNAS-26-Nightlies'] == 'new'
+    # No duplicates
+    assert trains.count('TrueNAS-SCALE-Goldeye') == 1
+
+def test_build_merged_train_list_skips_redirection_keys():
+    new_trains = {
+        'TrueNAS-SCALE-Halfmoon-Nightlies': {},  # alias — skip
+        'TrueNAS-26-Nightlies': {},               # canonical — keep
+        'TrueNAS-SCALE-Goldeye-BETA': {},         # alias — skip
+        'TrueNAS-SCALE-Goldeye': {},              # canonical — keep
+    }
+    new_redirections = {
+        'TrueNAS-SCALE-Halfmoon-Nightlies': 'TrueNAS-26-Nightlies',
+        'TrueNAS-SCALE-Goldeye-BETA': 'TrueNAS-SCALE-Goldeye',
+    }
+    old_trains = {}
+    additional = {}
+
+    trains, cdn_map = build_merged_train_list(new_trains, new_redirections, old_trains, additional)
+
+    assert 'TrueNAS-SCALE-Halfmoon-Nightlies' not in cdn_map
+    assert 'TrueNAS-SCALE-Goldeye-BETA' not in cdn_map
+    assert 'TrueNAS-26-Nightlies' in cdn_map
+    assert 'TrueNAS-SCALE-Goldeye' in cdn_map
+
+def test_build_merged_train_list_additional_trains_inserted_at_start():
+    new_trains = {'TrueNAS-26-Nightlies': {}}
+    new_redirections = {}
+    old_trains = {'TrueNAS-SCALE-Goldeye': {}}
+    additional = {'TrueNAS-SCALE-Fangtooth': {'description': 'Fangtooth 25.04'}}
+
+    trains, cdn_map = build_merged_train_list(new_trains, new_redirections, old_trains, additional)
+
+    # Additional trains inserted at position 0 (oldest) so cascade logic checks them last
+    assert trains[0] == 'TrueNAS-SCALE-Fangtooth'
+    assert cdn_map['TrueNAS-SCALE-Fangtooth'] == 'old'
+
+def test_build_merged_train_list_both_cdns_empty_returns_empty():
+    trains, cdn_map = build_merged_train_list({}, {}, {}, {})
+    assert trains == []
+    assert cdn_map == {}
+
+def test_build_merged_train_list_old_cdn_skips_redirections_too():
+    # Old CDN might also list alias train names — they should be skipped
+    new_trains = {'TrueNAS-26-Nightlies': {}}
+    new_redirections = {'TrueNAS-SCALE-Halfmoon-Nightlies': 'TrueNAS-26-Nightlies'}
+    old_trains = {'TrueNAS-SCALE-Halfmoon-Nightlies': {}}  # alias on old CDN
+    additional = {}
+
+    trains, cdn_map = build_merged_train_list(new_trains, new_redirections, old_trains, additional)
+
+    assert 'TrueNAS-SCALE-Halfmoon-Nightlies' not in cdn_map
