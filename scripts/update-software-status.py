@@ -50,6 +50,38 @@ def version_to_anchor(version):
     # After removal, this function should simply be:
     # return version
 
+def get_doc_url_components(version):
+    """Extract URL path version, doc path, and anchor for a release version.
+
+    Returns (url_path_version, doc_path, anchor) or None if version cannot be parsed.
+
+    Three version ranges, each with different URL conventions:
+    - 26+:     URL uses major only (e.g. "26"), path is "versionnotes"
+    - 25.10:   URL uses major.minor (e.g. "25.10"), path is "versionnotes"
+    - Pre-25.10: URL uses major.minor, path is "scalereleasenotes", anchor is compressed
+                 TODO: Remove this branch once 25.04 is no longer recommended
+    """
+    version_match = re.match(r'^(\d+)\.(\d+)', version)
+    if not version_match:
+        return None
+
+    major = int(version_match.group(1))
+    minor = int(version_match.group(2))
+    major_minor = version_match.group(0)
+    anchor = version_to_anchor(version)
+
+    if major >= 26:
+        # 26+: new versioning scheme (26.0.0, 26.1.0, ...), URL uses major only
+        return str(major), 'versionnotes', anchor
+    elif major > 25 or (major == 25 and minor >= 10):
+        # 25.10: URL uses major.minor
+        return major_minor, 'versionnotes', anchor
+    else:
+        # Pre-25.10: different path and compressed anchor
+        # TODO: Remove once 25.04 is no longer recommended
+        return major_minor, 'scalereleasenotes', anchor
+
+
 def parse_version_for_sorting(version):
     """Parse version string into sortable tuple for proper version ordering"""
     # Handle formats like: 25.10.0, 25.10-RC.1, 25.10-BETA.1, 24.10.2.2

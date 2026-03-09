@@ -12,6 +12,7 @@ _spec.loader.exec_module(_mod)
 # Import the functions we will test
 version_to_anchor = _mod.version_to_anchor
 parse_version_for_sorting = _mod.parse_version_for_sorting
+get_doc_url_components = _mod.get_doc_url_components
 
 
 # --- version_to_anchor ---
@@ -52,3 +53,39 @@ def test_parse_version_old_format_still_works():
     v1 = parse_version_for_sorting('25.10.1')
     v2 = parse_version_for_sorting('25.10.2')
     assert v1 < v2
+
+
+# --- get_doc_url_components ---
+
+def test_get_doc_url_components_pre_25_10():
+    url_ver, doc_path, anchor = get_doc_url_components('25.04.2.6')
+    assert url_ver == '25.04'
+    assert doc_path == 'scalereleasenotes'
+    assert anchor == '250426'
+
+def test_get_doc_url_components_25_10():
+    url_ver, doc_path, anchor = get_doc_url_components('25.10.2.1')
+    assert url_ver == '25.10'
+    assert doc_path == 'versionnotes'
+    assert anchor == '25.10.2.1'
+
+def test_get_doc_url_components_26():
+    url_ver, doc_path, anchor = get_doc_url_components('26.0.0')
+    assert url_ver == '26'          # major only, not '26.0'
+    assert doc_path == 'versionnotes'
+    assert anchor == '26.0.0'
+
+def test_get_doc_url_components_26_beta():
+    url_ver, doc_path, anchor = get_doc_url_components('26.0.0-BETA.1')
+    assert url_ver == '26'
+    assert doc_path == 'versionnotes'
+    assert anchor == '26.0.0-BETA.1'
+
+def test_get_doc_url_components_27():
+    url_ver, doc_path, anchor = get_doc_url_components('27.0.0')
+    assert url_ver == '27'
+    assert doc_path == 'versionnotes'
+    assert anchor == '27.0.0'
+
+def test_get_doc_url_components_unparseable_returns_none():
+    assert get_doc_url_components('nightly') is None
