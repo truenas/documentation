@@ -5,7 +5,7 @@ table_data:
       link: null
     community:
       version: 26 Nightly
-      link: https://download.truenas.com/truenas-scale-halfmoon-nightly/
+      link: https://iso.sys.truenas.net/TrueNAS-26-Nightlies/
   early_adopter:
     enterprise:
       version: Not Available
@@ -32,7 +32,6 @@ api_config:
   new_base_url: https://auto-public.sys.truenas.net/
   trains_file: trains_v2.json
   additional_trains:
-    # TEMPORARY: Remove once 25.04 is no longer a recommended version
     TrueNAS-SCALE-Fangtooth:
       description: TrueNAS SCALE Fangtooth 25.04 [release]
 profiles:
