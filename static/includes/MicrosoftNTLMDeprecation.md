@@ -16,7 +16,7 @@ Home and workgroup deployments that use local TrueNAS accounts are affected as f
 - The **NTLMv1 Auth** setting in the TrueNAS SMB service has no effect for Windows 11 (version 24H2 and later) or Windows Server 2025 clients, which no longer send NTLMv1.
   This setting might still be relevant for legacy or non-Windows devices that use NTLMv1.
 - Windows clients using NTLMv2 (standard for workgroup and local account SMB access) currently connect without issue.
-  These clients will lose SMB access when Microsoft enforces the full NTLM disable-by-default in a future Windows release.
+  These clients lose SMB access when Microsoft enforces the full NTLM disable-by-default in a future Windows release.
   macOS, Linux, older Windows versions, and network-attached devices such as printers and MFPs are not affected.
   When that change takes effect, re-enabling NTLM in Windows security policy is a temporary workaround.
 
