@@ -281,56 +281,52 @@ def main():
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
 
-    print("Step 1: Fetching available trains...")
-    
+    print("Step 1: Fetching available trains from both CDNs...")
+    legacy_base_url = config.get('api_config', {}).get('base_url', '')
+    new_base_url = config.get('api_config', {}).get('new_base_url', '')
+    trains_file = config.get('api_config', {}).get('trains_file', 'trains_v2.json')
+    additional_trains = config.get('api_config', {}).get('additional_trains', {})
+
     try:
-        # Step 1: Get available trains
-        trains_response = requests.get('https://update.sys.truenas.net/scale/trains_v2.json', timeout=10)
-        trains_data = trains_response.json()
-        
-        # Extract train names from the "trains" section
-        if 'trains' in trains_data:
-            available_trains = list(trains_data['trains'].keys())
-            print(f"Found {len(available_trains)} trains: {available_trains}")
-            # Show descriptions
-            for train_name, train_info in trains_data['trains'].items():
-                print(f"  {train_name}: {train_info.get('description', 'No description')}")
-        else:
-            print("No 'trains' section found in trains_v2.json")
+        print("  Fetching from new CDN...")
+        new_trains, new_redirections = fetch_trains_from_cdn(new_base_url, trains_file, 'New CDN')
+
+        print("  Fetching from legacy CDN...")
+        old_trains, _ = fetch_trains_from_cdn(legacy_base_url, trains_file, 'Legacy CDN')
+
+        if not new_trains and not old_trains:
+            print("\n" + "="*70)
+            print("⚠️  Both CDNs failed. Cannot determine available trains.")
+            print("="*70 + "\n")
             return
 
-        # Merge in additional trains from config
-        # Insert at position 0 (oldest) so after reversal they're checked last
-        additional_trains = config.get('api_config', {}).get('additional_trains', {})
-        if additional_trains:
-            print(f"\nAdding {len(additional_trains)} additional train(s) from config:")
-            for train_name, train_info in additional_trains.items():
-                if train_name not in available_trains:
-                    available_trains.insert(0, train_name)
-                    print(f"  + {train_name}: {train_info.get('description', 'No description')}")
-                else:
-                    print(f"  - {train_name}: Already in API trains, skipping")
+        available_trains, train_cdn_map = build_merged_train_list(
+            new_trains or {}, new_redirections, old_trains or {}, additional_trains
+        )
 
-        # Step 2: Fetch releases from each train
+        print(f"\nMerged train list ({len(available_trains)} trains, oldest-first):")
+        for t in available_trains:
+            print(f"  [{train_cdn_map[t]}] {t}")
+
         print("\nStep 2: Fetching releases from each train...")
         train_releases = {}
-        
+
         for train_name in available_trains:
+            cdn_source = train_cdn_map.get(train_name, 'old')
+            base_url = new_base_url if cdn_source == 'new' else legacy_base_url
+
             try:
-                releases_url = f'https://update.sys.truenas.net/scale/{train_name}/releases.json'
+                releases_url = f'{base_url}{train_name}/releases.json'
                 releases_response = requests.get(releases_url, timeout=10)
-                
+
                 if releases_response.status_code == 200:
                     releases = releases_response.json()
                     train_releases[train_name] = releases
-                    print(f"  ✓ {train_name}: {len(releases)} releases")
-                    
-                    # Show profiles found in this train
+                    print(f"  ✓ {train_name} [{cdn_source}]: {len(releases)} releases")
                     profiles_found = set(info.get('profile', 'NO_PROFILE') for info in releases.values())
                     print(f"    Profiles: {sorted(profiles_found)}")
                 else:
                     print(f"  ✗ {train_name}: HTTP {releases_response.status_code}")
-                    
             except Exception as e:
                 print(f"  ✗ {train_name}: {e}")
         
@@ -350,18 +346,9 @@ def main():
                 train = result['train']
                 release_info = result['info']
 
-                # Generate documentation link
-                # Parse version once for all link generation
+                # Parse major version for nightly display label
                 major_minor_match = re.match(r'^(\d+)\.(\d+)', version)
-                if major_minor_match:
-                    major = int(major_minor_match.group(1))
-                    minor = int(major_minor_match.group(2))
-                    major_minor = major_minor_match.group(0)  # Keep original string format (e.g., "25.04")
-                else:
-                    major, minor = 0, 0
-                    major_minor = "unknown"
-
-                anchor = version_to_anchor(version)
+                major = int(major_minor_match.group(1)) if major_minor_match else 0
 
                 # Check if this is a nightly/developer release
                 is_nightly = 'nightly' in train.lower() or release_info.get('profile') == 'DEVELOPER'
@@ -384,21 +371,12 @@ def main():
                         # build team's URL structure for versions without codenames
                         doc_link = f"https://download.truenas.com/truenas-scale-goldeye-nightly/"
                 else:
-                    # Generate FQDN release notes link
-                    # ========== LEGACY: Remove path logic after 25.04 EOL ==========
-                    # Path changes at version 25.10: scalereleasenotes -> versionnotes
-                    # TODO: After ~June 2025, remove this check and always use "versionnotes"
-                    if major > 25 or (major == 25 and minor >= 10):
-                        # 25.10+ uses versionnotes path
-                        doc_path = "versionnotes"
-                    else:
-                        # Pre-25.10 uses scalereleasenotes path
-                        doc_path = "scalereleasenotes"
-                    # ========== END LEGACY CODE ==========
-
-                    # After removal, simply use: doc_path = "versionnotes"
-
-                    doc_link = f"https://www.truenas.com/docs/scale/{major_minor}/gettingstarted/{doc_path}/#{anchor}"
+                    components = get_doc_url_components(version)
+                    if components is None:
+                        print(f"  ✗ Could not parse version for URL generation: {version}")
+                        continue
+                    url_path_version, doc_path, anchor = components
+                    doc_link = f"https://www.truenas.com/docs/scale/{url_path_version}/gettingstarted/{doc_path}/#{anchor}"
                     version_display = version
 
                 # Update both Enterprise and Community data when API data available
