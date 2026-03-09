@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
-"""Quick script to update table with live API data
+"""Update software status recommendations from TrueNAS CDN APIs.
 
-Updates software_status_config.yaml with latest version recommendations from TrueNAS API.
+Updates software_status_config.yaml with latest version recommendations.
+Fetches data from both the legacy CDN (update.sys.truenas.net) for 25.10
+and earlier trains, and the new CDN (auto-public.sys.truenas.net) for 26+.
 Uses cascading profile logic: MISSION_CRITICAL > GENERAL > EARLY_ADOPTER > DEVELOPER
 
-LEGACY CODE CLEANUP TODO (~June 2025):
-When 25.04 is no longer recommended for any user profile, remove pre-25.10 compatibility:
-1. Search for "LEGACY:" comments in this file
-2. Remove version_to_anchor() compressed format logic (lines ~27-35)
-3. Remove doc_path version check logic (lines ~259-271)
-4. Simplify to: version_to_anchor() returns version as-is, doc_path always "versionnotes"
-5. Remove TrueNAS-SCALE-Fangtooth from additional_trains in software_status_config.yaml
+CLEANUP TODO: When 25.04 is no longer a recommended version, remove:
+1. The compressed anchor format branch in version_to_anchor() (pre-25.10)
+2. The 'scalereleasenotes' doc_path branch in get_doc_url_components() (pre-25.10)
+3. TrueNAS-SCALE-Fangtooth from additional_trains in software_status_config.yaml
+4. The version_to_anchor() pre-25.10 comment block
 """
 
 import requests
@@ -20,35 +20,28 @@ import argparse
 from pathlib import Path
 
 def version_to_anchor(version):
-    """Convert version to documentation anchor
+    """Convert version string to documentation anchor.
 
-    Format changes at version 25.10:
-    - Pre-25.10: Compressed format (remove periods): "25.04.2.5" -> "250425"
-    - 25.10+: Full format (keep as-is): "25.10.0" -> "25.10.0"
+    - 25.10+ and 26+: anchor is the version string as-is (e.g. "25.10.2.1", "26.0.0")
+    - Pre-25.10: anchor is compressed (periods removed) (e.g. "25.04.2.6" -> "250426")
 
-    LEGACY SUPPORT: The pre-25.10 logic below can be removed once 25.04 is EOL
-    TODO: Remove compressed format logic after ~June 2025 when 25.04 is no longer recommended
+    The pre-25.10 branch is retained for 25.04 support.
+    Remove when 25.04 is no longer a recommended version (see CLEANUP TODO in module docstring).
     """
-    # Extract major.minor version
     version_match = re.match(r'^(\d+)\.(\d+)', version)
     if not version_match:
-        return version  # Fallback to original if can't parse
+        return version
 
     major = int(version_match.group(1))
     minor = int(version_match.group(2))
 
-    # ========== LEGACY: Remove this check after 25.04 EOL ==========
-    # Check if version is >= 25.10
     if major > 25 or (major == 25 and minor >= 10):
-        # 25.10+ uses full format with periods
+        # 25.10+ and 26+: use version string as-is
         return version
     else:
-        # Pre-25.10 uses compressed format (remove periods)
+        # Pre-25.10: compressed format (remove periods)
+        # Remove when 25.04 is no longer recommended
         return version.replace('.', '')
-    # ========== END LEGACY CODE ==========
-
-    # After removal, this function should simply be:
-    # return version
 
 def get_doc_url_components(version):
     """Extract URL path version, doc path, and anchor for a release version.
