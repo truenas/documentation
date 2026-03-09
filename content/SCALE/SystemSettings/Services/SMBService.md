@@ -36,6 +36,8 @@ If using SMB1 clients, select **Enable SMB1 support** to allow legacy SMB1 clien
 If you plan to use the insecure and vulnerable NTLMv1 encryption, select **NTLMv1 Auth** to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users.
 This setting enables backward compatibility with older versions of Windows, but we do not recommend it. Do not use on untrusted networks.
 
+{{< include file="/static/includes/MicrosoftNTLMDeprecation.md" >}}
+
 Enter any notes about the service configuration in **Description**.
 
 For more advanced settings, see [SMB Services Screen]({{< ref "SMBServicesScreen" >}}).
