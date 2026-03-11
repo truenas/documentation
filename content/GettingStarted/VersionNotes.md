@@ -493,6 +493,14 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   This issue will be resolved in a future TrueNAS release.
 
+* Existing SMB sessions cannot connect to shares created after the session was established.
+  SMB clients with active sessions might be unable to access newly-created shares without first reconnecting to the server.
+  This is a long-standing behavior that affects all SMB clients, not specific to any operating system.
+
+  Workaround: Restart the SMB service in **System > Services**, or disconnect and reconnect the SMB client (unmount and remount the server).
+
+  This issue is resolved in TrueNAS 26.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=14131" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
