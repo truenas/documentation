@@ -11,9 +11,9 @@ Alternatively, close the **Add SMB** screen, go to the **Datasets** screen, sele
 
 Click **Strip ACL** on the **Edit ACL** screen. Save the change, then return to the **Shares** screen and open the **Add SMB** screen.
 
-if you did not stop to strip the ACL, TrueNAaS shows a **Configure ACL** dialog to remind you to edit the ACL.
+If you did not stop to strip the ACL, TrueNAaS shows a **Configure ACL** dialog to remind you to edit the ACL.
 
-{{< trueimage src="/images/SCALE/Shares/SMBShareConfigureACLDialog.png" alt="Configure ACL Dialog" id="Confiure ACL Dialog" >}}
+{{< trueimage src="/images/SCALE/Shares/SMBShareConfigureACLDialog.png" alt="Configure ACL Dialog" id="Configure ACL Dialog" >}}
 
 Click **Configure** to open the **Edit ACL** screen, or **No** to close the dialog and do nothing.
 {{< /hint >}}
