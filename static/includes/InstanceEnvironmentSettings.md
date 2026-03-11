@@ -1,6 +1,6 @@
 &NewLine;
 
-{{< expand "Environment Settings" "v" >}}
+{{< expand "Environment Settings" "v" >}} {id="container_create_env-var"}
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|

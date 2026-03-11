@@ -1,6 +1,6 @@
 &NewLine;
 
-{{< expand "GPU Settings" "v" >}}
+{{< expand "GPU Settings" "v" >}} {id="vm_wizard-gpu"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

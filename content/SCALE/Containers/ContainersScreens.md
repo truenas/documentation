@@ -56,7 +56,7 @@ The **Pools** dropdown list shows a list of available pools on the system for co
 
 The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
 
-#### Default Network Settings
+#### Default Network Settings {id="containers_default-network"}
 
 **Default Network** settings configure global networking defaults for the containers service.
 
@@ -79,7 +79,7 @@ The **Volumes** screen lists all volumes currently configured for the containers
 **Import Zvols** opens the [**Import Zvol**](#import-zvol) dialog to import an existing Zvol as a containers volume.
 
 
-#### Create Volumes
+#### Create Volumes {id="containers_create-volumes"}
 
 **Create Volume** on the **Volumes** screen opens the **Create New Volume** dialog.
 
@@ -94,7 +94,7 @@ The **Volumes** screen lists all volumes currently configured for the containers
 
 **Create** creates the new volume.
 
-#### Import Zvol
+#### Import Zvol {id="containers_import-zvol"}
 
 **Import Zvols** on the **Volumes** screen opens the **Import Zvol** dialog.
 
@@ -108,7 +108,7 @@ The **Volumes** screen lists all volumes currently configured for the containers
 | **Move** | Relocates the existing zvol to the ix-virt dataset as a volume. |
 {{< /truetable >}}
 
-#### Delete Volumes
+#### Delete Volumes {id="containers_delete-volumes"}
 
 **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on an image row deletes that image.
 A **Delete volume** dialog displays.
@@ -132,7 +132,7 @@ The **Users** or **Groups** tabs display mappings for individual user or group a
 Existing mappings are shown in a table containing the group or user name, host ID, and container ID.
 **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row deletes that mapping.
 
-{{< expand "Add New Mapping Settings" "v" >}}
+{{< expand "Add New Mapping Settings" "v" >}} {id="containers_map-user-group"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -149,7 +149,7 @@ Changes take effect immediately, but containers might require a restart to refle
 
 The **Create Container** configuration wizard displays all settings to set up a new container.
 
-### Container Configuration
+### Container Configuration {id="containers_create-config"}
 
 The **Container Configuration** settings specify the container name and operating system image.
 
@@ -191,7 +191,7 @@ Container options include creating a new dataset or using an existing one.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksVM.png" alt="Disks - VM" id="Disks - VM" >}}
 
-{{< expand "Disks Settings" "v" >}}
+{{< expand "Disks Settings" "v" >}} {id="containers_create-disks"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -209,7 +209,7 @@ This routes traffic from a specific address on the host to an address inside the
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
 
-{{< expand "Proxies Settings" "v" >}}
+{{< expand "Proxies Settings" "v" >}} {id"containers_create-proxies"}
 {{< include file="/static/includes/InstanceProxySettings.md" >}}
 {{< /expand >}}
 

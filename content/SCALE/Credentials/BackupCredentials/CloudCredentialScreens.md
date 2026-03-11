@@ -18,19 +18,20 @@ doctype: reference
 
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
-## Cloud Credentials Widget
+## Cloud Credentials Card
 
-The **Cloud Credentials** widget displays a list of cloud storage credentials configured on the system.
+The **Cloud Credentials** card displays a list of cloud storage credentials configured on the system.
 
-{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsCloudCredentialsWidget.png" alt="Cloud Credentials Widget" id="Cloud Credentials Widget" >}}
+{{< trueimage src="/images/SCALE/Credentials/BackupCredentialsCloudCredentialsWidget.png" alt="Cloud Credentials Card" id="Cloud Credentials Card" >}}
 
-Before adding cloud credentials for a cloud storage provider, the **Cloud Credentials** widget displays **No Cloud Credentials configured**.
+Before adding cloud credentials for a cloud storage provider, the **Cloud Credentials** card displays **No Cloud Credentials configured**.
 
-{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsNoCredentials.png" alt="Cloud Credentials Widget No Credentials" id="Cloud Credentials Widget No Credentials" >}}
+{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsNoCredentials.png" alt="Cloud Credentials Card No Credentials" id="Cloud Credentials Card No Credentials" >}}
 
 **Add** opens the **[Cloud Credentials](#cloud-credentials-screen)** configuration screen.
 
 ## Cloud Credentials Screen
+
 The **Cloud Credentials** configuration screen opens pre-populated with Storj-iX as the provider.
 It shows settings to add or edit cloud credentials TrueNAS uses to integrate with cloud storage providers.
 
@@ -42,7 +43,7 @@ Select the name of a cloud provider to populate the configuration screen with cr
 
 **Verify Credentials** uses the credentials entered to verify access to the cloud storage provider account.
 
-### Name and Provider Settings
+### Name and Provider Settings {id="cloud-creds_add-name-provider}
 The selection in **Provider** changes the **Authentication** settings.
 
 {{< truetable >}}
@@ -53,16 +54,18 @@ The selection in **Provider** changes the **Authentication** settings.
 {{< /truetable >}}
 
 ### Storj iX Credential
+
 Storj authentication includes going to the Storj iX sign-in screen to either create a new Storj iX account or log into an existing Storj iX account.
 After configuring the Storj account in the Storj-iX portal, return to TrueNAS to enter the S3 credentials provided by Storj.
 
 {{< trueimage src="/images/SCALE/Credentials/AddingStorjCloudCredential.png" alt="Cloud Credentials Storj iX" id="Cloud Credentials Storj iX" >}}
 
-{{< expand "Storj iX Authentication Settings" "v" >}}
+{{< expand "Storj iX Authentication Settings" "v" >}} {id="cloud-creds_add-storj"}
+
+**Signup for account** links to the Storj iX account sign-up page where you either create a new account or sign in to your Storj iX account.|
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Signup for account** | Link to the Storj iX account sign-up page where you either create a new account or sign in to your Storj iX account. |
 | **Access Key ID** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< ref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
 | **Secret Access Key** | Enter the alphanumeric key provided by Storj when you [create the S3 account access]({{< ref "TrueCloudTasks" >}}) associated with the storage buckets added in Storj. |
 | **Endpoint** | (Optional) Enter a custom Storj S3-compatible endpoint to use a specific tier, such as Global or Select. Automatically set to the default. |
@@ -74,7 +77,7 @@ Amazon S3 has basic authentication and advanced authentication settings. This se
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsAmzon3AuthenticationSetting.png" alt="Amazon S3 Authentication Settings" id="Amazon S3 Authentication Settings" >}}
 
-{{< expand "Amazon S3 Authentication Settings" "v" >}}
+{{< expand "Amazon S3 Authentication Settings" "v" >}} {id="cloud-creds_add-aws-s3"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -88,7 +91,7 @@ This section provides information on Amazon S3 advanced authentication settings 
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsAmzon3AdvancedAuthSettings.png" alt="Amazon S3 Advanced Authentication Settings" id="Amazon S3 Advanced Authentication Settings" >}}
 
-{{< expand "Amazon S3 Advanced Authentication Settings" "v" >}}
+{{< expand "Amazon S3 Advanced Authentication Settings" "v" >}} {id="cloud-creds_add-aws-s3-adv-auth"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -105,7 +108,7 @@ This section provides information on the BackBlaze B2 authentication settings.
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsBackBlazeB2Authentication.png" alt="BackBlaze B2 Authentication Settings" id="BackBlaze B2 Authentication Settings" >}}
 
-{{< expand "Backblaze B2 Authentication Settings" "v" >}}
+{{< expand "Backblaze B2 Authentication Settings" "v" >}} {id="cloud-creds_add-b2-auth"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -120,7 +123,7 @@ Providers using these methods are Box, Dropbox, Google Photos, pCloud, and Yande
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsOAuthAccessTokenAuthentication.png" alt="OAuth and Access Token Authentications" id="OAuth and Access Token Authentication" >}}
 
-{{< expand "OAuth and Access Token Authentication Settings" "v" >}}
+{{< expand "OAuth and Access Token Authentication Settings" "v" >}} {id="cloud-creds_add-oauth-tokens"}
 Use **Login to Provider** to enter the account username and password.
 
 {{< truetable >}}
@@ -138,7 +141,7 @@ FTP and SFTP cloud storage providers use host name, port, and user credentials t
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsHostPortUserCredPrivateKeyAuth.png" alt="Host, Port User Credentials Authentication" id="Host, Port User Credentials Authentication" >}}
 
-{{< expand "FTP and SFTP Authentication Settings" "v" >}}
+{{< expand "FTP and SFTP Authentication Settings" "v" >}} {id="cloud-creds_add-ftp-sftp"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -146,7 +149,7 @@ FTP and SFTP cloud storage providers use host name, port, and user credentials t
 | **Port** | Enter the FTP or for SFTPP, the SSH port number. Leave blank to use the default port **21** for FTP or **22** for SFTP. |
 | **Username** | Enter a username on the FTP or for the SFTP host system, the SSJ user name. This user must already exist on the host. |
 | **Password** | Enter the password for the user account. |
-| **Private Key ID** | (SFTP only) Import the private key from an existing SSH keypair or, if no keypairs exist on the system, select **Add** on the **SSH Keypairs** widget to open the **SSH Keypairs** screen. Enter a name, and then click **Generate New** to create a new SSH key for this credential. |
+| **Private Key ID** | (SFTP only) Import the private key from an existing SSH keypair or, if no keypairs exist on the system, select **Add** on the **SSH Keypairs** card to open the **SSH Keypairs** screen. Enter a name, and then click **Generate New** to create a new SSH key for this credential. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -155,7 +158,7 @@ Google Cloud Storage authentication uses a Google [service account JSON key cred
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsGoogleCloudAuth.png" alt="Google Cloud Storage Authentication" id="Google Cloud Storage Authentication" >}}
 
-{{< expand "Google Cloud Storage Authentication Settings" "v" >}}
+{{< expand "Google Cloud Storage Authentication Settings" "v" >}} {id="cloud-creds_add-google-cloud"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -170,13 +173,12 @@ Google Drive adds one additional authentication setting to the general OAuth set
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudCredentialsGoogleDriveAuthentication.png" alt="Google Drive Authentication" id="Google Drive Authentication" >}}
 
-{{< expand "Google Drive Authentication Settings" "v" >}}
+{{< expand "Google Drive Authentication Settings" "v" >}} {id="cloud-creds_add-google-drive"}
 Use **Login to Provider** to enter the account username and password.
+Google Drive uses the **OAuth Client ID** and **OAuth Client Secret** method of authentication.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **OAuth Client ID** | Enter the public identifier for the cloud application. |
-| **OAuth Client Secret** | Enter the secret phrase known only to the cloud application and the authorization server. |
 | **Access Token** | (Required) Token created with [Google Drive](https://developers.google.com/drive/api/v3/about-auth). Access Tokens expire periodically, so you must refresh them. |
 | **Team Drive ID** | (Optional) Google Drive only when connecting to a team drive, and is the top-level folder ID for the team drive. |
 {{< /truetable >}}
@@ -187,7 +189,7 @@ Use **Login to Provider** to enter the account username and password.
 HTTP uses an HTTP host URL to authenticate account credentials.
 It is a read-only client that supports directory listings from popular web servers like Apache and Nginx.
 
-### Hubic Credential
+### Hubic Credential  {id="cloud-creds_add-hubic"}
 
 Hubic uses an access token to authenticate the account.
 Enter the token generated by a [Hubic account](https://api.hubic.com/sandbox/) into the **Access Token** field.
@@ -196,9 +198,9 @@ Enter the token generated by a [Hubic account](https://api.hubic.com/sandbox/) i
 Microsoft Azure Blob Storage uses the Microsoft Azure account name and account key to authenticate the account credentials.
 
 ![CloudCredentialsMSAzureBlogStorageAuth](/images/SCALE/Credentials/CloudCredentialsMSAzureBlogStorageAuth.png "Microsoft Azure Blob Storage Authentication")
-{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsNoCredentials.png" alt="Cloud Credentials Widget No Credentials" id="Cloud Credentials Widget No Credentials" >}}
+{{< trueimage src="/images/SCALE/Credentials/CloudCredentialsNoCredentials.png" alt="Cloud Credentials Card No Credentials" id="Cloud Credentials Card No Credentials" >}}
 
-{{< expand "Microsoft Azure Blob Storage Authentication Settings" "v" >}}
+{{< expand "Microsoft Azure Blob Storage Authentication Settings" "v" >}} {id="cloud-creds_add-azure"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -214,7 +216,7 @@ The **AuthVersion** setting selection changes setting options displayed in **[Ad
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsOpenStackAuthentication.png" alt="OpenStack Swift Authentication" id="OpenStack Swift Authentications" >}}
 
-{{< expand "OpenStack Swift Authentication Settings" "v" >}}
+{{< expand "OpenStack Swift Authentication Settings" "v" >}} {id="cloud-creds_add-openstack"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -231,7 +233,7 @@ The **Authentication Advanced Options** screen shows different options based on 
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsOpenStackAuthAdvanced.png" alt="OpenStack Swift Authentication Advanced" id="OpenStack Swift Authentication Advanced" >}}
 
-{{< expand "Auto(vx), V1 and V2 Authentication Settings" "v" >}}
+{{< expand "Auto(vx), V1 and V2 Authentication Settings" "v" >}} {id="cloud-creds_add-openstack-auto"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -244,7 +246,7 @@ The **Authentication Advanced Options** screen shows different options based on 
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "V3 Authentication Settings" "v" >}}
+{{< expand "V3 Authentication Settings" "v" >}} {id="cloud-creds_add-openstack-v3"}
 Setting **AuthVersion** to **v3** shows additional authentication settings.
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsOpenStackAuthAdvancedV3.png" alt="OpenStack Swift Authentication Advanced V3" id="OpenStack Swift Authentication Advanced V3" >}}
@@ -269,7 +271,7 @@ WebDAV uses a URL, service type, and user credentials to authenticate the cloud 
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialWebDAVAuthentication.png" alt="WebDAV Authentication Settings" id="WebDAV Authentication Settings" >}}
 
-{{< expand "WebDAV Authentication Settings" "v" >}}
+{{< expand "WebDAV Authentication Settings" "v" >}} {id="cloud-creds_add-webdav"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -285,7 +287,7 @@ Microsoft OneDrive uses several required settings to authenticate credential acc
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialsMicrosoftOneDrive.png" alt="Microsoft OneDrive Cloud Credentials" id="Microsoft OneDrive Cloud Credentials" >}}
 
-{{< expand "Microsoft OneDrive Authentication Settings" "v" >}}
+{{< expand "Microsoft OneDrive Authentication Settings" "v" >}} {id="cloud-creds_add-onedrive"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

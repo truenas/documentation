@@ -60,7 +60,7 @@ When a VM is placed in a suspended state, the options shown on the VM details sc
 {{< /truetable >}}
 {{< /expand >}}
 
-### Delete Virtual Machine Dialog
+### Delete Virtual Machine Dialog {id="vm_delete"}
 
 The **Delete Virtual Machine** dialog shows options when deleting the VM and removing the VM configuration from your system.
 
@@ -74,14 +74,14 @@ The **Delete Virtual Machine** dialog shows options when deleting the VM and rem
 | **Enter *vmname* below to confirm** | Blank text entry field to manually enter the name of the VM to delete. This must match the name shown in the dialog. |
 {{< /truetable >}}
 
-### Clone Virtual Machine Dialog
+### Clone Virtual Machine Dialog {id="vm_clone"}
 
 The **Clone** dialog settings create an exact duplicate (clone) of the VM. The blank field allows manual entry of a name for the clone of the selected VM.
 Naming the clone VM is optional.
 
 {{< trueimage src="/images/SCALE/Virtualization/CloneVMDialog.png" alt="Clone Virtual Machine" id="Clone Virtual Machine" >}}
 
-A cloned VM shows on the Virtual Machines list with the extension **_clone0**. Cloning the same VM again changes the extension for the second clone to **clone1**.
+**Enter a Name (Optional)** shows a list of Virtual Machines on the system. The selected VM shows with the extension **_clone0** after clicing **Clone**. Cloning the same VM again changes the extension for the second clone to **clone1**.
 
 ### VM Serial Shell Screen
 
@@ -167,7 +167,7 @@ The **Operating System** settings specify the VM operating system type, the time
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineOperatingSystemSettings.png" alt="Operating System Settings" id="Operating System Settings" >}}
 
-{{< expand "Operating System Settings" "v" >}}
+{{< expand "Operating System Settings" "v" >}} {id="vm_wizard-os"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -200,7 +200,7 @@ The **Disks** settings specify how virtual disks are added. Options are creating
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachinesDisksSettings.png" alt="Disks Settings" id="Disks Settings" >}}
 
-{{< expand "Disks Settings" "v" >}}
+{{< expand "Disks Settings" "v" >}} {id="vm_wizard-disk"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -221,7 +221,7 @@ The **Network Interface** settings specify the network adapter type, MAC address
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachinesNetworkInterfaceSettings.png" alt="Network Interface" id="Network Interface" >}}
 
-{{< expand "Network Interface Settings" "v" >}}
+{{< expand "Network Interface Settings" "v" >}} {id="vm_wizard-network"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -238,7 +238,7 @@ The **Installation Media** settings specify the location of the operating system
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachineInstallationMediaSettings.png" alt="Installation Media Settings" id="Installation Media Settings" >}}
 
-{{< expand "Installation Media Settings" "v" >}}
+{{< expand "Installation Media Settings" "v" >}} {id="vm_wizard-install-media"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -247,11 +247,15 @@ The **Installation Media** settings specify the location of the operating system
 {{< /truetable >}}
 {{< /expand >}}
 
-#### Upload Installation Media Dialog
+#### Upload Installation Media Dialog {id="vm_wizard-iso"}
+
+**Optional: Choose Installation Media** shows two fields, one for the path the other a file browser where you can browse to select the location of the <file>iso</file> and populate the path field.
+
+**Upload New Image File** opens the **Upload Image File** dialog.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateVMWInstallMediaUploadSCALE.png" alt="Upload Installation Media" id="Upload Installation Media" >}}
 
-{{< expand "Upload Installation Media Settings" "v" >}}
+{{< expand "Upload Image File Settings" "v" >}} {id="vm_wizard_upload-image"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -274,7 +278,7 @@ The **Confirm Options** screen shows a summary of settings for the VM, including
 
 **Save** adds the VM to the **Virtual Machines** screen.
 
-## Add Device Screen
+## Add Device Screen {id="vm_device_add"}
 
 The **Add Device** screen shows different settings based on the option selected in **Device Type**. Settings change based on the type, except the **Type** and **Device Order** settings, which are common to all device types.
 
@@ -283,7 +287,7 @@ The **Add Device** screen shows different settings based on the option selected 
 **Device Order** sets the position of the device in the boot order used when the system boots up or restarts.
 Accepts a number (such as *1003*) that represents where in the boot order this device should be. The higher the number, the later in the boot-up process the device falls.
 
-{{< expand "CD-ROM Settings" "v" >}}
+{{< expand "CD-ROM Settings" "v" >}} {id="vm_device_add-cdrom"}
 CD-ROM settings show when **Device Type** is set to **CD-ROM**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceCDROM.png" alt="Add Device - CD-ROM" id="Add Device - CD-ROM" >}}
@@ -291,7 +295,7 @@ CD-ROM settings show when **Device Type** is set to **CD-ROM**.
 **CD-ROM Path** shows two fields: the **/mnt** path field that populates with what is selected with the file browser field directly below it. The <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** expands or collapses the directory branch while you browse to the location of the CD-ROM file on the system. |
 {{< /expand >}}
 
-{{< expand "NIC Settings" "v" >}}
+{{< expand "NIC Settings" "v" >}} {id="vm_device_add-nic"}
 VM network interface card settings show when **Device Type** is set to **NIC**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceNIC.png" alt="Add Device - NIC" id="Add Device - NIC" >}}
@@ -300,14 +304,13 @@ VM network interface card settings show when **Device Type** is set to **NIC**.
 | Setting | Description |
 |---------|-------------|
 | **Adapter Type** | (Required) Sets the emulator type to the option selected in the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. **VirtIO** provides better performance for systems with VirtIO paravirtualized network driver support. |
-| **MAC Address** | Shows the default auto-generated random MAC address the VM receives. Enter a custom address to override the default. |
-| **Generate** | Generates a new randomized address in **MAC Address**. |
+| **MAC Address** | Shows the default auto-generated random MAC address the VM receives. Enter a custom address to override the default. **Generate** has TrueNaS generate a new randomized address in **MAC Address**. |
 | **NIC To attach** | Sets a physical interface to associate with the VM to the device selected on the dropdown list. |
 | **Trust Guest Filters** | Allows the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks because it allows the virtual server to change its MAC address and receive all frames delivered to this address. The default setting is not enabled. |
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Disk Settings" "v" >}}
+{{< expand "Disk Settings" "v" >}} {id="vm_device_add-disk"}
 Disk settings, including disk location, drive type, and disk sector size, show when **Device Type** is set to **Disk**.
 A disk device has four options: **Edit**, **Delete**, **Details**, and **Export to Image**.
 **Export to Image** opens the [**Export Disk to Image**](#export-disk-to-image-window) window.
@@ -323,7 +326,7 @@ A disk device has four options: **Edit**, **Delete**, **Details**, and **Export 
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Display Settings" "v" >}}
+{{< expand "Display Settings" "v" >}} {id="vm_device_add-display"}
 Display settings show when **Device Type** is set to **Display**. You can only have one display type set to **VNC** (the default when creating a new VM), but you can add a second display device and set it to **SPICE**.
 
 Remote clients can connect to VM display sessions using a SPICE client, or by installing a third-party remote desktop server inside your VM.
@@ -344,7 +347,7 @@ SPICE clients are available from the [SPICE Protocol site](https://www.spice-spa
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Raw File Settings" "v" >}}
+{{< expand "Raw File Settings" "v" >}} {id="vm_device_add-raw-file"}
 Shows the raw file settings, including file location, size, disk sector size, and type when **Device Type** is set to **Raw File**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceRawFile.png" alt="Add Device - Raw File" id="Add Device - Raw File" >}}
@@ -359,7 +362,7 @@ Shows the raw file settings, including file location, size, disk sector size, an
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "PCI Passthrough Settings" "v" >}}
+{{< expand "PCI Passthrough Settings" "v" >}} {id="vm_device_add-pci-pass"}
 Shows PCI passthrough device settings when **Device Type** is set to **PCI Passthrough Device**.
 
 {{< hint type=important >}}
@@ -373,7 +376,7 @@ If this occurs, determine if you want to proceed with this action.
 **PCI Passthrough Device** sets the PCI device to what is manually entered or select on the dropdown list of options. Enter a device as *bus#/slot#/fcn#*, for example *0000:00:04.3 'System peripheral': Sky Lake-E CBDMA Registers by 'Intel Corporation'*.
 {{< /expand >}}
 
-{{< expand "USB Passthrough Settings" "v" >}}
+{{< expand "USB Passthrough Settings" "v" >}} {id="vm_device_add-usb-pass"}
 Shows the USB passthrough device setting when **Device Type** is set to **USB Passthrough Device**.
 
 {{< trueimage src="/images/SCALE/Virtualization/VMAddDeviceUSBpass.png" alt="Add Device - USB Passthrough" id="Add Device - USB Passthrough" >}}
@@ -383,10 +386,12 @@ Shows the USB passthrough device setting when **Device Type** is set to **USB Pa
 |---------|-------------|
 | **Controller Type** | (Required) Sets the controller to the option selected on the dropdown list. Options are: **piix3-uhci**, **piix4-uhci**, **ehci**, **ich9-ehci1**, **vt82c686b-uhci**, **pci-ohci**, **nec-xhci**, **qemu-xhci**. |
 | **Device** | Sets the device to the option manually entered or selected on the dropdown list of options. Selecting **Specify custom** shows the **Vendor ID** and **Product ID** fields. |
+| **Vendor ID** | Sets the USB device vendor ID. Only shows when **Device** is **Specify custom**. |
+| **Product ID** | Sets the USB device product ID. Only shows when **Device** is **Specify custom**. |
 {{< /truetable >}}
 {{< /expand >}}
 
-### Export Disk to Image Window
+### Export Disk to Image Window {id="vm_export_disk-image"}
 
 The **Export Disk to Image** window shows a file browser and other settings to convert a VM disk (zvol) to a portable disk image file. You access it from a disk device on the **Devices** screen.
 

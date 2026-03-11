@@ -31,7 +31,7 @@ The <span class="material-icons">more_vert</span> icon for a listed CSR shows a 
 
 **Add** opens the **[Add CSR](#add-csr-wizard-screens)** wizard. 
 
-### Create ACME Certificate Screen
+### Create ACME Certificate Screen {id="acme_certificate_create"} 
 
 The **Create ACME Certificate** screen shows settings to create an ACME Certificate by selecting an ACME Server Directory URI.
 
@@ -48,7 +48,7 @@ The **Create ACME Certificate** screen shows settings to create an ACME Certific
 | **DNS:UnitedStates** | Sets the authenticator to validate the domain. Shows a dropdown list of previously configured ACME DNS authenticators. |
 {{< /truetable >}}
 
-### Edit CSR Screen
+### Edit CSR Screen {id="csr_edit"}
 
 The **Edit CSR** screen shows the current CSR settings. It allows changing the CSR name (identifier), downloading or viewing the CSR, and provides access to the **Create ACME Certificate** screen.
 
@@ -97,7 +97,7 @@ The wizard screens are:
 
 5 **[Confirm Options](#confirm-options)**
 
-### Identifier and Type Options
+### Identifier and Type Options {id="csr_wizard_add-id-type"}
 
 The **Add CSR** wizard **Identifier and Type** settings specify the name, type, and profile to use when creating a new CSR.
 Changing the **Type** setting to import a CSR changes the setting options and wizard screens shown.
@@ -116,7 +116,7 @@ Changing the **Type** setting to import a CSR changes the setting options and wi
 | **Profile** | Sets the predefined certificate extention to either **HTTPS RSA Certificate** or **HTTPS ECC Certificate**. |
 {{< /truetable >}}
 
-### Certificate Options Screen
+### Certificate Options Screen {id="csr_wizard_add-cert-options"}
 
 **Certificate Options** show when **Type** is set to **Certificate Signing Request** on the **Identifier and Type** wizard screen. The settings specify the private key type, number of bits in the key used by the cryptographic algorithm, and the cryptographic algorithm the CSR uses.
 
@@ -137,7 +137,7 @@ When **Type** is set to **Import Certificate Signing Request**, the settings sho
 | **Digest Algorithm** | Sets the cryptographic algorithm used. The options are: **SHA1**, **SHA224**, **SHA256**, **SHA384** and **SHA512**. Only change the default **SHA256** if the organization requires a different algorithm. |
 {{< /truetable >}}
 
-#### Import Certificate Screen
+#### Import Certificate Screen {id="csr_wizard_import"}
 
 The **Import Certificate** screen shows when **Type** on the **Identifier and Type** screen is set to **Import Certificate Signing Request**.
 
@@ -152,7 +152,7 @@ The **Import Certificate** screen shows when **Type** on the **Identifier and Ty
 | **Confirm Passphrase** | Text entry field that accepts manual or copy/paste re-entry of the passphrase for the private key. |
 {{< /truetable >}}
 
-### Certificate Subject Settings
+### Certificate Subject Settings {id="csr_wizard_add-subject"}
 
 The **Certificate Subject** settings define the geographical location, name, and email for the organization using the certificate.
 Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.edu/d/aiuv) and any additional domains for multi-domain support.
@@ -172,7 +172,7 @@ Users can also enter the system [fully-qualified hostname (FQDN)](https://kb.iu.
 | **Subject Alternate Names** | Sets multi-domain support of additional domains to secure. Text entry field that accepts manual or copy/paste entry of additional domains to secure for multi-domain support. Separate each domain by pressing <kbd>Enter</kbd>. For example, if the primary domain is *example.com*, entering *www.example.com* secures both addresses. | 
 {{< /truetable >}}
 
-#### Extra Constraints Settings
+#### Extra Constraints Settings {id="csr_wizard_add-extra-constraints"}
 
 The **Extra Constraints** screen shows when adding a CSR. Settings on this screen are optional.
 

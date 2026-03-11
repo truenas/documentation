@@ -35,12 +35,13 @@ The <span class="material-icons">more_vert</span> icon for a listed certificate 
 
 <span class="material-icons">delete</span> deletes opens a [**Delete DNS Authenticator**](#delete-dns-authenticator-dialog) dialog.
 
-## Add or Edit DNS Authenticator
+## Add or Edit DNS Authenticator {id="acme-dns-auth_add"} 
 
 Fields change based on **Authenticator** selection. The **Edit DNS Authenticator** screen shows the current settings entered and saved on the **Add DNS Authenticator** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/AddDNSAuthenticator.png" alt="Add DNS Authenticator" id="Add DNS Authenticator" >}}
 
+<!-- The various settings for the authenticator providers at near the bottom of the yaml file, tagged to find them easier -->
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -62,7 +63,7 @@ Fields change based on **Authenticator** selection. The **Edit DNS Authenticator
 | **Delay** | Text entry field that accepts manual or copy/paste entry of a numeric value (in seconds) that TrueNAS writes after the creation of the DNS record. The default is 60 or 120 seconds. Shows when **shell** is selected in **Authenticator**. |
 {{< /truetable >}}
 
-## Delete DNS Authenticator Dialog
+## Delete DNS Authenticator Dialog {id="acme-dns-auth_delete} 
 
 The **Delete DNS Authenticator** dialog shows a **Confirm** option that, when selected, activates the **Delete** button. TrueNAS asks you to confirm before you can delete the authenticator.
 

@@ -1,6 +1,6 @@
 &NewLine;
 
-{{< expand "CPU and Memory Settings" "v" >}}
+{{< expand "CPU and Memory Settings" "v" >}} {id="vm_wizard-cpu-mem"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

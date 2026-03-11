@@ -1,6 +1,6 @@
 &NewLine;
 
-{{< expand "CPU and Memory Settings" "v" >}}
+{{< expand "CPU and Memory Settings" "v" >}} {id="container_create_cpu-mem"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|

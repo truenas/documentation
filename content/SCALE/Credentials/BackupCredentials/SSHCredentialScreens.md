@@ -40,7 +40,7 @@ The <span class="material-icons">more_vert</span> icon shows options to **Edit**
 
 The settings on the **SSH Connections** configuration screens are the same whether you add a new connection or edit an existing connection.
 
-#### Name and Method Settings
+#### Name and Method Settings {id="ssh-connection_add-name-method"}
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectNameMethodAuto.png" alt="Name and Method" id="Name and Method" >}}
 
@@ -51,7 +51,7 @@ The settings on the **SSH Connections** configuration screens are the same wheth
 | **Setup Method** | Select the setup method to use from the dropdown list of options. Options are:<br><li>**Semi-automatic (TrueNAS only)** - Select to simplify setting up an SSH connection with another TrueNAS or FreeNAS system without logging into that system to transfer SSH keys. The default is set to **Semi-automatic (TrueNAS only)**.<br><li>**Manual** - Select to enter all settings when setting up an SSH connection with a non-TrueNAS server. Displays other setting options required to [manually configure an SSH connection](#authentication-settings---manual-method). Requires copying a public encryption key from the local system to the remote system. A manual setup allows a secure connection without a password prompt.</li> |
 {{< /truetable >}}
 
-#### Authentication - Semi-Automatic Method Settings
+#### Authentication - Semi-Automatic Method Settings  {id="ssh-connection_add-auth-semi-auto"}
 These authentication settings show when **Setup Method** is **Semi-automatic (TrueNAS only)**.
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectAuthentication.png" alt="Authentication Settings" id="Authentication Settings" >}}
@@ -67,7 +67,7 @@ These authentication settings show when **Setup Method** is **Semi-automatic (Tr
 | **Private Key** | (Required) Select a saved SSH key pair, import the private key from a previously created SSH key pair, or select **Generate New** to create a new key pair to use for the connection to this remote system. |
 {{< /truetable >}}
 
-#### Authentication - Manual Method Settings
+#### Authentication - Manual Method Settings {id="ssh-connection_add-auth-manual"}
 These authentication settings show when **Setup Method** is **Manual**. You must copy a public encryption key from the local system to the remote system.
 A manual setup allows a secure connection without a password prompt.
 
@@ -84,7 +84,7 @@ A manual setup allows a secure connection without a password prompt.
 | **Discover Remote Host Key** | Click to connect to the remote system and attempt to copy the key string to the related TrueNAS field. |
 {{< /truetable >}}
 
-#### More Options Settings
+#### More Options Settings {id="ssh-connection_add_otheroptions"}
 
 {{< trueimage src="/images/SCALE/Credentials/NewSSHConnectMoreOptions.png" alt="More Options Settings" id="More Options Settings" >}}
 
@@ -106,7 +106,7 @@ The name of the key pair listed on the widget is a link that opens the **[SSH Ke
 
 The <span class="material-icons">more_vert</span> icon shows a dropdown list of options: **Download**, **Edit**, and **Delete**. Download saves the public and private key strings as text files for later use. Edit opens the SSH keypair configuration screen. Delete opens the delete dialog. If the keypair is used by SSH Connections, deleting it also deletes those connections. Click **Confirm** and then **Delete** to remove the stored key pairs from the system.
 
-#### SSH Keypairs Screen
+#### SSH Keypairs Screen {id="ssh-keypair_add"}
 
 The **SSH Keypairs** configuration screen displays the same settings for both add and edit options. Click **Add** to open a new configuration form, or click on an existing key pair to open the configuration screen populated with the settings for the selected key pair.
 

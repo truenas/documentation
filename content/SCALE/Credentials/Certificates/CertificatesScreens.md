@@ -27,7 +27,7 @@ Each TrueNAS has an internal certificate that enables encrypted access to the we
 
 <span class="material-icons">delete</span> **Delete** opens the [**Delete**](#delete-certificate-dialog) dialog.
 
-### Import Certificate
+### Import Certificate {id="certificate_import"}
 
 The **Import Certificate** screen provides the settings options needed to import an existing certificate using the private key.
 

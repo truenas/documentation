@@ -27,7 +27,7 @@ The **KMIP Key Status** area of the **KMIP** screen lists ZFS/SED keys synced be
 
 **Clear Sync Keys** cancels a pending synchronization. This button is active when a KMIP key sync is pending or in progress but not completed.
 
-### KMIP Server Settings
+### KMIP Server Settings {id="credentials_kmip"}
 
 {{< truetable >}}
 | Setting | Description |
