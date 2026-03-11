@@ -725,7 +725,7 @@ However, this workaround requires a secondary GPU (such as integrated Intel grap
 
   <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
 
-### Upgrade Paths (Anticipated)
+### Upgrade Paths
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
