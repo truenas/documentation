@@ -1,15 +1,12 @@
 &NewLine;
 
-To configure global SED settings, go to the **System > Advanced Settings** screen and locate the **Self-Encrypting Drive** widget.
+To configure global SED settings, go to the **System > Advanced Settings** screen and locate the **Self-Encrypting Drive** card.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSEDWidget.png" alt="Self-Encrypting Drive Widget" id="Self-Encrypting Drive Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSEDCard.png" alt="Self-Encrypting Drive Card" id="Self-Encrypting Drive Card" >}}
 
 Click **Configure** to open the **Self-Encrypting Drive** configuration screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Screen" id="Self-Encrypting Drive Screen" >}}
-
-Select the user to unlock SEDs from the **ATA Security User** dropdown list.
-Options are **USER** or **MASTER**.
 
 Enter the global SED password in **SED Password** and in **Confirm SED Password**.
 

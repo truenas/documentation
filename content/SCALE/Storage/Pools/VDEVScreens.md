@@ -1,7 +1,7 @@
 ---
 title: "VDEVs"
 description: "Provides information on settings and functions found on the VDEVs screens and cards."
-weight: 35
+weight: 60
 aliases:
  - /scale/scaleuireference/storage/devicesscreensscale/
  - /scale/scaleuireference/storage/pools/devicesscreensscale/
@@ -49,9 +49,9 @@ After selecting a disk, the cards show on the right side of the screen in the **
 The **ZFS Info** card for each device (disk drive) in the VDEV shows the name of the VDEV (**Parent**), the read, write, and checksum errors for that drive, and the **Detach** and **Offline** options.
 
 {{< columns >}}
-{{< trueimage src="/images/SCALE/Storage/ZvolInfoWidget.png" alt="ZFS Info Card" id="ZFS Info Card" >}}
+{{< trueimage src="/images/SCALE/Storage/ZvolInfoCard.png" alt="ZFS Info Card" id="ZFS Info Card" >}}
 <--->
-{{< trueimage src="/images/SCALE/Storage/ZFSInfoWidgetWithExtendRemove.png" alt="ZFS Info Card With Extend and Remove" id="ZFS Info Card with Extend and Remove" >}}
+{{< trueimage src="/images/SCALE/Storage/ZFSInfoCardWithExtendRemove.png" alt="ZFS Info Card With Extend and Remove" id="ZFS Info Card with Extend and Remove" >}}
 {{< /columns >}}
 
 **Detach** opens a confirmation dialog and removes the selected drive from the parent VDEV.
@@ -68,13 +68,13 @@ After taking a drive offline, you can remove or replace the physical drive.
 
 The **Disk Info** card shows the disk size, transfer mode, the serial and model numbers for the drive, type of drive, HDD standby setting, and a description associated with the selected drive.
 
-{{< trueimage src="/images/SCALE/Storage/DiskInfoWidget.png" alt="Disk Info Card" id="Disk Info Card" >}}
+{{< trueimage src="/images/SCALE/Storage/DiskInfoCard.png" alt="Disk Info Card" id="Disk Info Card" >}}
 
 **Replace** opens the **Replacing disk *diskname*** dialog, where *diskname* is the name of the selected disk.
 
 ### Hardware Disk Encryption Card
 {{< enterprise >}}
-The **Hardware Disk Encryption** card only shows on Enterprise-licensed systems.
+The **Hardware Disk Encryption** card only shows on Enterprise systems with an SED license and with SED drives.
 {{< /enterprise >}}
 
 The **Hardware Disk Encryption** card shows drive information, like whether the SED password is set or not.
@@ -82,7 +82,7 @@ It might show on non-enterprise systems with self-encrypting drives, but not all
 
 The **Manage SED Password** link opens a **Manage SED Password** dialog, where you can enter a disk SED password to set the disk encryption password.
 
-{{< trueimage src="/images/SCALE/Storage/DevicesDiskHardwareDiskEncryptionWidget.png" alt="Devices Disk Hardware Disk Encryption Card" id="Devices Disk Hardware Disk Encryption Card" >}}
+{{< trueimage src="/images/SCALE/Storage/HardwareDiskEncryptionCard.png" alt="Hardware Disk Encryption Card" id="Hardware Disk Encryption Card" >}}
 
 {{< trueimage src="/images/SCALE/Storage/ManageSEDPasswordDialog.png" alt="Manage Disk SED Encryption Password" id="Manage Disk SED Encryption Password" >}}
 

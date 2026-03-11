@@ -7,8 +7,7 @@ Choosing a dRAID VDEV layout removes the **Manual Disk Selection** button and ad
 It also removes the **Spare** VDEV section from the pool creation wizard and replaces it with the **Distributed Hot Spares** option in the **Data** VDEV section.
 
 #### VDEV Layouts
-
-{{< trueimage src="/images/SCALE/Storage/PoolCreationWizard.png" alt="Pool Creation Wizard" id="Pool Creation Wizard" >}}
+The **Layouts** field shows the following options:
 
 * **Stripe**
 

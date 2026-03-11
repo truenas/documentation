@@ -125,6 +125,19 @@ fi
 FINAL_PR_TITLE="$PR_TYPE: $PR_TITLE"
 
 # Create or update the Pull Request using GitHub CLI
+# Check for an existing open PR before attempting to create (gh pr create exits
+# with code 1 if one already exists, which would kill the script under set -e)
+EXISTING_PR=$(gh pr list --head "$BRANCH_NAME" --json number --jq '.[0].number' 2>/dev/null)
+
+if [ -n "$EXISTING_PR" ]; then
+    echo "✅ PR #$EXISTING_PR already exists for branch ${BRANCH_NAME} — branch has been updated, skipping PR creation."
+    echo "   View PR: https://github.com/truenas/documentation/pull/$EXISTING_PR"
+    echo "========================================="
+    echo "PR creation complete!"
+    echo "========================================="
+    exit 0
+fi
+
 echo "Creating pull request..."
 gh pr create --base "$BASE_BRANCH" --head "$BRANCH_NAME" --title "$FINAL_PR_TITLE" --body "$PR_DESCRIPTION" --reviewer "$REVIEWERS_LIST" 2>/dev/null
 
