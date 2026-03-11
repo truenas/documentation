@@ -25,11 +25,11 @@ See [Replacing SMB Home Shares](#replacing-smb-home-shares) below for more infor
 ### Adding a Share User
 
 The share user is the individual user account for the private dataset share.
-This user can be manually created as described below or created by a directory server (FreeIPA, LDAP or Active Directory).
-Users that requires access to an SMB share must be created with the **SMB Access** granted.
-TrueNAS assigns this level of access to new users by default but administrators can disable/enable this manually on the **Add User** or **Edit User** screen.
+You can manually create this user as described below or by using a directory server (FreeIPA, LDAP, or Active Directory).
+Users who require access to an SMB share must be created with the **SMB Access** granted.
+TrueNAS assigns this level of access to new users by default, but administrators can disable/enable this manually on the **Add User** or **Edit User** screen.
 
-Go to **Credentials > Users** to verify the user for a private dataset exists and is correctly configured. If the user does not exist, create the user.
+Go to **Credentials > Users** to verify that the user for a private dataset exists and is correctly configured. If the user does not exist, create the user.
 If the user exists but does not have **SMB Access** enabled, edit the user to enable this level of access.
 
 {{< expand "How do I create a user?" "v" >}}
@@ -54,15 +54,15 @@ You can use Active Directory or LDAP to create the share users.
 
 {{< include file="/static/includes/LocalSMBUser.md" >}}
 
-You can edit an use an existing dataset and share to use for a private dataset share, or you can create a new dataset and share. We recommend creating a new dataset and share.
+You can edit and use an existing dataset and share to use for a private dataset share, or you can create a new dataset and share. We recommend creating a new dataset and share.
 
 When creating a new share, TrueNAS allows you to use the **Add Dataset** or **Add SMB** screen to create the share and dataset.
-Each method has advantages depending on they type of share you want to create.
+Each method has advantages depending on the type of share you want to create.
 In general, when creating a simple SMB share and dataset, you can use either screen.
 
 When adding a new share and dataset for a private dataset share, we recommend using the **Add SMB** screen to create a new share and dataset for private datasets, or for any other customized SMB share, rather than using the **Add Dataset** screen.
 
-We recommend using the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) when you want to customize the dataset with the advanced setting options. Afterwhich, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
+We recommend using the [**Add Dataset** screen]({{< ref "DatasetsSCALE" >}}) when you want to customize the dataset with the advanced setting options. After which, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
 {{< /expand >}}
 
 {{< include file="/static/includes/ShareACLDialogs.md" >}}
@@ -82,7 +82,7 @@ For more information on changing permissions, see [Storage Permissions]({{< ref 
 
 #### Adding the Private Dataset Share and Dataset
 
-To create SMB private dataset share, go to **Shares**, and click **Add** on the **Windows (SMB) Shares** card to open the **Add SMB** screen.
+To create an SMB private dataset share, go to **Shares**, and click **Add** on the **Windows (SMB) Shares** card to open the **Add SMB** screen.
 
 1. Select **Private Dataset Share** on the **Purpose** dropdown list, then click **Advanced Options** to configure additional share setting options.
 
@@ -116,7 +116,7 @@ To create SMB private dataset share, go to **Shares**, and click **Add** on the 
    Files are renamed to a per-user subdirectory within <file>.recycle</file> directory at the root of the SMB share if the path is the same dataset as the share.
    If the dataset has a nested dataset, the directory is at the root of the current dataset. If this is the case, there is no automatic deletion based on file size.
 
-6. (Optional) Select any other advanced options that applies to your share needs.
+6. (Optional) Select any other advanced options that apply to your share needs.
 
 7. Click **Save**.
 
@@ -171,7 +171,7 @@ After adding all users or groups and setting the required permissions for each, 
 
 {{< expand "Setting Share Permissions" "v" >}}
 If the private dataset is nested under a parent dataset that has other private datasets nested under it, you must set the share ACL permission to restrict access to the files in the private share dataset (directory) to prevent other users from accessing the private share.
-Windows File Explorer shows all datasets nested under the share parent but blocks other users not granted access permission from opening and viewing the contents of that folder or directory.
+Windows File Explorer shows all datasets nested under the share parent, but blocks other users not granted access permission from opening and viewing the contents of that folder or directory.
 
 Click the triple dot icon at the right of the private dataset share on the **Shares** screen, then click **Edit Share ACL** to open the **Share ACL for *rikka-private*** screen.
 
@@ -182,7 +182,7 @@ Leave **Permissions** set to **Full** and **Type** set to **Allowed**.
 Click **Add** to show another **Add entry** group of settings. Change **Who** to the admin user to allow for share maintenance tasks, like moving the directory to a new location if that becomes necessary.
 
 If granting other users in a group to a private share for that group, add an entry for each user and change the level of permissions to what is needed.
-For example, if the group members can read the files but not change them, set **Permission** to **READ** for those users, and grant the user that maintains the documents either **FULL** or **CHANGE** permissions.
+For example, if the group members can read the files but not change them, set **Permission** to **READ** for those users, and grant the user who maintains the documents either **FULL** or **CHANGE** permissions.
 
 Click **Save** when finished.
 {{< /expand >}}
@@ -212,7 +212,7 @@ If you are looking for guest access functionality, see the [Guest Access]({{< re
 TrueNAS allows creating one private directory per user, while it still allows creating as many non-private directories as desired or needed.
 When a user first authenticates to a Private Dataset Share, TrueNAS automatically creates a subdirectory named after their username (for example, */mnt/poolname/share-name/username/*).
 Each user only sees and can access their own subdirectory when connecting to the share.
-Users can create as many directories as needed through a Windows File Explorer.
+Users can create as many directories as needed through Windows File Explorer.
 
 TrueNAS does not control what Windows allows through the File Explorer.
 Share ACL settings control who can access the private directory share.
@@ -231,11 +231,11 @@ Creating an SMB private dataset share requires provisioning users or joining Act
 ## Adding Private Dataset Shares
 
 Private directories are not intended for every user on the system.
-When setting the **Purpose** dropdown list to the **Private Dataset Share** option, TrueNAS might show the private directories to all users with access to the root level of the share but setting the share ACL prevents other users from accessing the private share.
+When setting the **Purpose** dropdown list to the **Private Dataset Share** option, TrueNAS might show the private directories to all users with access to the root level of the share, but setting the share ACL prevents other users from accessing the private share.
 
 Examples of setting up private SMB shares are those for backups, system configuration, and users or departments that need to keep information private from other users.
 
 This article covers:
 1. Adding the private dataset share user.
 2. Creating the private dataset share and the dataset.
-3. Modifying ACL permissions for the dataset(show has accessa to the file system) and the share(who has access to the share).
+3. Modifying ACL permissions for the dataset (who has access to the file system) and the share (who has access to the share).
