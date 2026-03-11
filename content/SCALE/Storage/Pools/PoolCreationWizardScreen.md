@@ -72,7 +72,7 @@ Losing the encryption key file results in lost data you cannot recover.
 ### General Info with SED Encryption 
 <!-- comment out tag for setting automation {id="pool_create_general-info-sed"} -->
 
-Enterprise systems licensed for SED encryption and with SED disks see the option for Self Encryption Drives (SED) encryption. 
+Enterprise systems licensed for and containing SED encryption can use the Self Encryption Drives (SED) encryption type. 
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfoSED.png" alt="Pool Creation Wizard General Info - SED" id="Pool Creation Wizard General Info - SED" >}}
 
@@ -90,10 +90,10 @@ The **Enclosure Options** wizard screen shows if the Enterprise system has one o
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsScreen.png" alt="Pool Creation Wizard Enclosure Options" id="Pool Creation Wizard Enclosure Options" >}}
 
-The three radio button options apply a dispersal strategy that sets pool storage configuration topology. A *dispersal strategy* determines how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option. Enclosures in the options below refer to the disk enclosures in the expansion shelves and system chassis.
+The three radio button options apply a dispersal strategy that sets the pool storage configuration topology. A *dispersal strategy* determines how the system adds disks by size and type to the pool VDEVs created when using the **Automated Disk Selection** option. Enclosures in the options below refer to the disk enclosures in the expansion shelves and system chassis.
 
 * **No Enclosure Dispersal Strategy** does not apply a dispersal strategy and does not show additional options.
-  Disks added to the pool VDEVs are assigned in sequence based on disk availability but are not balanced across all enclosures.
+  Disks added to the pool VDEVs are assigned in sequence based on disk availability, but are not balanced across all enclosures.
 
 * **Maximum Dispersal Strategy** applies a maximum dispersal strategy, which balances disk selection across all enclosures and available disks.
   Does not show additional options. Disks added to the pool VDEVs are spread across all available enclosure disks.
@@ -123,7 +123,7 @@ The **Layout** dropdown list shows the **Stripe**, **Mirror**, **RAIDZ1**, **RAI
 ### Log (Optional)
 <!-- comment out tag for setting automation {id="pool_create_log"} -->
 
-The **Log** wizard screen settings configure a log VDEV. ZFS log devices can improve the speeds of synchronous writes.
+The **Log** wizard screen settings configure a log VDEV. ZFS log devices can improve synchronous write speeds.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardLogScreen.png" alt="Pool Creation Wizard Log Screen" id="Pool Creation Wizard Log Screen" >}}
 
@@ -209,7 +209,7 @@ Drag disks to the VDEV to add them.
 | **Search** | Enter the disk name or other details to search for disks matching the specified value to filter available disks in the system. |
 | **Filter by Disk Type** | Resets the available disks listed to show only the selected type (HDD or SSD). |
 | **Filter by Disk Size** | Resets the available disks listed to show only disks matching the selected size. |
-| TrueNAS System | Click to expand and show the list of available disks in the system. Filter options change disks displayed on this list. |
+| TrueNAS System | Click to expand and show the list of available disks in the system. Filter options change the disks displayed on this list. |
 {{< /truetable >}}
 
 ### Review 
