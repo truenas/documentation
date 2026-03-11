@@ -145,6 +145,9 @@ Selecting **Full Filesystem Replication** means the task completely replicates t
 When using this option, we recommend allocating additional time for the replication task to run.
 
 ### Replicating Dataset Properties
+{{< hint type=warning >}}
+When enabled, and when migrating from a FreeBSD-based to a Debian-based TrueNAS, verify the **ACL Type** and **Encryption** settings on a migrated dataset before configuring a replication task. When a migrated dataset is used as the replication source, this option can silently overwrite the destination  dataset properties with incorrect settings. For datasets associated with SMB shares, confirm the **ACL Type** is set to **SMB/NFSv4** and not **Inherit** — an  incorrect setting can cause SMB share users to lose folder access. Also verify **Encryption** settings are correct for your environment before running replication. 
+{{< /hint >}}
 
 Leave **Full Filesystem Replication** unselected and select **Include Dataset Properties** to include just the dataset properties in the snapshots to replicate.
 Leave this option unselected on an encrypted dataset to replicate the data to another unencrypted dataset.
