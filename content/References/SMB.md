@@ -31,9 +31,10 @@ Another helpful reference is [Methods For Fine-Tuning Samba Permissions](https:/
 Note: the [SMB1 protocol is disabled by default](https://www.truenas.com/docs/core/13.0/coresecurityreports/smb1advisory/).
 
 By default, Samba disables NTLMv1 authentication for security.
-Standard configurations of Windows XP and some configurations of later clients like Windows 7 cannot connect with NTLMv1 disabled.
-[Security guidance for NTLMv1 and LM network authentication](https://support.microsoft.com/en-us/help/2793313/security-guidance-for-ntlmv1-and-lm-network-authentication) has information about the security implications and ways to enable NTLMv2 on those clients.
-If changing the client configuration is not possible, enable NTLMv1 authentication by selecting the **NTLMv1 auth** option in the SMB service configuration screen.
+If legacy clients require NTLMv1 authentication, enable it by selecting **NTLMv1 Auth** in the SMB service configuration screen.
+NTLMv1 is insecure and vulnerable. We recommend using modern operating systems that support NTLMv2 or Kerberos.
+
+{{< include file="/static/includes/MicrosoftNTLMDeprecation.md" >}}
 
 Most configuration scenarios require each user to have their own user account and to authenticate before accessing the share.
 This allows the administrator to control access to data, provide appropriate permissions to that data, and to determine who accesses and modifies stored data.
