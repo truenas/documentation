@@ -155,7 +155,7 @@ initializeChangelogTableForTabs('26');
 
   <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
 
-### Upgrade Paths (Anticipated)
+### Upgrade Paths
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
