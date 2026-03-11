@@ -16,8 +16,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
    Select the encryption option for the pool. Select **None** to create an unencrypted pool. We recommend not encrypting the pool root dataset or the system dataset.
    If creating a second pool on your system and you want to encrypt this pool, select **Software Encryption (ZFS)**. All datasets created with this option selected are also encrypted by default.
    {{< enterprise >}}
-   If your Enterprise system is licensed for and has SED drives, you can select **Self-Encrypting Drives (SED)** to create a pool with SED drives and encryption.
-   The drives you can select are only SED drives.
+   If your Enterprise system is licensed for and has SED drives, you can select **Self-Encrypting Drives (SED)** to create a pool with SED drives and encryption. You may only select SEDs when using **Self-Encrypting Drives (SED)** encryption.
 
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfoSED.png" alt="Pool Creation Wizard General Info - SED" id="Pool Creation Wizard General Info - SED" >}}
 
@@ -36,7 +35,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
 
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardEnclosureOptionsScreen.png" alt="Pool Creation Wizard Enclosure Options" id="Pool Creation Wizard Enclosure Options" >}}
 
-   **No Enclosure Dispersal Strategy** does not apply a dispersal strategy, and does not show additional options.
+   **No Enclosure Dispersal Strategy** does not apply a dispersal strategy and does not show additional options.
    Disks added to the pool VDEVs are assigned in sequence based on disk availability and are not balanced across all enclosures.
 
    **Maximum Dispersal Strategy** applies a maximum dispersal strategy.
