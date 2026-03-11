@@ -30,7 +30,7 @@ This option does not show in 25.10 and later releases unless an existing home sh
 
 Private directories are not intended for every user on the system.
 
-When setting the **Purpose** dropdown list to the **Private Dataset Share** option, TrueNAS might show the private directories to all users with access to the root level of the share but setting the share ACL prevents other users from accessing the private share.
+When setting the **Purpose** dropdown list to the **Private Dataset Share** option, TrueNAS might show the private directories to all users with access to the root level of the share, but setting the share ACL prevents other users from accessing the private share.
 
 Examples of setting up private SMB shares are those for backups, system configuration, and users or departments that need to keep information private from other users.
 
@@ -42,11 +42,11 @@ This article covers:
 ### Adding a Share User
 
 The share user is the individual user account for the private dataset share.
-This user can be manually created as described below or created by a directory server (FreeIPA, LDAP or Active Directory).
+You can manually create this user as described below, or by using a directory server (FreeIPA, LDAP, or Active Directory).
 Users that requires access to an SMB share must be created with the **SMB Access** granted.
-TrueNAS assigns this level of access to new users by default but administrators can disable/enable this manually on the **Add User** or **Edit User** screen.
+TrueNAS assigns this level of access to new users by default, but administrators can disable/enable this manually on the **Add User** or **Edit User** screen.
 
-Go to **Credentials > Users** to verify the user for a private dataset exists and is correctly configured. If the user does not exist, create the users.
+Go to **Credentials > Users** to verify that the user for a private dataset exists and is correctly configured. If the user does not exist, create the user.
 If the user exists but does not have **SMB Access** enabled, edit the user to enable this level of access.
 
 {{< expand "How do I create a user?" "v" >}}
@@ -244,7 +244,7 @@ If you are looking for guest access functionality, see the [Guest Access]({{< re
 TrueNAS allows creating one private directory per user, while it still allows creating as many non-private directories as desired or needed.
 When a user first authenticates to a Private Dataset Share, TrueNAS automatically creates a subdirectory named after their username (for example, */mnt/poolname/share-name/username/*).
 Each user only sees and can access their own subdirectory when connecting to the share.
-Users can create as many directories as needed through a Windows File Explorer.
+Users can create as many directories as needed through Windows File Explorer.
 
 TrueNAS does not control what Windows allows through the File Explorer.
 The share ACL settings control who can access the private directory share.
