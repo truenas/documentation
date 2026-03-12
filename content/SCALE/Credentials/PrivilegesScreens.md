@@ -1,6 +1,6 @@
 ---
 title: "Privilege Screens"
-description: "Provides information on the Privilege screens and settings."
+description: "Provides information on the Privileges screens and settings."
 weight: 50
 aliases:
 tags:
