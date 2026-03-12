@@ -36,7 +36,7 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.2.2" data-tab-label="25.10.2.2">
 
-March 12, 2026
+March 13, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
 
@@ -500,6 +500,11 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
   Workaround: Restart the SMB service in **System > Services**, or disconnect and reconnect the SMB client (unmount and remount the server).
 
   This issue is resolved in TrueNAS 26.
+
+* Fibre Channel iSCSI initiator changes do not apply to the running configuration until the iSCSI service is restarted.
+  When updating a Fibre Channel initiator on an iSCSI share, SCST updates with the change but the running configuration file does not reflect the update until the iSCSI service is stopped and started.
+
+  Workaround: After updating the Fibre Channel initiator, stop and then start the iSCSI service in **System > Services** to apply the change to the running configuration.
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=14131" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
