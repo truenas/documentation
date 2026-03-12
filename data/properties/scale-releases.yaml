@@ -30,7 +30,7 @@ majorVersions:
       - name: "25.10.2.2"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.2.2"
-        releaseDate: "2026-03-12"
+        releaseDate: "2026-03-13"
         latest: true
   - lifecycle: "26"
     name: "TrueNAS 26"
