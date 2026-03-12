@@ -11,9 +11,7 @@ doctype: reference
 
 ## Privileges Screen
 
-{{< hint type="warning" title="Experimental Feature" >}}
-The **Privileges** feature in releases earlier than 24.10 is experimental, but as of 24.10 onwards is no longer experimental.
-
+{{< hint type="warning" title="Do Not Edit Predefined Admin Roles" >}}
 Do not edit the existing predefined administrator roles (Full Control Admin, Readonly Admin, and Sharing Admin)!
 Editing an unrestricted administrator account privilege can result in lost access to the system!
 {{< /hint >}}
