@@ -14,7 +14,6 @@ doctype: reference
 ---
 
 
-
 The TrueNAS **Update** screen provides users with an automatic or manual method to update the TrueNAS software running on the system.
 
 ## Update Screen
@@ -32,7 +31,7 @@ An upgrade only shows when the system detects it. The screen shows four informat
 - [**Update Profile**](#update-profiles) - Shows the **Select an update profile** dropdown list.
 - [**Available Profiles**](#available-profiles) - Shows a list of update profiles, and a description of what each provides.
 
-### Installed Version
+### Installed Version {id="update-profile"}
 
 This section shows the current TrueNAS release installed on the system. **System is up to date** shows when no updates are available to the profile set in **Select an update profile**.
 
@@ -79,7 +78,7 @@ Profile selections allow users to choose how conservative the software selection
 | **Developer** | Available to developer users. The developer profile is for nightly builds of software in active development. Expect many issues and frequent, sometimes twice daily updates. |
 {{< /truetable >}}
 
-## Save Configuration Settings Window
+## Save Configuration Settings Window {id="update-save-config"}
 
 The **Save configuration settings from this machine before updating?** window opens after clicking **Install** to the right of **Manual Install**.
 
@@ -93,7 +92,7 @@ This means various services can be broken due to the missing information. Exampl
 
 **Save Configuration** downloads the system configuration file to your system. Keep the configuration file in a safe place that is regularly backed up.
 
-## Manual Update Screen
+## Manual Update Screen {id="update-manual"}
 
 The **Manual Update** screen opens after saving the system configuration settings.
 

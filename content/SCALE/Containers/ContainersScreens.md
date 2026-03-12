@@ -148,6 +148,7 @@ Changes take effect immediately, but containers might require a restart to refle
 ## Create Container Wizard
 
 The **Create Container** configuration wizard displays all settings to set up a new container.
+The **Add** button opens the **Add Container** screen showing the **Basic** options and the **Advanced Options** which opens a configuration screen with all container configuration options.
 
 ### Container Configuration {id="containers_create-config"}
 
@@ -160,6 +161,9 @@ The **Container Configuration** settings specify the container name and operatin
 |---------|-------------|
 | **Name** | Required. Enter an alphanumeric name for the container. |
 | **Image** | **Browse Catalog** opens the **Select Image** screen with available Linux image choices from [linuxcontainers.org](https://linuxcontainers.org/). Search or browse to locate your desired image and click **Select**. |
+| **Description** | Brief text summary of the purpose of or use for the container. Shows in the main Container table. |
+| **Autostart** | Autamatically starts the container after clicking **Create**. |
+| **Pool** | Shows a list of system pools. Sets the selected pool as the storage for the container. |
 {{< /truetable >}}
 
 {{< include file="/static/includes/InstanceNameRequirements.md" >}}
@@ -222,7 +226,7 @@ See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/Network/ContainerNAS
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
 
-{{< expand "Network Settings" "v" >}}
+{{< expand "Network Settings" "v" >}} {id="containers_create-network"}
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Non-Default Network Settings" id="Non-Default Network Settings" >}}
 
@@ -236,13 +240,13 @@ See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/Network/ContainerNAS
 {{< include file="/static/includes/MacvlanHost.md" >}}
 {{< /expand >}}
 
-### USB Devices
+### USB Devices {id="c"ontainers_usb"}
 
 **USB Devices** displays a list of available devices to attach to a container, allowing the device to function as if physically connected.
 
 {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceUSB.png" alt="USB Devices" id="USB Devices" >}}
 
-### GPU Devices
+### GPU Devices {id="containers_gpu"}
 
 **GPU Devices** displays available GPU devices to attach to a container, enabling it to utilize hardware acceleration for graphics or computation tasks.
 
@@ -255,7 +259,7 @@ Stopped containers show the option to start the container.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Containers Screen - Populated" id="Containers Screen - Populated" >}}
 
-The **Details for *Container*** [widgets](#containers-widgets) show information and management options for the selected container.
+The **Details for *Container*** [cards](#containers-cards) show information and management options for the selected container.
 
 The <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i> button restarts or the <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> button stops a running container.
 
@@ -276,16 +280,16 @@ Options are **Start All Selected**, **Stop All Selected**, and **Restart All Sel
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesBulkActions.png" alt="Bulk Actions" id="Bulk Actions" >}}
 
-## Containers Widgets
+## Containers Cards
 
-The **Details for *Container*** widgets display information and configuration options for the selected container.
+The **Details for *Container*** cards display information and configuration options for the selected container.
 
-### General Info Widget
+### General Info Card
 
-The **General Info** widget displays the container status, autostart setting, base image, CPU, memory, and secure boot configuration.
+The **General Info** card displays the container status, autostart setting, base image, CPU, memory, and secure boot configuration.
 It includes the **Edit** and **Delete** buttons for the container.
 
-{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Card" id="General Info Card" >}}
 
 **[Delete](#delete-containers)** opens the **Delete** dialog.
 
@@ -300,28 +304,28 @@ The **Delete** dialog asks for confirmation to delete the selected container.
 **Confirm** activates the **Continue** button.
 **Continue** starts the delete operation.
 
-### Devices Widget
+### Devices Card
 
-The **Devices** widget displays all USB, GPU, Trusted Platform Module (TPM), and PCI Passthrough devices attached to the container.
+The **Devices** card displays all USB, GPU, Trusted Platform Module (TPM), and PCI Passthrough devices attached to the container.
 
-{{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="Devices Widget" id="Devices Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="Devices Card" id="Devices Card" >}}
 
 **Add** opens a list of available **USB Devices**, **GPUs**, **TPM**, and **PCI Passthrough** devices.
 
 **Add Device** under **PCI Passthrough** opens the [**Add PCI Passthrough Device**](#add-pci-passthrough-device-screen) screen.
 
-### Disks Widget
+### Disks Card
 
-The **Disks** widget shows the storage devices attached to the container, along with their associated paths.
+The **Disks** card shows the storage devices attached to the container, along with their associated paths.
 It allows you to manage the disks, including adding new ones or modifying existing ones.
 
-{{< trueimage src="/images/SCALE/Virtualization/DisksWidget.png" alt="Disks Widget" id="Disks Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/DisksWidget.png" alt="Disks Card" id="Disks Card" >}}
 
 **Add** opens the [**Add Disk**](#addedit-disk-screen) screen for adding new disks to the container.
 
 For existing disks, the <span class="material-icons">more_vert</span> actions include options to [**Edit**](#addedit-disk-screen) or [**Delete**](#delete-disk-mounts) the disk mount.
 
-For VMs, the widget displays the current root disk size.
+For VMs, the card displays the current root disk size.
 The root disk stores the OS and serves as the boot disk for the VM.
 **Change** opens the [**Change Root Disk Setup**](#change-root-disk-setup) dialog.
 
@@ -367,7 +371,7 @@ The **Delete Item** dialog asks for confirmation to delete the selected disk mou
 
 The **Change Root Disk Setup** dialog allows you to configure the size of the disk a VM stores its OS on and boots from, and change the root disk I/O bus.
 
-{{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Widget" id="Increase Root Disk Size Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/IncreaseRoot.png" alt="Increase Root Disk Size Card" id="Increase Root Disk Size Card" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -376,15 +380,14 @@ The **Change Root Disk Setup** dialog allows you to configure the size of the di
 | **Root Disk I/O Bus** | Sets the communication pathway type for the root disk. Options are **NVMe**, **Virtio-BLK**, and **Virtio-SCSI**. |
 {{< /truetable >}}
 
-
 **Save** applies changes.
 
-### NIC Widget
+### NIC Card
 
-The **NIC Widget** displays the network interfaces (NICs) attached to the container, along with their names and types.
+The **NIC Card** displays the network interfaces (NICs) attached to the container, along with their names and types.
 It allows you to add new NICs and manage existing ones.
 
-{{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Widget" id="NIC Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Card" id="NIC Card" >}}
 
 **Add** opens a menu with available NIC choices, allowing you to select and attach a new NIC to the container.
 
@@ -399,12 +402,12 @@ The **Delete Item** dialog asks for confirmation to delete the selected NIC.
 **Confirm** activates the **Continue** button.
 **Continue** starts the delete operation.
 
-### Proxies Widget
+### Proxies Card
 
-The **Proxies** widget displays the network proxy settings configured for the container.
+The **Proxies** card displays the network proxy settings configured for the container.
 It allows you to manage these settings, including adding, editing, or removing proxies.
 
-{{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Card" id="Proxies Card" >}}
 
 **Add** opens the [**Add Proxy**](#addedit-proxy-screen) screen to configure a new proxy for the container.
 
@@ -429,12 +432,12 @@ The **Delete Item** dialog asks for confirmation to delete the selected proxy co
 **Confirm** activates the **Continue** button.
 **Continue** starts the delete operation.
 
-### Idmap Widget
+### Idmap Card
 
-The **Idmap** widget shows the user ID (UID) and group ID (GID) mappings used by the container to translate IDs between the host and the container.
+The **Idmap** card shows the user ID (UID) and group ID (GID) mappings used by the container to translate IDs between the host and the container.
 It provides details such as the **Host ID**, **Maprange**, and **NS ID** for both UIDs and GIDs.
 
-{{< trueimage src="/images/SCALE/Virtualization/IdmapWidget.png" alt="Idmap Widget" id="Idmap Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/IdmapWidget.png" alt="Idmap Card" id="Idmap Card" >}}
 
 * **Host ID** shows the starting ID used by the host for mapping to the container IDs.
 * **Maprange** indicates the range of IDs that the host allocates for the container.
@@ -443,12 +446,12 @@ It provides details such as the **Host ID**, **Maprange**, and **NS ID** for bot
 For example, if the **Host ID** is `2147000001` and the **Maprange** is `458752`, the container UID 0 (root) is mapped to the host UID `2147000001`.
 This ensures proper isolation and user/group identity management between the host and the container.
 
-### Tools Widget
+### Tools Card
 
-The **Tools** widget provides quick access to various tools and utilities for managing your container.
-You can open a shell, console, or VNC session directly from this widget.
+The **Tools** card provides quick access to various tools and utilities for managing your container.
+You can open a shell, console, or VNC session directly from this card.
 
-{{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Widget - VM" id="Tools Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Card - VM" id="Tools Card" >}}
 
 **Shell** opens an **Container Shell** session for command-line interaction with the container.
   
@@ -458,11 +461,11 @@ You can open a shell, console, or VNC session directly from this widget.
 It uses a VNC URL scheme (for example, `vnc://hostname.domain.com:5930`) to launch the session directly in the application.
 If your environment does not support VNC URLs, you can manually connect using a VNC client by entering the host name or IP address followed by the port number without `vnc://` (for example, `hostname.domain.com:5930` or `IP:5930`).
 
-### Metrics Widget
+### Metrics Card
 
-The **Metrics** widget displays real-time graphs that monitor container performance, including CPU usage, memory usage, and disk I/O pressure.
+The **Metrics** card displays real-time graphs that monitor container performance, including CPU usage, memory usage, and disk I/O pressure.
 
-{{< trueimage src="/images/SCALE/Virtualization/MetricsWidget.png" alt="Metrics Widget" id="Metrics Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/MetricsWidget.png" alt="Metrics Card" id="Metrics Card" >}}
 
 **CPU (%)** shows the percentage of CPU usage over time.
   
@@ -475,9 +478,9 @@ The **Metrics** widget displays real-time graphs that monitor container performa
 The **Edit Container: *Container*** screen settings are a subset of those found on the **[Create Container Wizard](#create-container-wizard)** screens.
 It includes the general **Container Configuration** and **CPU and Memory** settings for containers.
 Additionally, containers include **Environment** settings.
-To edit device, disk, network, or proxy settings, use the [Containers Widgets](#containers-widgets) on the **Containers** screen.
+To edit device, disk, network, or proxy settings, use the [Containers Cards](#containers-cards) on the **Containers** screen.
 
-### Edit Container Configuration Settings
+### Edit Container Configuration Settings {id="containers_config_edit"}
 
 The **Container Configuration** settings on the **Edit** screen allow you to modify basic parameters for the container, such as startup behavior.
 

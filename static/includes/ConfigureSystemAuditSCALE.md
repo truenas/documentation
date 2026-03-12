@@ -4,7 +4,7 @@ The **Audit** configuration screen sets the retention period, reservation size, 
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditScreen.png" alt="Configure Audit Screen" id="Configure Audit Screen" >}}
 
-{{< expand "Audit Settings" "v" >}}
+{{< expand "Audit Settings" "v" >}} {id="adv-settings_audit-config"}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|

@@ -1,28 +1,24 @@
 ---
 title: "Custom App Screens"
 description: "Provides information on the Install Custom App screen and configuration settings."
-weight: 50
+weight: 25
 aliases:
- - /scale/scaleuireference/apps/installcustomappscreens/
  - /scale/scaleuireference/apps/launchdockerimagescreens/
  - /scale/scaletutorials/apps/docker/
  - /scale/scaleuireference/apps/docker/
 tags:
 - customapp
-doctype: reference
 ---
 
-{{< include file="/static/includes/apps/AppsMarket.md" >}}
-
-**Custom App** on the [**Discover**]({{< ref "SCALE/Apps" >}}) screen opens the **[Install Custom App](#install-custom-app-screen)** guided installation wizard.
+**Custom App** on the [**Discover**]({{< ref "SCALE/SCALEUIReference/Apps" >}}) screen opens the **[Install iX App](#install-ix-app-screen)** guided installation wizard.
 <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> > **Install via YAML** opens the **[Add Custom App](#add-custom-app-screen)** screen with an advanced YAML editor for deploying apps using Docker Compose.
 
-## Install Custom App Screen
+## Install iX App Screen
 
-The **Install Custom App** screen allows you to configure third-party applications using Docker settings.
+The **Install iX App** screen allows you to configure third-party applications using Docker settings.
 Use the wizard to configure applications not included in the official catalog.
 
-{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install Custom App Screen" id="Install Custom App Screen" >}}
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenNameAndImage.png" alt="Install iX App Screen" id="Install iX App Screen" >}}
 
 The panel on the right of the screen links to each setting area.
 Click on a heading or setting to jump to that area of the screen.
@@ -39,7 +35,7 @@ After completing the installation these settings are not editable.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppApplicationName.png" alt="Application Name Settings" id="Application Name Settings" >}}
 
-{{< expand "Settings Information" "v" >}}
+{{< expand "Settings Information" "v" >}} {id="apps_custom-app-name"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -48,6 +44,10 @@ After completing the installation these settings are not editable.
 {{< /truetable >}}
 {{< /expand >}}
 
+### General Configuration Settings {id="apps_custom-gen"}
+
+The **General** configuation sectopn shows a **Notes** section and a field with a numbered list where you can notes about the application that show in the **Notes** card. You can use markdown here. This has no effect on the application.
+
 ### Image Configuration Settings
 
 **Image Configuration** settings specify the container image details.
@@ -55,7 +55,7 @@ They define the image, tag, and when TrueNAS pulls the image from the remote rep
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerImages.png" alt="Image Configuration Settings" id="Image Configuration Settings" >}}
 
-{{< expand "Settings Information" "v" >}}
+{{< expand "Settings Information" "v" >}} {id="apps_custom-image-config"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -73,7 +73,7 @@ Check the documentation for the application you want to install for required ent
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppContainerEntrypoint.png" alt="Container Configuration Settings" id="Container Configuration Settings" >}}
 
-{{< expand "Settings Information" "v" >}}
+{{< expand "Settings Information" "v" >}} {id="apps_custom-container-config"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -96,7 +96,7 @@ Check the documentation for the application you want to install for required ent
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppSecurityContextConfiguration.png" alt="Security Context Configuration Settings" id="Security Context Configuration Settings" >}}
 
-{{< expand "Settings Information" "v" >}}
+{{< expand "Settings Information" "v" >}} {id="apps_custom-security"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -124,7 +124,7 @@ See the Docker [DNS services documentation](https://docs.docker.com/engine/netwo
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppNetworking.png" alt="Network Configuration Settings" id="Network Configuration Settings" >}}
 
-{{< expand "Settings Information" "v" >}}
+{{< expand "Settings Information" "v" >}} {id="apps_custom-network"}
 
 {{< truetable >}}
 | Setting | Description |
@@ -138,8 +138,7 @@ See the Docker [DNS services documentation](https://docs.docker.com/engine/netwo
 | **Nameserver** | Enter the IP address of the name server. |
 | **Search Domains** | Use to add one or more DNS domains to search non-fully qualified host names. Click **Add** to display a **Search Domain** field to enter the domain you want to configure. Click again to add another search domain. See the Linux [search](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information. |
 | **Search Domain** | Enter the search domain you want to configure. For example, *mydomain.com*. |
-| **DNS Options** | Use to add one or more key-value pairs to control various aspects of query behavior and DNS resolution. Click **Add** to display an **Option** field. Click again to add another option. See the Linux [options](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information. |
-| **Option** | Enter a key-value pair representing a DNS option and its value. For example, *ndots:2*. |
+| **DNS Options** | Use to add one or more key-value pairs to control various aspects of query behavior and DNS resolution. Click **Add** to display an **Option** field. Click again to add another option. See the Linux [options](https://www.man7.org/linux/man-pages/man5/resolv.conf.5.html) documentation for more information. For **Option** , enter a key-value pair representing a DNS option and its value. For example, *ndots:2*. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -151,7 +150,7 @@ Click **Add** to display the web portal configuration settings.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddPortalConfiguration.png" alt="Portal Configuration Settings" id="Portal Configuration Settings" >}}
 
-{{< expand "Settings Information" "v" >}}
+{{< expand "Settings Information" "v" >}} {id="apps_custom-portal"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -165,7 +164,7 @@ Click **Add** to display the web portal configuration settings.
 {{< /expand >}}
 
 ### Storage Configuration Settings
-
+ 
 The **Storage Configuration** settings specify persistent storage paths and share data claims separate from the lifecycle of the container.
 For more details, see the [Docker storage documentation](https://docs.docker.com/engine/storage/).
 
@@ -184,14 +183,14 @@ See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentat
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppScreenStorage.png" alt="Storage Configuration Settings" id="Storage Configuration Settings" >}}
 
-{{< expand "Settings Information" "v" >}}
+{{< expand "Settings Information" "v" id="" >}} {id="apps_custom-storage"}
 
 Click **Add** to display a block of storage configuration settings.
 Click again to mount an additional storage volume.
 
 Select an option from the **Type** dropdown:
 
-{{< expand "Host Path (Path that already exists on the system)" "v" >}}
+{{< expand "Host Path (Path that already exists on the system)" "v" >}} {id="apps_custom-storage-host-path"}
 Use to configure a persistent host path.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddHostPathVol.png" alt="Host Path Settings" id="Host Path Settings" >}}
@@ -212,7 +211,7 @@ Use to configure a persistent host path.
 
 {{< /expand >}}
 
-{{< expand "ixVolume (Dataset created automatically by the system)" "v" >}}
+{{< expand "ixVolume (Dataset created automatically by the system)" "v" >}} {id="apps_custom-storage-ixvol"}
 Use to configure a storage mount for a system created dataset on the applications pool.
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddixVolume.png" alt="ixVolume Settings" id="ixVolume Settings" >}}
@@ -231,7 +230,7 @@ Use to configure a storage mount for a system created dataset on the application
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "SMB/CIFS Share (Mounts a volume to a SMB share)" "v" >}}
+{{< expand "SMB/CIFS Share (Mounts a volume to a SMB share)" "v" >}} {id="apps_custom-storage-smb"}
 Use to mount an SMB share with a Docker [volume](https://docs.docker.com/engine/storage/#volumes).
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddSMB.png" alt="SMB/CIFS Share Settings" id="SMB/CIFS Share Settings" >}}
@@ -249,7 +248,7 @@ Use to mount an SMB share with a Docker [volume](https://docs.docker.com/engine/
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Tmpfs (Temporary directory created on the RAM)" "v" >}}
+{{< expand "Tmpfs (Temporary directory created on the RAM)" "v" >}} {id="apps_custom-storage-tmpfs"}
 Use to configure a memory-backed temporary directory.
 See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentation for more information.
 
@@ -265,6 +264,10 @@ See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentat
 {{< /expand >}}
 {{< /expand >}}
 
+### Label Configuration Settings {id="apps_custom-label-config"}
+
+{{< include file="/static/apps/InstallWizardLablesConfiguration.md" >}}
+
 ### Resources Configuration Settings
 
 **Resources Configuration** settings configure resources for the container.
@@ -277,7 +280,7 @@ See [GPU Passthrough](https://apps.truenas.com/managing-apps/installing-apps/#gp
 
 {{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddResourceLimits.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
 
-{{< expand "Settings Information" "v" >}}
+{{< expand "Settings Information" "v" >}} {id="apps_custom-resource-limits"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -290,9 +293,9 @@ See [GPU Passthrough](https://apps.truenas.com/managing-apps/installing-apps/#gp
 {{< /truetable >}}
 {{< /expand >}}
 
-## Add Custom App Screen
+## Install via Yaml Screen {id="apps_custom_yaml"}
 
-The **Add Custom App** screen allows you to configure third-party applications using Docker Compose YAML syntax.
+The **Install via YAML** screen allows you to configure third-party applications using Docker Compose YAML syntax.
 Use the YAML editor to configure applications not included in the official catalog.
 See the [Docker Compose overview](https://docs.docker.com/compose/) from Docker for more information.
 
@@ -303,8 +306,8 @@ See the [Docker Compose overview](https://docs.docker.com/compose/) from Docker 
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| Name | Enter a name for the application to be used in the TrueNAS UI. The name must use lowercase alphanumeric characters, start with an alphabetic character, and can end with alphanumeric character. A hyphen (`-`) is allowed but not as the first or last character, for example *abc123*, *abc*, *abcd-1232*, but not *-abcd*. |
-| Custom Config | Enter a Docker Compose YAML file for the application. |
+| **Name** | Enter a name for the application to be used in the TrueNAS UI. The name must use lowercase alphanumeric characters, start with an alphabetic character, and can end with alphanumeric character. A hyphen (`-`) is allowed but not as the first or last character, for example *abc123*, *abc*, *abcd-1232*, but not *-abcd*. |
+| **Custom Config** | Enter a Docker Compose YAML file for the application. |
 {{< /truetable >}}
 
 Click **Save** to initiate app deployment.

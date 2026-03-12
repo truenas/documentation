@@ -57,13 +57,13 @@ Graphs show short-, mid-, and long-term loads, along with CPU temperature graphs
 
 {{< trueimage src="/images/SCALE/Reporting/CPUReportingSystemLoad.png" alt="CPU Reporting System Load" id="CPU Reporting System Load" >}}
 
-### Disk Graphs
+### Disk Graphs {id="reporting-disks"}
 
 Shows graphs for each selected system disk, and by report type.
 Disk graphs show read and write statistics on I/O, percent busy, latency, operations per second, pending I/O requests, and disk temperature.
 
-Use the **Select Disks** dropdown to select the disks.
-Use the **Select Reports** dropdown to select the report types to display.
+Use the **Devvices** dropdown to select the disks.
+Use the **Metrcs** dropdown to select the report types to display. 
 
 {{< trueimage src="/images/SCALE/Reporting/DisksReportingScreen.png" alt="Disks Reporting" id="Disks Reporting" >}}
 
@@ -71,8 +71,6 @@ Use the **Select Reports** dropdown to select the report types to display.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Select All** | Displays all available graphs for any or all disks selected on the **Disks** dropdown list. |
-| **Disk Temperature** | Displays the minimum, maximum, and mean temperature readings for the disk selected. |
 | **Disk I/O** | Displays the disk read and write I/O stats in bytes/s. |
 {{< /truetable >}}
 
@@ -133,7 +131,7 @@ Exporters send reporting records as JSON objects to third-party reporting collec
 
 **Add** opens the **Add Reporting Exporter** screen.
 
-### Add Reporting Exporter
+### Add Reporting Exporter {id="reporting_add_exporter"}
 
 Use the **Add Reporting Exporter** screen to configure third-party reporting integrations.
 
@@ -149,7 +147,7 @@ Use the **Add Reporting Exporter** screen to configure third-party reporting int
 
 Additional settings populate based on the selected **Type** option.
 
-#### Graphite Settings
+#### Graphite Settings {id="reporting_add_exporter-graphite"}
 
 {{< trueimage src="/images/SCALE/Reporting/AddReportingExporterGraphite.png" alt="Graphite Exporter Settings" id="Graphite Exporter Settings" >}}
 

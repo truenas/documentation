@@ -110,7 +110,7 @@ The **Console** card shows the current console settings for TrueNAS, which cover
 
 **Configure** opens the **[Console](#console-configuration-screen)** configuration screen.
 
-### Console Configuration Screen
+### Console Configuration Screen {id="adv-settings_console-config"}
 
 **Console** settings configure how the [Console Setup menu]({{< ref "ConsoleSetupMenuSCALE" >}}) displays, the serial port it uses and the port speed, and the banner users see when accessing it.
 
@@ -145,13 +145,14 @@ There is also an option to configure a remote syslog server for recording system
 
 {{< trueimage src="/images/SCALE/SystemSettings/SyslogConfigScreen.png" alt="Syslog Config Screen" id="Syslog Config Screen" >}}
 
-{{< expand "Syslog Settings" "v" >}}
+The **Syslog Server** area contains two settings where you enter the remote syslog server DNS hostname or IP address. Add a colon and the port number to the hostname to use non-standard port numbers, like *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. **Add Syslog Server** shows this block of settings to configure a syslog server. Allows adding two servers. 
+
+{{< expand "Syslog Settings" "v" >}} {id="adv-settings_syslog-config"}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Use FQDN for Logging** | Select to include the fully qualified domain name (FQDN) in logs to identify systems with similar host names. |
 | **Syslog Level** | Select the minimum log priority level to send to the remote syslog server. The system only sends logs at or above this level. |
-| **Syslog Server** | Enter the remote syslog server DNS hostname or IP address. Add a colon and the port number to the hostname to use non-standard port numbers, like *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. **Add Syslog Server** shows a block of settings to configure a syslog server. Allows adding two servers. |
 | **Host** | **Syslog Server** setting. Sets the remote syslog server DNS host name or IP address. Allows using non-standard port numbers by adding a colon and the port number to the host name, like *mysyslogserver:1928*. Log entries are written to local logs and sent to the remote syslog server. | 
 | **Transport** | **Syslog Server** setting. Sets the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server connection. Selecting Transport Layer Security (TLS) shows the **TLS Certificate** field. This setting requires pre-configuring the server system certificate if not using the **Truenas_default** certificate. |
 | **TLS Certificate** | **Syslog Server** setting that shows after selecting **TLS** in **Transport**. Select the [transport protocol](https://tools.ietf.org/html/rfc8095) for the remote system log server TLS certificate from the dropdown list. Select the default or import a certificate using the **Credentials > Certificates** screen, **Certificates** card. |
@@ -177,7 +178,7 @@ The **Kernel** card shows options for configuring the Linux kernel installed wit
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemSettingsAdvancedKernel.png" alt="Kernel Card" id="Kernel Card" >}}
 
-{{< expand "Kernel Settings" "v" >}}
+{{< expand "Kernel Settings" "v" >}} {id="adv-settings_kernel-config"}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -203,7 +204,7 @@ The **Add Cron Job** and **Edit Cron Job** configuration screens display the sam
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddCronJobScreen.png" alt="Add Cron Job Screen" id="Add Cron Job Screen" >}}
 
-{{< expand "Cron Job Settings" "v" >}}
+{{< expand "Cron Job Settings" "v" >}} {id="adv-settings_cron-job"}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -232,7 +233,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddInitShutdownScriptConfigScreen.png" alt="Add Init/Shutdown Scripts" id="Add Init/Shutdown Scripts" >}}
 
-{{< expand "Init/Shutdown Script Settings" "v" >}}
+{{< expand "Init/Shutdown Script Settings" "v" >}} {id="adv-settings_init-shutdn"}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -260,7 +261,7 @@ The **Add Tunable** configuration screen allows setting up tunables to configure
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddTunableScreen.png" alt="Add Tunable Screen" id="Add Tunable Screen" >}}
 
-{{< expand "Tunable Settings" "v" >}} <!-- commenting out automation tag {id="system_advanced_tunables"} -->
+{{< expand "Tunable Settings" "v" >}} {id="system_advanced_add-tunables"} <!-- missing Type from the scrape, and still shows Sysctl, so we need to return to this when tagging is finished  -->
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -289,7 +290,7 @@ By default, new installations use several existing NTP servers. TrueNAS supports
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddNPTServerScreen.png" alt="Add NTP Servers Screen" id="Add NTP Server Screen" >}}
 
-{{< expand "Add NTP Server Settings" "v" >}}
+{{< expand "Add NTP Server Settings" "v" >}}  {id="adv-settings_ntp-servers"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -314,7 +315,7 @@ It also shows the resilivering priority setting.
 
 **Configure** opens the **Storage Settings** configuration screen.
 
-### Storage Settings Configuration Screen
+### Storage Settings Configuration Screen {id="adv-settings_storage"}
 
 The **Storage Settings** screen shows the current system dataset and resilvering priority.
 
@@ -334,7 +335,7 @@ You cannot move the system dataset to an encrypted pool with a passphrase set.
 
 **Save** implements setting changes.
 
-## Replication Card
+## Replication Card {id="adv-settings_replication"}
 
 The **Replication** card displays the number of replication tasks that can execute simultaneously on the system. It allows users to adjust the maximum number of replication tasks the system can perform simultaneously.
 
@@ -361,11 +362,13 @@ If the button is not clicked, TrueNAS terminates the session automatically and r
 
  **Configure** opens the **Access Settings** screen.
 
-### Access Settings Screen
+### Access Settings Screen {id="adv-settings_access"} <!-- the yaml lists settings that might alter this section -->
+
 The **Access Settings** screen allows users to configure the **Session Timeout** for the current account.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AccessSettingsScreen.png" alt="Access Settings Screen" id="Access Settings Screen" >}}
 
+**Session Timeout** sets the timeout for the current account in seconds. 
 Select a value that fits your needs and security requirements.
 Enter the value in seconds.
 
@@ -386,7 +389,7 @@ Enterprise-licensed systems include the **Allow Directory Service users to acces
 After enabling this option, TrueNAS automatically creates a new entry, named as the domain admin group, in the **Privileges** screen table. For example, if the domain is *ad03.mydomain.net*, then you should see a group of that name listed as well as any of the groups AD creates on the system.
 {{< /enterprise >}}
 
-## Allowed IP Addresses Card
+## Allowed IP Addresses Card {id="adv-settings_allowed-ip"}
 
 The **Allowed IP Addresses** card displays IP addresses and networks added to the system that are allowed to use the API and UI.
 If this list is empty, then all IP addresses are allowed to use the API and UI.
@@ -422,7 +425,7 @@ The **Self-Encrypting Drive** (SED) card shows when the system has self-encrypti
 
 **Configure** opens the **[Self-Encrypting Drive](#self-encrypting-drive-configuration-screen)** configuration screen.
 
-### Self-Encrypting Drive Configuration Screen
+### Self-Encrypting Drive Configuration Screen {id="adv-settings_sed"}
 
 The **Self-Encrypting Drive** configuration screen allows users to set the ATA security user and create a SED global password.
 
@@ -445,7 +448,7 @@ The **Isolated GPU Device(s)** card displays any isolated graphics processing un
 
 **Configure** opens the **Isolated GPU PCI Ids** screen, which allows users to isolate additional GPU devices.
 
-### Isolated GPU PCI IDs Configuration Screen
+### Isolated GPU PCI IDs Configuration Screen {id="adv-settings_gpu"}
 
 The **Isolate GPU PCI IDs** card shows GPU devices added in TrueNAS.
 **Configure** opens the configuration screen and allows you to isolate GPU devices for a virtual machine (VM).
@@ -465,8 +468,7 @@ When allocated to a VM, the isolated GPU connects to the VM as if it were physic
 
 The **Global Two Factor Authentication** card shows the status of global two-factor authentication, the tolerance window, and the status of two-factor authentication for SSH sessions. It provides access to the configuration screen that allows you to set up two-factor authentication (2FA) for your system.
 
-The card displays the following information:
-
+The card showss the following information:
 {{< truetable >}}
 | Field | Description |
 |-------|-------------|
@@ -483,7 +485,7 @@ The card displays the following information:
 
 {{< trueimage src="/images/SCALE/SystemSettings/GlobalTwoFactorAuthenticationSettingsScreen.png" alt="Global Two Factor Authentication Settings Screen" id="Global Two Factor Authentication Settings Screen" >}}
 
-{{< expand "Global Two Factor Authentication Settings" "v" >}}
+{{< expand "Global Two Factor Authentication Settings" "v" >}} {id="adv-settings_2fa-config"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
@@ -493,7 +495,7 @@ The card displays the following information:
 {{< /truetable >}}
 {{< /expand >}}
 
-## System Security Card
+## System Security Card {id="adv-settings_security"}
 
 {{< enterprise >}}
 The **System Security** card allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, general-purpose OS STIG compliance, and other administrator account rules.
@@ -535,7 +537,7 @@ It shows the status of failover, the default controller, and the network timeout
 
 **Configure** opens the **Failover** configuration screen.
 
-### Failover Configuration Screen
+### Failover Configuration Screen {id="adv-settings_failover"}
 
 The **Failover** screen shows settings used on TrueNAS Enterprise (HA) systems to turn the failover function on or off, sync the primary and standby controllers, and allow administrator users to configure failover. The main menu option and screen only display on Enterprise (HA) systems with the correct license applied.
 
@@ -547,11 +549,13 @@ The **Failover** screen shows settings used on TrueNAS Enterprise (HA) systems t
 | **Enable Automatic Failover** | Set the system to turn on failover. Leave clear to disable failover. |
 | **Default TrueNAS controller** | Sets the current active controller to be the default controller when both TrueNAS controllers are online and HA is enabled. To change the default TrueNAS controller, leave unselected on the default TrueNAS controller and allow the system to fail over. This process briefly interrupts system services. |
 | **Network Timeout Before Initiating Failover** | Sets the number in seconds to wait after a network failure before triggering a failover. The default value is **0**, which means failover occurs immediately or after two seconds when the system is using a link aggregate. |
-| **Sync To Peer** | Initiates a sync operation that copies over the primary controller configuration to the standby controller. Opens the **[Sync To Peer](#sync-to-or-from-peer)** dialog to confirm the operation. |
-| **Sync From Peer** | Initiates a sync operation that copies over the standby controller configuration to the primary controller. |
 {{< /truetable >}}
+**Sync To Peer** initiates a sync operation that copies over the primary controller configuration to the standby controller. Opens the **[Sync To Peer](#sync-to-or-from-peer)** dialog to confirm the operation.
 
-## Sync To or From Peer
+**Sync From Peer** initiates a sync operation that copies over the standby controller configuration to the primary controller.
+
+## Sync To or From Peer {id="adv-settings_sync-2-peer"}
+
 **Sync To Peer** and **Sync From Peer** buttons each open a confirmation dialog before TrueNAS performs the operation requested.
 
 ![FailoverSyncToPeerDialog](/images/SCALE/SystemSettings/FailoverSyncToPeerDialog.png "Failover Sync To Peer Dialog")
