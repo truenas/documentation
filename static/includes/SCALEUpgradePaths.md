@@ -5,7 +5,7 @@ You can then upgrade directly from the latest maintenance release to the latest 
 
 {{< hint type=note >}}
 This chart shows the basic upgrade paths between TrueNAS major versions.
-Depending on your use case and risk tolerance, you may prefer to delay upgrading to allow additional time for testing and stability.
+Depending on your use case and risk tolerance, you might prefer to delay upgrading to allow additional time for testing and stability.
 See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from Developer to Mission Critical.
 {{< /hint >}}
 
@@ -30,7 +30,8 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
               G["24.04.2.5 (Dragonfish)"] -->|update| H
               H["24.10.2.4 (Electric Eel)"] -->|update| I
               I["25.04.2.6 (Fangtooth)"] -->|update| J
-              J["25.10.2.1 (Goldeye)"]
+              J["25.10.2.1 (Goldeye)"] -->|"anticipated"| K
+              K["TrueNAS 26.0"]
             {{< /mermaid >}}
           </div>
         </div>
@@ -53,13 +54,14 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
             flowchart LR
               A["11.3-U5"] -->|update| B
               B["12.0-U8.1"] -->|update| C
-              C["13.0-U6.8"] -->|ISO install| G
+              C["13.0-U6.8"] -->|ISO install| H
               C -->|update| E
               D["23.10.2 (Cobia)"] -->|update| E
               E["24.04.2.5 (Dragonfish)"]  -->|update| F
               F["24.10.2.4 (Electric Eel)"] -->|update| G
               G["25.04.2.6 (Fangtooth)"] -->|update| H
-              H["25.10.2.1 (Goldeye)"]
+              H["25.10.2.1 (Goldeye)"] -->|"anticipated"| I
+              I["TrueNAS 26.0"]
             {{< /mermaid >}}
           </div>
         </div>
