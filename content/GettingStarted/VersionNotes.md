@@ -42,11 +42,14 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
 
 **Notable changes:**
 
-* Fixes pool creation errors on systems with a USB boot drive ([NAS-139947](https://ixsystems.atlassian.net/browse/NAS-139947)).
-  Resolves an error that prevented new storage pool creation when the TrueNAS boot pool resided on a USB device. Affected systems could not create additional pools through the web interface. Note that TrueNAS does not recommend USB boot devices. Installing on SATA, SAS, or NVMe flash media is recommended.
+* Fixes read authentication errors caused by block cloning between encrypted ZVOLs with different encryption keys ([NAS-140263](https://ixsystems.atlassian.net/browse/NAS-140263)).
+  Block cloning between encrypted ZVOLs that did not share compatible encryption keys was allowed, but subsequent reads of the cloned data produced authentication failures. TrueNAS now verifies that encryption keys match before allowing a block clone operation to proceed.
 
-* Fixes bond status alert check failures caused by a busy Netlink socket ([NAS-140041](https://ixsystems.atlassian.net/browse/NAS-140041)).
-  Resolves an issue where the system could not check network bond status for alerts due to a "Netlink socket busy" error. Bond interface status alerts did not fire correctly on affected systems.
+* Fixes Active Directory users and groups not found when using the idmap_ad backend with RFC2307 ([NAS-140077](https://ixsystems.atlassian.net/browse/NAS-140077)).
+  The idmap_ad backend failed when smb.conf was configured to disallow a private krb5.conf, preventing Active Directory users and groups from being resolved. Shares and services that depend on directory service identities were inaccessible on affected systems.
+
+* Fixes pool creation errors on systems with a USB boot drive or other disk with a duplicate serial number ([NAS-139947](https://ixsystems.atlassian.net/browse/NAS-139947)).
+  The disk availability check incorrectly blocked pool creation if any disk on the system had a duplicate serial number, even when that disk was unrelated to the new pool. USB boot drives commonly have blank or duplicate serial numbers and were the most frequent cause. Note that TrueNAS does not recommend USB boot devices. Installing on SATA, SAS, or NVMe flash media is recommended.
 
 * Fixes issues with log VDEV removal ([NAS-140080](https://ixsystems.atlassian.net/browse/NAS-140080)).
   Resolves errors that could occur when removing a log VDEV from a storage pool. Affected systems encountered failures during the log VDEV removal process.
@@ -54,8 +57,11 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
 * Fixes link aggregation failover not working out of the box ([NAS-136978](https://ixsystems.atlassian.net/browse/NAS-136978)).
   Resolves an issue where the MII polling interval was not correctly configured for bonding interfaces using the FAILOVER protocol. The bonding driver could not monitor slave link status, causing failover to fail silently when an interface lost carrier.
 
-* Fixes a memory handling issue with NTB window allocation during link changes ([NAS-139627](https://ixsystems.atlassian.net/browse/NAS-139627)).
-  Resolves an issue where Non-Transparent Bridge (NTB) window memory was not properly retained during network link state changes. This could cause instability on systems using NTB interconnects, such as TrueNAS Enterprise High Availability (HA) systems.
+* Fixes Netlink socket errors that caused network interface operations to fail ([NAS-140041](https://ixsystems.atlassian.net/browse/NAS-140041)).
+  Concurrent netlink route operations could collide at the kernel level, producing "Netlink socket busy" (EBUSY) errors. This was most visible as bond status alert failures. The fix serializes netlink route operations to prevent collisions, increases the retry limit, and adds a short delay between retries to reduce the chance of repeated failures.
+
+* Fixes NTB transport memory allocation failures during link state changes ([NAS-139627](https://ixsystems.atlassian.net/browse/NAS-139627)).
+  Non-Transparent Bridge (NTB) transport memory windows were allocated and freed on every link up/down event. Allocating several megabytes of physically contiguous memory on a running system could fail, causing instability. Memory windows are now pre-allocated at boot, avoiding repeated allocation attempts during link changes. This primarily affects TrueNAS Enterprise High Availability (HA) systems.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14130" target="_blank">TrueNAS 25.10.2.2 (Goldeye) Changelog</a> in Jira.
 
