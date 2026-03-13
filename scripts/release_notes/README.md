@@ -65,14 +65,39 @@ pip install -r requirements.txt
 ```
 
 **Required packages:**
-- `requests` - HTTP requests for fetching Jira XML
+- `requests` - HTTP requests for fetching Jira XML and GitHub API
 - `beautifulsoup4` - XML parsing
 - `lxml` - XML parser backend
 
 **Optional package:**
 - `anthropic` - Only needed if using Claude API mode (vs manual mode)
 
-### 2. Make Scripts Executable
+### 2. Set Up a GitHub Token (Recommended)
+
+The `prep` command searches GitHub for PR links when Jira's XML API does not return them (this happens when developers post PR links in internal-only Jira comments). A GitHub token raises the search API rate limit from 10 to 30 requests per minute.
+
+1. Go to **GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)**
+2. Click **Generate new token (classic)**
+3. No scopes are required — the `truenas` repos are public
+4. Copy the token and set it as an environment variable:
+
+**Bash (WSL/Linux):**
+```bash
+# Add to ~/.bashrc to persist across sessions
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxx
+```
+
+**PowerShell (Windows):**
+```powershell
+$env:GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"
+```
+
+Or pass it directly at runtime:
+```bash
+python release_notes.py prep --version 25.10.X --github-token ghp_xxxxxxxxxxxx
+```
+
+### 3. Make Scripts Executable
 
 ```bash
 chmod +x process_jira_export.py
@@ -119,7 +144,8 @@ python release_notes.py prep --version 25.10.X --csv /path/to/file.csv
 **What this does:**
 - Reads and validates the CSV
 - Fetches XML from the public Jira XML API for each ticket
-- Extracts PR links, severity scores, user-facing flags
+- Extracts PR links from Jira XML; falls back to a GitHub org-wide search if Jira returns none (this handles cases where developers post PR links in internal-only Jira comments)
+- Calculates severity scores and user-facing flags
 - Generates `output/25_10_X/prompt.txt` for Claude Code
 
 **Output directory:** `scripts/release_notes/output/25_10_X/`
@@ -301,14 +327,19 @@ Notable changes must follow TrueNAS documentation standards:
 ### "Could not find PR links for ticket"
 
 **Causes:**
-1. Bugclerk bot hasn't commented yet
-2. PR link uses different version format
-3. Ticket resolved without PR (rare)
+1. Developer posted PR link in an internal-only Jira comment (not visible to the public XML API)
+2. Bugclerk bot hasn't commented yet
+3. Ticket resolved without a PR (rare)
 
-**Solution:**
-- Check ticket manually in Jira
-- Add PR link manually if needed
+**What happens automatically:**
+The script falls back to searching GitHub for PRs referencing the ticket key across all `truenas` repos. This covers case 1, which is increasingly common.
+
+**If GitHub search also returns nothing:**
+- Check the ticket manually in Jira (you may be able to see the PR link if you have internal access)
+- Search GitHub manually: `NAS-XXXXX org:truenas type:pr`
 - Some tickets legitimately have no PRs (e.g., documentation-only changes)
+
+**To improve GitHub search rate limits**, set a `GITHUB_TOKEN` — see [Set Up a GitHub Token](#2-set-up-a-github-token-recommended).
 
 ### "Could not find version section in VersionNotes.md"
 
@@ -455,7 +486,7 @@ fi
 Potential improvements for future versions:
 
 - **Automatic Jira API integration** (eliminate CSV export step)
-- **GitHub PR analysis** (files changed, diff size for impact assessment)
+- **GitHub PR diff analysis** (files changed, diff size for impact assessment)
 - **Breaking changes detection** (auto-flag changes requiring user action)
 - **Historical comparison** (track recurring issues across releases)
 - **Multi-release changelog aggregation**
