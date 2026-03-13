@@ -59,6 +59,8 @@ def main():
     )
     prep_parser.add_argument("--version", required=True, help="Release version, e.g. 25.10.2.2")
     prep_parser.add_argument("--csv", type=Path, help="Path to Jira CSV export (optional override)")
+    prep_parser.add_argument("--github-token", type=str, default=None,
+                             help="GitHub personal access token for PR lookup (or set GITHUB_TOKEN env var)")
 
     # apply subcommand
     apply_parser = subparsers.add_parser(
@@ -103,10 +105,10 @@ def run_prep(args) -> None:
 
     # Step 1: Process CSV
     print("Step 1/2: Processing Jira CSV export...")
-    run_script("process_jira_export.py", [
-        "--csv", str(csv_path),
-        "--version", version,
-    ])
+    process_args = ["--csv", str(csv_path), "--version", version]
+    if args.github_token:
+        process_args += ["--github-token", args.github_token]
+    run_script("process_jira_export.py", process_args)
 
     # Step 2: Generate Claude prompt
     tickets_json = output_dir(version) / "tickets.json"

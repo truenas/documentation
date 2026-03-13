@@ -7,9 +7,10 @@ Get up and running with release notes automation in 5 minutes.
 ## Prerequisites
 
 - Python 3.8 or higher
-- Internet connection (to fetch Jira data)
+- Internet connection (to fetch Jira data and GitHub PR links)
 - Jira CSV export file
 - Claude Code (this tool)
+- GitHub personal access token (optional but recommended — see below)
 
 ## Installation
 
@@ -23,6 +24,23 @@ pip install -r requirements.txt
 ```bash
 cd scripts/release_notes
 pip install -r requirements.txt
+```
+
+## GitHub Token Setup (Recommended)
+
+The `prep` command searches GitHub for PR links when they are not available in Jira's public API (developers sometimes post them in internal-only comments). A token raises the GitHub search rate limit from 10 to 30 requests per minute.
+
+Get a token at **GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)**.
+No scopes are needed since `truenas` repos are public.
+
+**Bash (add to `~/.bashrc` to persist):**
+```bash
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxx
+```
+
+**PowerShell:**
+```powershell
+$env:GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"
 ```
 
 ## Quick Workflow
@@ -60,11 +78,16 @@ python release_notes.py prep --version 25.10.X
 python release_notes.py prep --version 25.10.X
 ```
 
-This processes the CSV and generates a Claude prompt at `output/25_10_X/prompt.txt`.
+This processes the CSV, fetches PR links from Jira XML (with a GitHub search fallback), and generates a Claude prompt at `output/25_10_X/prompt.txt`.
 
 > **Custom CSV path:** If your file is not in the default location:
 > ```
 > python release_notes.py prep --version 25.10.X --csv /path/to/file.csv
+> ```
+
+> **Pass token inline** if you prefer not to use the environment variable:
+> ```
+> python release_notes.py prep --version 25.10.X --github-token ghp_xxxxxxxxxxxx
 > ```
 
 ### Step 3: Run Claude Code (5 minutes)
