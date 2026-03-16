@@ -5,7 +5,7 @@ You can then upgrade directly from the latest maintenance release to the latest 
 
 {{< hint type=note >}}
 This chart shows the basic upgrade paths between TrueNAS major versions.
-Depending on your use case and risk tolerance, you may prefer to delay upgrading to allow additional time for testing and stability.
+Depending on your use case and risk tolerance, you might prefer to delay upgrading to allow additional time for testing and stability.
 See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from Developer to Mission Critical.
 {{< /hint >}}
 
