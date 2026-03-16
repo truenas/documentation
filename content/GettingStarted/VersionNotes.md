@@ -36,7 +36,7 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.2.2" data-tab-label="25.10.2.2">
 
-March 13, 2026
+March 17, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
 
