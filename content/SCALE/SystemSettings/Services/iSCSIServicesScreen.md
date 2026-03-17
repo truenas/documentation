@@ -11,7 +11,7 @@ aliases:
  - /scale/scaleuireference/systemsettings/services/iscsiservicesscreen/
 ---
 
-
+<!-- tagged in the shares > iscsis article for iscsi global configuration -->
 The **iSCSI** screen displays settings to configure iSCSI block shares.
 
 {{< expand "About the Block (iSCSI) Sharing Protocol" "v" >}}

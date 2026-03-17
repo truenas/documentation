@@ -149,7 +149,7 @@ This includes data written and space allocated to child datasets of this dataset
 **Manage User Quota** opens the [**User Quotas**]({{< relref "QuotaScreens.md" >}}) screen.
 **Manage Group Quotas** opens the [**Group Quotas**]({{< relref "QuotaScreens.md" >}}) screen.
 
-**Edit** opens the **[Capacity Settings]({{< ref "CapacitySettings" >}})** screen where you can set quotas for the dataset.
+**Edit** opens the **[Capacity Settings]({{< ref "CapacitySettings" >}})** screen where you can set quotas for the dataset. <!-- same settings as the Add/Edit User Qutoa Screen -->
 
 ### Data Protection Card
 

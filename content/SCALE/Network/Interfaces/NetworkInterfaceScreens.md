@@ -56,7 +56,7 @@ The setting on the **Add Interface** and **Edit Interface** screens are almost i
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
-### Interface Settings
+### Interface Settings {id="network_interfaces_add"}
 
 Interface settings configure the network interface name, type, and IP address assignment. These settings are common to the three interface types.
 
@@ -76,7 +76,7 @@ Interface settings configure the network interface name, type, and IP address as
 | **MTU** | Sets the maximum transmission unit (MTU), which is the largest protocol data unit that can be communicated. The largest workable MTU size varies  with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of **1500**. |
 {{< /truetable >}}
 
-### Bridge Settings
+### Bridge Settings {id="network_interfaces_add-bridge"}
 
 Bridge settings show after setting **Type** to **Bridge**. TrueNAS automatically populates the **Name** with the default **br1**.
 Use **Description** to further define or clarify how or where the bridge is used.
@@ -85,7 +85,7 @@ Use **Description** to further define or clarify how or where the bridge is used
 
 **Bridge Members** sets the network interfaces to include in the bridge to the option selected on the dropdown list. |
 
-### Link Aggregation Settings
+### Link Aggregation Settings  {id="network_interfaces_add-lagg"}
 
 Link aggregation (LAGG) settings show after setting  **Type** to **Link Aggregation**. TrueNAS automatically populates **Name** with the default **bond1**.
 Use **Description** to further define or clarify how or where the LAGG is used.
@@ -101,7 +101,7 @@ Use **Description** to further define or clarify how or where the LAGG is used.
 | **LACPDU Rate** | Shows when the protocol is set to **LCAP**. Shows a dropdown list with two options: **Slow** or **Fast**. |
 {{< /truetable >}}
 
-### VLAN Settings
+### VLAN Settings  {id="network_interfaces_add-vlan"}
 
 VLAN settings show after setting **Type** to **VLAN**. TrueNAS automatically populates the **Name** with the default **vlan1**.
 Use **Description** to further define or clarify how or where the bridge is used.

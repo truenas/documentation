@@ -20,7 +20,8 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 
 {{< include file="/static/includes/HAUninterruptiblePowerSupplyNotice.md" >}}
 
-### General Options and Monitor Settings
+### General Options and Monitor Settings {id="services_ups-gen-monitor"}
+
 **General Options** setting specify required UPS mode and connection. These settings change based on the **Master** or **Slave** UPS mode setting.
 
 {{< trueimage src="/images/SCALE/SystemSettings/UPSServiceSettingsGeneralOptions.png" alt="UPS Options" id="UPS Options" >}}
@@ -36,7 +37,8 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | **Port or Hostname** | Required. Enter or select the serial or USB port connected to the UPS from the dropdown list. Options include a list of port on your system and **auto**. Select **auto** to automatically detect and manage the USB port settings.<br> When selecting an SNMP driver, enter the IP address or host name of the SNMP UPS device. |
 {{< /truetable >}}
 
-### Monitor Settings
+### Monitor Settings {id="services_ups-monitor"}
+
 **Monitor** settings specify the primary username and password, other users that have administrative access to the UPS service, and whether the default configuration listens on all interfaces.
 
 {{< truetable >}}
@@ -48,7 +50,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | **Remote Monitor** | Select to have the default configuration to listen on all interfaces using the known values of user: **upsmon** and password: **fixmepass**. |
 {{< /truetable >}}
 
-### Shutdown Settings
+### Shutdown Settings {id="services_ups-shutdown"}
 **Shutdown** settings specify the UPS shutdown mode, command, and timer for the UPS service.
 
 {{< trueimage src="/images/SCALE/SystemSettings/UPSServicesSettingsShutdown.png" alt="UPS Service Shutdown Settings" id="UPS Service Shutdown Settings" >}}
@@ -62,7 +64,8 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 | **Power off UPS** | Select to power off the UPS after shutting down the system. |
 {{< /truetable >}}
 
-### Other Options Settings
+### Other Options Settings {id="services_ups-other"}
+
 **Other Options** settings specify warning and host sync times, a description for the UPS, and any additional parameters you want to apply to the UPS service.
 
 {{< trueimage src="/images/SCALE/SystemSettings/UPSServiceSettingsOtherOptions.png" alt="UPS Service Other Options" id="UPS Service Other Options" >}}

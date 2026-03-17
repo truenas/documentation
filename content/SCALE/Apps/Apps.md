@@ -300,7 +300,7 @@ When converted, an custom application cannot be converted back to a catalog vers
 
 **Convert** begins the conversion process.
 
-#### Roll Back Apps
+#### Roll Back Apps {id="apps_rollback"}
 
 **Roll Back** on the <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown opens a dialog to revert an application to the snapshot of an earlier installed version.
 

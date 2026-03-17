@@ -66,12 +66,21 @@ The **Update Production Status** dialog can set a TrueNAS Enterprise system to p
 
 **Proceed** starts the process and sets the system to a production system.
 
-### Send Feedback Window
+### Send Feedback Window {id="system_gen-settings_feedback"}
 
 The **Send Feedback** window shows two options: **Rate this page** and **Report a Bug**, which is the default selection after clicking **File Ticket**.
+
 The **Rate this page** is the default selection after clicking the option to rate a new screen shown in early release with new functional screens or redesigned screens.
 
-#### Report a Bug
+**Message** is a text entry field for a longer description of what steps were taken and the result. The field provides examples of what to enter.
+
+**Take screenshot of the current page**, selected by default, takes a screenshot of the current screen.
+
+**Attach additional images** opens a file browser where you can locate and attach saved logs, screenshots, or video files that help explain the issue reported in the ticket.
+
+**Submit** sends the rating information to TrueNAS.
+
+#### Report a Bug {id="system_gen-settings_file-ticket"}
 
 {{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
 
@@ -132,6 +141,20 @@ This feature automatically emails TrueNAS when certain conditions occur in a Tru
 {{< trueimage src="/images/SCALE/SystemSettings/ProactiveSupportForm.png" alt="Proactive Support Form" id="Proactive Support Form" >}}
 
 **Primary Contact** and **Secondary Contact** fields specify the customer name, title, and contact information.
+{{< truetable >}}
+| Settings | Description |
+|----------|-------------|
+| **Name** |  |
+| **Title** |  |
+| **Email** |  |
+| **Phone Number** |  |
+| **Secondary Name** |  |
+| **Secondary Title** |  |
+| **Secondary Email** |  |
+| **Secondary Phone Number** |  |
+| **Enable iXSystems Proactive Support** |  |
+{{< /truetable }}
+
 
 **Enable TrueNAS Proactive Support** and **Save** notifies the TrueNAS team that the system is configured for proactive support.
 

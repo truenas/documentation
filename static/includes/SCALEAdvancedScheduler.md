@@ -5,7 +5,26 @@
 Choosing a **Presets** option populates in the rest of the fields.
 To customize a schedule, enter [crontab](https://www.freebsd.org/cgi/man.cgi?crontab(5)) values for the `Minutes/Hours/Days`.
 
-These fields accept standard [cron](https://www.freebsd.org/cgi/man.cgi?query=cron) values.
+#### Scheduler Presets {id="scheduler_presets"}
+
+**Minutes** is the time values when the task runs. Accepts standard <a href="https://man7.org/linux/man-pages/man5/crontab.5.html" target="_blank">crontab(5)</a> values.
+<br>Symbols: A comma (,) separates individual values. An asterisk (*) means match all values.
+Hyphenated numbers (1-5) sets a range of time.
+</br> A slash (/) designates a step in the value: */2 means every other minute.
+</br> Example: 30-35 in Minutes, 1,14 in Hours, and */2 in Days means the task runs on 1:30 - 1:35 AM and 2:30-2:35 PM every other day.
+
+**Hours** is the time values when the task runs. Accepts standard <a href="https://man7.org/linux/man-pages/man5/crontab.5.html" target="_blank">crontab(5)</a> values.
+<br>Symbols: A comma (,) separates individual values. An asterisk (*) means match all values.
+Hyphenated numbers (1-5) sets a range of time. A slash (/) designates a step in the value: */2 means every other minute.
+Example: 30-35 in Minutes, 1,14 in Hours, and */2 in Days means the task runs on 1:30 - 1:35 AM and 2:30- 2:35 PM every other day.
+
+**Days** is the time values when the tasks run. Accepts standard <a href="https://man7.org/linux/man-pages/man5/crontab.5.html" target="_blank">crontab(5)</a> values. 
+<br>Symbols: A comma (,) separates individual values. An asterisk (*) means match all values.
+</br> Hyphenated numbers (1-5) sets a range of time.
+</br> A slash (/) designates a step in the value: */2 means every other minute.
+</br> Example: 30-35 in Minutes, 1,14 in Hours, and */2 in Days means the task runs on 1:30 - 1:35 AM and 2:30 - 2:35 PM every other day.
+
+Preset fields accept standard [cron](https://www.freebsd.org/cgi/man.cgi?query=cron) values.
 The simplest option is to enter a single number in the field.
 The task runs when the time value matches that number.
 For example, entering *10* means that the job runs when the time is ten minutes past the hour.

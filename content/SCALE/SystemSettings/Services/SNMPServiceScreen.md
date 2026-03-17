@@ -20,7 +20,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 ![SCALESNMPOptions](/images/SCALE/SystemSettings/SCALESNMPOptions.png "TrueNAS SNMP Service Options")
 
-### SNMP v3 Options
+### SNMP v3 Options {id="services_snmp-v3"}
 
 {{< truetable >}}
 | Setting | Description |
@@ -30,7 +30,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 | **Community** | Enter a community other than the default **public** to increase system security. Value can only contain alphanumeric characters, underscores (_), dashes (-), periods (.), and spaces. Not required and can leave this empty for SNMPv3 networks. |
 {{< /truetable >}}
 
-### SNMP v3 Support Options
+### SNMP v3 Support Options {id="services_snmp-v3-support"}
 
 ![SNMPServiceSettingsV3Options](/images/SCALE/SystemSettings/SNMPServiceSettingsV3Options.png "TrueNAS SNMP Service SNMP v3 Options")
 
@@ -45,7 +45,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 | **Privacy Passphrase** | Enter a separate privacy passphrase. **Password** is used when this is left empty. |
 {{< /truetable >}}
 
-### Other Options
+### Other Options {id="services_snmp-v3-other"}
 
 {{< include file="/static/includes/auxiliary-parameters-caution.md" >}}
 

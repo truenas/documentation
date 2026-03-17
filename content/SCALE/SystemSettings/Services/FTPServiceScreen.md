@@ -20,7 +20,7 @@ The SSH options provide secure transfer methods for critical objects like config
 The **FTP** service has basic and advanced setting options. 
 Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i> for **FTP** to open the **Basic Settings** configuration screen.
 
-## FTP Basic Settings
+## FTP Basic Settings {id="services_ftp-basic"}
 
 To configure FTP, go to **System > Services** and find **FTP**, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i>.
 
@@ -44,7 +44,7 @@ To configure FTP, go to **System > Services** and find **FTP**, then click <i cl
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPAdvancedSettingsAccess.png" alt="FTP Advanced Settings Access" id="FTP Advanced Settings Access" >}}
 
-#### Access Settings
+#### Access Settings {id="services_ftp-access"}
 **Access** settings specify user login, file, and directory access permissions.
 
 {{< truetable >}}
@@ -61,7 +61,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPAdvancedSettingsTLS.png" alt="FTP Advanced Settings TLS" id="FTP Advanced Settings TLS" >}}
 
-#### TLS Settings
+#### TLS Settings {id="services_ftp-tls"}
 **TLS** settings specify the authentication methods, such as if you want to encrypt the data you transfer across the Internet.
 
 {{< truetable >}}
@@ -84,7 +84,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **TLS IP Address Required** | Select to require the client certificate IP address to match the client IP address. |
 {{< /truetable >}}
 
-### Other Options
+### Other Options {id="services_ftp-other"}
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPAdvancedSettingsOtherOptions.png" alt="FTP Advanced Settings Other Options" id="FTP Advanced Settings Other Options" >}}
 
@@ -103,7 +103,7 @@ Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectivel
 | **Auxiliary Parameters** | Used to add additional [proftpd(8)](https://linux.die.net/man/8/proftpd) parameters. |
 {{< /truetable >}}
 
-### Bandwidth Settings
+### Bandwidth Settings {id="services_ftp-bandwidth"}
 **Bandwidth** settings specify the space you want to allocate for local and anonymous user uploads and downloads.
 
 {{< trueimage src="/images/SCALE/SystemSettings/FTPAdvancedSettingsBandwidth.png" alt="FTP Advanced Settings Bandwidth" id="FTP Advanced Settings Bandwidth" >}}

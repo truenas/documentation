@@ -25,7 +25,7 @@ See [Security Recommendations](https://www.truenas.com/docs/solutions/optimizati
 
 You must also configure SSH backup credentials to allow SSH access. See [SSH Screens]({{< ref "sshcredentialscreens" >}}) for more information.
 
-## SSH Basic Settings Options
+## SSH Basic Settings Options {id="services_ssh-basic"}
 
 The **Basic Settings** options display by default when you edit the SSH service.
 
@@ -41,7 +41,7 @@ The **Basic Settings** options display by default when you edit the SSH service.
 | **Allow TCP Port Forwarding** | Select to allow users to bypass firewall restrictions using [SSH port forwarding](https://www.ssh.com/academy/ssh/tunneling-example). For best security, leave disabled and deny shell access to users. |
 {{< /truetable >}}
 
-### SSH Advanced Settings Options
+### SSH Advanced Settings Options {id="services_ssh-advanced"}
 **Advanced Settings** include the **General Options** settings. Advanced settings specify bind interfaces, SFTP settings, ciphers and any additional parameters you want to use.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SSHServicesAdvancedSettings.png" alt="SSH Advanced Settings Options" id="SSH Advanced Settings Options" >}}

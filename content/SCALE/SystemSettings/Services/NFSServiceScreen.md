@@ -13,7 +13,6 @@ doctype: reference
 ---
 
 
-
 The **System > Services** screen includes two options on the **NFS** service row:
 * **View Sessions** opens the [**NFS Sessions** screen]({{< ref "NFSSharesScreens#nfs-sessions-screen" >}}).
 * <span class="material-icons">edit</span> **Configure** icon opens the **NFS Service** screen.
@@ -32,7 +31,7 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ServicesNFSSettingsScreen.png" alt="NFS Service Settings" id="NFS Service Settings" >}}
 
-### General Options Settings
+### General Options Settings {id="sevices_nfs-general"}
 
 {{< truetable >}}
 | Setting | Description |
@@ -42,7 +41,7 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 | **Specify number of threads manually** | Shows after disabling **Calculate number of threads dynamically**. Enter an optimal number of threads used by the kernel NFS server. |
 {{< /truetable >}}
 
-### NFSv4 Settings
+### NFSv4 Settings {id="sevices_nfs-nfsv4"}
 
 {{< truetable >}}
 | Setting | Description |
@@ -53,7 +52,7 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 | **Require Kerberos for NFSv4** | Select to force NFS shares to fail if the Kerberos ticket is unavailable. |
 {{< /truetable >}}
 
-### Ports Settings
+### Ports Settings {id="sevices_nfs-ports"}
 
 {{< truetable >}}
 | Setting | Description |
@@ -63,7 +62,7 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 | **rpc.lockd(8) bind port** | Enter a port to bind [rpc.lockd(8)](https://linux.die.net/man/8/rpc.lockd). |
 {{< /truetable >}}
 
-### Other Options Settings
+### Other Options Settings {id="sevices_nfs-other"}
 
 {{< truetable >}}
 | Setting | Description |

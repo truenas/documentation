@@ -25,7 +25,7 @@ The **SMB** service screen displays setting options to configure TrueNAS SMB ser
 
 Click **Save** or **Cancel** to close the configuration screen and return to the **Services** screen.
 
-### Basic Settings
+### Basic Settings {id="services_smb-basic"}
 
 {{< truetable >}}
 | Setting | Description |
@@ -42,9 +42,11 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 
 {{< include file="/static/includes/SMBShareMSDOSalert.md" >}}
 
-### Advanced Settings
-
+### Advanced Settings {id="services_smb-advanced"}
+<!-- change the images to side-by-side with caption and figure number -->
 {{< trueimage src="/images/SCALE/SystemSettings/SMBServiceAdvanced1.png" alt="SMB Service Advanced Settings" id="SMB Service Advanced Settings" >}}
+
+{{< trueimage src="/images/SCALE/SystemSettings/SMBServiceAdvanced2.png" alt="SMB Service Advanced Settings (continued)" id="SMB Service Advanced Settings (continued)" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -58,13 +60,6 @@ Click **Save** or **Cancel** to close the configuration screen and return to the
 | **Multichannel** | SMB multichannel allows servers to use multiple network connections simultaneously by combining the bandwidth of several network interface cards (NICs) for better performance. SMB multichannel does not function if you combine NICs into a LAGG. |
 | **Enable Search (Spotlight)** | Allows macOS clients to use Spotlight to search for file contents on SMB shares. Enables the TrueSearch indexing service, which indexes all enabled, non-encrypted SMB shares. Requires an Enterprise license or TrueNAS Connect configuration. When the setting is unavailable, a notice displays with a link to configure TrueNAS Connect. Encrypted datasets are not indexed. |
 | **Stateful Failover** | Available in High Availability (HA) configurations with an Enterprise license. Maintains SMB session state across HA failover events. SMB clients recover existing connections without re-authentication after a controller failover. This setting is incompatible with **Enable SMB1 support** and with shares using the **Multi-Protocol Share** or **Legacy Share** purpose. |
-{{< /truetable >}}
-
-{{< trueimage src="/images/SCALE/SystemSettings/SMBServiceAdvanced2.png" alt="SMB Service Advanced Settings (continued)" id="SMB Service Advanced Settings (continued)" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
 | **Administrators Group** | Enter or select members from the dropdown list. Members of this group are local administrators and automatically have privileges to take ownership of any file in an SMB share, reset permissions, and administer the SMB server through the Computer Management MMC snap-in. |
 | **Guest Account** | Select the account for guest access from the dropdown list. The default is **nobody**. The selected account must have permission for the shared pool or dataset. To adjust permissions, edit the dataset Access Control List (ACL), add a new entry for the chosen guest account, and configure the permissions in that entry. If you delete the selected **Guest Account**, the field resets to **nobody**. |
 | **File Mask** | Overrides default **0664** file creation mask, which creates files with read and write access for everybody. |

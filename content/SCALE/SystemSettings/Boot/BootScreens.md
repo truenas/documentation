@@ -48,7 +48,7 @@ Each boot environment row on the table shows icon buttons for available actions.
 | <span class="iconify" data-icon="mdi:bookmark">Keep</span>**Keep** | Opens the **Keep** dialog, and toggles the boot environment action to **Unkeep**. Use to prevent the TrueNAS updater from automatically deleting the environment to make more space for a new environment when there is insufficient space to complete the update. |
 {{< /truetable >}}
 
-### Boot Pool Status
+### Boot Pool Status {id-"boot-pool_status"}
 
 The **System > Boot > Boot Pool Status** screen shows the status of the current boot pool.
 It includes the current status, the path, and the number of read, write, and checksum errors.
@@ -64,7 +64,7 @@ The <span class="material-icons">more_vert</span> shows two options, **Replace**
 
 **Attach** opens the [**Attach** window](#attach-screen).
 
-#### Attach Window
+#### Attach Window {id-"boot-pool_status-attach"}
 
 The **Attach** window setting, accessed from the **Boot Status** screen, specifies a device as the disk member to attach to the boot environment, and how much of the device it can use.
 
@@ -76,7 +76,7 @@ The **Attach** window setting, accessed from the **Boot Status** screen, specifi
 
 **Save** makes the change and closes the window.
 
-#### Replace Window
+#### Replace Window {id-"boot-pool_status-replace"}
 
 The **Replace** window settings, accessed from the **Boot Status** screen, specify a replacement device for the current boot environment device.
 
@@ -86,7 +86,7 @@ The **Replace** window settings, accessed from the **Boot Status** screen, speci
 
 **Save** makes the change and closes the window.
 
-### Clone Boot Environment Screen
+### Clone Boot Environment Screen {id-"boot-pool_clone"}
 
 Each time the system updates to a new software release, it creates a new boot environment. The <span class="iconify" data-icon="mdi:content-copy">Clone</span>**Clone** icon button opens the **Clone Boot Environment** screen where you can clone an existing boot environment to create an operating system restore point.
 
@@ -94,7 +94,7 @@ Each time the system updates to a new software release, it creates a new boot en
 
 **Name** - The name of the new cloned boot environment. The name can use upper and lowercase alphanumeric and special characters dash (-), underscore (_), and periods (.).
 
-**Source** shows the selected boot environment to be cloned.
+**Source** shows the the build on the selected boot environment to be cloned.
 
 ### Batch Operations
 

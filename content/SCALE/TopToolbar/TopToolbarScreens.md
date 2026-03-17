@@ -71,7 +71,7 @@ The **Search UI** global search bar allows users to search for screens and eleme
 
 {{< include file="/static/includes/AlertsSCALE.md" >}}
 
-### Settings
+### Settings {id="toolbar_settings-change-passwd"}
 
 The <span class="material-icons">account_circle</span> **Settings** button displays a menu of general system settings options.
 The options are **Change Password**, **Two-Factor Authentication** (when Global 2FA is enabled), **My API Keys**, **Guide**, and **Log Out**.
@@ -89,6 +89,16 @@ The <span class="material-icons">exit_to_app</span> **Log Out** button logs the 
 ### Power
 
 The **Power** <span class="material-icons">power_settings_new</span> button provides two options that let the user restart or shut down their TrueNAS system.
+
+#### Reason for Restart {id="toobar_power_reason"}
+
+**Restart** and **Shutdown** open a dialog where users select a predefined reason or enter a custom reason to restart or shutdown the system.
+This dialog or a message shows in the Console Setup menu after selecting the option to restart or shutdown the system in that interface.
+This provides TrueNAS with metrics on the reasons users restart or shutdown their system.
+
+**Reason** shows a list of predefined reason to restart or shutdown the system.
+
+**Custom** shows a text field where users can enter a reason other than the predefined options a why they are restarting or shutting down the system.
 
 <div class="noprint">
 

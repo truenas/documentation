@@ -42,12 +42,16 @@ All TrueNAS systems include the **Disks** option. TrueNAS systems with expansion
 The expansion shelf  includes the **Disks**, **Cooling**, **Services**, **Power Supply**, **SAS**, **Temperature**, and **Voltage** options.
 Each option displays a table with readings from the system's internal components taken over a period of time.
 
-### Change Enclosure Label
+### Change Enclosure Label {id="enclosure-change-label"}
 
 **Edit Label** displays for the main system (except TrueNAS Minis) and expansion shelves.
 **Edit Label** opens the **Change Enclosure Label** window.
 
 {{< trueimage src="/images/SCALE/SystemSettings/EnclosureChangeEnclosureLabel.png" alt="Change Enclosure Label" id="Change Enclosure Label" >}}
+
+**Enclosure Label** shows the current system type but is editable to change to any desired name.
+
+**Reset to default** resets any label change back to the default setting
 
 Type a name or description for the system and click **Save** to apply the label.
 To simplify system maintenance, use labels that help identify the physical location of the system, such as *ES102 Rack D5 U20*.

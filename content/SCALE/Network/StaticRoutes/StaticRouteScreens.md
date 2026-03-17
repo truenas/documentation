@@ -23,7 +23,7 @@ TrueNAS does not have defined static routes by default.
 
 {{< trueimage src="/images/SCALE/Network/AddStaticRoute.png" alt="Add Static Route" id="Add Static Route" >}}
 
-{{< truetable >}}
+{{< truetable >}} {id="network_static-ip"}
 | Setting | Description |
 |---------|-------------|
 | **Destination** |The destination IP address entered in the format *A.B.C.D/E* where *E* is the CIDR or netmask. This is a required field. |

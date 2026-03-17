@@ -31,7 +31,7 @@ The **Edit Global Configuration** screen manages general network settings for yo
 
 {{< trueimage src="/images/SCALE/Network/EditGlobalConfiguration.png" alt="Edit Global Configuration" id="Edit Global Configuration" >}}
 
-### Hostname and Domain Settings
+### Hostname and Domain Settings {id="network_global-host-domain"}
 
 Many of these fields have default values, but users can change them to meet local network requirements.
 
@@ -50,7 +50,7 @@ Some fields only show in the **Edit Global Configuration** screen when the appro
 | **Additional Domains** | Specifies additional domains to search. Separate entries by pressing <kbd>Enter</kbd>. Adding search domains can cause slow DNS lookups. |
 {{< /truetable >}}
 
-### Service Announcement Settings
+### Service Announcement Settings {id="network_global-service"}
 
 {{< truetable >}}
 | Setting | Description |
@@ -64,35 +64,37 @@ Some fields only show in the **Edit Global Configuration** screen when the appro
 
 {{< trueimage src="/images/SCALE/Network/GlobalConfigNameserverSettings.png" alt="Global Configuration Nameserver Settings" id="Global Configuration Nameserver Settings" >}}
 
-{{< truetable >}}
+{{< truetable >}} {id="network_global-dns"}
 | Setting | Description |
 |---------|-------------|
 | **Primary** | Sets the IP address for the primary DNS server (nameserver 1). |
 | **Secondary** | Sets the IP address for the secondary DNS server (nameserver 2). |
 | **Tertiary** | Sets the IP address for the third DNS server (nameserver 3). |
 {{< /truetable >}}
-{{< truetable >}}
+{{< truetable >}} {id="network_global-gateways"}
 | Setting | Description |
 |---------|-------------|
 | **IPv4 Default Gateway** | Sets the IPv4 address for the default gateway. This overrides a default gateway provided by DHCP. |
 | **IPv6 Default Gateway** | Sets the IPv6 address for the default gateway of the IPv6 network. This overrides a default gateway provided by DHCP. |
 {{< /truetable >}}
 
-### Outbound Network and Other Settings
-
-The **Outbound Network** setting should match the preferred system services allowed to communicate externally for your use case.
-The **Other Settings** allow setting an HTTP proxy and any host name database preferences.
+### Outbound Network and Other Settings {id="network_global-outbound"}
 
 {{< trueimage src="/images/SCALE/Network/GlobalConfigOutboundSettings.png" alt="Global Configuration Outbound Settings" id="Global Configuration Outbound Settings" >}}
 
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Allow All** | Allows any system service to communicate externally. |
-| **Deny All** | Restricts this system from communicating externally. |
-| **Allow Specific** | Allows a limited set of system services to allow to communicate externally to those selected on the dropdown list. All other external traffic is restricted. A dropdown list shows the services you select to allow external communication. |
-| **Allow All Except** | Allows all system services to communicate externally except for the services selected on the dropdown list. A dropdown list shows the services you select to deny external communication. |
-{{< /truetable >}}
+The **Outbound Network** setting should match the preferred system services allowed to communicate externally for your use case.
+Options are:
+* **Allow All** - Allows any system service to communicate externally.
+* **Deny All** - Restricts this system from communicating externally.
+* **Allow Specific** - Allows a limited set of system services to allow to communicate externally to those selected on the dropdown list. All other external traffic is restricted. A dropdown list shows the services you select to allow external communication.
+* **Allow All Except** - Allows all system services to communicate externally except for the services selected on the dropdown list. A dropdown list shows the services you select to deny external communication.
+
+The **Other Settings** allow setting an HTTP proxy and any host name database preferences.
+
+**HTTP Proxy** specifies an HTTP proxy address when using a proxy. Accepts manual or copy/paste entry of the network proxy information in the format *http://my.proxy.server:3128* or *http://user:password@my.proxy.server:3128*.
+
+**Host Name Database** specifies additional hosts to append to */etc/hosts*. Accepts manual or copy/paste entry in the format *`IP_address space hostname`* where multiple host names can be used if separated by a space. Separate entries by pressing <kbd>Enter</kbd>. Hosts defined here are still accessible by name even when DNS is not available. See [hosts](https://manpages.debian.org/unstable/bind9-host/host.1.en.html) for additional information.
+
 <!-- comment out until information on what is allowed for each service, and if there are any other requirements associated with the selections.
 {{< expand "Allowed Services" "v">}}
 Selecting any of these services either allows or denies external communications when selected on the dropdown list for **Allow Specific** or **Allow All Except**. Service options:
@@ -114,10 +116,3 @@ Selecting any of these services either allows or denies external communications 
 | **VMware Snapshots** |  |  |
 {{< /truetable >}}
 {{< /expand >}} -->
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **HTTP Proxy** | Specifies an HTTP proxy address when using a proxy. Accepts manual or copy/paste entry of the network proxy information in the format *http://my.proxy.server:3128* or *http://user:password@my.proxy.server:3128*. |
-| **Host Name Database** | Specifies additional hosts to append to */etc/hosts*. Accepts manual or copy/paste entry in the format *`IP_address space hostname`* where multiple host names can be used if separated by a space. Separate entries by pressing <kbd>Enter</kbd>. Hosts defined here are still accessible by name even when DNS is not available. See [hosts](https://manpages.debian.org/unstable/bind9-host/host.1.en.html) for additional information. |
-{{< /truetable >}}

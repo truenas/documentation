@@ -16,7 +16,7 @@ The **WebShare** service screen displays settings to configure the WebShare serv
 
 {{< trueimage src="/images/SCALE/SystemSettings/WebShareServiceScreen.png" alt="WebShare Service Settings" id="WebShare Service Settings" >}}
 
-{{< truetable >}}
+{{< truetable >}} {id="services_webshare"}
 | Icon | Description |
 |------|-------------|
 | **Enable TrueSearch** | Enables TrueSearch file indexing and search functionality. When enabled, the active WebShares are indexed for fast file searching. |
