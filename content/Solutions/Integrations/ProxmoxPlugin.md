@@ -4,6 +4,7 @@ description: "Overview and deployment guidance for the TrueNAS Proxmox VE Storag
 weight: 35
 tags:
  - proxmox
+ - vm
  - iscsi
  - nvme
 ---
@@ -18,8 +19,8 @@ It works with Proxmox cluster deployments that use shared storage.
 
 ## Requirements
 
-{{< hint type=caution >}}
-**Note**: This plugin requires Proxmox VE 8.x or later (9.x recommended) and TrueNAS 25.10 or later.
+{{< hint type=info title="Version Requirements" >}}
+This plugin requires Proxmox VE 8.x or later (9.x recommended) and TrueNAS 25.10 or later.
 NVMe/TCP mode requires Proxmox VE 9.x or later.
 {{< /hint >}}
 
@@ -31,9 +32,9 @@ You must also have a TrueNAS API key with sufficient privileges to create and ma
 
 Before installing the plugin, complete these steps on TrueNAS:
 
-1. Create a ZFS dataset to use for Proxmox storage (for example, `tank/proxmox`). Set **Dataset Preset** to **Generic**.
+1. Create a ZFS dataset to use for Proxmox storage (for example, *tank/proxmox*). Set **Dataset Preset** to **Generic**.
 2. Enable the **iSCSI** service under **System Settings > Services** and set it to start automatically.
-3. Create an iSCSI portal under **Shares > Block Shares (iSCSI) > Portals**. Set the IP address to your TrueNAS IP and the port to `3260`.
+3. Create an iSCSI portal under **Shares > Block Shares (iSCSI) > Portals**. Set the IP address to your TrueNAS IP and the port to *3260*.
 4. Create an iSCSI initiator group under **Shares > Block Shares (iSCSI) > Initiators**. Leave the defaults to allow all initiators.
 5. Create an iSCSI target under **Shares > Block Shares (iSCSI) > Targets**. Set **Target Mode** to **iSCSI**. After saving, edit the target and add a group. Set the portal to the portal from step 3 and the initiator group to the group from step 4.
 6. Generate a TrueNAS API key under **Credentials > Local Users**. Edit your user, scroll to **API Keys**, and click **Add**. Save the key securely. TrueNAS does not show the key again after you close the dialog.
