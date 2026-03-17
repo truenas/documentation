@@ -92,7 +92,7 @@ In general, when creating a simple SMB share and dataset, you can use either scr
 
 When adding a new share and dataset for a private dataset share, we recommend using the **Add SMB** screen to create a new share and dataset for private datasets, or for any other customized SMB share, rather than using the **Add Dataset** screen.
 
-We recommend using the [**Add Dataset** screen]({{< ref "/scale/datasets/Datasets" >}}) when you want to customize the dataset with the advanced setting options. After which, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
+We recommend using the [**Add Dataset** screen]({{< ref "/Datasets/Datasets" >}}) when you want to customize the dataset with the advanced setting options. After which, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
 
 {{< include file="/static/includes/ShareACLDialogs.md" >}}
 
@@ -110,7 +110,7 @@ You can change the admin user who is creating the private dataset share dataset 
 
 Alternatively, leave the **Owner** and **Owner Group** set to the root user and add a new user entry for the admin user who creates the private dataset shares.
 Give that admin user full access permissions.
-For more information on changing permissions, see [Storage Permissions]({{< ref "scale/datasets/permissions/Permissions.md" >}}).
+For more information on changing permissions, see [Storage Permissions]({{< ref "/Datasets/Permissions/Permissions.md" >}}).
 
 #### Adding the Private Dataset Share and Dataset
 
@@ -174,7 +174,7 @@ If you want or need to grant another user access to the private share dataset, o
 Accessing the **Edit ACL** screen with the dataset permissions:
 - From the **Datasets** screen, select the dataset row for the private share dataset.
   Click **Edit** on the **Permissions** card to open the **Edit ACL** screen.
-  See [Setting Up Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}) for more information on editing dataset permissions.
+  See [Setting Up Permissions]({{< ref "/Datasets/Permissions" >}}) for more information on editing dataset permissions.
 
 - From the **Shares** screen, click the triple dot icon for the share row, then click **Edit Filesystem ACL** to open the **Edit ACL** screen.
 
@@ -237,7 +237,7 @@ A **Private Dataset Share** is not the same as guest access:
 * **Private Dataset Share** creates per-user isolated datasets - users must authenticate with credentials
 * **Guest Access** (**Legacy Share** only) allows anonymous access without credentials
 
-If you are looking for guest access functionality, see the [Guest Access]({{< relref "/SCALE/Shares/SMB/_index.md#guest-access" >}}) section in the main SMB tutorial.
+If you are looking for guest access functionality, see the [Guest Access]({{< relref "/Shares/SMB/_index.md#guest-access" >}}) section in the main SMB tutorial.
 {{< /hint >}}
 {{< /expand >}}
 

@@ -125,16 +125,16 @@ Finally, add the share owner to the dataset permissions.
 
 2. Go to **Credentials > Local User** to create the share user.
 
-3. Go to either **Shares** or **Datasets** to [create the share and dataset]({{< ref "/SCALE/Shares/SMB#adding-an-smb-share-and-dataset" >}}).
+3. Go to either **Shares** or **Datasets** to [create the share and dataset]({{< ref "/Shares/SMB#adding-an-smb-share-and-dataset" >}}).
 
 4. Modify the ACL permissions.
    Either click on **Edit Filesystem ACL** on the **Shares** screen or go to **Datasets**, select the dataset row, scroll down and click **Edit** on the **Permissions** widget.
 
    Leave the dataset permissions @owner and @group set to root or change them to the admin user.
    Next click **Add New** to create a new ACL entry for the share user(s).
-   See [Setting Up Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}) for more information on adding new entries and modifying dataset permissions.
+   See [Setting Up Permissions]({{< ref "/Datasets/Permissions" >}}) for more information on adding new entries and modifying dataset permissions.
 
-   See [Adding NFS Shares]({{< ref "AddingNFSShares" >}}) or [Windows Shares (SMB)]({{< ref "/SCALE/Shares/SMB" >}}) for more information on adding shares.
+   See [Adding NFS Shares]({{< ref "AddingNFSShares" >}}) or [Windows Shares (SMB)]({{< ref "/Shares/SMB" >}}) for more information on adding shares.
 
 ### Mounting and Accessing the Share in Windows
 

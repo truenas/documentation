@@ -58,7 +58,7 @@ When available disks are exported from a pool, a message alerting you to this sh
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
-See [Storage Encryption]({{< ref "/SCALE/Datasets/Encryption" >}}) for more information on using TrueNAS storage encryption.
+See [Storage Encryption]({{< ref "/Datasets/Encryption" >}}) for more information on using TrueNAS storage encryption.
 
 An encryption warning dialog opens with a **Confirm** option.
 **Confirm** enables the **I Understand** button. **I Understand** continues with adding the pool with encryption applied.

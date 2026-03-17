@@ -106,7 +106,7 @@ Use **Scrub Now** on the **Storage Health** pool widget to start a pool data int
 
 Click **Scrub Now** to open the **Scrub Pool** dialog, then click **Start Scrub** to begin the process.
 
-If TrueNAS detects problems during the scrub operation, it corrects them or generates an [alert]({{< ref "/SCALE/TopToolbar/Alerts" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it corrects them or generates an [alert]({{< ref "/TopToolbar/Alerts" >}}) in the web interface.
 
 ### Scheduling Scrub Tasks
 
@@ -199,7 +199,7 @@ Extended VDEVs recover lost headroom because existing data is read and rewritten
 This can occur naturally over the lifetime of the pool as you modify or delete data.
 Replicate and rewrite the data to the extended pool to manually recover capacity.
 
-You can use the [RAIDZ Extension Calculator]({{< ref "/References/ExtensionCalculator" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
+You can use the [RAIDZ Extension Calculator](https://www.truenas.com/docs/references/extensioncalculator/) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
 {{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 

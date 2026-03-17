@@ -29,7 +29,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset]({{< ref "/SCALE/Datasets/Datasets" >}}) to use as storage for files.
+Go to **Storage** to add a new [dataset]({{< ref "/Datasets/Datasets" >}}) to use as storage for files.
 
 Next, add a new user. Go to **Credentials > Users** and click **Add** to create a local user on the TrueNAS.
 

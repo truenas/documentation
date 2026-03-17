@@ -140,7 +140,7 @@ The dataset name populates the **SMB Name** field and becomes the name of the SM
 {{< trueimage src="/images/SCALE/Datasets/AddMultimodeDataset.png" alt="Adding a Multi-Mode Dataset and Share" id="Adding a Multi-Mode Dataset and Share" >}}
 
 (Optional) Click **Advanced Options** to customize other dataset settings such as quotas, compression level, encryption, and case sensitivity.
-See [Creating Datasets]({{< ref "/SCALE/Datasets/Datasets#creating-a-dataset" >}}) for more information on adding and customizing datasets.
+See [Creating Datasets]({{< ref "/Datasets/Datasets#creating-a-dataset" >}}) for more information on adding and customizing datasets.
 
 Click **Save**.
 TrueNAS creates the dataset and the SMB and NFS shares.
@@ -228,7 +228,7 @@ If not, add this Access Control Entry (ACE) item on the **Edit ACL** screen for 
 
 4. Click **Save Access Control List** to add the ACE item or save changes.
 
-See [Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}) for more information on editing dataset permissions.
+See [Permissions]({{< ref "/Datasets/Permissions" >}}) for more information on editing dataset permissions.
 
 After setting the dataset permission, connect to the share.
 
@@ -238,4 +238,4 @@ After setting the dataset permission, connect to the share.
 
 After creating and configuring the shares, connect to the multi-protocol share using either SMB or NFS protocols from a variety of client operating systems, including Windows, Apple, FreeBSD, and Linux/Unix systems.
 
-For more information on accessing shares, see [Mounting the SMB Share]({{< ref "/SCALE/Shares/SMB#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< ref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).
+For more information on accessing shares, see [Mounting the SMB Share]({{< ref "/Shares/SMB#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< ref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).

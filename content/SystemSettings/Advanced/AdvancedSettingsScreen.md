@@ -161,7 +161,7 @@ There is also an option to configure a remote syslog server for recording system
 
 ## Audit Card
 
-The **Audit** card displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The **Audit** card displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< ref "/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Card" id="Advanced System Setting Audit Card" >}}
 
@@ -169,7 +169,7 @@ The **Audit** card displays the current audit storage and retention policy setti
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "/SCALE/SystemSettings/Audit/Auditing#configuring-audit-storage-and-retention-policies" >}})
+Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "/SystemSettings/Audit/Auditing#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Card
 

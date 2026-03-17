@@ -232,7 +232,7 @@ Storage configurations with more than 9,007,199,254,740,992 bytes round to the l
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
 {{< /hint >}}
 
-**View Datasets** opens the **[Datasets]({{< ref "/SCALE/Datasets" >}})** screen.
+**View Datasets** opens the **[Datasets]({{< ref "/Datasets" >}})** screen.
 
 ### Storage Health Widget
 

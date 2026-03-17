@@ -76,4 +76,4 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 {{< include file="/static/includes/NFSUpdateTime.md" >}}
 
 We recommend using the default NFS settings unless you require specific settings.
-When TrueNAS is already connected to [Active Directory]({{< ref "/SCALE/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/SCALE/Credentials/DirectoryServices" >}}).
+When TrueNAS is already connected to [Active Directory]({{< ref "/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/Credentials/DirectoryServices" >}}).

@@ -68,7 +68,7 @@ If your system loses power or you restart the system, all encrypted datasets and
 
 ### Encryption Visual Cues
 
-TrueNAS uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< ref "/SCALE/Datasets" >}})** screen.
+TrueNAS uses lock icons to indicate the encryption state of a root, parent, or child dataset in the tree table on the **[Datasets]({{< ref "/Datasets" >}})** screen.
 Each icon shows a text label with the state of the dataset when you hover the mouse over the icon.
 
 {{< include file="/static/includes/EncryptionIconsSCALE.md" >}}

@@ -58,4 +58,4 @@ This setting assumes group membership is configured correctly on the NFS server.
 Click **Save**.
 
 Start the NFS service.
-When TrueNAS is already connected to [Active Directory]({{< ref "/SCALE/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/SCALE/Credentials/DirectoryServices" >}}).
+When TrueNAS is already connected to [Active Directory]({{< ref "/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/Credentials/DirectoryServices" >}}).

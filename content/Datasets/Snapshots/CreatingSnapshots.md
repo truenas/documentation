@@ -22,7 +22,7 @@ doctype: tutorial
 
 {{< include file="/static/includes/SnapshotsIntroSnippet.md" >}}
 
-Taking snapshots requires the system have all [pools]({{< ref "CreatingPools" >}}), [datasets]({{< ref "/SCALE/Datasets/Datasets" >}}), and [zvols]({{< ref "AddManageZvols" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< ref "CreatingPools" >}}), [datasets]({{< ref "/Datasets/Datasets" >}}), and [zvols]({{< ref "AddManageZvols" >}}) already configured.
 
 ## Creating a Snapshot
 

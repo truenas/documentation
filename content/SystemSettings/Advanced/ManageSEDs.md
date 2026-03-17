@@ -27,4 +27,4 @@ doctype: tutorial
 
 {{< include file="/static/includes/SEDIndividualPWs.md" >}}
 
-See [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALE/Storage/Disks/SED" >}}) for more information.
+See [Managing Self-Encrypting Drives (SED)]({{< ref "/Storage/Disks/SED" >}}) for more information.

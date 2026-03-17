@@ -55,12 +55,12 @@ Click **Add** and select the new bridge interface from the dropdown list.
 {{< trueimage src="/images/SCALE/Virtualization/InstanceAddNIC.png" alt="Add NIC" id="Add NIC" >}}
 
 You can now access your TrueNAS storage from the container.
-You might have to set up [shares]({{< ref "/SCALE/Shares/iSCSI" >}}) or [users]({{< ref "ManageUsers" >}}) with home directories to access certain files.
+You might have to set up [shares]({{< ref "/Shares/iSCSI" >}}) or [users]({{< ref "ManageUsers" >}}) with home directories to access certain files.
 
 ## Assigning a Secondary NIC: Multiple Physical Interfaces
 
 If you have more than one NIC on your system, you can assign container traffic to a secondary NIC.
-Configure the secondary interface as described in [Managing Interfaces]({{< ref "/SCALE/Network/Interfaces" >}}) before attaching it to an instance.
+Configure the secondary interface as described in [Managing Interfaces]({{< ref "/Network/Interfaces" >}}) before attaching it to an instance.
 
 If you are creating a new instance, use the **Network** settings to disable **Use default network Settings** and select the secondary NIC from **Macvlan NICs**.
 
