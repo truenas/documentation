@@ -41,7 +41,7 @@ See [Setting Up a Network VLAN]({{< ref "SettingUpVLAN" >}}) for more informatio
 
 Storage pool creation is part of the initial process of setting up storage.
 A TrueNAS dataset is a file system within a data storage pool.
-See [Setting Up Storage]({{< ref "SetUpStorageScale" >}}) to review storage pool creation and [Adding and Managing Datasets]({{< ref "/SCALE/Datasets/Datasets" >}}) for information on dataset configuration.
+See [Setting Up Storage]({{< ref "SetUpStorageScale" >}}) to review storage pool creation and [Adding and Managing Datasets]({{< ref "/Datasets/Datasets" >}}) for information on dataset configuration.
 
 ### Shares Configuration
 
@@ -57,7 +57,7 @@ Adjust access permissions using the advanced options.
 ### Directory Services Configuration
 
 Certain directory services must be set up as part of SMB and NFS share configuration.
-See [Active Directory Screen]({{< ref "/SCALE/Credentials/DirectoryServices/ActiveDirectory" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< ref "ConfigKerberos" >}}) for an outline of required Kerberos information.
+See [Active Directory Screen]({{< ref "/Credentials/DirectoryServices/ActiveDirectory" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< ref "ConfigKerberos" >}}) for an outline of required Kerberos information.
 For LDAP best practices see [Configuring LDAP]({{< ref "ConfigLDAP" >}}).
 
 ## Virtual Machine and Container Configuration
@@ -80,7 +80,7 @@ Linux containers, powered by LXC, offer lightweight, isolated environments that 
 
 {{< include file="/static/includes/ContainerRequirements.md" >}}
 
-See [Containers]({{< ref "/scale/containers/containers/" >}}) for Linux container configuration and management information.
+See [Containers]({{< ref "/Containers/Containers" >}}) for Linux container configuration and management information.
 
 ## Application Configuration
 
@@ -95,7 +95,7 @@ Set up a new dataset before installing your applications if you want to store yo
 After an Apps storage pool is configured, the status changes to <span class="iconify" data-icon="mdi:check-circle" color=#71BF44></span> **Apps Service Running**.
 
 Use **Discover Apps** to view available applications.
-See [TrueNAS Apps Market](https://apps.truenas.com/) and [Apps reference guide]({{< ref "/SCALE/Apps" >}}) for more information.
+See [TrueNAS Apps Market](https://apps.truenas.com/) and [Apps reference guide]({{< ref "/Apps" >}}) for more information.
 
 For custom applications, [Install Custom App]({{< ref "InstallCustomAppScreens" >}}) details each field on the **Install Custom App** screen.
 Before beginning a custom application installation, determine the following information:

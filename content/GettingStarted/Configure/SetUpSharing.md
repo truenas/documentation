@@ -27,7 +27,7 @@ TrueNAS provides three types of sharing methods:
 * NFS for Unix-like shares
 * ISCSi block shares
 
-For more information on TrueNAS shares, see the [Shares]({{< ref "/SCALE/Shares" >}}) tutorials.
+For more information on TrueNAS shares, see the [Shares]({{< ref "/Shares" >}}) tutorials.
 
 Regardless of what type of share you create, you need to create the user and dataset for the share.
 
@@ -62,7 +62,7 @@ This article provides instructions on creating the share and adding the dataset 
 
 ## Setting up SMB Shares for Windows
 
-For more detailed information on adding SMB shares, see [Adding SMB Shares]({{< ref "/SCALE/Shares" >}}).
+For more detailed information on adding SMB shares, see [Adding SMB Shares]({{< ref "/Shares" >}}).
 
 {{< include file="/static/includes/LocalSMBUser.md" >}}
 
@@ -78,7 +78,7 @@ To set up a basic SMB share from the **Add SMB** screen:
       Continue expanding until reaching the storage location of the existing dataset or where you want to create a new dataset for the share.
       Click on the exiting dataset to populate the field with the full path, or click **Create Dataset** to enter a name for a new dataset and the share.
 
-      {{< trueimage src="/images/SCALE/Shares/AddSMBPath.png" alt="Add SMB Path" id="Add SMB Path" >}}
+      {{< trueimage src="/images/Shares/AddSMBPath.png" alt="Add SMB Path" id="Add SMB Path" >}}
 
       {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
@@ -98,7 +98,7 @@ To set up a basic SMB share from the **Add SMB** screen:
 
    a. Click on <span class="material-icons">share</span> **Edit Share ACL** icon to open the **Edit Share ACL** screen.
 
-   {{< trueimage src="/images/SCALE/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
+   {{< trueimage src="/images/Shares/SMBShareACLScreen.png" alt="SMB Share ACL Screen" id="SMB Share ACL Screen" >}}
 
    b. Select either **User** in **Who**, then the user name in **User**, and then set the permission level using **Permissions** and **Type**.
 
@@ -111,7 +111,7 @@ To set up a basic SMB share from the **Add SMB** screen:
 
    a. Click on <span class="material-icons">share</span> **Edit Filesystem ACL** icon to open the **Edit ACL** screen for the dataset.
 
-   {{< trueimage src="/images/SCALE/Shares/SMBACLEditor.png" alt="Edit ACL Screen for Share Dataset" id="Edit ACL Screen for Share Dataset" >}}
+   {{< trueimage src="/images/Shares/SMBACLEditor.png" alt="Edit ACL Screen for Share Dataset" id="Edit ACL Screen for Share Dataset" >}}
 
    b. Select the **Owner** and **Group** and click **Apply Owner** and **Apply Group**.
       With **Who** set to **Owner**, set the permission level using **Permissions** and **Type**.
@@ -128,7 +128,7 @@ To set up a basic SMB share from the **Add SMB** screen:
 
    b. Enter the TrueNAS user account credentials created on the TrueNAS system.
 
-   {{< trueimage src="/images/SCALE/Shares/FileExplorerEnterSMBCredentials.png" alt="File Explorer Enter SMB Credentials" id="File Explorer Enter SMB Credentials" >}}
+   {{< trueimage src="/images/Shares/FileExplorerEnterSMBCredentials.png" alt="File Explorer Enter SMB Credentials" id="File Explorer Enter SMB Credentials" >}}
 
    c. Begin browsing the dataset.
 
@@ -152,7 +152,7 @@ To set up NFS sharing from the **Add NFS** screen:
       Continue expanding until reaching the storage location of the existing dataset or where you want to create a new dataset for the share.
       Click on the exiting dataset to populate the field with the full path, or click **Create Dataset** to enter a name for a new dataset and the share.
 
-      {{< trueimage src="/images/SCALE/Shares/AddNFSSharePath.png" alt="Add NFS Share Path" id="Add NFS Share Path" >}}
+      {{< trueimage src="/images/Shares/AddNFSSharePath.png" alt="Add NFS Share Path" id="Add NFS Share Path" >}}
 
       {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 
@@ -195,6 +195,6 @@ To set up NFS sharing from the **Add NFS** screen:
 ## Setting up an iSCSI Block Share
 
 Setting up block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.
-A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the Tutorials section]({{< ref "/SCALE/Shares/iSCSI" >}}).
+A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the Tutorials section]({{< ref "/Shares/iSCSI" >}}).
 
 With simple sharing now set up, you can back up your configuration and set up data backup.

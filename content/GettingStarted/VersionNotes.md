@@ -170,7 +170,7 @@ initializeChangelogTableForTabs('26');
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
 Depending on the specific system configuration, migrating from a FreeBSD-based TrueNAS version can be a straightforward or complicated process.
-See the [Migration articles]({{< ref "/SCALE/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
+See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
 
 {{< enterprise >}}
 {{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}

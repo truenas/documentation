@@ -285,7 +285,7 @@ The **Update** state on the application row on the **Installed** screen changes 
 #### Convert to Custom App
 
 **Convert to custom app** on the <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown opens a dialog to convert an installed catalog application to a custom YAML application.
-Converting to a custom app direct editing to YAML configuration file for the app using the [Custom App Screens]({{< relref "/SCALE/Apps/InstallCustomAppScreens.md" >}}).
+Converting to a custom app direct editing to YAML configuration file for the app using the [Custom App Screens]({{< relref "/Apps/InstallCustomAppScreens.md" >}}).
 
 {{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppDialog.png" alt="Convert to Custom App Dialog" id="Convert to Custom App Dialog" >}}
 
