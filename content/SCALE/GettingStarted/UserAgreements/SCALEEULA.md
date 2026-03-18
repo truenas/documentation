@@ -69,12 +69,6 @@ Licensee shall:
 
 <ol type="a">
    <li>Use TrueNAS Enterprise Software in compliance with all applicable laws, including export control (Section 5.0), data protection (Section 6.0), and applicable sanctions laws;
-      <ol type="i">
-         <li></li>
-         <li></li>
-         <li></li>
-      </ol>
-   </li>
    <li>Maintain the confidentiality of license keys, credentials, and administrative access, and implement reasonable physical and logical access controls;   
    <li>Promptly apply all critical security patches and updates released by TrueNAS within ninety (90) days of release, unless TrueNAS specifies a different timeline;
    <li>Maintain current backups of all data stored on TrueNAS Devices in accordance with industry best practices;
@@ -107,7 +101,7 @@ Notwithstanding anything to the contrary in this EULA, TrueNAS may temporarily s
    <li>TrueNAS’ provision of the TrueNAS Enterprise Software to You or any of Your Authorized Users is prohibited by applicable law.
 </ol>
 
-Reversion of License and Data Control Upon Revocation
+**Reversion of License and Data Control Upon Revocation**
 
 Notwithstanding any other provision in this Agreement, upon the permanent revocation of the TrueNAS Enterprise Software license, the functionality of the software installed on Your TrueNAS Device(s) will automatically revert to the terms and conditions of the then-current TrueNAS Community Edition License. In all cases of license revocation, Licensee shall retain full read and write access to all data stored on the TrueNAS Device(s). TrueNAS shall have no obligation to provide maintenance, support, or updates for the reverted Community Edition. Any features or functionality exclusive to the TrueNAS Enterprise Software, including but not limited to high-availability data protection and certain specialized support services, will cease to operate upon reversion.
 
