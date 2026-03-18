@@ -110,7 +110,11 @@ If you used the interactive installer, review the examples in the Configuration 
 
 ## Configuration
 
-If you used the APT repository or `.deb` installation, manually add a storage backend entry to <file>/etc/pve/storage.cfg</file> on each Proxmox node.
+If you used the APT repository or `.deb` installation, manually add a storage backend entry to <file>/etc/pve/storage.cfg</file> on each Proxmox node using the GNU nano text editor.
+
+```
+nano /etc/pve/storage.cfg
+```
 
 ### iSCSI
 
