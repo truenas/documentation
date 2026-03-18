@@ -30,7 +30,7 @@ The [Evaluation Guide](https://www.truenas.com/evaluating-truenas-scale/) also p
 This Table of Contents is a specific article arrangement that guides deploying TrueNAS Enterprise hardware purchased from the TrueNAS team.
 
 * [User Agreements]({{< ref "/GettingStarted/UserAgreements" >}})
-  * [TrueNAS EULA]({{< ref "SCALEEULA" >}})
+  * [TrueNAS EULA]({{< ref "EULA" >}})
   * [Software Development Life Cycle]({{< ref "/GettingStarted/UserAgreements/SoftwareDevelopmentLifeCycleSCALE" >}})
   * [TrueNAS Data Collection Statement]({{< ref "/GettingStarted/UserAgreements/DataCollectionStatement" >}})
 * [Installation Instructions]({{< ref "/GettingStarted/Install" >}})
