@@ -325,6 +325,16 @@
         return '';
       }
 
+      // Book prefixes used in pre-26 URL structure that were removed in 26+
+      function isNewStructureVersion(ver) {
+        if (ver === 'scale-nightly') return true;
+        return /^\d+$/.test(ver) && parseInt(ver, 10) >= 26;
+      }
+
+      function stripOldBookPrefix(path) {
+        return path.replace(/\/(scaletutorials|scaleuireference|scaleclireference)\//, '/');
+      }
+
       function getActualProduct(version) {
         if (version === '13.0' || version === '13.3') {
           return 'truenas-core';
@@ -452,13 +462,15 @@
       
       if (version === 'scale-nightly') {
         // Remove version from path: /scale/25.04/path -> /scale/path
-        newPath = currentPath.replace(/\/\d+\.\d+\//, '/');
+        newPath = currentPath.replace(/\/\d+(?:\.\d+)?\//, '/');
+        // Strip old book prefixes (scaletutorials, scaleuireference, scaleclireference)
+        newPath = stripOldBookPrefix(newPath);
         fallbackUrl = constructFallbackUrl(newPath, 'nightly');
       } else if (version === 'Archive') {
         newPath = '/docs/archive/';
         fallbackUrl = base_url + newPath;
       } else {
-        var matches = currentPath.match(/\/(\d+\.\d+)\//);
+        var matches = currentPath.match(/\/(\d+(?:\.\d+)?)\//);
         if (matches) {
           var currentVersion = matches[1];
           newPath = currentPath.replace('/' + currentVersion + '/', '/' + version + '/');
@@ -472,6 +484,10 @@
             pathParts.splice(3, 0, version);
           }
           newPath = pathParts.join('/');
+        }
+        // Strip old book prefixes when targeting new URL structure (26+)
+        if (isNewStructureVersion(version)) {
+          newPath = stripOldBookPrefix(newPath);
         }
         fallbackUrl = constructFallbackUrl(currentPath, version);
       }
