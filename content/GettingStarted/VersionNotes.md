@@ -31,12 +31,6 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-{{< hint type="important" title="TrueNAS 26 Early Release Documentation" >}}
-This page tracks release information for TrueNAS 26, the next major version of TrueNAS.
-
-See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) release notes for information relating to those versions.
-{{< /hint >}}
-
 ## Notable Changes and Known Issues
 
 <!-- Hugo-processed content for release notes tab box -->
