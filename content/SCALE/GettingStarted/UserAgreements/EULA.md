@@ -5,6 +5,7 @@ weight: 10
 aliases:
   - /scale/introduction/scaleeula/
   - /scale/notices/scaleeula/
+  - /scale/gettingstarted/useragreements/scaleeula/
 ---
 
 **TrueNAS Enterprise Terms of Service**
