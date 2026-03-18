@@ -63,7 +63,7 @@ bash <(curl -sSL https://raw.githubusercontent.com/truenas/truenas-proxmox-plugi
 {{< /truetable >}}
 
 {{< expand "Manual APT source setup" "v" >}}
-If you prefer not to run the installer script, add the APT source manually:
+If you prefer not to run the installer script, or the script did not work, you can add the APT source manually:
 
 ```bash
 cat >/etc/apt/sources.list.d/truenas-proxmox-plugin.sources <<'EOF'
