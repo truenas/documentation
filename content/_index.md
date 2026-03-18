@@ -22,7 +22,7 @@ h1 {display:none;}
 aside.sidebar-right {display: none;}
 </style>
 
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Early Release - TrueNAS 26" icon="" icon_alt="" >}}
+{{< header logo="/images/truenas26logono_background.png" logo_alt="TrueNAS 26 Logo" version="Early Release Documentation - TrueNAS 26" icon="" icon_alt="" >}}
 
 {{< include file="/static/includes/26FeatureList.md" >}}
 
@@ -34,24 +34,24 @@ aside.sidebar-right {display: none;}
 
   <div class="docs-sections">
     <p>
-    <a href="/scale/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
-    <br><a href="/scale/gettingstarted/versionnotes/">Development Notes</a>
-    <br><a href="/scale/gettingstarted/scalehardwareguide/">Community Hardware Guide</a>
-    <br><a href="/scale/gettingstarted/install/">Software Install</a>
-    <br><a href="/scale/gettingstarted/migrate/">Migrating from CORE</a>
+    <a href="/gettingstarted/" style="font-size:18px;">Getting Started Guide</a>
+    <br><a href="/gettingstarted/versionnotes/">Release Notes</a>
+    <br><a href="/gettingstartedhardwareguide/">Community Hardware Guide</a>
+    <br><a href="/gettingstarted/install/">Software Install</a>
+    <br><a href="/gettingstarted/migrate/">Migrating from CORE</a>
     </p>
     <p>
-    <a href="/scale/network/" style="font-size:18px;">Networking</a>
-    <br><a href="/scale/storage/">Storage Management</a>
-    <br><a href="/scale/dataprotection/">Data Protection</a>
-    <br><a href="/scale/shares/">Shares</a>
+    <a href="/network/" style="font-size:18px;">Networking</a>
+    <br><a href="/storage/">Storage Management</a>
+    <br><a href="/dataprotection/">Data Protection</a>
+    <br><a href="/shares/">Shares</a>
     <br><a href="https://apps.truenas.com/">TrueNAS Apps Marketplace</a>
     </p>
     <p>
-    <a href="/scale/systemsettings/" style="font-size:18px;">System Settings</a>
-    <br><a href="/scale/dashboard/">Dashboard</a>
-    <br><a href="/scale/credentials/">Credentials</a>
-    <br><a href="/scale/datasets/">Datasets</a>
+    <a href="/systemsettings/" style="font-size:18px;">System Settings</a>
+    <br><a href="/dashboard/">Dashboard</a>
+    <br><a href="/credentials/">Credentials</a>
+    <br><a href="/datasets/">Datasets</a>
     </p>
   </div>
 </div>
