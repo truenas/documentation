@@ -56,9 +56,9 @@
     </div>
   {{ end }}
 </div>
-{{ if and (in .Section "SCALE") (hasPrefix .RelPermalink "/scale/apps/") }}
+{{ if (hasPrefix .RelPermalink "/apps/") }}
 <article class="gdoc-markdown">
-<blockquote class="gdoc-hint caution">
+<blockquote class="gdoc-hint important">
   <div class="gdoc-hint__title flex align-center">
     <img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS Apps: UI Reference" title="TrueNAS Apps: UI Reference" style="padding-right:.75rem;"></img>TrueNAS Apps: UI Reference
   </div>
@@ -69,9 +69,9 @@
   </div>
 </blockquote>
 </article>
-{{ else if in .Section "SCALE" }}
+{{ else }}
 <article class="gdoc-markdown">
-<blockquote class="gdoc-hint caution">
+<blockquote class="gdoc-hint important">
   <div class="gdoc-hint__title flex align-center">
     <img src="/favicon/TN-favicon-32x32.png" alt="TrueNAS" title="TrueNAS Early Release Documentation" style="padding-right:.75rem;"></img>TrueNAS Early Release Documentation
   </div>
@@ -81,3 +81,4 @@
 </blockquote>
 </article>
 {{ end }}
+
