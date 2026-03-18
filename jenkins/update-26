@@ -15,7 +15,7 @@ pipeline {
             sh 'npm install -D --save autoprefixer'
             sh 'npm install -D --save postcss-cli'
             sh 'hugo -d public --gc --minify --cleanDestinationDir'
-            sh 'npx pagefind --site "public" --glob "{api,gettingstarted,scalesecurityreports,scaletutorials,scaleuireference}/**/*.html"'
+            sh 'npx pagefind --site "public" --glob "{api,apps,containers,credentials,dashboard,dataprotection,datasets,gettingstarted,network,reporting,scalesecurityreports,shares,storage,systemsettings,toptoolbar,virtualmachines}/**/*.html"'
         }
     }
     stage('Publish') {
