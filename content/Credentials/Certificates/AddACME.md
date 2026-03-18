@@ -2,8 +2,6 @@
 title: "Adding ACME DNS Authenticators"
 description: "Provides basic instructions on adding and managing ACME DNS authenticators in TrueNAS."
 weight: 30
-aliases:
- - /scale/scaletutorials/credentials/certificates/addacmescale/
 tags:
  - certificates
  - csr

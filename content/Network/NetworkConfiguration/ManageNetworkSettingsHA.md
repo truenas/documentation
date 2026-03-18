@@ -2,9 +2,6 @@
 title: "Managing Network Settings (Enterprise HA)"
 description: "Provides instructions on how to make changes to network settings on TrueNAS Enterprise (HA) systems."
 weight: 30
-aliases:
- - /scale/scaletutorials/network/managenetworksettingsha/
- - /scale/network/managenetworksettingsha/
 tags:
 - enterprise
 - failover

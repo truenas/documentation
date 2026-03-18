@@ -7,8 +7,6 @@ tags:
 - smb
 - nfs
 doctype: tutorial
-aliases:
- - /scale/shares/mixedmodeshares/
 ---
 
 

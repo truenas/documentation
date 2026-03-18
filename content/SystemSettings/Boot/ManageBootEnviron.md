@@ -2,7 +2,6 @@
 title: "Boot Pool Management"
 description: "Provides instructions on managing the boot pool and boot environments in TrueNAS."
 weight: 20
-aliases: /scale/systemsettings/bootenvironment/
 tags:
  - boot
  - settings

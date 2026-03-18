@@ -3,9 +3,6 @@ title: "Configuring Advanced Settings"
 description: "Tutorials for configuring advanced system settings in TrueNAS."
 geekdocCollapseSection: true
 weight: 10
-aliases:
- - /scale/scaletutorials/systemsettings/advanced/advancedsettings/
- - /_includes/createdebugcore/
 tags:
  - settings
  - replication

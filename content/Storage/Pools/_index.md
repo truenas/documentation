@@ -3,8 +3,6 @@ title: "Pools"
 description: "Tutorials and UI reference to create and manage ZFS storage pools in TrueNAS."
 geekdocCollapseSection: true
 weight: 20
-aliases:
- - /scale/storage/pools/
 related: false
 tags:
 - pools

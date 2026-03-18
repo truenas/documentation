@@ -4,9 +4,6 @@ description: "Describes the TrueNAS jobs manager and how to use it to view faile
 weight: 50
 tags:
 - tasks
-aliases:
- - /scale/scaleuireference/jobsscreens/
- - /scale/scaleuireference/toptoolbar/jobsscreens/
 doctype: reference
 ---
 

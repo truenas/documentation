@@ -4,8 +4,6 @@ description: "Describes the TrueNAS alert system."
 geekdocCollapseSection: true
 weight: 2
 related: false
-aliases:
- - /scale/scaleuireference/toptoolbar/alerts/
 tags:
 - toolbar
 ---

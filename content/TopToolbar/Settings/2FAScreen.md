@@ -2,9 +2,6 @@
 title: "Two Factor Auth Screen"
 description: "Provides information on the Two Factor Auth screen settings."
 weight: 20
-aliases:
- - /scale/scaleuireference/toptoolbar/settings/2fascreenscale/
- - /scale/scaleclireference/auth/clitwofactor/
 tags:
  - 2fa
  - credentials

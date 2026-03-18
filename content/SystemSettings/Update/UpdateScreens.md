@@ -2,9 +2,6 @@
 title: "Update Screens"
 description: "Provides information on functions and fields on the TrueNAS Update screens."
 weight: 50
-aliases: 
- - /scale/scaleuireference/systemsettings/updatescreensscale/
- - /scale/scaleclireference/system/cliupdate/
 tags:
 - update
 - configuration files

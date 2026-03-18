@@ -2,9 +2,6 @@
 title: "Static Routes Screens"
 description: "The Static Routes widget displays existing static routes or sets up new ones."
 weight: 50
-aliases:
- - /scale/scaleuireference/network/staticroutescreens/
- - /scale/network/staticroutescreens/
 tags:
 - network
 - static routes

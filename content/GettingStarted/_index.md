@@ -7,8 +7,6 @@ cascade:
   - _target:
     book: "SCALEGettingStarted"
 related: false
-aliases:
- - /hub/gettingstarted/intro/
 ---
 
 This section guides you through installing TrueNAS, or migrating from a FreeBSD-based TrueNAS version to a Linux-based TrueNAS version, and using the UI to access and configure TrueNAS.

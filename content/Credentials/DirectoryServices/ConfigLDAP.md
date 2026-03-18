@@ -2,8 +2,6 @@
 title: "Configuring LDAP"
 description: "Provides instructions on configuring and managing LDAP configurations in TrueNAS."
 weight: 20
-aliases:
- - /scale/scaletutorials/credentials/directoryservices/configldapscale/
 tags:
 - ldap
 - directoryservices

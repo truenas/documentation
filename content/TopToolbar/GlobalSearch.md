@@ -2,8 +2,6 @@
 title: "Using UI Global Search"
 description: "This tutorial shows how to use the Global Search feature to explore the TrueNAS UI and documentation."
 weight: 10
-aliases:
- - /scale/scaletutorials/toptoolbar/globalsearch/
 tags:
 - toolbar
 doctype: tutorial

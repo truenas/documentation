@@ -2,9 +2,6 @@
 title: "Network Interface Screens"
 description: "Provides information on the Network screen Interfaces widget and configuration screens."
 weight: 40
-aliases:
- - /scale/scaleuireference/network/networkinterfacescreens/
- - /scale/network/networkinterfacescreens/
 tags:
  - network
  - interfaces

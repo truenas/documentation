@@ -2,10 +2,6 @@
 title: "Periodic Snapshot Tasks Screens"
 description: "Provides information on the Data Protection and Periodic Snapshot Task screens and settings."
 weight: 50
-aliases:
- - /scale/scaleuireference/dataprotection/periodicsnapshotTasksscreensscale/
- - /scale/scaleclireference/task/clisnapshottask/
- - /scale/dataprotection/periodicsnapshottasksscreens/
 tags:
 - snapshots
 - replication

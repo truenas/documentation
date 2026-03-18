@@ -2,8 +2,6 @@
 title: "Configuring TrueNAS Using the UI"
 description: "Provides a sequential process to complete the initial configuration using the TrueNAS UI."
 weight: 30
-aliases:
- - /scale/gettingstarted/install/uiconfigurationscale/
 tags:
 - install
 - migrate

@@ -9,10 +9,6 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
-aliases:
- - /scale/systemsettings/general/settingupsystememail/
- - /scale/gettingstarted/scalesystememail/
- - /scale/toptoolbar/settingupsystememail/
 doctype: tutorial
 ---
 

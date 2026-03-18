@@ -10,10 +10,6 @@ keywords:
 - nas cloud storage
 - data protection
 - data backup and recovery
-aliases:
- - /scale/scaletutorials/dataprotection/truecloudtasks/
- - /scale/dataprotection/cloudsynctasks/addstorjcloudsynctask/
- - /scale/dataprotection/truecloudtasks/
 doctype: tutorial
 ---
 

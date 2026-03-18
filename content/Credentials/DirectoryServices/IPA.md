@@ -2,8 +2,6 @@
 title: "IPA Screens"
 description: "Provides information on the IPA screen and widget settings."
 weight: 70
-aliases:
- - /scale/credentials/directoryservices/directoryservicesscreens/ipa/
 tags:
 - IPA
 - directoryservices

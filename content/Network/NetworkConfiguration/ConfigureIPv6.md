@@ -2,8 +2,6 @@
 title: "Configuring IPv6"
 description: "Provides instructions configuring a network interface and other network settings for IPv6, and configuring an SMB or NFS share for IPv6."
 weight: 20
-aliases:
- - /scale/network/configureipv6/
 tags:
 - network
 - interfaces

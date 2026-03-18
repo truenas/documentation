@@ -2,11 +2,6 @@
 title: "SMB Shares Screens"
 description: "Provides information on SMB share screens and settings."
 weight: 80
-aliases:
- - /scale/scaleuireference/shares/smbsharesscreens/
- - /scale/scaleuireference/shares/smb/smbsharesscreens/
- - /scale/scaleuireference/shares/smb/
- - /scale/scaleclireference/sharing/clismb/
 tags:
 - smb
 - afp

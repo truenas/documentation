@@ -2,13 +2,6 @@
 title: "General Settings Screen"
 description: "Provides information on the General Settings screen, widgets, and configuration settings for getting support, changing console or the GUI, localization and keyboard setups, and system email."
 weight: 50
-aliases:
- - /scale/systemsettings/generalsettingsscreens/
- - /scale/scaleclireference/system/cliconfig/
- - /scale/scaleclireference/system/cligeneral/
- - /scale/scaleclireference/system/clisupport/
- - /scale/scaleclireference/system/clitruenas/
- - /scale/systemsettings/generalsettings/
 tags:
  - settings
  - console

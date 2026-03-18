@@ -7,8 +7,6 @@ tags:
 - shares
 - iscsi
 doctype: tutorial
-aliases:
- - /scale/scaletutorials/shares/iscsi/addingiscsishares/
 ---
 
 

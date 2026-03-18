@@ -2,10 +2,6 @@
 title: "NFS Services Screen"
 description: "Provides information on NFS service screen and settings."
 weight: 100
-aliases:
- - /scale/systemsettings/services/nfsservicescreen/
- - /scale/shares/iscsi/nfs/nfsservicescreen/
- - /scale/scaleclireference/service/clinfs/
 tags:
  - nfs
  - services

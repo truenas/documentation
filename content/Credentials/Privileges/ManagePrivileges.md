@@ -2,7 +2,6 @@
 title: "Managing Privileges"
 description: "Provides instructions on adding and managing groups privileges."
 weight: 20
-aliases: 
 tags:
  - groups
 keywords:

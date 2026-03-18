@@ -2,8 +2,6 @@
 title: "Managing NVMe-oF Subsystems"
 description: "Provides information on managing NVMe-oF subsystems, namespaces, hosts, and ports."
 weight: 20
-aliases:
- - /scale/scaletutorials/shares/nvme-of/managing-nvme-of-subsystems/
 tags:
 - nvme-of
 - rdma

@@ -2,12 +2,6 @@
 title: "Encrypting Datasets"
 description: "Provides information on TrueNAS storage encryption for pools, root datasets, datasets, and zvols."
 weight: 20
-aliases:
- - /scale/scaletutorials/datasets/encryptionscale/
- - /scale/storage/encryptionscale/
- - /scale/scaletutorials/storage/datasets/encryptionscale/
- - /scale/storage/pools/encryptionscale/ 
- - /scale/datasets/encryption/
 tags:
 - encryption
 - datasets

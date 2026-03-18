@@ -2,8 +2,6 @@
 title: "NVMe-oF Share Screens"
 description: "Provides information on NVMe-oF share screens and settings."
 weight: 50
-aliases:
- - /scale/scaleuireference/shares/nvme-of-screens/
 tags:
 - nvme-of
 - fibre channel

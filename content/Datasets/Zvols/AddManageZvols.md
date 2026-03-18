@@ -2,10 +2,6 @@
 title: "Adding and Managing Zvols"
 description: "Provides instructions on creating, editing, and managing zvols."
 weight: 20
-aliases:
- - /scale/datasets/addmanagezvols/
- - /scale/storage/storagedashboardscreens/pools/zvolsscale/
- - /scale/storage/storageoverview/datasets/addmanagezvols/
 tags: 
 - zvol
 - storage

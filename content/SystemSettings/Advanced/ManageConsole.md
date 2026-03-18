@@ -2,8 +2,6 @@
 title: "Managing the Console Setup Menu"
 description: "Provides information on the Console setup menu configuration settings including the serial port, port speed, password protection, and the banner users see."
 weight: 20
-aliases:
- - /scale/scaletutorials/systemsettings/advanced/manageconsolescale/
 tags:
  - console
  - settings

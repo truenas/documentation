@@ -2,9 +2,6 @@
 title: "Virtual Machines Screens"
 description: "Provides information on the screens and settings to add virtual machines (VMs) and devices to your TrueNAS SCALE system."
 weight: 40
-aliases:
- - /scale/scaleuireference/virtualmachinesscreens/
- - /scale/scaleuireference/virtualizationscreens/
 tags:
  - vm
  - gpu

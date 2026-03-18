@@ -10,8 +10,6 @@ keywords:
 - data protection
 - data backup and recovery
 doctype: tutorial
-aliases:
- - /scale/scaletutorials/dataprotection/cloudsynctasks/addgooglephotoscloudsynctask/
 ---
 
 

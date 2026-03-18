@@ -4,11 +4,6 @@ description: "Tutorials for data backup feature configuration in TrueNAS."
 geekdocCollapseSection: true
 weight: 8
 related: false
-aliases:
- - /scale/scaleclireference/task/
- - /scale/scaleuireference/dataprotection/
- - /scale/scaletutorials/dataprotection/
- - /scale/dataprotection/
 ---
 
 The **Data Protection** screen task widgets allow users to set up multiple redundant tasks to protect and back up data in case of drive failure.

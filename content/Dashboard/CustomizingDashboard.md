@@ -2,8 +2,6 @@
 title: "Customizing the Dashboard"
 description: "Tutorials related to using the TrueNAS Dashboard. Includes instructions on customizing the Dashboard widgets."
 weight: 10
-aliases:
- - /scale/scaletutorials/dashboard/
 tags:
 - dashboard
 related: true

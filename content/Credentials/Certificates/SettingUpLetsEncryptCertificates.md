@@ -9,8 +9,6 @@ tags:
 keywords:
 - nas data storage 
 doctype: tutorial
-aliases:
- - /scale/scaletutorials/credentials/certificates/settingupletsencryptcertificates/
 ---
 
 

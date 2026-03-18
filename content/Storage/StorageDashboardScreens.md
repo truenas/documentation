@@ -2,15 +2,6 @@
 title: "Storage Dashboard Screens"
 description: "Provides information on the Storage Dashboard widgets and options for pools, devices, and disks listed on this screen."
 weight: 40 
-aliases:
- - /scale/scaleuireference/storage/pools/
- - /scale/scaleclireference/storage/
- - /scale/scaleclireference/storage/clifilesystem-storage/
- - /scale/scaleuireference/storage/storagedashboardscreen/ 
- - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
- - /scale/scaleclireference/storage/cliresilver/
- - /scale/scaleclireference/storage/cliscrub/
- - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
 tags:
 - pools
 - storage

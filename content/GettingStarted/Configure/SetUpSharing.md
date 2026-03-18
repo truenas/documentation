@@ -2,8 +2,6 @@
 title: "Setting Up Data Sharing"
 description: "Provides general information on setting up basic data sharing on TrueNAS."
 weight: 50
-aliases:
- - /scale/gettingstarted/install/setupsharing/
 tags:
 - shares
 keywords:

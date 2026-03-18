@@ -2,8 +2,6 @@
 title: "API Reference"
 description: "Instructions to access built-in TrueNAS API documentation and links to static copies of the API documentation."
 geekdocCollapseSection: true
-aliases:
- - /api/websocket.html
 weight: 50
 related: false
 ---

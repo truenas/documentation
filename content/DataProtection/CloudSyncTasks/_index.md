@@ -2,10 +2,6 @@
 title: "Cloud Sync Tasks"
 description: "Tutorials to configure and manage data backups from TrueNAS to various third-party cloud service providers."
 geekdocCollapseSection: true
-aliases:
- - /scale/dataprotection/cloudsynctasks/cloudsynctasks/
- - /scale/dataprotection/cloudsynctasks/addcloudsynctasks/
- - /scale/scaleclireference/task/cloudsync/
 weight: 20
 tags:
  - cloud

@@ -2,9 +2,6 @@
 title: "Advanced Replication Tasks"
 description: "Instructions to configure advanced ZFS snapshot replication tasks in TrueNAS."
 geekdocCollapseSection: true
-aliases:
- - /scale/dataprotection/replication/useadvancedreplicationscale/
- - /scale/dataprotection/replication/advancedreplication/useadvancedreplicationscale/
 weight: 70
 related: false
 tags:

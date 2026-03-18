@@ -1,17 +1,9 @@
 ---
-title: "TrueNAS 26 Development Notes"
+title: "TrueNAS 26 Version Notes"
 description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
 weight: 10
 related: false
 use_jump_to_buttons: true
-aliases:
- - /scale/scalereleasenotes/
- - /scalenext-releasenotes/
- - /scale/scalenextversion/
- - /scale/26/gettingstarted/scalereleasenotes/
- - /scale/26/gettingstarted/versionnotes/
- - /scale/gettingstarted/scalereleasenotes/ 
- - /releasenotes/
 jump_to_buttons:
   - text: "Latest Changes"
     anchor: "26-nightly-changes"
@@ -39,10 +31,10 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-{{< hint type="tip" title="TrueNAS 26 Nightly Development Documentation" >}}
-This page tracks the latest development roadmap and notes for TrueNAS 26, the next major version of TrueNAS.
+{{< hint type="important" title="TrueNAS 26 Early Release Documentation" >}}
+This page tracks release information for TrueNAS 26, the next major version of TrueNAS.
 
-See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or pre-release [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) release notes for information relating to those versions.
+See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) release notes for information relating to those versions.
 {{< /hint >}}
 
 ## Notable Changes and Known Issues

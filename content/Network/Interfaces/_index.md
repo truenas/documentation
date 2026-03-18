@@ -3,9 +3,6 @@ title: "Interface Configuration"
 description: "Tutorials to configure the various types of network interfaces available in TrueNAS."
 geekdocCollapseSection: true
 weight: 10
-aliases:
- - /scale/scaletutorials/network/interfaces/managinginterfaces/
- - /scale/scaletutorials/network/interfaces/settingupstaticips/ 
 related: false
 tags:
  - network

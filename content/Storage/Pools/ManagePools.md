@@ -2,11 +2,6 @@
 title: "Managing Pools"
 description: "Provides instructions on managing storage pools, VDEVs, and disks in TrueNAS."
 weight: 40
-aliases:
- - /scale/scaletutorials/storage/managepoolsscale/
- - /scale/scaletutorials/storage/pools/managepoolsscale/
- - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
- - /scale/scaletutorials/dataprotection/scrubtasksscale/
 tags: 
 - pools
 - storage

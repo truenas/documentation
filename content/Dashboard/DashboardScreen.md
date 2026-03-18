@@ -2,9 +2,6 @@
 title: "Dashboard Screen"
 description: "Explains the main dashboard information cards (widgets) and provides basic information on synchronizing the system and TrueNAS server times, and on customizing the Dashboard display."
 weight: 50
-aliases:
- - /scale/scaleuireference/scaledashboard/
- - /scale/dashboard/dashboard/
 tags:
 - dashboard
 - timesync

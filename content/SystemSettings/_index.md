@@ -4,14 +4,6 @@ description: "TrueNAS system settings tutorials and UI reference for General, Ad
 geekdocCollapseSection: true
 weight: 15
 related: false
-aliases:
- - /scale/scaletutorials/systemsettings/
- - /scale/scaleuireference/systemsettings/
- - /scale/scaleclireference/system/
- - /scale/scaleclireference/service/clictdb/
- - /scale/scaleclireference/system/clicore/
- - /scale/systemsettings/
- - /scale/scaletutorials/systemsettings/overview/
 ---
 
 TrueNAS system management options are collected in this section of the UI and organized into a few different screens:

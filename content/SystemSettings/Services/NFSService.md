@@ -2,7 +2,6 @@
 title: "Configuring NFS Service"
 description: "Provides information on configuring NFS service in TrueNAS."
 weight: 20
-aliases: /scale/shares/iscsi/nfs/nfsservicescreen/
 tags:
  - nfs
  - services

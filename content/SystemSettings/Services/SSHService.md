@@ -2,8 +2,6 @@
 title: "Configuring SSH Service"
 description: "Provides information on configuring the SSH service in TrueNAS and using an SFTP connection."
 weight: 50
-aliases: 
- - /scale/scaletutorials/systemsettings/services/sshservicescale/
 tags:
  - ssh
  - sftp

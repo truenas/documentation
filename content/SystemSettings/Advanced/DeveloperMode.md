@@ -2,8 +2,6 @@
 title: "Developer Mode (Unsupported)"
 description: "Provides information on the unsupported TrueNAS developer mode and how to enable it."
 weight: 100
-aliases:
- - /scale/scaletutorials/systemsettings/advanced/developermode/
 tags:
 keywords:
 - nas storage solutions

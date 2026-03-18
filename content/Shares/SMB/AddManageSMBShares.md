@@ -2,11 +2,6 @@
 title: "Adding and Managing SMB Shares"
 description: "Provides instructions on creating and managing SMB shares, configuring advanced options, and managing ACL permissions."
 weight: 10
-aliases:
- - /scale/scaletutorials/shares/smb/addsmbshares/
- - /scale/scaletutorials/shares/smb/managesmbshares/
- - /scale/shares/smb/smbshares/
- - /scale/shares/smb/managesmbshares/
 tags:
 - smb
 - afp
