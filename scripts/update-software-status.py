@@ -66,7 +66,7 @@ def get_doc_url_components(version):
     if major >= 26:
         # 26+: new versioning scheme (26.0.0, 26.1.0, ...), URL uses major only
         return str(major), 'versionnotes', anchor
-    elif major > 25 or (major == 25 and minor >= 10):
+    elif major == 25 and minor >= 10:
         # 25.10: URL uses major.minor
         return major_minor, 'versionnotes', anchor
     else:
