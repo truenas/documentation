@@ -113,6 +113,10 @@ def combine_changelogs(version):
     # Sort by Issue key for consistent output
     unique_rows.sort(key=lambda x: x[1] if len(x) > 1 else '')
     
+    if header is None:
+        print(f"No data rows found across all CSV files for version {version}")
+        return
+
     # Write combined file
     with open(output_file, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
