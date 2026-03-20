@@ -23,6 +23,7 @@ timeout = "30s"
 name = "The TrueNAS development team and TrueNAS users"
 
 [outputs]
+home = ["HTML","RSS","print"]
 section = ["HTML","RSS","print"]
 [outputFormats.PRINT]
 baseName = "index"
