@@ -8,6 +8,8 @@ keywords:
 - data storage system
 - nas storage
 - nas data storage
+aliases:
+ - /fseries
 ---
 
 {{< prodintro banner="FSeries/F-SeriesFrontBez2.png" bannerhover="F-Series System" bannerlink="https://www.truenas.com/f-series/"
