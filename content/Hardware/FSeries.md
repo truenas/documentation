@@ -9,7 +9,7 @@ keywords:
 - nas storage
 - nas data storage
 aliases:
- - /vseries
+ - /fseries
 ---
 
 {{< prodintro banner="FSeries/F-SeriesFrontBez2.png" bannerhover="F-Series System" bannerlink="https://www.truenas.com/f-series/"
