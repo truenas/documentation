@@ -4,6 +4,8 @@ description: "View the TrueNAS UI Reference Guide as a single page for download 
 weight: 1
 no_print: "true"
 related: false
+aliases:
+ - /scaleuireference/printview/
 ---
 
 <meta http-equiv="Refresh" content="0; url='/printview/scaleuireference/'" />
