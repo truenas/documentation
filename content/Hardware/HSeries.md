@@ -3,6 +3,8 @@ title: "H-Series"
 weight: 40
 geekdocFlatSection: true
 description: "Compact and power-efficient flexible HA ZFS NAS storage platform with dual-ported SAS HDD and SSDs for small to medium businesses, virtualization, file share, and backups."
+aliases:
+ - /hseries/
 keyword:
  - enterprise storage solution
  - scalable storage systems
