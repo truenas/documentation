@@ -1,10 +1,12 @@
 ---
-title: "24.10 (Electric Eel) Version Notes"
+title: "24.10 (Electric Eel) Version Notes (Archived)"
 description: "Highlights, change log, and known issues for TrueNAS 24.10 release versions."
 weight: 10
 related: false
 ---
 {{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="24.10 Electric Eel" icon="/images/SCALE_Electric_Eel_Icon.png" icon_alt="Electric Eel Icon" >}}
+
+TrueNAS released 24.10 (Electric Eel) on December 17, 2024. This version received its final update on August 7, 2025. The terminal version of Electric Eel is 24.10.2.4.
 
 ## Features
 
