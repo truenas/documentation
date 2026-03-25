@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 ## GitHub Token Setup (Recommended)
 
-The `prep` command searches GitHub for PR links when they are not available in Jira's public API (developers sometimes post them in internal-only comments). A token raises the GitHub search rate limit from 10 to 30 requests per minute.
+The `prep` command searches GitHub for PR links when they are not available in the Jira public API (developers sometimes post them in internal-only comments). A token raises the GitHub search rate limit from 10 to 30 requests per minute.
 
 Get a token at **GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)**.
 No scopes are needed since `truenas` repos are public.
