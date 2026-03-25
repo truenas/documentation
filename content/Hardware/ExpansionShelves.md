@@ -23,7 +23,7 @@ keyword:
 
 {{< prodintro title="Scale Storage Effortlessly"
 subtitle="As your data grows, TrueNAS grows with you."
-imgurl="/images/Hardware/ExpansionShelves/ExpansionShelves.png"
+imgurl="https://www.truenas.com/wp-content/uploads/2025/01/F100_Expansion_Stack.png"
 imgalt="TrueNAS Expansion Shelves" >}}
 
 ## ES24 Resources
