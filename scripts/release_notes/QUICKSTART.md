@@ -155,7 +155,7 @@ jump_to_buttons:
 ```
 
 > **Important:** The placeholder must be exactly `<!-- Notable changes placeholder -->`.
-> Any other text (including other placeholder patterns) will cause `apply` to fail with a warning.
+> Any other text (including other placeholder patterns) causes `apply` to fail with a warning.
 
 ---
 
