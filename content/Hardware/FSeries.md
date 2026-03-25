@@ -24,7 +24,7 @@ Visit the [F Series product page](https://www.truenas.com/f-series/) for more de
 
 <div class="docs-sections">
 
-{{< imagecard-lang image="/images/Hardware/FSeries/FSeriesPUM.png" title="User Manual" link="https://www.truenas.com/docs/files/FSeriesPUM/FSeriesPUM.pdf"
+{{< imagecard-lang image="/images/Hardware/FSeries/FSeriesPUM.png" title="F-Series User Manual" link="https://www.truenas.com/docs/files/FSeriesPUM/FSeriesPUM.pdf"
 descr="Comprehensive User Manual for TrueNAS F-Series systems." pumid="fseries" >}}
 
 {{< imagecard image="/images/Hardware/FSeries/FSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/FSeriesSOV.pdf"

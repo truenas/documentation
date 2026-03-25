@@ -27,7 +27,7 @@ Visit the [H Series product page](https://www.truenas.com/h-series/) for more de
 
 <div class="docs-sections">
 
-{{< imagecard-lang image="/images/Hardware/HSeries/HSeriesPUM.png" title="Product User Manual" link="https://www.truenas.com/docs/files/HSeriesPUM/HSeriesPUM.pdf"
+{{< imagecard-lang image="/images/Hardware/HSeries/HSeriesPUM.png" title="H-Series User Manual" link="https://www.truenas.com/docs/files/HSeriesPUM/HSeriesPUM.pdf"
 descr="Comprehensive User Manual for TrueNAS H-Series systems." pumid="hseries" >}}
 
 {{< imagecard image="/images/Hardware/HSeries/HSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/HSeriesSOV.pdf"
