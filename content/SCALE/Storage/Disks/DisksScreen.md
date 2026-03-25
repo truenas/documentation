@@ -101,7 +101,7 @@ The **Unlock** button opens the **Unlock SED for *diskname*** dialog with the **
 
 {{< trueimage src="/images/SCALE/Storage/DiskSEDUnlockDialog.png" alt="SED Unlock Dialog" id="SED Unlock Dialog" >}}
 
-#### SED Reset Window <!-- tag for ui ref automation {id="disk_sed-reset"} -->
+#### SED Reset Window {id="disk_sed-reset"}
 
 The **SED Reset** button opens the **SED Reset - Secure Erase** window.
 This window shows a critical warning stating the operation is irreversible and permanently destroys all data on the disk.
@@ -113,7 +113,7 @@ Reseting the SED is a destructive process and should only be used as a last reso
 
 {{< trueimage src="/images/SCALE/Storage/DiskResetSEDWindowBottom.png" alt="Reset SED Window Bottom" id="Reset SED Window Bottom" >}}
 
-**Physical Security ID (PSID)** requires entering the  PSID from the label on the drive.
+**Physical Security ID (PSID)** requires entering the PSID from the label on the drive.
 
 **I understand this will permanently destroy all data on this disk** is required and confirms you understand this is a destructive process before you can proceed.
 

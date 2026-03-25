@@ -115,7 +115,7 @@ The **Basic Options** settings on the **Add** and **Edit NFS** screens show by d
 | **Description** | A text-entry field for a brief description or notes about how this share is used. The description entered shows in the **Description** column on the **Unix (NFS) Shares** card on the **Shares** dashboard and the **NFS** table on the **NFS** screen. |
 | **Enabled** | Select to enable this NFS share. Clear the checkbox to disable this NFS share without deleting the configuration. |
 | **Networks** | Defines an authorized network, and any added, restricts access to all other networks. Leave empty to allow all networks. **Add** shows the **Networks** IP address and CIDR fields to enter an allowed network IP and select the mask CIDR notation. Click **Add** for each network address and CIDR you want to define as an authorized network. |
-| **Add hosts** | Defines allowed clients (hosts) you want to allow to connect to the share. Defining authorized systems restricts access to all other systems. Leave the field empty to allow all systems access to the share. **Add** shows the **Authorized Hosts and IP addresses** field. Enter a host name or IP address to allow that system access to the NFS share. Click **Add** for each allowed system you want to define.  |
+| **Authorized Hosts and IP Addresses** | Defines allowed clients (hosts) you want to allow to connect to the share. Defining authorized systems restricts access to all other systems. Leave the field empty to allow all systems access to the share. **Add** to the right of **Hosts** shows the **Authorized Hosts and IP addresses** field. Can have multiple entries.|
 {{< /truetable >}}
 
 ### Advanced Options Settings {id="nfs_add_advanced-access"}

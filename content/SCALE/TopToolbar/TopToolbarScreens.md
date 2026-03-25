@@ -90,7 +90,7 @@ The <span class="material-icons">exit_to_app</span> **Log Out** button logs the 
 
 The **Power** <span class="material-icons">power_settings_new</span> button provides two options that let the user restart or shut down their TrueNAS system.
 
-#### Reason for Restart {id="toobar_power_reason"}
+#### Reason for Restart {id="[toobar_power_reason](https://spdk.io/doc/fips.html)"}
 
 **Restart** and **Shutdown** open a dialog where users select a predefined reason or enter a custom reason to restart or shutdown the system.
 This dialog or a message shows in the Console Setup menu after selecting the option to restart or shutdown the system in that interface.
@@ -99,6 +99,8 @@ This provides TrueNAS with metrics on the reasons users restart or shutdown thei
 **Reason** shows a list of predefined reason to restart or shutdown the system.
 
 **Custom** shows a text field where users can enter a reason other than the predefined options a why they are restarting or shutting down the system.
+
+**Confirm** activates the **Restart** or **Shut Down** button, allowing you to power cycle or shutdown the system.
 
 <div class="noprint">
 

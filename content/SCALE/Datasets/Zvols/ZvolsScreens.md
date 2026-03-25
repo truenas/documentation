@@ -1,6 +1,6 @@
 ---
 title: "Zvols Screen"
-description: "Provides information on the settings and functions found on the Zvol screens and widgets."
+description: "Provides information on the settings and functions found on the Zvol screens and cards."
 weight: 50
 aliases:
  - /scale/scaleuireference/datasets/zvolsscreensscale/
@@ -13,31 +13,31 @@ doctype: reference
 ---
 
 
-The zvol screens and widgets, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage.
+The zvol screens and cards, accessed from the **Datasets** screen, allow you to add or edit a zvol and manage the volume storage.
 Zvols are listed on the **Datasets** screen tree table.
 
-{{< trueimage src="/images/SCALE/Datasets/DatasetsScreenWithZvolWidgets.png" alt="Dataset Tree Table and Zvol Widgets" id="Dataset Tree Table and Zvol Widgets" >}}
+{{< trueimage src="/images/SCALE/Datasets/DatasetsScreenWithZvolWidgets.png" alt="Dataset Tree Table and Zvol Cards" id="Dataset Tree Table and Zvol Cards" >}}
 
 The dataset tree table shows storage space used and available for that zvol (or dataset), encryption status (locked, unlocked, or unencrypted), and how that zvol or dataset is used (i.e., the system dataset, a share, virtual machine, or application).
 
 **Add Zvol** shows on the **Datasets** screen when a dataset is selected, but does not show when a zvol is selected. 
 
-## Zvol Widgets
+## Zvol cards
 
-Each zvol has a set of **Details for *zvolname*** information cards (widgets) that provide information grouped by functional areas.
-Zvol widgets are:
-* **[Zvol Details](#zvol-details-widget)**
-* **[Zvol Space Management](#zvol-space-management-widget)**
-* **[Data Protection](#data-protection-widget)**
-* **[Encryption](#encryption-widget)**
+Each zvol has a set of **Details for *zvolname*** information cards (cards) that provide information grouped by functional areas.
+Zvol cards are:
+* **[Zvol Details](#zvol-details-card)**
+* **[Zvol Space Management](#zvol-space-management-card)**
+* **[Data Protection](#data-protection-card)**
+* **[Encryption](#encryption-card)**
 
-The **Encryption** widget only shows if the zvol is encrypted.
+The **Encryption** card only shows if the zvol is encrypted.
 
-### Zvol Details Widget
+### Zvol Details ard
 
-The **Zvol Details** widget lists information on sync type, compression level, and ZFS deduplication settings. The **Path** shows the full path from a root (pool) dataset to the zvol location.
+The **Zvol Details** card lists information on sync type, compression level, and ZFS deduplication settings. The **Path** shows the full path from a root (pool) dataset to the zvol location.
 
-{{< trueimage src="/images/SCALE/Datasets/ZvolDetailsWidget.png" alt="Zvol Details Widget" id="Zvol Details Widget" >}}
+{{< trueimage src="/images/SCALE/Datasets/ZvolDetailsWidget.png" alt="Zvol Details Card" id="Zvol Details Card" >}}
 
 **Edit** opens the **[Edit Zvol](#add-and-edit-zvol-screens)** screen for the selected zvol.
 
@@ -54,35 +54,35 @@ Parent and child datasets include the **Delete** button.
 The window includes a blank field where you type the path for the zvol.
 **Confirm** activates the **Delete Zvol** button.
 
-### Zvol Space Management Widget
+### Zvol Space Management Card
 
-The **Zvol Space Management** widget shows the space allocation (reserved, used, available) for the zvol.  
-When an encrypted zvol is locked, you must unlock it to see this widget.
+The **Zvol Space Management** card shows the space allocation (reserved, used, available) for the zvol.  
+When an encrypted zvol is locked, you must unlock it to see this card.
 The donut graph provides at-a-glance information and numeric values for the space allocated and used in the selected zvol.
 This includes data written and space allocated to child datasets of this dataset.
 
-{{< trueimage src="/images/SCALE/Datasets/ZvolSpaceManagementWidget.png" alt="Zvol Space Management Widget" id="Zvol Space Management Widget" >}}
+{{< trueimage src="/images/SCALE/Datasets/ZvolSpaceManagementWidget.png" alt="Zvol Space Management Card" id="Zvol Space Management Card" >}}
 
-### Encryption Widget
+### Encryption Card
 
-The **Encryption** widget only shows when a zvol is configured with encryption.
+The **Encryption** card only shows when a zvol is configured with encryption.
 It shows the current state of the encryption, the encryption root, the type, and the algorithm used.
-The **Encryption** widget shows the **Lock** or **Unlock** options if it uses passphrase encryption.
+The **Encryption** card shows the **Lock** or **Unlock** options if it uses passphrase encryption.
 The **Export Key** option shows if the zvol uses key encryption.
 
-{{< trueimage src="/images/SCALE/Datasets/ZvolEncryptionWidget.png" alt="Encryption Widget Zvol" id="Encryption Widget Zvol" >}}
+{{< trueimage src="/images/SCALE/Datasets/ZvolEncryptionWidget.png" alt="Encryption Card Zvol" id="Encryption Card Zvol" >}}
 
 **Edit** opens the **[Edit Encryption Options]({{< ref "EncryptionScreen" >}}) for *zvol*** window for the selected zvol.
 
 For more details on encryption windows and functions, see [Encryption Settings]({{< ref "EncryptionScreen" >}}).
 
-### Data Protection Widget
+### Data Protection Card
 
-The **Data Protection** widget displays for all datasets or zvols.
+The **Data Protection** card displays for all datasets or zvols.
 It shows information for the number of snapshots and other data protection-related scheduled tasks (replication, cloud sync, rsync, and snapshots) configured on the system.
 It provides access to the tasks found on the **Data Protection** screen through links.
 
-{{< trueimage src="/images/SCALE/Datasets/ZvolDataProtectionWidget.png" alt="Data Protection Widget" id="Data Protection Widget" >}}
+{{< trueimage src="/images/SCALE/Datasets/ZvolDataProtectionWidget.png" alt="Data Protection Card" id="Data Protection Card" >}}
 
 **Take Snapshot** opens the **[Add Snapshot]({{< ref "SnapshotsScreens" >}})** screen.
 
@@ -92,13 +92,13 @@ It provides access to the tasks found on the **Data Protection** screen through 
 
 **Go To Backups** opens the **Data Protection** screen, where you can create a data protection task like Rsync, Replication, or Cloud Sync Backup.
 
-## Add and Edit Zvol Screens
+## Add and Edit Zvol Screens {id="zvol_add"}
 
 The **Add Zvol** and **Edit Zvol** screens allow admin users with the right permission level to create and modify zvols.
 Both screens include the same settings, but you cannot change the zvol name, **Block Size**, or select the **Sparse** option after you click **Save** on the **Add Zvol** screen.
-After adding a zvol, click **Edit** on the **Zvol Details** widget to open the **Edit Zvol** screen.
+After adding a zvol, click **Edit** on the **Zvol Details** card to open the **Edit Zvol** screen.
 
-When the zvol is encrypted, **Edit** on the **Encryption** widget opens a configuration screen where you can change the passphrase for a zvol encrypted with the passphrase type, but you cannot change to a key encryption type. If the zvol is not encrypted, you do not see encryption options on the **Edit Zvol** screen.
+When the zvol is encrypted, **Edit** on the **Encryption** card opens a configuration screen where you can change the passphrase for a zvol encrypted with the passphrase type, but you cannot change to a key encryption type. If the zvol is not encrypted, you do not see encryption options on the **Edit Zvol** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/AddZvolScreen.png" alt="Add Zvol Screen" id="Add Zvol Screen" >}}
 

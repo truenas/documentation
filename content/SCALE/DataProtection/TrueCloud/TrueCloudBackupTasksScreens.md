@@ -115,7 +115,7 @@ Additional settings show depending on the **Include/Exclude** selection.
 Use **Local** settings to select the target mount point on the current (local) system where files are restored.
 Be cautious when setting the restore target to avoid overwriting existing files.
 
-**Target** settings allow entering the path to the dataset or directory or browse to the location to populate the field with the local directory where files are restored.
+**Target** allows entering or browsing to select the path to the dataset or directory populates the field with the local directory where files are restored.
 
 {{< include file="/static/includes/FileExplorerFolderIcons.md" >}}
 

@@ -21,9 +21,13 @@ Boot environments do not share all configuration information. Updates create a n
 
 {{< trueimage src="/images/SCALE/SystemSettings/BootEnvironmentListingSCALE.png" alt="System Boot Screen" id="System Boot Screen" >}}
 
+### Boot Environment Options {id="boot_environment-options"}
+
 Screen options shown at the top right of the screen are:
 
-* **Stats/Settings** - Opens the **Stats/Settings** window with the **Boot pool Condition**, **Size** and **Used**, and **Last Scrub Run** statistics for the operating system device, and provides the option to change the default duration between the operating system device scrubs from every seven days to a new duration in days.
+* **Stats/Settings** - Opens the **Stats/Settings** window with the **Boot pool Condition**, **Size** and **Used**, and **Last Scrub Run** statistics for the operating system device.
+
+**Scrub interval (in days)** allows changing the default duration between the operating system device scrubs from every seven days to a new duration in days.
 
 * **Boot Pool Status** - Opens the **[Boot Pool Status](#boot-pool-status)** screen that displays the status of each device in the operating system device (boot pool), options for managing boot-pool devices, and lists any read, write, or checksum errors.
 

@@ -345,7 +345,7 @@ The **Add/Edit Disk** screen allows you to configure a new disk or modify an exi
 {{< /truetable >}}
 {{< /expand >}}
 
-{{< expand "Add/Edit Disk Settings" "v" >}}
+{{< expand "Add/Edit Disk Settings" "v" >}} <!-- {id="container_disk-add"} -->
 {{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen" id="Add Disk Screen" >}}
 
 {{< truetable >}}

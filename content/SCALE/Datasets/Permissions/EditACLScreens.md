@@ -35,7 +35,7 @@ If you set **Dataset Preset** to **Generic**, or selected **POSIX** or **Inherit
 
 Use the settings on this screen to configure basic ACL permissions.
 
-{{< expand "POSIX ACL Owner Settings" "v" >}}
+{{< expand "POSIX ACL Owner Settings" "v" >}} {id="edit_acl"}
 The **Owner** section controls which TrueNAS user and group has full control of this dataset.
 
 {{< truetable >}}

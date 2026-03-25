@@ -51,6 +51,8 @@ These are ZFS storage pools previously created and stored on disks connected to 
 TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 
 **Import** starts connecting to the pool and bringing it into TrueNAS.
+
+**Global SED Password** shows for SED encrypted drives. Enter the global SED password, if set, or the SED password assigned to the selected drive to unlock it and allow the pool import to proceed.
  {{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.

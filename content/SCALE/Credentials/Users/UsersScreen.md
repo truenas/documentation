@@ -187,8 +187,9 @@ Authentication settings show after selecting **Shell Access** or **SSH Access** 
 | Setting | Description |
 |---------|-------------|
 | **Password** | (Required) Text entry field for the password or passphrase the user enters when logging into the UI or an SSH session. A password cannot contain a question mark (?). |
+| **Confirm Password** | (Required) Text entry field to re-enter the password or passphrase for the user when logging into the UI or an SSH session. Must match the entry in **Password**. |
 | **Disable Password** | Disables password-based authentication for the user account. When selected, TrueNAS removes the existing password and hides the **Password** widget. Users with disabled passwords cannot access password-based services like SMB shares or SSH password authentication. This option is not available (grayed out) when **SMB Access** is selected. |
-| **Public SSH Key** | Only shows after selecting **SSH Access**. Text entry field that accepts manual or copy/paste entry of the public SSH key for any key-based authentication. Do not paste the private key in this field! |
+| **Public SSH Key (Authorized Access)** | Only shows after selecting **SSH Access**. Text entry field that accepts manual or copy/paste entry of the public SSH key for any key-based authentication. Do not paste the private key in this field! |
 {{< /truetable >}}
 
 ### Additional Details {id="user_add-other"}
