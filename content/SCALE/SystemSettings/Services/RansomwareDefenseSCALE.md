@@ -30,6 +30,7 @@ It does not protect client computers, email, web traffic, or other services.
 - Enable TrueNAS Ransomware Defense on the target system through TrueNAS Connect.
   See the [TrueNAS Connect documentation](https://connect.truenas.com/docs/) for instructions.
   <!-- PLACEHOLDER: Update link to the specific Enable TrueNAS Ransomware Defense article once published in connect-docs. -->
+- Confirm your TrueNAS Connect subscription tier supports the amount of storage you intend to monitor. The Foundations tier supports up to 1 TiB of monitored storage.
 - Verify at least one dataset exists on the TrueNAS system. TrueNAS Ransomware Defense monitors existing datasets and does not create them.
 - Confirm you have TrueNAS system credentials with admin-level access (root, sudo group, or builtin_administrators group membership).
 
@@ -79,7 +80,7 @@ Disable **Report Only** after testing to enable full automated protection.
 
 After adding a dataset, TrueNAS Ransomware Defense automatically creates *honeypot files* in the dataset.
 Honeypot files are decoy files with realistic names distributed across the dataset.
-Any access to a honeypot file triggers an immediate high-confidence ransomware alert.
+Any write to a honeypot file triggers an immediate high-confidence ransomware alert.
 
 {{< hint type=important >}}
 Do not delete honeypot files from monitored datasets. Removing them reduces detection capability.
@@ -106,6 +107,12 @@ Protection settings determine how TrueNAS Ransomware Defense responds when it de
 | **Restrict Access** | Applies both **Disable Share** and **Read Only** simultaneously for maximum automated response. |
 | **Stop Deleting Snapshots** | Pauses snapshot retention cleanup during an active incident to preserve snapshots needed for recovery. |
 {{< /truetable >}}
+
+{{< hint type=important >}}
+Enabling **Read Only** sets the entire dataset to read-only mode and affects all services that use it.
+Child zvols, virtual machines, iSCSI shares, and SMB shares on the dataset become unavailable for write operations until the protection is manually reversed.
+Verify no critical workloads depend on the dataset before enabling **Read Only** in a production environment.
+{{< /hint >}}
 
 {{< expand "Recommended configurations" "v" >}}
 Choose a configuration based on your environment requirements.
@@ -187,12 +194,10 @@ TrueNAS Ransomware Defense displays a red alert indicator on the **Dashboard** w
 4. Filter events by dataset, type, or date to identify the full scope of the activity.
 
 {{< expand "Detection methods" "v" >}}
-TrueNAS Ransomware Defense uses four methods to detect ransomware activity:
+TrueNAS Ransomware Defense uses honeypot file monitoring as its primary detection method.
 
-- **Honeypot access**: Any access to a honeypot file triggers an immediate high-confidence alert. This is the most reliable detection method.
-- **Suspicious behavior**: Detects rapid file modifications, mass file rewrites, systematic directory scanning, and file read-then-rewrite patterns consistent with encryption.
-- **File analysis**: Detects files with unusually high data randomness (indicating encrypted content), file type mismatches, and file extension changes such as renaming documents to *.encrypted*.
-- **Snapshot comparison**: Alerts when more than the configured threshold percentage of dataset data changes between consecutive snapshots, catching slow-moving ransomware.
+- **Honeypot access**: TrueNAS Ransomware Defense actively watches honeypot files in each monitored dataset. Any write to a honeypot file triggers an immediate high-confidence ransomware alert.
+- **Rapid change detection**: A secondary mechanism alerts when a dataset undergoes an unusually high rate of data change between consecutive snapshots. Accurate use of this method requires familiarity with your environment's normal usage patterns to minimize false positives.
 {{< /expand >}}
 
 ### Recovering from a Ransomware Attack
