@@ -1,6 +1,7 @@
 ---
 title: "Expansion Shelves"
 weight: 60
+hide_title: true
 aliases:
  - /hardware/expansionshelves/es12bsg/
  - /hardware/expansionshelves/es24bsg/
@@ -20,11 +21,10 @@ keyword:
 ---
 <br>
 
-{{< prodintro banner="ExpansionShelves/ExpansionShelvesFront.png" bannerhover="Expansion Shelves"
-icon1="IconTrueNAS.png" cell1title="Wide Range of Capacity Options" cell1text="24 to 102 drive capacity. Multiple form factors."
-icon2="IconGraph.png" cell2title="Seamless Scaling" cell2text="Add storage to your datacenter without hassle or downtime."
-icon3="IconHA.png" cell3title="Dual Controller" cell3text="Highly available storage expansion."
-icon4="IconEnterprise.png" cell4title="Meets any Expansion Requirements" cell4text="Whether you need a few drives or hundreds, TrueNAS Enterprise products offer customizable solutions to fit any of your storage requirements." >}}
+{{< prodintro title="Scale Storage Effortlessly"
+subtitle="As your data grows, TrueNAS grows with you."
+imgurl="/images/Hardware/ExpansionShelves/ExpansionShelves.png"
+imgalt="TrueNAS Expansion Shelves" >}}
 
 ## ES24 Resources
 

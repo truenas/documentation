@@ -1,6 +1,7 @@
 ---
 title: "M-Series"
 weight: 20
+hide_title: true
 geekdocFlatSection: true
 aliases:
  - /hardware/mseries/mseriesbsg/
@@ -18,13 +19,12 @@ keywords:
 ---
 <br>
 
-{{< prodintro banner="MSeries/MSeriesFront.png" bannerhover="M-Series System" bannerlink="https://www.truenas.com/m-series/"
-icon1="IconTrueNAS.png" cell1title="The Industry’s Fastest ZFS Storage is now Upgradeable" cell1text="Best for: Larger Projects / Enterprise, Virtualization, File Share, Backup."
-icon2="IconSpeed.png" cell2title="Over 20 GB/s & 1 Million IOPS" cell2text="10,000+ VMs, and thousands of SMB/NFS Clients. Up to 64 Cores, 1.5 TB RAM, 4 NVDIMMs."
-icon3="IconHA.png" cell3title="Maximum Storage Density with HA" cell3text="Up to 20 PB capacity, 8 PB All-Flash Capacity in a Rack. Fusion pools (with NVMe) increase performance."
-icon4="IconGraph.png" cell4title="Upgradeable with Common Chassis" cell4text="In-service Upgrades to M40, M50 and M60." >}}
-
-Visit the [M Series product page](https://www.truenas.com/m-series/) for more details.
+{{< prodintro title="Experience True Scalability"
+subtitle="All-Flash or Hybrid Capacity with legendary resilience."
+productlink="https://www.truenas.com/m-series/"
+linklabel="Visit the M-Series product page for more details"
+imgurl="https://www.truenas.com/wp-content/uploads/2026/01/M50.png"
+imgalt="TrueNAS M-Series" >}}
 
 ## Resources
 
