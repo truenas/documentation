@@ -23,11 +23,12 @@ Visit the [Mini Family product page](https://www.truenas.com/truenas-mini/) for 
 ## Resources
 
 <div class="docs-sections">
+
 {{< imagecard-lang image="/images/Hardware/Minis/MiniX+BSG.png" title="Mini X+ Basic Setup Guide" link="https://www.truenas.com/docs/files/MiniX+BSG/MiniX+BSG25111.pdf"
-descr="Deployment guide for TrueNAS Mini X+ Systems." >}}
+descr="Deployment guide for TrueNAS Mini X+ Systems." pumid="minix+" >}}
 
 {{< imagecard-lang image="/images/Hardware/Minis/MiniRBSG.png" title="Mini R Basic Setup Guide" link="https://www.truenas.com/docs/files/MiniRBSG/MiniRBSG25111.pdf"
-descr="Deployment guide for TrueNAS Mini R Systems." >}}
+descr="Deployment guide for TrueNAS Mini R Systems." pumid="minir" >}}
 
 {{< imagecard image="/images/Hardware/Minis/MiniNetworkPortIDs.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/MiniNetworkPortID25011.pdf"
 descr="TrueNAS identifications list of TrueNAS Mini systems network ports." >}}
