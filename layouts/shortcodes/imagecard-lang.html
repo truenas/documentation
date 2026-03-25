@@ -42,7 +42,7 @@
     <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
   </div>
   <div class="section-tab-content ixprods">
-    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
+    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title | safeHTML }}</b>
     <p>{{ $descr }}</p>
 
     <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">
@@ -66,13 +66,16 @@
 {{ $modalId := printf "pum-modal-%s" $pumid }}
 
 <dialog id="{{ $modalId }}" class="pum-modal" onclick="if(event.target===this)this.close();">
+  <button class="pum-modal-close" onclick="this.closest('dialog').close();" aria-label="Close">&times;</button>
   <div class="section-box pum-modal-card">
-    <button class="pum-modal-close" onclick="this.closest('dialog').close();" aria-label="Close">&times;</button>
+    <div class="section-tab-content ixprods" style="padding-top:0.75rem;">
+      <b style="justify-content:center;font-size:2rem;font-weight:600;">{{ $title | safeHTML }}</b>
+    </div>
     <div class="box-image">
       <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
     </div>
     <div class="section-tab-content ixprods">
-      <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
+      <a href="{{ $baseLink }}" target="_blank" class="pum-modal-english-btn">Open English PDF</a>
 
       <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">
         <select
