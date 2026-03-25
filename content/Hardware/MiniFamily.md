@@ -6,6 +6,7 @@ geekdocFlatSection: true
 aliases:
  - /hardware/mini/
  - /hardware/mini/minibsg/
+ - /mini/
 keyword:
  - scalable storage systems
  - data storage system

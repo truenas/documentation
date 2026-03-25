@@ -9,6 +9,7 @@ aliases:
  - /hardware/expansionshelves/es102bsg/
  - /hardware/expansionshelves/sasconnections/
  - /hardware/expansionshelves/
+ - /shelves/
 description: "TrueNAS platform expansion shelves to customize your NAS data storage systems and scale out drive capacity from 24 to 102 drives."
 keyword:
  - enterprise storage solution
