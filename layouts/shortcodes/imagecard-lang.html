@@ -34,9 +34,6 @@
   (dict "name" "Svenska" "code" "sv")
 }}
 
-{{/* Language selector markup reused in both card and modal */}}
-{{ define "lang-select" }}{{ end }}
-
 <a class="section-box" href="{{ $baseLink }}">
   <div class="box-image">
     <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
@@ -49,7 +46,7 @@
       <select
         id="lang-select-{{ md5 $baseLink }}"
         class="language-dropdown"
-        onchange="event.preventDefault(); event.stopPropagation(); window.open(this.value, '_blank');"
+        onchange="event.stopPropagation(); window.open(this.value, '_blank');"
         onclick="event.preventDefault(); event.stopPropagation();"
         style="padding: 0.25rem 0.5rem; border-radius: 4px; min-width: 200px; cursor: pointer; background-color: var(--body-background); color: var(--body-font-color); border: 1px solid var(--accent-color);">
         <option value="" disabled selected>Select a language...</option>
