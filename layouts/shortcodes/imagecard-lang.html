@@ -3,6 +3,7 @@
 {{ $image := .Get "image" }}
 {{ $title := .Get "title" }}
 {{ $descr := .Get "descr" }}
+{{ $pumid := .Get "pumid" }}
 
 {{/* EU Languages in alphabetical order with language codes */}}
 {{ $languages := slice
@@ -33,6 +34,67 @@
   (dict "name" "Svenska" "code" "sv")
 }}
 
+{{ if $pumid }}
+{{ $modalId := printf "pum-modal-%s" $pumid }}
+
+<a class="section-box" href="{{ $baseLink }}" onclick="event.preventDefault(); var m=document.getElementById('{{ $modalId }}'); if(m && m.showModal) m.showModal();">
+  <div class="box-image">
+    <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
+  </div>
+  <div class="section-tab-content ixprods">
+    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
+    <p>{{ $descr }}</p>
+    <p class="pum-card-hint">Click to select language</p>
+  </div>
+</a>
+
+<dialog id="{{ $modalId }}" class="pum-modal" onclick="if(event.target===this)this.close();">
+  <div class="pum-modal-inner">
+    <div class="pum-modal-header">
+      <span>{{ $title }}</span>
+      <button class="pum-modal-close" onclick="this.closest('dialog').close();" aria-label="Close">&times;</button>
+    </div>
+    <p>{{ $descr }}</p>
+    <div class="pum-modal-actions">
+      <a href="{{ $baseLink }}" target="_blank" class="pum-modal-english">Open English PDF</a>
+      <select class="pum-modal-select"
+        onchange="if(this.value){window.open(this.value,'_blank');this.value='';}">
+        <option value="" disabled selected>Select a language...</option>
+        {{ range $languages }}
+          {{ $langLink := printf "%s-%s.pdf" $baseLinkNoExt .code }}
+          <option value="{{ $langLink }}">{{ .name }} ({{ .code }})</option>
+        {{ end }}
+      </select>
+    </div>
+  </div>
+</dialog>
+
+<script>
+if (!window.__pumModalInit) {
+  window.__pumModalInit = true;
+  (function () {
+    function openPumFromURL() {
+      var params = new URLSearchParams(window.location.search);
+      var pum = params.get('pum');
+      if (pum) {
+        var modal = document.getElementById('pum-modal-' + pum);
+        if (modal && typeof modal.showModal === 'function') {
+          modal.showModal();
+        }
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', openPumFromURL);
+    } else {
+      openPumFromURL();
+    }
+  })();
+}
+</script>
+
+{{ else }}
+
+{{/* No pumid — original inline language selector behavior */}}
 <a class="section-box" href="{{ $baseLink }}">
   <div class="box-image">
     <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
@@ -57,3 +119,5 @@
     </div>
   </div>
 </a>
+
+{{ end }}
