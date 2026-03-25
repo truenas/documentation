@@ -10,6 +10,7 @@ aliases:
  - /hardware/rseries/rseriessov/
  - /files/R50BMPUM.pdf
  - /files/r50bsg3.0.pdf
+ - /rseries/
 keyword:
  - enterprise storage solution
  - scalable storage systems
@@ -34,7 +35,7 @@ imgalt="TrueNAS R-Series" >}}
 <div class="docs-sections">
 
 {{< imagecard-lang image="/images/Hardware/RSeries/R20PUM.png" title="R20 User Manual" link="https://www.truenas.com/docs/files/RSeriesPUM/R20B/R20PUM.pdf"
-descr="User Manual for the TrueNAS R20." >}}
+descr="User Manual for the TrueNAS R20." pumid="r20" >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/RSeriesNetworkPortIDs.pdf"
 descr="Identifications list of TrueNAS R20 and R50 systems network ports." >}}
@@ -55,7 +56,7 @@ descr="TrueNAS official Statement of Volatility for the R20B system." >}}
 <div class="docs-sections">
 
 {{< imagecard-lang image="/images/Hardware/RSeries/R50BMPUM.png" title="R50 User Manual" link="https://www.truenas.com/docs/files/RSeriesPUM/R50BM/R50BMPUM.pdf"
-descr="User Manual for the TrueNAS R50." >}}
+descr="User Manual for the TrueNAS R50." pumid="r50" >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/RSeriesNetworkPortIDs.pdf"
 descr="Identifications list of TrueNAS R20 and R50 systems network ports." >}}
@@ -76,7 +77,7 @@ descr="Notice about reliability issues with some 1300W power supplies used with 
 <div class="docs-sections">
 
 {{< imagecard-lang image="/images/Hardware/RSeries/R60PUM.png" title="R60 User Manual" link="https://www.truenas.com/docs/files/RSeriesPUM/R60/R60PUM.pdf"
-descr="User Manual for the TrueNAS R60." >}}
+descr="User Manual for the TrueNAS R60." pumid="r60" >}}
 
 {{< imagecard image="/images/Hardware/RSeries/R20BSOV.png" title="R60 Statement of Volatility" link="https://www.truenas.com/docs/files/R60SOV25091.pdf"
 descr="TrueNAS official Statement of Volatility for the R60 system." >}}

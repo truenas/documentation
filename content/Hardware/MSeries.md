@@ -8,6 +8,7 @@ aliases:
  - /hardware/mseries/mserieshanetworking
  - /hardware/mseries/mseriesoobm
  - /hardware/mseries/mseriessov
+ - /mseries/
 description: "Fastest ZFS NAS storage HA platform. Over 20 GB/s, M IOPS, and up to 20 PB capacity. Suited for Enterprise deployments, large projects, virtualization, file share, and data backup."
 keywords:
  - nvme
@@ -30,8 +31,8 @@ imgalt="TrueNAS M-Series" >}}
 
 <div class="docs-sections">
 
-{{< imagecard-lang image="/images/Hardware/MSeries/MSeriesPUM.png" title="Product User Manual" link="https://www.truenas.com/docs/files/MSeriesPUM/MSeriesPUM.pdf"
-descr="Comprehensive User Manual for TrueNAS M-Series systems." >}}
+{{< imagecard-lang image="/images/Hardware/MSeries/MSeriesPUM.png" title="M-Series User Manual" link="https://www.truenas.com/docs/files/MSeriesPUM/MSeriesPUM.pdf"
+descr="Comprehensive User Manual for TrueNAS M-Series systems." pumid="mseries" >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/MSeriesNetworkPortID.pdf"
 descr="Identifications list of TrueNAS M-Series systems network ports." >}}
