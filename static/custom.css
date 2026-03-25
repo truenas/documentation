@@ -3830,13 +3830,10 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
    ========================================= */
 dialog.pum-modal {
     border: none;
-    border-radius: 8px;
     padding: 0;
-    max-width: 480px;
-    width: 90%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    background-color: var(--body-background);
-    color: var(--body-font-color);
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
 }
 
 dialog.pum-modal::backdrop {
@@ -3844,70 +3841,42 @@ dialog.pum-modal::backdrop {
     backdrop-filter: blur(3px);
 }
 
-.pum-modal-inner {
-    padding: 1.5rem;
+.pum-modal-card {
+    position: relative;
+    width: min(90vw, 420px);
+    padding-bottom: 1.25rem;
 }
 
-.pum-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    font-size: 1.2rem;
-    font-weight: 600;
+.pum-modal-card .box-image {
+    padding-top: 2rem;
+    padding-bottom: 1.25rem;
+}
+
+.pum-modal-card .prod-card-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 50vh;
 }
 
 .pum-modal-close {
-    background: none;
-    border: 1px solid transparent;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: var(--body-font-color);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.35);
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.4rem;
     line-height: 1;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .pum-modal-close:hover {
-    background-color: var(--accent-color);
-    color: #fff;
-}
-
-.pum-modal-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-}
-
-.pum-modal-english {
-    display: block;
-    padding: 0.5rem 1rem;
-    background-color: var(--accent-color);
-    color: #fff !important;
-    border-radius: 4px;
-    text-decoration: none !important;
-    font-weight: 600;
-    text-align: center;
-}
-
-.pum-modal-english:hover {
-    opacity: 0.85;
-}
-
-.pum-modal-select {
-    width: 100%;
-    padding: 0.4rem 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: var(--body-background);
-    color: var(--body-font-color);
-    border: 1px solid var(--accent-color);
-}
-
-.pum-card-hint {
-    font-size: 0.8rem;
-    color: var(--accent-color);
-    margin-top: 0.5rem;
-    margin-bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
 }

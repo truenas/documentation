@@ -34,37 +34,58 @@
   (dict "name" "Svenska" "code" "sv")
 }}
 
-{{ if $pumid }}
-{{ $modalId := printf "pum-modal-%s" $pumid }}
+{{/* Language selector markup reused in both card and modal */}}
+{{ define "lang-select" }}{{ end }}
 
-<a class="section-box" href="{{ $baseLink }}" onclick="event.preventDefault(); var m=document.getElementById('{{ $modalId }}'); if(m && m.showModal) m.showModal();">
+<a class="section-box" href="{{ $baseLink }}">
   <div class="box-image">
     <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
   </div>
   <div class="section-tab-content ixprods">
     <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
     <p>{{ $descr }}</p>
-    <p class="pum-card-hint">Click to select language</p>
-  </div>
-</a>
 
-<dialog id="{{ $modalId }}" class="pum-modal" onclick="if(event.target===this)this.close();">
-  <div class="pum-modal-inner">
-    <div class="pum-modal-header">
-      <span>{{ $title }}</span>
-      <button class="pum-modal-close" onclick="this.closest('dialog').close();" aria-label="Close">&times;</button>
-    </div>
-    <p>{{ $descr }}</p>
-    <div class="pum-modal-actions">
-      <a href="{{ $baseLink }}" target="_blank" class="pum-modal-english">Open English PDF</a>
-      <select class="pum-modal-select"
-        onchange="if(this.value){window.open(this.value,'_blank');this.value='';}">
+    <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">
+      <select
+        id="lang-select-{{ md5 $baseLink }}"
+        class="language-dropdown"
+        onchange="event.preventDefault(); event.stopPropagation(); window.open(this.value, '_blank');"
+        onclick="event.preventDefault(); event.stopPropagation();"
+        style="padding: 0.25rem 0.5rem; border-radius: 4px; min-width: 200px; cursor: pointer; background-color: var(--body-background); color: var(--body-font-color); border: 1px solid var(--accent-color);">
         <option value="" disabled selected>Select a language...</option>
         {{ range $languages }}
           {{ $langLink := printf "%s-%s.pdf" $baseLinkNoExt .code }}
           <option value="{{ $langLink }}">{{ .name }} ({{ .code }})</option>
         {{ end }}
       </select>
+    </div>
+  </div>
+</a>
+
+{{ if $pumid }}
+{{ $modalId := printf "pum-modal-%s" $pumid }}
+
+<dialog id="{{ $modalId }}" class="pum-modal" onclick="if(event.target===this)this.close();">
+  <div class="section-box pum-modal-card">
+    <button class="pum-modal-close" onclick="this.closest('dialog').close();" aria-label="Close">&times;</button>
+    <div class="box-image">
+      <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
+    </div>
+    <div class="section-tab-content ixprods">
+      <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
+
+      <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">
+        <select
+          class="language-dropdown"
+          style="width:100%; padding: 1rem 0.5rem; font-size: 1.5rem;"
+          onchange="event.stopPropagation(); if(this.value){window.open(this.value,'_blank');this.value='';}">
+          <option value="" disabled selected>Select a language...</option>
+          {{ range $languages }}
+            {{ $langLink := printf "%s-%s.pdf" $baseLinkNoExt .code }}
+            <option value="{{ $langLink }}">{{ .name }} ({{ .code }})</option>
+          {{ end }}
+        </select>
+      </div>
     </div>
   </div>
 </dialog>
@@ -91,33 +112,5 @@ if (!window.__pumModalInit) {
   })();
 }
 </script>
-
-{{ else }}
-
-{{/* No pumid — original inline language selector behavior */}}
-<a class="section-box" href="{{ $baseLink }}">
-  <div class="box-image">
-    <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
-  </div>
-  <div class="section-tab-content ixprods">
-    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
-    <p>{{ $descr }}</p>
-
-    <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">
-      <select
-        id="lang-select-{{ md5 $baseLink }}"
-        class="language-dropdown"
-        onchange="event.preventDefault(); event.stopPropagation(); window.open(this.value, '_blank');"
-        onclick="event.preventDefault(); event.stopPropagation();"
-        style="padding: 0.25rem 0.5rem; border-radius: 4px; min-width: 200px; cursor: pointer; background-color: var(--body-background); color: var(--body-font-color); border: 1px solid var(--accent-color);">
-        <option value="" disabled selected>Select a language...</option>
-        {{ range $languages }}
-          {{ $langLink := printf "%s-%s.pdf" $baseLinkNoExt .code }}
-          <option value="{{ $langLink }}">{{ .name }} ({{ .code }})</option>
-        {{ end }}
-      </select>
-    </div>
-  </div>
-</a>
 
 {{ end }}
