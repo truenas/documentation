@@ -64,6 +64,12 @@ Earlier releases are available only in PDF.
 
 ## TrueNAS
 
+{{< expand "TrueNAS 24.10 (Electric Eel)" "v" >}}
+[TrueNAS 24.10 (Electric Eel)](https://www.truenas.com/docs/scale/24.10/)
+
+Release notes for each minor release of 24.10 are available in the [24.10 Electric Eel Release Notes](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/).
+{{< /expand >}}
+
 {{< expand "TrueNAS 24.04 (Dragonfish)" "v" >}}
 [TrueNAS 24.04 (Dragonfish)](https://www.truenas.com/docs/scale/24.04/)
 
