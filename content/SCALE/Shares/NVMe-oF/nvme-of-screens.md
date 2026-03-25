@@ -164,7 +164,8 @@ Stopping the service enables these options. After selecting, restart the service
 
 {{< include file="/static/includes/NVMe-oFSPDKorLinuxKernel.md" >}}
 
-storage performance development kit (SPDK)
+{{< /enterprise >}}
+
 {{< expand "Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
