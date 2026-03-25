@@ -19,7 +19,7 @@ See [Setting Up System Email]({{< ref "/SystemSettings/General/SettingUpSystemEm
 
 ### Alerts Admonitions
 
-Each screen in TrueNAS displays relevant alerts with an Admonition box.
+Each screen in TrueNAS displays relevant alerts with an admonition box.
 
 {{< trueimage src="/images/SCALE/Dashboard/AlertsAdmonitions.png" alt="Alerts" id="Alerts" >}}
 
