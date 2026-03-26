@@ -3,6 +3,7 @@
 {{ $image := .Get "image" }}
 {{ $title := .Get "title" }}
 {{ $descr := .Get "descr" }}
+{{ $pumid := .Get "pumid" }}
 
 {{/* EU Languages in alphabetical order with language codes */}}
 {{ $languages := slice
@@ -38,14 +39,14 @@
     <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
   </div>
   <div class="section-tab-content ixprods">
-    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title }}</b>
+    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ $title | safeHTML }}</b>
     <p>{{ $descr }}</p>
 
     <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">
       <select
         id="lang-select-{{ md5 $baseLink }}"
         class="language-dropdown"
-        onchange="event.preventDefault(); event.stopPropagation(); window.open(this.value, '_blank');"
+        onchange="event.stopPropagation(); window.open(this.value, '_blank');"
         onclick="event.preventDefault(); event.stopPropagation();"
         style="padding: 0.25rem 0.5rem; border-radius: 4px; min-width: 200px; cursor: pointer; background-color: var(--body-background); color: var(--body-font-color); border: 1px solid var(--accent-color);">
         <option value="" disabled selected>Select a language...</option>
@@ -57,3 +58,59 @@
     </div>
   </div>
 </a>
+
+{{ if $pumid }}
+{{ $modalId := printf "pum-modal-%s" $pumid }}
+
+<dialog id="{{ $modalId }}" class="pum-modal" onclick="if(event.target===this)this.close();">
+  <button class="pum-modal-close" onclick="this.closest('dialog').close();" aria-label="Close">&times;</button>
+  <div class="section-box pum-modal-card">
+    <div class="section-tab-content ixprods" style="padding-top:0.75rem;">
+      <b style="justify-content:center;font-size:2rem;font-weight:600;">{{ $title | safeHTML }}</b>
+    </div>
+    <div class="box-image">
+      <img class="prod-card-img" src="{{ $image }}" aria-label="{{ $title }} Documentation Page">
+    </div>
+    <div class="section-tab-content ixprods">
+      <a href="{{ $baseLink }}" target="_blank" class="pum-modal-english-btn">Open English PDF</a>
+
+      <div class="language-selector" style="margin-top: 1rem; margin-bottom: 1rem;">
+        <select
+          class="language-dropdown"
+          style="width:100%; padding: 1rem 0.5rem; font-size: 1.5rem;"
+          onchange="event.stopPropagation(); if(this.value){window.open(this.value,'_blank');this.value='';}">
+          <option value="" disabled selected>Select a language...</option>
+          {{ range $languages }}
+            {{ $langLink := printf "%s-%s.pdf" $baseLinkNoExt .code }}
+            <option value="{{ $langLink }}">{{ .name }} ({{ .code }})</option>
+          {{ end }}
+        </select>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+if (!window.__pumModalInit) {
+  window.__pumModalInit = true;
+  (function () {
+    function openPumFromURL() {
+      var params = new URLSearchParams(window.location.search);
+      var pum = params.get('pum');
+      if (pum) {
+        var modal = document.getElementById('pum-modal-' + pum);
+        if (modal && typeof modal.showModal === 'function') {
+          modal.showModal();
+        }
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', openPumFromURL);
+    } else {
+      openPumFromURL();
+    }
+  })();
+}
+</script>
+
+{{ end }}

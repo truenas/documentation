@@ -15,11 +15,24 @@ It uses ZFS to provide instant, space-efficient snapshots, including live VM sta
 It supports CHAP authentication, thin provisioning, ZFS compression, and multipath I/O.
 It works with Proxmox cluster deployments that use shared storage.
 
-{{< include file="/static/includes/ThirdPartyIntegration.md" >}}
+{{< hint type=warning title="Experimental Feature" >}}
+The TrueNAS Proxmox VE Storage Plugin is in active development and has not been fully tested.
+This plugin is currently intended for TrueNAS Community Edition (CE) and is not yet supported on TrueNAS Enterprise systems.
+Do not use in production workloads.
+
+To report bugs or follow development progress, submit an issue on the [truenas-proxmox-plugin GitHub repository](https://github.com/truenas/truenas-proxmox-plugin/issues).
+{{< /hint >}}
+
+{{< hint type=info title="Plugin and Platform Support" >}}
+The TrueNAS Proxmox VE Storage Plugin is developed and maintained by TrueNAS.
+Proxmox VE is a third-party virtualization platform not affiliated with TrueNAS.
+TrueNAS support covers plugin functionality only.
+For Proxmox VE issues, consult the [Proxmox documentation](https://pve.proxmox.com/pve-docs/) and [Proxmox support](https://www.proxmox.com/en/proxmox-virtual-environment/support).
+{{< /hint >}}
 
 ## Requirements
 
-{{< hint type=info title="Version Requirements" >}}
+{{< hint type=tip title="Version Requirements" >}}
 This plugin requires Proxmox VE 8.x or later (9.x recommended) and TrueNAS 25.10 or later.
 NVMe/TCP mode requires Proxmox VE 9.x or later.
 {{< /hint >}}

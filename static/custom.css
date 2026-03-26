@@ -3824,3 +3824,76 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 .gdoc-nav section:last-child .gdoc-nav__list li:not(:nth-child(2)) {
     order: 0 !important;
 }
+
+/* =========================================
+   PUM Modal (Product User Manual lightbox)
+   ========================================= */
+dialog.pum-modal {
+    border: none;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+dialog.pum-modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.pum-modal-card {
+    position: relative;
+    width: min(90vw, 420px);
+    padding-bottom: 1.25rem;
+}
+
+.pum-modal-card b {
+    display: block;
+    line-height: 1.4;
+}
+
+.pum-modal-english-btn {
+    display: block;
+    margin: 0.75rem 0 0;
+    padding: 0.75rem 1rem;
+    background-color: #1194d2;
+    color: #fff !important;
+    border-radius: 16px;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 1.25rem !important;
+    text-align: center;
+}
+
+.pum-modal-english-btn:hover {
+    opacity: 0.85;
+}
+
+.pum-modal-card .box-image {
+    padding-top: 2rem;
+    padding-bottom: 1.25rem;
+}
+
+.pum-modal-card .prod-card-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 50vh;
+}
+
+.pum-modal-close {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 0.4rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+    opacity: 0.85;
+}
+
+.pum-modal-close:hover {
+    opacity: 1;
+}
