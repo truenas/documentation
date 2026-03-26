@@ -1,6 +1,6 @@
 ---
 title: "M-Series"
-weight: 20
+weight: 30
 hide_title: true
 geekdocFlatSection: true
 aliases:
@@ -20,10 +20,12 @@ keywords:
 ---
 <br>
 
-{{< prodintro title="Experience True Scalability"
-subtitle="All-Flash or Hybrid Capacity with legendary resilience."
+{{< 
+prodintro title="M-Series"
+subtitle="Experience True Scalability"
+tagline="All-Flash or Hybrid Capacity with legendary resilience."
 productlink="https://www.truenas.com/m-series/"
-linklabel="Visit the M-Series product page for more details"
+linklabel="Product Page"
 imgurl="https://www.truenas.com/wp-content/uploads/2026/01/M50.png"
 imgalt="TrueNAS M-Series" >}}
 

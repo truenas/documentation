@@ -3,7 +3,7 @@ title: "R-Series"
 description: "High rack-density, Enterprise-grade, fusion or all-flash, performance NAS storage. Suited for workgroup projects, file sharing, backups, plugins, and Kubernetes."
 geekdocFlatSection: true
 hide_title: true
-weight: 30
+weight: 40
 aliases:
  - /hardware/rseries/rseriesbsg/
  - /hardware/rseries/rseriesoobm/
@@ -26,7 +26,7 @@ prodintro title="R-Series"
 subtitle="Single Controller, Serious Storage."
 tagline="Data Power that Respects your Budget"
 productlink="https://www.truenas.com/r-series/"
-linklabel="R-Series Product Page"
+linklabel="Product Page"
 imgurl="https://www.truenas.com/wp-content/uploads/2025/09/R-Series_Navigation_Image.png"
 imgalt="TrueNAS R-Series" >}}
 

@@ -3276,6 +3276,7 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	padding: 2rem 2.5rem;
 	border-radius: 6px;
 	margin-bottom: 1.5rem;
+	min-height: 220px;
 }
 .prodintro-banner__content {
 	flex: 1;
@@ -3307,6 +3308,8 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 }
 .prodintro-banner__image img {
 	max-width: 100%;
+	max-height: 180px;
+	width: auto;
 	height: auto;
 }
 @media (max-width: 768px) {

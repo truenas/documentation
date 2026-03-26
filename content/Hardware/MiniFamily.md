@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS Mini"
+title: "Mini Series"
 description: "Professional-grade office ZFS NAS storage solution with up to 250TB fusion or 90TB all-flash capacity. Suited for small/home office, file sharing, VMs, and plugins."
 weight: 50
 hide_title: true
@@ -14,11 +14,15 @@ keyword:
  - nas storage
  - nas data storage
 ---
-{{< prodintro title="Manage Your Data Like a Pro"
-productlink="https://www.truenas.com/truenas-mini/"
-linklabel="Visit the TrueNAS Mini product page for more details"
+
+{{< 
+prodintro title="Mini Series"
+subtitle="Manage Your Data Like a Pro"
+tagline="Compact, Quiet, and Powerful"
+productlink="https://www.truenas.com/truenas-mini"
+linklabel="Product Page"
 imgurl="https://www.truenas.com/wp-content/uploads/2024/05/TrueNAS_Mini_Family_Lineup_2024.png"
-imgalt="TrueNAS Mini Family" >}}
+imgalt="TrueNAS Minis" >}}
 
 ## Resources
 

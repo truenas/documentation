@@ -1,6 +1,6 @@
 ---
 title: "H-Series"
-weight: 40
+weight: 20
 hide_title: true
 geekdocFlatSection: true
 description: "Compact and power-efficient flexible HA ZFS NAS storage platform with dual-ported SAS HDD and SSDs for small to medium businesses, virtualization, file share, and backups."
@@ -16,10 +16,12 @@ keyword:
 ---
 <br>
 
-{{< prodintro title="Compact and Mission-critical"
-subtitle="High Availability for Edge, Mobile &amp; IT Workloads."
+{{< 
+prodintro title="H-Series"
+subtitle="Compact and Mission-critical"
+tagline="High Availability for Edge, Mobile, and IT Workloads."
 productlink="https://www.truenas.com/h-series/"
-linklabel="Visit the H-Series product page for more details"
+linklabel="Product Page"
 imgurl="https://www.truenas.com/wp-content/uploads/2025/01/H30_Front_Top-Down.png"
 imgalt="TrueNAS H-Series" >}}
 

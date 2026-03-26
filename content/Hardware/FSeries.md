@@ -13,10 +13,12 @@ aliases:
  - /fseries/
 ---
 
-{{< prodintro title="Experience True Performance"
-subtitle="All-Flash NVMe Performance and Legendary ZFS Reliability. Never Compromise."
+{{< 
+prodintro title="F-Series"
+subtitle="Experience True Performance"
+tagline="All-Flash NVMe Performance and Legendary ZFS Reliability. Never Compromise."
 productlink="https://www.truenas.com/f-series/"
-linklabel="Visit the F-Series product page for more details"
+linklabel="Product Page"
 imgurl="https://www.truenas.com/wp-content/uploads/2023/11/F100_Front_Top-2.png"
 imgalt="TrueNAS F-Series" >}}
 
