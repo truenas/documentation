@@ -116,7 +116,7 @@ Users with pools using virtual disks use this option to resize these virtual dis
 The **Auto TRIM** option on the <span class="material-icons">more_vert</span> dropdown menu opens the **AutoTRIM** dialog.
 The **ZFS Health** widget shows whether this function is set to on.
 
-{{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Option Auto TRIM" id="Pool Option Auto TRIM" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolOptionsAutoTRIM.png" alt="Pool Option AutoTRIM" id="Pool Option AutoTRIM" >}}
 
 When enabled, **Auto TRIM** allows TrueNAS to periodically review data blocks and identify which empty blocks of obsolete blocks it can delete.
 Leave unselected to incorporate day block overwrites when a device write is started (default).
