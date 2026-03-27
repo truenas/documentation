@@ -32,11 +32,11 @@ Configure link aggregation (LAGG) to combine multiple physical interfaces into a
 
 {{< include file="/static/includes/MultipleInterfacesOnNetwork.md" >}}
 
-See also [Setting Up a Link Aggregation]({{< ref "settinguplagg" >}}).
+See also [Setting Up a Link Aggregation]({{< ref "SettingUpLinkAggregation" >}}).
 
 ### LACP
 
-If supported by your network switch and other networking equipment in your environment, select Link Aggregation Control Protocol (LACP) to use the most common protocol for LAGG interfaces based on [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf).
+If supported by your network switch and other networking equipment in your environment, select Link Aggregation Control Protocol (LACP) to use the most common protocol for link aggregation interfaces based on [IEEE specification 802.3ad](https://www.ieee802.org/3/hssg/public/apr07/frazier_01_0407.pdf).
 LACP dynamically aggregates multiple network interfaces into a single logical link, providing increased bandwidth and fault tolerance.
 
 LACP allows you to bundle multiple physical network links into a single logical link, increasing the overall bandwidth available.

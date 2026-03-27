@@ -97,7 +97,7 @@ You might be able to access the web UI using a `hostname.domain` command at the 
 
 ## Console Setup Menu Network Settings
 
-You can either use TrueNAS UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
+You can either use TrueNAS UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregation (bond) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
 
 {{< include file="/static/includes/UsingConsoleSetupMenuSCALE.md" >}}
 
