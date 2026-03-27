@@ -26,7 +26,7 @@ TrueNAS DHM is designed to:
 - Keep configuration simple and automated.
 - Minimize performance impact on drives and CPU.
 
-## Enterprise Considerations
+### Enterprise Considerations
 
 Enterprise deployments benefit from additional protections and processes built around DHM:
 - Factory burn-in testing (running drives at sustained load before deployment) significantly reduces failure rates.
@@ -45,7 +45,7 @@ SMART polls drives every 90 minutes. When a polled attribute crosses a threshold
 ### ZFS as Real-Time Failure Detection
 
 ZFS acts as the primary detector for sudden, unexpected drive failures.
-Unlike SMART polling — which runs on a schedule — ZFS detects failures immediately when a read or write operation returns an error.
+Unlike SMART polling, which runs on a schedule, ZFS detects failures immediately when a read or write operation returns an error.
 
 When ZFS encounters an unrecoverable error, it marks the affected VDEV or disk as faulted and generates an alert.
 ZFS and SMART work together: SMART catches degrading drives before they fail, while ZFS catches drives that fail without prior warning.
@@ -53,7 +53,7 @@ ZFS and SMART work together: SMART catches degrading drives before they fail, wh
 ### Alert Logic
 
 TrueNAS evaluates incoming SMART data and ZFS events against alert rules before generating a notification.
-This filtering suppresses known-benign attribute fluctuations and only notifies users about conditions that require attention, reducing false-positive alerts by approximately 50% compared to prior releases by refining which attribute changes constitute actionable signals.
+This filtering suppresses known-benign attribute fluctuations and only notifies users about conditions that require attention, reducing false-positive alerts by approximately 50% compared to prior releases.
 
 **Alert Levels** can be adjusted to control notification severity.
 Higher-priority alerts appear in the **[Alerts]({{< ref "/SCALE/TopToolbar/Alerts/_index.md" >}})** panel and can trigger configured [alert services]({{< ref "/SCALE/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) (email, SNMP, etc.).
@@ -74,7 +74,7 @@ Click an alert to expand it and view details, including the affected disk, the a
 | Type    | Description |
 |-----------------|-------------|
 | **SMART Stat**  | A drive-reported diagnostic value crossed a failure threshold. The alert identifies the specific attribute (for example, Reallocated Sector Count) and the current value. |
-| **ZFS Event**   | ZFS detected an I/O error or checksum failure during a read or write operation. These alerts indicate the disk may have failed or is failing. |
+| **ZFS Event**   | ZFS detected an I/O error or checksum failure during a read or write operation. These alerts indicate the disk might have failed or is failing. |
 | **Temperature** | Drive temperature exceeded the rated maximum from the manufacturer specification. |
 {{< /truetable >}}
 
