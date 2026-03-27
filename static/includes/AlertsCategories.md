@@ -12,6 +12,16 @@ Use the **Category** dropdown list to display alert settings for each category.
 You can customize alert settings for when available applications have updates, catalog is not healthy, the system cannot configure or start applications, and the system cannot sync the catalog.
 {{< /expand >}}
 
+### Audit
+
+**Audit** alert settings apply to the audit and verification services on your TrueNAS system.
+{{< expand "Click here for more information" >}}
+
+![AlertSettingsAudit](/images/SCALE/SystemSettings/AlertSettingsAudit.png "Audit Alert Settings")
+
+You can customize alert settings for when the audit service backend fails, the audit service has a health failure, and when the TrueNAS verify service detects changes in the root file system.
+{{< /expand >}}
+
 ### Certificates
 
 **Certificates** alert settings apply to certificates you add through the **Credentials > Certificates** screen.
