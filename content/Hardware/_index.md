@@ -17,22 +17,22 @@ Legacy documentation for discontinued TrueNAS products is also archived here.
 
 <div class="docs-sections">
 
-{{< imagecard image="/images/Hardware/FSeries/F-Series.png" title="F-Series" link="/hardware/fseries/"
+{{< imagecard image="https://www.truenas.com/wp-content/uploads/2023/11/F100_Front_Top-2.png" title="F-Series" link="/hardware/fseries/"
 descr="High Availability (HA), all-flash performance in a 2U form factor." >}}
 
-{{< imagecard image="/images/Hardware/HSeries/H-Series.png" title="H-Series" link="/hardware/hseries/"
+{{< imagecard image="https://www.truenas.com/wp-content/uploads/2025/01/H30_Front_Top-Down.png" title="H-Series" link="/hardware/hseries/"
 descr="High Availability (HA) hybrid or all-flash performance in a 2U form factor." >}}
 
-{{< imagecard image="/images/Hardware/MSeries/M-Series.png" title="M-Series" link="/hardware/mseries/"
+{{< imagecard image="https://www.truenas.com/wp-content/uploads/2026/01/M50.png" title="M-Series" link="/hardware/mseries/"
 descr="High Availability (HA), hybrid performance in a 4U form factor." >}}
 
-{{< imagecard image="/images/Hardware/RSeries/R-Series.png" title="R-Series" link="/hardware/rseries/"
+{{< imagecard image="https://www.truenas.com/wp-content/uploads/2025/09/R-Series_Navigation_Image.png" title="R-Series" link="/hardware/rseries/"
 descr="Highly-customizable performance in various form factors." >}}
 
-{{< imagecard image="/images/Hardware/Minis/Minis.png" title="Minis" link="/hardware/mini/"
+{{< imagecard image="https://www.truenas.com/wp-content/uploads/2024/05/TrueNAS_Mini_Family_Lineup_2024.png" title="Minis" link="/hardware/mini/"
 descr="Compact and with support for all TrueNAS features." >}}
 
-{{< imagecard image="/images/Hardware/ExpansionShelves/ExpansionShelves.png" title="Expansion Shelves" link="/hardware/expansionshelves/"
+{{< imagecard image="https://www.truenas.com/wp-content/uploads/2025/01/F100_Expansion_Stack.png" title="Expansion Shelves" link="/hardware/expansionshelves/"
 descr="Increase TrueNAS storage capacity with different JBODs." >}}
 
 {{< imagecard image="/images/Hardware/FullStencilPack.png" title="TrueNAS Full Stencil Pack" link="https://www.truenas.com/docs/files/truenasfullstencilpack.vssx"
