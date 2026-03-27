@@ -9,43 +9,44 @@ cascade:
     related: false
 ---
 
-Click a product card to view all documentation for that series.
-To help visualize system placements in networking environments, we provide Visio stencils for each system on its respective page. You can also download a comprehensive stencil pack below.
+Select a product to view documents, resources, and stencils for that product.
+
+A comprehensive stencil pack of all sytems is provided below.
 
 Legacy documentation for discontinued TrueNAS products is also archived here.
 
 <div class="docs-sections">
 
 {{< imagecard image="/images/Hardware/FSeries/F-Series.png" title="F-Series" link="/hardware/fseries/"
-descr="F-Series systems provide High Availability (HA), all-flash performance in a 2U form factor." >}}
-
-{{< imagecard image="/images/Hardware/MSeries/M-Series.png" title="M-Series" link="/hardware/mseries/"
-descr="M-Series systems provide High Availability (HA), hybrid performance in a 4U form factor." >}}
-
-{{< imagecard image="/images/Hardware/RSeries/R-Series.png" title="R-Series" link="/hardware/rseries/"
-descr="R-Series systems provide highly-customizable performance in various form factors." >}}
+descr="High Availability (HA), all-flash performance in a 2U form factor." >}}
 
 {{< imagecard image="/images/Hardware/HSeries/H-Series.png" title="H-Series" link="/hardware/hseries/"
-descr="H-Series systems provide High Availability (HA) hybrid or all-flash performance in a 2U form factor." >}}
+descr="High Availability (HA) hybrid or all-flash performance in a 2U form factor." >}}
+
+{{< imagecard image="/images/Hardware/MSeries/M-Series.png" title="M-Series" link="/hardware/mseries/"
+descr="High Availability (HA), hybrid performance in a 4U form factor." >}}
+
+{{< imagecard image="/images/Hardware/RSeries/R-Series.png" title="R-Series" link="/hardware/rseries/"
+descr="Highly-customizable performance in various form factors." >}}
 
 {{< imagecard image="/images/Hardware/Minis/Minis.png" title="Minis" link="/hardware/mini/"
-descr="TrueNAS Minis are compact and support all TrueNAS features." >}}
+descr="Compact and with support for all TrueNAS features." >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ExpansionShelves.png" title="Expansion Shelves" link="/hardware/expansionshelves/"
 descr="Increase TrueNAS storage capacity with different JBODs." >}}
 
+{{< imagecard image="/images/Hardware/FullStencilPack.png" title="TrueNAS Full Stencil Pack" link="https://www.truenas.com/docs/files/truenasfullstencilpack.vssx"
+descr="Download all TrueNAS stencils to diagram your configuration in Visio." >}}
+
 {{< imagecard image="/images/Hardware/Legacy/Legacy.png" title="Legacy" link="/hardware/legacyhardware/"
-descr="Archived documentation about discontinued TrueNAS hardware products." >}}
+descr="Archived documentation about discontinued TrueNAS hardware." >}}
 
 {{< imagecard image="/images/Hardware/Notices.png" title="Notices" link="/hardware/notices/"
-descr="Product announcements, unspecific FAQs, and articles about hardware components." >}}
-
-{{< imagecard image="/images/Hardware/FullStencilPack.png" title="TrueNAS Full Stencil Pack" link="https://www.truenas.com/docs/files/truenasfullstencilpack.vssx"
-descr="Download all TrueNAS stencils to diagram your hardware configuration in Microsoft Visio." >}}
+descr="Product announcements and articles about hardware components." >}}
 
 </div>
 
 {{< hint type=tip >}}
-To download Visio Stencils, ensure your web browser download settings allow you to specify a download folder location.<br> 
+To download Visio Stencils, ensure your browser download settings allow specifying a download folder.<br> 
 We recommend using Google Chrome to download stencils.
 {{< /hint >}}
