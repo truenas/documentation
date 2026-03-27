@@ -258,6 +258,9 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
     releaseName: "Goldeye"
     releases:
+      - name: "25.10.2.2"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Goldeye/25.10.2.2/"
+        date: "2026-03-17"
       - name: "25.10.2.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-Goldeye/25.10.2.1/"
         date: "2026-02-25"
@@ -287,5 +290,5 @@ majorVersions:
     releaseName: "26"
     releases:
       - name: "26 Nightly"
-        link: "https://download.truenas.com/truenas-scale-halfmoon-nightly/"
+        link: "https://iso.sys.truenas.net/TrueNAS-26-Nightlies"
         date: ""

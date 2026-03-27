@@ -1,3 +1,18 @@
+Process time: 2026-03-06 11:38:50
+Initiated by: Dan Pizappi
+
+1444 files reviewed.
+7 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\TutorialsIntro.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\UIReferenceIntro.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\WebShare--SMBWarning.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\DataProtectionScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\ExportDisconnectPoolWindow.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\AddSysctlConfigScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\AdvancedSysctlWidget.png
+
+----------------------------------------
 Process time: 2026-02-12 09:59:58
 Initiated by: Dan Pizappi
 
