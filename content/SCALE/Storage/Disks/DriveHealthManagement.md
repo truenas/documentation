@@ -1,6 +1,6 @@
 ---
 title: "Drive Health Management"
-description: "Provides solutions and considerations for drive health."
+description: "Provides information and considerations for drive health."
 weight: 60
 tags:
 - disks
@@ -40,7 +40,7 @@ Enterprise deployments benefit from additional protections and processes built a
 
 TrueNAS integrates SMART stats collection directly into the middleware, which provides consistent handling across all supported drive types and vendors.
 
-SMART polls drives every 90 minutes. When a polled attribute crosses a threshold that indicates a likely failure, TrueNAS decides to supress the alert or notify the user. 
+SMART polls drives every 90 minutes. When a polled attribute crosses a threshold indicating a likely failure, TrueNAS chooses whether to suppress the alert or notify the user. 
 
 ### ZFS as Real-Time Failure Detection
 
@@ -48,7 +48,7 @@ ZFS acts as the primary detector for sudden, unexpected drive failures.
 Unlike SMART polling — which runs on a schedule — ZFS detects failures immediately when a read or write operation returns an error.
 
 When ZFS encounters an unrecoverable error, it marks the affected VDEV or disk as faulted and generates an alert.
-ZFS and SMART work together: SMART catches degrading drives before they fail completely, while ZFS catches drives that fail without prior warning.
+ZFS and SMART work together: SMART catches degrading drives before they fail, while ZFS catches drives that fail without prior warning.
 
 ### Alert Logic
 
@@ -58,8 +58,8 @@ This filtering suppresses known-benign attribute fluctuations and only notifies 
 **Alert Levels** can be adjusted to control notification severity.
 Higher-priority alerts appear in the **[Alerts]({{< ref "/SCALE/TopToolbar/Alerts/_index.md" >}})** panel and can trigger configured [alert services]({{< ref "/SCALE/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) (email, SNMP, etc.).
 
-TrueNAS configures automated temperature alerts based on the maximum operating temperature reported in each drive specifications.
-If the drive's reported temperature exceeds its rated maximum, TrueNAS generates a warning alert.
+TrueNAS configures automated temperature alerts based on the specified maximum operating temperature of each drive.
+If a drive reports a temperature that exceeds its rated maximum, TrueNAS generates an alert.
 
 ## Monitoring Drive Health
 
@@ -106,7 +106,7 @@ Replace `/dev/sda` with the target disk device name.
 
 ### LONG Test
 
-The LONG test performs a full drive surface scan for periodic, deep validation. It provides a thorough validation of the entire drive surface, but has a significant negative performance impact during the test. LONG tests can also produce false-positive failure results on drives that are otherwise healthy.
+The LONG test performs a full drive surface scan for periodic, deep validation. It provides a thorough validation of the entire drive surface, but has a significant negative performance impact during the test. LONG tests can also produce false-positive failure results on healthy drives.
 
 To run a LONG test, go to **System > Shell** and run:
 
