@@ -9,14 +9,10 @@ cascade:
     related: false
 ---
 
-TrueNAS has a variety of Enterprise hardware solutions that are rigorously qualified and built to maximize TrueNAS performance.
-Each line of products are tailored to meet your specific needs, whether you are a home user, Small and Medium Enterprise (SME), or extended business environment.
-
-To help visualize the system placement in a networking environment, the TrueNAS team provides Visio stencils for each system on their respective pages, but you can also download a comprehensive stencil pack below.
+Click a product card to view all documentation for that series.
+To help visualize system placements in networking environments, we provide Visio stencils for each system on its respective page. You can also download a comprehensive stencil pack below.
 
 Legacy documentation for discontinued TrueNAS products is also archived here.
-
-Click a Product card to see all documentation related to that series.
 
 <div class="docs-sections">
 
