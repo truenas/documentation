@@ -24,12 +24,12 @@ You can customize alert settings for when a certificate expires, a certificate p
 
 ### Directory Service
 
-**Directory Service** alert settings apply to the Active Directory and LDAP servers configured on your TrueNAS.
+**Directory Service** alert settings apply to the directory services configured on your TrueNAS.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsDirectoryServices](/images/SCALE/SystemSettings/AlertSettingsDirectoryServices.png "Directory Services Alert Settings")
 
-You can customize alert settings for when the Active Directory bind is unhealthy, Active Directory domain validation fails, the domain is offline, and the LDAP bind is unhealthy.
+You can customize alert settings for when the directory service bind is not healthy and when a directory service DNS update fails.
 {{< /expand >}}
 
 ### High Availability Settings
