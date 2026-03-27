@@ -29,7 +29,7 @@ You can customize alert settings for when the audit service backend fails, the a
 
 ![AlertSettingsCertificates](/images/SCALE/SystemSettings/AlertSettingsCertificates.png "Certificates Alert Settings")
 
-You can customize alert settings for when a certificate expires, a certificate parsing fails, a certificate revokes, and the web UI HTTPS certificate setup fails.
+You can customize alert settings for when a certificate has expired, is expiring, or is expiring soon, when a certificate parsing fails, and when the web UI HTTPS certificate setup fails.
 {{< /expand >}}
 
 ### Directory Service
@@ -78,7 +78,7 @@ You can customize alert settings for when disk temperature is too hot, disk(s) f
 
 ![AlertSettingsKMIP](/images/SCALE/SystemSettings/AlertSettingsKMIP.png "KMIP Alert Settings")
 
-You can customize alert settings for when the system fails to communicate, sync the SED global password, and sync keys with the KMIP server.
+You can customize alert settings for when the system fails to communicate with the KMIP server, sync the SED global password, sync SED keys, or sync ZFS keys with the KMIP server.
 {{< /expand >}}
 
 ### Network
@@ -88,7 +88,7 @@ You can customize alert settings for when the system fails to communicate, sync 
 
 ![AlertSettingsNetwork](/images/SCALE/SystemSettings/AlertSettingsNetwork.png "Network Alert Settings")
 
-You can customize alert settings for when ports are not active on the LAGG interface and when the LAGG interface has no active ports.
+You can customize alert settings for when a BOND interface references missing ports, when ports are not active on a BOND interface, and when there are no active ports on a BOND interface.
 {{< /expand >}}
 
 ### Reporting
@@ -110,9 +110,15 @@ You can customize alert settings for when Netdata has critical alerts and warnin
 
 ![AlertSettingsSharing2](/images/SCALE/SystemSettings/AlertSettingsSharing2.png "Sharing Alert Settings")
 
-You can customize alert settings for when a deprecated service is running, IP addresses bound to an iSCSI portal are not found, NFS services cannot bind to specific IP addresses using 0.0.0.0, and the system cannot resolve NFS share references to hosts.
+You can customize alert settings for when a deprecated service configuration is detected or a deprecated service is running, and when Fibre Channel HBAs are added or replaced.
 
-You can also customize alerts for when NTLMv1 attempts authentication in the last 24 hours, SMB1 connections to the TrueNAS server are performed in the last 24 hours, and a share is unavailable because it uses a locked dataset.
+You can also customize alerts for iSCSI issues: IP addresses bound to an iSCSI portal are not found, iSCSI authorized access has invalid characters or leading/trailing whitespace, and iSCSI discovery authorization is set to global, has multiple mutual CHAP, or is merged.
+
+For NFS, you can customize alerts for when NFS services cannot bind to specific IP addresses using 0.0.0.0, an NFS export entry is blocked, host or network lists are excessively long, share references to hosts cannot be resolved, and NFS start is blocked by entries in /etc/exports.d.
+
+For SMB, you can customize alerts for when NTLMv1 authentication is attempted in the last 24 hours, SMB1 connections to the TrueNAS server are performed in the last 24 hours, an SMB share audit configuration contains invalid groups, an SMB share path has unresolvable issues, SMB shares use an incorrect recordsize value for Veeam Fast Clone, and an SMB user is missing a required password hash.
+
+You can also set alerts for when a share is unavailable because it uses a locked dataset.
 {{< /expand >}}
 
 ### Storage
@@ -122,9 +128,9 @@ You can also customize alerts for when NTLMv1 attempts authentication in the las
 
 ![AlertSettingsStorage](/images/SCALE/SystemSettings/AlertSettingsStorage.png "Storage Alert Settings")
 
-You can customize alert settings for when a dataset exceeds standard and critical quotas, a pool has new available feature flags, pool space usage exceeds 70, 80, or 90 percent, and pool status is not healthy.
+You can customize alert settings for when a dataset exceeds standard or critical quotas, a pool has new available feature flags, pool space usage exceeds 85, 90, or 95 percent, and pool status is not healthy.
 
-You can change alert settings for when a pool consumes USB disks, a scrub pauses, and too many snapshots exist.
+You can also change alert settings for when a scrub pauses, too many snapshots exist on the system or on a specific dataset.
 {{< /expand >}}
 
 ### System
@@ -136,9 +142,13 @@ You can change alert settings for when a pool consumes USB disks, a scrub pauses
 
 ![AlertSettingsSystem2](/images/SCALE/SystemSettings/AlertSettingsSystem2.png "System Alert Settings 2")
 
-You can customize alert settings for when the admin user is overridden, the boot pool is unhealthy, the system dataset has core files, a device slows down pool I/O, NTP health checks fail, and TrueCommand API keys are disabled or need confirmation.
+You can customize alert settings for when an API key is revoked, API or SSH login failures occur, the admin user is overridden, administrator account activity is detected, the boot pool is unhealthy, core files are detected, and the running system version does not match the selected update profile.
 
-You can also change alert settings for when SSH logins fail, the system is not ready for Kdump, the web UI cannot bind to a configured address, TrueCommand fails health checks, the system restarts off schedule, and updates are available, failed, or not applied.
+You can also change alert settings for when a failover event or fencing causes a system reboot, a Gmail OAuth configuration is discarded, NTP health checks fail, a GPU configuration update requires a reboot, the system is not ready for Kdump, and system mocking endpoints are in use.
+
+For TrueCommand, you can customize alerts for when an API key is pending confirmation or disabled by iX Portal, and when the TrueCommand container or service fails a scheduled health check.
+
+You can also set alerts for when unencrypted datasets are detected within encrypted datasets and when an update is available.
 {{< /expand >}}
 
 ### Tasks
@@ -150,9 +160,17 @@ You can also change alert settings for when SSH logins fail, the system is not r
 
 ![AlertSettingsTasks2](/images/SCALE/SystemSettings/AlertSettingsTasks2.png "Task Alert Settings 2")
 
-You can customize alert settings for when cloud sync tasks, VMWare snapshot creation, login, and deletion, replication, rsync tasks, scrubs, and snapshot tasks fail in general or due to locked datasets.
+You can customize alert settings for when cloud backup or cloud sync tasks fail, a cloud provider is removed, VMWare snapshot creation or deletion fails, VMWare login fails, replication fails or succeeds, rsync tasks fail or succeed, a scrub fails to start or starts, snapshot tasks fail, and when a task is unavailable because it uses a locked dataset.
+{{< /expand >}}
 
-You can also change alert settings for when replication, rsync tasks, and scrubs succeed.
+### TrueNAS Connect Service
+
+**TrueNAS Connect Service** alert settings apply to the [TrueNAS Connect](https://connect.truenas.com/) service on your TrueNAS system.
+{{< expand "Click here for more information" >}}
+
+![AlertSettingsTNConnect](/images/SCALE/SystemSettings/AlertSettingsTNConnect.png "TrueNAS Connect Service Alert Settings")
+
+You can customize alert settings for when TrueNAS Connect is disabled or unconfigured and when the system is unable to connect to the TrueNAS Connect heartbeat service.
 {{< /expand >}}
 
 ### UPS
