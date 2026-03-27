@@ -50,12 +50,12 @@ You can customize alert settings for when an automatic sync to peer fails, disks
 
 ### Hardware
 
-**Hardware** alert settings apply to the IPMI network connections and S.M.A.R.T.-related tests that monitor the hard drives installed on your TrueNAS system.
+**Hardware** alert settings apply to the IPMI network connections and disk health monitoring on your TrueNAS system.
 {{< expand "Click here for more information" >}}
 
 ![AlertSettingsHardware](/images/SCALE/SystemSettings/AlertSettingsHardware.png "Hardware Alert Settings")
 
-You can customize alert settings for when disk(s) format with the data integrity feature, IPMI has system events, the IPMI system event log space is low, and S.M.A.R.T. testing found errors with self-testing or uncorrected errors on disk.
+You can customize alert settings for when disk temperature is too hot, disk(s) format with the data integrity feature, a selftest fails, erase cycle count is high, IPMI has system events, the IPMI system event log space is low, JBOF removal requires reboot, spare block reserve is low, and uncorrected errors are detected.
 
 {{< include file="/static/includes/IPMISELAlert.md" >}}
 
