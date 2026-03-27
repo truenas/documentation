@@ -27,7 +27,7 @@ To see if the AutoTRIM function is enabled, locate the **Storage Health** widget
 
 To enable or disable the function, click on the <span class="material-icons">more_vert</span> dropdown menu and select **AutoTRIM** to open the **Pool Options for *poolname*** dialog.
 
-{{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolOptionsAutoTRIM.png" alt="Pool Edit AutoTRIM Dialog" id="Pool Edit AutoTRIM Dialog" >}}
 
 Select **Auto TRIM**.
 
