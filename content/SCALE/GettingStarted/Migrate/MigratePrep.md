@@ -73,7 +73,7 @@ Please contact Support for assistance!
 
    <input type="checkbox"> Credentials - Copy or write down the credentials for SSH connections and keypairs, and any configured cloud service backup providers if you do not have the credential settings saved in other files kept secured outside of TrueNAS.
 
-   <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
+   <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, rsync tasks, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
    
    TrueNAS uses SSH connections in data protection tasks, so data protection tasks (especially replication tasks) might require reconfiguration in some cases.
    After migrating to 25.10, SSH connections have failed with an authentication error in some cases.
@@ -81,6 +81,9 @@ Please contact Support for assistance!
    When this occurs, you must set up a new replication task and a new SSH connection between systems on the migrated system (in 25.10).
    After migrating and the system is online, check replication and data protection tasks that rely on SSH connections to verify they work as expected.
    If you receive an authentication error, use the notes from the CORE system to reconfigure these tasks and the SSH connection between systems.
+
+   SSH rsync tasks do not transfer from TrueNAS CORE to TrueNAS SCALE.
+   After migrating, go to **Data Protection > Rsync Tasks** and configure a new rsync task using the settings recorded from the CORE system.
 
    Community users with iSCSI deployments can migrate their systems without assistance. Note, unlike FreeBSD systems, Linux Debian systems require at least one LUN set to zero.
    iSCSI portals in Linux Debian-based systems are defined globally instead of per port.
