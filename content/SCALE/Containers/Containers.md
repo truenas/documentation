@@ -33,7 +33,7 @@ When you first access the **Containers** screen, it displays a message indicatin
 
 You can create containers immediately using the **Create New Container** button, or configure global settings first using the **Configuration** menu.
 
-For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens](/SCALE/Containers/ContainersScreens).
+For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens]({{< relref "/SCALE/Containers/ContainersScreens.md" >}}).
 
 Use the **Configuration** menu to access [**Settings**](#configuring-settings) where you can configure an optional [preferred storage pool](#setting-a-preferred-pool) for containers and [default network settings](#configuring-the-default-network).
 The **Configuration** menu also provides access to [**Map User/Group IDs**](#managing-container-permissions) for configuring UID and GID mappings.
@@ -264,12 +264,21 @@ To create a new container:
 
    - Use **Environment Variables** to define environment variables that will be available inside the container.
 
-   - Use **Capabilities** to control Linux capabilities (special permissions). Use **DEFAULT** for most containers (secure and functional) or **ALLOW** to grant all capabilities when containers need broad system access (reduces isolation).
-
    - Use **ID Mapping** to control how container UIDs and GIDs map to host UIDs and GIDs. This setting cannot be changed after the container is created.
      - **Default** (recommended): Container root maps to the unprivileged host user **truenas_container_unpriv_root**. Provides security isolation for most workloads.
      - **Isolated**: Assigns a unique UID/GID range to this container to prevent overlap with other containers. Use when multiple containers share access to the same host datasets.
-     - **Privileged**: Container UIDs map directly to host UIDs with no offset. Use only when an application explicitly requires it.
+     - **Privileged**: Container UIDs map directly to host UIDs with no offset. Required for nested container workloads such as running Docker inside a container. Use only when necessary.
+
+   {{< hint type=important title="Nested Containers Require Privileged ID Mapping" >}}
+   Starting in TrueNAS 26, running nested containers inside a TrueNAS container — for example, installing and running Docker inside the container — requires setting **ID Map Type** to **Privileged**.
+
+   Nested container runtimes require direct UID mapping to function.
+   Containers created with **Default** or **Isolated** ID mapping cannot run nested containers.
+
+   Because **Privileged** removes UID isolation between the container and the TrueNAS host, use it only for workloads that specifically require nested container support, and ensure the container image and its contents are trusted.
+   {{< /hint >}}
+
+   - Use **Capabilities** to control Linux capabilities (special permissions). Use **DEFAULT** for most containers (secure and functional) or **ALLOW** to grant all capabilities when containers need broad system access (reduces isolation).
 
 7. Click **Create** to deploy the container.
 
