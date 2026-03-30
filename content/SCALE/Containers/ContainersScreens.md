@@ -105,6 +105,17 @@ Click **Advanced Options** to display additional configuration settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddContainerAdvanced1.png" alt="Add Container Advanced Options - Part 1" id="Add Container Advanced Options - Part 1" >}}
 
+#### Storage
+
+The **Storage** settings are displayed only when a preferred pool is configured in [Settings](#settings-panel).
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Use Preferred Pool** | (Displayed only when a preferred pool is configured) Select to store this container on the configured preferred pool. Deselect to choose a different pool from the **Pool** dropdown. |
+| **Pool** | (Displayed when **Use Preferred Pool** is deselected) Select the storage pool for this container. |
+{{< /truetable >}}
+
 #### CPU Configuration
 
 The **CPU Configuration** settings bind the container to specific CPU cores.
@@ -156,17 +167,6 @@ Click **Add** to display a set of environment variable fields.
 
 Click **Add** again to configure additional environment variables.
 
-#### Capabilities
-
-The **Capabilities** settings control Linux capabilities, which are special permissions that divide root privileges into distinct units.
-This allows containers to perform specific privileged operations without granting full root access.
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Capabilities Policy** | Select the default policy for container capabilities:<br><br>**DEFAULT** (Recommended): Keeps most capabilities but drops dangerous ones (sys_module, sys_time, mknod, audit_control, mac_admin). Provides security while allowing normal container operations.<br><br>**ALLOW**: Grants all capabilities. Use when containers need broad system access, but reduces security isolation. |
-{{< /truetable >}}
-
 #### ID Mapping
 
 The **ID Mapping** settings configure how user and group IDs (UIDs/GIDs) inside the container map to UIDs/GIDs on the TrueNAS host.
@@ -183,6 +183,17 @@ Setting **ID Map Type** to **Privileged** removes all UID isolation between the 
 Container processes running as root have direct host root access.
 Use only when an application explicitly requires it and you understand the security implications.
 {{< /hint >}}
+
+#### Capabilities
+
+The **Capabilities** settings control Linux capabilities, which are special permissions that divide root privileges into distinct units.
+This allows containers to perform specific privileged operations without granting full root access.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Capabilities Policy** | Select the default policy for container capabilities:<br><br>**DEFAULT** (Recommended): Keeps most capabilities but drops dangerous ones (sys_module, sys_time, mknod, audit_control, mac_admin). Provides security while allowing normal container operations.<br><br>**ALLOW**: Grants all capabilities. Use when containers need broad system access, but reduces security isolation. |
+{{< /truetable >}}
 
 {{< hint type=note >}}
 Device configuration (network interfaces, USB devices, GPU devices, and filesystem mounts) is performed after container creation using the detail cards on the **Containers** screen.
@@ -365,7 +376,7 @@ Settings available in Edit mode include **Name**, **Description**, **Autostart**
 
 Note that the **Init Process** command line field cannot be changed after creation, but **Init Working Directory**, **Init User**, and **Init Group** remain editable.
 
-To edit device, disk, network, or proxy settings, use the [Containers Cards](#containers-cards) on the **Containers** screen.
+To edit device, disk, network, or other settings, use the [Containers Cards](#containers-cards) on the **Containers** screen.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditContainerBasic.png" alt="Edit Container Screen" id="Edit Container Screen" >}}
 
