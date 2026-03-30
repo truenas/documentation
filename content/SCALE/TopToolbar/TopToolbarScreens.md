@@ -2,10 +2,6 @@
 title: "Top Toolbar Screens"
 description: "All the icons and options contained in the TrueNAS top toolbar."
 geekdocCollapseSection: true
-aliases:
- - /scale/scaleuireference/scaletopbar/
- - /contributing/issuereporting/prereleaseuserfeedback/
-weight: 3
 tags:
 - tasks
 - toolbar

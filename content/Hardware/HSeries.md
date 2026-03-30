@@ -3,6 +3,8 @@ title: "H-Series"
 weight: 40
 geekdocFlatSection: true
 description: "Compact and power-efficient flexible HA ZFS NAS storage platform with dual-ported SAS HDD and SSDs for small to medium businesses, virtualization, file share, and backups."
+aliases:
+- /hseries/
 keyword:
  - enterprise storage solution
  - scalable storage systems
@@ -25,8 +27,8 @@ Visit the [H Series product page](https://www.truenas.com/h-series/) for more de
 
 <div class="docs-sections">
 
-{{< imagecard-lang image="/images/Hardware/HSeries/HSeriesPUM.png" title="Product User Manual" link="https://www.truenas.com/docs/files/HSeriesPUM/HSeriesPUM.pdf"
-descr="Comprehensive User Manual for TrueNAS H-Series systems." >}}
+{{< imagecard-lang image="/images/Hardware/HSeries/HSeriesPUM.png" title="H-Series User Manual" link="https://www.truenas.com/docs/files/HSeriesPUM/HSeriesPUM.pdf"
+descr="Comprehensive User Manual for TrueNAS H-Series systems." pumid="hseries" >}}
 
 {{< imagecard image="/images/Hardware/HSeries/HSeriesSOV.png" title="Statement of Volatility" link="https://www.truenas.com/docs/files/HSeriesSOV.pdf"
 descr="TrueNAS official Statement of Volatility for H-Series systems." >}}

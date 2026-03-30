@@ -30,9 +30,9 @@ This article provides instructions on pool management functions available in the
 Select **Storage** on the main navigation panel to open the **Storage Dashboard**.
 To see if the AutoTRIM function is enabled, locate the **Storage Health** widget for the pool.
 
-To enable or disable the function, click on the <span class="material-icons">more_vert</span> dropdown menu and select **AuotTRIM** to open the **Pool Options for *poolname*** dialog.
+To enable or disable the function, click on the <span class="material-icons">more_vert</span> dropdown menu and select **AutoTRIM** to open the **Pool Options for *poolname*** dialog.
 
-{{< trueimage src="/images/SCALE/Storage/PoolOptionsAuotTRIM.png" alt="Pool Edit Auto TRIM Dialog" id="Pool Edit Auto TRIM Dialog" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolOptionsAutoTRIM.png" alt="Pool Edit AutoTRIM Dialog" id="Pool Edit AutoTRIM Dialog" >}}
 
 Select **Auto TRIM**.
 
@@ -252,6 +252,11 @@ or
 
   {{< trueimage src="/images/SCALE/Storage/AddVdevsToPoolScreen.png" alt="Add VDEVs to Pool Wizard" id="Add VDEVs to Pool Screen" >}}
 
+{{< enterprise >}}
+Enterprise systems that are licensed for and contain SEDs display a message about SED encryption, indicating that only SED-capable disks are available for VDEV selection within the SED-encrypted pool.
+Pools that are not SED encrypted do not display this message.
+{{< /enterprise >}}
+
 Adding a vdev to an existing pool follows the same process as documented in [Create Pool]({{< ref "CreatingPools" >}}).
 
 Click on the type of vdev you want to add. For example, to add a spare, click on **Spare** to show the vdev spare options.
@@ -274,7 +279,7 @@ Drag the disk icon to the stripe vdev, then click **Save Selection**.
 
 {{< trueimage src="/images/SCALE/Storage/ManualSelectionAddVdevAddDisk.png" alt="Add Disk to Stripe Vdev for Spare" id="Add Disk to Stripe Vdev for Spare" >}}
 
-The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case, the Spare option.)
+The **Manual Selection** screen closes and returns to the **Add Vdev to Pool** wizard screen (in this case, the Spare option).
 
 {{< trueimage src="/images/SCALE/Storage/AddVdevToPoolSpareWithVdevAdded.png" alt="Add Vdev to Pool Spare with Vdev Added" id="Add Vdev to Pool Spare with Vdev Added" >}}
 
@@ -382,7 +387,7 @@ This process preserves data integrity but has multiple requirements:
   
   Special VDEVs cannot be removed when RAIDZ data VDEVs are present.
 
-* Use the same basice allocation unit size.
+* Use the same basic allocation unit size.
   
   All top-level VDEVs in the pool must use the same basic allocation unit size (`ashift`).
 

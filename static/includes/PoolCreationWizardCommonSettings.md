@@ -7,8 +7,7 @@ Choosing a dRAID VDEV layout removes the **Manual Disk Selection** button and ad
 It also removes the **Spare** VDEV section from the pool creation wizard and replaces it with the **Distributed Hot Spares** option in the **Data** VDEV section.
 
 #### VDEV Layouts
-
-{{< trueimage src="/images/SCALE/Storage/PoolCreationWizard.png" alt="Pool Creation Wizard" id="Pool Creation Wizard" >}}
+The **Layouts** field shows the following options:
 
 * **Stripe**
 
@@ -30,6 +29,7 @@ It also removes the **Spare** VDEV section from the pool creation wizard and rep
   For example, a **RAIDZ2** layout reserves two additional disks for parity, and two disks can fail without data loss.
 
 #### Automated Disk Selection - Stripe, Mirror, and RAIDZ layouts
+ <!-- comment out the setting automation tag {id="pool_create_auto-select"} -->
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDataScreen.png" alt="Pool Creation Wizard Data Screen" id="Pool Creation Wizard Data Screen" >}}
 
@@ -43,6 +43,7 @@ It also removes the **Spare** VDEV section from the pool creation wizard and rep
 {{< /truetable >}}
 
 #### Automated Disk Selection - dRAID layouts
+<!-- comment out the setting automation tag {id="pool_create_draid"} -->
 
 Similar to RAIDZ, dRAID layout numbers (**1**, **2**, or **3**) indicate the parity level and how many disks can fail without data loss to the pool.
 
@@ -52,7 +53,6 @@ If creating a data VDEV with fewer than 10 disks, using a RAIDZ layout is strong
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Disk Size** | Select the disk size from the list that displays. The list shows disks by size in GiB and type (SSD or HDD). |
 | **Treat Disk Size as Minimum** | Select to use disks of the size selected in **Disk Size** or larger. If not selected, only disks of the size selected in **Disk Size** are used. |
 | **Data Devices** | Data stripe width for the VDEV. Select the number of disks from the options provided on the dropdown list. TrueNAS recommends that dRAID layouts have data devices allocated in multiples of two. |
 | **Distributed Hot Spares** | Number of disk areas to actively provide spare capacity to the entire VDEV. These areas are active within the pool and function in of adding a **Spare** VDEV to the pool. We recommend setting this to at least **1**. The **Distributed Hot Spares** number cannot be modified after the pool is created. |
