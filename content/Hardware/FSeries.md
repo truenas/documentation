@@ -1,6 +1,7 @@
 ---
 title: "F-Series"
 weight: 10
+hide_title: true
 description: "NAS storage suited for performance projects, virtualization, M&E, and analytics. Highly available ZFS with dual port NVMe Gen4 SSDs, Copy-on-Write, snapshots, and RAID-Z."
 keywords: 
 - nvme
@@ -12,13 +13,14 @@ aliases:
  - /fseries/
 ---
 
-{{< prodintro banner="FSeries/F-SeriesFrontBez2.png" bannerhover="F-Series System" bannerlink="https://www.truenas.com/f-series/"
-icon1="IconTrueNAS.png" cell1title="High Performance All NVMe HA Storage" cell1text="Best for: NVMe Performance Project, Virtualization, M&E, Analytics."
-icon2="IconHA.png" cell2title="High Availability ZFS with Dual Controllers" cell2text="Dual ported NVMe Gen4 SSDs. Full ZFS capabilities: Copy-on-Write, Snapshot, and RAID-Z."
-icon3="IconTarget.png" cell3title="Only 2U and 20GB/s" cell3text="Up to 20GB/s: 4 x 100Gbe User Ports + 2 Expansion Ports. 48 Cores, 512GB RAM, and 96 GB/s of Flash Bandwidth."
-icon4="IconGraph.png" cell4title="NVMe Power Efficiency" cell4text="Typical operating power of less than 800W. High capacity and High bandwidth." >}}
-
-Visit the [F Series product page](https://www.truenas.com/f-series/) for more details.
+{{< 
+prodintro title="F-Series"
+subtitle="Experience True Performance"
+tagline="All-Flash NVMe Performance and Legendary ZFS Reliability. Never Compromise."
+productlink="https://www.truenas.com/f-series/"
+linklabel="Product Page"
+imgurl="https://www.truenas.com/wp-content/uploads/2023/11/F100_Front_Top-2.png"
+imgalt="TrueNAS F-Series" >}}
 
 ## Resources
 
