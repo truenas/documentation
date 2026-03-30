@@ -184,7 +184,7 @@ To uninstall the drivers:
 
 Containers using NVIDIA GPUs cannot start after driver removal.
 
-See [NVIDIA Drivers Widget]({{< relref "/SCALE/SCALEUIReference/SystemSettings/AdvancedSettingsScreen.md#nvidia-drivers-widget" >}}) in the UI Reference for detailed field descriptions.
+See [NVIDIA Drivers Card]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) in the UI Reference for detailed field descriptions.
 
 ## Security Settings
 {{< enterprise >}}
