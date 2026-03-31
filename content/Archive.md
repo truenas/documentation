@@ -50,10 +50,9 @@ aliases:
 
 Welcome to the Documentation Archive!
 
-The TrueNAS team maintains documentation content and provide regular updates for current and in development (future) versions of TrueNAS software.
-For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/software-status/) for one or more user type.
+{{< include file="/static/includes/DocLifecycle.md" >}}
 
-Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
+See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for details on how TrueNAS versions reach end of life.
 
 {{< hint type=important >}}
 All documentation provided here is end-of-life (EoL), intended for reference only, and no longer receives *any* updates.
