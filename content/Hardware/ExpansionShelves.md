@@ -1,6 +1,7 @@
 ---
 title: "Expansion Shelves"
 weight: 60
+hide_title: true
 aliases:
  - /hardware/expansionshelves/es12bsg/
  - /hardware/expansionshelves/es24bsg/
@@ -9,6 +10,7 @@ aliases:
  - /hardware/expansionshelves/es102bsg/
  - /hardware/expansionshelves/sasconnections/
  - /hardware/expansionshelves/
+ - /shelves/
 description: "TrueNAS platform expansion shelves to customize your NAS data storage systems and scale out drive capacity from 24 to 102 drives."
 keyword:
  - enterprise storage solution
@@ -20,18 +22,19 @@ keyword:
 ---
 <br>
 
-{{< prodintro banner="ExpansionShelves/ExpansionShelvesFront.png" bannerhover="Expansion Shelves"
-icon1="IconTrueNAS.png" cell1title="Wide Range of Capacity Options" cell1text="24 to 102 drive capacity. Multiple form factors."
-icon2="IconGraph.png" cell2title="Seamless Scaling" cell2text="Add storage to your datacenter without hassle or downtime."
-icon3="IconHA.png" cell3title="Dual Controller" cell3text="Highly available storage expansion."
-icon4="IconEnterprise.png" cell4title="Meets any Expansion Requirements" cell4text="Whether you need a few drives or hundreds, TrueNAS Enterprise products offer customizable solutions to fit any of your storage requirements." >}}
+{{< 
+prodintro title="Expansion Shelves"
+subtitle="Scale Storage Effortlessly"
+tagline="As your data grows, TrueNAS grows with you."
+imgurl="https://www.truenas.com/wp-content/uploads/2025/01/F100_Expansion_Stack.png"
+imgalt="TrueNAS Expansion Shelves" >}}
 
 ## ES24 Resources
 
 <div class="docs-sections">
 
-{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES24BSG.png" title="ES24 Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24BSG/ES24BSG25111.pdf"
-descr="Deployment guide for TrueNAS ES24 Expansion Shelf." >}}
+{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES24BSG.png" title="ES24<br>Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24BSG/ES24BSG25111.pdf"
+descr="Deployment guide for TrueNAS ES24 Expansion Shelf." pumid="es24" >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24Stencil.png" title="ES24 Hardware Stencils" link="https://www.truenas.com/docs/files/es24_stencil_pack.vssx"
 descr="Download ES24 Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
@@ -42,8 +45,8 @@ descr="Download ES24 Expansion Shelf stencils to diagram your TrueNAS hardware c
 
 <div class="docs-sections">
 
-{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES24FBSG.png" title="ES24F Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24FBSG/ES24FBSG25111.pdf"
-descr="Deployment guide for TrueNAS ES24F Expansion Shelf." >}}
+{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES24FBSG.png" title="ES24F<br>Basic Setup Guide" link="https://www.truenas.com/docs/files/ES24FBSG/ES24FBSG25111.pdf"
+descr="Deployment guide for TrueNAS ES24F Expansion Shelf." pumid="es24f" >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24FStencil.png" title="ES24F Hardware Stencils" link="https://www.truenas.com/docs/files/es24f_stencil_pack.vssx"
 descr="Download ES24F Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
@@ -55,7 +58,7 @@ descr="Download ES24F Expansion Shelf stencils to diagram your TrueNAS hardware 
 <div class="docs-sections">
 
 {{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES24NPUM.png" title="ES24N User Manual" link="https://www.truenas.com/docs/files/ES24NPUM/ES24NPUM.pdf"
-descr="Comprehensive User Manual for the TrueNAS ES24N." >}}
+descr="Comprehensive User Manual for the TrueNAS ES24N." pumid="es24n" >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES24NConnection.png" title="Connect ES24N to TrueNAS F-Series" link="https://www.truenas.com/docs/files/ConnectES24NtoFSeries.pdf"
 descr="Guide for connecting the ES24N to a TrueNAS F-Series." >}}
@@ -69,8 +72,8 @@ descr="Download ES24N Expansion Shelf stencils to diagram your TrueNAS hardware 
 
 <div class="docs-sections">
 
-{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES60Gen2PUM.png" title="ES60 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES60PUM/ES60Gen2PUM.pdf"
-descr="Comprehensive User Manual for the TrueNAS ES60 Gen 2." >}}
+{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES60Gen2PUM.png" title="ES60 Gen 2<br>User Manual" link="https://www.truenas.com/docs/files/ES60PUM/ES60Gen2PUM.pdf"
+descr="Comprehensive User Manual for the TrueNAS ES60 Gen 2." pumid="es60" >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES60Gen2Stencil.png" title="ES60 Gen 2 Hardware Stencils" link="https://www.truenas.com/docs/files/es60_gen_2_stencil_pack.vssx"
 descr="Download ES60 Gen 2 Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}
@@ -81,8 +84,8 @@ descr="Download ES60 Gen 2 Expansion Shelf stencils to diagram your TrueNAS hard
 
 <div class="docs-sections">
 
-{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES102Gen2PUM.png" title="ES102 Gen 2 User Manual" link="https://www.truenas.com/docs/files/ES102PUM/ES102Gen2PUM.pdf"
-descr="Comprehensive User Manual for the TrueNAS ES102 Gen 2." >}}
+{{< imagecard-lang image="/images/Hardware/ExpansionShelves/ES102Gen2PUM.png" title="ES102 Gen 2<br>User Manual" link="https://www.truenas.com/docs/files/ES102PUM/ES102Gen2PUM.pdf"
+descr="Comprehensive User Manual for the TrueNAS ES102 Gen 2." pumid="es102" >}}
 
 {{< imagecard image="/images/Hardware/ExpansionShelves/ES102Gen2Stencil.png" title="ES102 Gen 2 Hardware Stencils" link="https://www.truenas.com/docs/files/es102_gen_2_stencil_pack.vssx"
 descr="Download ES102 Gen 2 Expansion Shelf stencils to diagram your TrueNAS hardware configuration." >}}

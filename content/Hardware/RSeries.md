@@ -2,13 +2,15 @@
 title: "R-Series"
 description: "High rack-density, Enterprise-grade, fusion or all-flash, performance NAS storage. Suited for workgroup projects, file sharing, backups, plugins, and Kubernetes."
 geekdocFlatSection: true
-weight: 30
+hide_title: true
+weight: 40
 aliases:
  - /hardware/rseries/rseriesbsg/
  - /hardware/rseries/rseriesoobm/
  - /hardware/rseries/rseriessov/
  - /files/R50BMPUM.pdf
  - /files/r50bsg3.0.pdf
+ - /rseries/
 keyword:
  - enterprise storage solution
  - scalable storage systems
@@ -19,20 +21,21 @@ keyword:
 ---
 <br>
 
-{{< prodintro banner="RSeries/RSeriesAll.png" bannerhover="R-Series System" bannerlink="https://www.truenas.com/r-series/"
-icon1="IconTrueNAS.png" cell1title="High Rack Density: Capacity  & Performance" cell1text="Best for: Workgroup Projects, File sharing, Backup."
-icon2="IconEnterprise.png" cell2title="Enterprise-Grade Appliances" cell2text="ECC RAM, IPMI and Enclosure Mgmt. 3 Year HW Warranty with Bronze/Silver Options."
-icon3="IconSpeed.png" cell3title="Fusion or All-Flash Performance" cell3text="Single Controller: 6-32 Cores, 32-256GB RAM 600K IOPS and 10GB/s per Node, HDD and All-Flash Expansion options."
-icon4="IconGraph.png" cell4title="Built for All TrueNAS Options" cell4text="Scale-up or Scale-out. Plugins or Kubernetes." >}}
-
-Visit the [R Series product page](https://www.truenas.com/r-series/) for more details.
+{{< 
+prodintro title="R-Series"
+subtitle="Single Controller, Serious Storage."
+tagline="Data Power that Respects your Budget"
+productlink="https://www.truenas.com/r-series/"
+linklabel="Product Page"
+imgurl="https://www.truenas.com/wp-content/uploads/2025/09/R-Series_Navigation_Image.png"
+imgalt="TrueNAS R-Series" >}}
 
 ## R20 Resources
 
 <div class="docs-sections">
 
 {{< imagecard-lang image="/images/Hardware/RSeries/R20PUM.png" title="R20 User Manual" link="https://www.truenas.com/docs/files/RSeriesPUM/R20B/R20PUM.pdf"
-descr="User Manual for the TrueNAS R20." >}}
+descr="User Manual for the TrueNAS R20." pumid="r20" >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/RSeriesNetworkPortIDs.pdf"
 descr="Identifications list of TrueNAS R20 and R50 systems network ports." >}}
@@ -53,7 +56,7 @@ descr="TrueNAS official Statement of Volatility for the R20B system." >}}
 <div class="docs-sections">
 
 {{< imagecard-lang image="/images/Hardware/RSeries/R50BMPUM.png" title="R50 User Manual" link="https://www.truenas.com/docs/files/RSeriesPUM/R50BM/R50BMPUM.pdf"
-descr="User Manual for the TrueNAS R50." >}}
+descr="User Manual for the TrueNAS R50." pumid="r50" >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/RSeriesNetworkPortIDs.pdf"
 descr="Identifications list of TrueNAS R20 and R50 systems network ports." >}}
@@ -74,7 +77,7 @@ descr="Notice about reliability issues with some 1300W power supplies used with 
 <div class="docs-sections">
 
 {{< imagecard-lang image="/images/Hardware/RSeries/R60PUM.png" title="R60 User Manual" link="https://www.truenas.com/docs/files/RSeriesPUM/R60/R60PUM.pdf"
-descr="User Manual for the TrueNAS R60." >}}
+descr="User Manual for the TrueNAS R60." pumid="r60" >}}
 
 {{< imagecard image="/images/Hardware/RSeries/R20BSOV.png" title="R60 Statement of Volatility" link="https://www.truenas.com/docs/files/R60SOV25091.pdf"
 descr="TrueNAS official Statement of Volatility for the R60 system." >}}
