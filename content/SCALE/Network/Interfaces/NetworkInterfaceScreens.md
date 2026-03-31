@@ -75,6 +75,19 @@ Interface settings configure the network interface name, type, and IP address as
 | **Autoconfigure IPv6** | Select to automatically configure the IPv6 address with [rtsol(8)](https://man.cx/rtsol(8)). Only one interface can be configured this way. |
 | **MTU** | Sets the maximum transmission unit (MTU), which is the largest protocol data unit that can be communicated. The largest workable MTU size varies  with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of **1500**. |
 {{< /truetable >}}
+{{< enterprise >}}
+Enterprise HA systems show a block of three **Static IP Addresses** after clicking **Add**:
+
+{{< trueimage src="/images/SCALE/Network/EditInterfaceHAStaticIPAddresses.png" alt="HA Static IP Address Setting" id="HA Static IP Address Setting" >}}
+
+{{< truetable >}} {id="network_interface-ha-static"}
+| Setting | Description |
+|---------|-------------|
+| **IP Address (TrueNAS Controller 1)** |  |
+| **IP Address (This Controller)**|  |
+| **Virtual IP Address (Failover Address)** | Alias for the identical interface  on the other TrueNAS controller. The alias can be an IPv4 or IPv6 address. |
+{{< /truetable >}}
+{{< /enterprise >}}
 
 ### Bridge Settings {id="network_interfaces_add-bridge"}
 
@@ -83,7 +96,9 @@ Use **Description** to further define or clarify how or where the bridge is used
 
 {{< trueimage src="/images/SCALE/Network/AddInterfaceBridgeSettings.png" alt="Bridge Interface Settings" id="Bridge Interface Settings" >}}
 
-**Bridge Members** sets the network interfaces to include in the bridge to the option selected on the dropdown list. |
+**Bridge Members** sets the network interfaces to include in the bridge to the option selected on the dropdown list.
+
+**Enable Learning** defers interface learning until runtime. Leave disabled to prevent premature state trasnsitions and potential issues during system startup.
 
 ### Link Aggregation Settings  {id="network_interfaces_add-lagg"}
 
@@ -114,6 +129,19 @@ Use **Description** to further define or clarify how or where the bridge is used
 | **Parent Interface** | Shows a dropdown list of VLAN parent interface options. Options are usually an Ethernet card connected to a switch port configured for the VLAN. New link aggregations are not available until you restart the system. |
 | **VLAN Tag** |(Required) Accepts manual or copy/paste entry of the numeric tag configured in the switched network. Request this tag from your IT department if you are not the network administrator for your systems. |
 | **Priority Code Point** | Shows a dropdown list of the class of service options. The available 802.1p class of service ranges from **Best effort (default)** to **Network control (highest)**. |
+{{< /truetable >}}
+
+### Failover Settings {id="network_interfaces-failover"}
+
+**Failover** settings only show for Enterprise HA systems. 
+
+{{< trueimage src="/images/SCALE/Network/EditInterfaceFailoveSettingsHA.png" alt="Failover Settings" id="Failover Settings" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Critical** | Marks the interfaces as criticalm which means it is considered necessary for normal operation. When the last critical interface in a failover group is preempted by the other storage controller through the VRRP or CARP protocols, a failover is triggered. |
+| **Failover Group** | Sets the combine multiple, critical-for-failover interfaces into a group. Groups apply to single systems. A failover occurs when every interface in the group fails. Groups with a single interface trigger a failover when that interface fails. Configuring the system to failover when any interface fails requires marking each interface as critical and placing them in separate groups. |
 {{< /truetable >}}
 
 ## Test Changes

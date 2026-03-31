@@ -71,7 +71,7 @@ The **Search UI** global search bar allows users to search for screens and eleme
 
 {{< include file="/static/includes/AlertsSCALE.md" >}}
 
-### Settings {id="toolbar_settings-change-passwd"}
+### Settings {id="toolbar_settings-change-passwd"} <!-- change this tag when the Preferences screen gets added to the Settings section Add a Change Password and Preferences subsections -->
 
 The <span class="material-icons">account_circle</span> **Settings** button displays a menu of general system settings options.
 The options are **Change Password**, **Two-Factor Authentication** (when Global 2FA is enabled), **My API Keys**, **Guide**, and **Log Out**.

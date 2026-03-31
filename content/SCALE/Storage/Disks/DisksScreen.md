@@ -147,7 +147,7 @@ Click **Edit Disk** on the **[Devices]({{< ref "VDEVScreens" >}})** screen to op
 | **Advanced Power Management (APM)** |  Sets the APM level that controls power management behavior when drives are idle, not maximum performance capabilities. When drives are actively accessed, they operate at full performance regardless of the APM setting. Lower-numbered levels prioritize power savings during idle periods, while higher levels prioritize quick response times. Power management profile options: <br><li>**Disabled** (the default setting) <br><li>**Level 1 - Minimum power usage with Standby (spindown)** <br><li>**Level 64 - Intermediate power usage with Standby** <br><li>**Level 127 - Maximum power usage with Standby** <br><li>**Level 128 - Minimum power usage without Standby (no spindown)** <br><li>**Level 192 - Intermediate power usage without Standby** <br><li>**Level 254 - Maximum performance, maximum power usage**</li> |
 {{< /truetable >}}
 
-### SED Password <!-- tag for ui ref automation {id="disk_edit-sed"} -->
+### SED Password {id="disk_edit-sed"}
 
 Shows only for SED disks in an SED-licensed Enterprise system.
 

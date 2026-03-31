@@ -46,7 +46,7 @@ The <span class="material-icons">more_vert</span> dropdown list for each share s
 * **Edit Filesystem ACL** opens the [**Edit ACL**](#edit-filesystem-acl-screen) screen.
 * **<span class="material-icons">delete</span> Delete** opens the [**Delete** dialog](#delete-smb-share-dialog).
 
-### Delete SMB Share Dialog
+### Delete SMB Share Dialog {id="smb_delete"}
 
 The <span class="material-icons">delete</span> delete icon opens the **Delete** dialog.
 

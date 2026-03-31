@@ -1,6 +1,6 @@
 &NewLine;
 
-{{< truetable >}}
+{{< truetable >}} {id="add_encryption-options"}
 | Setting | Description  |
 |---------|-------------|
 | **Encryption Type** | Shows two encryption type options: <br><li>**Key** -  Shows key-based encryption settings. Shows a system-generated key field, an option to use a manual entry key, and key-based encryption algorithms. <br><li>**Passphrase** - Shows text fields for manual or copy/paste entry of a passphrase, and passphrase authentication algorithms. |
