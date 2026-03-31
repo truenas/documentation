@@ -78,7 +78,7 @@ A dataset with an active task includes an activity spinner when that task is in 
 {{< /truetable >}}
 {{< /expand >}}
 
-## Dataset Details Cards
+## Dataset Cards
 
 Each dataset has a set of information cards (cards) in the **Details for *datasetname*** area of the screen. 
 These cards and information is grouped by functional areas. 
