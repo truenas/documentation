@@ -7,13 +7,15 @@ aliases:
 ---
 
 The TrueNAS Software Development Life Cycle (SDLC) covers how the TrueNAS team plans, develops, tests, deploys, and maintains TrueNAS releases.
-This process applies to TrueNAS major versions released to the Community.
-For Enterprise customers, the team applies additional evaluation criteria covering commercial hardware compatibility, security, upgradability, and stability informed by Community usage data.
+TrueNAS uses an <a href="https://www.truenas.com/blog/advantages-of-the-truenas-open-core-business-model/" target="_blank">open-core model</a> — Community and Enterprise systems run the same software from the same installation image, with Enterprise features unlocked through licensing.
+Community members play an important role in testing pre-release builds, with participation guided by the [TrueNAS Software Status](https://www.truenas.com/docs/softwarestatus/) page and the [update profile]({{< ref "UpdateScreens" >}}) configured on each system.
 
 ## Planning
 
 The TrueNAS team defines the objectives, scope, and direction of future TrueNAS versions.
-This involves gathering Community feedback, identifying existing problems, and evaluating potential solutions.
+This involves gathering feedback from both Enterprise and Community users, identifying existing problems, and evaluating potential solutions.
+Enterprise customer requirements and use cases are a key input to the planning process.
+Community members can also submit and vote on ideas through the <a href="https://forums.truenas.com/c/features/12" target="_blank">Feature Requests</a> section of the TrueNAS forums.
 The output is a prioritized list of improvements targeted for an upcoming release.
 
 ## Development
@@ -24,17 +26,19 @@ TrueNAS developers then implement the approved changes.
 
 ## Evaluation
 
-Teams merge code into the TrueNAS source tree and test it alongside Community members running early development builds.
-Documentation contributors evaluate these builds and write public-facing content describing changes in the new version.
-Teams verify all requirements and objectives, with a focus on reliability and fault tolerance, and rework any features that fall short before release.
+The development team integrates changes into the TrueNAS codebase and tests builds alongside Community members running early development versions.
+Nightly builds undergo automated regression testing to verify that new changes do not break existing functionality.
+Following code freeze, each release goes through a suite of manual validation testing before it publishes, verifying all requirements and objectives with a focus on reliability and fault tolerance.
+Features that fall short of requirements are reworked before release.
 
-Concurrently, the security team reviews the codebase and sends any findings to the development team for resolution.
-The team also drafts security notices, errata, and best practices for the [TrueNAS Security website](https://security.truenas.com/).
+The documentation team evaluates pre-release builds in parallel and writes public-facing content describing changes in the new version.
+
+Concurrently, the security team reviews the codebase, resolves any findings with the development team, and publishes security notices, errata, and best practices to the [TrueNAS Security website](https://security.truenas.com/).
 
 ## Maintenance
 
-The team monitors each release for further development needs, bug fixes, and security patches.
-The team publishes updated point releases as it resolves issues and solicits Community feedback to inform planning for future versions.
+Each release enters an ongoing maintenance phase covering bug fixes, security patches, and further development needs.
+Maintenance releases are published as issues are resolved, with user feedback continuing to inform planning for future versions.
 
 ## Release Versioning
 
