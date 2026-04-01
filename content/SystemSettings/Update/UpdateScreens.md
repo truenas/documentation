@@ -66,6 +66,7 @@ The profiles listed in this section show the profile and a brief description of 
 {{< trueimage src="/images/SCALE/SystemSettings/UpdateScreenAvailableProfiles.png" alt="Available Profiles" id="Available Profiles" >}}
 
 Profile selections allow users to choose how conservative the software selection is based on the use case. The table below summarizes profiles and the intended users.
+See the [TrueNAS Software Status](https://www.truenas.com/docs/softwarestatus/) page for current version recommendations by user type, and the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for details on TrueNAS release stages.
 
 {{< truetable >}}
 | Profile | Description |
