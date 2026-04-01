@@ -78,13 +78,13 @@ To configure default network settings:
 1. Click **Configuration** on the **Containers** screen header and select **Settings**.
 
 2. Select a bridge from the **Bridge** dropdown list:
-   - **Automatic** creates and manages a dedicated virtual bridge (`truenasbr0`) on the TrueNAS host. TrueNAS assigns containers addresses from this bridge using DHCP and routes their outbound traffic through the host via NAT. The bridge uses `172.200.0.0/24` (IPv4) and `fd42:4c58:43ae::/64` (IPv6) by default — change these using the **IPv4 Network** and **IPv6 Network** fields if they conflict with your network.
+   - **Automatic** to allow TrueNAS to create and manage a dedicated virtual bridge (`truenasbr0`) on the TrueNAS host using DHCP and routes their outbound traffic through the host via NAT. Change the defaults using the **IPv4 Network** and **IPv6 Network** fields if they conflict with your network.
    - Select an existing bridge interface to use that bridge for container networking.
 
    See [Accessing NAS from VMs and Containers](/scale/network/containernasbridge) for information on creating bridge interfaces.
 
    {{< enterprise >}}
-   Custom bridge selection is not available on High Availability systems. HA deployments always use **Automatic** to prevent bridge STP issues that could interfere with controller failover.
+   Custom bridge selection is not available on High Availability systems. HA deployments always use **Automatic** to prevent issues that could interfere with controller failover.
    {{< /enterprise >}}
 
 3. (Optional) When **Bridge** is set to **Automatic**, configure IP address ranges:
@@ -153,33 +153,33 @@ For production containers in HA environments:
 
 ### Managing Container Permissions
 
-When a container reads or writes to a host dataset mounted via a [filesystem device](#configuring-filesystem-devices), TrueNAS checks whether the user identity inside the container has permission to access that path on the host.
-User accounts inside containers are independent from host user accounts, so a user named `appuser` with UID `1000` inside a container is not the same identity as UID `1000` on the TrueNAS host, even though they share the same number.
+When a container reads or writes to a host dataset mounted via a [file system device](#configuring-filesystem-devices), TrueNAS checks whether the user identity inside the container has permission to access that path on the host.
+User accounts inside containers are independent from host user accounts, so a user named *appuser* with UID *1000* inside a container is not the same identity as UID *1000* on the TrueNAS host, even though they share the same number.
 
 To bridge this gap, TrueNAS uses **UID/GID mapping**: a translation layer that tells the host which host user corresponds to each container user.
-For most containers you do not need to configure this manually — the default behavior set by the container's **ID Map Type** at creation time handles it automatically.
+For most containers you do not need to configure this manually — the default behavior set by the **ID Map Type** for the container at creation time handles it automatically.
 The **Map User/Group IDs** screen is for cases where you need finer control, such as granting a specific host user access to data a container reads or writes.
 
 #### How Default Mapping Works
 
 By default (when **ID Map Type** is set to **Default**), TrueNAS shifts all container UIDs and GIDs into a private range on the host starting at **2147000001**.
-This means container UID `0` (root) maps to host UID `2147000001`, container UID `1` maps to `2147000002`, and so on.
+This means container UID *0* (root) maps to host UID *2147000001*, container UID *1* maps to *2147000002*, and so on.
 No container process appears as a real user on the host, which prevents a compromised container from having any meaningful access to host resources.
 
 #### Granting Root Access to Host Paths
 
-The special host user **truenas_container_unpriv_root** (UID `2147000001`) represents the container root on the host when using Default ID mapping.
+The special host user **truenas_container_unpriv_root** (UID *2147000001*) represents the container root on the host when using default ID mapping.
 To give a container running as root access to a host dataset, assign dataset permissions to **truenas_container_unpriv_root** — no mapping configuration is required.
 
 #### When You Need Custom Mappings
 
 You need to configure a custom mapping when:
 
-- An application inside the container runs as a specific non-root UID (for example, UID `1000`) and needs access to a TrueNAS dataset.
+- An application inside the container runs as a specific non-root UID (for example, UID *1000*) and needs access to a TrueNAS dataset.
 - You want a specific TrueNAS user account to own files the container creates on a shared dataset.
 - You are sharing a dataset between a container and other services (like an SMB share) and need consistent ownership.
 
-In these cases, you create a mapping that tells TrueNAS: "when the container acts as UID `X`, treat it as host user `Y`."
+In these cases, you create a mapping that tells TrueNAS: when the container acts as UID *X*, treat it as host user *Y*.
 
 #### Configuring Mappings
 
@@ -197,22 +197,22 @@ To add a new mapping:
 1. Type an account name to search or select it from the dropdown.
 
 2. Choose how to map the ID:
-   - Enable **Map to the same UID/GID in the container** to use the identical ID number inside the container (for example, host UID `1000` → container UID `1000`).
+   - Select **Map to the same UID/GID in the container** to use the identical ID number inside the container (for example, host UID *1000* → container UID *1000*).
    - Disable it to assign a different container ID. Enter the UID or GID the container uses for this account — for example, *1000*.
 
 3. Click **Set** to save the mapping.
 
-Changes apply immediately, though restarting the container may be required for them to take effect.
+Changes apply immediately, though restarting the container might be required for them to take effect.
 
 {{< hint type=info >}}
 Only local TrueNAS users and groups are supported. Active Directory and other directory service accounts cannot be used for container ID mapping.
 {{< /hint >}}
 
-For example, if your container runs a service as UID `1000` and you want it to read and write to a TrueNAS dataset owned by the local user `mediauser` (host UID `3000`):
+For example, if your container runs a service as UID *1000* and you want it to read and write to a TrueNAS dataset owned by the local user *mediauser* (host UID *3000*):
 
-1. Create a mapping: host user `mediauser` → container UID `1000`.
-2. Assign the dataset permissions to `mediauser` on the host.
-3. The container service running as UID `1000` can now access that dataset.
+1. Create a mapping for the host user *mediauser* to the  container UID *1000*.
+2. Assign the dataset permissions to *mediauser* on the host.
+3. The container service running as UID *1000* can now access that dataset.
 
 {{< hint type=note >}}
 Incorrect or missing mappings cause permission denied errors when containers access mounted host paths.
@@ -224,7 +224,7 @@ Click **Create New Container** to open the **Add Container** configuration wizar
 
 ### Creating a Container
 
-The **Add Container** form displays basic configuration fields and an **Advanced Options** button for additional settings.
+The **Add Container** screen displays basic configuration fields and an **Advanced Options** button for additional settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddContainerBasic.png" alt="Add Container Basic Settings" id="Add Container Basic Settings" >}}
 
@@ -235,13 +235,10 @@ To create a new container:
 
 2. (Optional) Enter a **Description** for the container.
 
-3. (Optional) Enable **Autostart** to automatically start the container when the system boots.
+3. (Optional) Select **Autostart** to automatically start the container when the system boots.
 
-   When you enable autostart:
-
-      - TrueNAS automatically starts the container during system boot after the containers service initializes.
-      - The container starts without manual intervention, ensuring services are available immediately after system startup.
-      - During system shutdown, TrueNAS sends a graceful shutdown signal to the container, allowing applications to close properly and save data.
+   When you enable autostart, TrueNAS automatically starts the container during system boot after the containers service initializes, ensuring services are available immediately after system startup.
+   During system shutdown, TrueNAS sends a graceful shutdown signal to the container, allowing applications to close properly and save data.
 
 4. Click **Browse Catalog** to open the **Select Image** screen.
 
@@ -259,15 +256,13 @@ To create a new container:
 
    - Use **Time Configuration** to set the container time zone (Local or UTC) and shutdown timeout (how long to wait for graceful shutdown before forcing termination).
 
-   - Use **Init Process** to configure the init command, working directory, and user/group for the container's PID 1 process. The default init command is `/sbin/init`.
-     Note: The init command cannot be changed after creation, but working directory, user, and group remain editable.
+   - Use **Init Process** to configure the init command, working directory, and user/group for the PID 1 process for the container. The default init command is `/sbin/init`.
+      Note: The init command cannot be changed after creation, but working directory, user, and group remain editable.
 
-   - Use **Environment Variables** to define environment variables that will be available inside the container.
-
-   - Use **ID Mapping** to control how container UIDs and GIDs map to host UIDs and GIDs. This setting cannot be changed after the container is created.
+   - Use **ID Mapping** to control how container UIDs and GIDs map to host UIDs and GIDs. This setting cannot be changed after the container is created. Options include:
      - **Default** (recommended): Container root maps to the unprivileged host user **truenas_container_unpriv_root**. Provides security isolation for most workloads.
      - **Isolated**: Assigns a unique UID/GID range to this container to prevent overlap with other containers. Use when multiple containers share access to the same host datasets.
-     - **Privileged**: Container UIDs map directly to host UIDs with no offset. Required for nested container workloads such as running Docker inside a container. Use only when necessary.
+   - Use **Environment Variables** to define environment variables that are available inside the container.
 
    {{< hint type=important title="Nested Containers Require Privileged ID Mapping" >}}
    Starting in TrueNAS 26, running nested containers inside a TrueNAS container — for example, installing and running Docker inside the container — requires setting **ID Map Type** to **Privileged**.
@@ -329,17 +324,17 @@ After selecting the container row in the table to populate the **Details for *Co
 
 Click **Edit** to open the **Edit Container: *Container*** screen.
 
-The Edit screen allows you to modify container settings after creation. You can change **Name**, **Description**, **Autostart**, and all **Advanced Options** settings.
+The edit screen allows you to modify container settings after creation. You can change **Name**, **Description**, **Autostart**, and all **Advanced Options** settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditContainerBasic.png" alt="Edit Container Screen" id="Edit Container Screen" >}}
 
 **Settings you cannot change after creation:**
-- **Image**: The container operating system image is fixed at creation
+The edit screen allows you to modify container settings after creation. You can change **Name**, **Description**, **Autostart**, and all **Advanced Options** settings.
 - **Pool**: The storage pool cannot be changed after deployment
 - **ID Map Type**: The UID/GID mapping mode is fixed at creation
-- **Init Process** command line: The init command is fixed, but Init Working Directory, Init User, and Init Group remain editable
+- **Init Process** command: The init command is fixed, but **Init Working Directory**, **Init User**, and **Init Group** remain editable
 
-For detailed information about each setting, see the [Add Container Form]({{< relref "/SCALE/Containers/ContainersScreens.md#add-container-form" >}}) section in the UI Reference.
+For detailed information about each setting, see the [Add Container Screen]({{< relref "/SCALE/Containers/ContainersScreens.md#add-container-screen" >}}) section in the UI Reference.
 
 ### Deleting Containers
 
@@ -357,12 +352,12 @@ Click **Continue** to delete the container.
 ### Managing USB Devices
 
 Use the **USB Devices** card to view and manage USB devices attached to the container.
-USB device passthrough allows containers to access USB peripherals as if they were physically connected.
+USB device passthrough allows containers to access USB peripherals as if they are physically connected.
 
 {{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="USB Devices Card" id="USB Devices Card" >}}
 
 Click **Add** to open a list of available USB devices.
-Select a USB device from the list to attach it to the container.
+USB device passthrough allows containers to access USB peripherals as if they are physically connected.
 
 USB devices appear in the list only if they are physically connected to the TrueNAS system and not currently allocated to another container or VM.
 
@@ -387,39 +382,39 @@ Select a GPU from the list to attach it to the container.
 
 GPU devices appear in the list only if:
 
-- The physical GPU hardware is installed and detected by TrueNAS
-- For NVIDIA GPUs, drivers are installed via **System > Advanced Settings**
-- The GPU device is not currently allocated to another container or VM
+- The physical GPU hardware is installed and detected by TrueNAS.
+- The NVIDIA GPU drivers are installed via **System > Advanced Settings**.
+- The GPU device is not currently allocated to another container or VM.
 
 ### Configuring Filesystem Devices
 
 Use the **Filesystem Devices** card to mount additional host directories or datasets into the container.
-Filesystem devices provide containers with access to TrueNAS storage for reading and writing data.
+File system devices provide containers with access to TrueNAS storage for reading and writing data.
 
 {{< trueimage src="/images/SCALE/Virtualization/FilesystemDevicesWidget.png" alt="Filesystem Devices Card" id="Filesystem Devices Card" >}}
 
-To add a filesystem device:
-
+To add a file system device:
+File system devices provide containers with access to TrueNAS storage for reading and writing data.
 1. Click **Add** in the **Filesystem Devices** card.
 
    {{< trueimage src="/images/SCALE/Virtualization/AddFilesystemDevice.png" alt="Add Filesystem Device" id="Add Filesystem Device" >}}
-
+To add a file system device:
 2. Enter or browse to select the **Host Directory Source**.
    This is the directory or dataset path on the TrueNAS host that you want to mount into the container.
 
 3. Enter the **Container Mount Path**.
-   This is the mount point inside the container where the filesystem appears (for example, */mnt/data* or */var/lib/appdata*).
+   This is the mount point inside the container where the file system appears (for example, */mnt/data* or */var/lib/appdata*).
 
-4. Click **Save** to create the filesystem device mount.
+4. Click **Save** to create the file system device mount.
 
-To edit or delete an existing filesystem device, click the <span class="material-icons">more_vert</span> icon and select **Edit** or **Delete**.
+To edit or delete an existing file system device, click the <span class="material-icons">more_vert</span> icon and select **Edit** or **Delete**.
 
-Use Cases for Filesystem Devices:
+Use cases for filesystem devices:
 
 - Mounting TrueNAS datasets for persistent container data storage
 - Providing containers with access to shared media libraries
 - Mounting configuration directories from the host
-- Sharing data between multiple containers
+Use cases for file system devices:
 
 ### Managing NICs
 
@@ -427,7 +422,7 @@ Use the **NIC Devices** card to view and manage network interfaces (NICs) attach
 
 {{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Devices Card" id="NIC Devices Card" >}}
 
-Each NIC displays the network interface name and MAC address (for example, `br0 (aa:bb:cc:dd:ee:ff)` or `br0 (Default Mac Address)`).
+Each NIC displays the network interface name and MAC address (for example, **br0 (aa:bb:cc:dd:ee:ff)** or **br0 (Default Mac Address)**).
 
 {{< hint type=important >}}
 NIC modifications are restricted when there are pending network interface changes on the TrueNAS system.
@@ -436,27 +431,26 @@ If you see a warning about pending changes, apply or revert those changes before
 
 To add a NIC:
 
-1. Click **Add** to open a menu with available network interfaces.
-2. Select a NIC from the menu to open the configuration dialog.
+1. Click **Add** to open a dropdown with available network interfaces.
+2. Select a NIC from the list to open the configuration dialog.
 
    {{< trueimage src="/images/SCALE/Virtualization/AddContainerNICDevice.png" alt="Add NIC Device" id="Add NIC Device" >}}
 
 3. Configure the NIC settings:
    - Use **NIC Type** to select the network interface type (virtio, macvlan, ipvlan, etc.).
-   - (Create only) Enable **Use Default Mac Address** to automatically assign a MAC address.
+   - (Create only) Select **Use Default Mac Address** to automatically assign a MAC address.
    - Use **Mac Address** to enter a custom MAC address, or leave empty to use the default.
-   - (virtio only) Enable **Trust Guest RX Filters** to trust guest OS receive filter settings for better performance.
+   - (virtio only) Select **Trust Guest RX Filters** to trust guest OS receive filter settings for better performance.
 4. Click **Add** to attach the NIC to the container.
 
 To edit or delete an existing NIC:
 
-1. Click the <span class="material-icons">more_vert</span> icon next to the NIC.
-2. Select **Edit** to modify the NIC settings, or **Delete** to remove the NIC.
+1. Stop the container if it is running.
+   Click <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop the container.
 
-{{< hint type=note >}}
-NICs can only be modified when the container is stopped.
-If the container is running, stop it first before editing or deleting NICs.
-{{< /hint >}}
+2. Click the <span class="material-icons">more_vert</span> icon next to the NIC.
+
+3. Select **Edit** to modify the NIC settings, or **Delete** to remove the NIC.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteNicDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
 

@@ -21,24 +21,21 @@ The **Containers** screen displays **No Containers** before you create the first
 {{< trueimage src="/images/SCALE/Virtualization/ContainersScreenNoContainers.png" alt="Containers Screen No Containers" id="Containers Screen No Containers" >}}
 
 The **Configuration** dropdown opens options to configure global container settings:
-- **Settings** opens the [**Settings**](#settings-panel) screen to configure the preferred pool and default network.
+- **Settings** opens the [**Settings**](#settings-screen) screen to configure the preferred pool and default network.
 - **Map User/Group IDs** opens the [**Map User and Group IDs**](#map-user-and-group-ids-screen) screen to configure UID and GID mappings.
 
-**Create New Container** at the top right of the screen opens the **[Add Container](#add-container-form)** form.
+**Create New Container** at the top right of the screen opens the **[Add Container](#add-container-screen)** screen.
 
-## Settings Panel
+## Settings Screen
 
-Select **Settings** from the **Configuration** dropdown to open the **Settings** screen showing global options that apply to all containers.
-Use this screen to configure an optional preferred storage pool for containers and default network settings.
+The **Settings** screen displays global options that apply to all containers, including an optional preferred storage pool and default network settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Settings Panel" id="Settings Panel" >}}
 
 ### Preferred Pool
 
-**Preferred Pool** specifies a default storage pool for container data.
-This setting is optional.
-Select a pool from the dropdown list to use it as the default when creating containers.
-If no preferred pool is set, TrueNAS prompts for pool selection when creating each container.
+**Preferred Pool** specifies an optional default storage pool for container data.
+When no preferred pool is configured, TrueNAS prompts for pool selection at container creation.
 
 #### Default Network Settings
 
@@ -47,19 +44,17 @@ If no preferred pool is set, TrueNAS prompts for pool selection when creating ea
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Bridge** | Specifies the network bridge. Select from the dropdown list. **Automatic** creates and manages a dedicated virtual bridge (`truenasbr0`) on the TrueNAS host. TrueNAS assigns containers addresses from this bridge using DHCP and routes their outbound traffic through the host via NAT. The bridge uses `172.200.0.0/24` (IPv4) and `fd42:4c58:43ae::/64` (IPv6) by default. Use the **IPv4 Network** and **IPv6 Network** fields to change these ranges if they conflict with your network. Additional dropdown options show existing configured bridges. See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/Network/ContainerNASBridge" >}}) for more information.<br><br>Custom bridge selection is not available on High Availability systems. HA deployments always use **Automatic** to prevent bridge STP issues that could interfere with controller failover. |
-| **IPv4 Network** | (Displayed only when **Bridge** is set to **Automatic**) Specifies the IPv4 address and subnet for the automatic bridge (e.g., *192.168.1.0*/*24*). Leave empty to use the default address. At least one network (IPv4 or IPv6) must be specified. |
-| **IPv6 Network** | (Displayed only when **Bridge** is set to **Automatic**) Specifies the IPv6 address and subnet for the automatic bridge (e.g., *fd42:96dd:aef2:483c::1*/*64*). Leave empty to use the default address. At least one network (IPv4 or IPv6) must be specified. |
+| **Bridge** | Network bridge for containers. **Automatic** creates and manages a dedicated virtual bridge (*truenasbr0*) on the TrueNAS host, assigns container IP addresses via DHCP, and routes outbound traffic through the host via NAT. Default ranges are *172.200.0.0/24* (IPv4) and *fd42:4c58:43ae::/64* (IPv6), configurable via **IPv4 Network** and **IPv6 Network**. Additional options show existing configured bridges. See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/Network/ContainerNASBridge" >}}) for more information.<br><br>Custom bridge selection is not available on High Availability systems. HA deployments always use **Automatic** to prevent bridge STP issues that could interfere with controller failover. |
+| **IPv4 Network** | (Displayed only when **Bridge** is set to **Automatic**) IPv4 address and subnet for the automatic bridge (for example, *192.168.1.0/24*). Defaults to the system-assigned address when empty. At least one network (IPv4 or IPv6) must be configured. |
+| **IPv6 Network** | (Displayed only when **Bridge** is set to **Automatic**) IPv6 address and subnet for the automatic bridge (for example, *fd42:96dd:aef2:483c::1/64*). Defaults to the system-assigned address when empty. At least one network (IPv4 or IPv6) must be configured. |
 {{< /truetable >}}
 
 ## Map User and Group IDs Screen
 
-The **Map User and Group IDs** screen allows users to manually configure UID and GID mappings between the TrueNAS host and containers.
-Access this screen by clicking **Configuration** on the **Containers** screen header and selecting **Map User/Group IDs**.
+The **Map User and Group IDs** screen  allows users to manually configure UID and GID mappings between the TrueNAS host and containers.
+It opens after clicking **Configuration** on the **Containers** screen header and selecting **Map User/Group IDs**.
 
 {{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
-
-The **Users** and **Groups** tabs display mappings for individual user or group accounts, respectively.
 
 Existing mappings appear in a table listing the user or group name, host ID, and container ID.
 **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row removes that mapping.
@@ -68,18 +63,18 @@ Existing mappings appear in a table listing the user or group name, host ID, and
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **User/Group** | Specifies the user or group account name. Begin typing an account name to search for it or select it from the dropdown menu. Only local users and groups are supported. Active Directory or other directory service accounts are not supported. |
+| **User/Group** | Specifies the user or group account name. Supports local users and groups only; Active Directory and other directory service accounts are not supported. |
 | **Map to the same UID/GID in the container** | (Default) Maps the host user or group ID to the same ID inside containers. |
 | **Container UID/GID** | (Displays when **Map to the same UID/GID in the container** is not selected) Enter the ID number (e.g., *1000*) to map the host user or group ID to inside containers. |
 {{< /truetable >}}
 {{< /expand >}}
 
 **Set** creates the mapping.
-Changes apply immediately, though restarting the container may be required for them to take effect.
+Changes apply immediately, though restarting the container might be required for them to take effect.
 
-## Add Container Form
+## Add Container Screen
 
-The **Add Container** form displays basic configuration fields and an **Advanced Options** button for additional settings.
+The **Add Container** screen displays basic configuration fields and an **Advanced Options** button for additional settings.
 
 ### Basic Settings
 
@@ -91,29 +86,29 @@ The basic settings are always visible and configure essential container properti
 | Setting | Description |
 |---------|-------------|
 | **Name** | Required. Enter an alphanumeric name for the container. |
-| **Description** | Optional. Enter a description for the container. |
-| **Autostart** | Optional. Select to automatically start the container when the system boots. |
-| **Image** | Required. Click **Browse Catalog** to open the **Select Image** screen with available Linux image choices. Search or browse to locate your desired image and click **Select**. |
-| **Pool** | (Conditional) Select a storage pool for the container. This field appears when no preferred pool is configured in [Settings](#settings-panel). |
+| **Description** | Specifies an optional description about the container or how it is used. |
+| **Autostart** | Automatically starts the container when the system boots when selected. |
+| **Image** | Specifies the operating system image file for the container. **Browse Catalog** opens the **Select Image** screen with available Linux image choices, with an option to search or browse to locate a desired image. |
+| **Pool** | Specifies a storage pool for the container. Only shows when no preferred pool is configured in [Settings](#settings-screen). |
 {{< /truetable >}}
 
 {{< include file="/static/includes/InstanceNameRequirements.md" >}}
 
 ### Advanced Options
 
-Click **Advanced Options** to display additional configuration settings.
+**Advanced Options** shows additional configuration settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddContainerAdvanced1.png" alt="Add Container Advanced Options - Part 1" id="Add Container Advanced Options - Part 1" >}}
 
 #### Storage
 
-The **Storage** settings are displayed only when a preferred pool is configured in [Settings](#settings-panel).
+The **Storage** settings only show when a preferred pool is configured in [Settings](#settings-screen).
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Use Preferred Pool** | (Displayed only when a preferred pool is configured) Select to store this container on the configured preferred pool. Deselect to choose a different pool from the **Pool** dropdown. |
-| **Pool** | (Displayed when **Use Preferred Pool** is deselected) Select the storage pool for this container. |
+| **Use Preferred Pool** | Sets the selected pool as the preferred pool to store the container. Only shows when a preferred pool is configured. When selected, this container is stored on the configured preferred pool. When not enabled, the **Pool** dropdown shows a list of pools to choose from. |
+| **Pool** | Sets a storage pool for the container to use. Only shows when **Use Preferred Pool** is deselected. |
 {{< /truetable >}}
 
 #### CPU Configuration
@@ -123,7 +118,7 @@ The **CPU Configuration** settings bind the container to specific CPU cores.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **CPU Set** | Optional. Specify CPU core numbers to allocate to the container (e.g., *0,1,2* or *0-3*). Leave blank to allow the container access to all host CPU cores. |
+| **CPU Set** | Specifies CPU core numbers to allocate to the container (e.g., *0,1,2* or *0-3*). Leave blank to allow the container access to all host CPU cores. |
 {{< /truetable >}}
 
 #### Time Configuration
@@ -133,21 +128,21 @@ The **Time Configuration** settings control container time zone and shutdown beh
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Container Time** | Select the time zone for the container. **Local** uses the host system time. **UTC** uses Coordinated Universal Time. |
-| **Shutdown Timeout** | Specify the number of seconds to wait for the container to shut down gracefully before forcing termination. Default is 30 seconds. |
+| **Container Time** | Sets the time zone for the container. **Local** uses the host system time. **UTC** uses Coordinated Universal Time. |
+| **Shutdown Timeout** | Specifies the number of seconds to wait for the container to shut down gracefully before forcing termination. Default is 30 seconds. |
 {{< /truetable >}}
 
 #### Init Process
 
-The **Init Process** settings configure the container's initialization process.
+The **Init Process** settings configure the initialization process for the container.  
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Init Process** | Optional. Specify the init process command line. Default is `/sbin/init`. |
-| **Init Working Directory** | Optional. Specify the working directory for the init process. |
-| **Init User** | Optional. Specify the user to run the init process as. |
-| **Init Group** | Optional. Specify the group to run the init process as. |
+| **Init Process** | Specifies the init process command line. Default is `/sbin/init`. |
+| **Init Working Directory** | Specifies the working directory for the init process. |
+| **Init User** | Specifies the user to run the init process as. |
+| **Init Group** | Specifies the group to run the init process as. |
 {{< /truetable >}}
 
 {{< trueimage src="/images/SCALE/Virtualization/AddContainerAdvanced2.png" alt="Add Container Advanced Options - Part 2" id="Add Container Advanced Options - Part 2" >}}
@@ -156,16 +151,14 @@ The **Init Process** settings configure the container's initialization process.
 
 The **Environment Variables** settings configure optional environment variables to run on boot or execute.
 
-Click **Add** to display a set of environment variable fields.
+**Add** shows a set of environment variable fields each time you click it.
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Enter the environment variable name (e.g., *PATH*, *HOME*). |
-| **Value** | Enter the value for the environment variable. |
+| **Name** | Specifies the environment variable name (e.g., *PATH*, *HOME*). |
+| **Value** | Specifies the value for the environment variable. |
 {{< /truetable >}}
-
-Click **Add** again to configure additional environment variables.
 
 #### ID Mapping
 
@@ -175,7 +168,7 @@ This setting is available at container creation only and cannot be changed after
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **ID Map Type** | Select the UID/GID mapping mode for the container:<br><br>**Default** (Recommended): Maps the container root (UID 0) to the unprivileged host user **truenas_container_unpriv_root** (UID 2147000001). All other container UIDs are offset by the same amount (e.g., container UID 1000 becomes host UID 2147001001). Provides security isolation while allowing normal container operations.<br><br>**Isolated**: Uses the same offset as Default but shifts the base further by a per-container slice value, ensuring no two containers share host UID ranges. Use when multiple containers access the same host datasets and non-overlapping UID ranges are required. TrueNAS automatically assigns a unique slice if none is specified.<br><br>**Privileged**: Applies no UID/GID mapping — container UIDs map directly to the same UIDs on the host. Container root (UID 0) becomes host root. Use only when an application explicitly requires direct UID mapping. |
+| **ID Map Type** | Sets the UID/GID mapping mode for the container from the options:<br><li>**Default** (Recommended): Maps the container root (UID 0) to the unprivileged host user **truenas_container_unpriv_root** (UID 2147000001). All other container UIDs are offset by the same amount (e.g., container UID 1000 becomes host UID 2147001001). Provides security isolation while allowing normal container operations.<br><li>**Isolated**: Uses the same offset as default but shifts the base further by a per-container slice value, ensuring no two containers share host UID ranges. Use when multiple containers access the same host datasets and non-overlapping UID ranges are required. TrueNAS automatically assigns a unique slice if none is specified.<br><li>**Privileged**: Applies no UID/GID mapping — container UIDs map directly to the same UIDs on the host. Container root (UID 0) becomes host root. Use only when an application explicitly requires direct UID mapping. </li> |
 {{< /truetable >}}
 
 {{< hint type=warning title="Privileged ID Mapping Warning" >}}
@@ -186,23 +179,23 @@ Use only when an application explicitly requires it and you understand the secur
 
 #### Capabilities
 
-The **Capabilities** settings control Linux capabilities, which are special permissions that divide root privileges into distinct units.
-This allows containers to perform specific privileged operations without granting full root access.
+**Capabilities** settings control Linux capabilities, which are special permissions that divide root privileges into distinct units.  
+Allows containers to perform specific privileged operations without granting full root access.  
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Capabilities Policy** | Select the default policy for container capabilities:<br><br>**DEFAULT** (Recommended): Keeps most capabilities but drops dangerous ones (sys_module, sys_time, mknod, audit_control, mac_admin). Provides security while allowing normal container operations.<br><br>**ALLOW**: Grants all capabilities. Use when containers need broad system access, but reduces security isolation. |
+| **Capabilities Policy** | Sets the default policy for container capabilities:<br><li>**DEFAULT** (Recommended): Keeps most capabilities but drops dangerous ones (sys_module, sys_time, mknod, audit_control, mac_admin). Provides security while allowing normal container operations.<br><li>**ALLOW**: Grants all capabilities. Use when containers need broad system access, but reduces security isolation. |
 {{< /truetable >}}
 
 {{< hint type=note >}}
-Device configuration (network interfaces, USB devices, GPU devices, and filesystem mounts) is performed after container creation using the detail cards on the **Containers** screen.
+Device configuration (network interfaces, USB devices, GPU devices, and file system mounts) is performed after container creation using the detail cards on the **Containers** screen.  
 See [Containers Cards](#containers-cards) for information on configuring devices.
 {{< /hint >}}
 
 ## Containers Table
 
-The **Containers** table lists each configured container and displays its name, current state, autostart setting, and live resource metrics: **CPU %**, **Memory MiB**, and **Disk I/O % Full Pressure** (shown as *N/A* when the container is stopped or metrics are unavailable).
+The **Containers** table lists each configured container name, current state, autostart setting, and live resource metrics: **CPU %**, **Memory MiB**, and **Disk I/O % Full Pressure** (shown as *N/A* when the container is stopped or metrics are unavailable).  
 Stopped containers show the option to start the container.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Containers Screen - Populated" id="Containers Screen - Populated" >}}
@@ -214,7 +207,7 @@ The <i class="material-icons" aria-hidden="true" title="Restart">restart_alt</i>
 The **Stop Options** window defines how the container stops:
 
 - **Wait for graceful stop** - Sends a shutdown signal and waits indefinitely for the container to stop gracefully. Does not force kill the container.
-- **Wait for graceful stop, then force** - Sends a shutdown signal and waits for the container's shutdown timeout (default 30 seconds). Force kills the container if still running after the timeout expires.
+- **Wait for graceful stop, then force** - Sends a shutdown signal and waits for the shutdown timeout (default 30 seconds) for the container. Force-kills the container if still running after the timeout expires.  
 - **Force stop immediately** - Immediately force kills the container without attempting graceful shutdown.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstanceStopOptions.png" alt="Container Stop Options" id="Container Stop Options" >}}
@@ -275,33 +268,33 @@ TrueNAS supports GPU passthrough for containers with the following GPU vendors:
 {{< truetable >}}
 | GPU Vendor | Driver Requirements | Notes |
 |------------|---------------------|-------|
-| **NVIDIA** | Manual installation required | Supports Turing architecture and later. Install drivers via **System > Advanced Settings**. See [Advanced Settings Screen]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for details. |
+| **NVIDIA** | Manual installation required | Supports Turing architecture and later. See [Advanced Settings Screen]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for driver installation details. |
 | **Intel** | Native support | No additional driver installation required. |
 | **AMD** | Native support | No additional driver installation required. |
 {{< /truetable >}}
 
 **Add** opens a list of available GPU devices.
-GPU devices appear in the list only if:
+GPU devices only appear in the list if:  
 - The physical GPU hardware is installed and detected by TrueNAS
-- For NVIDIA GPUs, drivers are installed via **System > Advanced Settings**
+- The NVIDIA GPU drivers are installed via **System > Advanced Settings**
 - The GPU device is not currently allocated to another container or VM
 
 ### Filesystem Devices Card
 
-The **Filesystem Devices** card displays filesystem mounts that provide the container with access to host directories and datasets.
-Filesystem devices allow containers to read and write data to TrueNAS datasets or host paths.
+The **Filesystem Devices** card displays file system mounts that provide the container with access to host directories and datasets.  
+File system devices allow containers to read and write data to TrueNAS datasets or host paths.
 
 {{< trueimage src="/images/SCALE/Virtualization/FilesystemDevicesWidget.png" alt="Filesystem Devices Card" id="Filesystem Devices Card" >}}
 
-**Add** opens fields to configure a new filesystem device mount.
+**Add** opens fields to configure a new file system device mount.
 
 {{< trueimage src="/images/SCALE/Virtualization/AddFilesystemDevice.png" alt="Add Filesystem Device" id="Add Filesystem Device" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Host Directory Source** | Host source path for the filesystem. Enter or browse to select an existing host directory or dataset path. |
-| **Container Mount Path** | Mount path inside the container where the filesystem appears. Enter the container path, for example */mnt/data* or */var/lib/data*. |
+| **Host Directory Source** | Specifies the host source path for the file system to mount into the container. |
+| **Container Mount Path** | Specifies the mount path inside the container where the file system appears, for example */mnt/data* or */var/lib/data*. |
 {{< /truetable >}}
 
 For existing filesystem devices, the <span class="material-icons">more_vert</span> actions menu includes options to **Edit** or **Delete** the filesystem device.
@@ -312,21 +305,10 @@ See [Configuring Filesystem Devices]({{< relref "/SCALE/Containers/Containers.md
 
 The **NIC Devices** card displays network interfaces (NICs) attached to the container.
 
-{{< enterprise >}}
-**High Availability Configuration**
-
-Containers in High Availability (HA) environments require a static IP address configured in the container operating system.
-
-Without a static IP, containers lose network connectivity after a controller failover.
-Configure the static IP inside the container OS, not in TrueNAS network settings.
-
-See [Containers in High Availability Environments]({{< relref "/SCALE/Containers/Containers.md#containers-in-high-availability-environments" >}}) for detailed guidance.
-{{< /enterprise >}}
-
 {{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Devices Card" id="NIC Devices Card" >}}
 
-Each NIC displays the network interface name and MAC address in the format: `{interface_name} ({mac_address})`.
-Example: `br0 (aa:bb:cc:dd:ee:ff)` or `br0 (Default Mac Address)`.
+Each NIC displays the network interface name and MAC address in the format: *{interface_name} ({mac_address})*.
+For example: *br0 (aa:bb:cc:dd:ee:ff)* or *br0 (Default Mac Address)*.
 
 {{< hint type=important >}}
 NIC modifications are restricted when there are pending network interface changes on the TrueNAS system.
@@ -334,7 +316,6 @@ If the card displays a warning about pending changes, apply or revert those netw
 {{< /hint >}}
 
 **Add** opens a menu with available network interfaces grouped by type.
-Select a NIC from the menu to open the configuration dialog.
 
 #### Add/Edit NIC Device Dialog
 
@@ -345,10 +326,10 @@ The **Add/Edit NIC Device** dialog configures network interface settings for the
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **NIC Type** | Select the NIC type (virtio, macvlan, ipvlan, etc.). |
-| **Use Default Mac Address** | (While adding only) Select to automatically assign a MAC address. |
-| **Mac Address** | Enter a custom MAC address. While adding, this field appears when **Use Default Mac Address** is deselected. While editing, leave empty to use the default MAC address. |
-| **Trust Guest RX Filters** | (virtio type only) Enable to trust guest OS receive filter settings for better performance. |
+| **NIC Type** | Sets the NIC type (*virtio*, *macvlan*, *ipvlan*, etc.). |
+| **Use Default Mac Address** | Sets TrueNAS to automatically assign a MAC address. Only available when adding a new NIC. |
+| **Mac Address** | Specifies a custom MAC address. Only shows while adding and when **Use Default Mac Address** is not selected. If editing a NIC, leave empty to use the default MAC address. |
+| **Trust Guest RX Filters** | (*virtio* type only) When enabled, trusts guest OS receive filter settings for better performance. |
 {{< /truetable >}}
 
 **Add** or **Update** applies the NIC configuration.
@@ -357,7 +338,6 @@ For existing NICs, the <span class="material-icons">more_vert</span> actions men
 
 {{< hint type=note >}}
 NICs can only be modified when the container is stopped.
-If the container is running, stop it before editing or deleting NICs.
 {{< /hint >}}
 
 ### Tools Card
@@ -370,19 +350,19 @@ The **Tools** card provides quick access to the container shell.
 
 ## Edit Container Screen
 
-The **Edit Container: *Container*** screen includes most settings from the **[Add Container Form](#add-container-form)** except **Image**, **Pool**, and **ID Map Type**.
+The **Edit Container: *Container*** screen includes most settings from the **[Add Container Screen](#add-container-screen)** except **Image**, **Pool**, and **ID Map Type**.
 
-Settings available in Edit mode include **Name**, **Description**, **Autostart**, and all **Advanced Options** (CPU Configuration, Time Configuration, Init Process, Environment Variables, and Capabilities).
+Settings available in edit mode include **Name**, **Description**, **Autostart**, and all **Advanced Options** (**CPU Configuration**, **Time Configuration**, **Init Process**, **Environment Variables**, and **Capabilities**).  
 
-Note that the **Init Process** command line field cannot be changed after creation, but **Init Working Directory**, **Init User**, and **Init Group** remain editable.
+Note that the **Init Process** command field cannot be changed after creation, but **Init Working Directory**, **Init User**, and **Init Group** remain editable.
 
-To edit device, disk, network, or other settings, use the [Containers Cards](#containers-cards) on the **Containers** screen.
+Device, disk, network, and other settings are configured via the [Containers Cards](#containers-cards) on the **Containers** screen.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditContainerBasic.png" alt="Edit Container Screen" id="Edit Container Screen" >}}
 
-The form has **Basic** settings (Name, Description, Autostart) visible by default, with an **Advanced Options** button to expand additional configuration sections.
+The screen has **Basic** settings (Name, Description, Autostart) visible by default, with an **Advanced Options** button to expand additional configuration sections.
 
-For detailed field descriptions, see the **[Add Container Form](#add-container-form)** section. The Edit form uses the same fields except **Image**, **Pool**, **ID Map Type**, and the **Init Process** command (none of which can be changed after creation).
+For detailed field descriptions, see the **[Add Container Screen](#add-container-screen)** section. The Edit screen uses the same fields except **Image**, **Pool**, **ID Map Type**, and the **Init Process** command (none of which can be changed after creation).
 
 {{< enterprise >}}
 **Autostart in HA Environments**

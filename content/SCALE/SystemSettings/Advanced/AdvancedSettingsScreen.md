@@ -475,7 +475,7 @@ NVIDIA GPU support is required before containers or VMs can use NVIDIA GPUs for 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Install NVIDIA Drivers** | Select to install NVIDIA GPU drivers on the system. Deselect to remove installed drivers. Requires the system to use the production kernel — if **Enable Debug Kernel** is selected in the [Kernel Card](#kernel-card), driver installation fails. Disable the debug kernel before installing NVIDIA drivers. |
+| **Install NVIDIA Drivers** | Allows installing NVIDIA GPU drivers on the system. When disabled, allows removing installed drivers. Requires the system to use the production kernel — if **Enable Debug Kernel** is selected in the [Kernel Card](#kernel-card), driver installation fails. Installing requires you to disable the debug kernel before installing NVIDIA drivers. |
 {{< /truetable >}}
 
 After installation completes, NVIDIA GPU devices become available for assignment to containers and VMs.

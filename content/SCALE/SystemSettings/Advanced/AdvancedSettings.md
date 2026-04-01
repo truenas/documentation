@@ -20,7 +20,7 @@ keywords:
 doctype: tutorial
 ---
 
-**Advanced Settings** provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), NVIDIA drivers, self-encrypting drives, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication.
+**Advanced Settings** provides configuration options for the console, syslog, kernel, sysctl, replication, cron jobs, init/shutdown scripts, system dataset pool, isolated GPU device(s), NVIDIA drivers, system access sessions, allowed IP addresses, audit logging, and global two-factor authentication. Enterprise systems with SED drives and the appropriate license also see the self-encrypting drive option. Enterprise systems also see the security options (STIG and FIPS).
 
 {{< enterprise >}}
 Enterprise-licensed system administrators have additional options to configure security-related settings, such as FIPS and STIG compatibility and Self-Encrypting Drive (SED) configuration.
