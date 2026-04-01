@@ -10,20 +10,21 @@ tags:
 - rdma
 - tcp
 - NVME over Fabric
+- spdk
+- linux kernel
 doctype: reference
 ---
 
 
-
-The **NVMe-oF** screens provide access to screens, widgets, settings, and dialogs to add, manage, or delete NVMe over Fabric subsystems (targets).
+The **NVMe-oF** screens provide access to screens, cards, settings, and dialogs to add, manage, or delete NVMe over Fabric subsystems (targets).
 NVMe-oF (NVMe over Fabric) is a specification that extends NVMe storage access over network fabrics like Ethernet, Fibre Channel, and InfiniBand.
 It allows hosts to access NVMe storage remotely while maintaining the high performance and low latency benefits of NVMe.
 
 {{< include file="/static/includes/NVMe-oF-Overview.md" >}}
 
-## NVMe-oF Subsystems Widget
+## NVMe-oF Subsystems Card
 
-The **NVMe-oF Subsystems** widget shows on the **Shares** screen.
+The **NVMe-oF Subsystems** card shows on the **Shares** screen.
 The header shows the status of the NVMe service as **Stopped** or **Running**, the **Add** button, and the <span class="material-icons">more_vert</span> dropdown menu with two options:
 
 * **Turn Service On/Off** toggle.
@@ -33,13 +34,13 @@ The header shows the status of the NVMe service as **Stopped** or **Running**, t
 
 {{< trueimage src="/images/SCALE/Shares/SharesScreenWithNVMeRunning.png" alt="NVMe-oF Screen without Subsystems" id="NVMe-oF Screen without Subsystems" >}}
 
-The table in the **NVMe-oF Subsystems** widget lists each subsystem added in TrueNAS.
+The table in the **NVMe-oF Subsystems** card lists each subsystem added in TrueNAS.
 
 Each row shows the subsystem name, the number of namespaces associated with the subsystem, the number of ports available through the subsystem, and the number of hosts allowed or restricted from accessing the subsystem.
 
 The <span class="material-icons">more_vert</span> dropdown menu for each subsystem shows two options:
 
-* **View** - Opens the [**NVMe-oF**](#nvme-of-screen) screen showing the widgets for the selected subsystem.
+* **View** - Opens the [**NVMe-oF**](#nvme-of-screen) screen showing the cards for the selected subsystem.
 * **Delete** - Opens [**Delete Subsystem**](#delete-subsystem-dialog) dialog.
 
 ### Delete Subsystem Dialog
@@ -48,7 +49,7 @@ The **Delete Subsystem** dialog confirms you want to delete the subsystem before
 
 {{< trueimage src="/images/SCALE/Shares/DeleteSubsystemDialog.png" alt="Delete Subsystem Dialog" id="Delete Subsystem Dialog" >}}
 
-**Force** forces the delete operation if the subsystem has a port or host assicated with it.
+**Force** forces the delete operation if the subsystem has a port or host associated with it.
 
 **Cancel** closes the dialog without deleting the subsystem.
 
@@ -56,9 +57,9 @@ The **Delete Subsystem** dialog confirms you want to delete the subsystem before
 
 ## NVMe-oF Screen
 
-The **NVMe-oF** screen displays a table listing subsystems (targets) added to Truenas, and a set of **Details** widgets for the subsystem selected in the table. **Shares** on top breadcrumb returns you to the **Shares** screen.
+The **NVMe-oF** screen displays a table listing subsystems (targets) added to Truenas, and a set of **Details** cards for the subsystem selected in the table. **Shares** on top breadcrumb returns you to the **Shares** screen.
 
-Before adding an NVMe-oF subsystem, the NVMe-oF screen shows a general widget with information about subsystems and a basic comparison to iSCSI.
+Before adding an NVMe-oF subsystem, the NVMe-oF screen shows a general card with information about subsystems and a basic comparison to iSCSI.
 
 {{< trueimage src="/images/SCALE/Shares/NVMe-oFScreenWithoutSubsystems.png" alt="NVMe-oF Screen without Subsystems" id="NVMe-oF Screen without Subsystems" >}}
 
@@ -67,8 +68,8 @@ Before adding an NVMe-oF subsystem, the NVMe-oF screen shows a general widget wi
 **Add Subsystem** opens the [**Add Subsystem**](#add-subsystem-wizard) screen.
 
 After adding a subsystem, the **NVMe-oF** screen **Subsystem** table lists it.
-The first row of the table is selected by default and shows four **Details** widgets for that subsystem.
-Select the row of any listed subsystem to view the detail widgets for that subsystem.
+The first row of the table is selected by default and shows four **Details** cards for that subsystem.
+Select the row of any listed subsystem to view the detail cards for that subsystem.
 
 ### Subsystems Table
 
@@ -78,66 +79,66 @@ Each row shows the subsystem name, the number of namespaces associated with the 
 {{< trueimage src="/images/SCALE/Shares/NVMe-oFScreenWithSubsystems.png" alt="NVMe-oF Screen with Subsystems" id="NVMe-oF Screen with Subsystems" >}}
 
 TrueNAS allows adding a subsystem without configuring a namespace, port, or host, which can be added later.
-An <span class="material-icons">report_problem</span> alert icon shows beside the namespace name in the table and on the **Ports** and **Namespaces** widgets until these are added.
+An <span class="material-icons">report_problem</span> alert icon shows beside the namespace name in the table and on the **Ports** and **Namespaces** cards until these are added.
 
-### Details Widgets
+### Details Cards
 
-Each subsystem shows a group of four **Details for *subsystemName*** widgets on the right side of the screen, *subsystemName* is the name given to the subsystem (i.e., *test*).
-Subsystem widgets are:
+Each subsystem shows a group of four **Details for *subsystemName*** cards on the right side of the screen, *subsystemName* is the name given to the subsystem (i.e., *test*).
+Subsystem cards are:
 
-* [**Details**](#details-widget)
-* [**Namespaces**](#namespaces-widget)
-* [**Ports**](#ports-widget)
-* [**Associated Hosts**](#associated-hosts-widget)
+* [**Details**](#details-card)
+* [**Namespaces**](#namespaces-card)
+* [**Ports**](#ports-card)
+* [**Associated Hosts**](#associated-hosts-card)
 
-#### Details Widget
+#### Details Card
 
-The **Details** widget shows the name and NQN ID associated with the TrueNAS subsystem.
+The **Details** card shows the name and NQN ID associated with the TrueNAS subsystem.
 The NQN shows an edit <span class="material-icons">edit</span> icon that changes the NQN to a text-entry field.
 
-{{< trueimage src="/images/SCALE/Shares/SubsystemDetailsWidget.png" alt="Subsystem Details Widget" id="Subsystem Details Widget" >}}
+{{< trueimage src="/images/SCALE/Shares/SubsystemDetailsWidget.png" alt="Subsystem Details Card" id="Subsystem Details Card" >}}
 
 {{< expand "Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
 | **Name** | Shows the name given to the subsystem at creation. The edit <span class="material-icons">edit</span> icon opens an edit field. Names can consist of upper and lower case alphabetic, numeric, and special characters such as the dash (-), underscore (_), etc. |
-| **NQN** | The NVMe Qualified Name (NQN) that identifies the subsystem, includes the base NQN and name of the subsystem. The edit <span class="material-icons">edit</span> icon changes the NQN ID to a text-entry field. It accepts copy/paste of a new properly formatted NQN ID number. |
+| **NQN** | The NVMe Qualified Name (NQN) that identifies the subsystem, includes the base NQN and the name of the subsystem. The edit <span class="material-icons">edit</span> icon changes the NQN ID to a text-entry field. It accepts copy/paste of a new properly formatted NQN ID number. |
 {{< /truetable >}}
 {{< /expand >}}
 
-#### Namespaces Widget
+#### Namespaces Card
 
-The **Namespaces** widget lists namespaces (zvol or file) added to the subsystem and the path to it.
+The **Namespaces** card lists namespaces (zvol or file) added to the subsystem and the path to it.
 *Namespaces* are similar to iSCSI extents.
 
-{{< trueimage src="/images/SCALE/Shares/SubsystemNamespacesWidget.png" alt="Subsystem Namespaces Widget" id="Subsystem Namespaces Widget" >}}
+{{< trueimage src="/images/SCALE/Shares/SubsystemNamespacesWidget.png" alt="Subsystem Namespaces Card" id="Subsystem Namespaces Card" >}}
 
 **Add** opens the [**Add Namespace**](#add-namespace-screens) screen.
 
 **Delete** opens a [confirmation dialog](#delete-namespace-dialog) for the namespace.
 
-#### Ports Widget
+#### Ports Card
 
-The **Ports** widget shows the port type and ID associated with the subsystem.
+The **Ports** card shows the port type and ID associated with the subsystem.
 
-{{< trueimage src="/images/SCALE/Shares/SubsystemPortsWidget.png" alt="Subsystem Ports Widget" id="Subsystem Ports Widget" >}}
+{{< trueimage src="/images/SCALE/Shares/SubsystemPortsWidget.png" alt="Subsystem Ports Card" id="Subsystem Ports Card" >}}
 
 {{< include file="/static/includes/NVMe-oFAddPortsMenu.md" >}}
 
 The ![RemoveFromSubsystem](/images/SCALE/Shares/RemoveFromSubsystem.png "Remove from Subsystem Icon") **Remove this port from the subsystem** icon removes the port from the subsystem but does not delete the port from TrueNAS.
 After removing a port, the **Add** button dropdown list shows the removed port and all available ports on the system in the format *IP address:port*.
 
-#### Associated Hosts Widget
+#### Associated Hosts Card
 
-The **Associated Hosts** widget shows a list of hosts associated with the subsystem.
+The **Associated Hosts** card shows a list of hosts associated with the subsystem.
 Shows **All hosts are allowed** if a host is not specified.
 
-{{< trueimage src="/images/SCALE/Shares/SubsystemAssociatedHostsWidget.png" alt="Subsystem Associated Hosts Widget" id="Subsystem Associated Hosts Widget" >}}
+{{< trueimage src="/images/SCALE/Shares/SubsystemAssociatedHostsWidget.png" alt="Subsystem Associated Hosts Card" id="Subsystem Associated Hosts Card" >}}
 
-After adding a host, the widget shows the NQN identification number for the client host and the ![RemoveFromSubsystem](/images/SCALE/Shares/RemoveFromSubsystem.png "Remove from Subsystem Icon") **Removes this host from the subsystem** icon that only removes the host from the subsystem but does not delete it from TrueNAS.
+After adding a host, the card shows the NQN identification number for the client host and the ![RemoveFromSubsystem](/images/SCALE/Shares/RemoveFromSubsystem.png "Remove from Subsystem Icon") **Removes this host from the subsystem** icon that only removes the host from the subsystem but does not delete it from TrueNAS.
 
-{{< trueimage src="/images/SCALE/Shares/AssoicatedHostsWiidgetWithHost.png" alt="Associated Hosts Widget with a Host" id="Associated Hosts Widget with a Host" >}}
+{{< trueimage src="/images/SCALE/Shares/AssoicatedHostsWiidgetWithHost.png" alt="Associated Hosts Card with a Host" id="Associated Hosts Card with a Host" >}}
 
 **Add** shows a dropdown list of options:
 
@@ -148,25 +149,37 @@ After adding a host, the widget shows the NQN identification number for the clie
 
 ## NVMe-oF Global Configuration Screen
 
-Set system-wide NVMe-oF settings.
-**Config Service** on the **NVMe-oF Subsystem** widget dropdown menu, **Global Configuration** on the **NVMe-oF** screen, and the <span class="material-icons">edit</span> edit icon on the **NVMe-oF** row on the **System > Services** screen open the **NVMe-oF Global Configuration** screen.
+Sets system-wide NVMe-oF settings.
+**Config Service** on the **NVMe-oF Subsystem** card dropdown menu, **Global Configuration** on the **NVMe-oF** screen, and the <span class="material-icons">edit</span> edit icon on the **NVMe-oF** row on the **System > Services** screen open the **NVMe-oF Global Configuration** screen.
 
-{{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreen.png" alt="NVMe-oF Global Configuration Screen" id="NVMe-oF Global Configuration Scree" >}}
+{{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreen.png" alt="NVMe-oF Global Configuration Screen" id="NVMe-oF Global Configuration Screen" >}}
+
+{{< enterprise >}}
+Enterprise systems equipped with the right hardware and license show the **SPDK (userspace)** and **Linux Kernel** options that change the NVMe backend.
+These experimental implementation functions are geared towards experimentation with client compatibility.
+Try each option based on your use case, and if you have issues with certain clients, such as hypervisors that might require specific capabilities that come with the Linux Kernel or SPDK option.
+Stopping the service enables these options. After selecting, restart the service.
+
+{{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreenWithSPDK.png" alt="NVMe-oF Global Configuration with SPDK" id="NVMe-oF Global Configuration with SPDK" >}}
+
+{{< include file="/static/includes/NVMe-oFSPDKorLinuxKernel.md" >}}
+
+{{< /enterprise >}}
 
 {{< expand "Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Base NQN** | Text-entry field that shows the TrueNAS NVMe NQN identification number and accepts manual or copy/paste entry of a NQN. It is used as the prefix of a subsystem NQN at creation if a subnqn is not supplied. Modifying this value does not change the subnqn of any existing subsystems. |
-| **Enable Asymmetric Namespace Access (ANA)** | When enabled, allows an Enterprise-licensed High Availability (HA) storage system to inform a host about the optimal controller path to access a namespace. It is equivalent to Asymmetric Logical Unit Access (ALUA) in iSCSI. ANA helps storage arrays communicate with hosts and inform the host which controller provides the best (lowest latency) path to specific namespaces, enabling intelligent multipathing and improving performance in NVMe-oF environments. |
-| **Enable Remote Direct Memory Access (RDMA)** | When enabled, allows configuring one or more ports after enabling and selecting RDMA as the transport. It requires an Enterprise license, and an RDMA-capable system and network equipment. Inactive on systems without an Enterprise license. If the system does not have the required hardware, it shows **Not enabled, because this system does not support RDMA**. |
+| **Base NQN** | Text-entry field that shows the TrueNAS NVMe NQN identification number and accepts manual or copy/paste entry of a NQN. It is used as the prefix of a subsystem NQN at creation if a subNQN is not supplied. Modifying this value does not change the subNQN of any existing subsystems. |
+| **Enable Asymmetric Namespace Access (ANA)** | When enabled, it allows an Enterprise-licensed High Availability (HA) storage system to inform a host about the optimal controller path to access a namespace. It is equivalent to Asymmetric Logical Unit Access (ALUA) in iSCSI. ANA helps storage arrays communicate with hosts and inform the host which controller provides the best (lowest latency) path to specific namespaces, enabling intelligent multipathing and improving performance in NVMe-oF environments. |
+| **Enable Remote Direct Memory Access (RDMA)** | When enabled, it allows configuring one or more ports after enabling and selecting RDMA as the transport. It requires an Enterprise license, an RDMA-capable system, and network equipment. Inactive on systems without an Enterprise license. If the system does not have the required hardware, it shows **Not enabled, because this system does not support RDMA**. |
 | **Generate Cross-port Referrals for Ports on This System** | When enabled, allows xport_referral. If ANA is active, referrals are always generated between the peer ports on each TrueNAS controller node. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ## Add Subsystem Wizard
 
-The **Add Subsystem** wizard opens after clicking **Add** on the **NVMe-oF Subsystem** widget or **Add Subsystem** on the **NVMe-oF** screen.
+The **Add Subsystem** wizard opens after clicking **Add** on the **NVMe-oF Subsystem** card or **Add Subsystem** on the **NVMe-oF** screen.
 The wizard has two parts, **What to Share** and **Access**. **What to Share** shows by default.
 
 ### What to Share
@@ -203,14 +216,14 @@ When not selected, it shows the **Allow Hosts** option and **Add** button that o
 
 
 ## Add Namespace Screens
-<!-- BETA.1 removes the ability to edit a namespace. RC.1 might add it back or it could get added back later. No details on this. add an enable checkbox to allow disabling the namespace, update screenshots and add descriptions to these screens/tabs -->
+
 The **Add Namespace** ** screens show settings and options to create namespaces.
 Use to select or create the storage device (zvol or file) for the NVMe-oF share.
 
 **Add** to the right of **Namespaces** on the **What to Share** option of the **Add Subsystem** wizard opens the **Add Namespace** screen.
-**Add** on the **Namespaces** widget on the **NVMe-oF** screen opens the **Add Namespaces** screen.
+**Add** on the **Namespaces** card on the **NVMe-oF** screen opens the **Add Namespaces** screen.
 <!--  Comment out edit content for now as it might be added back at some point in the semi-near term future
-The <span class="material-icons">edit</span> edit icon on the **Namespaces** widget opens the **Edit Namespaces** screen. -->
+The <span class="material-icons">edit</span> edit icon on the **Namespaces** card opens the **Edit Namespaces** screen. -->
 
 {{< trueimage src="/images/SCALE/Shares/AddNamespaceScreenZvolTab.png" alt="Add Namespace Screen" id="Add Namespace Screen" >}}
 
@@ -259,7 +272,7 @@ The **New File** tab on the **Add Namespace** screen allows creating a new file 
 
 ### Delete Namespace Dialog
 
-The **Delete Namespace** opens after clicking the delete icon to the right of a zvol on the **Namespaces** widget.
+The **Delete Namespace** opens after clicking the delete icon to the right of a zvol on the **Namespaces** card.
 
 {{< trueimage src="/images/SCALE/Shares/DeleteNamespaceDialog.png" alt="Delete Namespace Dialog" id="Delete Namespace Dialog" >}}
 
@@ -283,7 +296,7 @@ Use to create a new zvol for the namespace to use for storage.
 | **Force size** | When enabled, the system restricts creating a zvol that brings the pool to over 80% capacity. Set to force creation of the zvol (not recommended). |
 | **Sparse** | Enables using thin provisioning where disk space for this volume is allocated on demand as new writes are received. Use caution when enabling this feature, as writes can fail when the pool is low on space. |
 | **Sync** | Sets the data write synchronization. Options are:<br><li>**Inherit** takes the sync settings from the parent dataset.<br><li>**Standard** uses the settings requested by the client software.<br><li>**Always** waits for data writes to complete.<br><li>**Disabled** never waits for writes to complete.</li> |
-| **Compression** | Encodes information in less space than the original data occupies. We recommend choosing a compression algorithm that balances disk performance with the amount of saved space. LZ4 is generally recommended because it maximizes performance and dynamically identifies the best files to compress. GZIP options range from 1 for least compression and best performance, through 9 for maximum compression with greatest performance impact. ZLE is a fast algorithm that only eliminates runs of zeroes. |
+| **Compression** | Encodes information in less space than the original data occupies. We recommend choosing a compression algorithm that balances disk performance with the amount of saved space. LZ4 is generally recommended because it maximizes performance and dynamically identifies the best files to compress. GZIP options range from 1 for least compression and best performance, through 9 for maximum compression with the greatest performance impact. ZLE is a fast algorithm that only eliminates runs of zeroes. |
 | **ZFS Deduplication** | Transparently reuses a single copy of duplicated data to save space. Deduplication can improve storage capacity, but it is RAM-intensive. Compressing data is generally recommended before using deduplication. Deduplicating data is a one-way process. Deduplicated data cannot be undeduplicated! |
 | **Read-only** | When enabled, it prevents modifying the zvol. |
 | **Block size** | Shows a dropdown list of options to set the zvol default block size. Block size is automatically chosen based on the number of disks in the pool for a general use case. |
@@ -297,7 +310,7 @@ Encryption settings secure data within this zvol. These settings establish the l
 The default setting is **Inherit (non-encrypted)** when the root or parent dataset for the new storage is unencrypted.
 If encrypted, this shows **Inherit (encrypted)**.
 
-Clearing the checkbox shows the **Encryption Type** setting with two options: **Key** and **Passphrase**. Each option shows different setting options.
+Clearing the checkbox shows the **Encryption Type** setting with two options: **Key** and **Passphrase**. Each option shows different settings.
 
 {{< trueimage src="/images/SCALE/Shares/AddZvolScreenEncryption.png" alt="Add Zvol Encryption" id="Add Zvol Encryption" >}}
 
@@ -314,7 +327,7 @@ Shows with **Generate Key** selected by default. This automatically generates an
 | Setting | Description |
 |---------|-------------|
 | **Generate Key** | Randomly generates an encryption key to secure the zvol. Disable to manually enter an encryption key. <br><br>  WARNING: The encryption key is the only means to decrypt the information stored in this zvol. Store the encryption key in a secure location. |
-| **Key** |Text-entry field that accepts manually entering or copy/pasting an alpha-numeric string to use as the encryption key for this zvol. |
+| **Key** | Text-entry field that accepts manually entering or copy/pasting an alphanumeric string to use as the encryption key for this zvol. |
 | **Algorithm** | Dropdown list of mathematical instruction sets that determine how plain text is converted into cipher text. See [Advanced Encryption Standard (AES)(https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)] for more details. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -332,7 +345,7 @@ The **Passphrase** settings set encryption to a passphrase of your choice to enc
 | **Passphrase** | Text-entry field that accepts manual or copy/paste of a user-defined string that decrypts the zvol. Use instead of an encryption key.<br><br>WARNING: The passphrase is the only means to decrypt the information stored in this dataset. Be sure to create a memorable passphrase or physically secure the passphrase. |
 | **Confirm Passphrase** | Confirms the user-defined string entered in **Passphrase**. Entries must match. |
 | **pbkdf2iters** | The pencil icon shows a dropdown list of options to set the number of password-based key derivation function 2 (PBKDF2) iterations to reduce vulnerability to brute-force attacks. Entering a number larger than 100000 is required. See [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for more details. |
-| **Algorithm** | The pencil icon shows dropdown list of options to set the mathematical instruction that determine how plain text is converted into cipher text. See [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) for more details. |
+| **Algorithm** | The pencil icon shows a dropdown list of options to set the mathematical instruction that determines how plain text is converted into cipher text. See [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) for more details. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -414,8 +427,8 @@ The <span class="material-icons">edit</span> edit icon on the port row listed on
 | Setting | Description |
 |---------|-------------|
 | **Transport Type** | Dropdown list of options for the transport type. Options are **TCP**, **RDMA**, or **Fibre Channel**. The **RDMA** and **Fibre Channel** options require Enterprise licenses and systems with compatible/supporting hardware. |
-| **Port** | Text-entry field that shows the current port assignment and allows manual or copy/past entry of a new port number. |
-| **Address** | Dropdown list that shows the current static IP address assignment and any other static IP on the system the subsystem can use. |
+| **Port** | Text-entry field that shows the current port assignment and allows manual or copy/paste entry of a new port number. |
+| **Address** | Dropdown list that shows the current static IP address assignment and any other static IP on the system that the subsystem can use. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -434,7 +447,7 @@ Delete opens a [delete confirmation](#delete-port-dialog) dialog for the port.
 
 ### Delete Port Dialog
 
-The **Delete Port** confirmation dialog removes the port from the selected subsystem but does not delete it from TrueNAS. A deleted port shows on the **Add** dropdown list on the **Ports** widget for a selected subsystem on the **NVMe-oF** screen.
+The **Delete Port** confirmation dialog removes the port from the selected subsystem but does not delete it from TrueNAS. A deleted port shows on the **Add** dropdown list on the **Ports** card for a selected subsystem on the **NVMe-oF** screen.
 The dialog shows the name of the subsystem and the assigned *IP address:port* assignment.
 
 {{< trueimage src="/images/SCALE/Shares/DeletePortDialog.png" alt="Delete Port Dialog" id="Delete Port Dialog" >}}
