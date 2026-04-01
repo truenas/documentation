@@ -30,7 +30,7 @@ TrueNAS DHM is designed to:
 
 Enterprise deployments benefit from additional protections and processes built around DHM:
 - Factory burn-in testing (running drives at sustained load before deployment) significantly reduces failure rates.
-- TrueNAS DHM is designed to scale across large drive counts (1000+) without increasing administrative overhead.
+- TrueNAS DHM is designed to scale across large drive counts (1000+) without increasing without increasing administrator and system resource overheads.
 - When an alert appears, review the alert details to determine the recommended action.
 - For guidance on drive replacement or interpreting a specific alert condition, contact iXsystems support.
 
@@ -40,7 +40,7 @@ Enterprise deployments benefit from additional protections and processes built a
 
 TrueNAS integrates SMART stats collection directly into the middleware, which provides consistent handling across all supported drive types and vendors.
 
-SMART polls drives every 90 minutes. When a polled attribute crosses a threshold indicating a likely failure, TrueNAS chooses whether to suppress the alert or notify the user. 
+SMART polls drives every 90 minutes. When a polled attribute crosses a threshold indicating a likely failure, TrueNAS alerts the user. 
 
 ### ZFS as Real-Time Failure Detection
 
