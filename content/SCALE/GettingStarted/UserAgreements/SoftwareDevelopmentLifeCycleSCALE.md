@@ -7,7 +7,8 @@ aliases:
 ---
 
 The TrueNAS Software Development Life Cycle (SDLC) covers how the TrueNAS team plans, develops, tests, deploys, and maintains TrueNAS releases.
-TrueNAS uses an <a href="https://www.truenas.com/blog/advantages-of-the-truenas-open-core-business-model/" target="_blank">open-core model</a> — Community and Enterprise systems run the same software from the same installation image, with Enterprise features unlocked through licensing.
+TrueNAS uses an <a href="https://www.truenas.com/blog/advantages-of-the-truenas-open-core-business-model/" target="_blank">open-core model</a>.
+Community and Enterprise systems run the same software from the same installation image, with Enterprise features unlocked through licensing.
 Community members play an important role in testing pre-release builds, with participation guided by the [TrueNAS Software Status](https://www.truenas.com/docs/softwarestatus/) page and the [update profile]({{< ref "UpdateScreens" >}}) configured on each system.
 
 ## Planning
@@ -27,6 +28,7 @@ TrueNAS developers then implement the approved changes.
 ## Evaluation
 
 The development team integrates changes into the TrueNAS codebase and tests builds alongside Community members running early development versions.
+
 Nightly builds undergo automated regression testing to verify that new changes do not break existing functionality.
 Following code freeze, each release goes through a suite of manual validation testing before it publishes, verifying all requirements and objectives with a focus on reliability and fault tolerance.
 Features that fall short of requirements are reworked before release.
@@ -43,7 +45,7 @@ Maintenance releases are published as issues are resolved, with user feedback co
 ## Release Versioning
 
 Starting with TrueNAS 26, TrueNAS follows an annual release cadence with one major version per year.
-The major version number reflects the release year — TrueNAS 26 in 2026, TrueNAS 27 in 2027, and so on.
+The major version number reflects the release year: TrueNAS 26 in 2026, TrueNAS 27 in 2027, and so on.
 
 Version numbers follow a `YY.MINOR.PATCH` format:
 
