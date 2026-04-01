@@ -118,7 +118,7 @@ For more details about TRIM in ZFS, see the `autotrim` property description in [
 
 * {{< expand "Upgrade" "v" >}}
 
-The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< ref "VersionNotes.md#component-versions" >}}).
+The **Storage Dashboard** shows the **Upgrade** button for existing pools after an upgrade to a new TrueNAS release that includes new [OpenZFS feature flags]({{< ref "/GettingStarted/VersionNotes.md#component-versions" >}}).
 Newly created pools are always up-to-date with the OpenZFS feature flags in the installed TrueNAS release.
 
 {{< include file="/static/includes/UpgradePools.md" >}}

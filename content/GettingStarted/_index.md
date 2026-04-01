@@ -29,7 +29,7 @@ This Table of Contents is a specific article arrangement that guides deploying T
 
 * [User Agreements]({{< ref "/GettingStarted/UserAgreements" >}})
   * [TrueNAS EULA]({{< ref "EULA" >}})
-  * [Software Development Life Cycle]({{< ref "/GettingStarted/UserAgreements/SoftwareDevelopmentLifeCycleSCALE" >}})
+  * [Software Development Life Cycle]({{< ref "/GettingStarted/UserAgreements/SoftwareDevelopmentLifeCycle" >}})
   * [TrueNAS Data Collection Statement]({{< ref "/GettingStarted/UserAgreements/DataCollectionStatement" >}})
 * [Installation Instructions]({{< ref "/GettingStarted/Install" >}})
   * [Preparing for UI Configuration (Enterprise)]({{< ref "InstallPrepEnterprise" >}})
