@@ -27,15 +27,13 @@ TrueNAS developers then implement the approved changes.
 
 ## Evaluation
 
-The development team integrates changes into the TrueNAS codebase and tests builds alongside Community members running early development versions.
-
-Nightly builds undergo automated regression testing to verify that new changes do not break existing functionality.
-Following code freeze, each release goes through a suite of manual validation testing before it publishes, verifying all requirements and objectives with a focus on reliability and fault tolerance.
-Features that fall short of requirements are reworked before release.
+TrueNAS teams integrate changes into the codebase and test builds across multiple stages of development, with Community members contributing additional coverage by running early development versions.
+Nightly builds undergo regression testing throughout the development cycle, with more intensive validation following code freeze and before each release.
+Engineers rework any features or changes that fall short of requirements before release.
 
 The documentation team evaluates pre-release builds in parallel and writes public-facing content describing changes in the new version.
 
-Concurrently, the security team reviews the codebase, resolves any findings with the development team, and publishes security notices, errata, and best practices to the [TrueNAS Security website](https://security.truenas.com/).
+TrueNAS also conducts a security review of the codebase during this stage, addressing any findings before release and publishing relevant security notices, errata, and best practices to the [TrueNAS Security website](https://security.truenas.com/).
 
 ## Maintenance
 
