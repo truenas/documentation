@@ -52,7 +52,7 @@ Welcome to the Documentation Archive!
 
 {{< include file="/static/includes/DocLifecycle.md" >}}
 
-See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for details on how TrueNAS versions reach end of life.
+See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycle" >}}) for details on how TrueNAS versions reach end of life.
 
 {{< hint type=important >}}
 All documentation provided here is end-of-life (EoL), intended for reference only, and no longer receives *any* updates.
