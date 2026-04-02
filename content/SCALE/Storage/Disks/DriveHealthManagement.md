@@ -92,29 +92,27 @@ You can schedule manual SMART tests using **[Cron Jobs]({{< ref "/SCALE/SystemSe
 
 TrueNAS logs cron job output. Review the system log or configure the cron job to send output to a file for later review.
 
-### SHORT Test
+### Manual Drive Tests
 
-The SHORT test performs a quick, surface-level diagnostic check. It typically completes within a few minutes and has minimal performance impact on drives used in a ZFS pool. It is suitable for nightly or weekly scheduling as a routine check.
+The manual SHORT test performs a quick, surface-level diagnostic check. It typically completes within a few minutes and has minimal performance impact on drives used in a ZFS pool. It is suitable for nightly or weekly scheduling as a routine check.
 
-To run a SHORT test, go to **System > Shell** and run:
+The manual LONG test performs a full drive surface scan for periodic, deep validation. It provides a thorough validation of the entire drive surface, but has a significant negative performance impact during the test. LONG tests can also produce false-positive failure results on healthy drives.
 
-```
-smartctl -t short /dev/sda
-```
-
-Replace `/dev/sda` with the target disk device name.
-
-### LONG Test
-
-The LONG test performs a full drive surface scan for periodic, deep validation. It provides a thorough validation of the entire drive surface, but has a significant negative performance impact during the test. LONG tests can also produce false-positive failure results on healthy drives.
-
-To run a LONG test, go to **System > Shell** and run:
+To run a manual test, go to **System > Shell** and run:
 
 ```
-smartctl -t long /dev/sda
+smartctl -t {short/long} /dev/<device>
 ```
 
-Replace `/dev/sda` with the target disk device name.
+Choose whether to run a short or ling test and replace `/dev/<device>` with the target disk device name. Repeat for all devices as needed.
+
+Example: `smartctl -t short /dev/sda`
+
+To review manual test output, go to **System > Shell** and run:
+
+```
+smartctl -a /dev/<device>
+```
 
 For a full reference of `smartctl` options and output interpretation, see the [smartmontools documentation](https://www.smartmontools.org/wiki/TocDoc).
 
