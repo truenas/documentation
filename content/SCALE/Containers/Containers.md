@@ -262,18 +262,11 @@ To create a new container:
    - Use **ID Mapping** to control how container UIDs and GIDs map to host UIDs and GIDs. This setting cannot be changed after the container is created. Options include:
      - **Default** (recommended): Container root maps to the unprivileged host user **truenas_container_unpriv_root**. Provides security isolation for most workloads.
      - **Isolated**: Assigns a unique UID/GID range to this container to prevent overlap with other containers. Use when multiple containers share access to the same host datasets.
+     - **Privileged**: Removes UID isolation — container UIDs map directly to host UIDs, including root. Required for nested container runtimes. See [Running Nested Containers](#running-nested-containers).
+
    - Use **Environment Variables** to define environment variables that are available inside the container.
 
-   {{< hint type=important title="Nested Containers Require Privileged ID Mapping" >}}
-   Starting in TrueNAS 26, running nested containers inside a TrueNAS container — for example, installing and running Docker inside the container — requires setting **ID Map Type** to **Privileged**.
-
-   Nested container runtimes require direct UID mapping to function.
-   Containers created with **Default** or **Isolated** ID mapping cannot run nested containers.
-
-   Because **Privileged** removes UID isolation between the container and the TrueNAS host, use it only for workloads that specifically require nested container support, and ensure the container image and its contents are trusted.
-   {{< /hint >}}
-
-   - Use **Capabilities** to control Linux capabilities (special permissions). Use **DEFAULT** for most containers (secure and functional) or **ALLOW** to grant all capabilities when containers need broad system access (reduces isolation).
+   - Use **Capabilities** to control Linux capabilities (special permissions). Use **DEFAULT** for most containers (secure and functional) or **ALLOW** to grant all capabilities when containers need broad system access (reduces isolation). **ALLOW** is required for nested container runtimes. See [Running Nested Containers](#running-nested-containers).
 
 7. Click **Create** to deploy the container.
 
@@ -287,6 +280,32 @@ See the following sections for device configuration procedures:
 - [Managing GPU Devices](#managing-gpu-devices) for GPU hardware acceleration
 - [Configuring Filesystem Devices](#configuring-filesystem-devices) for additional filesystem mounts
 {{< /hint >}}
+
+### Running Nested Containers
+
+A nested container is a container that runs its own container runtime — for example, a TrueNAS container with Docker installed and running inside it.
+Nested container runtimes require direct UID mapping and full Linux capabilities, which means the container must be configured as privileged.
+
+{{< hint type=warning title="Privileged Containers Reduce Security Isolation" >}}
+Privileged containers remove UID isolation between the container and the TrueNAS host.
+Container processes running as root have direct host root access.
+
+Only use privileged containers for workloads that specifically require nested container support, and ensure the container image and its contents are trusted.
+{{< /hint >}}
+
+To create a container that supports a nested container runtime such as Docker:
+
+1. Begin creating a container as described in [Creating a Container](#creating-a-container).
+
+2. Click **Advanced Options**.
+
+3. Under **ID Mapping**, set **ID Map Type** to **Privileged**.
+
+4. Under **Capabilities**, set **Capabilities Policy** to **ALLOW**.
+
+5. Complete the remaining settings and click **Create**.
+
+After the container starts, open a shell session from the **Tools** card and install the container runtime of your choice.
 
 ## Managing Containers
 
