@@ -104,7 +104,7 @@ To run a manual test, go to **System > Shell** and run:
 smartctl -t {short/long} /dev/<device>
 ```
 
-Choose whether to run a short or ling test and replace `/dev/<device>` with the target disk device name. Repeat for all devices as needed.
+Choose whether to run a short or long test and replace `/dev/<device>` with the target disk device name. Repeat for all devices as needed.
 
 Example: `smartctl -t short /dev/sda`
 
