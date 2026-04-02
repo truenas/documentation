@@ -16,4 +16,4 @@ This page tracks features removed in 26 and features deprecated in 26 for remova
 ## Additional Resources
 
 - See the [26 Version Notes]({{< ref "VersionNotes" >}}) for complete release information and known issues
-- Check the [Software Development Lifecycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for recommended versions by user type
+- See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for an overview of the TrueNAS release process and versioning scheme
