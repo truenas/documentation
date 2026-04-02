@@ -110,6 +110,7 @@ style:
     - "Write at 5th-grade reading level"
     - "No gerunds (-ing words)"
     - "No semicolons"
+    - "No 'may' (use 'might' or 'could' — 'may' implies permission and confuses ESL readers)"
     - "Bold UI elements: **Button Name**"
     - "Use backticks for code: `field_name`"
 
