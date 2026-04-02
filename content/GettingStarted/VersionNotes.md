@@ -1,12 +1,14 @@
 ---
 title: "TrueNAS 26 Version Notes"
-description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
+description: "Highlights, change log, and known issues for TrueNAS 26 releases."
 weight: 10
+aliases:
+ - /releasenotes/
 related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "26-nightly-changes"
+    anchor: "26-BETA.1"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -35,17 +37,33 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="26-nightly-changes" data-tab-label="26 Nightly Changes">
+  <div data-tab-id="26-BETA.1" data-tab-label="26-BETA.1 Notable Changes">
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
+April 00, 2026
+
+The TrueNAS team is pleased to release TrueNAS 26-BETA.1!
+This first public release version of TrueNAS 26 has software component updates and new features that are in the polishing phase.
+
+Special thanks to (Github users): [Franco Castillo](https://github.com/castillofrancodamian), [AquariusStar](https://github.com/AquariusStar), [Rogelio Tajes Piñeiro](https://github.com/rtajes-max), [Aurélien Sallé](https://github.com/MDVAurelien), [dany22m](https://github.com/dany22m), [ReiKirishima](https://github.com/ReiKirishima), [Christos Longros](https://github.com/chrislongros), [Lee Jihaeng](https://github.com/SejoWuigui), [Aui162](https://github.com/Aui162), [Seele Volleri](https://github.com/SeeleVolleri), [Ban](https://github.com/Ban921), [Michael Rohrhirsch](https://github.com/CrunkA3), [PCAsusM1981](https://github.com/PCAsusM1981), [Cantabile](https://github.com/cantab1le), [Fernando G. Monteiro](https://github.com/fgmGitHub), [Joda Stößer](https://github.com/SimJoSt), [Marius](https://github.com/mariusachim), [herbkk](https://github.com/herbkk), [saso-g1](https://github.com/saso-g1), [René](https://github.com/renediepenbroek), [Jehu Marcos Herrera Puentes](https://github.com/JMarcosHP), [Amir Burbea](https://github.com/amirburbea), [Piotr Jasiek](https://github.com/pht31337), [Eric Schultz](https://github.com/eschultz), [Kent Ross](https://github.com/mumbleskates), [fkwp](https://github.com/fkwp), [Gautam krishna R](https://github.com/gautamkrishnar) and [Joel May](https://github.com/joel0) for contributing to TrueNAS 26-BETA.1.
+Visit [our guide](https://www.truenas.com/docs/contributing/) for information on how you too can contribute.
+
+### 26-BETA.1 Notable Changes
+
+<!-- Notable changes placeholder -->
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14298" target="_blank">TrueNAS 26-BETA.1 Changelog</a> in Jira.
+
+<!-- NIGHTLY CONTENT - preserved for reference, remove when no longer needed
 **SMB Stateful Failover** (Enterprise, HA) — TrueNAS 26 introduces stateful SMB HA failover.
 When enabled in the SMB service configuration, TrueNAS maintains SMB session state across controller failover events, allowing clients to reconnect without re-authentication.
 Incompatible with SMB1 support and Multi-Protocol or Legacy share purposes.
 See [Enabling SMB Stateful Failover]({{< ref "AddManageSMBShares#enabling-smb-stateful-failover" >}}) for details.
+-->
 
   </div>
 
@@ -61,6 +79,8 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 No known issues currently reported for 26 development builds.
 
 Check back for more information.
+
+<a href="https://ixsystems.atlassian.net/issues?filter=14297" target="_blank">See the latest status on Jira</a> for public issues discovered in 26-BETA.1 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -93,7 +113,7 @@ For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" 
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26-nightly-changes');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26-BETA.1');
 });
 </script>
 
