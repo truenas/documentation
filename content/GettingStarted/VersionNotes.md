@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "26-BETA.1"
+    anchor: "26.0.0-beta.1"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -37,7 +37,7 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="26-BETA.1" data-tab-label="26-BETA.1 Notable Changes">
+  <div data-tab-id="26.0.0-beta.1" data-tab-label="26-BETA.1 Notable Changes">
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -54,7 +54,125 @@ Visit [our guide](https://www.truenas.com/docs/contributing/) for information on
 
 ### 26-BETA.1 Notable Changes
 
-<!-- Notable changes placeholder -->
+* Adds support for LXC containers in Enterprise High Availability (HA) configurations ([NAS-138309](https://ixsystems.atlassian.net/browse/NAS-138309)).
+  Containers can now fail over between HA controllers. HA container failover requires a static IP configuration.
+
+* Adds GPU passthrough support for LXC containers, including NVIDIA and Intel GPUs ([NAS-138569](https://ixsystems.atlassian.net/browse/NAS-138569), [NAS-138570](https://ixsystems.atlassian.net/browse/NAS-138570), [NAS-138700](https://ixsystems.atlassian.net/browse/NAS-138700)).
+  Users can assign NVIDIA and Intel GPU devices to LXC containers from the container configuration screen in the UI.
+
+* Adds CPU, memory, and network metrics for LXC containers in the UI ([NAS-138624](https://ixsystems.atlassian.net/browse/NAS-138624)).
+  Container performance data is now visible directly from the container view, matching the metrics display previously available for virtual machines.
+
+* Fixes migration of containers from the Incus implementation to the libvirt implementation ([NAS-138743](https://ixsystems.atlassian.net/browse/NAS-138743)).
+  Users upgrading from TrueNAS 25.10 with existing containers could encounter migration failures. This fix ensures containers transfer correctly during upgrade.
+
+* Adds Multi-Path I/O (MPIO) support for Fibre Channel connections ([NAS-137252](https://ixsystems.atlassian.net/browse/NAS-137252)).
+  Fibre Channel configurations can now use multiple paths for improved redundancy and throughput. This option is available in the Fibre Channel port configuration.
+
+* Updates the **Pools** and storage screens to reflect OpenZFS 2.4 changes, including the new separation of special and dedup vdev types ([NAS-138129](https://ixsystems.atlassian.net/browse/NAS-138129)).
+  Pool creation and management dialogs now correctly represent the new vdev types available in OpenZFS 2.4.
+
+* Fixes the Samba Spotlight metadata service connection so that macOS Spotlight search works correctly on SMB shares ([NAS-137715](https://ixsystems.atlassian.net/browse/NAS-137715)).
+  The Spotlight AF_UNIX socket connection was established as a non-privileged user, causing authentication failures. The connection now runs with the correct permissions.
+
+* Adds an option to de-register a system from TrueNAS Connect ([NAS-139544](https://ixsystems.atlassian.net/browse/NAS-139544)).
+  Users can now remove a system's TrueNAS Connect registration from the **TrueNAS Connect** configuration screen without needing to contact support.
+
+* Adds BRT (Block Reference Table) support to the `zpool prefetch` command for faster pool import operations ([NAS-139230](https://ixsystems.atlassian.net/browse/NAS-139230)).
+  Pool imports on systems that use block cloning are now faster, as the prefetch operation includes BRT metadata.
+
+* Fixes SNMP alerts that stopped sending notifications ([NAS-140259](https://ixsystems.atlassian.net/browse/NAS-140259)).
+  A regression caused SNMP alert notifications to fail silently. SNMP monitoring integrations relying on TrueNAS alerts now receive notifications correctly.
+
+* Fixes an issue where `pool.get_disks` incorrectly returned virtual DRAID devices as physical disks ([NAS-140344](https://ixsystems.atlassian.net/browse/NAS-140344)).
+  This caused incorrect disk inventory results for pools using DRAID vdevs and affected downstream operations that depend on accurate disk lists.
+
+* Fixes a blocker that prevented creating or modifying virtual machines and containers ([NAS-139812](https://ixsystems.atlassian.net/browse/NAS-139812)).
+  A middleware regression in earlier nightly builds made it impossible to save new VM or container configurations.
+
+* Fixes TrueNAS updates failing with a "pool or dataset is busy" error that could set a broken boot environment as the default ([NAS-139794](https://ixsystems.atlassian.net/browse/NAS-139794)).
+  In some cases, the update process failed mid-way and left the system with an incomplete boot environment set as default. The update sequence is fixed to prevent this state.
+
+* Fixes an issue where applications did not start after a TrueNAS update ([NAS-139545](https://ixsystems.atlassian.net/browse/NAS-139545)).
+  A regression caused the apps service to fail to start applications following an update. Apps now start correctly after updating.
+
+* Fixes a failure where datasets could not be loaded in the UI ([NAS-140389](https://ixsystems.atlassian.net/browse/NAS-140389)).
+  A middleware issue prevented dataset information from loading on the **Datasets** screen, showing an error instead of the dataset tree.
+
+* Fixes available space calculations for pools with special or dedup vdevs ([NAS-139820](https://ixsystems.atlassian.net/browse/NAS-139820)).
+  Incorrect accounting caused available space to display inaccurate values for pools using special allocation or dedup vdevs.
+
+* Fixes an error that prevented setting secondary IP address aliases on network interfaces ([NAS-139803](https://ixsystems.atlassian.net/browse/NAS-139803)).
+  A `KeyError: 'alias_interface_id'` error prevented saving secondary aliases in the network interface configuration.
+
+* Fixes the **System > Services** screen showing as empty ([NAS-139571](https://ixsystems.atlassian.net/browse/NAS-139571)).
+  A regression caused the services list to appear blank, preventing users from starting, stopping, or configuring services from the UI.
+
+* Fixes an error that prevented editing share ACLs ([NAS-139535](https://ixsystems.atlassian.net/browse/NAS-139535)).
+  Users attempting to modify permissions on SMB or NFS shares through the ACL editor received errors and could not save changes.
+
+* Fixes NFS shares showing no available actions in the **Shares** screen ([NAS-139490](https://ixsystems.atlassian.net/browse/NAS-139490)).
+  The action buttons for NFS shares were not rendering correctly, preventing users from editing or deleting NFS shares from the UI.
+
+* Fixes an error that prevented updating an iSCSI auth method when **Mutual CHAP** was selected ([NAS-139397](https://ixsystems.atlassian.net/browse/NAS-139397)).
+  Users could not save changes to iSCSI authorized access entries with Mutual CHAP configured.
+
+* Fixes USB and PCIe device passthrough to virtual machines ([NAS-139045](https://ixsystems.atlassian.net/browse/NAS-139045), [NAS-139356](https://ixsystems.atlassian.net/browse/NAS-139356)).
+  A regression in an earlier nightly build broke the ability to pass USB and PCIe devices through to VMs. Both USB and PCIe passthrough are restored in BETA.1.
+
+* Fixes a boot delay of up to 120 seconds on systems with VLAN interfaces configured for DHCP ([NAS-139038](https://ixsystems.atlassian.net/browse/NAS-139038)).
+  Systems using VLAN interfaces with DHCP experienced long waits during boot due to a `dhcpcd` configuration issue. Boot now completes without the delay.
+
+* Fixes Time Machine SMB shares being unnecessarily indexed by the Spotlight service ([NAS-139559](https://ixsystems.atlassian.net/browse/NAS-139559)).
+  Time Machine volumes were being sent to the Spotlight indexer even though they do not support Spotlight search, causing unnecessary resource usage.
+
+* Fixes the web interface logging out users on page refresh in Firefox ([NAS-139491](https://ixsystems.atlassian.net/browse/NAS-139491)).
+  Firefox users experienced unexpected session termination when refreshing the TrueNAS web interface. Sessions now persist correctly across page refreshes in Firefox.
+
+* Fixes datasets becoming unavailable after a ZFS send replication operation ([NAS-139363](https://ixsystems.atlassian.net/browse/NAS-139363)).
+  A ZFS issue caused target datasets to enter an unavailable state after a send operation completed. Datasets are now accessible immediately after replication finishes.
+
+* Fixes Rsync task setup failures related to remote path validation and host key verification ([NAS-139773](https://ixsystems.atlassian.net/browse/NAS-139773)).
+  Remote path validation incorrectly rejected valid paths, and host key verification failed even after accepting the key. Both issues are resolved.
+
+* Fixes tooltips and hover popovers throughout the UI that broke after an Angular framework upgrade ([NAS-139342](https://ixsystems.atlassian.net/browse/NAS-139342)).
+  An Angular update caused tooltips and contextual popovers to stop working across many screens. Tooltips now display correctly.
+
+* Improves the **Storage Dashboard** to show the reason a pool is degraded ([NAS-138613](https://ixsystems.atlassian.net/browse/NAS-138613)).
+  Previously, a degraded pool indicator offered no detail on the cause. The dashboard now provides context so users can take corrective action.
+
+* Fixes a misleading warning that appeared when exporting a pool that did not contain the system dataset ([NAS-139293](https://ixsystems.atlassian.net/browse/NAS-139293)).
+  The export dialog incorrectly stated "System dataset will be moved off this pool" even when the pool did not host the system dataset.
+
+* Fixes incorrect compression options and size calculation discrepancies in the zvol creation form ([NAS-136251](https://ixsystems.atlassian.net/browse/NAS-136251)).
+  Some compression options shown in the form were invalid, and reported zvol sizes did not always match actual allocated space.
+
+* Fixes snapshot task retention attributes being lost after editing a periodic snapshot task ([NAS-133952](https://ixsystems.atlassian.net/browse/NAS-133952)).
+  Editing a snapshot task caused existing snapshots to lose their retention timestamp, which could result in premature snapshot deletion.
+
+* Fixes the CPU reporting chart to show both per-core and total CPU usage ([NAS-135633](https://ixsystems.atlassian.net/browse/NAS-135633)).
+  The **Reporting** screen previously only showed aggregated CPU usage. Users can now view individual core utilization alongside the total.
+
+* Fixes application log timestamps not following the system timezone ([NAS-139705](https://ixsystems.atlassian.net/browse/NAS-139705)).
+  App logs displayed timestamps in UTC regardless of the configured system timezone, making it harder to correlate events with local time.
+
+* Fixes the **Keep** and **Unkeep** actions being reversed in the boot environments dialog ([NAS-139053](https://ixsystems.atlassian.net/browse/NAS-139053)).
+  The keep/unkeep action was labeled and applied in reverse. The correct behavior is now restored.
+
+* Fixes the **Apps** catalog page not updating after manually triggering a catalog refresh ([NAS-138934](https://ixsystems.atlassian.net/browse/NAS-138934)).
+  After refreshing the app catalog, users had to reload the entire page to see updated app information. The page now updates automatically.
+
+* Fixes the update dialog obscuring a failed encryption key download notification ([NAS-139166](https://ixsystems.atlassian.net/browse/NAS-139166)).
+  When an update was available and an encryption key download failed, the update modal blocked the failure message from being visible to the user.
+
+* Fixes the replication task search filter being reset when a job starts or completes ([NAS-139213](https://ixsystems.atlassian.net/browse/NAS-139213)).
+  Active search filters on the **Replication Tasks** screen were cleared whenever a replication job changed state, forcing users to re-enter their search.
+
+* Improves touch and mobile usability for side panels and form layouts ([NAS-139925](https://ixsystems.atlassian.net/browse/NAS-139925), [NAS-139786](https://ixsystems.atlassian.net/browse/NAS-139786), [NAS-138896](https://ixsystems.atlassian.net/browse/NAS-138896)).
+  Side panels now scroll correctly in mobile browsers, canvas edge spacing is improved for touch targets, and the **Save** button on the **Add Rsync Task** form is no longer hidden on small screens.
+
+* Fixes the TrueNAS web UI preventing NVIDIA driver removal when the GPU has already been uninstalled ([NAS-137282](https://ixsystems.atlassian.net/browse/NAS-137282)).
+  When an NVIDIA GPU was physically removed, the UI did not allow removing the associated driver package. The driver can now be removed independently of hardware presence.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14298" target="_blank">TrueNAS 26-BETA.1 Changelog</a> in Jira.
 
@@ -113,7 +231,7 @@ For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" 
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26-BETA.1');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.0.0-beta.1');
 });
 </script>
 
