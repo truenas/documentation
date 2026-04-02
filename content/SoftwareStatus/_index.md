@@ -115,10 +115,9 @@ Legacy releases can only be used by downloading the .iso file and freshly instal
   <div data-tab-id="documentation-lifecycle" data-tab-label="Documentation Lifecycle">
 
 The TrueNAS team maintains and regularly updates documentation for current and in-development versions of TrueNAS software. For documentation purposes, current and future releases are those [recommended](#which-truenas-version-is-recommended) for one or more user types.
+See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for an overview of the TrueNAS release process, versioning scheme, and how versions reach end of life.
 
-Documentation is actively maintained for all recommended TrueNAS versions, with updates published alongside software releases. Each TrueNAS product has dedicated documentation sections, and version selectors help users navigate between different software releases when breaking changes or new features are introduced.
-
-When TrueNAS versions are no longer recommended for any user type, their documentation is moved to the [Documentation Archive](https://www.truenas.com/docs/archive/). Archived documentation becomes read-only and receives no further updates, but remains available as a historical reference for existing installations that haven't yet migrated to supported versions.
+{{< include file="/static/includes/DocLifecycle.md" >}}
 
 Users can find additional help through the [TrueNAS Community Forums](https://www.truenas.com/community/) for discussions and community support, or through [GitHub Issues](https://github.com/truenas) for reporting bugs and requesting features. Enterprise customers with support contracts receive priority assistance with documentation questions and access to custom deployment guides.
 
