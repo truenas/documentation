@@ -99,7 +99,7 @@ To configure default network settings:
 
 Adjust these settings as needed to match your network environment and ensure proper connectivity for containers.
 
-### Containers in High Availability Environments
+### Configuring Containers in High Availability Environments
 
 {{< enterprise >}}
 High Availability (HA) functionality is available in [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/) systems.
@@ -118,7 +118,7 @@ Configure the static IP inside the container OS, not in TrueNAS network settings
 Refer to your container operating system documentation for instructions on setting a static IP address.
 {{< /hint >}}
 
-#### Network Configuration Best Practices for HA
+#### Understanding Network Configuration Best Practices for HA
 
 When you configure containers for HA environments:
 
@@ -131,7 +131,7 @@ When you configure containers for HA environments:
    See [Editing Container Configuration Settings](#editing-container-configuration-settings) for details.
 - Perform test failovers to verify containers restart properly and remain accessible with their static IP addresses.
 
-#### Failover Behavior
+#### Understanding Container Failover Behavior
 
 When a controller failover occurs in an HA system:
 
