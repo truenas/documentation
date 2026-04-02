@@ -160,7 +160,7 @@ To bridge this gap, TrueNAS uses **UID/GID mapping**: a translation layer that t
 For most containers you do not need to configure this manually — the default behavior set by the **ID Map Type** for the container at creation time handles it automatically.
 The **Map User/Group IDs** screen is for cases where you need finer control, such as granting a specific host user access to data a container reads or writes.
 
-#### How Default Mapping Works
+#### Understanding Default Mapping
 
 By default (when **ID Map Type** is set to **Default**), TrueNAS shifts all container UIDs and GIDs into a private range on the host starting at **2147000001**.
 This means container UID *0* (root) maps to host UID *2147000001*, container UID *1* maps to *2147000002*, and so on.
@@ -171,7 +171,7 @@ No container process appears as a real user on the host, which prevents a compro
 The special host user **truenas_container_unpriv_root** (UID *2147000001*) represents the container root on the host when using default ID mapping.
 To give a container running as root access to a host dataset, assign dataset permissions to **truenas_container_unpriv_root** — no mapping configuration is required.
 
-#### When You Need Custom Mappings
+#### Determining When to Use Custom Mappings
 
 You need to configure a custom mapping when:
 
@@ -271,14 +271,14 @@ To create a new container:
 7. Click **Create** to deploy the container.
 
 {{< hint type=note title="Configuring Devices After Creation" >}}
-Device configuration (network interfaces, USB devices, GPU devices, and filesystem mounts) is performed after container creation using the detail cards on the **Containers** screen.
+Device configuration (network interfaces, USB devices, GPU devices, and file system mounts) is performed after container creation using the detail cards on the **Containers** screen.
 
 See the following sections for device configuration procedures:
 
 - [Managing NICs](#managing-nics) for network interface configuration
 - [Managing USB Devices](#managing-usb-devices) for USB device passthrough
 - [Managing GPU Devices](#managing-gpu-devices) for GPU hardware acceleration
-- [Configuring Filesystem Devices](#configuring-filesystem-devices) for additional filesystem mounts
+- [Configuring File system Devices](#configuring-filesystem-devices) for additional file system mounts
 {{< /hint >}}
 
 ### Running Nested Containers
@@ -428,7 +428,7 @@ To add a file system device:
 
 To edit or delete an existing file system device, click the <span class="material-icons">more_vert</span> icon and select **Edit** or **Delete**.
 
-Use cases for filesystem devices:
+Use cases for file system devices:
 
 - Mounting TrueNAS datasets for persistent container data storage
 - Providing containers with access to shared media libraries
