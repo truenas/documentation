@@ -36,14 +36,14 @@ majorVersions:
     name: "TrueNAS 26"
     releaseName: "26"
     releases:
+      - name: "26-BETA.1"
+        type: "Early Release"
+        link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26-BETA.1"
+        releaseDate: "TBD"
+        latest: true
       - name: "26 Nightlies"
         type: "Experimental"
         link: "https://www.truenas.com/docs/scale/26.04/gettingstarted/versionnotes/"
         releaseDate: "2025-08-11"
-        latest: true
-      - name: "26-BETA.1"
-        type: "Experimental"
-        link: ""
-        releaseDate: "TBD"
         latest: false
 
