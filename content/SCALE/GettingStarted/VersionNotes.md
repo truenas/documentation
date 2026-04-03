@@ -41,6 +41,8 @@ jump_to_buttons:
 
 {{< hint type="tip" title="TrueNAS 26 Nightly Development Documentation" >}}
 This page tracks the latest development roadmap and notes for TrueNAS 26, the next major version of TrueNAS.
+Nightly builds are early-stage development software intended for testing and feedback — not production use.
+See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for an overview of TrueNAS release stages and versioning.
 
 See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or pre-release [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) release notes for information relating to those versions.
 {{< /hint >}}
