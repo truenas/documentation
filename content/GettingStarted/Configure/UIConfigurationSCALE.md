@@ -65,7 +65,7 @@ DHCP is only available for a single interface; all other physical interfaces mus
 TrueNAS allows configuring virtual network interfaces such as a [bridge]({{< ref "SettingUpBridge" >}}), link aggregation (bond), or virtual LAN (VLAN) interface.
 
 You can use the Console Setup menu or TrueNAS UI to configure network interfaces.
-We recommend using the web UI **Network** screen to [add or change network interfaces or aliases]({{< ref "/SCALE/Network/Interfaces" >}}), set up virtual interfaces such as a [link aggregation]({{< ref "SettingUpLinkAggregation" >}}) or virtual LAN [VLAN]({{< ref "SettingUpVLAN" >}}), and change or [configure global network settings]({{< ref "ManagingGlobalConfig" >}}).
+We recommend using the web UI **Network** screen to [add or change network interfaces or aliases]({{< ref "/Network/Interfaces" >}}), set up virtual interfaces such as a [link aggregation]({{< ref "SettingUpLinkAggregation" >}}) or virtual LAN [VLAN]({{< ref "SettingUpVLAN" >}}), and change or [configure global network settings]({{< ref "ManagingGlobalConfig" >}}).
 
 ### Adding Aliases or Static IP Addresses
 
