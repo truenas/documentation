@@ -14,12 +14,12 @@ doctype: tutorial
 SMB multichannel allows servers to use multiple network connections simultaneously by combining the bandwidth of several network interface cards (NICs) for better performance.
 
 {{< hint type=important >}}
-SMB multichannel does not function if you combine NICs into a LAGG.
+SMB multichannel does not function if you combine NICs into a link aggregation.
 {{< /hint >}}
 
 ## Configuring Multiple Network Interfaces
 
-Do not configure multiple SMB multichannel interfaces on the same subnet. To ensure reliable multichannel performance, TrueNAS recommends placing each interface on a different subnet. 
+Do not configure multiple SMB multichannel interfaces on the same subnet. To ensure reliable multichannel performance, TrueNAS recommends placing each interface on a different subnet.
 
 If interfaces share a subnet, the system could fail to initialize multichannel, experience several connectivity issues, and accept inbound traffic inconsistently. To avoid these issues, assign each NIC a unique IP address on a different subnet and avoid bridging interfaces used for multichannel.
 
