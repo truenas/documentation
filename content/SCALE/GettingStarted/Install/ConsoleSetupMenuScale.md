@@ -29,33 +29,34 @@ The menu provides several options:
 
 For network configuration options **1**, **2**, and **3**, we recommend using the TrueNAS UI to configure network interfaces, as it has safeguards to prevent breaking network access to TrueNAS.
 
-* **1) Configure network interfaces**
+<div style="margin-left: 23px;">
+<strong> 1) Configure network interfaces</strong>
 
-  Use this to configure the primary network interface with a static IP.
-  This is for switching away from the DHCP-assigned IP address TrueNAS provides when the system boots after installing TrueNAS.
-  Also, use this to set up other network interfaces or to add alias IP addresses, also referred to as static IP addresses, for the primary interface.
+<p>Use this to configure the primary network interface with a static IP.
+This is for switching away from the DHCP-assigned IP address TrueNAS provides when the system boots after installing TrueNAS.
+Also, use this to set up other network interfaces or to add alias IP addresses, also referred to as static IP addresses, for the primary interface.
 
-* **2) Configure network settings**
+<strong>2) Configure network settings</strong>
   
-  Use this to set up the network default gateway, host name, domain, IPv4 gateway and DNS name servers.
-  Configured options display in the **Global Configuration** widget in the web UI **Network** screen.
+<p>Use this to set up the network default gateway, host name, domain, IPv4 gateway and DNS name servers.
+Configured options display in the **Global Configuration** widget in the web UI **Network** screen.
 
-* **3) Configure static routes**
+<strong>3) Configure static routes</strong>
   
-  Use this to set up static IP routes, but this is not required as part of the initial configuration setup.
+<p>Use this to set up static IP routes, but this is not required as part of the initial configuration setup.
 
-* **4) Change local administrator password**
+<strong>4) Change local administrator password</strong>
   
-  Use to change the administrator user password.
-  If you selected option 1 on the iso installer menu, you have already configured the **truenas_admin** user and password.
-  You can use this to change the admin password before you log into the TrueNAS UI. Note that TrueNAS begins warning all local account types (administrator, full admin, read-only, and sharing-only) seven days before password expiration. After expiration, the account locks and requires administrative action to unlock.
-  {{< hint type=note >}}
-  This is not the password for the root user in the CLI or the root user login password for the web UI.
-  The [root user password]({{< ref "AdminRoles" >}}) is disabled by default as part of security hardening.
-  Activating the root user is not recommended.
-  {{< /hint >}}
+<p>Use to change the administrator user password.
+If you selected option 1 on the iso installer menu, you have already configured the **truenas_admin** user and password.
+You can use this to change the admin password before you log into the TrueNAS UI. Note that TrueNAS begins warning all local account types (administrator, full admin, read-only, and sharing-only) seven days before password expiration. After expiration, the account locks and requires administrative action to unlock.</p>
+<p>{{< hint type=note >}}</p>
+<p>This is not the password for the root user in the CLI or the root user login password for the web UI.
+The [root user password]({{< ref "AdminRoles" >}}) is disabled by default as part of security hardening.</p>
+Activating the root user is not recommended.
+<p>{{< /hint >}}<p>
 
-* **5) Create one-time password for "root"**
+<strong>5) Create one-time password for "root"</strong>
 
   Use to create a one-time password for the root user.
   This is intended for quick authentication to the web interface to further set up secure log ins.
@@ -64,28 +65,28 @@ For network configuration options **1**, **2**, and **3**, we recommend using th
   across reboots.
   You must set a new password after you log in.
 
-* **6) Reset configuration to defaults**
+<strong>6) Reset configuration to defaults</strong>
 
-  Use to wipe all system configuration settings and return the system to a fresh install state.
+<p>Use to wipe all system configuration settings and return the system to a fresh install state.
 
-* **7) Open TrueNAS CLI Shell**
+<strong>7) Open TrueNAS CLI Shell</strong>
 
-  Use to start a shell for running TrueNAS commands, or use the TrueNAS UI **[System Settings > Shell]({{< ref "UseScaleShell" >}})**.
-  Type `exit` to leave the shell.
+<p>Use to start a shell for running TrueNAS commands, or use the TrueNAS UI **[System Settings > Shell]({{< ref "UseScaleShell" >}})**.
+Type `exit` to leave the shell.</p>
 
-* **8) Open Linux Shell**
+<strong>8) Open Linux Shell</strong>
 
-  Use to start a shell window for running Linux CLI commands.
-  Configuration changes made do not write to the database and reset on each system boot.
-  We do not recommend using the Linux shell unless you are an advanced user. Type `exit` to leave the shell.
+<p>Use to start a shell window for running Linux CLI commands.
+Configuration changes made do not write to the database and reset on each system boot.
+We do not recommend using the Linux shell unless you are an advanced user. Type `exit` to leave the shell.</p>
 
-* **9) Reboot**
+<strong>9) Reboot</strong>
 
-  Restart the system by powering down and then automatically powering on the system.
+<p>Restart the system by powering down and then automatically powering on the system.</p>
 
-* **10) Shut down**
+<strong>10) Shut down</strong>
 
-  Use to power down the system.
+<p>Use to power down the system.</p></div>
 
 During the first boot, TrueNAS attempts to connect to a DHCP server from all live interfaces.
 If it receives an IP address, the Console Setup menu displays it under **The web user interface is at:** so you can access the TrueNAS web UI.
@@ -97,7 +98,7 @@ You might be able to access the web UI using a `hostname.domain` command at the 
 
 ## Console Setup Menu Network Settings
 
-You can either use TrueNAS UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregate (LAGG) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
+You can either use TrueNAS UI or the Console Setup menu to configure your network settings for the primary network interface or other interfaces such as a link aggregation (bond) or virtual LAN (VLAN), or aliases for an interface, and to configure other network settings such as the default gateway, host name, domain, and the DNS name servers, or add static routes.
 
 {{< include file="/static/includes/UsingConsoleSetupMenuSCALE.md" >}}
 
