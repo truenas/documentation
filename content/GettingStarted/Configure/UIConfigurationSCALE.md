@@ -62,10 +62,10 @@ You must disable failover in the UI on TrueNAS Enterprise HA systems to [add or 
 If your system has more than one network interface card (NIC) connected to your internal network (wired to your router or Internet access point), you can add an interface in TrueNAS.
 DHCP is only available for a single interface; all other physical interfaces must be manually configured with static IP addresses.
 
-TrueNAS allows configuring virtual network interfaces such as a [bridge]({{< ref "SettingUpBridge" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
+TrueNAS allows configuring virtual network interfaces such as a [bridge]({{< ref "SettingUpBridge" >}}), link aggregation (bond), or virtual LAN (VLAN) interface.
 
 You can use the Console Setup menu or TrueNAS UI to configure network interfaces.
-We recommend using the web UI **Network** screen to [add or change network interfaces or aliases]({{< ref "/Network/Interfaces" >}}), set up virtual interfaces such as a link aggregate [LAGG]({{< ref "SettingUpLAGG" >}}) or virtual LAN [VLAN]({{< ref "SettingUpVLAN" >}}), and change or [configure global network settings]({{< ref "ManagingGlobalConfig" >}}).
+We recommend using the web UI **Network** screen to [add or change network interfaces or aliases]({{< ref "/SCALE/Network/Interfaces" >}}), set up virtual interfaces such as a [link aggregation]({{< ref "SettingUpLinkAggregation" >}}) or virtual LAN [VLAN]({{< ref "SettingUpVLAN" >}}), and change or [configure global network settings]({{< ref "ManagingGlobalConfig" >}}).
 
 ### Adding Aliases or Static IP Addresses
 
