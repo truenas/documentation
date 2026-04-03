@@ -116,14 +116,13 @@ First, add the [pool with a Metadata VDEV]({{< ref "CreatingFusionPools" >}}).
 {{< trueimage src="/images/SCALE/Storage/AddMetadataVDEV.png" alt="Add Metadata VDEV" id="Add Metadata VDEV" >}}
 
 Select the root dataset of the pool (with the metadata VDEV), then click **Add Dataset** to add the dataset.
-Click **Advanced Options**. Enter the dataset name, select the **Dataset Preset**, then scroll down to **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< ref "CreatingFusionPools" >}}).
+Click **Advanced Options**. Enter the dataset name and select the **Dataset Preset**, then scroll down to the **Use Metadata (Special) VDEVs** setting.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetFusionPoolMetadataOptions.png" alt="Add Dataset for Fusion Pool" id="Add Dataset for Fusion Pool" >}}
 
-Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class.
-Valid values are zero or a power of two from 512B up to 1M.
-The default size **0** means no small file blocks are allocated in the special class.
-Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< ref "CreatingFusionPools" >}}).
+Select **On** to enable storing data blocks in the special allocation class.
+The **Threshold** field appears. Enter a maximum block size (1 byte to 16 MiB) for blocks to store in the special class.
+The default threshold is 16 MiB. Blocks smaller than or equal to the threshold are assigned to the special allocation class; larger blocks are assigned to the regular class.
 
 ## Managing Datasets
 After creating a dataset, users can manage additional options from the **Datasets** screen.
