@@ -47,8 +47,7 @@ To configure FTP, go to **System > Services** and find **FTP**, then click <i cl
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Always Chroot** | When selected, restricts all local users to their home directory regardless of group membership. This option increases security risk — chroot jails can be escaped if users have write access to their home directory, potentially exposing the broader filesystem. |
-Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security. |
+| **Always Chroot** | When selected, restricts all local users to their home directory regardless of group membership. This option increases security risk — chroot jails can be escaped if users have write access to their home directory, potentially exposing the broader filesystem. Enable TLS when possible (especially when exposing FTP to a WAN). TLS effectively makes this [FTPS](https://tools.ietf.org/html/rfc4217) for better security. |
 | **Allow Anonymous Login** | Select to allow anonymous FTP logins with access to the directory specified in **Path**. Selecting this displays the **Path** field. Enter or browse the location to populate the field. |
 | **Allow Local User Login** | Select to allow any local user to log in. Only members of the **ftp** group may log in by default. |
 | **Require IDENT Authentication** | Select to require IDENT authentication. Setting this option results in timeouts when IDENT is not running on the client. |
