@@ -44,7 +44,7 @@ Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-April 00, 2026
+April 7, 2026
 
 The TrueNAS team is pleased to release TrueNAS 26-BETA.1!
 This first public release version of TrueNAS 26 has software component updates and new features that are in the polishing phase.

@@ -39,7 +39,7 @@ majorVersions:
       - name: "26-BETA.1"
         type: "Early Release"
         link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.1"
-        releaseDate: "TBD"
+        releaseDate: "2026-04-07"
         latest: true
       - name: "26 Nightlies"
         type: "Experimental"
