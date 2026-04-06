@@ -14,8 +14,8 @@ doctype: tutorial
 Drive Health Management (DHM) in TrueNAS monitors the condition of installed HDD and SSD drives (SAS, SATA, and NVMe) and alerts you when action is required. TrueNAS manages drive health with three layers:
 
 - **ZFS** detects sudden failures in real time during active read and write operations.
+- **TrueNAS Middleware** automatically polls SMART (Self-Monitoring, Analysis, and Reporting Technology) data in each drive
 - **TrueNAS Middleware** handles the alert logic and provides actionable notifications.
-- **SMART (Self-Monitoring, Analysis, and Reporting Technology)** integrates directly into TrueNAS middleware to regularly poll drives.
 
 TrueNAS DHM is designed to:
 
@@ -98,6 +98,8 @@ The manual SHORT test performs a quick, surface-level diagnostic check. It typic
 
 The manual LONG test performs a full drive surface scan for periodic, deep validation. It provides a thorough validation of the entire drive surface, but has a significant negative performance impact during the test. LONG tests can also produce false-positive failure results on healthy drives.
 
+We recommend scheduling SMART tests so that they do not overlap with other data protection tasks like [snapshot creation or removal]({{< ref "/SCALE/Datasets/Snapshots/_index.md" >}}), or [pool scrubs](https://www.truenas.com/docs/scale/storage/pools/managepools/index.html#running-a-pool-data-integrity-check-scrub).
+
 To run a manual test, go to **System > Shell** and run:
 
 ```
@@ -116,6 +118,14 @@ smartctl -a /dev/<device>
 
 For a full reference of `smartctl` options and output interpretation, see the [smartmontools documentation](https://www.smartmontools.org/wiki/TocDoc).
 
+#### Deprecated API for SMART Testing
+
+{{< hint type=Warning title="This feature is unsupported, and may be removed in future versions of TrueNAS." >}}
+TrueNAS 25.10 has a specific API call it can leverage to call a SMART test with the default parameters on systems where it has been validated that simultaneous SMART testing does not impact performance or cause unexpected controller/drive interactions.
+
+To run the command, use
+`midclt call disk.smart_test {SHORT|LONG} '["*"]'`
+{{< /hint >}}
 
 ### Third-Party Tools
 
