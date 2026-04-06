@@ -3,6 +3,12 @@ title: "TrueNAS 26 Version Notes"
 description: "Highlights, change log, and known issues for TrueNAS 26 releases."
 weight: 10
 aliases:
+ - /scale/scalereleasenotes/
+ - /scalenext-releasenotes/
+ - /scale/scalenextversion/
+ - /scale/26/gettingstarted/scalereleasenotes/
+ - /scale/26/gettingstarted/versionnotes/
+ - /scale/gettingstarted/scalereleasenotes/ 
  - /releasenotes/
 related: false
 use_jump_to_buttons: true
