@@ -1,4 +1,3 @@
-
 ## TrueNAS 26-BETA.1
 ===This is a BETA release of software available to early adopters who wish to evaluate new features===
 
