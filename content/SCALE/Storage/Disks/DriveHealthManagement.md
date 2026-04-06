@@ -120,7 +120,7 @@ For a full reference of `smartctl` options and output interpretation, see the [s
 
 #### Deprecated API for SMART Testing
 
-{{< hint type=Warning title="This feature is unsupported, and may be removed in future versions of TrueNAS." >}}
+{{< hint type=Warning title="Warning: This feature is unsupported, and may be removed in future versions of TrueNAS" >}}
 TrueNAS 25.10 has an API call it can leverage to call a SMART test with the default parameters. The command works on systems where it has been validated that simultaneous SMART tests do not impact performance or cause unexpected controller/drive interactions.
 
 To run the command, use
