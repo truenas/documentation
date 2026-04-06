@@ -1,8 +1,11 @@
 
 ## TrueNAS 26-BETA.1
 ===This is a BETA release of software available to early adopters who wish to evaluate new features===
+
 TrueNAS 26 introduces an annual release cadence with simplified version numbering, along with new Enterprise container capabilities, protocol improvements, and OpenZFS 2.4 integration.
-- ==**Breaking Changes:** The REST API is removed in TrueNAS 26. Migrate all integrations to the WebSocket API before upgrading.==
+
+==**Breaking Changes:** The REST API is removed in TrueNAS 26. Migrate all integrations to the WebSocket API before upgrading.==
+
 - **New Features:**
   - LXC containers now supported in Enterprise High Availability (HA) configurations with controller failover.
   - GPU passthrough support added for LXC containers (NVIDIA and other supported GPUs).
@@ -12,6 +15,7 @@ TrueNAS 26 introduces an annual release cadence with simplified version numberin
   - BRT (Block Reference Table) prefetch support added for faster pool imports on systems using block cloning.
 - **Improvements:** OpenZFS 2.4 integration with updated pool/vdev UI, Samba 4.23, improved Storage Dashboard degraded pool reporting, and mobile usability improvements.
 - **Critical Bug Fixes:** Resolved update failures that could set a broken boot environment or leave apps non-functional; fixed dataset loading and available space calculation issues; fixed NFS/SMB share management errors; fixed VLAN DHCP boot delays; fixed VM device passthrough; resolved UI regressions from an Angular framework upgrade.
+
 === **Key Known Issues:** No known issues currently reported. ===
 
 **Pre-Update Actions:** This is an early release intended for testing and feedback. Do not use for critical tasks or in production environments. Migrate any REST API integrations to the [WebSocket API](https://api.truenas.com/) before upgrading.
