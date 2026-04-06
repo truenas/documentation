@@ -73,6 +73,9 @@ Visit [our guide](https://www.truenas.com/docs/contributing/) for information on
 * Adds an option to de-register a system from TrueNAS Connect ([NAS-139544](https://ixsystems.atlassian.net/browse/NAS-139544)).
   Users can now remove a system's TrueNAS Connect registration from the **TrueNAS Connect** configuration screen without needing to contact support.
 
+* Adds support for the `include:` key in custom app Docker Compose configurations ([NAS-137498](https://ixsystems.atlassian.net/browse/NAS-137498)).
+  Custom app Compose files can now reference external Compose files that define services, allowing users who manage their own Docker Compose files outside TrueNAS to use modular configurations.
+
 * Updates the **Pools** and storage screens to reflect OpenZFS 2.4 changes, including the new separation of special and dedup vdev types ([NAS-138129](https://ixsystems.atlassian.net/browse/NAS-138129)).
   Pool creation and management dialogs now correctly represent the new vdev types available in OpenZFS 2.4.
 
