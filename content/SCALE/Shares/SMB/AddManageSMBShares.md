@@ -384,7 +384,7 @@ See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for gen
 
 To connect to an SMB share, start the SMB service.
 
-After adding a new share, TrueNAS prompts you to start or restart the SMB service.
+After adding or editing a share, TrueNAS prompts you to restart the SMB service so that changes take effect.
 
 You can also start the service from the **Windows (SMB) Share** widget or on the **System > Services** screen from the **SMB** service row.
 
