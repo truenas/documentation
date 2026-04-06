@@ -30,7 +30,7 @@ When you first access the **Containers** screen, it displays a message indicatin
 
 You can create containers immediately using the **Create New Container** button, or configure global settings first using the **Configuration** menu.
 
-For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens]({{< relref "/SCALE/Containers/ContainersScreens.md" >}}).
+For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens]({{< relref "/Containers/ContainersScreens.md" >}}).
 
 Use the **Configuration** menu to access [**Settings**](#configuring-settings) where you can configure an optional [preferred storage pool](#setting-a-preferred-pool) for containers and [default network settings](#configuring-the-default-network).
 The **Configuration** menu also provides access to [**Map User/Group IDs**](#managing-container-permissions) for configuring UID and GID mappings.
