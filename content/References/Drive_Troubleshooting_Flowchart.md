@@ -71,7 +71,7 @@ If you get stuck in the same loop more than twice, stop and seek help on the [Tr
     - Yes — Go to step 7.
     - No — Go to step 12.
 
-12. Restore any corrupt files from a backup.
+12. Use a backup to restore any corrupted files.
 
 13. Problem corrected. Exit this procedure.
 
@@ -149,7 +149,7 @@ See [Appendix A](#appendix-a---reading-smart-output) for more information on SMA
    - Pass — Go to step 6.
    - Fail — Go to step 3.
 
-6. Problem corrected. Monitor for recurrence. A subsequent failure indicates the drive is failing.
+6. Is the problem corrected? Monitor for recurrence. A subsequent failure indicates the drive is failing.
    Exit this procedure.
 
 7. For SSD/NVMe: is the wear level value 0?
@@ -157,13 +157,13 @@ See [Appendix A](#appendix-a---reading-smart-output) for more information on SMA
    - Yes — Go to step 8.
    - No or NA — Go to step 9.
 
-8. The drive requires immediate replacement. Exit this procedure.
+8. Does the drive require immediate replacement? Exit this procedure.
 
-9. Is Reallocated Sectors (ID 5) raw value less than 5?
+9. Is the Reallocated Sectors (ID 5) raw value less than 5?
    - Yes — Go to step 11.
    - No — Go to step 10.
 
-10. This likely indicates media damage or wear. The drive should be replaced. Seek additional help.
+10. Relace the drive with media or wear damage. Seek additional help.
     Exit this procedure.
 
 11. Run `smartctl -t long /dev/diskID`.
