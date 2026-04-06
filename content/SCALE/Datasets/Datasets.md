@@ -113,7 +113,7 @@ Complete any other setting changes you want to make, then click **Save**.
 ## Creating a Dataset for a Fusion Pool
 First, add the [pool with a Metadata VDEV]({{< ref "CreatingFusionPools" >}}).
 
-{{< trueimage src="/images/SCALE/Storage/AddMetadataVDEV.png" alt="Add Metadata VDEV" id="Add Metadata VDEV" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Step" id="Pool Creation Wizard Metadata Step" >}}
 
 Select the root dataset of the pool (with the metadata VDEV), then click **Add Dataset** to add the dataset.
 Click **Advanced Options**. Enter the dataset name and select the **Dataset Preset**, then scroll down to the **Use Metadata (Special) VDEVs** setting.
