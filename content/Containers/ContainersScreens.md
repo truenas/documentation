@@ -41,7 +41,7 @@ When no preferred pool is configured, TrueNAS prompts for pool selection at cont
 {{< truetable >}}
 | Setting | Description |
 |-----------|-------------|
-| **Bridge** | Network bridge for containers. **Automatic** creates and manages a dedicated virtual bridge (*truenasbr0*) on the TrueNAS host, assigns container IP addresses via DHCP, and routes outbound traffic through the host via NAT. Default ranges are *172.200.0.0/24* (IPv4) and *fd42:4c58:43ae::/64* (IPv6), configurable via **IPv4 Network** and **IPv6 Network**. Additional options show existing configured bridges. See [Accessing NAS from VMs and Containers]({{< ref "/SCALE/Network/ContainerNASBridge" >}}) for more information.<br><br>Custom bridge selection is not available on High Availability systems. HA deployments always use **Automatic** to prevent bridge STP issues that could interfere with controller failover. |
+| **Bridge** | Network bridge for containers. **Automatic** creates and manages a dedicated virtual bridge (*truenasbr0*) on the TrueNAS host, assigns container IP addresses via DHCP, and routes outbound traffic through the host via NAT. Default ranges are *172.200.0.0/24* (IPv4) and *fd42:4c58:43ae::/64* (IPv6), configurable via **IPv4 Network** and **IPv6 Network**. Additional options show existing configured bridges. See [Accessing NAS from VMs and Containers]({{< ref "/Network/ContainerNASBridge" >}}) for more information.<br><br>Custom bridge selection is not available on High Availability systems. HA deployments always use **Automatic** to prevent bridge STP issues that could interfere with controller failover. |
 | **IPv4 Network** | (Displayed only when **Bridge** is set to **Automatic**) IPv4 address and subnet for the automatic bridge (for example, *192.168.1.0/24*). Defaults to the system-assigned address when empty. At least one network (IPv4 or IPv6) must be configured. |
 | **IPv6 Network** | (Displayed only when **Bridge** is set to **Automatic**) IPv6 address and subnet for the automatic bridge (for example, *fd42:96dd:aef2:483c::1/64*). Defaults to the system-assigned address when empty. At least one network (IPv4 or IPv6) must be configured. |
 {{< /truetable >}}
@@ -265,7 +265,7 @@ TrueNAS supports GPU passthrough for containers with the following GPU vendors:
 {{< truetable >}}
 | GPU Vendor | Driver Requirements | Notes |
 |------------|---------------------|-------|
-| **NVIDIA** | Manual installation required | Supports Turing architecture and later. See [Advanced Settings Screen]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for driver installation details. |
+| **NVIDIA** | Manual installation required | Supports Turing architecture and later. See [Advanced Settings Screen]({{< relref "/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for driver installation details. |
 | **Intel** | Native support | No additional driver installation required. |
 | **AMD** | Native support | No additional driver installation required. |
 {{< /truetable >}}
@@ -296,7 +296,7 @@ File system devices allow containers to read and write data to TrueNAS datasets 
 
 For existing filesystem devices, the <span class="material-icons">more_vert</span> actions menu includes options to **Edit** or **Delete** the filesystem device.
 
-See [Configuring Filesystem Devices]({{< relref "/SCALE/Containers/Containers.md#configuring-filesystem-devices" >}}) in the Containers tutorial for configuration procedures.
+See [Configuring Filesystem Devices]({{< relref "/Containers/Containers.md#configuring-filesystem-devices" >}}) in the Containers tutorial for configuration procedures.
 
 ### NIC Devices Card
 
@@ -366,5 +366,5 @@ For detailed field descriptions, see the **[Add Container Screen](#add-container
 
 In High Availability configurations, containers with autostart enabled automatically restart on the new active controller after a failover.
 Ensure containers have static IP addresses configured to maintain network connectivity after failover.
-See [Containers in High Availability Environments]({{< relref "/SCALE/Containers/Containers.md#containers-in-high-availability-environments" >}}) for details.
+See [Containers in High Availability Environments]({{< relref "/Containers/Containers.md#containers-in-high-availability-environments" >}}) for details.
 {{< /enterprise >}}

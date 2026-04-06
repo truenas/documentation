@@ -350,7 +350,7 @@ The edit screen allows you to modify container settings after creation. You can 
 - **ID Map Type**: The UID/GID mapping mode is fixed at creation
 - **Init Process** command: The init command is fixed, but **Init Working Directory**, **Init User**, and **Init Group** remain editable
 
-For detailed information about each setting, see the [Add Container Screen]({{< relref "/SCALE/Containers/ContainersScreens.md#add-container-screen" >}}) section in the UI Reference.
+For detailed information about each setting, see the [Add Container Screen]({{< relref "/Containers/ContainersScreens.md#add-container-screen" >}}) section in the UI Reference.
 
 ### Deleting Containers
 
@@ -391,7 +391,7 @@ TrueNAS supports GPU passthrough for containers with the following GPU vendors:
 
 For NVIDIA GPUs, you must install drivers before attaching the GPU to a container.
 Go to **System > Advanced Settings** to install NVIDIA drivers.
-See [Advanced Settings Screen]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for detailed instructions.
+See [Advanced Settings Screen]({{< relref "/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for detailed instructions.
 
 Click **Add** to open a list of available GPU devices.
 Select a GPU from the list to attach it to the container.
