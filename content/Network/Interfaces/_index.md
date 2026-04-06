@@ -10,7 +10,7 @@ tags:
 ---
 
 
-TrueNAS supports configuring different types of network interfaces such as a standard interface, network bridge, LAGG, and VLAN interfaces to use as part of the various backup, sharing, and virtualization features in TrueNAS.
+TrueNAS supports configuring different types of network interfaces such as a standard interface, network bridge, link aggregation (bond), and VLAN interfaces to use as part of the various backup, sharing, and virtualization features in TrueNAS.
 The tutorials in this section guide you through each of the various network interface configurations.
 
 {{< expand "Why should I use different interface types?" "v" >}}
@@ -55,7 +55,7 @@ To add another network interface in the UI, go to **System > Network** and click
 {{< trueimage src="/images/SCALE/Network/AddInterfaceScreen.png" alt="Add Interface Screen" id="Add Interface Screen" >}}
 
 You must specify the type of interface to create.
-Select the interface type from the **Type** dropdown options: **Bridge**, **Link Aggregation** (LAGG), or **VLAN** (virtual LAN).
+Select the interface type from the **Type** dropdown options: **Bridge**, **Link Aggregation** (bond), or **VLAN** (virtual LAN).
 The interface type cannot be changed after clicking **Save**.
 
 To revert the interface to default network settings, select **Reset Configuration** on the <span class="material-icons">more_vert</span> for the interface.
@@ -85,7 +85,7 @@ Click **Save** when you are certain of your configuration. You cannot change the
 To change an existing interface, click on the <span class="material-icons">more_vert</span> icon at the right of the interface, and then click **Edit** to open the **Edit Interface** screen.
 
 The **Edit Interface** and **Add Interface** screen settings are identical, but the **Type** and **Name** fields are not editable for an existing interface.
-If you created the wrong type of virtual interface (for example, a bridge, vlan, or lagg), delete the interface and add a new interface with the correct type.
+If you created the wrong type of virtual interface (for example, a bridge, vlan, or link aggregation), delete the interface and add a new interface with the correct type.
 
 When changing from a DHCP-provided IP address to a static IP, first verify your current default gateway and name servers work with the new IP address.
 You must add the new default gateway and DNS name servers that work with the new IP address to the global configuration.

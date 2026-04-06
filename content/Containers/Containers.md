@@ -15,13 +15,8 @@ keywords:
 doctype: tutorial
 ---
 
-
-{{< include file="/static/includes/25.04Virtualization.md" >}}
-
-**Containers** allow users to configure linux containers in TrueNAS.
-
-*Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
-Containers start quickly, use fewer system resources than [virtual machines (VMs)](/virtualmachines/virtualmachines/), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
+Linux containers, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
+Containers start quickly, use fewer system resources than [virtual machines (VMs)](/scale/virtualmachines/virtualmachines/), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
 {{< expand "What system resources do containers require?" "v" >}}
 {{< include file="/static/includes/ContainerRequirements.md" >}}
@@ -29,286 +24,291 @@ Containers start quickly, use fewer system resources than [virtual machines (VMs
 
 ## Setting Up the Containers Service
 
-You must choose a pool before you can deploy a container.
-The **Containers** screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
-See [Choosing the Containers Pool](#choosing-the-containers-pool) below for more information about pool selection.
+When you first access the **Containers** screen, it displays a message indicating no containers are configured.
 
-{{< trueimage src="/images/SCALE/Virtualization/InstancesPoolNotSelected.png" alt="Pool Is Not Selected" id="Pool Is Not Selected" >}}
+{{< trueimage src="/images/SCALE/Virtualization/ContainersScreenNoContainers.png" alt="No Containers" id="No Containers" >}}
 
-After setting the pool, <i class="fa fa-check" aria-hidden="true" title="Check"></i> **Initialized** shows on the screen header.
+You can create containers immediately using the **Create New Container** button, or configure global settings first using the **Configuration** menu.
 
-For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens](/Containers/ContainersScreens).
+For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens]({{< relref "/Containers/ContainersScreens.md" >}}).
 
-Use the **Configuration** dropdown to access the **[Global Settings](#configuring-global-settings)**, **[Manage Volumes](#managing-volumes)**, and [**Map User/Group IDs**](#mapping-user-and-group-ids) options.
+Use the **Configuration** menu to access [**Settings**](#configuring-settings) where you can configure an optional [preferred storage pool](#setting-a-preferred-pool) for containers and [default network settings](#configuring-the-default-network).
+The **Configuration** menu also provides access to [**Map User/Group IDs**](#managing-container-permissions) for configuring UID and GID mappings.
 
-### Configuring Global Settings
+### Configuring Settings
 
-Click **Global Settings** on the **Configuration** menu to open the **Global Settings** screen, showing global options that apply to all containers.
-Use these options to configure the [storage pool](#choosing-the-containers-pool) for containers and [network settings](#configuring-the-default-network).
+Click **Configuration** on the **Containers** screen header and select **Settings** to open the **Settings** screen.
+The screen displays global options that apply to all containers.
+Use these options to configure an optional [preferred storage pool](#setting-a-preferred-pool) for containers and [default network settings](#configuring-the-default-network).
 
-{{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Global Settings Screen" id="Global Settings Screen" >}}
+{{< trueimage src="/images/SCALE/Virtualization/InstancesGlobalSettingsScreen.png" alt="Settings Panel" id="Settings Panel" >}}
 
-#### Choosing the Containers Pool
+#### Setting a Preferred Pool
 
-You must set a pool before you can add any containers.
+The **Preferred Pool** setting allows you to specify a default storage pool for container data.
+This setting is optional.
+If you do not specify a preferred pool, TrueNAS prompts you to select a pool when creating each container.
 
-Select **Enabled** to enable container storage.
+To set a preferred pool:
 
-Use the **Pool** dropdown to select one or more pools and click **Save**.
+1. Click **Configuration** on the **Containers** screen header and select **Settings**.
 
-We recommend users keep the container use case in mind when choosing a containers pool.
+2. Select a pool from the **Preferred Pool** dropdown list.
+   The dropdown displays all available pools on your system.
+
+3. Click **Save**.
+
+We recommend keeping the container use case in mind when choosing a preferred pool.
 Select a pool with enough storage space for all the containers you intend to host.
 
-For stability and performance, we recommend using SSD/NVMe storage for the containers pool due to their faster speed and resilience for repeated read/writes.
+For stability and performance, we recommend using SSD/NVMe storage for the containers pool due to faster speed and resilience for repeated read/writes.
 
-Select additional pools to allow containers to access shared resources.
-
-<!-- Placeholder: Further description of the containers storage implementation here (once implementation is nailed down and experimental status removed) -->
-
-To select a different pool for containers to use, use the **Pool** dropdown to select a different pool.
-
-Deselect **Enabled** to deactivate the pool and disable the containers service.
+You can change the preferred pool at any time by opening **Configuration** > **Settings** and selecting a different pool from the **Preferred Pool** dropdown.
 
 #### Configuring the Default Network
 
-Use the **Default Network** settings on the **Global Settings** screen to define how containers connect to the network.
-These settings apply to all new containers, unless configured otherwise.  
+Use the **Default Network** settings in the **Settings** screen to define how containers connect to the network.
+These settings apply to all new containers unless you configure different network settings for individual containers.
 
-Select **Automatic** from the **Bridge** dropdown list to use the default network bridge for communication between containers and the TrueNAS host.
-To specify an existing bridge, select one from the dropdown list.
-See [Accessing NAS from VMs and Containers](/network/containernasbridge) for details.  
-When **Bridge** is set to **Automatic**, the **IPv4 Network** and **IPv6 Network** settings display.
+To configure default network settings:
 
-Enter an IPv4 address and subnet (e.g., *192.168.1.0/24*) in **IPv4 Network** to assign a specific network for containers.
-Leave this field empty to allow TrueNAS to assign the default address.  
+1. Click **Configuration** on the **Containers** screen header and select **Settings**.
 
-Enter an IPv6 address and subnet (e.g., *fd42:96dd:aef2:483c::1/64*) in **IPv6 Network** or leave this field empty to allow TrueNAS to assign the default address.  
+2. Select a bridge from the **Bridge** dropdown list:
+   - **Automatic** to allow TrueNAS to create and manage a dedicated virtual bridge (`truenasbr0`) on the TrueNAS host using DHCP and routes their outbound traffic through the host via NAT. Change the defaults using the **IPv4 Network** and **IPv6 Network** fields if they conflict with your network.
+   - Select an existing bridge interface to use that bridge for container networking.
 
-Adjust these settings as needed to match your network environment and ensure proper connectivity for containers.  
+   See [Accessing NAS from VMs and Containers](/scale/network/containernasbridge) for information on creating bridge interfaces.
 
-### Managing Volumes
+   {{< enterprise >}}
+   Custom bridge selection is not available on High Availability systems. HA deployments always use **Automatic** to prevent issues that could interfere with controller failover.
+   {{< /enterprise >}}
 
-Click **Manage Volumes** on the **Configuration** menu to open the **Volumes** screen, which lists all the volumes currently configured for the containers service.
+3. (Optional) When **Bridge** is set to **Automatic**, configure IP address ranges:
 
-Click **Create Volume** to open the [**Create New Volume**](#creating-volumes) dialog to configure a new volume.
+   a. Enter an IPv4 address and subnet in **IPv4 Network** (for example, *192.168.1.0/24*) to assign a specific IPv4 network for containers.
+      Leave empty to allow TrueNAS to assign the default IPv4 address.
 
-Click **Import Zvols** to open the [**Import Zvol**](#importing-zvols) dialog to import an existing Zvol as a volume.
+   b. Enter an IPv6 address and subnet in **IPv6 Network** (for example, *fd42:96dd:aef2:483c::1/64*) to assign a specific IPv6 network for containers.
+      Leave empty to allow TrueNAS to assign the default IPv6 address.
 
-{{< trueimage src="/images/SCALE/Virtualization/InstancesVolumesScreen.png" alt="Volumes Screen" id="Volumes Screen" >}}
+4. Click **Save**.
 
-#### Creating Volumes
+Adjust these settings as needed to match your network environment and ensure proper connectivity for containers.
 
-Click **Create Volume** on the **Volumes** screen to open the **Create New Volume** dialog.
+### Configuring Containers in High Availability Environments
 
-{{< trueimage src="/images/SCALE/Virtualization/InstancesCreateVolume.png" alt="Create New Volume Dialog" id="Create New Volume Dialog" >}}
+{{< enterprise >}}
+High Availability (HA) functionality is available in [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/) systems.
+{{< /enterprise >}}
 
-Enter a name for the volume.
+TrueNAS 26 adds support for containers in High Availability (HA) configurations.
+Containers can run on HA systems and automatically restart after a controller failover.
+However, HA environments require specific network configuration to ensure containers remain accessible after failover events.
 
-Enter a size for the volume, for example *1 GiB*.
+{{< hint type=warning title="Static IP Configuration Required" >}}
+Containers in HA environments must have a static IP address configured in the container operating system.
 
-Click **Create** to create the new volume.
+Without a static IP, the container loses network connectivity after a controller failover and becomes inaccessible.
 
-#### Importing Zvols
+Configure the static IP inside the container OS, not in TrueNAS network settings.
+Refer to your container operating system documentation for instructions on setting a static IP address.
+{{< /hint >}}
 
-Click **Import Zvols** on the **Volumes** screen to open the **Import Zvol** dialog.
+#### Understanding Network Configuration Best Practices for HA
 
-Importing a zvol as a volume allows its lifecycle to be managed, including backups, restores, and snapshots.
-This allows portability between systems using standard tools.
+When you configure containers for HA environments:
 
-{{< trueimage src="/images/SCALE/Virtualization/InstanceImportZvol.png" alt="Import Zvol Dialog" id="Import Zvol Dialog" >}}
+- Configure a static IP address inside each container OS before deploying containers in an HA system.
+   This ensures the container retains its IP address across reboots and failover events.
+   Maintain records of static IP addresses assigned to each container for troubleshooting and network planning.
+- Mount container data to  datasets that persist across failovers.
+   This ensures container data remains available after a controller switchover.
+- Select the **Autostart** option in container configuration to automatically start containers after a failover.
+   See [Editing Container Configuration Settings](#editing-container-configuration-settings) for details.
+- Perform test failovers to verify containers restart properly and remain accessible with their static IP addresses.
 
-Enter the path or browse to select an existing Zvol in **Select Zvols**.
+#### Understanding Container Failover Behavior
 
-Select **Clone** to clone and promote a temporary snapshot of the zvol into a custom storage volume.
-This option retains the original zvol while creating an identical copy as a container volume.
+When a controller failover occurs in an HA system:
 
-Select **Move** to relocate the existing zvol to the ix-virt dataset as a volume.
+- Containers on the active controller experience a hard shutdown without a graceful stop sequence.
+- After failover completes, containers configured with **Autostart** automatically start on the new active controller.
+- Containers with static IP addresses restore network connectivity and become accessible again.
+- Container data persists if stored on datasets that remain available after failover.
 
-#### Deleting Volumes
+{{< hint type=important title="Data Persistence During Failover" >}}
+A hard shutdown during failover can result in data loss for applications that do not handle abrupt stops gracefully.
 
-Click **Configuration > Manage Volumes** to access the **Volumes** screen.
-Click <i class="material-icons" aria-hidden="true" title="Delete">delete</i> on a volume row to delete that volume.
-The **Delete volume** dialog displays.
+For production containers in HA environments:
 
-{{< trueimage src="/images/SCALE/Virtualization/InstancesDeleteVolume.png" alt="Delete Volume Dialog" id="Delete Volume Dialog" >}}
-
-Select **Confirm** and then click **Continue** to delete the volume.
-TrueNAS disables the delete icon for active images to prevent accidental deletion.
+- Use applications designed to handle unexpected shutdowns
+- Configure regular backups or snapshots
+- Store critical data on persistent datasets
+- Test your containers' behavior during simulated failovers
+{{< /hint >}}
 
 ### Managing Container Permissions
 
-Containers run as isolated environments from the host system.  
-To give container processes access to host files and datasets, you must map user and group IDs (UIDs and GIDs) between the host and the container.
+When a container reads or writes to a host dataset mounted via a [file system device](#configuring-filesystem-devices), TrueNAS checks whether the user identity inside the container has permission to access that path on the host.
+User accounts inside containers are independent from host user accounts, so a user named *appuser* with UID *1000* inside a container is not the same identity as UID *1000* on the TrueNAS host, even though they share the same number.
 
-Click **Map User/Group IDs** from the **Configuration** dropdown to open the **Map User and Group IDs** screen.  
-This screen allows you to configure how user and group IDs (UIDs and GIDs) appear inside containers.
+To bridge this gap, TrueNAS uses **UID/GID mapping**: a translation layer that tells the host which host user corresponds to each container user.
+For most containers you do not need to configure this manually — the default behavior set by the **ID Map Type** for the container at creation time handles it automatically.
+The **Map User/Group IDs** screen is for cases where you need finer control, such as granting a specific host user access to data a container reads or writes.
 
-By default, user and group accounts within a container are assigned UIDs and GIDs from a private range starting at **2147000001**.  
-This mapping ensures security isolation for containers.
-You can override these mappings to meet specific access requirements.
+#### Understanding Default Mapping
+
+By default (when **ID Map Type** is set to **Default**), TrueNAS shifts all container UIDs and GIDs into a private range on the host starting at **2147000001**.
+This means container UID *0* (root) maps to host UID *2147000001*, container UID *1* maps to *2147000002*, and so on.
+No container process appears as a real user on the host, which prevents a compromised container from having any meaningful access to host resources.
+
+#### Granting Root Access to Host Paths
+
+The special host user **truenas_container_unpriv_root** (UID *2147000001*) represents the container root on the host when using default ID mapping.
+To give a container running as root access to a host dataset, assign dataset permissions to **truenas_container_unpriv_root** — no mapping configuration is required.
+
+#### Determining When to Use Custom Mappings
+
+You need to configure a custom mapping when:
+
+- An application inside the container runs as a specific non-root UID (for example, UID *1000*) and needs access to a TrueNAS dataset.
+- You want a specific TrueNAS user account to own files the container creates on a shared dataset.
+- You are sharing a dataset between a container and other services (like an SMB share) and need consistent ownership.
+
+In these cases, you create a mapping that tells TrueNAS: when the container acts as UID *X*, treat it as host user *Y*.
+
+#### Configuring Mappings
+
+Click **Configuration** on the **Containers** screen header and select **Map User/Group IDs** to open the **Map User and Group IDs** screen.
 
 {{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
 
-Select **Users** or **Groups** to view mappings for individual user or group accounts.
+Select the **Users** or **Groups** tab to view and manage mappings for user or group accounts respectively.
 
-Existing mappings appear in a table that lists the user or group name, host ID, and container ID.  
+Existing mappings appear in a table listing the user or group name, host ID, and container ID.
 Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to remove a mapping.
 
 To add a new mapping:
 
-* Type an account name to search or select it from the dropdown.
-* Enable **Map to the same UID/GID in the container** to use the same ID from the host in containers.  
-  This makes the selected user or group ID appear the same inside and outside the container.
-* Disable **Map to the same UID/GID in the container** to assign a different container ID.  
-  Enter the container UID or GID you want to use—for example, *1000*.
+1. Type an account name to search or select it from the dropdown.
+
+2. Choose how to map the ID:
+   - Select **Map to the same UID/GID in the container** to use the identical ID number inside the container (for example, host UID *1000* → container UID *1000*).
+   - Disable it to assign a different container ID. Enter the UID or GID the container uses for this account — for example, *1000*.
+
+3. Click **Set** to save the mapping.
+
+Changes apply immediately, though restarting the container might be required for them to take effect.
 
 {{< hint type=info >}}
-Only local users and groups are supported for ID mapping in containers.  
-Domain accounts from Active Directory or other directory services are not supported.
+Only local TrueNAS users and groups are supported. Active Directory and other directory service accounts cannot be used for container ID mapping.
 {{< /hint >}}
 
-Click **Set** to create the mapping.  
-Changes apply immediately, though restarting the container can be required for them to take effect.
+For example, if your container runs a service as UID *1000* and you want it to read and write to a TrueNAS dataset owned by the local user *mediauser* (host UID *3000*):
 
-Mapped IDs control access to mounted host datasets.  
-For example, if you map a host user with UID *3000* to UID *1000* inside the container:
-
-1. Assign permissions on the host dataset to UID *3000*.
-2. Inside the container, perform actions as UID *1000*.
-
-This setup grants user 1000 in the container the same access to the dataset as user 3000 has on the host.  
-Assigning dataset permissions to a host user is not enough to grant container permissions to all users—you must also map that user and ensure the correct user and UID is used inside the container.
+1. Create a mapping for the host user *mediauser* to the  container UID *1000*.
+2. Assign the dataset permissions to *mediauser* on the host.
+3. The container service running as UID *1000* can now access that dataset.
 
 {{< hint type=note >}}
-Incorrect or missing mappings can cause permission errors when containers access host paths.
-{{< /hint >}}
-
-#### Granting Root Access to Host Paths
-
-To safely allow container root processes to access host datasets, TrueNAS provides a built-in unprivileged root user for containers **truenas_container_unpriv_root**.
-
-This user has UID **2147000001** and is used automatically to represent the container root on the host.
-No manual ID mapping is required.
-
-To grant container root access to host data:
-
-1. Assign permissions on the host dataset to the **truenas_container_unpriv_root** user.
-2. Access the dataset from inside the container as root.
-
-When the container root accesses the path, it uses the host permissions of **truenas_container_unpriv_root**.
-
-{{< hint type=note >}}
-This approach provides secure, controlled access for container root processes without exposing host root privileges.
+Incorrect or missing mappings cause permission denied errors when containers access mounted host paths.
 {{< /hint >}}
 
 ## Creating Containers
 
-Click **Create New Container** to open the **Create Container** configuration wizard.
+Click **Create New Container** to open the **Add Container** configuration wizard.
 
 ### Creating a Container
 
+The **Add Container** screen displays basic configuration fields and an **Advanced Options** button for additional settings.
+
+{{< trueimage src="/images/SCALE/Virtualization/AddContainerBasic.png" alt="Add Container Basic Settings" id="Add Container Basic Settings" >}}
+
 To create a new container:
 
-1. Configure the container configuration settings.
+1. Enter a **Name** for the container.
+   {{< include file="/static/includes/InstanceNameRequirements.md" >}}
 
-   {{< trueimage src="/images/SCALE/Virtualization/InstanceConfigurationContainer.png" alt="Container Configuration" id="Container Configuration" >}}
+2. (Optional) Enter a **Description** for the container.
 
-   a. Enter a name for the container.
-      {{< include file="/static/includes/InstanceNameRequirements.md" >}}
+3. (Optional) Select **Autostart** to automatically start the container when the system boots.
 
-   b. Click **Browse Catalog** to open the **Select Image** screen.
+   When you enable autostart, TrueNAS automatically starts the container during system boot after the containers service initializes, ensuring services are available immediately after system startup.
+   During system shutdown, TrueNAS sends a graceful shutdown signal to the container, allowing applications to close properly and save data.
 
-      {{< trueimage src="/images/SCALE/Virtualization/SelectImage.png" alt="Select Image Screen" id="Select Image Screen" >}}
+4. Click **Browse Catalog** to open the **Select Image** screen.
 
-      Search or browse to choose a Linux image.
-      Click **Select** in the row for your desired image.
+   {{< trueimage src="/images/SCALE/Virtualization/SelectImage.png" alt="Select Image Screen" id="Select Image Screen" >}}
 
-2. (Optional) Configure CPU and memory settings.
+   Search or browse to choose a Linux image.
+   Click **Select** in the row for your desired image.
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceCPUandMemory.png" alt="CPU & Memory" id="CPU & Memory" >}}
+5. (Conditional) Select a **Pool** for the container.
+   This field appears when no preferred pool is configured in global container settings.
 
-   Enter values for **CPU Configuration** and **Memory Size** or leave blank to allow the container access to all host CPU and memory resources.
-   To configure resource allocation:
+6. (Optional) Click **Advanced Options** to configure additional settings:
 
-   {{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
+   - Use **CPU Configuration** to bind the container to specific CPU cores (useful for performance-sensitive workloads or isolating container resources).
 
-3. (Optional) Configure environment variables to run on boot or execute.
+   - Use **Time Configuration** to set the container time zone (Local or UTC) and shutdown timeout (how long to wait for graceful shutdown before forcing termination).
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceEnvironment.png" alt="Environment" id="Environment" >}}
+   - Use **Init Process** to configure the init command, working directory, and user/group for the PID 1 process for the container. The default init command is `/sbin/init`.
+      Note: The init command cannot be changed after creation, but working directory, user, and group remain editable.
 
-   {{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
+   - Use **ID Mapping** to control how container UIDs and GIDs map to host UIDs and GIDs. This setting cannot be changed after the container is created. Options include:
+     - **Default** (recommended): Container root maps to the unprivileged host user **truenas_container_unpriv_root**. Provides security isolation for most workloads.
+     - **Isolated**: Assigns a unique UID/GID range to this container to prevent overlap with other containers. Use when multiple containers share access to the same host datasets.
+     - **Privileged**: Removes UID isolation — container UIDs map directly to host UIDs, including root. Required for nested container runtimes. See [Running Nested Containers](#running-nested-containers).
 
-4. (Optional) Configure disk settings to mount storage volumes for the container.
-   You can create a new dataset or use an existing one.
+   - Use **Environment Variables** to define environment variables that are available inside the container.
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceDisksContainer.png" alt="Disks" id="Disks" >}}
+   - Use **Capabilities** to control Linux capabilities (special permissions). Use **DEFAULT** for most containers (secure and functional) or **ALLOW** to grant all capabilities when containers need broad system access (reduces isolation). **ALLOW** is required for nested container runtimes. See [Running Nested Containers](#running-nested-containers).
 
-   a. Click **Add** in the **Disks** section to display a set of fields to mount a disk.
+7. Click **Create** to deploy the container.
 
-   b. To create a new dataset, enter a path or browse to select a parent dataset from the dropdown list of datasets on the system.
-      Then click **Create Dataset**, enter a name for the new dataset in the **Create Dataset** window, and click **Create**.
+{{< hint type=note title="Configuring Devices After Creation" >}}
+Device configuration (network interfaces, USB devices, GPU devices, and file system mounts) is performed after container creation using the detail cards on the **Containers** screen.
 
-      To use an existing volume, enter a path or browse to select an existing dataset from the **Source** dropdown list.
+See the following sections for device configuration procedures:
 
-   c. Enter the file system **Destination** path to mount the disk in the container, for example */media* or */var/lib/data*.
+- [Managing NICs](#managing-nics) for network interface configuration
+- [Managing USB Devices](#managing-usb-devices) for USB device passthrough
+- [Managing GPU Devices](#managing-gpu-devices) for GPU hardware acceleration
+- [Configuring File system Devices](#configuring-filesystem-devices) for additional file system mounts
+{{< /hint >}}
 
-   d. Click **Add** again to mount additional storage volumes.
+### Running Nested Containers
 
-5. (Optional) Configure proxy settings to forward network connections between the host and the container.
-   This routes traffic from a specific address on the host to an address inside the container, or vice versa, allowing the container to connect externally through the host.
+A nested container is a container that runs its own container runtime — for example, a TrueNAS container with Docker installed and running inside it.
+Nested container runtimes require direct UID mapping and full Linux capabilities, which means the container must be configured as privileged.
 
-   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceProxies.png" alt="Proxies" id="Proxies" >}}
+{{< hint type=warning title="Privileged Containers Reduce Security Isolation" >}}
+Privileged containers remove UID isolation between the container and the TrueNAS host.
+Container processes running as root have direct host root access.
 
-   a. Click **Add** in the **Proxies** section to display a set of proxy configuration settings.
+Only use privileged containers for workloads that specifically require nested container support, and ensure the container image and its contents are trusted.
+{{< /hint >}}
 
-   b. Select the protocol option from the **Host Protocol** dropdown list to set the connection protocol for the TrueNAS host as **TCP** or **UDP**.
+To create a container that supports a nested container runtime such as Docker:
 
-   c. Enter a port in **Host Port** to define the TrueNAS port to map to the container port on the container, for example *3600*.
+1. Begin creating a container as described in [Creating a Container](#creating-a-container).
 
-   d. Select the connection protocol for the container in **Instance Protocol**.
-      Options are **TCP** or **UDP**.
+2. Click **Advanced Options**.
 
-   e. Enter the port number within the container in **Instance Port**, for example *80*, to map to the host port.
+3. Under **ID Mapping**, set **ID Map Type** to **Privileged**.
 
-6. Configure the **Network** section settings to define how the container connects to the host and external networks.
-   Options include the default network bridge, an existing [bridge interface](/reporting/Network/ContainerNASBridge), or a MACVLAN.
+4. Under **Capabilities**, set **Capabilities Policy** to **ALLOW**.
 
-   {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
+5. Complete the remaining settings and click **Create**.
 
-   - **Use default network settings**: Enable to connect the instance to the host using the automatic bridge defined in [**Global Settings**](#configuring-global-settings). Disable to show the **Bridged NICs** (if available) and **Macvlan NICs** settings.
-
-   {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkNonDefault.png" alt="Non-Default Network Settings" id="Non-Default Network Settings" >}}
-
-   - To configure non-default network settings, select one or more interface options:
-
-      - **Bridged NICs**: Use to connect an existing bridge interface to the instance.
-      - **Macvlan NICs**: Use to create a virtual network interface based on an existing interface.
-         A MACVLAN assigns a unique MAC address to the virtual interface so the instance appears as a separate device on the network.
-
-      {{< include file="/static/includes/MacvlanHost.md" >}}
-
-7. (Optional) Configure USB devices to attach available devices to the container by selecting one or more in **USB Devices**.
-   This allows the device to function as if physically connected.
-
-   {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceUSB.png" alt="USB Devices" id="USB Devices" >}}
-
-8. (Optional) Configure GPU devices in the **GPU Devices** section to attach available GPU devices, enabling the container to utilize hardware acceleration for graphics or computation tasks.
-
-  {{< trueimage src="/images/SCALE/Virtualization/CreateInstanceGPU.png" alt="GPU Devices" id="GPU Devices" >}}
-
-   Select one or more devices.
-
-   {{< hint type="note" title="Supported GPUs" >}}
-   TrueNAS does not have a list of approved GPUs at this time but TrueNAS does support various GPUs from NVIDIA, Intel, and AMD.
-   As of 24.10, TrueNAS does not automatically install NVIDIA drivers. Instead, users must manually install drivers from the UI. For detailed instructions, see [Installing NVIDIA Drivers](https://apps.truenas.com/getting-started/initial-setup/#installing-nvidia-drivers).
-   {{< /hint >}}
-
-9. Click **Create** to deploy the container.
+After the container starts, open a shell session from the **Tools** card and install the container runtime of your choice.
 
 ## Managing Containers
 
 Created containers appear in a table on the **Containers** screen.
-The table lists each configured container, displaying its name, type, current status, and options to restart or stop it.
+The table lists each configured container, displaying its name, current status, autostart setting, and live resource metrics: **CPU %**, **Memory MiB**, and **Disk I/O % Full Pressure**.
+Metrics display *N/A* for stopped containers.
 Stopped containers show the option to start the container.
 
 {{< trueimage src="/images/SCALE/Virtualization/InstancesScreenWithInstances.png" alt="Containers Screen - Populated" id="Containers Screen - Populated" >}}
@@ -322,7 +322,7 @@ Choosing to stop a container shows a choice to stop immediately or after a small
 
 Click <i class="material-icons" aria-hidden="true" title="Start">play_circle</i> to start a stopped container.
 
-Select a container row in the table to populate the **Details for *Container*** widgets with information and management options for the selected container.
+Select a container row in the table to populate the **Details for *Container*** cards with information and management options for the selected container.
 
 ### Using Bulk Actions
 
@@ -334,46 +334,29 @@ Use the dropdown to select **Start All Selected**, **Stop All Selected**, or **R
 
 ### Editing Containers
 
-After selecting the container row in the table to populate the **Details for *Container*** widgets, locate the **General Info** widget.
+After selecting the container row in the table to populate the **Details for *Container*** cards, locate the **General Info** card.
 
-{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Card" id="General Info Card" >}}
 
 Click **Edit** to open the **Edit Container: *Container*** screen.
-The **Edit Container: *Container*** screen settings are a subset of those found on the **Create Container** screen.
-It includes the general **Container Configuration** and **CPU and Memory** settings for containers.
-Additionally, containers include **Environment** settings.
 
-#### Editing Container Configuration Settings
+The edit screen allows you to modify container settings after creation. You can change **Name**, **Description**, **Autostart**, and all **Advanced Options** settings.
 
-{{< trueimage src="/images/SCALE/Virtualization/EditInstanceConfiguration.png" alt="Edit Container Configuration" id="Edit Container Configuration" >}}
+{{< trueimage src="/images/SCALE/Virtualization/EditContainerBasic.png" alt="Edit Container Screen" id="Edit Container Screen" >}}
 
-Select **Autostart** to automatically start the container when the system boots.
+**Settings you cannot change after creation:**
+The edit screen allows you to modify container settings after creation. You can change **Name**, **Description**, **Autostart**, and all **Advanced Options** settings.
+- **Pool**: The storage pool cannot be changed after deployment
+- **ID Map Type**: The UID/GID mapping mode is fixed at creation
+- **Init Process** command: The init command is fixed, but **Init Working Directory**, **Init User**, and **Init Group** remain editable
 
-#### Editing CPU & Memory Settings
-
-**CPU Configuration** and **Memory Size** can be configured or left blank to allow the container access to all host CPU and memory resources.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditCPUandMemory.png" alt="Edit CPU & Memory" id="Edit CPU & Memory" >}}
-
-To edit resource allocation:
-
-<div style="margin-left: 33px">{{< include file="/static/includes/InstanceCPUMemoryProcedure.md" >}}
-</div>
-
-#### Editing Environment Settings
-
-These settings configure optional environment variables for the container.
-
-{{< trueimage src="/images/SCALE/Virtualization/EditEnvironment.png" alt="Environment Settings" id="Environment Settings" >}}  
-
-<div style="margin-left: 33px">{{< include file="/static/includes/InstancesEnvironmentProcedure.md" >}}
-</div>
+For detailed information about each setting, see the [Add Container Screen]({{< relref "/SCALE/Containers/ContainersScreens.md#add-container-screen" >}}) section in the UI Reference.
 
 ### Deleting Containers
 
-After selecting the container row in the table to populate the **Details for *Container*** widgets, locate the **General Info** widget.
+After selecting the container row in the table to populate the **Details for *Container*** cards, locate the **General Info** card.
 
-{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Widget" id="General Info Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Card" id="General Info Card" >}}
 
 Click **Delete** to open the **Delete** dialog.
 
@@ -382,133 +365,119 @@ Click **Delete** to open the **Delete** dialog.
 Select **Confirm** to activate the **Continue** button.
 Click **Continue** to delete the container.
 
-### Managing Devices
+### Managing USB Devices
 
-Use the **Devices** widget to view all USB, GPU, Trusted Platform Module (TPM), and PCI Passthrough devices attached to the container.
+Use the **USB Devices** card to view and manage USB devices attached to the container.
+USB device passthrough allows containers to access USB peripherals as if they are physically connected.
 
-{{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="Devices Widget" id="Devices Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="USB Devices Card" id="USB Devices Card" >}}
 
-Click **Add** to open a list of available **USB Devices**, **GPUs**, **TPM**, and **PCI Passthrough** devices to attach.
-Select a device to attach to a container.
+Click **Add** to open a list of available USB devices.
+USB device passthrough allows containers to access USB peripherals as if they are physically connected.
 
-To attach a PCI passthrough device, click **Add Device** under **PCI Passthrough** on the device list to open the **Add PCI Passthrough Device**.
-PCI passthrough assigns a physical PCI device, such as a network card or controller, directly to a VM, allowing it to function as if physically attached.
-The **Add PCI Passthrough Device** screen lists the available physical PCI devices that can be attached to a container.
+USB devices appear in the list only if they are physically connected to the TrueNAS system and not currently allocated to another container or VM.
 
-{{< trueimage src="/images/SCALE/Virtualization/AddPCIPassthroughDevice.png" alt="Add PCI Passthrough Device Screen" id="Add PCI Passthrough Device Screen" >}}
+### Managing GPU Devices
 
-Use **Search Devices** or the **Type** dropdown to filter available devices.
-The selected PCI device(s) must not be in use by the host or share an IOMMU group with any device the host requires.
+Use the **GPU Devices** card to attach GPU hardware to containers for graphics acceleration or computation tasks.
 
-Click **Select** to attach the selected device.
+{{< trueimage src="/images/SCALE/Virtualization/GPUDevices.png" alt="GPU Devices Card" id="GPU Devices Card" >}}
 
-### Managing Disks
+TrueNAS supports GPU passthrough for containers with the following GPU vendors:
 
-Use the **Disks** widget to view the storage devices attached to the container, along with their associated paths.
+- NVIDIA (Turing architecture and later) - Requires driver installation
+- Intel - Native support (no drivers needed)
+- AMD - Native support (no drivers needed)
 
-{{< trueimage src="/images/SCALE/Virtualization/DisksWidget.png" alt="Disks Widget" id="Disks Widget" >}}
+For NVIDIA GPUs, you must install drivers before attaching the GPU to a container.
+Go to **System > Advanced Settings** to install NVIDIA drivers.
+See [Advanced Settings Screen]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for detailed instructions.
 
-Click **Add** to open the [**Add Disk**](#adding-or-editing-disks) screen for adding new disks to the container.
+Click **Add** to open a list of available GPU devices.
+Select a GPU from the list to attach it to the container.
 
-Click the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
-Select to either [**Edit**](#adding-or-editing-disks) or [**Delete**](#deleting-disk-mounts) the disk mount.
+GPU devices appear in the list only if:
 
-For VMs, use the **Disks** widget to manage the root disk size and I/O Bus.
-The root disk stores the OS and serves as the boot disk for the VM.
-Click **Change** to open the [**Change Root Disk Setup**](#managing-the-root-disk-setup) dialog.
+- The physical GPU hardware is installed and detected by TrueNAS.
+- The NVIDIA GPU drivers are installed via **System > Advanced Settings**.
+- The GPU device is not currently allocated to another container or VM.
 
-#### Adding or Editing Disks
+### Configuring Filesystem Devices
 
-Click **Add** to open the **Add Disk** screen for adding new disks to the container.
+Use the **Filesystem Devices** card to mount additional host directories or datasets into the container.
+File system devices provide containers with access to TrueNAS storage for reading and writing data.
 
-Click the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
-Select **Edit** to edit the disk mount.
+{{< trueimage src="/images/SCALE/Virtualization/FilesystemDevicesWidget.png" alt="Filesystem Devices Card" id="Filesystem Devices Card" >}}
 
-{{< trueimage src="/images/SCALE/Virtualization/AddDiskScreen.png" alt="Add Disk Screen" id="Add Disk Screen" >}}
+To add a file system device:
+File system devices provide containers with access to TrueNAS storage for reading and writing data.
+1. Click **Add** in the **Filesystem Devices** card.
 
-Enter or browse to select the host **Source** path for the disk.
-For a new dataset, enter or browse to select the parent path.
-Enter the **Destination** path to mount the disk in the container.
+   {{< trueimage src="/images/SCALE/Virtualization/AddFilesystemDevice.png" alt="Add Filesystem Device" id="Add Filesystem Device" >}}
+To add a file system device:
+2. Enter or browse to select the **Host Directory Source**.
+   This is the directory or dataset path on the TrueNAS host that you want to mount into the container.
 
-Click **Save** to apply changes.
+3. Enter the **Container Mount Path**.
+   This is the mount point inside the container where the file system appears (for example, */mnt/data* or */var/lib/appdata*).
 
-#### Deleting Disk Mounts
+4. Click **Save** to create the file system device mount.
 
-Click the <span class="material-icons">more_vert</span> icon to the right of an existing disk to open the actions menu.
-Select **Delete** to delete the disk mount.
+To edit or delete an existing file system device, click the <span class="material-icons">more_vert</span> icon and select **Edit** or **Delete**.
 
-The **Delete Item** dialog asks for confirmation to delete the selected disk mount.
+Use cases for file system devices:
 
-{{< trueimage src="/images/SCALE/Virtualization/DeleteDiskDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
-
-Click **Confirm** to activate the **Continue** button.
-Click **Continue** to start the delete operation.
-
+- Mounting TrueNAS datasets for persistent container data storage
+- Providing containers with access to shared media libraries
+- Mounting configuration directories from the host
+Use cases for file system devices:
 
 ### Managing NICs
 
-Use the **NIC Widget** to view the network interfaces (NICs) attached to the container, along with their names and types.
+Use the **NIC Devices** card to view and manage network interfaces (NICs) attached to the container.
 
-{{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Widget" id="NIC Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Devices Card" id="NIC Devices Card" >}}
 
-Click **Add** to open a menu with available NIC choices.
-Select a NIC from the dropdown to attach it to the container.
+Each NIC displays the network interface name and MAC address (for example, **br0 (aa:bb:cc:dd:ee:ff)** or **br0 (Default Mac Address)**).
 
-#### Deleting NICs
+{{< hint type=important >}}
+NIC modifications are restricted when there are pending network interface changes on the TrueNAS system.
+If you see a warning about pending changes, apply or revert those changes before modifying container NICs.
+{{< /hint >}}
 
-Click the <span class="material-icons">more_vert</span> icon to the right of an existing NIC to open the actions menu.
-Select **Delete** to delete the NIC mount.
+To add a NIC:
+
+1. Click **Add** to open a dropdown with available network interfaces.
+2. Select a NIC from the list to open the configuration dialog.
+
+   {{< trueimage src="/images/SCALE/Virtualization/AddContainerNICDevice.png" alt="Add NIC Device" id="Add NIC Device" >}}
+
+3. Configure the NIC settings:
+   - Use **NIC Type** to select the network interface type (virtio, macvlan, ipvlan, etc.).
+   - (Create only) Select **Use Default Mac Address** to automatically assign a MAC address.
+   - Use **Mac Address** to enter a custom MAC address, or leave empty to use the default.
+   - (virtio only) Select **Trust Guest RX Filters** to trust guest OS receive filter settings for better performance.
+4. Click **Add** to attach the NIC to the container.
+
+To edit or delete an existing NIC:
+
+1. Stop the container if it is running.
+   Click <i class="material-icons" aria-hidden="true" title="Stop">stop_circle</i> to stop the container.
+
+2. Click the <span class="material-icons">more_vert</span> icon next to the NIC.
+
+3. Select **Edit** to modify the NIC settings, or **Delete** to remove the NIC.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteNicDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
 
 Click **Confirm** to activate the **Continue** button.
 Click **Continue** to start the delete operation.
 
-### Managing Proxies
-
-Use the **Proxies** widget to view the network proxy settings configured for the container.
-It allows you to manage these settings, including adding, editing, or removing proxies.
-Proxies allow you to forward network connections between the host and the container.
-
-{{< trueimage src="/images/SCALE/Virtualization/ProxiesWidget.png" alt="Proxies Widget" id="Proxies Widget" >}}
-
-Click **Add** to open the [**Add Proxy**](#adding-or-editing-proxies) screen to configure a new proxy for the container.
-
-For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu with options to [**Edit**](#adding-or-editing-proxies) or [**Delete**](#deleting-proxies) the proxy.
-
-#### Adding or Editing Proxies
-
-Use the **Add Proxy** or **Edit Proxy** screen to configure or modify a proxy setting attached to a container.
-
-{{< trueimage src="/images/SCALE/Virtualization/AddProxyScreen.png" alt="Add Proxy Screen" id="Add Proxy Screen" >}}
-
-Select a **Host Protocol** to set the connection protocol for the TrueNAS host.
-Options are **TCP** or **UDP**.
-
-Enter a port number in **Host Port** to map to the container port on the container, for example *3600*.
-
-Select an **Instance Protocol** to set the connection protocol for the container.
-Options are **TCP** or **UDP**.
-
-Enter a port number for the container in **Instance Port**, for example *80*.
-
-Click **Save** to apply changes.
-
-#### Deleting Proxies
-
-For existing proxies, click <span class="material-icons">more_vert</span> to open the actions menu.
-Select **Delete** to remove the proxy configuration.
-
-{{< trueimage src="/images/SCALE/Virtualization/DeleteProxyDialog.png" alt="Delete Item Dialog" id="Delete Item Dialog" >}}
-
-Click **Confirm** to activate the **Continue** button.
-Click **Continue** to start the delete operation.
-
 ## Accessing Containers
 
-After selecting the container row in the table to populate the **Details for *Container*** widgets, locate the **Tools** widget.
-You can open a shell session directly from this widget.
+After selecting the container row in the table to populate the **Details for *Container*** cards, locate the **Tools** card.
+You can open a shell session directly from this card.
 
-{{< trueimage src="/images/SCALE/Virtualization/ToolsWidget.png" alt="Tools Widget" id="Tools Widget" >}}
+{{< trueimage src="/images/SCALE/Virtualization/ContainersToolsWidget.png" alt="Tools Card" id="Tools Card" >}}
 
 Click **Shell** <span class="iconify" data-icon="mdi:console-line"></span> to open a **Container Shell** session for command-line interaction with the container.
