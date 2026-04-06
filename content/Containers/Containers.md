@@ -21,7 +21,7 @@ doctype: tutorial
 **Containers** allow users to configure linux containers in TrueNAS.
 
 *Linux containers*, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
-Containers start quickly, use fewer system resources than [virtual machines (VMs)](/scale/virtualmachines/virtualmachines/), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
+Containers start quickly, use fewer system resources than [virtual machines (VMs)](/virtualmachines/virtualmachines/), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
 {{< expand "What system resources do containers require?" "v" >}}
 {{< include file="/static/includes/ContainerRequirements.md" >}}
@@ -37,7 +37,7 @@ See [Choosing the Containers Pool](#choosing-the-containers-pool) below for more
 
 After setting the pool, <i class="fa fa-check" aria-hidden="true" title="Check"></i> **Initialized** shows on the screen header.
 
-For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens](/SCALE/Containers/ContainersScreens).
+For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens](/Containers/ContainersScreens).
 
 Use the **Configuration** dropdown to access the **[Global Settings](#configuring-global-settings)**, **[Manage Volumes](#managing-volumes)**, and [**Map User/Group IDs**](#mapping-user-and-group-ids) options.
 
@@ -76,7 +76,7 @@ These settings apply to all new containers, unless configured otherwise.
 
 Select **Automatic** from the **Bridge** dropdown list to use the default network bridge for communication between containers and the TrueNAS host.
 To specify an existing bridge, select one from the dropdown list.
-See [Accessing NAS from VMs and Containers](/scale/network/containernasbridge) for details.  
+See [Accessing NAS from VMs and Containers](/network/containernasbridge) for details.  
 When **Bridge** is set to **Automatic**, the **IPv4 Network** and **IPv6 Network** settings display.
 
 Enter an IPv4 address and subnet (e.g., *192.168.1.0/24*) in **IPv4 Network** to assign a specific network for containers.
@@ -271,7 +271,7 @@ To create a new container:
    e. Enter the port number within the container in **Instance Port**, for example *80*, to map to the host port.
 
 6. Configure the **Network** section settings to define how the container connects to the host and external networks.
-   Options include the default network bridge, an existing [bridge interface](/scale/reporting/Network/ContainerNASBridge), or a MACVLAN.
+   Options include the default network bridge, an existing [bridge interface](/reporting/Network/ContainerNASBridge), or a MACVLAN.
 
    {{< trueimage src="/images/SCALE/Virtualization/InstancesNetworkDefault.png" alt="Default Network Settings" id="Default Network Settings" >}}
 
