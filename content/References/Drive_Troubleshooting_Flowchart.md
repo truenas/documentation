@@ -9,11 +9,11 @@ weight: 80
 These flowcharts help you diagnose the most common drive and ZFS-related problems using a systematic approach.
 There are five flowcharts:
 
-- **ZFS Errors**
-- **ZFS Slow Pool**
-- **Critical Drive Errors**
-- **Non-Critical Drive Errors**
-- **Suspect Foul Play (Altered Drive Data)**
+- [ZFS Errors](#zfs-errors)
+- [ZFS Slow Pool](#zfs-slow-pool)
+- [Critical Drive Errors](#critical-drive-errors)
+- [Non-Critical Drive Errors](#non-critical-drive-errors)
+- [Suspect Foul Play (Altered Drive Data)](#suspect-foul-play-altered-drive-data)
 
 Read each step carefully and answer each question exactly as written before proceeding.
 For help reading *Self-Monitoring, Analysis, and Reporting Technology* (SMART) output, see [Appendix A](#appendix-a---reading-smart-output).
@@ -21,7 +21,7 @@ For commands referenced in the flowchart steps, see [Appendix B](#appendix-b---t
 
 You must run all commands as `root` or with `sudo`.
 
-**Seagate drives** typically report Error Rates as wildly changing numbers.
+Seagate drives typically report Error Rates as wildly changing numbers.
 This is normal behavior for Seagate drives and does not necessarily indicate a failure.
 The flowcharts include specific guidance for evaluating Seagate error rates where applicable.
 
@@ -38,22 +38,20 @@ If you get stuck in the same loop more than twice, stop and seek help on the [Tr
    - Yes — Go to step 3.
    - No — Go to step 2.
 
-2. This flowchart does not assist in bringing a ZFS pool back online.
-   That process can be complex and requires additional help.
-   If you believe you have a drive failure, proceed to step 3.
+2. If you believe you have a drive failure, proceed to step 3.
    Otherwise, exit this procedure.
 
-3. Is **Repaired Data** from the `zpool status` output greater than zero?
+3. Is Repaired Data from the `zpool status` output greater than zero?
    - Yes — Go to step 14.
    - No — Go to step 4.
 
-4. Do you have Read, Write, or Checksum errors?
+4. Do you have read, write, or checksum errors?
    - Yes — Go to step 5.
    - No — Go to step 9.
 
 5. Run `zpool scrub poolname`.
 
-6. Did the Read, Write, or Checksum errors increase? Note any corrupt files.
+6. Did the read, write, or checksum errors increase? Note any corrupt files.
    - Yes — Go to step 7.
    - No — Go to step 9.
 
@@ -71,30 +69,29 @@ If you get stuck in the same loop more than twice, stop and seek help on the [Tr
     - Yes — Go to step 7.
     - No — Go to step 12.
 
-12. Use a backup to restore any corrupted files.
+12. Use the TrueNAS Guide to perform things like "How to replace a drive."
+    - If the problem is solved, exit this procedure.
 
-13. Problem corrected. Exit this procedure.
+13. Record the names of the corrupt files and delete them.
 
-14. Record the names of the corrupt files and delete them.
+14. Run `zpool scrub poolname`.
 
-15. Run `zpool scrub poolname`.
-
-16. Do you still have Repaired Data errors?
+15. Do you still have Repaired Data errors?
     - Yes — Go to step 14.
     - No — Go to step 17.
 
-17. Have you been through this loop more than twice?
+16. Have you been through this loop more than twice?
     - Yes — Go to step 18.
     - No — Go to step 3.
 
-18. Are the errors associated only with one drive?
-    - Yes — Go to step 19.
-    - No — Go to step 20.
+17. Are the errors associated only with one drive?
+    - Yes — Go to step 18.
+    - No — Go to step 19.
 
-19. Troubleshoot the drive using the [Critical Drive Errors](#critical-drive-errors) and [Non-Critical Drive Errors](#non-critical-drive-errors) flowcharts.
+18. Troubleshoot the drive using the [Critical Drive Errors](#critical-drive-errors) and [Non-Critical Drive Errors](#non-critical-drive-errors) flowcharts.
     Exit this procedure.
 
-20. Back up your data and seek additional help. Exit this procedure.
+19. Back up your data and seek additional help. Exit this procedure.
 
 ## ZFS Slow Pool
 
@@ -120,13 +117,13 @@ If you get stuck in the same loop more than twice, stop and seek help on the [Tr
 ## Critical Drive Errors
 
 {{< hint type="info" title="Media Wear Level" >}}
-**NA** = Not applicable.
+NA = Not applicable.
 
-Media wear level can be reported as **Wear Level** or **Percent Used**.
+Media wear level can be reported as Wear Level or Percent Used.
 
-Examine the **Thresh** value to interpret the wear level correctly:
-- If **Thresh** is below 50: 100 = new, 0 = worn out.
-- If **Thresh** is above 50: 0 = new, 100 = worn out.
+Examine the Thresh value to interpret the wear level correctly:
+- If Thresh is below 50: 100 = new, 0 = worn out.
+- If Thresh is above 50: 0 = new, 100 = worn out.
 
 See [Appendix A](#appendix-a---reading-smart-output) for more information on SMART attributes and values.
 {{< /hint >}}
@@ -163,7 +160,7 @@ See [Appendix A](#appendix-a---reading-smart-output) for more information on SMA
    - Yes — Go to step 11.
    - No — Go to step 10.
 
-10. Relace the drive with media or wear damage. Seek additional help.
+10. Replace the drive due to media or wear damage. Seek additional help.
     Exit this procedure.
 
 11. Run `smartctl -t long /dev/diskID`.
@@ -180,18 +177,15 @@ See [Appendix A](#appendix-a---reading-smart-output) for more information on SMA
     - Yes — Go to step 11.
     - No — Go to step 15.
 
-15. This could be a drive or power supply failure.
-    Check the power supply before replacing the drive. Exit this procedure.
+15. Check the power supply before replacing the drive — this could be a drive or power supply failure. Exit this procedure.
 
-16. The drive has no critical errors. Refer to the [Non-Critical Drive Errors](#non-critical-drive-errors) flowchart.
-    Exit this procedure.
+16. Refer to the [Non-Critical Drive Errors](#non-critical-drive-errors) flowchart. The drive has no critical errors. Exit this procedure.
 
 17. Is Current Pending (ID 197) raw value greater than 0, or is Uncorrectable Sector (ID 198) raw value greater than 0?
     - Yes — Go to step 18.
     - No — Go to step 16.
 
-18. These errors alone are generally not critical.
-    Refer to the [Non-Critical Drive Errors](#non-critical-drive-errors) flowchart and consider seeking additional help.
+18. Refer to the [Non-Critical Drive Errors](#non-critical-drive-errors) flowchart and consider seeking additional help.
     Exit this procedure.
 
 ## Non-Critical Drive Errors
@@ -209,19 +203,17 @@ See [Appendix A](#appendix-a---reading-smart-output) for more information on SMA
    - No — Go to step 4.
 
 4. Are Hardware ECC Recovered or MultiZone errors increasing and are they the only errors present?
-   - Yes — Go to step 5.
+   - Yes — Go to step 5. This is not an immediate issue.
    - No — Go to step 6.
 
-5. This is not an immediate issue. Monitor for increasing counts.
+5. Monitor for increasing counts.
    Hardware ECC Recovered (ID 195) raw count does not indicate a typical drive failure. Exit this procedure.
 
 6. Are there any other errors?
    - Yes — Go to step 8.
    - No — Go to step 7.
 
-7. Hardware ECC Recovered (ID 195) indicates the drive hardware is automatically correcting data reads, which is expected behavior.
-   MultiZone Error (ID 200) sometimes indicates a problem when associated errors are present, but is generally not an issue on its own.
-   Exit this procedure.
+7. Monitor these non-critical errors. Hardware ECC Recovered (ID 195) indicates the drive hardware is automatically correcting data reads, which is expected behavior. MultiZone Error (ID 200) sometimes indicates a problem when associated errors are present, but is generally not an issue on its own. Exit this procedure.
 
 8. Is Current Pending Sectors (ID 197) raw value greater than 5?
    - Yes — Go to step 9.
@@ -231,12 +223,12 @@ See [Appendix A](#appendix-a---reading-smart-output) for more information on SMA
    - Yes — Go to step 10.
    - No — Go to step 11.
 
-10. The drive is acceptable for now.
-    Monitor Current Pending Sectors (ID 197) raw value. If the count continues to increase, replace the drive.
+10. Monitor Current Pending Sectors (ID 197) raw value.
+    If the count continues to increase, replace the drive.
     Post the full `smartctl -x /dev/diskID` output to the [TrueNAS community forums](https://forums.truenas.com) for additional evaluation.
     Exit this procedure.
 
-11. The drive has a serious problem. Replace the drive. Exit this procedure.
+11. Replace the drive. Exit this procedure.
 
 12. Is ID 1 (Raw Read Error Rate) or ID 7 (Seek Error Rate) the error you are evaluating?
     - Yes — Go to step 14.
@@ -250,11 +242,9 @@ See [Appendix A](#appendix-a---reading-smart-output) for more information on SMA
     - Yes — Go to step 15.
     - No — Go to step 16.
 
-15. Seagate drives report these values differently and rapidly changing numbers can be normal.
-    To check for a real failure, subtract 4294967295 (0xFFFFFFFF) from the raw value.
-    If the result is greater than zero, the drive has that many real failures. Go to step 9.
+15. Subtract 4294967295 (0xFFFFFFFF) from the raw value to check for real failures. Seagate drives report these values differently and rapidly changing numbers can be normal. If the result is greater than zero, the drive has that many real failures. Go to step 9.
 
-16. This indicates a failure of the armature or head mechanism. Replace the drive. Exit this procedure.
+16. Replace the drive. This indicates a failure of the armature or head mechanism. Exit this procedure.
 
 ## Suspect Foul Play (Altered Drive Data)
 
@@ -270,7 +260,7 @@ Western Digital has WDDA data, but reading it requires additional software not i
    - Yes — Go to step 4.
    - No — Go to step 3.
 
-3. You need smartmontools 7.4 or later to read FARM data. Exit this procedure.
+3. Update to smartmontools version 7.4 or later to read FARM data. Exit this procedure.
 
 4. Obtain SMART drive data: `smartctl -a /dev/diskID`
 
@@ -287,11 +277,9 @@ Western Digital has WDDA data, but reading it requires additional software not i
    - Yes — Go to step 9.
    - No — Go to step 8.
 
-8. The drive data appears valid. Exit this procedure.
+8. Confirm the drive data appears valid. Exit this procedure.
 
-9. The drive likely has altered data.
-   If the drive was refurbished or previously used, the discrepancy might be expected.
-   If in doubt, seek additional help. Exit this procedure.
+9. Investigate likely data alteration on this drive. If the drive was refurbished or previously used, the discrepancy might be expected. If in doubt, seek additional help. Exit this procedure.
 
 ## Appendix A - Reading SMART Output
 
@@ -314,12 +302,12 @@ Each SMART attribute line contains the following values:
 When VALUE or WORST approaches THRESH and other errors are present, plan to replace the drive.
 Do not wait until a critical failure occurs, as data loss is possible.
 
-**Example — ID 5 (Reallocated Sectors Count):**
+Example — ID 5 (Reallocated Sectors Count):
 Fewer than five reallocated sectors indicates a drive to monitor.
 More than five indicates likely media damage.
 Adjust these thresholds based on your environment and risk tolerance.
 
-**Example — ID 1 (Raw Read Error Rate) for Seagate drives:**
+Example — ID 1 (Raw Read Error Rate) for Seagate drives:
 Seagate drives report large RAW_VALUE numbers for error rates because the value represents more than a simple count of failures.
 Do not interpret a large Raw Read Error Rate RAW_VALUE as a failure on Seagate drives without evaluating it using the method described in step 15 of the [Non-Critical Drive Errors](#non-critical-drive-errors) flowchart.
 
@@ -327,7 +315,7 @@ If you are unsure how to interpret SMART data, post the full `smartctl -x /dev/d
 
 ## Appendix B - Troubleshooting Commands
 
-The commands below apply to both TrueNAS CORE (FreeBSD) and TrueNAS SCALE (Debian Linux) unless marked otherwise.
+The commands below apply to both TrueNAS FreeBSD-based versions and TrueNAS Debian-based versions unless marked otherwise.
 Replace *diskID* with your drive identifier and *poolname* with your pool name.
 
 {{< hint type="warning" title="Warning" >}}
