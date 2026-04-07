@@ -22,6 +22,8 @@ The options are **Change Password**, **Preferences**, **My API Keys**, **Guide**
 
 The **Preferences** screen settings configure the color theme, session duration before timing out and logging out the currently logged in user, and localization settings for the logged-in user account.
 
+{{< trueimage src="/images/SCALE/Dashboard/PreferencesScreen.png" alt="Preferences Screen" id="Preferences Screen" >}}
+
 ### Customizing UI Theme and Localization
 
 **Theme** settings, moved from the **System > General Settings > GUI** configuration screen. It sets the color theme for the session. 
@@ -43,8 +45,6 @@ Click **Save** to set all changes for the currently logged-in user.
 TrueNAS automatically terminates the currently logged-in user session when the default session timeout expires and shows the TrueNAS login splash screen.
 
 To extend the alloted session time, go to the **Preferences** screen, and change the **Session Timeout** to a value that suits the use case for the logged-in user. 
-
-{{< trueimage src="/images/SCALE/TopToolbar/PreferencesSettingsScreen.png" alt="Preferences Screen" id="Preferences Screen" >}}
 
 {{< hint type=tip >}}
 The default lifetime setting is 300 seconds or five minutes.
