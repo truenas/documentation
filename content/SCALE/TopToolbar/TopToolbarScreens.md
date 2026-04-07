@@ -76,9 +76,9 @@ The **Search UI** global search bar allows users to search for screens and eleme
 The <span class="material-icons">account_circle</span> **Settings** button shows a menu of general system settings options.
 The options are **Change Password**, **Preferences**, **Two-Factor Authentication** (when Global 2FA is enabled), **My API Keys**, **Guide**, and **Log Out**.
 
-The <span class="material-icons">dialpad</span> **Change Password** button displays a dialog where you can change the login password for the currently logged-in administrator password.
+The <span class="material-icons">dialpad</span> **Change Password** button displays a dialog where you can change the login password for the currently logged-in administrator.
 
-The <span class="material-icons">settings</span> **Preferences** option opens a screen with **Thene**, **Session Timeout**, and **Localization** settings to customize the UI for the currently logged in user account.
+The <span class="material-icons">settings</span> **Preferences** option opens a screen with **Theme**, **Session Timeout**, and **Localization** settings to customize the UI for the currently logged in user account.
 
 The <span class="iconify" data-icon="mdi:two-factor-authentication"></span> **Two-Factor Authentication** button displays only when Global 2FA is enabled and opens the [**Two Factor Auth**]({{< ref "2FAScreen" >}}) screen. Users can also access this screen from **Credentials > Two Factor Auth**.
 

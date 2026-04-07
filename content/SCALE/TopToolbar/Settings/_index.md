@@ -20,7 +20,7 @@ The options are **Change Password**, **Preferences**, **My API Keys**, **Guide**
 
 ## Preferences
 
-The **Preferences** screen settings configure the color theme, session duration before timing out and logging out the currently logged in user, and localization settings for the logged-in user account.
+The **Preferences** screen settings configure the color theme, session duration before timing out and logging out the currently logged-in user, and localization settings for the logged-in user account.
 
 {{< trueimage src="/images/SCALE/Dashboard/PreferencesScreen.png" alt="Preferences Screen" id="Preferences Screen" >}}
 
@@ -32,7 +32,7 @@ Selecting an option immediately changes the UI to the selected color theme.
 
 **Session Timeout**, moved from the **System > Advanced Settings > Access** configuration screen, sets the number of minutes a session remains active or inactive before it is automatically ended by logging out the user.
 
-**Localization** sets the screen language, date format, and time format for the currently logged-in user account. To see the keyboard map and timezoe, use the **System > General Settings > Localization** configuration screen.
+**Localization** sets the screen language, date format, and time format for the currently logged-in user account. To see the keyboard map and timezone, use the **System > General Settings > Localization** configuration screen.
 
 Select the desired language for the UI from the **Language** dropdown list. The default setting is **English** but might be customized to the language based on the country of origin for an Enterprise customer. You can filter the list by typing in the field after clearing the default value, or use the scroll option to find and select a language.
 
@@ -44,12 +44,12 @@ Click **Save** to set all changes for the currently logged-in user.
 
 TrueNAS automatically terminates the currently logged-in user session when the default session timeout expires and shows the TrueNAS login splash screen.
 
-To extend the alloted session time, go to the **Preferences** screen, and change the **Session Timeout** to a value that suits the use case for the logged-in user. 
+To extend the allotted session time, go to the **Preferences** screen, and change the **Session Timeout** to a value that suits the use case for the logged-in user. 
 
 {{< hint type=tip >}}
 The default lifetime setting is 300 seconds or five minutes.
 
-The maximum is 2147482 seconds or converting it to hours/minutes/seconds, 596 hours, 31 minutes, and 22 seconds.
+The maximum is 2147482 seconds, or converting it to hours/minutes/seconds, 596 hours, 31 minutes, and 22 seconds.
 If converting it to days/hours/minutes/seconds, 24 days, 20 hours, 31 minutes, and 22 seconds.
 {{< /hint >}}
 
