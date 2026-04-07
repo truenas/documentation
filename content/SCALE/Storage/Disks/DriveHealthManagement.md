@@ -1,6 +1,6 @@
 ---
 title: "Drive Health Management"
-description: "Provides information and considerations for drive health."
+description: "Describes how TrueNAS monitors drive health using SMART polling and ZFS event detection, and explains alert types, manual testing options, and Enterprise considerations."
 weight: 60
 tags:
 - disks
