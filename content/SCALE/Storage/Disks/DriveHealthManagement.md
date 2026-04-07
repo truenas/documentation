@@ -121,7 +121,7 @@ For a full reference of `smartctl` options and output interpretation, see the [s
 #### Deprecated API for SMART Testing
 
 {{< hint type=Warning title="Warning: This feature is unsupported, and may be removed in future versions of TrueNAS" >}}
-TrueNAS 25.10 has an API call it can leverage to call a SMART test with the default parameters. The command works on systems where it has been validated that simultaneous SMART tests do not impact performance or cause unexpected controller/drive interactions.
+TrueNAS 25.10+ has an unsupported API call it can leverage to start a SMART test on all drives with the default parameters. Use at your own risk or switch to a custom smart command where advanced options are required for stability or functionality.
 
 To run the command, use
 `midclt call disk.smart_test {SHORT|LONG} '["*"]'`
@@ -129,6 +129,6 @@ To run the command, use
 
 ### Third-Party Tools
 
-Additional drive introspection and analysis tools are available outside of TrueNAS.
+Additional drive introspection and analysis tools [are available outside of TrueNAS](https://apps.truenas.com/catalog/scrutiny/).
 These tools can supplement DHM data with more detailed vendor-specific diagnostics.
 Consult the documentation for any third-party tool before running it against drives in an active ZFS pool.
