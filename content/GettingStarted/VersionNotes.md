@@ -50,7 +50,7 @@ The TrueNAS team is pleased to release TrueNAS 26-BETA.1!
 This first public release version of TrueNAS 26 has software component updates and new features that are in the polishing phase.
 See [26 Major Features](#major-features) for an overview of what's new in this release.
 
-Special thanks to (Github users): [Franco Castillo](https://github.com/castillofrancodamian), [AquariusStar](https://github.com/AquariusStar), [Rogelio Tajes Piñeiro](https://github.com/rtajes-max), [Aurélien Sallé](https://github.com/MDVAurelien), [dany22m](https://github.com/dany22m), [ReiKirishima](https://github.com/ReiKirishima), [Christos Longros](https://github.com/chrislongros), [Lee Jihaeng](https://github.com/SejoWuigui), [Aui162](https://github.com/Aui162), [Seele Volleri](https://github.com/SeeleVolleri), [Ban](https://github.com/Ban921), [Michael Rohrhirsch](https://github.com/CrunkA3), [PCAsusM1981](https://github.com/PCAsusM1981), [Cantabile](https://github.com/cantab1le), [Fernando G. Monteiro](https://github.com/fgmGitHub), [Joda Stößer](https://github.com/SimJoSt), [Marius](https://github.com/mariusachim), [herbkk](https://github.com/herbkk), [saso-g1](https://github.com/saso-g1), [René](https://github.com/renediepenbroek), [Jehu Marcos Herrera Puentes](https://github.com/JMarcosHP), [Amir Burbea](https://github.com/amirburbea), [Piotr Jasiek](https://github.com/pht31337), [Eric Schultz](https://github.com/eschultz), [Kent Ross](https://github.com/mumbleskates), [fkwp](https://github.com/fkwp), [Gautam krishna R](https://github.com/gautamkrishnar) and [Joel May](https://github.com/joel0) for contributing to TrueNAS 26-BETA.1.
+Special thanks to (GitHub users): [Franco Castillo](https://github.com/castillofrancodamian), [AquariusStar](https://github.com/AquariusStar), [Rogelio Tajes Piñeiro](https://github.com/rtajes-max), [Aurélien Sallé](https://github.com/MDVAurelien), [dany22m](https://github.com/dany22m), [ReiKirishima](https://github.com/ReiKirishima), [Christos Longros](https://github.com/chrislongros), [Lee Jihaeng](https://github.com/SejoWuigui), [Aui162](https://github.com/Aui162), [Seele Volleri](https://github.com/SeeleVolleri), [Ban](https://github.com/Ban921), [Michael Rohrhirsch](https://github.com/CrunkA3), [PCAsusM1981](https://github.com/PCAsusM1981), [Cantabile](https://github.com/cantab1le), [Fernando G. Monteiro](https://github.com/fgmGitHub), [Joda Stößer](https://github.com/SimJoSt), [Marius](https://github.com/mariusachim), [herbkk](https://github.com/herbkk), [saso-g1](https://github.com/saso-g1), [René](https://github.com/renediepenbroek), [Jehu Marcos Herrera Puentes](https://github.com/JMarcosHP), [Amir Burbea](https://github.com/amirburbea), [Piotr Jasiek](https://github.com/pht31337), [Eric Schultz](https://github.com/eschultz), [Kent Ross](https://github.com/mumbleskates), [fkwp](https://github.com/fkwp), [Gautam krishna R](https://github.com/gautamkrishnar) and [Joel May](https://github.com/joel0) for contributing to TrueNAS 26-BETA.1.
 Visit [our guide](https://www.truenas.com/docs/contributing/) for information on how you too can contribute.
 
 ### 26-BETA.1 Notable Changes
@@ -94,7 +94,7 @@ Visit [our guide](https://www.truenas.com/docs/contributing/) for information on
 * Fixes the **System > Services** screen showing as empty ([NAS-139571](https://ixsystems.atlassian.net/browse/NAS-139571)).
   A regression could cause the services list to appear blank on affected systems, preventing users from starting, stopping, or configuring services from the UI.
 
-* Fixes a failure where datasets could not be loaded in the UI ([NAS-140389](https://ixsystems.atlassian.net/browse/NAS-140389)).
+* Fixes an issue where datasets could not be loaded in the UI ([NAS-140389](https://ixsystems.atlassian.net/browse/NAS-140389)).
   A middleware issue could prevent dataset information from loading on the **Datasets** screen, showing an error instead of the dataset tree.
 
 * Fixes available space calculations for pools with special or dedup vdevs ([NAS-139820](https://ixsystems.atlassian.net/browse/NAS-139820)).
@@ -161,10 +161,6 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 {{< /hint >}}
 
 ### Current Known Issues
-
-No known issues currently reported for 26 development builds.
-
-Check back for more information.
 
 <a href="https://ixsystems.atlassian.net/issues?filter=14297" target="_blank">See the latest status on Jira</a> for public issues discovered in 26-BETA.1 that are being resolved in a future TrueNAS release.
 
