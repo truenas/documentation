@@ -14,7 +14,7 @@ doctype: tutorial
 Drive Health Management (DHM) in TrueNAS monitors the condition of installed HDD and SSD drives (SAS, SATA, and NVMe) and alerts you when action is required. TrueNAS manages drive health with three layers:
 
 - **ZFS** detects sudden failures in real time during active read and write operations.
-- **TrueNAS Middleware** automatically polls SMART (Self-Monitoring, Analysis, and Reporting Technology) data in each drive
+- **TrueNAS Middleware** automatically polls SMART (Self-Monitoring, Analysis, and Reporting Technology) data in each drive.
 - **TrueNAS Middleware** handles the alert logic and provides actionable notifications.
 
 TrueNAS DHM is designed to:
@@ -30,7 +30,7 @@ TrueNAS DHM is designed to:
 
 Enterprise deployments benefit from additional protections and processes built around DHM:
 - Factory burn-in testing (running drives at sustained load before deployment) significantly reduces failure rates.
-- TrueNAS DHM is designed to scale across large drive counts (1000+) without increasing without increasing administrator and system resource overheads.
+- TrueNAS DHM is designed to scale across large drive counts (1000+) without increasing administrator and system resource overheads.
 - When an alert appears, review the alert details to determine the recommended action.
 - For guidance on drive replacement or interpreting a specific alert condition, contact iXsystems support.
 
@@ -63,7 +63,7 @@ If a drive reports a temperature that exceeds its rated maximum, TrueNAS generat
 
 ## Monitoring Drive Health
 
-To view drive health status, go to the **Storage** dashboard and view the [Disk Health card](https://www.truenas.com/docs/scale/storage/storagedashboardscreens/#storage-health-widget).
+To view drive health status, go to the **Storage** dashboard and view the [**Disk Health** card]({{< ref "/SCALE/Storage/StorageDashboardScreens.md#disk-health-widget" >}}).
 
 Active alerts appear in the **[Alerts]({{< ref "/SCALE/TopToolbar/Alerts/_index.md" >}})** panel at the top right of the UI.
 Click an alert to expand it and view details, including the affected disk, the attribute or event that triggered the alert, and recommended next steps.
@@ -79,7 +79,7 @@ Click an alert to expand it and view details, including the affected disk, the a
 {{< /truetable >}}
 
 
-## SMART Tests Options for Community Edition
+## SMART Test Options for Community Edition
 
 {{< hint type=note >}}
 TrueNAS handles SMART testing through its automated DHM polling.
@@ -98,7 +98,7 @@ The manual SHORT test performs a quick, surface-level diagnostic check. It typic
 
 The manual LONG test performs a full drive surface scan for periodic, deep validation. It provides a thorough validation of the entire drive surface, but has a significant negative performance impact during the test. LONG tests can also produce false-positive failure results on healthy drives.
 
-We recommend scheduling SMART tests so that they do not overlap with other data protection tasks like [snapshot creation or removal]({{< ref "/SCALE/Datasets/Snapshots/_index.md" >}}), or [pool scrubs](https://www.truenas.com/docs/scale/storage/pools/managepools/index.html#running-a-pool-data-integrity-check-scrub).
+We recommend scheduling SMART tests so that they do not overlap with other data protection tasks like [snapshot creation or removal]({{< ref "/SCALE/Datasets/Snapshots/_index.md" >}}), or [pool scrubs]({{< ref "/SCALE/Storage/Pools/ManagePools.md#running-a-pool-data-integrity-check-scrub" >}}).
 
 To run a manual test, go to **System > Shell** and run:
 
@@ -120,7 +120,7 @@ For a full reference of `smartctl` options and output interpretation, see the [s
 
 #### Deprecated API for SMART Testing
 
-{{< hint type=Warning title="Warning: This feature is unsupported, and may be removed in future versions of TrueNAS" >}}
+{{< hint type=warning title="Warning: This feature is unsupported, and may be removed in future versions of TrueNAS" >}}
 TrueNAS 25.10+ has an unsupported API call it can leverage to start a SMART test on all drives with the default parameters. Use at your own risk or switch to a custom smart command where advanced options are required for stability or functionality.
 
 To run the command, use
