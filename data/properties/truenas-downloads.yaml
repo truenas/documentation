@@ -288,7 +288,7 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/"
     releases:
       - name: "26-BETA.1"
-        link: "https://iso.sys.truenas.net/TrueNAS-26-BETA/"
+        link: "https://iso.sys.truenas.net/TrueNAS-26-BETA/26.0.0-BETA.1/"
         date: "2026-04-07"
       - name: "26 Nightly"
         link: "https://iso.sys.truenas.net/TrueNAS-26-Nightlies/"
