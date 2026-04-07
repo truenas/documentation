@@ -18,6 +18,43 @@ The options are **Change Password**, **Preferences**, **My API Keys**, **Guide**
 
 {{< include file="/static/includes/ChangeLoggedInUserPassword.md" >}}
 
+## Preferences
+
+The **Preferences** screen settings configure the color theme, session duration before timing out and logging out the currently logged in user, and localization settings for the logged-in user account.
+
+### Customizing UI Theme and Localization
+
+**Theme** settings, moved from the **System > General Settings > GUI** configuration screen. It sets the color theme for the session. 
+Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Soloarized Dark**, **Midnight**, and **High Contrast**.
+Selecting an option immediately changes the UI to the selected color theme.
+
+**Session Timeout**, moved from the **System > Advanced Settings > Access** configuration screen, sets the number of minutes a session remains active or inactive before it is automatically ended by logging out the user.
+
+**Localization** sets the screen language, date format, and time format for the currently logged-in user account. To see the keyboard map and timezoe, use the **System > General Settings > Localization** configuration screen.
+
+Select the desired language for the UI from the **Language** dropdown list. The default setting is **English** but might be customized to the language based on the country of origin for an Enterprise customer. You can filter the list by typing in the field after clearing the default value, or use the scroll option to find and select a language.
+
+Select the desired format in the **Date Format** and **Time Format** that matches your geographic location.
+
+Click **Save** to set all changes for the currently logged-in user.
+
+### Changing UI Session Timeout
+
+TrueNAS automatically terminates the currently logged-in user session when the default session timeout expires and shows the TrueNAS login splash screen.
+
+To extend the alloted session time, go to the **Preferences** screen, and change the **Session Timeout** to a value that suits the use case for the logged-in user. 
+
+{{< trueimage src="/images/SCALE/TopToolbar/PreferencesSettingsScreen.png" alt="Preferences Screen" id="Preferences Screen" >}}
+
+{{< hint type=tip >}}
+The default lifetime setting is 300 seconds or five minutes.
+
+The maximum is 2147482 seconds or converting it to hours/minutes/seconds, 596 hours, 31 minutes, and 22 seconds.
+If converting it to days/hours/minutes/seconds, 24 days, 20 hours, 31 minutes, and 22 seconds.
+{{< /hint >}}
+
+Click **Save**.
+
 ## My API Keys
 
 Click on <span class="material-icons">laptop</span> **My API Keys** to display the **User API Keys** screen where you can add or manage API keys on your system.

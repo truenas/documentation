@@ -98,7 +98,7 @@ To show real-time console messages at the bottom of the browser window, select *
 
 ## Localizing the TrueNAS System
 
-Localizing the TrueNAS system consists of changing the UI language and the keyboard layout to support the selected language, setting the time zone to match where the TrueNAS server is located, and setting date and time formats.
+Localizing the TrueNAS system consists of changing the UI language and the keyboard layout to support the selected language, and setting the time zone to match where the TrueNAS server is located. To set date and time formats, go to the top toolbar [**Settings > Preferences**]({{< ref "/Scale/TopToolbar/Settings/_index.md" >}}) screen.
 
 To change the Web UI on-screen language and set the keyboard to work with the selected language, click **Settings** on the **Localization** widget to open the **Localization Settings** configuration screen.
 
