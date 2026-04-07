@@ -154,7 +154,7 @@ The **GUI Settings** screen shows configuration settings for the TrueNAS web int
 
 ## Localization Settings Screen
 
-The **Localization** card shows the current language, date, time format, time zone, and console keyboard map settings for the TrueNAS system.
+The **Localization** card shows the current time zone and console keyboard map settings for the TrueNAS system.
 Provides access to a configuration screen to customize settings.
 
 {{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsLocalizationCard.png" alt="Localization Card" id="Localization Card" >}}

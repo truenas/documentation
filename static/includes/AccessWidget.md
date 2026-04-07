@@ -14,7 +14,7 @@ Administrators can manage other active sessions and configure the session timeou
 The logout icon is inactive for the currently logged-in administrator session and active for any other current sessions.
 It cannot be used to terminate the currently logged-in active administrator session.
 
-The **Start Session time** shows the configured token duration for the current session (default is five minutes).
+The **Start session time** shows the configured token duration for the current session (default is 300 seconds, or five minutes).
 TrueNAS logs out user sessions that are inactive for longer than the configured token setting for the user.
 New activity resets the token counter.
 

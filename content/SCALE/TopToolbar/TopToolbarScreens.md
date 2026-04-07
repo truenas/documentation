@@ -88,6 +88,22 @@ The <span class="material-icons">library_books</span> **Guide** button opens the
 
 The <span class="material-icons">exit_to_app</span> **Log Out** button logs the current user out of the TrueNAS UI.
 
+#### Preferences Screen Settings
+
+The **Preferences** screen customizes the UI screens for the currently logged-in user.
+
+{{< trueimage src="/images/SCALE/Dashboard/PreferencesScreen.png" alt="Preferences Screen" id="Preferences Screen" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Theme** | Sets the UI color theme for the session. for the currently logged-in user. Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Solarized Dark**, **Midnight**, and **High Contrast**. Selecting an option immediately changes the UI to the selected color theme. |
+| **Session Timeout** | Sets the number of seconds a session remains active or inactive before it is automatically ended by logging out the user. |
+| **Language** | Sets the lauguage for the UI screen. The default setting is **English**, but it might be customized to the language based on the country of origin for an Enterprise customer. You can filter the list by typing in the field after clearing the default value, or use the scroll option to find and select a language. |
+| **Date Format** | Sets the desired date format for the UI. |
+| **Time Format** | Sets the desired time format for the UI. |
+{{< /truetable >}}
+
 ### Power
 
 The **Power** <span class="material-icons">power_settings_new</span> button provides two options that let the user restart or shut down their TrueNAS system.

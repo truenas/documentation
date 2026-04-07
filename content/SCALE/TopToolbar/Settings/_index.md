@@ -26,11 +26,11 @@ The **Preferences** screen settings configure the color theme, session duration 
 
 ### Customizing UI Theme and Localization
 
-**Theme** settings, moved from the **System > General Settings > GUI** configuration screen. It sets the color theme for the session. 
-Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Soloarized Dark**, **Midnight**, and **High Contrast**.
+The **Theme** settings, moved from the **System > General Settings > GUI** configuration screen, now show in the **Preferences** screen, which customizes the UI color theme for the session. for the currently logged-in user. 
+Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Solarized Dark**, **Midnight**, and **High Contrast**.
 Selecting an option immediately changes the UI to the selected color theme.
 
-**Session Timeout**, moved from the **System > Advanced Settings > Access** configuration screen, sets the number of minutes a session remains active or inactive before it is automatically ended by logging out the user.
+**Session Timeout**, moved from the **System > Advanced Settings > Access** configuration screen, sets the number of seconds a session remains active or inactive before it is automatically ended by logging out the user.
 
 **Localization** sets the screen language, date format, and time format for the currently logged-in user account. To see the keyboard map and timezone, use the **System > General Settings > Localization** configuration screen.
 
