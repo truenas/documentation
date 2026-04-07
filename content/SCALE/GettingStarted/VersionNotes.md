@@ -251,6 +251,24 @@ See [Containers]({{< ref "/SCALE/Containers/Containers.md" >}}) for configuratio
 
   </div>
 
+  <div data-tab-id="disk-health-management" data-tab-label="Drive Health Management">
+
+### Drive Health Management
+
+TrueNAS monitors the condition of installed HDD and SSD drives (SAS, SATA, and NVMe) through three integrated layers:
+
+- **ZFS** detects sudden failures in real time during active read and write operations and marks affected vdevs or disks as faulted immediately.
+- **TrueNAS Middleware** polls SMART data from every drive every 90 minutes. When a polled attribute crosses a failure threshold, TrueNAS generates an alert.
+- **Alert logic** filters incoming SMART and ZFS data to suppress known-benign attribute fluctuations, reducing false-positive alerts by approximately 50% compared to prior releases.
+
+Drive health status is visible on the [**Disk Health**]({{< ref "/SCALE/Storage/StorageDashboardScreens.md#disk-health-widget" >}}) card on the **Storage** dashboard. Active alerts appear in the **Alerts** panel with details on the affected disk and recommended next steps.
+
+Community Edition users can supplement automated monitoring with manual SMART tests run via cron jobs or the `smartctl` command-line tool. Third-party tools such as [Scrutiny](https://apps.truenas.com/catalog/scrutiny_stable/) are also available from the TrueNAS Apps catalog.
+
+See [Drive Health Management]({{< ref "/SCALE/Storage/Disks/DriveHealthManagement.md" >}}) for full details.
+
+  </div>
+
   <div data-tab-id="truenas-apps" data-tab-label="TrueNAS Apps">
 
 ### TrueNAS Apps
