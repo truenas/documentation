@@ -30,8 +30,8 @@ function initializeChangelogTableForTabs(majorVersion, baseUrl) {
                         // Versioned branch: /docs/scale/25.10/data
                         baseUrl = '/' + pathSegments.slice(0, scaleIndex + 2).join('/') + '/data';
                     } else {
-                        // Master branch: /docs/scale/data
-                        baseUrl = '/' + pathSegments.slice(0, scaleIndex + 1).join('/') + '/data';
+                        // Master branch: /docs/data
+                        baseUrl = '/' + pathSegments.slice(0, scaleIndex).join('/') + '/data';
                     }
                 } else {
                     // Fallback: /docs/data
