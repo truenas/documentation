@@ -73,7 +73,7 @@ Click an alert to expand it and view details, including the affected disk, the a
 {{< truetable >}}
 | Type    | Description |
 |-----------------|-------------|
-| **SMART Stat**  | A drive-reported diagnostic value crossed a failure threshold. The alert identifies the specific attribute (for example, Reallocated Sector Count) and the current value. |
+| **SMART Stat**  | A drive-reported diagnostic value crossed a failure threshold. The alert identifies the specific attribute (for example, Reported Uncorrectable Error) and the current value. |
 | **ZFS Event**   | ZFS detected an I/O error or checksum failure during a read or write operation. These alerts indicate the disk might have failed or is failing. |
 | **Temperature** | Drive temperature exceeded the rated maximum from the manufacturer specification. |
 {{< /truetable >}}
