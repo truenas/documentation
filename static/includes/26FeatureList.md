@@ -34,7 +34,7 @@ TrueNAS 26 extends container support to Enterprise systems with High Availabilit
 HA container failover requires a static IP configuration.
 
 Users migrating from TrueNAS CORE who previously relied on custom Jails can use containers as a supported migration path.
-See [Containers]({{< ref "/containers/containers.md" >}}) for configuration details.
+See [Containers]({{< ref "/Containers/Containers.md" >}}) for configuration details.
 
 ### SMB Stateful Failover
 
