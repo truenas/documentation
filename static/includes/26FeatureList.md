@@ -10,7 +10,7 @@ TrueNAS 26 receives feature packs, security updates, and hotfixes throughout the
 
 ### WebShare with TrueSearch
 
-WebShare provides browser-based file access without requiring SMB or NFS client mounting on user systems.
+[**WebShare**]({{< relref "/SCALE/Shares/WebShare" >}}) provides browser-based file access without requiring SMB or NFS client mounting on user systems.
 Users can browse, upload, download, and manage files directly from a web browser, with support for folder creation, filtering, snapshot timeline viewing, shareable links, and hidden file toggling.
 WebShare is configured through [TrueNAS Connect](https://connect.truenas.com/) and requires a dataset and at least one local user account with WebShare access enabled.
 
@@ -27,13 +27,14 @@ IP blocking, threat scoring, and snapshot-based recovery tools are available to 
 
 ### Containers
 
-LXC containers, introduced as an experimental feature in TrueNAS 25.04, are fully supported in TrueNAS 26.
+[**Containers**]({{< relref "/SCALE/Containers/Containers.md" >}}), introduced as an experimental feature in TrueNAS 25.04, are fully supported in TrueNAS 26.
 Containers provide lightweight, isolated Linux environments that share the host kernel while maintaining their own file system, processes, and network configuration, using fewer system resources than virtual machines while starting quickly and scaling efficiently.
 
 TrueNAS 26 extends container support to Enterprise systems with High Availability (HA) configurations, enabling container failover between controllers.
 HA container failover requires a static IP configuration.
 
 Users migrating from TrueNAS CORE who previously relied on custom Jails can use containers as a supported migration path.
+See [Containers]({{< ref "/SCALE/Containers/Containers.md" >}}) for configuration details.
 
 ### SMB Stateful Failover
 
