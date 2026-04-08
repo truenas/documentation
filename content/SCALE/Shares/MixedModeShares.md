@@ -32,6 +32,9 @@ To ensure security and data integrity when using multi-protocol sharing, it is i
 To maximize security on the NFS side of the multi-protocol share, we recommend using NFSv4 and [Active Directory](#joining-active-directory)(AD) for Kerberos authentication.
 It is also important that NFS clients preserve extended attributes when copying files, or SMB metadata could be discarded in the copy.
 
+TrueNAS enables SMB3 unix extensions for multiprotocol shares, allowing Linux clients with SMB3 POSIX support to use filesystem primitives beyond standard SMB semantics.
+Windows clients without unix extension support are unaffected.
+
 Multi-protocol shares are not compatible with APPL extensions such as Time Machine that rely on SMB3/3 lease support, which is no longer available in multi-protocol shares.
 Choosing to configure a multi-protocol share disables options to enable AAPL extensions globally.
 

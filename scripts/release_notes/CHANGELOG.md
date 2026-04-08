@@ -5,6 +5,25 @@ All notable changes to the TrueNAS Release Notes Automation project will be docu
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-03-05
+
+### Added
+
+- `release_notes.py` — Unified workflow wrapper with `prep` and `apply` subcommands
+  - `prep`: processes CSV and generates Claude prompt in one command
+  - `apply`: dry-run preview, confirmation, and VersionNotes.md update in one command
+  - Auto-resolves CSV path from version (`public/data/{version}-changelog.csv`)
+  - All intermediate paths derived from version — no repeated arguments
+
+### Changed
+
+- `QUICKSTART.md` — Rewritten around two-command workflow
+- `README.md` — Updated usage section; fixed output path discrepancy; added placeholder and CSV naming conventions
+
+### Deprecated
+
+- `example_workflow.sh` — Superseded by `release_notes.py`; retained for reference
+
 ## [1.0.0] - 2026-02-09
 
 ### Added
@@ -154,6 +173,7 @@ No known security vulnerabilities. The scripts:
 
 ## Version History
 
+- **1.1.0** (2026-03-05) - Unified wrapper script; simplified two-command workflow
 - **1.0.0** (2026-02-09) - Initial release with core automation features
 
 ## Maintenance Notes
@@ -175,4 +195,4 @@ When making changes:
 ---
 
 **Maintained by:** TrueNAS Documentation Team
-**Last Updated:** 2026-02-09
+**Last Updated:** 2026-03-05
