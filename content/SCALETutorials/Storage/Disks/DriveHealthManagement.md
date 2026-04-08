@@ -1,14 +1,13 @@
 ---
 title: "Drive Health Management"
 description: "Provides information and considerations for drive health."
-weight: 60
+weight: 50
 tags:
 - disks
 keywords:
 - nas storage device
 - enterprise data storage solutions
 - nas data storage
-doctype: tutorial
 ---
 
 Drive Health Management (DHM) in TrueNAS monitors the condition of installed HDD and SSD drives (SAS, SATA, and NVMe) and alerts you when action is required. TrueNAS manages drive health with three layers:
