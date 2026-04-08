@@ -4,13 +4,13 @@ TrueNAS Release Notes — unified workflow wrapper.
 
 Usage:
   # Phase 1: process CSV and generate Claude prompt
-  python release_notes.py prep --version 25.10.2.2
+  python release_notes.py prep --version 25.10.3
 
   # Phase 2: apply notable-changes.md to VersionNotes.md
-  python release_notes.py apply --version 25.10.2.2
+  python release_notes.py apply --version 25.10.3
 
   # Override default CSV path
-  python release_notes.py prep --version 25.10.2.2 --csv /path/to/file.csv
+  python release_notes.py prep --version 25.10.3 --csv /path/to/file.csv
 """
 
 import argparse
@@ -25,7 +25,7 @@ def version_to_slug(version: str) -> str:
     """Convert version string to underscore-separated slug.
 
     Examples:
-        25.10.2.2 -> 25_10_2_2
+        25.10.3 -> 25_10_2_2
         25.10.3   -> 25_10_3
     """
     return version.replace(".", "_")
@@ -57,7 +57,7 @@ def main():
         "prep",
         help="Process Jira CSV and generate Claude prompt (Phase 1)",
     )
-    prep_parser.add_argument("--version", required=True, help="Release version, e.g. 25.10.2.2")
+    prep_parser.add_argument("--version", required=True, help="Release version, e.g. 25.10.3")
     prep_parser.add_argument("--csv", type=Path, help="Path to Jira CSV export (optional override)")
     prep_parser.add_argument("--github-token", type=str, default=None,
                              help="GitHub personal access token for PR lookup (or set GITHUB_TOKEN env var)")
@@ -67,7 +67,7 @@ def main():
         "apply",
         help="Apply notable-changes.md to VersionNotes.md (Phase 2)",
     )
-    apply_parser.add_argument("--version", required=True, help="Release version, e.g. 25.10.2.2")
+    apply_parser.add_argument("--version", required=True, help="Release version, e.g. 25.10.3")
 
     args = parser.parse_args()
 
