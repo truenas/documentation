@@ -8,7 +8,7 @@ Select **AWS SNS** from the **Type** dropdown list to display AWS SNS authentica
 
 ![AddAlertServiceScreen](/images/SCALE/SystemSettings/AddAlertServiceScreen.png "Add Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
@@ -22,11 +22,11 @@ Select **AWS SNS** from the **Type** dropdown list to display AWS SNS authentica
 
 ### Email
 {{< expand "Click here for more information" "v" >}}
-Select **Email** from the **Type** dropdown list to display email authentication settings.
+Select **E-Mail** from the **Type** dropdown list to display email authentication settings.
 
 ![AddAlertServiceEmailScreen](/images/SCALE/SystemSettings/AddAlertServiceEmailScreen.png "Add Email Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
@@ -41,7 +41,7 @@ Select **InfluxDB** from the **Type** dropdown list to display InfluxDB authenti
 
 ![AddAlertServiceInfluxDBScreen](/images/SCALE/SystemSettings/AddAlertServiceInfluxDBScreen.png "Add InfluxDB Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
@@ -60,7 +60,7 @@ Select **Mattermost** from the **Type** dropdown list to display Mattermost auth
 
 ![AddAlertServiceMattermostScreen](/images/SCALE/SystemSettings/AddAlertServiceMattermostScreen.png "Add Mattermost Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
@@ -78,7 +78,7 @@ Select **OpsGenie** from the **Type** dropdown list to display OpsGenie authenti
 
 ![AddAlertServiceOpsGenieScreen](/images/SCALE/SystemSettings/AddAlertServiceOpsGenieScreen.png "Add OpsGenie Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
@@ -94,7 +94,7 @@ Select **PagerDuty** from the **Type** dropdown list to display PagerDuty authen
 
 ![AddAlertServicePagerDutyScreen](/images/SCALE/SystemSettings/AddAlertServicePagerDutyScreen.png "Add PagerDuty Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
@@ -110,7 +110,7 @@ Select **Slack** from the **Type** dropdown list to display Slack authentication
 
 ![AddAlertServiceSlackScreen](/images/SCALE/SystemSettings/AddAlertServiceSlackScreen.png "Add Slack Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
@@ -125,7 +125,7 @@ Select **SNMP Trap** from the **Type** dropdown list to display SNMP trap authen
 
 ![AddAlertServiceSNMPTrapScreen](/images/SCALE/SystemSettings/AddAlertServiceSNMPTrapScreen.png "Add SNMP Trap Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
@@ -143,7 +143,7 @@ Select **Telegram** from the **Type** dropdown list to display Telegram authenti
 
 ![AddAlertServiceTelegramScreen](/images/SCALE/SystemSettings/AddAlertServiceTelegramScreen.png "Add Telegram Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
@@ -153,18 +153,18 @@ Select **Telegram** from the **Type** dropdown list to display Telegram authenti
 {{< /truetable >}}
 {{< /expand >}}
 
-### VictorOPS
+### Splunk On-Call
 {{< expand "Click here for more information" "v" >}}
-Select **VictorOps** from the **Type** dropdown list to display VictorOps authentication settings.  
+Select **Splunk On-Call** from the **Type** dropdown list to display Splunk On-Call authentication settings.
 
-![AddAlertServiceVictorOpsScreen](/images/SCALE/SystemSettings/AddAlertServiceVictorOpsScreen.png "Add VictorOps Alert Service")
+![AddAlertServiceSplunkOnCallScreen](/images/SCALE/SystemSettings/AddAlertServiceSplunkOnCallScreen.png "Add Splunk On-Call Alert Service")
 
-**Authentication Settings**
+**Settings**
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **API Key** | Enter or paste the [VictorOps API key](https://help.victorops.com/knowledge-base/api/). |
-| **Routing Key** | Enter or past the [VictorOps routing key](https://portal.victorops.com/public/api-docs.html). |
+| **API Key** | Enter or paste the [Splunk On-Call API key](https://help.splunk.com/en/splunk-observability-cloud/splunk-on-call/introduction-to-splunk-on-call/splunk-on-call-api). |
+| **Routing Key** | Enter or past the [Splunk On-Call routing key](https://help.splunk.com/en/splunk-cloud-platform/alert-and-respond/splunk-on-call/alerts/routing-keys). |
 {{< /truetable >}}
 {{< /expand >}}

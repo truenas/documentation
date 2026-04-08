@@ -1,4 +1,27 @@
 {
+  "26": {
+    "label": "26",
+    "versions": [
+      { "value": "all", "label": "26 (All)", "filename": "26-changelog.csv" },
+      { "value": "26-BETA.1", "label": "26-BETA.1", "filename": "26.0.0-beta.1-changelog.csv" }
+    ],
+    "defaultVersion": "all"
+  },
+  "25.10": {
+    "label": "25.10 (Goldeye)",
+    "versions": [
+      { "value": "all", "label": "25.10 (All)", "filename": "25.10-changelog.csv" },
+      { "value": "25.10.2.2", "label": "25.10.2.2", "filename": "25.10.2.2-changelog.csv" },
+      { "value": "25.10.2.1", "label": "25.10.2.1", "filename": "25.10.2.1-changelog.csv" },
+      { "value": "25.10.2", "label": "25.10.2", "filename": "25.10.2-changelog.csv" },
+      { "value": "25.10.1", "label": "25.10.1", "filename": "25.10.1-changelog.csv" },
+      { "value": "25.10.0.1", "label": "25.10.0.1", "filename": "25.10.0.1-changelog.csv" },
+      { "value": "25.10.0", "label": "25.10.0", "filename": "25.10.0-changelog.csv" },
+      { "value": "25.10-RC.1", "label": "25.10-RC.1", "filename": "25.10-rc.1-changelog.csv" },
+      { "value": "25.10-BETA.1", "label": "25.10-BETA.1", "filename": "25.10-beta.1-changelog.csv" }  
+    ],
+    "defaultVersion": "all"
+  },
   "25.04": {
     "label": "25.04 (Fangtooth)",
     "versions": [
@@ -7,15 +30,6 @@
       { "value": "25.04.0", "label": "25.04.0", "filename": "scale-25.04.0-changelog.csv" },
       { "value": "25.04-RC.1", "label": "25.04-RC.1", "filename": "scale-25.04-RC.1-changelog.csv" },
       { "value": "25.04-BETA.1", "label": "25.04-BETA.1", "filename": "scale-25.04-BETA.1-changelog.csv" }
-    ],
-    "defaultVersion": "all"
-  },
-  "25.10": {
-    "label": "25.10 (Goldeye)",
-    "versions": [
-      { "value": "all", "label": "25.10 (All)", "filename": "25.10-changelog.csv" },
-      { "value": "25.10-BETA.1", "label": "25.10-BETA.1", "filename": "25.10-beta.1-changelog.csv" },
-      { "value": "25.10-RC.1", "label": "25.10-RC.1", "filename": "25.10-rc.1-changelog.csv" }
     ],
     "defaultVersion": "all"
   }

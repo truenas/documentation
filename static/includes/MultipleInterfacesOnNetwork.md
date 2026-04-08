@@ -1,7 +1,7 @@
 &NewLine;
 
 {{< hint type="important" title="Configuring Multiple Interfaces" >}}
-Multiple interfaces connected to a single TrueNAS system cannot be members of the same subnet but you can combine multiple interfaces with a link aggregation (LAGG) or network bridge.
+Multiple interfaces connected to a single TrueNAS system cannot be members of the same subnet but you can combine multiple interfaces with a link aggregation (bond) or network bridge.
 Alternatively, you can assign multiple static IP addresses to a single interface by configuring aliases.
 
 {{< expand "Multiple NICs on One Subnet" "v" >}}
@@ -10,8 +10,8 @@ However, ethernet network topology allows only one interface to communicate at a
 Additionally, both interfaces must handle broadcast messages since they are listening on the same network.
 This configuration adds complexity and significantly reduces network throughput.
 
-If you require multiple NICs on a single network for performance optimization, use a link aggregation (LAGG) configured with Link Aggregation Control Protocol (LACP).
-A single LAGG interface with multiple NICs shows as a single connection to the network.
+If you require multiple NICs on a single network for performance optimization, use a link aggregation configured with Link Aggregation Control Protocol (LACP).
+A single link aggregation (bond) interface with multiple NICs shows as a single connection to the network.
 
 While LACP is beneficial for larger deployments with many active clients, it might not be practical for smaller setups.
 LACP provides additional bandwidth or redundancy for critical networking situations, but it is limited because it does not load balance packets.

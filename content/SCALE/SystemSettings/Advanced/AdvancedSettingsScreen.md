@@ -1,6 +1,6 @@
 ---
 title: "Advanced Settings Screen"
-description: "Provides information on the System Settings > Advanced screen, widgets, and configuration screen settings."
+description: "Provides information on the System Settings > Advanced screen, cards, and configuration screen settings."
 weight: 110
 aliases:
  - /scale/scaleuireference/systemsettings/advancedsettingsscreen/
@@ -461,6 +461,26 @@ Isolated GPU devices are reserved for use by configured applications or a VM.
 To allocate an isolated GPU device, select it while creating or editing the VM configuration.
 When allocated to a VM, the isolated GPU connects to the VM as if it were physically installed in that VM, and it becomes unavailable for any other allocations.
 
+## NVIDIA Drivers Card
+
+The **NVIDIA Drivers** card shows the current NVIDIA driver installation status.
+NVIDIA GPU support is required before containers or VMs can use NVIDIA GPUs for graphics acceleration or computation.
+
+{{< trueimage src="/images/SCALE/SystemSettings/NVIDIADriversWidget.png" alt="NVIDIA Drivers Card" id="NVIDIA Drivers Card" >}}
+
+**Configure** opens the **NVIDIA Drivers** configuration screen.
+
+{{< trueimage src="/images/SCALE/SystemSettings/NVIDIADriversConfigScreen.png" alt="NVIDIA Drivers Configuration Screen" id="NVIDIA Drivers Configuration Screen" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Install NVIDIA Drivers** | Allows installing NVIDIA GPU drivers on the system. When disabled, allows removing installed drivers. Requires the system to use the production kernel — if **Enable Debug Kernel** is selected in the [Kernel Card](#kernel-card), driver installation fails. Installing requires you to disable the debug kernel before installing NVIDIA drivers. |
+{{< /truetable >}}
+
+After installation completes, NVIDIA GPU devices become available for assignment to containers and VMs.
+Containers using NVIDIA GPUs cannot start after driver removal.
+
 ## Global Two Factor Authentication Card
 
 The **Global Two Factor Authentication** card shows the status of global two-factor authentication, the tolerance window, and the status of two-factor authentication for SSH sessions. It provides access to the configuration screen that allows you to set up two-factor authentication (2FA) for your system.
@@ -497,8 +517,9 @@ The card displays the following information:
 
 {{< enterprise >}}
 The **System Security** card allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, general-purpose OS STIG compliance, and other administrator account rules.
-Changing FIPS or STIG settings requires a system restart to apply the setting changes.
+{{< /enterprise >}}
 
+Changing FIPS or STIG settings requires a system restart to apply the setting changes.
 High Availability (HA) systems restart the standby controller and then show a prompt to failover and restart the primary controller.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedSecurityWidget.png" alt="System Security Card" id="System Security Card" >}}
@@ -522,14 +543,13 @@ Requires two-factor authentication for an admin user with full permissions befor
 | **Password History Length** | Define how many previously used passwords to remember. Prevents administrators from reusing passwords when updating credentials. Requires an integer between **1** and **10**.
 {{< /truetable >}}
 
-{{< /enterprise >}}
-
 ## Failover Card
 
 {{< enterprise >}}
 
 The **Failover** card shows only on Enterprise-licensed HA systems.
 It shows the status of failover, the default controller, and the network timeout before TrueNAS initiates failover.
+{{< /enterprise >}}
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSettingsFailoverWidget.png" alt="System Failover Card" id="System Failover Card" >}}
 
@@ -563,4 +583,3 @@ The **Failover** screen shows settings used on TrueNAS Enterprise (HA) systems t
 | **Confirm** | Select to confirm you want to perform the sync-to-peer operation. |
 | **Proceed** | Begins the sync operation. |
 {{< /truetable >}}
-{{< /enterprise >}}
