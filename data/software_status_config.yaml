@@ -4,15 +4,15 @@ table_data:
       version: Not Available
       link: null
     community:
-      version: 26 Nightly
-      link: https://iso.sys.truenas.net/TrueNAS-26-Nightlies/
+      version: 26.0.0-BETA.1
+      link: https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-BETA.1
   early_adopter:
     enterprise:
       version: Not Available
       link: null
     community:
-      version: 25.10.2.1
-      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.2.1
+      version: 26.0.0-BETA.1
+      link: https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-BETA.1
   general:
     enterprise:
       version: 25.10.1

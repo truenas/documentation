@@ -168,3 +168,4 @@ advanced:
   rate_limit:
     enabled: true
     requests_per_second: 2  # To avoid overwhelming Jira
+    

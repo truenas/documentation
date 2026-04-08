@@ -1,12 +1,14 @@
 ---
 title: "M-Series"
-weight: 20
+weight: 30
+hide_title: true
 geekdocFlatSection: true
 aliases:
  - /hardware/mseries/mseriesbsg/
  - /hardware/mseries/mserieshanetworking
  - /hardware/mseries/mseriesoobm
  - /hardware/mseries/mseriessov
+ - /mseries/
 description: "Fastest ZFS NAS storage HA platform. Over 20 GB/s, M IOPS, and up to 20 PB capacity. Suited for Enterprise deployments, large projects, virtualization, file share, and data backup."
 keywords:
  - nvme
@@ -18,20 +20,21 @@ keywords:
 ---
 <br>
 
-{{< prodintro banner="MSeries/MSeriesFront.png" bannerhover="M-Series System" bannerlink="https://www.truenas.com/m-series/"
-icon1="IconTrueNAS.png" cell1title="The Industry’s Fastest ZFS Storage is now Upgradeable" cell1text="Best for: Larger Projects / Enterprise, Virtualization, File Share, Backup."
-icon2="IconSpeed.png" cell2title="Over 20 GB/s & 1 Million IOPS" cell2text="10,000+ VMs, and thousands of SMB/NFS Clients. Up to 64 Cores, 1.5 TB RAM, 4 NVDIMMs."
-icon3="IconHA.png" cell3title="Maximum Storage Density with HA" cell3text="Up to 20 PB capacity, 8 PB All-Flash Capacity in a Rack. Fusion pools (with NVMe) increase performance."
-icon4="IconGraph.png" cell4title="Upgradeable with Common Chassis" cell4text="In-service Upgrades to M40, M50 and M60." >}}
-
-Visit the [M Series product page](https://www.truenas.com/m-series/) for more details.
+{{< 
+prodintro title="M-Series"
+subtitle="Experience True Scalability"
+tagline="All-Flash or Hybrid Capacity with legendary resilience."
+productlink="https://www.truenas.com/m-series/"
+linklabel="Product Page"
+imgurl="https://www.truenas.com/wp-content/uploads/2026/01/M50.png"
+imgalt="TrueNAS M-Series" >}}
 
 ## Resources
 
 <div class="docs-sections">
 
-{{< imagecard-lang image="/images/Hardware/MSeries/MSeriesPUM.png" title="Product User Manual" link="https://www.truenas.com/docs/files/MSeriesPUM/MSeriesPUM.pdf"
-descr="Comprehensive User Manual for TrueNAS M-Series systems." >}}
+{{< imagecard-lang image="/images/Hardware/MSeries/MSeriesPUM.png" title="M-Series User Manual" link="https://www.truenas.com/docs/files/MSeriesPUM/MSeriesPUM.pdf"
+descr="Comprehensive User Manual for TrueNAS M-Series systems." pumid="mseries" >}}
 
 {{< imagecard image="/images/Hardware/NetworkPortID.png" title="Network Port IDs" link="https://www.truenas.com/docs/files/MSeriesNetworkPortID.pdf"
 descr="Identifications list of TrueNAS M-Series systems network ports." >}}

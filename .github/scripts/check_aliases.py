@@ -30,10 +30,16 @@ for file in content_files:
             lines = f.readlines()
 
         if lines[0].strip() == "---":
-            end_index = lines[1:].index("---\n") + 1
+            try:
+                end_index = lines[1:].index("---\n") + 1
+            except ValueError:
+                print(f"⚠️ Skipping {file}: no closing '---' found in front matter")
+                continue
             front_matter = "".join(lines[1:end_index])
             data = yaml.safe_load(front_matter)
 
+            if data is None:
+                continue
             aliases = data.get("aliases", [])
             for alias in aliases:
                 if version_pattern.search(alias) and not any(pattern.match(alias) for pattern in exception_patterns):
