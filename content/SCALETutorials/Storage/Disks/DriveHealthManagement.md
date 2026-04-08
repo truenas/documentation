@@ -55,7 +55,7 @@ TrueNAS evaluates incoming SMART data and ZFS events against alert rules before 
 This filtering suppresses known-benign attribute fluctuations and only notifies users about conditions that require attention, reducing false-positive alerts by approximately 50% compared to prior releases.
 
 **Alert Levels** can be adjusted to control notification severity.
-Higher-priority alerts appear in the **[Alerts]({{< ref "/SCALE/TopToolbar/Alerts/_index.md" >}})** panel and can trigger configured [alert services]({{< ref "/SCALE/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) (email, SNMP, etc.).
+Higher-priority alerts appear in the **[Alerts]({{< ref "/SCALEUIReference/TopToolbar/Alerts/_index.md" >}})** panel and can trigger configured [alert services]({{< ref "/SCALEUIReference/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) (email, SNMP, etc.).
 
 TrueNAS configures automated temperature alerts based on the specified maximum operating temperature of each drive.
 If a drive reports a temperature that exceeds its rated maximum, TrueNAS generates an alert.
@@ -64,7 +64,7 @@ If a drive reports a temperature that exceeds its rated maximum, TrueNAS generat
 
 To view drive health status, go to the **Storage** dashboard and view the [Disk Health card](https://www.truenas.com/docs/scale/storage/storagedashboardscreens/#storage-health-widget).
 
-Active alerts appear in the **[Alerts]({{< ref "/SCALE/TopToolbar/Alerts/_index.md" >}})** panel at the top right of the UI.
+Active alerts appear in the **[Alerts]({{< ref "/SCALEUIReference/TopToolbar/Alerts/_index.md" >}})** panel at the top right of the UI.
 Click an alert to expand it and view details, including the affected disk, the attribute or event that triggered the alert, and recommended next steps.
 
 ### Alert Types
@@ -87,7 +87,7 @@ The manual SMART test options described in this section are primarily intended f
 
 ### Cron Jobs
 
-You can schedule manual SMART tests using **[Cron Jobs]({{< ref "/SCALE/SystemSettings/Advanced/ManageCronJobs.md" >}})** in the TrueNAS UI.
+You can schedule manual SMART tests using **[Cron Jobs]({{< ref "/SCALETutorials/SystemSettings/Advanced/ManageCronJobsSCALE.md" >}})** in the TrueNAS UI.
 
 TrueNAS logs cron job output. Review the system log or configure the cron job to send output to a file for later review.
 
@@ -97,7 +97,7 @@ The manual SHORT test performs a quick, surface-level diagnostic check. It typic
 
 The manual LONG test performs a full drive surface scan for periodic, deep validation. It provides a thorough validation of the entire drive surface, but has a significant negative performance impact during the test. LONG tests can also produce false-positive failure results on healthy drives.
 
-We recommend scheduling SMART tests so that they do not overlap with other data protection tasks like [snapshot creation or removal]({{< ref "/SCALE/Datasets/Snapshots/_index.md" >}}), or [pool scrubs](https://www.truenas.com/docs/scale/storage/pools/managepools/index.html#running-a-pool-data-integrity-check-scrub).
+We recommend scheduling SMART tests so that they do not overlap with other data protection tasks like [snapshot creation or removal]({{< ref "/SCALETutorials/Datasets/ManageSnapshotsSCALE.md" >}}), or [pool scrubs](https://www.truenas.com/docs/scale/25.10/scaletutorials/storage/managepoolsscale/#running-a-pool-data-integrity-check-scrub).
 
 To run a manual test, go to **System > Shell** and run:
 
