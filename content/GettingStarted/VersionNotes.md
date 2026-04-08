@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.2.2"
+    anchor: "25.10.3"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,11 +34,11 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="25.10.2.2" data-tab-label="25.10.2.2">
+  <div data-tab-id="25.10.3" data-tab-label="25.10.3">
 
-March 17, 2026
+April 14, 2026
 
-The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
+The TrueNAS team is pleased to release TrueNAS 25.10.3!
 
 **Notable changes:**
 
@@ -63,7 +63,12 @@ The TrueNAS team is pleased to release TrueNAS 25.10.2.2!
 * Fixes NTB transport memory allocation failures during link state changes ([NAS-139627](https://ixsystems.atlassian.net/browse/NAS-139627)).
   Non-Transparent Bridge (NTB) transport memory windows were allocated and freed on every link up/down event. Allocating several megabytes of physically contiguous memory on a running system could fail, causing instability. Memory windows are now pre-allocated at boot, avoiding repeated allocation attempts during link changes. This primarily affects TrueNAS Enterprise High Availability (HA) systems.
 
-<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14130" target="_blank">TrueNAS 25.10.2.2 (Goldeye) Changelog</a> in Jira.
+* Fixes stale NFS file handles for ZFS snapshots that could not be recovered without a client reboot ([NAS-140474](https://ixsystems.atlassian.net/browse/NAS-140474)).
+  When mountd failed to resolve a snapshot's filesystem ID — such as after failover, snapshot expiration, or an automount failure — it permanently cached a negative response, causing all subsequent file handle lookups to return ESTALE errors. Client-side remounts did not clear the cached state. The fix replaces the permanent negative cache with a 120-second retry window, allowing recovery once the snapshot becomes accessible again.
+
+* Documentation improvement: Adds [Drive Health Management](#disk-health-management) documentation covering how TrueNAS 25.10 monitors drive health through ZFS real-time failure detection, automated 90-minute SMART polling, and improved alert filtering. Also covers manual SMART test scheduling options available to TrueNAS Community Edition users. See the [Drive Health Management tutorial]({{< ref "/SCALETutorials/Storage/Disks/DriveHealthManagement.md" >}}) for full details.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14130" target="_blank">TrueNAS 25.10.3 (Goldeye) Changelog</a> in Jira.
 
   </div>
   <div data-tab-id="25.10.2" data-tab-label="25.10.2">
@@ -234,12 +239,9 @@ For information on how you can contribute, visit https://www.truenas.com/docs/co
     Users can continue to manage certificates by creating Certificate Signing Requests (CSRs) to be signed by external certificate authorities or and importing certificates that have been signed by external CAs or directory services.
     These alternatives provide the certificate management capabilities most users need while ensuring proper certificate validation through established certificate authorities.
 * **SMART Monitoring**:
-  * 25.10 removes the built-in SMART test scheduling and monitoring interface to improve user flexibility for disk monitoring.
-    The smartmontools binaries remain installed and continue to be used internally by TrueNAS, ensuring that existing third-party scripts and monitoring tools continue to work unchanged.
-    Users seeking advanced SMART monitoring can install the "Scrutiny" app from the TrueNAS catalog, which offers superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
-    TrueNAS maintains monitoring of critical disk health indicators and automatically migrates existing scheduled SMART tests to cron tasks during upgrade.
+  * 25.10 removes the built-in SMART test scheduling and monitoring interface. TrueNAS continues automated drive health monitoring through middleware-integrated SMART polling and ZFS failure detection. Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and smartmontools binaries remain installed.
 
-    See [Disk Management](#disk-management) for more information on disk health monitoring in 25.10 and beyond.
+    See [Drive Health Management](#disk-health-management) for more information on disk health monitoring in 25.10 and beyond.
 * **SMB Shares**:
   * In 25.10, SMB share configuration only displays options relevant to each purpose-based preset.
     Existing shares that previously used the **No Preset** option are automatically migrated to the **Legacy Share** preset during upgrade.
@@ -434,7 +436,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
   * Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
     Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the Scrutiny app for advanced SMART monitoring.
   * SMART tests functions no longer show on the **Data Protections Tasks**, **Storage Dashboard**, or individual disk screens.
-   See [Disk Management](#disk-management) for more information on the SMART monitoring transition.
+   See [Drive Health Management](#disk-health-management) for more information on the SMART monitoring transition.
 * Improves drive temperature monitoring efficiency by extending the `drivetemp` kernel module to include SCSI/SAS disk temperatures.
 * Fixes an issue affecting drive temperature reporting on the dashboard ([NAS-135572](https://ixsystems.atlassian.net/browse/NAS-135572)).
 * Fixes a bug to reenable available update notifications for custom apps ([NAS-135124](https://ixsystems.atlassian.net/browse/NAS-135124)).
@@ -538,7 +540,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.2.2');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.3');
 });
 </script>
 
@@ -576,11 +578,8 @@ initializeChangelogTableForTabs('25.10');
   Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
 
-* TrueNAS 25.10 removes the built-in SMART test scheduling and monitoring interface to improve user flexibility for disk monitoring.
-  The smartmontools binaries remain installed and continue to be used internally by TrueNAS, ensuring that existing third-party scripts and monitoring tools continue to work unchanged.
-  Users seeking advanced SMART monitoring can install the "Scrutiny" app from the TrueNAS catalog, which offers superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
-  TrueNAS maintains monitoring of critical disk health indicators and automatically migrates existing scheduled SMART tests to cron tasks during upgrade.
-  See [Disk Management](#disk-management) for more information on the SMART monitoring transition.
+* TrueNAS 25.10 removes the built-in SMART test scheduling and monitoring interface. TrueNAS continues automated drive health monitoring through middleware-integrated SMART polling and ZFS failure detection. Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and smartmontools binaries remain installed.
+  See [Drive Health Management](#disk-health-management) for more information on the SMART monitoring transition.
 
 * TrueNAS 25.10 removes the Certificate Authority (CA) functionality that allowed TrueNAS to create and sign certificates.
   Users can continue to manage certificates by creating Certificate Signing Requests (CSRs) to be signed by external certificate authorities or and importing certificates that have been signed by external CAs or directory services.
@@ -635,9 +634,9 @@ Virtual Machines are now "Enterprise ready" with support for TrueNAS Enterprise 
 
   </div>
 
-  <div data-tab-id="disk-management" data-tab-label="SMART &amp; Disk Management">
+  <div data-tab-id="disk-health-management" data-tab-label="Drive Health Management">
 
-### SMART Monitoring and Disk Management in 25.10 (and Beyond)
+### Drive Health Management in 25.10 (and Beyond)
 
 TrueNAS 25.10 changes how disk health monitoring works, transitioning from built-in SMART test scheduling to a flexible approach that better serves modern storage environments.
 
@@ -652,8 +651,8 @@ TrueNAS 25.10 changes how disk health monitoring works, transitioning from built
 ##### In TrueNAS 25.10 and later:
 
 * SMART test scheduling UI is removed
-* SMART monitoring is handled through dedicated applications or user-managed scripts
-* TrueNAS continues to automatically monitor critical disk health indicators
+* TrueNAS continues automated drive health monitoring through middleware-integrated SMART polling and ZFS failure detection
+* Manual SMART testing can be scheduled via cron jobs or third-party apps
 * The smartmontools binaries remain installed and functional
 * Drive temperature monitoring uses the enhanced `drivetemp` kernel module, extended to include SCSI/SAS disk temperatures
 
@@ -669,52 +668,19 @@ This transition addresses several limitations:
 
 4. Better Tools Available: Dedicated monitoring applications like Scrutiny provide superior disk health tracking with historical data storage, customizable alerts, and automatic drive detection.
 
-#### What TrueNAS Still Monitors Automatically
+#### How Drive Health Management Works in 25.10
 
-TrueNAS continues to run continuous background monitoring that periodically polls SMART attributes from all drives. The system automatically detects and alerts on critical disk health indicators:
+TrueNAS monitors the condition of installed HDD and SSD drives (SAS, SATA, and NVMe) through three integrated layers:
 
-* Uncorrected read, write, and verify errors
-* SMART self-test failures
-* Critical SMART attributes that indicate imminent drive failure
-* Drive temperatures using the enhanced `drivetemp` kernel module
+* **ZFS** detects sudden failures in real time during active read and write operations and marks affected vdevs or disks as faulted immediately.
+* **TrueNAS Middleware** polls SMART data from every drive every 90 minutes. When a polled attribute crosses a failure threshold, TrueNAS generates an alert.
+* **Alert logic** filters incoming SMART and ZFS data to suppress known-benign attribute fluctuations, reducing false-positive alerts by approximately 50% compared to prior releases.
 
-These automatic alerts ensure critical disk health issues are reported immediately without additional monitoring applications.
+Drive health status is visible on the **[Disk Health]({{< ref "/SCALEUIReference/Storage/_index.md#disk-health-widget" >}})** card on the **Storage** dashboard. Active alerts appear in the **Alerts** panel with details on the affected disk and recommended next steps.
 
-#### How to Monitor Disk Health in 25.10
+Community Edition users can supplement automated monitoring with manual SMART tests run via cron jobs or the `smartctl` command-line tool. Third-party tools such as [Scrutiny](https://apps.truenas.com/catalog/scrutiny/) are also available from the TrueNAS Apps catalog.
 
-TrueNAS 25.10 provides multiple options for monitoring disk health.
-
-##### Built-in Disk Health Widget
-
-The **[Disk Health]({{< ref "/SCALEUIReference/Storage/_index.md#disk-health-widget" >}})** widget on the **Storage Dashboard** provides quick access to temperature monitoring and disk performance metrics:
-
-* Displays disk temperature-related alerts and temperature ranges (highest, lowest, average)
-* **View Disks** opens the **Storage > [Disks]({{< ref "DisksScreen" >}})** screen
-* **View Disk Reports** opens the **[Reporting > Disk]({{< ref "/SCALEUIReference/ReportingScreensSCALE.md#disk-graphs" >}})** screen with historical disk I/O performance and temperature data
-
-##### Scrutiny App for Advanced Monitoring
-
-The **Scrutiny** app provides comprehensive disk health monitoring.
-It automatically detects all system drives and offers a clean web interface that displays SMART status, temperature, capacity, and power-on time at a glance.
-Scrutiny also tracks historical data and supports configurable alert thresholds to help identify potential drive issues early.
-
-{{< trueimage src="/images/SCALE/Apps/ScrutinyDiskHealthScreenshot.png" alt="Scrutiny Dashboard" id="Scrutiny Dashboard showing disk health monitoring" >}}
-
-Install Scrutiny from the TrueNAS Apps catalog. See the [Scrutiny app documentation](https://apps.truenas.com/catalog/scrutiny/) for installation and configuration details.
-
-##### Migrated SMART Test Cron Jobs
-
-During the 25.10 upgrade, TrueNAS automatically migrates existing scheduled SMART tests to cron tasks, preserving your test schedules and intervals.
-
-View and manage these migrated tests at **System > Advanced Settings > Cron Jobs**.
-
-{{< trueimage src="/images/SCALE/SystemSettings/CronJobsSmartTest.png" alt="Migrated SMART Test Cron Job" id="Migrated SMART Test Cron Job" >}}
-
-You can edit, disable, or delete these cron jobs as needed.
-
-##### Custom Monitoring Scripts
-
-The smartmontools binaries (`smartctl`, `smartd`) remain installed and continue to function normally. Existing scripts or third-party monitoring tools that invoke smartctl continue to work without modification.
+See the [Drive Health Management tutorial]({{< ref "/SCALETutorials/Storage/Disks/DriveHealthManagement.md" >}}) for full details.
 
   </div>
 

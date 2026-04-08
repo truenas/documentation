@@ -1,4 +1,4 @@
-## TrueNAS 25.10.2.2
+## TrueNAS 25.10.3
 
 This maintenance release resolves pool creation failures on systems with a USB boot drive, log VDEV removal errors, bond status alert check failures, and an NTB memory handling issue affecting High Availability configurations.
 
@@ -6,4 +6,4 @@ This maintenance release resolves pool creation failures on systems with a USB b
 
 **Pre-Update Actions:** None required.
 
-**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.2.2)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.3)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**

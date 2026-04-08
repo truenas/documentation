@@ -10,7 +10,7 @@
 major_version:
   "25.10":
     release_order: # list minor version releases in order, starting with the latest
-      - "25.10.2.2"
+      - "25.10.3"
       - "25.10.2.1"
       - "25.10.2"
       - "25.10.1"
@@ -24,7 +24,7 @@ major_version:
       - "docker_engine"
       - "nvidia_driver"
     release: # include each release with component versions and links
-      "25.10.2.2":
+      "25.10.3":
         components:
           linux_kernel:
             version: "6.12.33"
