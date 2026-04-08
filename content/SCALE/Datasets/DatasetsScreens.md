@@ -72,12 +72,13 @@ A dataset with an active task includes an activity spinner when that task is in 
 | System dataset | ![DatasetRolesSystemDatasetIcon](/images/SCALE/Datasets/DatasetRolesSystemDatasetIcon.png "Roles System Dataset Icon") | Indicates the parent (root) dataset designated as the system dataset. To change the system dataset, go to **System > Advanced Settings** and edit the **System Dataset Pool** on the **Storage** card. |
 | Share | ![DatasetRolesShareGenericIcon](/images/SCALE/Datasets/DatasetRolesShareGenericIcon.png "Roles Dataset Share Icon") | Indicates the dataset is used by a share or that child datasets of the parent are used by a share. |
 | SMB share | ![DatasetRolesSMBShareIcon](/images/SCALE/Datasets/DatasetRolesSMBShareIcon.png "Roles Dataset SMB Share Icon") | Indicates the dataset is used by an SMB share. |
+| NVMe-oF Share | ![DatasetRolesNVMeShareIcon](/images/SCALE/Datasets/DatasetRolesNVMEShareIcon.png "Roles Dataset NVME Share Icon") | Indicates the dataset or zvol is used by an NVMe-oF share. |
 | VM | ![DatasetRolesVMIcon](/images/SCALE/Datasets/DatasetRolesVMIcon.png "Roles Dataset VM Icon") | Indicates the dataset is used by a virtual machine (VM). |
 | Apps | ![DatasetRolesAppsIcon](/images/SCALE/Datasets/DatasetRolesAppsIcon.png "Roles Apps Dataset Icon") | Indicates this dataset is used by an application and stores configuration and container-related data. |
 {{< /truetable >}}
 {{< /expand >}}
 
-## Dataset Details Cards
+## Dataset Cards
 
 Each dataset has a set of information cards (cards) in the **Details for *datasetname*** area of the screen. 
 These cards and information is grouped by functional areas. 
@@ -330,7 +331,7 @@ The **Encryption** option (pre-selected), when selected, shows the key type encr
 |---------|-------------|
 | **Inherit (*non-encrypted*)** | Selected by default. When selected, it inherits the encryption setting of the parent dataset (encrypted/non-encrypted). Clearing the checkmark shows the **Encryption** option. |
 | **Encryption** | When selected, shows other encryption settings. The default encryption type is key. Clearing the **Encryption** checkmark hides the encryption settings. |
-{{< /truetable >}}
+{{< /truetable >}} {id="add_encryption-options"}
 {{< include file="/static/includes/EncryptionSettings.md" >}}
 {{< /expand >}}
 

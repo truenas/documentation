@@ -91,6 +91,7 @@ You are generating notable changes for TrueNAS release notes. Your responsibilit
    - Second sentence: Impact, previous behavior, new behavior (indented 2 spaces)
    - No gerunds (-ing words like "improving", "adding")
    - No semicolons
+   - No "may" (use "might" or "could" instead — "may" implies permission and confuses ESL readers)
    - Bold UI elements: **Button Name**, **Screen Name**
    - Code formatting: `field_name`, `/path/to/file`
 
@@ -209,6 +210,7 @@ Before finalizing notable changes, verify:
 - [ ] All included tickets have clear user impact
 - [ ] Action verbs are appropriate (Fixes, Improves, Adds, etc.)
 - [ ] No gerunds (-ing words) are used
+- [ ] No "may" is used (replace with "might" or "could")
 - [ ] UI elements are bolded
 - [ ] Code elements use backticks
 - [ ] Each entry has Jira link

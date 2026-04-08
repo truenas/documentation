@@ -10,9 +10,10 @@ tags:
 - rdma
 - tcp
 - NVME over Fabric
+- spdk
+- linux kernel
 doctype: reference
 ---
-
 
 
 The **NVMe-oF** screens provide access to screens, cards, settings, and dialogs to add, manage, or delete NVMe over Fabric subsystems (targets).
@@ -48,7 +49,7 @@ The **Delete Subsystem** dialog confirms you want to delete the subsystem before
 
 {{< trueimage src="/images/SCALE/Shares/DeleteSubsystemDialog.png" alt="Delete Subsystem Dialog" id="Delete Subsystem Dialog" >}}
 
-**Force** forces the delete operation if the subsystem has a port or host assicated with it.
+**Force** forces the delete operation if the subsystem has a port or host associated with it.
 
 **Cancel** closes the dialog without deleting the subsystem.
 
@@ -102,7 +103,7 @@ The NQN shows an edit <span class="material-icons">edit</span> icon that changes
 | Setting | Description |
 |---------|-------------|
 | **Name** | Shows the name given to the subsystem at creation. The edit <span class="material-icons">edit</span> icon opens an edit field. Names can consist of upper and lower case alphabetic, numeric, and special characters such as the dash (-), underscore (_), etc. |
-| **NQN** | The NVMe Qualified Name (NQN) that identifies the subsystem, includes the base NQN and name of the subsystem. The edit <span class="material-icons">edit</span> icon changes the NQN ID to a text-entry field. It accepts copy/paste of a new properly formatted NQN ID number. |
+| **NQN** | The NVMe Qualified Name (NQN) that identifies the subsystem, includes the base NQN and the name of the subsystem. The edit <span class="material-icons">edit</span> icon changes the NQN ID to a text-entry field. It accepts copy/paste of a new properly formatted NQN ID number. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -148,18 +149,30 @@ After adding a host, the card shows the NQN identification number for the client
 
 ## NVMe-oF Global Configuration Screen
 
-Set system-wide NVMe-oF settings.
+Sets system-wide NVMe-oF settings.
 **Config Service** on the **NVMe-oF Subsystem** card dropdown menu, **Global Configuration** on the **NVMe-oF** screen, and the <span class="material-icons">edit</span> edit icon on the **NVMe-oF** row on the **System > Services** screen open the **NVMe-oF Global Configuration** screen.
 
-{{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreen.png" alt="NVMe-oF Global Configuration Screen" id="NVMe-oF Global Configuration Scree" >}}
+{{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreen.png" alt="NVMe-oF Global Configuration Screen" id="NVMe-oF Global Configuration Screen" >}}
+
+{{< enterprise >}}
+Enterprise systems equipped with the right hardware and license show the **SPDK (userspace)** and **Linux Kernel** options that change the NVMe backend.
+These experimental implementation functions are geared towards experimentation with client compatibility.
+Try each option based on your use case, and if you have issues with certain clients, such as hypervisors that might require specific capabilities that come with the Linux Kernel or SPDK option.
+Stopping the service enables these options. After selecting, restart the service.
+
+{{< trueimage src="/images/SCALE/Shares/NVMeoFGlobalConfigurationScreenWithSPDK.png" alt="NVMe-oF Global Configuration with SPDK" id="NVMe-oF Global Configuration with SPDK" >}}
+
+{{< include file="/static/includes/NVMe-oFSPDKorLinuxKernel.md" >}}
+
+{{< /enterprise >}}
 
 {{< expand "Settings" "v" >}} {id="nvme_global_config"}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Base NQN** | Text-entry field that shows the TrueNAS NVMe NQN identification number and accepts manual or copy/paste entry of a NQN. It is used as the prefix of a subsystem NQN at creation if a subnqn is not supplied. Modifying this value does not change the subnqn of any existing subsystems. |
-| **Enable Asymmetric Namespace Access (ANA)** | When enabled, allows an Enterprise-licensed High Availability (HA) storage system to inform a host about the optimal controller path to access a namespace. It is equivalent to Asymmetric Logical Unit Access (ALUA) in iSCSI. ANA helps storage arrays communicate with hosts and inform the host which controller provides the best (lowest latency) path to specific namespaces, enabling intelligent multipathing and improving performance in NVMe-oF environments. |
-| **Enable Remote Direct Memory Access (RDMA)** | When enabled, allows configuring one or more ports after enabling and selecting RDMA as the transport. It requires an Enterprise license, and an RDMA-capable system and network equipment. Inactive on systems without an Enterprise license. If the system does not have the required hardware, it shows **Not enabled, because this system does not support RDMA**. |
+| **Base NQN** | Text-entry field that shows the TrueNAS NVMe NQN identification number and accepts manual or copy/paste entry of a NQN. It is used as the prefix of a subsystem NQN at creation if a subNQN is not supplied. Modifying this value does not change the subNQN of any existing subsystems. |
+| **Enable Asymmetric Namespace Access (ANA)** | When enabled, it allows an Enterprise-licensed High Availability (HA) storage system to inform a host about the optimal controller path to access a namespace. It is equivalent to Asymmetric Logical Unit Access (ALUA) in iSCSI. ANA helps storage arrays communicate with hosts and inform the host which controller provides the best (lowest latency) path to specific namespaces, enabling intelligent multipathing and improving performance in NVMe-oF environments. |
+| **Enable Remote Direct Memory Access (RDMA)** | When enabled, it allows configuring one or more ports after enabling and selecting RDMA as the transport. It requires an Enterprise license, an RDMA-capable system, and network equipment. Inactive on systems without an Enterprise license. If the system does not have the required hardware, it shows **Not enabled, because this system does not support RDMA**. |
 | **Generate Cross-port Referrals for Ports on This System** | When enabled, allows xport_referral. If ANA is active, referrals are always generated between the peer ports on each TrueNAS controller node. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -202,7 +215,7 @@ When not selected, it shows the **Allow Hosts** option and **Add** button that o
 **Save** saves changes, creates the subsystem, closes the wizard screen, and returns to the previous screen.
 
 ## Add Namespace Screens
-<!-- BETA.1 removes the ability to edit a namespace. RC.1 might add it back or it could get added back later. No details on this. add an enable checkbox to allow disabling the namespace, update screenshots and add descriptions to these screens/tabs -->
+
 The **Add Namespace** ** screens show settings and options to create namespaces.
 Use to select or create the storage device (zvol or file) for the NVMe-oF share.
 
@@ -282,7 +295,7 @@ Use to create a new zvol for the namespace to use for storage.
 | **Force size** | When enabled, the system restricts creating a zvol that brings the pool to over 80% capacity. Set to force creation of the zvol (not recommended). |
 | **Sparse** | Enables using thin provisioning where disk space for this volume is allocated on demand as new writes are received. Use caution when enabling this feature, as writes can fail when the pool is low on space. |
 | **Sync** | Sets the data write synchronization. Options are:<br><li>**Inherit** takes the sync settings from the parent dataset.<br><li>**Standard** uses the settings requested by the client software.<br><li>**Always** waits for data writes to complete.<br><li>**Disabled** never waits for writes to complete.</li> |
-| **Compression** | Encodes information in less space than the original data occupies. We recommend choosing a compression algorithm that balances disk performance with the amount of saved space. LZ4 is generally recommended because it maximizes performance and dynamically identifies the best files to compress. GZIP options range from 1 for least compression and best performance, through 9 for maximum compression with greatest performance impact. ZLE is a fast algorithm that only eliminates runs of zeroes. |
+| **Compression** | Encodes information in less space than the original data occupies. We recommend choosing a compression algorithm that balances disk performance with the amount of saved space. LZ4 is generally recommended because it maximizes performance and dynamically identifies the best files to compress. GZIP options range from 1 for least compression and best performance, through 9 for maximum compression with the greatest performance impact. ZLE is a fast algorithm that only eliminates runs of zeroes. |
 | **ZFS Deduplication** | Transparently reuses a single copy of duplicated data to save space. Deduplication can improve storage capacity, but it is RAM-intensive. Compressing data is generally recommended before using deduplication. Deduplicating data is a one-way process. Deduplicated data cannot be undeduplicated! |
 | **Read-only** | When enabled, it prevents modifying the zvol. |
 | **Block size** | Shows a dropdown list of options to set the zvol default block size. Block size is automatically chosen based on the number of disks in the pool for a general use case. |
@@ -296,7 +309,7 @@ Encryption settings secure data within this zvol. These settings establish the l
 The default setting is **Inherit (non-encrypted)** when the root or parent dataset for the new storage is unencrypted.
 If encrypted, this shows **Inherit (encrypted)**.
 
-Clearing the checkbox shows the **Encryption Type** setting with two options: **Key** and **Passphrase**. Each option shows different setting options.
+Clearing the checkbox shows the **Encryption Type** setting with two options: **Key** and **Passphrase**. Each option shows different settings.
 
 {{< trueimage src="/images/SCALE/Shares/AddZvolScreenEncryption.png" alt="Add Zvol Encryption" id="Add Zvol Encryption" >}}
 
@@ -313,7 +326,7 @@ Shows with **Generate Key** selected by default. This automatically generates an
 | Setting | Description |
 |---------|-------------|
 | **Generate Key** | Randomly generates an encryption key to secure the zvol. Disable to manually enter an encryption key. <br><br>  WARNING: The encryption key is the only means to decrypt the information stored in this zvol. Store the encryption key in a secure location. |
-| **Key** |Text-entry field that accepts manually entering or copy/pasting an alpha-numeric string to use as the encryption key for this zvol. |
+| **Key** | Text-entry field that accepts manually entering or copy/pasting an alphanumeric string to use as the encryption key for this zvol. |
 | **Algorithm** | Dropdown list of mathematical instruction sets that determine how plain text is converted into cipher text. See [Advanced Encryption Standard (AES)(https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)] for more details. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -331,7 +344,7 @@ The **Passphrase** settings set encryption to a passphrase of your choice to enc
 | **Passphrase** | Text-entry field that accepts manual or copy/paste of a user-defined string that decrypts the zvol. Use instead of an encryption key.<br><br>WARNING: The passphrase is the only means to decrypt the information stored in this dataset. Be sure to create a memorable passphrase or physically secure the passphrase. |
 | **Confirm Passphrase** | Confirms the user-defined string entered in **Passphrase**. Entries must match. |
 | **pbkdf2iters** | The pencil icon shows a dropdown list of options to set the number of password-based key derivation function 2 (PBKDF2) iterations to reduce vulnerability to brute-force attacks. Entering a number larger than 100000 is required. See [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) for more details. |
-| **Algorithm** | The pencil icon shows dropdown list of options to set the mathematical instruction that determine how plain text is converted into cipher text. See [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) for more details. |
+| **Algorithm** | The pencil icon shows a dropdown list of options to set the mathematical instruction that determines how plain text is converted into cipher text. See [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) for more details. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -403,6 +416,23 @@ The <span class="material-icons">edit</span> edit icon on the port row listed on
 | **Transport Type** | Sets the transport type. Options are: **TCP**, **RDMA**, or **Fibre Channel**. The **RDMA** and **Fibre Channel** options require Enterprise licenses and systems with compatible/supporting hardware. |
 | **Port** | Sets the current port assignment. **4420** is the default and recommended port number. We recommend using this port rather than entering a custom port number. |
 | **Address** | Sets an existing static IP address for the port assignment. |
+{{< /truetable >}}
+{{< /expand >}}
+
+## Edit Port Screen
+
+The **Edit Port** screen shows current port settings for the selected subsystem.
+The <span class="material-icons">edit</span> edit icon on the port row listed on the **Ports** dialog opens the **Edit Port** screen.
+
+{{< trueimage src="/images/SCALE/Shares/EditPortScreen.png" alt="Edit Port Screen" id="Edit Port Screen" >}}
+
+{{< expand "Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Transport Type** | Dropdown list of options for the transport type. Options are **TCP**, **RDMA**, or **Fibre Channel**. The **RDMA** and **Fibre Channel** options require Enterprise licenses and systems with compatible/supporting hardware. |
+| **Port** | Text-entry field that shows the current port assignment and allows manual or copy/paste entry of a new port number. |
+| **Address** | Dropdown list that shows the current static IP address assignment and any other static IP on the system that the subsystem can use. |
 {{< /truetable >}}
 {{< /expand >}}
 

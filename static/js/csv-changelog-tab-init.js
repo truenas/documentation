@@ -26,12 +26,12 @@ function initializeChangelogTableForTabs(majorVersion, baseUrl) {
                 if (scaleIndex !== -1 && scaleIndex < pathSegments.length - 1) {
                     // Check if the segment after 'scale' looks like a version (e.g., "25.10")
                     const potentialVersion = pathSegments[scaleIndex + 1];
-                    if (potentialVersion && /^\d+\.\d+/.test(potentialVersion)) {
+                    if (potentialVersion && /^\d+(\.\d+)?/.test(potentialVersion)) {
                         // Versioned branch: /docs/scale/25.10/data
                         baseUrl = '/' + pathSegments.slice(0, scaleIndex + 2).join('/') + '/data';
                     } else {
-                        // Master branch: /docs/scale/data
-                        baseUrl = '/' + pathSegments.slice(0, scaleIndex + 1).join('/') + '/data';
+                        // Master branch: /docs/data
+                        baseUrl = '/' + pathSegments.slice(0, scaleIndex).join('/') + '/data';
                     }
                 } else {
                     // Fallback: /docs/data

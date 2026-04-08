@@ -16,7 +16,7 @@ doctype: tutorial
 SMB multichannel allows servers to use multiple network connections simultaneously by combining the bandwidth of several network interface cards (NICs) for better performance.
 
 {{< hint type=important >}}
-SMB multichannel does not function if you combine NICs into a LAGG.
+SMB multichannel does not function if you combine NICs into a link aggregation.
 {{< /hint >}}
 
 ## Configuring Multiple Network Interfaces

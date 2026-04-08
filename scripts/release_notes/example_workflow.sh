@@ -6,6 +6,14 @@
 
 set -e  # Exit on error
 
+# DEPRECATED: This script is superseded by release_notes.py.
+#
+# Use instead:
+#   python release_notes.py prep --version 25.10.X
+#   python release_notes.py apply --version 25.10.X
+#
+# This file is retained for reference only.
+
 # Configuration
 VERSION="25.10.3"
 CSV_FILE="${VERSION}-changelog.csv"

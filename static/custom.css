@@ -3266,37 +3266,74 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
     border-color: #0095d5;
   }
 /* End Adjust search bar for all color modes */
-/* Custom table style for Product page intro section */
-.product-intro-table {
-	max-width: 100%;
-	border-collapse: collapse;
-}
-.product-intro-table tbody,
-.product-intro-table tr,
-.product-intro-table td {
-	border: none;
-	background: var(--body-background);
-	border-bottom: none !important;
-}
-/* End custom table style for Product page intro section */
-.prodintronote {
+/* Product page intro banner */
+.prodintro-banner {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
+	gap: 2rem;
+	background: linear-gradient(to right, #00141d, #005e86);
+	padding: 2rem 2.5rem;
+	border-radius: 6px;
+	margin-bottom: 1.5rem;
+	min-height: 220px;
 }
-.prodnoteicon {
-	flex: .2;
-	text-align: left;
-	margin-right: .25rem;
-}
-.prodnotetext {
+.prodintro-banner__content {
 	flex: 1;
 }
-.prodbanner > img {
-	max-width: 100%;
-	align-items: center;
-	max-height: 75%;
-	margin-bottom: 1rem;
+.prodintro-banner__content h1 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	line-height: 1.15;
+	color: #ffffff;
+	margin: 0 0 0.5rem 0;
 }
+.prodintro-subtitle {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.95);
+	margin: 0.25rem 0 0 0;
+}
+.prodintro-tagline {
+	font-size: 0.9rem;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.75);
+	margin: 0.25rem 0 0 0;
+}
+.prodintro-banner__image {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.prodintro-banner__image img {
+	max-width: 100%;
+	max-height: 180px;
+	width: auto;
+	height: auto;
+}
+@media (max-width: 768px) {
+	.prodintro-banner {
+		flex-direction: column;
+	}
+}
+.prodintro-btn {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0.6rem 1.4rem;
+	background-color: #0095d5;
+	color: #ffffff !important;
+	border-radius: 2rem;
+	font-weight: 600;
+	font-size: 0.9rem;
+	text-decoration: none !important;
+	transition: background-color 0.2s ease;
+}
+.prodintro-btn:hover {
+	background-color: #007ab5;
+	color: #ffffff !important;
+}
+/* End product page intro banner */
 /* Adjust geekdoc properties list title style */
 .gdoc-props__title {
 	font-family: "Inter", sans-serif;

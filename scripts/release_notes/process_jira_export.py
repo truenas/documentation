@@ -15,8 +15,10 @@ Usage:
 import argparse
 import csv
 import json
+import os
 import re
 import sys
+import time
 from pathlib import Path
 from typing import Dict, List, Optional
 from urllib.parse import urljoin
@@ -35,6 +37,8 @@ class JiraTicketProcessor:
 
     JIRA_BASE_URL = "https://ixsystems.atlassian.net"
     XML_URL_TEMPLATE = "{base}/si/jira.issueviews:issue-xml/{key}/{key}.xml"
+    GITHUB_API_BASE = "https://api.github.com"
+    GITHUB_ORG = "truenas"
 
     # User-facing components that indicate tickets likely affect users
     USER_FACING_COMPONENTS = [
@@ -66,15 +70,31 @@ class JiraTicketProcessor:
         r"^bump\s+version",
     ]
 
-    def __init__(self, version: str, cache_dir: Optional[Path] = None):
+    def __init__(self, version: str, cache_dir: Optional[Path] = None, github_token: Optional[str] = None):
         """Initialize processor with target version."""
         self.version = version
         self.cache_dir = cache_dir or Path("/tmp/jira_cache")
         self.cache_dir.mkdir(parents=True, exist_ok=True)
+
+        # Session for Jira requests
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'TrueNAS-ReleaseNotes-Script/1.0'
         })
+
+        # Separate session for GitHub API
+        self.github_token = github_token or os.environ.get('GITHUB_TOKEN')
+        self.github_session = requests.Session()
+        self.github_session.headers.update({
+            'User-Agent': 'TrueNAS-ReleaseNotes-Script/1.0',
+            'Accept': 'application/vnd.github+json',
+            'X-GitHub-Api-Version': '2022-11-28',
+        })
+        if self.github_token:
+            self.github_session.headers.update({'Authorization': f'Bearer {self.github_token}'})
+            print("GitHub token configured (30 search requests/min)")
+        else:
+            print("No GitHub token found; using unauthenticated GitHub API (10 search requests/min)")
 
     def parse_csv(self, csv_path: Path) -> List[Dict]:
         """Parse Jira CSV export file."""
@@ -165,6 +185,70 @@ class JiraTicketProcessor:
             print(f"  Warning: Failed to parse XML for {ticket_key}: {e}", file=sys.stderr)
             return []
 
+    def fetch_github_prs(self, ticket_key: str) -> List[str]:
+        """Search GitHub org-wide for PRs referencing this ticket key.
+
+        Used as a fallback when Jira XML contains no PR links (e.g. when devs
+        post PR links in internal-only comments not visible to the public API).
+        """
+        url = f"{self.GITHUB_API_BASE}/search/issues"
+        params = {
+            'q': f'{ticket_key} org:{self.GITHUB_ORG} type:pr',
+            'per_page': 10,
+        }
+
+        try:
+            print(f"  Falling back to GitHub search for {ticket_key}...")
+            response = self.github_session.get(url, params=params, timeout=10)
+
+            if response.status_code == 403:
+                reset_time = response.headers.get('X-RateLimit-Reset', 'unknown')
+                print(
+                    f"  Warning: GitHub API rate limit reached (resets at {reset_time}). "
+                    f"Use --github-token or set GITHUB_TOKEN to increase limits.",
+                    file=sys.stderr
+                )
+                return []
+
+            response.raise_for_status()
+            items = response.json().get('items', [])
+
+            if not items:
+                print(f"  No PRs found on GitHub for {ticket_key}")
+                return []
+
+            # PRs following TrueNAS convention include the version in the title:
+            # "NAS-XXXXX / 25.10.2.2 / Fix description"
+            # Prefer version-specific PRs; fall back to all closed PRs if none found.
+            version_prs = []
+            other_prs = []
+
+            for item in items:
+                if item.get('state') == 'open':
+                    continue
+                url_str = item.get('html_url', '')
+                if self.version in item.get('title', ''):
+                    version_prs.append(url_str)
+                else:
+                    other_prs.append(url_str)
+
+            result = version_prs if version_prs else other_prs
+
+            if result:
+                print(f"  Found {len(result)} PR(s) via GitHub search for {ticket_key}"
+                      f" ({len(version_prs)} version-specific)")
+
+            return result
+
+        except requests.RequestException as e:
+            print(f"  Warning: GitHub search failed for {ticket_key}: {e}", file=sys.stderr)
+            return []
+
+        finally:
+            # Respect GitHub search rate limits:
+            # unauthenticated = 10/min (~6s between calls), authenticated = 30/min (~2s)
+            time.sleep(2 if self.github_token else 6)
+
     def calculate_severity_score(self, ticket: Dict) -> int:
         """Calculate severity score for triage."""
         score = 0
@@ -232,8 +316,10 @@ class JiraTicketProcessor:
             # Fetch XML data
             xml_content = self.fetch_xml(ticket['key'])
 
-            # Extract PR links
+            # Extract PR links from Jira XML; fall back to GitHub search if empty
             pr_links = self.extract_pr_links(xml_content, ticket['key'])
+            if not pr_links:
+                pr_links = self.fetch_github_prs(ticket['key'])
             ticket['pr_links'] = pr_links
 
             # Calculate scores
@@ -330,6 +416,12 @@ def main():
         type=Path,
         help="Cache directory for XML files (default: /tmp/jira_cache)"
     )
+    parser.add_argument(
+        '--github-token',
+        type=str,
+        default=None,
+        help="GitHub personal access token for higher API rate limits (or set GITHUB_TOKEN env var)"
+    )
 
     args = parser.parse_args()
 
@@ -348,7 +440,7 @@ def main():
     print(f"Output directory: {args.output_dir}")
 
     # Initialize processor
-    processor = JiraTicketProcessor(args.version, args.cache_dir)
+    processor = JiraTicketProcessor(args.version, args.cache_dir, args.github_token)
 
     # Parse CSV
     print(f"Parsing CSV: {args.csv}")

@@ -19,7 +19,7 @@ TrueNAS uses [bridge(4)](https://www.freebsd.org/cgi/man.cgi?bridge(4)) as the k
 While the examples focus on the deprecated brctl(8) from the bridge-utilities package, we use ip(8) and bridge(8) from iproute2 instead.
 Refer to the FAQ section that covers bridging topics more generally.
 
-Network bridging does not inherently aggregate bandwidth like [link aggregation (LAGG)]({{< ref "settinguplagg" >}}).
+Network bridging does not inherently aggregate bandwidth like [link aggregation]({{< ref "SettingUpLinkAggregation" >}}).
 Bridging is often used for scenarios that require extending a network segment or combining different types of network traffic.
 
 You can use bridging to integrate different types of networks (e.g., wireless and wired networks) or to segment traffic within the same network.

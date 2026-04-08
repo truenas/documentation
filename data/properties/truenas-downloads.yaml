@@ -285,7 +285,11 @@ majorVersions:
   - lifecycle: "26"
     majorVersion: "26"
     releaseName: "26"
+    releaseNotes: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/"
     releases:
+      - name: "26-BETA.1"
+        link: "https://iso.sys.truenas.net/TrueNAS-26-BETA/26.0.0-BETA.1/"
+        date: "2026-04-07"
       - name: "26 Nightly"
-        link: "https://download.truenas.com/truenas-scale-halfmoon-nightly/"
+        link: "https://iso.sys.truenas.net/TrueNAS-26-Nightlies/"
         date: ""
