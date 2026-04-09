@@ -52,7 +52,7 @@ Welcome to the Documentation Archive!
 
 {{< include file="/static/includes/DocLifecycle.md" >}}
 
-See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycle" >}}) for details on how TrueNAS versions reach end of life.
+See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for details on how TrueNAS versions reach end of life.
 
 {{< hint type=important >}}
 All documentation provided here is end-of-life (EoL), intended for reference only, and no longer receives *any* updates.
@@ -62,12 +62,6 @@ Software releases after TrueNAS 22.12 (Bluefin) are available as navigable websi
 Earlier releases are available only in PDF.
 
 ## TrueNAS
-
-{{< expand "TrueNAS 24.10 (Electric Eel)" "v" >}}
-[TrueNAS 24.10 (Electric Eel)](https://www.truenas.com/docs/scale/24.10/)
-
-Release notes for each minor release of 24.10 are available in the [24.10 Electric Eel Release Notes](https://www.truenas.com/docs/scale/24.10/gettingstarted/scalereleasenotes/).
-{{< /expand >}}
 
 {{< expand "TrueNAS 24.04 (Dragonfish)" "v" >}}
 [TrueNAS 24.04 (Dragonfish)](https://www.truenas.com/docs/scale/24.04/)

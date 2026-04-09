@@ -4,8 +4,6 @@ description: "View all TrueNAS Getting Started articles as a single page for dow
 weight: 1
 no_print: "true"
 related: false
-aliases:
- - /scale/gettingstarted/printview/
 ---
 
-<meta http-equiv="Refresh" content="0; url='/printview/scale/gettingstarted/'" />
+<meta http-equiv="Refresh" content="0; url='/scale/gettingstarted/printview/'" />

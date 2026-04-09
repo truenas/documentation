@@ -1,14 +1,38 @@
 &NewLine;
 
 {{< hint type="important" title="Deprecation Notice" >}}
-This section tracks features removed in 27 and features deprecated in 27 for future removal.
+This section tracks features removed in 26 and features deprecated in 26 for future removal.
 Plan migrations immediately to avoid disruptions during upgrades.
 {{< /hint >}}
 
-## Features Removed in 27
+## Features Removed in 26
 
 <!-- Uncomment this line when there are no features removed in this version -->
-*No features are currently removed in this version.*
+<!-- *No features are removed in this version.* -->
+
+### REST API
+
+{{< deprecation-status deprecated="25.04" removed="26" >}}
+
+{{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
+
+The TrueNAS REST API has been fully replaced by the versioned JSON-RPC 2.0 Websocket API.
+
+Migration Path:
+
+1. Review current API integrations and identify all REST API calls.
+2. Review the [Websocket API documentation](https://api.truenas.com/) to identify replacement endpoints.
+3. Update all scripts and integrations to use Websocket API endpoints.
+4. Test thoroughly in a non-production environment.
+5. Deploy updated integrations before upgrading to 26.
+
+Impact: Systems still using the REST API must migrate to the Websocket API before upgrading to 26.
+REST API endpoints do not function in 26 and later.
+
+See Also:
+
+- [Websocket API Documentation](https://api.truenas.com/)
+- [Managing API Keys]({{< ref "/SCALE/TopToolbar/ManagingAPIKeys.md" >}})
 
 ---
 

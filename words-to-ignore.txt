@@ -2311,4 +2311,3 @@ Halfmoon
 RSeriesPUM
 imagecard-lang
 MicrosoftNTLMDeprecation
-SoftwareDevelopmentLifeCycle

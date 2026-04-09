@@ -4,7 +4,6 @@ description: "Notice about the typical development timeframe and end of life exp
 weight: 20
 aliases:
   - /scale/introduction/softwaredevelopmentlifecyclescale/
-  - /scale/gettingstarted/useragreements/softwaredevelopmentlifecyclescale/
 ---
 
 The TrueNAS Software Development Life Cycle (SDLC) covers how the TrueNAS team plans, develops, tests, deploys, and maintains TrueNAS releases.
