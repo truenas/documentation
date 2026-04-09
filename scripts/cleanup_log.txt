@@ -1,3 +1,33 @@
+Process time: 2026-03-25 09:28:53
+Initiated by: Dan Pizappi
+
+1448 files reviewed.
+0 files deleted.
+All files currently in use.
+
+----------------------------------------
+Process time: 2026-03-23 15:36:06
+Initiated by: Dan Pizappi
+
+1461 files reviewed.
+14 files deleted.
+The following files were deleted:
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\TutorialsIntro.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\UIReferenceIntro.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\includes\WebShare--SMBWarning.md
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\DataProtection\DataProtectionScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\DevicesDiskCards.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\EditDiskScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\ExportDisconnectPoolWindow.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\PoolCreationWizardGenInfoExportedPool.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\PoolCreationWizardGenInfoNonUniqueSerialNums.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\ZFSInfoCardtWithExtendRemove.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\Storage\ZvolInfoWidget.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\AddSysctlConfigScreen.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\AdvancedSysctlWidget.png
+C:\Users\iXUser\Documents\GitHub\documentation\static\images\SCALE\SystemSettings\AdvancedSystemSEDWidget.png
+
+----------------------------------------
 Process time: 2026-02-12 09:59:58
 Initiated by: Dan Pizappi
 
