@@ -29,28 +29,43 @@ The **General Settings** screen has four cards that show current general system 
 Community systems show the same cards, but are not eligible for Enterprise support options or licenses.
 Enterprise systems show an image of the system model.
 
-## Support Cards
+## Support Card
 
-The **Support** card for Community Edition TrueNAS shows the version, model number of the CPU detected, system memory detected, a system serial number if configured, and links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://forums.truenas.com/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information.
+The **Support** card shows system information and provides access to support resources and actions.
+All systems show three buttons in the card header:
+
+* **File Ticket** opens a [feedback/report issue window](#send-feedback-window) where users can provide feedback or report an issue and save/attach a system debug file.
+* **Save Debug** starts downloading a system debug file to the local machine.
+* **Add License** (or **Update License** after a license is applied) opens the **[License](#license-screen)** screen. Requires Full Admin role.
+
+### Community Edition Support Card
+
+The **Support** card for TrueNAS Community Edition shows a banner with a link to the TrueNAS forums for community support, followed by system information including the OS version, system product, CPU model (if detected), memory, and system serial number (if configured).
 
 {{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSupportCard.png" alt="Support Card" id="Support Card" >}}
 
-**File Ticket** opens a [feedback/report issue window](#send-feedback-window) where users can provide feedback on the screen or report an issue and save/attach a system debug file.
-
-**Save Debug** starts downloading a system debug file to the local machine.
+A links row at the bottom of the card provides quick access to **Documentation**, **Forums**, and **Licensing** information.
 
 {{< enterprise>}}
-The **Support** card on the **General Settings** screen for Enterprise customers shows system licenses applied to the system, the system model, serial, license numbers not shown for Community Edition of TrueNAS, and any additional hardware associated with the system.
+### Enterprise Support Card
+
+The **Support** card on the **General Settings** screen for Enterprise systems displays license details including contract type, expiration date, model, system serial, licensed serials, features, and any additional hardware.
+Licensed systems with recognized hardware display a product image at the top of the card.
 
 {{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSupportCardEnterprise.png" alt="Support Card - Enterprise" id="Support Card - Enterprise" >}}
 
-The **This is a production system** toggle, which shows only on TrueNAS Enterprise systems, opens the [**Update Production Status**](#update-production-status-dialog) dialog.
+The **This is a production system** toggle, which shows only on TrueNAS Enterprise systems, appears alongside the **Model** field in the license info list.
+Enabling it opens the [**Update Production Status**](#update-production-status-dialog) dialog.
 
-**Add License** opens the **[License](#license-screen)** screen.
-After adding a license, **Update License** replaces the **Add License** button.
+### Support Banners
 
-**Get Support** dropdown shows two options: **File Ticket** and **Proactive Support** when the system is an Enterprise-licensed system.
-Non-Enterprise licensed systems only show the [**File Ticket**](#) option.
+The **Support** card displays a contextual banner depending on the system's license tier and support configuration:
+
+* **Contract expiring soon** — Shows when an active support contract expires within 14 days. Displays the number of days remaining and the expiration date, with a **Contact Us** link to renew.
+* **Set up Proactive Support** — Shows for Silver/Gold tier systems where proactive support is available but not yet enabled. Click **Enable** to open the [Proactive Support](#proactive-support-screen) configuration screen.
+* **Need help? Looking for support?** (Bronze tier) — Shows for systems where proactive support is not included. Provides an **Explore your options** link to review available support plans.
+
+When proactive support is active, the license info list includes a **Proactive Support: Enabled** row with a **Manage** button to update contact configuration.
 {{< /enterprise >}}
 
 ### Update Production Status Dialog
@@ -122,7 +137,7 @@ It allows pasting a copy of your license into the form and saving it.
 Silver/Gold coverage customers can enable proactive support.
 This feature automatically emails TrueNAS when certain conditions occur in a TrueNAS system.
 
-**Proactive Support** opens a window where you configure proactive support.
+Click **Enable** in the **Set up Proactive Support** banner, or **Manage** in the proactive support row (when already enabled), to open the proactive support configuration screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ProactiveSupportForm.png" alt="Proactive Support Form" id="Proactive Support Form" >}}
 
