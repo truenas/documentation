@@ -1,7 +1,7 @@
 &NewLine;
 
 The **Alerts** <span class="material-icons">notifications</span> icon displays a list of current alert notifications.
-To remove an alert notification click **Dismiss** below it or use **Dismiss All Alerts** to remove all notifications from the list. You can also select the **All Alerts**, **Critical**, **Warnings**, **Info**, or **Dismissed** alert type tabs to filter alerts by type. 
+To remove an alert notification click **Dismiss** below it or use **Dismiss All Alerts** to remove all notifications from the list.
 
 {{< trueimage src="/images/SCALE/Dashboard/AlertsNotifications.png" alt="Alerts" id="Alerts" >}}
 
@@ -16,11 +16,3 @@ The [Alert Settings Screens]({{< ref "AlertSettingsScreen" >}}) article includes
 
 Select **Email** to configure the method for the system to send email reports and alerts.
 See [Setting Up System Email]({{< ref "/SCALE/SystemSettings/General/SettingUpSystemEmail" >}}) for information about configuring the system email service and alert emails.
-
-### Alerts Admonitions
-
-Each screen in TrueNAS displays relevant alerts with an admonition box.
-
-{{< trueimage src="/images/SCALE/Dashboard/AlertsAdmonitions.png" alt="Alerts" id="Alerts" >}}
-
-Click **Learn More** on an admonition to view documentation related to the issue, or click <span class="mdi">close</span> to dismiss the alert.
