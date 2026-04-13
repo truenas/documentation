@@ -37,7 +37,7 @@ We recommend organizing your pool with datasets before configuring [data sharing
 
 ### Setting Dataset Compression Levels
 
-Compression encodes information in less space than the original data occupies. 
+Compression encodes information in less space than the original data occupies.
 We recommend choosing a compression algorithm that balances disk performance with the amount of saved space.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetCompressionLevelOptions.png" alt="Add Dataset Compression Level Options" id="Add Dataset Compression Level Options" >}}
@@ -54,7 +54,7 @@ Setting a quota defines the maximum allowed space for the dataset.
 You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
 You can configure quotas for only the new dataset or both the new dataset and any child datasets of the new dataset.
 
-Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field. 
+Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field.
 Enter **0** to disable quotas.
 
 Dataset quota [alerts]({{< ref "/SCALE/TopToolbar/Alerts" >}}) are based on the percentage of storage used.
@@ -109,7 +109,6 @@ Change **Checksum** to **SHA512**.
 
 Complete any other setting changes you want to make, then click **Save**.
 
-
 ## Creating a Dataset for a Fusion Pool
 First, add the [pool with a Metadata VDEV]({{< ref "CreatingFusionPools" >}}).
 
@@ -126,7 +125,7 @@ The default threshold is 16 MiB. Blocks smaller than or equal to the threshold a
 
 ## Managing Datasets
 After creating a dataset, users can manage additional options from the **Datasets** screen.
-Select the dataset, then click **Edit** on the dataset widget for the function you want to manage. 
+Select the dataset, then click **Edit** on the dataset widget for the function you want to manage.
 The [Datasets Screen]({{< ref "/SCALE/Datasets" >}}) article describes each option in detail.
 
 ### Editing a Dataset
@@ -145,7 +144,7 @@ For more information, see the [Setting Up Permissions]({{< ref "/SCALE/Datasets/
 
 ### Deleting a Dataset
 Select the dataset on the tree table, then click **Delete** on the **Dataset Details** widget.
-This opens a delete window where you enter the dataset path (root/parent/child) and select **Confirm** to delete the dataset, all stored data, and any snapshots from TrueNAS. 
+This opens a delete window where you enter the dataset path (root/parent/child) and select **Confirm** to delete the dataset, all stored data, and any snapshots from TrueNAS.
 
 To delete a root dataset, use the **Export/Disconnect** option on the **[Storage Dashboard]({{< ref "ManagePools" >}})** screen to delete the pool.
 
