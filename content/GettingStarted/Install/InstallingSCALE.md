@@ -76,6 +76,7 @@ You need an OpenPGP encryption application for this method of ISO verification.
 
 ### Using SHA256 Verification
 SHA256 verification uses the checksum to validate/verify the file.
+The SHA256 checksum file for each TrueNAS release is published alongside the <kbd>.iso</kbd> file on the [TrueNAS Download page](https://www.truenas.com/download/) and in the [TrueNAS software CDN](https://download.truenas.com/).
 {{< expand "Click here for the verification process." "v" >}}
 The command to verify the checksum varies by operating system:
 
@@ -85,7 +86,7 @@ The command to verify the checksum varies by operating system:
 
 Freeware or online checksum utilities are available for Windows users.
 
-The value produced by running the command must match the value shown in the <kbd>sha256.txt</kbd> file.
+The value produced by running the command must match the value in the <kbd>.iso.sha256</kbd> checksum file for your release.
 Different checksum values indicate a corrupted installer file that you should not use.
 {{< /expand >}}
 
