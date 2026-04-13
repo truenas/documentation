@@ -35,7 +35,7 @@ The main option displays:
 
 ## Directory Services Configuration Screen
 
-The **Directory Services Configuration** screen shows common and directory service-specfic settings base on the type of directory service selectd in **Configuration Type**.
+The **Directory Services Configuration** screen shows common and directory service-specfic settings based on the type of directory service selectd in **Configuration Type**.
 
 Common settings:
 * [Basic Configuration](#basic-configuration)
@@ -62,12 +62,12 @@ The **Basic Configuration** settings show settings common to the three directory
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Configuration Type** | Sets the type of directory service. Options are: **Acitve Directory**, **LDAP**, and **IPA**. Each option shows the **Credential Configuration** settings, and changes the settiong options shown for each type of directory service. |
+| **Configuration Type** | Sets the type of directory service. Options are: **Acitve Directory**, **LDAP**, and **IPA**. Each option shows the **Credential Configuration** settings, and changes the setting options shown for each type of directory service. |
 | **Enable Service** | Enables the directory service when selected. If TrueNAS has never joined the specified domain (IPA or Active Directory), enabling causes TrueNAS to attempt to join the domain. <br>NOTE: The domain join process for Active Directory and IPA makes changes to the domain such as creating a new computer account for the TrueNAS server and creating DNS records for TrueNAS. Enabled by default. Leave disabled to deactivate the configuration without deleting it and allows reenabling it later without reconfiguring it. The screen returns to the default settings and provides the option to configure AD, LDAP, or IPA. |
 | **Enable Account Cache** | Enables backend caching for user and group lists. When enabled, directory services users and groups are presented as choices in the UI dropdowns and in API responses for user and group queries. Also controls whether users and groups appear in getent results. Disable to reduce load on the directory server when necessary. Enabled by default. |
 | **Enable DNS Updates** | Allows TrueNAS to automatically register and update its DNS records on the DNS server for the domain when its IP address changes. Uses Kerberos authentication to verify TrueNAS has permission to update its own records. Enabled by default. Disable only if your DNS server does not support dynamic updates or if DNS is managed manually. |
 | **Timeout (seconds)** | The number of seconds before the directory service connection times out. Valid range is 1-40 seconds. The timeout value for DNS queries that are performed as part of the join process and NETWORK_TIMEOUT for LDAP requests (5-60 seconds). |
-| **Kerberos Realm** |  Specifies the name of Kerberos realm used for authentication to the directory service, for example, *EXAMPLE.COM*). When left empty, Kerberos is not used for binding to the directory service, but when joining an Active Directory or IPA domain for the first time, the realm is detected and configured automatically if not specified. |
+| **Kerberos Realm** |  Specifies the name of Kerberos realm used for authentication to the directory service, for example, *EXAMPLE.COM*. When left empty, Kerberos is not used for binding to the directory service, but when joining an Active Directory or IPA domain for the first time, the realm is detected and configured automatically if not specified. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -86,9 +86,9 @@ The **Credential Type** setting changes the authentication settings shown for th
 | Setting | Description |
 |---------|-------------|
 | **Credential Type** | Sets the credential type for authentication. Options: **Kerberos User** or **Kerberos Principle**. **Kerberose User** shows the **Username** and **Password** settings. **Kerberose Principle** shows the **Kerberos Principle** dropdown list. **Kerberos Principal**, and **Kerberos User**. |
-| **Username** | Username of the account to use to create a kerberos ticket for authentication to directory services. This account must exist on the domain controller. A *kerberos ticket* is a time-limited encrypted credential issued by the dfomain controller that allows TrueNAS to authenticate to domain services without transmitting passwords over the network. |
+| **Username** | Username of the account to use to create a kerberos ticket for authentication to directory services. This account must exist on the domain controller. A *kerberos ticket* is a time-limited encrypted credential issued by the domain controller that allows TrueNAS to authenticate to domain services without transmitting passwords over the network. |
 | **Password** | Password for the user account that obtains the kerberos ticket. A *kerberos ticket* is a time-limited encrypted credential issued by the domain controller that allows TrueNAS to authenticate to domain services without transmitting passwords over the network. |
-| **Kerberos Principle** | A Kerberos principal is the unique identity, formated as *username@DOMAIN.COM*, that Kerberos uses to issue authentication tickets. Kerberos keytabs configured in TrueNAS show on the dropdown list. The specified principal must have a matching entry in a keytab stored on TrueNAS. Keytabs are managed in **Directory Services > Advanced Settings > Kerberos Keytabs**. If a keytab entry does not exists for the specified principal, authentication fails. |
+| **Kerberos Principle** | A Kerberos principal is the unique identity, formatted as *username@DOMAIN.COM*, that Kerberos uses to issue authentication tickets. Kerberos keytabs configured in TrueNAS show on the dropdown list. The specified principal must have a matching entry in a keytab stored on TrueNAS. Keytabs are managed in **Directory Services > Advanced Settings > Kerberos Keytabs**. If a keytab entry does not exist for the specified principal, authentication fails. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -116,7 +116,7 @@ Each option shows different settings in **Credential Configuration**.
 | **Bind DN** | Specifies the distinguished name to use for authentication. This is the administrative account name for the LDAP server. Shows when **LDAP Plain** is selected. For example, *cn=Manager,dc=test,dc=org*. |
 | **Bind Password** | Specifies the password for the **Bind DN**. Shows when **LDAP Plain** is selected. |
 | **Client Certificate** | Specifies the client certificate to use for mutual TLS authentication to the remote LDAP server. Shows when **LDAP MTLS** is selected. |
-| **Kerberos Principal** | A Kerberos principal is the unique identity, formated as *username@DOMAIN.COM*, that Kerberos uses to issue authentication tickets. Kerberos keytabs configured in TrueNAS show on the dropdown list. The specified principal must have a matching entry in a keytab stored on TrueNAS. Keytabs are managed in **Directory Services > Advanced Settings > Kerberos Keytabs**. If a keytab entry does not exists for the specified principal, authentication fails. |
+| **Kerberos Principal** | A Kerberos principal is the unique identity, formatted as *username@DOMAIN.COM*, that Kerberos uses to issue authentication tickets. Kerberos keytabs configured in TrueNAS show on the dropdown list. The specified principal must have a matching entry in a keytab stored on TrueNAS. Keytabs are managed in **Directory Services > Advanced Settings > Kerberos Keytabs**. If a keytab entry does not exist for the specified principal, authentication fails. |
 | **Kerberos User** | Shows the **Username** and **Password** authentication fields, and sets authentication to use the LDAP administrative account credentials. |
 | **Username** | Username of the account used to obtain a Kerberos ticket for authentication to the LDAP server. A Kerberos ticket is a time-limited encrypted
   credential that allows TrueNAS to authenticate without transmitting passwords over the network. |
@@ -139,7 +139,7 @@ The **Active Directory Configuration** section settings define the connection pa
 | **Domain Name** | The full DNS domain name of the Active Directory domain name (for example, *mydoman.internal*) or child domain (for example, *sales.example.com*) if configuring access to a child domain. This must not be a domain controller! |
 | **Site Name** | The Active Directory site where the TrueNAS server is located. TrueNAS detects this automatically during the domain join process. |
 | **Computer Account OU** | The organizational unit (OU) where the TrueNAS computer object is created when joining the Active Directory domain for the first time. The OU string includes the distinguished name (DN) of the Computer Account OU. For example, *OU=Computers,DC=example,DC=com*.  Use this setting to override the default organizational unit (OU) in which the TrueNAS computer account is created during the domain join. Use it to set a custom location for TrueNAS computer accounts. |
-| **Use Default Domain** | Removes the domain name prefix from AD users and groups. This setting may be required for specific configurations such as Kerberos authentication with NFS for AD users. Note that using this setting can cause collisions with local user account names.  Controls if the system removes the domain prefix from Active Directory user and group names. If enabled, users appear as "administrator" instead of "EXAMPLE\administrator". In most cases, disable this (default) to avoid name conflicts between Active Directory and local accounts. |
+| **Use Default Domain** | Removes the domain name prefix from AD users and groups. This setting might be required for specific configurations such as Kerberos authentication with NFS for AD users. Note that using this setting can cause collisions with local user account names.  Controls if the system removes the domain prefix from Active Directory user and group names. If enabled, users appear as "administrator" instead of "EXAMPLE\administrator". In most cases, disable this (default) to avoid name conflicts between Active Directory and local accounts. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -168,7 +168,7 @@ Each option shows different settings.
 
 {{< expand "Trusted Domain AD (RFC2307/SFU Attributes from Active Directory) Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/ADConfigTrustedDomainIDMAPBackendAD.png" alt="Active Directory Configuration" id="ctive Directory Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/ADConfigTrustedDomainIDMAPBackendAD.png" alt="Trusted Domain AD IDMAP Backend Configuration" id="Trusted Domain AD IDMAP Backend Configuration" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -184,31 +184,31 @@ Each option shows different settings.
 
 {{< expand "Trusted Domain LDAP Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/ADConfigTrustedDomainIDMAPBackendLDAP.png" alt="Active Directory Configuration" id="ctive Directory Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/ADConfigTrustedDomainIDMAPBackendLDAP.png" alt="Trusted Domain LDAP IDMAP Backend Configuration" id="Trusted Domain LDAP IDMAP Backend Configuration" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It may be null if the domain is configured as the base IDMAP for Active Directory. |
+| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It can be null if the domain is configured as the base IDMAP for Active Directory. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 | **LDAP Base DN** | Directory base suffix to use for mapping UIDs and GIDs to SIDs. |
 | **LDAP User DN** |Defines the user DN to be used for authentication to the LDAP server.|
 | **LDAP User DN Password** | Secret to use for authenticating the user specified by ldap_user_dn.  |
 | **LDAP Url** | LDAP server to use for the IDMAP entries. |
-| **Readonly** | If enabled, TrueNAS will not attempt to write new IDMAP entries. |
+| **Readonly** | If enabled, TrueNAS does not attempt to write new IDMAP entries. |
 | **Validate Certificates** | Verify certificate authenticity. |
 {{< /truetable >}}
 {{< /expand >}}
 
 {{< expand "Trusted Domain RFC2307 Attributes from Standalone LDAP Server Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/ADConfigTrustedDomainIDMAPBackendRFC2307.png" alt="Active Directory Configuration" id="ctive Directory Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/ADConfigTrustedDomainIDMAPBackendRFC2307.png" alt="Trusted Domain RFC2307 IDMAP Backend Configuration" id="Trusted Domain RFC-2307 IDMAP Backend Configuration" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It may be null if the domain is configured as the base IDMAP for Active Directory. |
+| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It can be null if the domain is configured as the base IDMAP for Active Directory. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 | **LDAP Url** | LDAP server to use for the IDMAP entries. |
@@ -224,12 +224,12 @@ Each option shows different settings.
 
 {{< expand "Trusted Domain RID (Default - Algorithmic Mapping Based on RID Values) Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/ADConfigTrustedDomainIDMAPBackendRID.png" alt="Active Directory Configuration" id="ctive Directory Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/ADConfigTrustedDomainIDMAPBackendRID.png" alt="Trusted Domain LDAP RID Backend Configuration" id="Trusted Domain RID IDMAP Backend Configuration" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It may be null if the domain is configured as the base IDMAP for Active Directory. |
+| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It can be null if the domain is configured as the base IDMAP for Active Directory. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 | **SSSD Compat**  | Generate an IDMAP low range using the algorithm from SSSD. Use this option if the domain uses only a single SSSD IDMAP slice. |
@@ -260,7 +260,7 @@ The **Builtin** settings map Windows built-in local groups to Unix GIDs, definin
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It may be null if the domain is configured as the base IDMAP for Active Directory. |
+| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It can be null if the domain is configured as the base IDMAP for Active Directory. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 {{< /truetable >}}
@@ -286,12 +286,12 @@ Each option shows different settings.
 
 {{< expand "IDMAP Domain AD (RFC2307/SFU Attributes from Active Directory) Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/ADConfigIDMAPDomainIDMAPBackendAD.png" alt="Active Directory Configuration" id="ctive Directory Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/ADConfigIDMAPDomainIDMAPBackendAD.png" alt="IDMAP Domain AD Configuration" id="IDMAP Domain AD Configuration" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the joined domain. Typically matches the NetBIOS domain name. May be null when this entry is configured as the base IDMAP domain for Active Directory. |
+| **Name** | Short name for the joined domain. Typically matches the NetBIOS domain name. Can be null when this entry is configured as the base IDMAP domain for Active Directory. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 | **Schema Mode** | The schema mode the IDMAP backend uses to query Active Directory for user and group information. The RFC2307 schema applies to Windows Server 2003 R2 and newer. The Services for Unix (SFU) schema applies to versions before Windows Server 2003 R2. |
@@ -302,31 +302,31 @@ Each option shows different settings.
 
 {{< expand "IDMAP Domain LDAP Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/ADConfigIDMAPDomainIDMAPBackendLDAP.png" alt="Active Directory Configuration" id="ctive Directory Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/ADConfigIDMAPDomainIDMAPBackendLDAP.png" alt="IDMAP Domain LDAP Configuration" id="IDMAP Domain LDAP Configuration" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the joined domain. Typically matches the NetBIOS domain name. May be null when this entry is configured as the base IDMAP domain for Active Directory. |
+| **Name** | Short name for the joined domain. Typically matches the NetBIOS domain name. Can be null when this entry is configured as the base IDMAP domain for Active Directory. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 | **LDAP Base DN** | Directory base suffix to use for mapping UIDs and GIDs to SIDs. |
 | **LDAP User DN** |Defines the user DN to be used for authentication to the LDAP server.|
 | **LDAP User DN Password** | Secret to use for authenticating the user specified by ldap_user_dn.  |
 | **LDAP Url** | LDAP server to use for the IDMAP entries. |
-| **Readonly** | If enabled, TrueNAS will not attempt to write new IDMAP entries. |
+| **Readonly** | If enabled, TrueNAS does not attempt to write new IDMAP entries. |
 | **Validate Certificates** | Verify certificate authenticity. |
 {{< /truetable >}}
 {{< /expand >}}
 
 {{< expand "IDMAP Domain RFC2307 Attributes from Standalone LDAP Server Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/ADConfigIDMAPDomainIDMAPBackendRFC2307.png" alt="Active Directory Configuration" id="ctive Directory Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/ADConfigIDMAPDomainIDMAPBackendRFC2307.png" alt="IDMAP Domain RFC-2307 Configuration" id="IDMAP Domain RFC2307 Configuration" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It may be null if the domain is configured as the base IDMAP for Active Directory. |
+| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. It can be null if the domain is configured as the base IDMAP for Active Directory. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 | **LDAP Url** | LDAP server to use for the IDMAP entries. |
@@ -342,12 +342,12 @@ Each option shows different settings.
 
 {{< expand "IDMAP Domain RID (Default - Algorithmic Mapping Based on RID Values) Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/ADConfigIDMAPDomainIDMAPBackendRID.png" alt="Active Directory Configuration" id="ctive Directory Configuration" >}}
+{{< trueimage src="/images/SCALE/Credentials/ADConfigIDMAPDomainIDMAPBackendRID.png" alt="IDMAP Domain RID Configuration" id="IDMAP Domain RID Configuration" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the joined domain. This should match the NetBIOS domain name for Active Directory domains. IMay be null when this entry is configured as the base IDMAP domain for Active Directory. |
+| **Name** | Short name for the joined domain. This should match the NetBIOS domain name for Active Directory domains. Can be null when this entry is configured as the base IDMAP domain for Active Directory. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 | **SSSD Compat**  | Generate an IDMAP low range using the algorithm from SSSD. Use this option if the domain uses only a single SSSD IDMAP slice. |
@@ -414,7 +414,7 @@ The screen groups settings into LDAP password attributes, shadow attributes, and
 
 {{< expand "LDAP Password Attribute Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/AttributeMapsLdapPasswordAttributes.png" alt="LDAP Net Group Attributes" id="LDAP Net Group Attributes" >}}
+{{< trueimage src="/images/SCALE/Credentials/AttributeMapsLdapPasswordAttributes.png" alt="LDAP Password Attributes" id="LDAP Password Attributes" >}}
 
 {{< truetable >}}
 | Setting | Description |
@@ -431,7 +431,7 @@ The screen groups settings into LDAP password attributes, shadow attributes, and
 
 {{< expand "LDAP Shadow Attribute Settings" "v" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/AttributeMapsLdapShadowAttributes.png" alt="LDAP Net Group Attributes" id="LDAP Net Group Attributes" >}}
+{{< trueimage src="/images/SCALE/Credentials/AttributeMapsLdapShadowAttributes.png" alt="LDAP Shadow Attributes" id="LDAP Shadow Attributes" >}}
 
 {{< truetable >}}
 | Setting | Description |
