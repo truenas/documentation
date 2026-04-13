@@ -50,7 +50,7 @@ Directory Service-specific settings:
   * [Search Bases](#search-bases)
   * [Attribute Maps](#attribute-maps)
 * [IPA Configuration](#ipa-configuration)
-  * [SMB Domain Confituration](#smb-domain-configuration)
+  * [SMB Domain Configuration](#smb-domain-configuration)
 
 ### Basic Configuration
 
@@ -79,13 +79,13 @@ The **Credential Type** setting changes the authentication settings shown for th
 
 {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesConfigCredentialConfigKerberosUser.png" alt="Credential Configuration Kerberos User" id="Credential Configuration Kerberos User" >}}
 
-{{< trueimage src="/images/SCALE/Credentials/DirectoryServicesConfigCredentialConfigKerberosPrincipal.png" alt="Credential Configuration Kerberos Principal" id="Credential Configuration Kerberos Kerberos Principal" >}}
+{{< trueimage src="/images/SCALE/Credentials/DirectoryServicesConfigCredentialConfigKerberosPrincipal.png" alt="Credential Configuration Kerberos Principal" id="Credential Configuration Kerberos Principal" >}}
 
 {{< expand "Kerberos Credential Configuration Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Credential Type** | Sets the credential type for authentication. Options: **Kerberos User** or **Kerberos Principal**. **Kerberose User** shows the **Username** and **Password** settings. **Kerberose Principal** shows the **Kerberos Principal** dropdown list. **Kerberos Principal**, and **Kerberos User**. |
+| **Credential Type** | Sets the credential type for authentication. Options: **Kerberos User** or **Kerberos Principal**. **Kerberos User** shows the **Username** and **Password** settings. **Kerberos Principal** shows the **Kerberos Principal** dropdown list. **Kerberos Principal**, and **Kerberos User**. |
 | **Username** | Username of the account to use to create a Kerberos ticket for authentication to directory services. This account must exist on the domain controller. A *Kerberos ticket* is a time-limited encrypted credential issued by the domain controller that allows TrueNAS to authenticate to domain services without transmitting passwords over the network. |
 | **Password** | Password for the user account that obtains the Kerberos ticket. A *Kerberos ticket* is a time-limited encrypted credential issued by the domain controller that allows TrueNAS to authenticate to domain services without transmitting passwords over the network. |
 | **Kerberos Principal** | A Kerberos principal is the unique identity, formatted as *username@DOMAIN.COM*, that Kerberos uses to issue authentication tickets. Kerberos keytabs configured in TrueNAS show on the dropdown list. The specified principal must have a matching entry in a keytab stored on TrueNAS. Keytabs are managed in **Directory Services > Advanced Settings > Kerberos Keytabs**. If a keytab entry does not exist for the specified principal, authentication fails. |
@@ -243,7 +243,7 @@ Use the TrueNAS default IDMAP configuration unless you want to customize ID mapp
 Defaults are suitable for new deployments without existing support for Unix-like operating systems.
 The default configuration uses the RID backend with predefined UID/GID ranges (builtin: 90000001-100000000, domain: 100000001-200000000).
 
-When disabled, it shows IDMAP configuration settings to customize Id mapping.
+When disabled, it shows IDMAP configuration settings to customize ID mapping.
 
 {{< trueimage src="/images/SCALE/Credentials/ADIDMAPConfig.png" alt="IDMAP Configuration" id="IDMAP Configuration" >}}
 
@@ -326,7 +326,7 @@ Each option shows different settings.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the domain. This should match the NetBIOS domain name for Active Directory domains. |
+| **Name** | Short name for the joined domain. Typically matches the NetBIOS domain name. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 | **LDAP Url** | LDAP server to use for the IDMAP entries. |
@@ -347,7 +347,7 @@ Each option shows different settings.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Short name for the joined domain. This typically matches the NetBIOS domain name for Active Directory domains. |
+| **Name** | Short name for the joined domain. Typically matches the NetBIOS domain name. |
 | **Range Low** | The lowest UID or GID that the IDMAP backend can assign. |
 | **Range High** | The highest UID or GID that the IDMAP backend can assign. |
 | **SSSD Compat**  | Generate an IDMAP low range using the algorithm from SSSD. Use this option if the domain uses only a single SSSD IDMAP slice. |
@@ -364,7 +364,7 @@ The **LDAP Configuration** section settings define the connection parameters and
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Server URLs** | Specifes the hostname or IP address of the LDAP server. Separate entries by pressing <kbd>Enter</kbd>. Multiple URLs create an LDAP failover priority list. If a host does not respond, TrueNAS tries the next host until it establishes a connection. If using a cloud service LDAP server, do not include the full URL. |
+| **Server URLs** | Specifies the hostname or IP address of the LDAP server. Separate entries by pressing <kbd>Enter</kbd>. Multiple URLs create an LDAP failover priority list. If a host does not respond, TrueNAS tries the next host until it establishes a connection. If using a cloud service LDAP server, do not include the full URL. |
 | **Base DN** | The top level of the LDAP directory tree to use when searching for resources. For example, *dc=test,dc=org*. |
 | **Start TLS** | Encrypts the LDAP connection with STARTTLS on the default LDAP port *389*. Options for encrypting the LDAP connection:<br><li>**OFF** - Does not encrypt the LDAP connection.<br><li>**ON**- Encrypts the LDAP connection with SSL on port 636.<br><li>**START_TLS**- Encrypts the LDAP connection with STARTTLS on the default LDAP port 389</li>. |
 | **Validate Certificates** | Verifies certificate authenticity when connecting to the LDAP server, when enabled. |
@@ -397,7 +397,7 @@ Use custom search bases only if the LDAP server uses a non-standard LDAP schema 
 |---------|-------------|
 | **User Base DN** | Sets the base DN to use when searching for LDAP user accounts. Restricts user searches to a specific directory subtree. For example, *ou=users,dc=example,dc=org*. |
 | **Group Base DN** | Sets the base DN to use when searching for LDAP group accounts. Restricts group searches to a specific directory subtree. For example, *ou=groups,dc=example,dc=org*. |
-| **Netgroup Base DN** | Sets the base DN to use when searching for LDAP group accounts. Restricts group searches to a specific directory subtree. For example, *ou=netgroups,dc=example,dc=org*. |
+| **Netgroup Base DN** | Sets the base DN to use when searching for LDAP group accounts. Restricts netgroup searches to a specific directory subtree. For example, *ou=netgroups,dc=example,dc=org*. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -410,7 +410,7 @@ Only use custom attribute maps if the LDAP server is non-standard, if your LDAP 
 **Use Standard Attribute Maps** is enabled by default, and uses standard RFC2307 or RFC2307BIS attribute mappings.
 When disabled, the standard LDAP attribute mapping for LDAP servers that do not follow RFC2307 or RFC2307BIS shows to allow for customization.
 
-The screen groups settings into LDAP password attributes, shadow attributes, and group attibutes: **LDAP Password Attributes**, **LDAP Shadow Attributes**, **LDAP Group Attributes**, and **LDAP Net Group Attributes**.
+The screen groups settings into LDAP password attributes, shadow attributes, and group attributes: **LDAP Password Attributes**, **LDAP Shadow Attributes**, **LDAP Group Attributes**, and **LDAP Net Group Attributes**.
 
 {{< expand "LDAP Password Attribute Settings" "v" >}}
 
