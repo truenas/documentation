@@ -478,11 +478,9 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
   Workaround: Restart the affected app after a minute or two.
 
 * Long-running systems with legacy FreeNAS datasets might encounter dataset editing errors ([NAS-138629](https://ixsystems.atlassian.net/browse/NAS-138629)).
-  Users might see `"aclmode: failed to get property"` errors when attempting to edit dataset properties. This affects datasets that contain invalid `aclmode=discard_chmod` property values from legacy FreeNAS versions.
+  Users might see `"aclmode: failed to get property"` errors when attempting to edit dataset properties. This affects datasets with invalid `aclmode=discard_chmod` property values carried over from legacy FreeNAS versions. TrueNAS 25.10.1 improves error messages to help identify affected datasets.
 
-  Workaround: Run `zfs set aclmode=passthrough dataset_name` via CLI (replacing `dataset_name` with the actual dataset path), then reboot the system.
-
-  Error messaging improvements for this issue are included in TrueNAS 25.10.1 to help identify affected datasets.
+  Users encountering this issue should run `zfs set aclmode=passthrough dataset_name` via CLI for each affected dataset (replacing `dataset_name` with the actual dataset path), then reboot the system.
 
 * NVMe over TCP is incompatible with VMware ESXi environments ([NAS-137372](https://ixsystems.atlassian.net/browse/NAS-137372)).
   TrueNAS 25.10 uses the Linux kernel NVMe over TCP target driver, which lacks support for fused commands required by VMware ESXi.
