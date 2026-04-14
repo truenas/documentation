@@ -186,13 +186,14 @@
         versionButton.textContent = 'Archive';
       } else if (path.includes('/13.0/')) {
         versionButton.textContent = '13.0';
-      }
-      else if (path.includes('/25.10/')) {
+      } else if (path.includes('/26/')) {
+        versionButton.textContent = '26';
+      } else if (path.includes('/25.10/')) {
         versionButton.textContent = '25.10';
       } else if (path.includes('/25.04/')) {
         versionButton.textContent = '25.04';
       } else if (path.includes('/24.10/')) {
-        versionButton.textContent = '24.10';
+        versionButton.textContent = 'Archive';
       } else if (path.includes('/24.04/')) {
         versionButton.textContent = 'Archive';
       } else if (path.includes('/23.10/')) {
@@ -259,22 +260,22 @@
               <small class="version-label">Next</small>
               <hr class="version-line">
             </div>
-            <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">26</div>
-            <div class="truenas-dropdown-item" onclick="selectVersion('25.10')" id="2510">25.10</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('scale-nightly')" id="scale-nightly">27</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('26')" id="26">26</div>
           </div>
           <div class="truenas-version-group">
             <div class="version-header">
               <small class="version-label">Current</small>
               <hr class="version-line">
             </div>
-            <div class="truenas-dropdown-item" onclick="selectVersion('25.04')" id="2504">25.04</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('25.10')" id="2510">25.10</div>
           </div>
           <div class="truenas-version-group">
             <div class="version-header">
               <small class="version-label">Previous</small>
               <hr class="version-line">
             </div>
-            <div class="truenas-dropdown-item" onclick="selectVersion('24.10')" id="2410">24.10</div>
+            <div class="truenas-dropdown-item" onclick="selectVersion('25.04')" id="2504">25.04</div>
             <div class="truenas-dropdown-item" onclick="selectVersion('13.0')" id="13">13.0</div>
           </div>
           <div class="truenas-version-group">
@@ -323,10 +324,20 @@
         return '';
       }
 
+      // Book prefixes used in pre-26 URL structure that were removed in 26+
+      function isNewStructureVersion(ver) {
+        if (ver === 'scale-nightly') return true;
+        return /^\d+$/.test(ver) && parseInt(ver, 10) >= 26;
+      }
+
+      function stripOldBookPrefix(path) {
+        return path.replace(/\/(scaletutorials|scaleuireference|scaleclireference)\//, '/');
+      }
+
       function getActualProduct(version) {
         if (version === '13.0' || version === '13.3') {
           return 'truenas-core';
-        } else if (version === '24.10' || version === '25.04' || version === '25.10' || version === 'scale-nightly' || (parseFloat(version) >= 20 && parseFloat(version) < 100)) {
+        } else if (version === '24.10' || version === '25.04' || version === '25.10' || version === '26' || version === 'scale-nightly' || (parseFloat(version) >= 20 && parseFloat(version) < 100)) {
           return 'truenas-scale';
         } else if (version === '3.0') {
           return 'truecommand';
@@ -450,13 +461,15 @@
       
       if (version === 'scale-nightly') {
         // Remove version from path: /scale/25.04/path -> /scale/path
-        newPath = currentPath.replace(/\/\d+\.\d+\//, '/');
+        newPath = currentPath.replace(/\/\d+(?:\.\d+)?\//, '/');
+        // Strip old book prefixes (scaletutorials, scaleuireference, scaleclireference)
+        newPath = stripOldBookPrefix(newPath);
         fallbackUrl = constructFallbackUrl(newPath, 'nightly');
       } else if (version === 'Archive') {
         newPath = '/docs/archive/';
         fallbackUrl = base_url + newPath;
       } else {
-        var matches = currentPath.match(/\/(\d+\.\d+)\//);
+        var matches = currentPath.match(/\/(\d+(?:\.\d+)?)\//);
         if (matches) {
           var currentVersion = matches[1];
           newPath = currentPath.replace('/' + currentVersion + '/', '/' + version + '/');
@@ -471,6 +484,10 @@
           }
           newPath = pathParts.join('/');
         }
+        // Strip old book prefixes when targeting new URL structure (26+)
+        if (isNewStructureVersion(version)) {
+          newPath = stripOldBookPrefix(newPath);
+        }
         fallbackUrl = constructFallbackUrl(currentPath, version);
       }
       newPath = newPath.replace(/\/+/g, '/');
@@ -481,12 +498,12 @@
         relative_url = 'core/13.0/';
       } else if (version === 'Archive') {
         relative_url = 'archive/';
-      } else if (version === '24.10') {
-        relative_url = 'scale/24.10/';
       } else if (version === '25.04') {
         relative_url = 'scale/25.04/';
-	  } else if (version === '25.10') {
+      } else if (version === '25.10') {
         relative_url = 'scale/25.10/';
+      } else if (version === '26') {
+        relative_url = 'scale/26/';
       } else if (version === 'scale-nightly') {
         relative_url = 'scale/';
       } else if (version === '3') {
@@ -561,12 +578,14 @@
         versionButton.innerHTML = '13.0 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/core/13.3/')) {
         versionButton.innerHTML = 'Archive <i class="fa fa-angle-down"></i>';
+      } else if (currentPath.includes('/scale/26/')) {
+        versionButton.innerHTML = '26 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/scale/25.10/')) {
         versionButton.innerHTML = '25.10 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/scale/25.04/')) {
         versionButton.innerHTML = '25.04 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/scale/24.10/')) {
-        versionButton.innerHTML = '24.10 <i class="fa fa-angle-down"></i>';
+        versionButton.innerHTML = 'Archive <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/scale/24.04/')) {
         versionButton.innerHTML = '24.04 <i class="fa fa-angle-down"></i>';
       } else if (currentPath.includes('/scale/23.10/')) {
@@ -575,7 +594,7 @@
         versionButton.innerHTML = '22.12 <i class="fa fa-angle-down"></i>';
       } else {
         // Default to latest version if no specific path is matched
-        versionButton.innerHTML = '26 <i class="fa fa-angle-down"></i>';
+        versionButton.innerHTML = '27 <i class="fa fa-angle-down"></i>';
       }
       
       versionDropdown.style.display = 'none';    
