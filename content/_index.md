@@ -1,5 +1,6 @@
 ---
-title: "24.10 (Electric Eel)"
+title: "TrueNAS 24.10 (Archived)"
+description: "Archival documentation for the TrueNAS SCALE 24.10 (Electric Eel) major version. This documentation is End of Life (EOL) and presented for reference only."
 geekdocCollapseSection: true
 weight: 20
 cascade:
@@ -19,7 +20,19 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="24.10 Electric Eel" icon="/images/SCALE_Electric_Eel_Icon.png" icon_alt="Electric Eel Icon" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="24.10 Electric Eel (Archived)" icon="/images/SCALE_Electric_Eel_Icon.png" icon_alt="Electric Eel Icon" >}}
+
+TrueNAS released 24.10 (Electric Eel) on December 17, 2024. This version received its final update on August 7, 2025. The terminal version of Electric Eel is 24.10.2.4.
+
+## Documentation End of Life (EOL)
+
+**24.10 (Electric Eel) Documentation EOL: 03-24-2026**
+
+TrueNAS employees maintain documentation and provide regular updates for current and in development (future) versions of TrueNAS software.
+For documentation purposes, current and future releases are those recommended by the TrueNAS [Software Status page](https://www.truenas.com/docs/softwarestatus/) for one or more user type.
+
+Documentation for previous releases, that are no longer recommended for any user type, is archived and unmaintained.
+All documentation provided here is end-of-life (EOL), intended for reference only, and no longer receives *any* updates.
 
 {{< include file="/static/includes/24.10FeatureList.md" >}}
 
@@ -27,7 +40,7 @@ h1 {display:none;}
 
 ## 24.10 (Electric Eel) Featured Content
 
-To view or search through documentation for previous TrueNAS SCALE major versions, use the **Version** dropdown at the top of this page.
+To view or search through documentation for previous TrueNAS major versions, use the **Version** dropdown at the top of this page.
 
   <div class="docs-sections">
     <p>

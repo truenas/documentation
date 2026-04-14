@@ -23,6 +23,7 @@ timeout = "30s"
 name = "iXsystems and TrueNAS Users"
 
 [outputs]
+home = ["HTML","RSS","print"]
 section = ["HTML","RSS","print"]
 [outputFormats.PRINT]
 baseName = "index"
