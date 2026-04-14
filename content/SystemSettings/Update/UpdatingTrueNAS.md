@@ -20,7 +20,9 @@ Some profiles are not available or recommended for Enterprise customers.
 TrueNAS systems are shipped with the profile set for the user based on their use case.
 
 The **Update** screen shows the installed version, other installation or update options, and user profiles.
-Some users can select a different profile option from the **Select and update profile** dropdown list.
+Some users can select a different profile option from the **Select an update profile** dropdown list.
+
+{{< trueimage src="/images/SCALE/SystemSettings/SystemUpdateScreen.png" alt="Update Screen" id="Update Screen" >}}
 
 ## Software Update Paths
 
@@ -39,13 +41,37 @@ For information on how to file an issue ticket, see [Filing an Issue Ticket in T
 The TrueNAS **Update** screen provides users with automatic and manual update methods.
 
 We recommend updating TrueNAS when the system is idle (no clients connected, no disk activity, etc.).
-The system restarts after an upgrade.
+The system restarts after an update.
 Update during scheduled maintenance times to avoid disrupting user activities.
 
 {{< hint type=important >}}
 All auxiliary parameters are subject to change between major versions of TrueNAS due to security and development issues.
 We recommend removing all auxiliary parameters from TrueNAS configurations before upgrading.
 {{< /hint >}}
+
+## Selecting an Update Profile
+
+The **Update Profile** section on the **Update** screen controls which releases TrueNAS checks for updates.
+TrueNAS ships with a profile already set for your use case.
+Change it only if you want to shift to a different release cadence.
+See the [TrueNAS Software Status](https://www.truenas.com/docs/softwarestatus/) page for current recommendations by user type.
+
+{{< trueimage src="/images/SCALE/SystemSettings/UpdateScreenUpdateProfile.png" alt="Update Profile" id="Update Profile" >}}
+
+Profile availability depends on two factors:
+
+- **User type**: TrueNAS Enterprise users can select **General** or **Mission Critical** only. Community Edition users can select **Developer**, **Early Adopter**, or **General**. Mission Critical is not available to Community Edition users.
+- **Installed version**: The **Select an update profile** dropdown only shows profiles that the currently installed version qualifies for. If the running software is a Developer nightly build, only **Developer** appears as selectable. Early Adopter and General builds qualify for their own profile and any less conservative profile below them. Profiles that the current version does not qualify for appear in the **Other Profiles (Not Available)** section and cannot be selected until the system runs a qualifying release.
+
+To change the update profile:
+
+1. Go to **System > Update**.
+2. In the **Update Profile** section, select the desired profile from the **Select an update profile** dropdown.
+3. Click **Apply**.
+4. In the confirmation dialog, click **Continue**.
+
+TrueNAS refreshes the update check after you apply the new profile.
+The **Update** screen shows an **Available Profiles** section that describes each profile. For complete field descriptions, see [Update Screens]({{< ref "UpdateScreens" >}}).
 
 ## Automatically Updating
 
