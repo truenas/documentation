@@ -91,7 +91,7 @@ The **Rate this page** is the default selection after clicking the option to rat
 
 **Message** is a text entry field for a longer description of what steps were taken and the result. The field provides examples of what to enter. This content populates the Jira ticket description field after clicking **Login To Jira To Submit**.
 
-**Attach debug**, which is selected by default, downloads and attaches a system debug to the Private Attachment Area TrueNaS provides to secure user confidential data that is part of the debug file.
+**Attach debug**, which is selected by default, downloads and attaches a system debug to the Private Attachment Area TrueNAS provides to secure user confidential data that is part of the debug file.
 
 **Take screenshot of the current page**, selected by default, takes a screenshot of the current screen.
 
@@ -107,7 +107,7 @@ Select the **Rate this page** to show options to submit review feedback on a UI 
 
 Stars set a rating using one (lowest) to five (best) stars.
 
-**Message** is a text entry field for comments about the screen you are rating. Include what you like, don't like, works well, or does not work well, and your exerience with the screen.
+**Message** is a text entry field for comments about the screen you are rating. Include what you like, don't like, works well, or does not work well, and your experience with the screen.
 
 **Take screenshot of the current page**, selected by default, takes a screenshot of the current screen.
 
