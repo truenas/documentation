@@ -1,5 +1,89 @@
 &NewLine;
 
+Update to the latest maintenance release of the current major version before upgrading to the next major version.
+You can then upgrade directly from the latest maintenance release to the latest release of the next major version.
+
+{{< hint type=note >}}
+This chart shows the basic upgrade paths between TrueNAS major versions.
+Depending on your use case and risk tolerance, you might prefer to delay upgrading to allow additional time for testing and stability.
+See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from Developer to Mission Critical.
+{{< /hint >}}
+
+<div class="section-box" id="tn-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
+    <div class="community-paths-container">
+      <img src="/images/truenas-community-edition-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <img src="/images/truenas-community-edition-logo-white.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
+      <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="scroll-container" id="scrollContainer1">
+          <div class="chart-wrapper">
+            {{< mermaid class="mermaid_sizing" >}}
+            flowchart LR
+              A["11.3-U5"] -->|update| B["12.0-U8.1"]
+              B -->|"update / ISO install"| C["13.0-U6.8 / 13.3-U2"]
+              C -->|update| G
+              C -->|ISO install| J
+              D["22.02.4 (Angelfish)"] -->|update| E
+              E["22.12.4.2 (Bluefin)"] -->|update| F
+              F["23.10.2 (Cobia)"] -->|update| G
+              G["24.04.2.5 (Dragonfish)"] -->|update| H
+              H["24.10.2.4 (Electric Eel)"] -->|update| I
+              I["25.04.2.6 (Fangtooth)"] -->|update| J
+              J["25.10.3 (Goldeye)"] -->|"anticipated"| K
+              K["TrueNAS 26.0"]
+            {{< /mermaid >}}
+          </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator1">
+          <div class="scroll-dot" data-section="0" title="Beginning"></div>
+          <div class="scroll-dot" data-section="1" title="Middle"></div>
+          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
+        </div>
+      </div>
+    </div>
+    <div class="upgrade-paths-container">
+      <img src="/images/truenas-enterprise-logo-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
+      <div class="scroll-wrapper">
+        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
+        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
+        <div class="scroll-container" id="scrollContainer2">
+          <div class="chart-wrapper">
+            {{< mermaid class="mermaid_sizing" >}}
+            flowchart LR
+              A["11.3-U5"] -->|update| B
+              B["12.0-U8.1"] -->|update| C
+              C["13.0-U6.8"] -->|ISO install| H
+              C -->|update| E
+              D["23.10.2 (Cobia)"] -->|update| E
+              E["24.04.2.5 (Dragonfish)"]  -->|update| F
+              F["24.10.2.4 (Electric Eel)"] -->|update| G
+              G["25.04.2.6 (Fangtooth)"] -->|update| H
+              H["25.10.1 (Goldeye)"] -->|"anticipated"| I
+              I["TrueNAS 26.0"]
+            {{< /mermaid >}}
+          </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator2">
+          <div class="scroll-dot" data-section="0" title="Beginning"></div>
+          <div class="scroll-dot" data-section="1" title="Middle"></div>
+          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
+        </div>
+      </div>
+    </div>
+</div>
+
+Permitted upgrade methods are:
+
+* **update**: Apply updates using the **Update** screen in the TrueNAS UI or install a manual update file.
+  Not all upgrade paths support automatic updates (see chart).
+* **ISO install**: Save your TrueNAS configuration file, perform a fresh install using an <file>.iso</file> file for the target version, then upload the saved configuration.
+
+You can skip major versions using a fresh installation with configuration file restore.
+Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that might affect your configuration.
+Consider upgrading incrementally through major versions with significant changes, or be prepared to manually reconfigure any incompatibilities after upgrading directly to the target version.
+
 <style>
 /* Custom CSS to override Mermaid background color */
 #scale-upgrade-paths .mermaid {
@@ -186,402 +270,3 @@
     min-width: 1400px;
 }
 </style>
-
-Update to the latest maintenance release of the current major version before upgrading to the next major version.
-You can then upgrade directly from the latest maintenance release to the latest release of the next major version.
-
-{{< hint type=note >}}
-This chart shows the basic upgrade paths between TrueNAS major versions.
-Depending on your use case and risk tolerance, you might prefer to delay upgrading to allow additional time for testing and stability.
-See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-version-is-recommended" target="_blank">TrueNAS Software Status</a> for version recommendations tailored to different user types from Developer to Mission Critical.
-{{< /hint >}}
-
-<div class="section-box" id="scale-upgrade-paths" style="padding: 0 40px 40px 40px; margin-bottom: 20px;">
-    <div class="upgrade-paths-container">
-      <img src="/images/truenas-community-edition-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
-      <img src="/images/truenas-community-edition-logo-white.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Community Edition" alt="TrueNAS Community Edition">
-      <div class="scroll-wrapper">
-        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
-        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="scroll-container" id="scrollContainer1">
-          <div class="chart-wrapper">
-            {{< mermaid class="mermaid_sizing" >}}
-            flowchart LR
-              A["11.3-U5"] -->|update| B["12.0-U8.1"]
-              B -->|"update / ISO install"| C["13.0-U6.8 / 13.3-U2"]
-              C -->|update| G
-              C -->|ISO install| I
-              D["22.02.4 (Angelfish)"] -->|update| E
-              E["22.12.4.2 (Bluefin)"] -->|update| F
-              F["23.10.2 (Cobia)"] -->|update| G
-              G["24.04.2.5 (Dragonfish)"] -->|update| H
-              H["24.10.2.4 (Electric Eel)"] -->|update| I
-              I["25.04.2.6 (Fangtooth)"] -->|"update"| J
-              J["25.10.2.1 (Goldeye)"]
-            {{< /mermaid >}}
-          </div>
-        </div>
-        <div class="scroll-indicator" id="scrollIndicator1">
-          <div class="scroll-dot" data-section="0" title="Beginning"></div>
-          <div class="scroll-dot" data-section="1" title="Middle"></div>
-          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
-        </div>
-      </div>
-    </div>
-    <div class="upgrade-paths-container">
-      <img src="/images/truenas-enterprise-logo-logo-blue.png" class="light-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
-      <img src="/images/truenas-enterprise-logo-logo-white-rgb-900px-w-72ppi.png" class="dark-mode-logo" style="box-shadow: none; max-width: 225px; padding-bottom: 20px; padding-top: 40px; display: none;" title="TrueNAS Enterprise" alt="TrueNAS Enterprise">
-      <div class="scroll-wrapper">
-        <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
-        <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="scroll-container" id="scrollContainer2">
-          <div class="chart-wrapper">
-            {{< mermaid class="mermaid_sizing" >}}
-            flowchart LR
-              A["11.3-U5"] -->|update| B
-              B["12.0-U8.1"] -->|update| C
-              C["13.0-U6.8"] -->|ISO install| G
-              C -->|update| E
-              D["23.10.2 (Cobia)"] -->|update| E
-              E["24.04.2.5 (Dragonfish)"]  -->|update| F
-              F["24.10.2.4 (Electric Eel)"] -->|update| G
-              G["25.04.2.6 (Fangtooth)"] -->|update| H
-              H["25.10.2.1 (Goldeye)"]
-            {{< /mermaid >}}
-          </div>
-        </div>
-        <div class="scroll-indicator" id="scrollIndicator2">
-          <div class="scroll-dot" data-section="0" title="Beginning"></div>
-          <div class="scroll-dot" data-section="1" title="Middle"></div>
-          <div class="scroll-dot active" data-section="2" title="Latest versions"></div>
-        </div>
-      </div>
-    </div>
-</div>
-
-<script>
-  // Enhanced scroll functionality - wait for Mermaid to properly render
-  document.addEventListener("DOMContentLoaded", function() {
-    
-    let checkAttempts = 0;
-    
-    function waitForMermaidAndInitialize() {
-      if (checkAttempts >= 15) { // 3 seconds total timeout
-        initializeScrollControls();
-        return;
-      }
-      
-      // Check if the upgrade-paths tab is currently active
-      const upgradePathsTab = document.getElementById('pane-upgrade-paths');
-      if (!upgradePathsTab || !upgradePathsTab.classList.contains('active')) {
-        // Tab is not active, wait longer
-        checkAttempts++;
-        setTimeout(waitForMermaidAndInitialize, 300);
-        return;
-      }
-      
-      // Find the VISIBLE containers (there might be duplicates)
-      const allContainers1 = document.querySelectorAll('[id="scrollContainer1"]');
-      const allContainers2 = document.querySelectorAll('[id="scrollContainer2"]');
-      
-      const container1 = Array.from(allContainers1).find(el => el.offsetParent !== null);
-      const container2 = Array.from(allContainers2).find(el => el.offsetParent !== null);
-      
-      if (container1 && container1.scrollWidth > 0 && 
-          container2 && container2.scrollWidth > 0) {
-        initializeScrollControls();
-      } else {
-        checkAttempts++;
-        setTimeout(waitForMermaidAndInitialize, 200);
-      }
-    }
-    
-    function initializeWhenReady() {
-      // Start checking immediately
-      waitForMermaidAndInitialize();
-    }
-    
-    // Start initialization
-    initializeWhenReady();
-    
-    // Handle URL hash changes (like when clicking jump buttons or loading with anchor)
-    window.addEventListener('hashchange', function() {
-      // Small delay to allow tab to become active
-      setTimeout(() => {
-        checkAttempts = 0;
-        waitForMermaidAndInitialize();
-      }, 300);
-    });
-    
-    // CRITICAL: Listen for when the upgrade-paths tab specifically becomes active
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-          const target = mutation.target;
-          if (target.id === 'pane-upgrade-paths' && target.classList.contains('active')) {
-            // Tab just became active, start initialization
-            setTimeout(() => {
-              checkAttempts = 0;
-              waitForMermaidAndInitialize();
-            }, 500); // Extra time for Mermaid to render
-          }
-        }
-      });
-    });
-    
-    // Start observing the upgrade-paths tab pane for class changes
-    const upgradePathsPane = document.getElementById('pane-upgrade-paths');
-    if (upgradePathsPane) {
-      observer.observe(upgradePathsPane, { attributes: true, attributeFilter: ['class'] });
-    }
-    
-    // Also check after a longer delay on initial load to catch tab activation from URL anchor
-    setTimeout(() => {
-      const container1 = document.getElementById('scrollContainer1');
-      const container2 = document.getElementById('scrollContainer2');
-      if ((!container1 || container1.scrollWidth === 0) || (!container2 || container2.scrollWidth === 0)) {
-        checkAttempts = 0;
-        waitForMermaidAndInitialize();
-      }
-    }, 1000);
-    
-    // Global function for manual testing
-    window.reinitializeScrollControls = function() {
-      initializeScrollControls();
-    };
-    
-    // Also listen for tab changes and reinitialize when this tab becomes visible
-    function handleTabVisibility() {
-      const upgradePathsSection = document.getElementById('scale-upgrade-paths');
-      if (upgradePathsSection && upgradePathsSection.offsetParent !== null) {
-        // Reset check attempts and try again
-        checkAttempts = 0;
-        setTimeout(waitForMermaidAndInitialize, 100);
-      }
-    }
-    
-    // Listen for tab changes (multiple methods to catch different tab systems)
-    document.addEventListener('click', function(e) {
-      if (e.target.matches('a[href*="upgrade"], .nav-link, .tab-link, [role="tab"]')) {
-        setTimeout(handleTabVisibility, 300);
-      }
-    });
-    
-    // Also try intersection observer for when the section becomes visible
-    if (typeof IntersectionObserver !== 'undefined') {
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
-            setTimeout(() => {
-              const container1 = document.getElementById('scrollContainer1');
-              if (container1 && container1.scrollWidth === 0) {
-                checkAttempts = 0;
-                waitForMermaidAndInitialize();
-              }
-            }, 200);
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      const upgradePathsSection = document.getElementById('scale-upgrade-paths');
-      if (upgradePathsSection) {
-        observer.observe(upgradePathsSection);
-      }
-    }
-    
-    // Manual trigger for testing - click anywhere on the upgrade paths section
-    document.addEventListener('click', function(e) {
-      const upgradePathsSection = document.getElementById('scale-upgrade-paths');
-      if (upgradePathsSection && upgradePathsSection.contains(e.target)) {
-        const container1 = document.getElementById('scrollContainer1');
-        if (container1 && container1.scrollWidth === 0) {
-          checkAttempts = 0;
-          setTimeout(waitForMermaidAndInitialize, 100);
-        }
-      }
-    });
-    
-    function initializeScrollControls() {
-      // Prevent multiple simultaneous initializations
-      if (initializeScrollControls.isInitializing) {
-        return;
-      }
-      initializeScrollControls.isInitializing = true;
-      const containerIds = ['scrollContainer1', 'scrollContainer2'];
-      
-      containerIds.forEach((containerId) => {
-        // Find the VISIBLE container with this ID (there might be duplicates)
-        const allContainers = document.querySelectorAll(`[id="${containerId}"]`);
-        
-        // More robust visibility detection
-        const container = Array.from(allContainers).find(el => {
-          const rect = el.getBoundingClientRect();
-          const computedStyle = window.getComputedStyle(el);
-          return el.offsetParent !== null && 
-                 rect.width > 0 && 
-                 rect.height > 0 && 
-                 computedStyle.display !== 'none' &&
-                 computedStyle.visibility !== 'hidden';
-        });
-        
-        if (!container) {
-          return;
-        }
-        
-        const wrapper = container.closest('.scroll-wrapper');
-        const leftBtn = wrapper ? wrapper.querySelector('.scroll-nav-left') : null;
-        const rightBtn = wrapper ? wrapper.querySelector('.scroll-nav-right') : null;
-        const indicatorId = containerId.replace('Container', 'Indicator');
-        // Find the VISIBLE indicator that corresponds to this container
-        const allIndicators = document.querySelectorAll(`[id="${indicatorId}"]`);
-        const indicator = Array.from(allIndicators).find(el => {
-          const rect = el.getBoundingClientRect();
-          const computedStyle = window.getComputedStyle(el);
-          return el.offsetParent !== null && 
-                 rect.width > 0 && 
-                 rect.height > 0 && 
-                 computedStyle.display !== 'none' &&
-                 computedStyle.visibility !== 'hidden';
-        });
-        const dots = indicator ? indicator.querySelectorAll('.scroll-dot') : [];
-        
-
-        // Set initial scroll position to rightmost
-        if (container.scrollWidth > container.clientWidth) {
-          container.scrollLeft = container.scrollWidth - container.clientWidth;
-        }
-        
-        // Update scroll state function
-        function updateScrollState() {
-          const { scrollLeft, scrollWidth, clientWidth } = container;
-          const maxScroll = scrollWidth - clientWidth;
-          const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
-          
-          // Update wrapper classes for gradients with larger threshold for smaller screens
-          if (wrapper) {
-            // Use larger threshold (10px) to handle sub-pixel rendering and smaller screens
-            const threshold = 10;
-            const isAtStart = scrollLeft <= threshold;
-            const isAtEnd = scrollLeft >= maxScroll - threshold;
-            
-            wrapper.classList.toggle('at-start', isAtStart);
-            wrapper.classList.toggle('at-end', isAtEnd);
-          }
-          
-          // Update scroll indicators with partial states (multiple dots can be active)
-          if (dots.length > 0) {
-            // scrollPercentage: 0 = leftmost, 1 = rightmost
-            // Allow overlapping ranges for better UX feedback
-            const dot0Active = scrollPercentage <= 0.4;  // Beginning: 0-40%
-            const dot1Active = scrollPercentage >= 0.2 && scrollPercentage <= 0.8;  // Middle: 20-80%  
-            const dot2Active = scrollPercentage >= 0.6;  // Latest: 60-100%
-            
-            dots[0].classList.toggle('active', dot0Active);
-            dots[1].classList.toggle('active', dot1Active);  
-            dots[2].classList.toggle('active', dot2Active);
-          }
-        }
-
-        // Arrow button event handlers
-        if (leftBtn) {
-          leftBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const scrollAmount = container.clientWidth * 0.7;
-            container.scrollBy({
-              left: -scrollAmount,
-              behavior: 'smooth'
-            });
-            setTimeout(updateScrollState, 100);
-          });
-        }
-
-        if (rightBtn) {
-          rightBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const scrollAmount = container.clientWidth * 0.7;
-            container.scrollBy({
-              left: scrollAmount,
-              behavior: 'smooth'
-            });
-            setTimeout(updateScrollState, 100);
-          });
-        }
-
-        // Dot click handlers
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const maxScroll = container.scrollWidth - container.clientWidth;
-            const targetScroll = (maxScroll / (dots.length - 1)) * index;
-            container.scrollTo({
-              left: targetScroll,
-              behavior: 'smooth'
-            });
-            setTimeout(updateScrollState, 100);
-          });
-        });
-
-        // Scroll event listener - more aggressive updates
-        container.addEventListener('scroll', updateScrollState);
-        
-        // Also listen for any programmatic scroll changes
-        const observer = new MutationObserver(() => updateScrollState());
-        observer.observe(container, { attributes: true, attributeFilter: ['scrollLeft'] });
-        
-        // Set up drag scrolling
-        setupDragScroll(container);
-        
-        // Initial state update
-        setTimeout(updateScrollState, 100);
-      });
-      
-      // Reset initialization flag
-      initializeScrollControls.isInitializing = false;
-    }
-
-    // Drag scroll functionality
-    function setupDragScroll(container) {
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-
-      container.addEventListener('mousedown', (e) => {
-        isDown = true;
-        container.style.cursor = 'grabbing';
-        startX = e.pageX - container.offsetLeft;
-        scrollLeft = container.scrollLeft;
-      });
-
-      container.addEventListener('mouseleave', () => {
-        isDown = false;
-        container.style.cursor = 'grab';
-      });
-
-      container.addEventListener('mouseup', () => {
-        isDown = false;
-        container.style.cursor = 'grab';
-      });
-
-      container.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - container.offsetLeft;
-        const walk = (x - startX) * 2;
-        container.scrollLeft = scrollLeft - walk;
-      });
-    }
-  });
-</script>
-
-Permitted upgrade methods are:
-
-* **update**: Apply updates using the **Update** screen in the TrueNAS UI or install a manual update file.
-  Not all upgrade paths support automatic updates (see chart).
-* **ISO install**: Save your TrueNAS configuration file, perform a fresh install using an .iso file for the target version, then upload the saved configuration.
-
-You can skip major versions using a fresh installation with configuration file restore.
-Before skipping versions, review release notes for each major version to identify service deprecations or significant changes that might affect your configuration.
-Consider upgrading incrementally through major versions with significant changes, or prepare to manually reconfigure any incompatibilities after upgrading directly to the target version.
