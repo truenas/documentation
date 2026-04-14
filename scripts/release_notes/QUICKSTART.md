@@ -2,241 +2,187 @@
 
 Get up and running with release notes automation in 5 minutes.
 
-> **📍 Where to run these commands:** All commands assume you're in the `documentation/scripts/release_notes/` directory. Navigate there first from your documentation repository root.
+> **Where to run these commands:** All commands assume you're in the `documentation/scripts/release_notes/` directory.
 
 ## Prerequisites
 
 - Python 3.8 or higher
-- Internet connection (to fetch Jira data)
+- Internet connection (to fetch Jira data and GitHub PR links)
 - Jira CSV export file
-- Claude Code (for automated notable changes generation)
+- Claude Code (this tool)
+- GitHub personal access token (optional but recommended — see below)
 
 ## Installation
 
-**From the documentation repository root:**
-
 **PowerShell (Windows):**
 ```powershell
-# Navigate to the scripts directory
 cd scripts\release_notes
-
-# Install dependencies
 pip install -r requirements.txt
 ```
 
 **Bash (Linux/macOS/WSL):**
 ```bash
-# Navigate to the scripts directory
 cd scripts/release_notes
-
-# Install dependencies
 pip install -r requirements.txt
 ```
 
-**Or use full path from anywhere:**
-```powershell
-# PowerShell
-cd <your-path>\documentation\scripts\release_notes
+## GitHub Token Setup (Recommended)
 
-# Bash
-cd <your-path>/documentation/scripts/release_notes
+The `prep` command searches GitHub for PR links when they are not available in the Jira public API (developers sometimes post them in internal-only comments). A token raises the GitHub search rate limit from 10 to 30 requests per minute.
+
+Get a token at **GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)**.
+No scopes are needed since `truenas` repos are public.
+
+**Bash (add to `~/.bashrc` to persist):**
+```bash
+export GITHUB_TOKEN=ghp_xxxxxxxxxxxx
+```
+
+**PowerShell:**
+```powershell
+$env:GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"
 ```
 
 ## Quick Workflow
 
-### 1. Export CSV from Jira (2 minutes)
+### Before You Start: Two Conventions to Know
 
-1. Open your Jira filter in browser
+> **CSV naming:** Save your Jira export as `{version}-changelog.csv` in `documentation/public/data/`.
+> Example: `public/data/25.10.3-changelog.csv`
+> The `prep` command looks for this file automatically.
+
+> **VersionNotes.md placeholder:** The new version tab must contain exactly this placeholder:
+> ```
+> <!-- Notable changes placeholder -->
+> ```
+> The `apply` command replaces this with the generated content.
+> See [Adding a New Version Tab](#adding-a-new-version-tab) below.
+
+---
+
+### Step 1: Export CSV from Jira (2 minutes)
+
+1. Open your Jira filter for the release
 2. Click **Export** → **Export CSV (all fields)**
-3. Save to `documentation/public/data/` as `25.10.X-changelog.csv`
+3. Save as `documentation/public/data/25.10.X-changelog.csv`
 
-### 2. Process the CSV (5 minutes)
+### Step 2: Run prep (5 minutes)
 
 **PowerShell:**
 ```powershell
-# Process CSV - automatically creates output/25_10_X/ directory
-python process_jira_export.py `
-  --csv ..\..\public\data\25.10.X-changelog.csv `
-  --version 25.10.X
+python release_notes.py prep --version 25.10.X
 ```
 
 **Bash:**
 ```bash
-python process_jira_export.py \
-  --csv ../../public/data/25.10.X-changelog.csv \
-  --version 25.10.X
+python release_notes.py prep --version 25.10.X
 ```
 
-**Output created:**
-- `output/25_10_X/tickets.json` - Structured data for Claude
-- `output/25_10_X/tickets.md` - Human-readable summary
+This processes the CSV, fetches PR links from Jira XML (with a GitHub search fallback), and generates a Claude prompt at `output/25_10_X/prompt.txt`.
 
-### 3. Generate Prompt for Claude Code (1 minute)
+> **Custom CSV path:** If your file is not in the default location:
+> ```
+> python release_notes.py prep --version 25.10.X --csv /path/to/file.csv
+> ```
 
-**PowerShell:**
-```powershell
-# Generate prompt file for Claude Code
-python generate_notable_changes.py `
-  --ticket-data output\25_10_X\tickets.json `
-  --version 25.10.X `
-  --manual
-```
+> **Pass token inline** if you prefer not to use the environment variable:
+> ```
+> python release_notes.py prep --version 25.10.X --github-token ghp_xxxxxxxxxxxx
+> ```
 
-**Bash:**
-```bash
-python generate_notable_changes.py \
-  --ticket-data output/25_10_X/tickets.json \
-  --version 25.10.X \
-  --manual
-```
+### Step 3: Run Claude Code (5 minutes)
 
-**Output:** `output/25_10_X/prompt.txt`
-
-### 4. Execute with Claude Code (5 minutes)
-
-In your Claude Code session (this tool!), say:
+In your Claude Code session, say:
 
 ```
 Complete the prompt from output/25_10_X/prompt.txt
 ```
 
-Claude Code will:
-1. Read the prompt and ticket data
-2. Analyze and triage tickets
-3. Generate notable changes following TrueNAS style
-4. Save to `output/25_10_X/notable-changes.md`
-5. Save excluded tickets to `output/25_10_X/excluded-tickets.md`
+Claude Code reads the prompt, analyzes tickets, and saves output to `output/25_10_X/notable-changes.md`.
 
-### 5. Review Generated Changes (2 minutes)
+### Step 4: Review generated changes (2 minutes)
 
-**PowerShell:**
-```powershell
-# Review notable changes
-notepad output\25_10_X\notable-changes.md
+Open and review:
+- `output/25_10_X/notable-changes.md` — the generated notable changes
+- `output/25_10_X/excluded-tickets.md` — tickets not included, with reasons
 
-# Review excluded tickets
-notepad output\25_10_X\excluded-tickets.md
-```
+Edit `notable-changes.md` as needed before applying.
 
-### 6. Update VersionNotes.md (3 minutes)
+### Step 5: Run apply (1 minute)
 
 **PowerShell:**
 ```powershell
-# Preview changes (dry run)
-python update_version_notes.py `
-  --version 25.10.X `
-  --notable-changes output\25_10_X\notable-changes.md `
-  --dry-run
-
-# Apply changes (creates backup automatically)
-python update_version_notes.py `
-  --version 25.10.X `
-  --notable-changes output\25_10_X\notable-changes.md
+python release_notes.py apply --version 25.10.X
 ```
 
 **Bash:**
 ```bash
-# Preview changes
-python update_version_notes.py \
-  --version 25.10.X \
-  --notable-changes output/25_10_X/notable-changes.md \
-  --dry-run
-
-# Apply changes
-python update_version_notes.py \
-  --version 25.10.X \
-  --notable-changes output/25_10_X/notable-changes.md
+python release_notes.py apply --version 25.10.X
 ```
 
-## Complete Example (PowerShell)
+This shows a diff preview, asks for confirmation, then updates VersionNotes.md.
 
-Here's a complete example for version 25.10.3:
+---
 
-```powershell
-# Step 1: Export CSV from Jira (manual)
-# Save to: documentation/public/data/25.10.3-changelog.csv
+## Adding a New Version Tab
 
-# Step 2: Process CSV
-python process_jira_export.py `
-  --csv ..\..\public\data\25.10.3-changelog.csv `
-  --version 25.10.3
+Before running `apply`, the version tab must exist in VersionNotes.md with the correct placeholder.
 
-# Step 3: Generate prompt for Claude Code
-python generate_notable_changes.py `
-  --ticket-data output\25_10_3\tickets.json `
-  --version 25.10.3 `
-  --manual
+Minimal tab structure:
 
-# Step 4: In Claude Code, say:
-# "Complete the prompt from output/25_10_3/prompt.txt"
+```html
+<div data-tab-id="25.10.X" data-tab-label="25.10.X">
 
-# Step 5: Review generated files
-notepad output\25_10_3\notable-changes.md
-notepad output\25_10_3\excluded-tickets.md
+Month DD, YYYY
 
-# Step 6: Update VersionNotes.md (dry run first)
-python update_version_notes.py `
-  --version 25.10.3 `
-  --notable-changes output\25_10_3\notable-changes.md `
-  --dry-run
+The TrueNAS team is pleased to release TrueNAS 25.10.X!
 
-# Step 7: Apply changes
-python update_version_notes.py `
-  --version 25.10.3 `
-  --notable-changes output\25_10_3\notable-changes.md
+**Notable changes:**
 
-# Done! Commit the changes
-git add content/GettingStarted/VersionNotes.md
-git commit -m "Add notable changes for 25.10.3"
+<!-- Notable changes placeholder -->
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=XXXXX" target="_blank">TrueNAS 25.10.X (Goldeye) Changelog</a> in Jira.
+
+</div>
 ```
 
-## Time Savings
+Also update the front matter jump button:
 
-| Task | Before | After | Savings |
-|------|--------|-------|---------|
-| Data collection | 30 min | 2 min | 28 min |
-| Ticket triage | 45 min | 5 min | 40 min |
-| Writing notable changes | 30 min | 5 min | 25 min |
-| Integration | 15 min | 3 min | 12 min |
-| **Total** | **120 min** | **15 min** | **105 min** |
+```yaml
+jump_to_buttons:
+  - text: "Latest Changes"
+    anchor: "25.10.X"   # ← update to new version
+```
+
+> **Important:** The placeholder must be exactly `<!-- Notable changes placeholder -->`.
+> Any other text (including other placeholder patterns) causes `apply` to fail with a warning.
+
+---
 
 ## Troubleshooting
 
-### "Module not found" error
-
-```bash
-# Install dependencies
-pip install -r requirements.txt
-```
-
 ### "CSV file not found"
 
-Make sure you specify the correct path:
+The `prep` command looks for `public/data/{version}-changelog.csv`.
+Save your Jira export there, named exactly `{version}-changelog.csv`.
 
-```bash
-./process_jira_export.py --csv /full/path/to/file.csv --version 25.10.X
+### "notable-changes.md not found"
+
+Run `prep` first, then ask Claude Code to complete the prompt before running `apply`.
+
+### "Could not find placeholder"
+
+Check that the version tab in VersionNotes.md contains exactly:
 ```
-
-### "Could not find VersionNotes.md"
-
-Specify the path manually:
-
-```bash
-./update_version_notes.py \
-  --version 25.10.X \
-  --notable-changes draft.md \
-  --version-notes /path/to/VersionNotes.md
+<!-- Notable changes placeholder -->
 ```
+No other placeholder text is recognized.
+
+### "Could not find version section"
+
+The version tab must exist in VersionNotes.md before running `apply`. See [Adding a New Version Tab](#adding-a-new-version-tab).
 
 ## Next Steps
 
 - Read the full [README.md](README.md) for detailed documentation
 - Review [prompts/notable_changes_prompt.md](prompts/notable_changes_prompt.md) for style guidelines
-- Customize triage criteria in `process_jira_export.py`
-
-## Support
-
-For questions or issues, consult:
-- [README.md](README.md) - Full documentation
-- Script help: `./script_name.py --help`
-- Contact documentation team
