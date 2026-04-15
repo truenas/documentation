@@ -20,8 +20,6 @@ keywords:
 doctype: tutorial
 ---
 
-
-
 The TrueNAS **General Settings** provide options to configure support, file a ticket or provide feedback on the UI or a feature, download a system debug, configure a graphic user interface (GUI), set UI and keyboard languages, and add system email.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralScreen.png" alt="General Settings Screen" id="General Settings Screen" >}}
@@ -97,7 +95,7 @@ To show real-time console messages at the bottom of the browser window, select *
 
 ## Localizing the TrueNAS System
 
-Localizing the TrueNAS system consists of changing the UI language and the keyboard layout to support the selected language and setting the time zone to match where the TrueNAS server is located. To set date and time formats, go to the top toolbar [**Settings > Preferences**]({{< ref "/Scale/TopToolbar/Settings/_index.md" >}}) screen.
+Localizing the TrueNAS system consists of changing the UI language and the keyboard layout to support the selected language and setting the time zone to match where the TrueNAS server is located. To set date and time formats, go to the top toolbar [**Settings > Preferences**]({{< ref "/TopToolbar/Settings/_index.md" >}}) screen.
 
 To change the Web UI on-screen language and set the keyboard to work with the selected language, click **Settings** on the **Localization** card to open the **Localization Settings** configuration screen.
 
