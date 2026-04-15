@@ -103,8 +103,7 @@ The **Manual Update** screen opens after saving the system configuration setting
 
 **Choose File** opens a browser window to locate the downloaded update file.
 
-The **Update File Temporary Storage Location** dropdown list includes two options:
-* **Memory Device** 
-* A mount location on the system, such as a pool or dataset path, where the update file is stored during installation.
+The **Update File Temporary Storage Location** dropdown lists **Memory Device** and a mount path entry for each pool available on the system.
+Select **Memory Device** to store the update file in system RAM during installation, or select a pool mount path to store it on disk if the system has limited memory available.
 
 **Apply Update** starts the installation.
