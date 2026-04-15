@@ -33,9 +33,9 @@ The **Create Pool** button in the center of the screen opens the **[Pool Creatio
 
 ## Storage Dashboard
 
-After adding pools, the dashboard shows the [pool widgets](#pool-widgets), the **Update** and **Disconnect** buttons, and a <span class="material-icons">more_vert</span> dropdown menu with more options: **Expand Pool** and **AutoTrim**.
+After adding pools, the dashboard shows the [pool widgets](#pool-widgets), the **Upgrade** and **Disconnect** buttons, and a <span class="material-icons">more_vert</span> dropdown menu with more options: **Expand Pool** and **AutoTrim**.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pool" id="Storage Dashboard with Pool" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pools" id="Storage Dashboard with Pools" >}}
 
 The buttons at the top right of the **Storage Dashboard** screen provide access to pool and disk functions:
 
@@ -53,6 +53,21 @@ TrueNAS detects these as present on the system but not yet connected in TrueNAS.
  {{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.
+
+* {{< expand "Tiering" "v" >}}
+**Tiering** openes the **Tiering** screen.
+
+{{< trueimage src="/images/SCALE/Storage/TieringScreen.png" alt="TieringScreen" id="TieringScreen" >}}
+
+The **Enable** checkbox activates tiering for shared datasets.
+The **Max Concurrent Jobs** field allows you to limit the max amount of concurrent ZFS rewrite jobs.
+The **Max Used Percentage** field allows you to set the dataset capacity at which rewrite operations will abort. 
+
+{{< hint type=note >}}
+Enabling tiering changes share behavior. SMB shares and Webshares will no longer export child datasets.
+{{< /hint >}}
+{{< /expand >}}
+
 * **Create Pool** opens the **[Pool Creation Wizard]({{< ref "PoolCreationWizardScreen" >}})**.
 
 * {{< expand "Disconnect Button" "v" >}}
