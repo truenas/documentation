@@ -37,7 +37,7 @@ We recommend organizing your pool with datasets before configuring [data sharing
 
 ### Setting Dataset Compression Levels
 
-Compression encodes information in less space than the original data occupies. 
+Compression encodes information in less space than the original data occupies.
 We recommend choosing a compression algorithm that balances disk performance with the amount of saved space.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetCompressionLevelOptions.png" alt="Add Dataset Compression Level Options" id="Add Dataset Compression Level Options" >}}
@@ -54,7 +54,7 @@ Setting a quota defines the maximum allowed space for the dataset.
 You can also reserve a defined amount of pool space to prevent automatically generated data like system logs from consuming all of the dataset space.
 You can configure quotas for only the new dataset or both the new dataset and any child datasets of the new dataset.
 
-Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field. 
+Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field.
 Enter **0** to disable quotas.
 
 Dataset quota [alerts]({{< ref "/SCALE/TopToolbar/Alerts" >}}) are based on the percentage of storage used.
@@ -109,25 +109,23 @@ Change **Checksum** to **SHA512**.
 
 Complete any other setting changes you want to make, then click **Save**.
 
-
 ## Creating a Dataset for a Fusion Pool
 First, add the [pool with a Metadata VDEV]({{< ref "CreatingFusionPools" >}}).
 
-{{< trueimage src="/images/SCALE/Storage/AddMetadataVDEV.png" alt="Add Metadata VDEV" id="Add Metadata VDEV" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Step" id="Pool Creation Wizard Metadata Step" >}}
 
 Select the root dataset of the pool (with the metadata VDEV), then click **Add Dataset** to add the dataset.
-Click **Advanced Options**. Enter the dataset name, select the **Dataset Preset**, then scroll down to **Metadata (Special) Small Block Size** setting to set a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< ref "CreatingFusionPools" >}}).
+Click **Advanced Options**. Enter the dataset name and select the **Dataset Preset**, then scroll down to the **Use Metadata (Special) VDEVs** setting.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetFusionPoolMetadataOptions.png" alt="Add Dataset for Fusion Pool" id="Add Dataset for Fusion Pool" >}}
 
-Blocks smaller than or equal to this value are assigned to the special allocation class while greater blocks are assigned to the regular class.
-Valid values are zero or a power of two from 512B up to 1M.
-The default size **0** means no small file blocks are allocated in the special class.
-Enter a threshold block size for including small file blocks into the [special allocation class (fusion pools)]({{< ref "CreatingFusionPools" >}}).
+Select **On** to enable storing data blocks in the special allocation class.
+The **Threshold** field appears. Enter a maximum block size (1 byte to 16 MiB) for blocks to store in the special class.
+The default threshold is 16 MiB. Blocks smaller than or equal to the threshold are assigned to the special allocation class; larger blocks are assigned to the regular class.
 
 ## Managing Datasets
 After creating a dataset, users can manage additional options from the **Datasets** screen.
-Select the dataset, then click **Edit** on the dataset widget for the function you want to manage. 
+Select the dataset, then click **Edit** on the dataset widget for the function you want to manage.
 The [Datasets Screen]({{< ref "/SCALE/Datasets" >}}) article describes each option in detail.
 
 ### Editing a Dataset
@@ -146,7 +144,7 @@ For more information, see the [Setting Up Permissions]({{< ref "/SCALE/Datasets/
 
 ### Deleting a Dataset
 Select the dataset on the tree table, then click **Delete** on the **Dataset Details** widget.
-This opens a delete window where you enter the dataset path (root/parent/child) and select **Confirm** to delete the dataset, all stored data, and any snapshots from TrueNAS. 
+This opens a delete window where you enter the dataset path (root/parent/child) and select **Confirm** to delete the dataset, all stored data, and any snapshots from TrueNAS.
 
 To delete a root dataset, use the **Export/Disconnect** option on the **[Storage Dashboard]({{< ref "ManagePools" >}})** screen to delete the pool.
 

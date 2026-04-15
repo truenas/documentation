@@ -27,23 +27,22 @@ majorVersions:
     name: "TrueNAS 25.10 - Goldeye"
     releaseName: "Goldeye"
     releases:
-      - name: "25.10.2.1"
+      - name: "25.10.3"
         type: "Maintenance"
-        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.2.1"
-        releaseDate: "2026-02-25"
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.3"
+        releaseDate: "2026-04-14"
         latest: true
   - lifecycle: "26"
     name: "TrueNAS 26"
     releaseName: "26"
     releases:
+      - name: "26-BETA.1"
+        type: "Early Release"
+        link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.1"
+        releaseDate: "2026-04-07"
+        latest: true
       - name: "26 Nightlies"
         type: "Experimental"
         link: "https://www.truenas.com/docs/scale/26.04/gettingstarted/versionnotes/"
         releaseDate: "2025-08-11"
-        latest: true
-      - name: "26-BETA.1"
-        type: "Experimental"
-        link: ""
-        releaseDate: "TBD"
         latest: false
-

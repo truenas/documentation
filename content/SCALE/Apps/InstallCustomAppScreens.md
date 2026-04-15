@@ -304,7 +304,7 @@ See the [Docker Compose overview](https://docs.docker.com/compose/) from Docker 
 | Setting | Description |
 |-----------|-------------|
 | Name | Enter a name for the application to be used in the TrueNAS UI. The name must use lowercase alphanumeric characters, start with an alphabetic character, and can end with alphanumeric character. A hyphen (`-`) is allowed but not as the first or last character, for example *abc123*, *abc*, *abcd-1232*, but not *-abcd*. |
-| Custom Config | Enter a Docker Compose YAML file for the application. |
+| Custom Config | Enter a Docker Compose YAML file for the application. The file must include a `services:` key or an `include:` key pointing to an external Compose file that defines services. |
 {{< /truetable >}}
 
 Click **Save** to initiate app deployment.

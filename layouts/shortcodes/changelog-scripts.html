@@ -37,7 +37,7 @@
 {{- else if ge $scaleIndex 0 -}}
   {{- /* Master branch */ -}}
   {{- $tempPath := "" -}}
-  {{- $segmentsAfterScale := sub (len $cleanSegments) (add $scaleIndex 1) -}}
+  {{- $segmentsAfterScale := sub (len $cleanSegments) $scaleIndex -}}
   {{- range seq $segmentsAfterScale -}}
     {{- $tempPath = printf "%s../" $tempPath -}}
   {{- end -}}

@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS 26 Development Notes"
+title: "TrueNAS 27 Development Notes"
 description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
 weight: 10
 related: false
@@ -8,24 +8,24 @@ aliases:
  - /scale/scalereleasenotes/
  - /scalenext-releasenotes/
  - /scale/scalenextversion/
- - /scale/26/gettingstarted/scalereleasenotes/
- - /scale/26/gettingstarted/versionnotes/
+ - /scale/27/gettingstarted/scalereleasenotes/
+ - /scale/27/gettingstarted/versionnotes/
  - /scale/gettingstarted/scalereleasenotes/ 
  - /releasenotes/
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "26-nightly-changes"
+    anchor: "27-nightly-changes"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
     icon: "warning"
-  - text: "26 Major Features"
+  - text: "27 Major Features"
     anchor: "major-features"
     icon: "new-releases"
   - text: "Deprecations"
     anchor: "deprecations"
     icon: "timeline"
-  - text: "Full 26 Changelog"
+  - text: "Full 27 Changelog"
     anchor: "full-changelog"
     icon: "history"
   - text: "Preparing to Upgrade"
@@ -39,42 +39,41 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-{{< hint type="tip" title="TrueNAS 26 Nightly Development Documentation" >}}
-This page tracks the latest development roadmap and notes for TrueNAS 26, the next major version of TrueNAS.
+{{< hint type="important" title="TrueNAS 27 Nightly Development Documentation" >}}
+This page tracks the latest development roadmap and notes for TrueNAS 27, the next major version of TrueNAS.
 Nightly builds are early-stage development software intended for testing and feedback — not production use.
-See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for an overview of TrueNAS release stages and versioning.
+See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycle" >}}) for an overview of TrueNAS release stages and versioning.
 
-See the stable [25.04 (Fangtooth)](https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/) or pre-release [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) release notes for information relating to those versions.
+See the stable [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) or pre-release [TrueNAS 26](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/) release notes for information relating to those versions.
 {{< /hint >}}
 
 ## Notable Changes and Known Issues
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="26-nightly-changes" data-tab-label="26 Nightly Changes">
+  <div data-tab-id="27-nightly-changes" data-tab-label="27 Nightly Changes">
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-**SMB Stateful Failover** (Enterprise, HA) — TrueNAS 26 introduces stateful SMB HA failover.
-When enabled in the SMB service configuration, TrueNAS maintains SMB session state across controller failover events, allowing clients to reconnect without re-authentication.
-Incompatible with SMB1 support and Multi-Protocol or Legacy share purposes.
-See [Enabling SMB Stateful Failover]({{< ref "AddManageSMBShares#enabling-smb-stateful-failover" >}}) for details.
+TrueNAS 27 is currently in active development.
+
+Check back for more information.
 
   </div>
 
   <div data-tab-id="known-issues" data-tab-label="Known Issues">
 
-{{< hint type="important" title="Known Issues in 26" >}}
-These are ongoing issues that can affect multiple versions in the 26 series.
+{{< hint type="important" title="Known Issues in 27" >}}
+These are ongoing issues that can affect multiple versions in the 27 series.
 <br> When resolved, issues move to **Notable Changes** for the appropriate release.
 {{< /hint >}}
 
 ### Current Known Issues
 
-No known issues currently reported for 26 development builds.
+No known issues currently reported for 27 development builds.
 
 Check back for more information.
 
@@ -82,12 +81,12 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 
   </div>
 
-  <div data-tab-id="major-features" data-tab-label="26 Major Features">
+  <div data-tab-id="major-features" data-tab-label="27 Major Features">
 
-{{< include file="/static/includes/26FeatureList.md" >}}
+{{< include file="/static/includes/27FeatureList.md" >}}
 
   </div>
-  <div data-tab-id="full-changelog" data-tab-label="Full 26 Changelog">
+  <div data-tab-id="full-changelog" data-tab-label="Full 27 Changelog">
 <!-- CSV Changelog Table with Version Support -->
 <div id="csv-changelog-container"></div>
   </div>
@@ -109,7 +108,7 @@ For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" 
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26-nightly-changes');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '27-nightly-changes');
 });
 </script>
 
@@ -117,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
 {{< changelog-scripts >}}
 <script>
 // Initialize changelog table for version
-initializeChangelogTableForTabs('26');
+initializeChangelogTableForTabs('27');
 </script>
 
 ## Upgrading TrueNAS {#upgrading}
@@ -143,6 +142,38 @@ initializeChangelogTableForTabs('26');
 
 ### Containers and Virtual Machines
 
+#### Containers
+
+LXC containers, introduced as an experimental feature in earlier TrueNAS releases, are fully supported in TrueNAS 26.
+No configuration migration is required for containers created in prior releases.
+
+TrueNAS 26 adds the following container improvements:
+
+- **Enterprise HA support** — Containers can now fail over between HA controllers ([NAS-138309](https://ixsystems.atlassian.net/browse/NAS-138309)).
+  HA container failover requires a **static IP configuration**. Containers using DHCP do not fail over.
+- **GPU passthrough** — NVIDIA and other supported GPU devices can now be assigned to LXC containers from the container configuration screen ([NAS-138569](https://ixsystems.atlassian.net/browse/NAS-138569), [NAS-138570](https://ixsystems.atlassian.net/browse/NAS-138570), [NAS-138700](https://ixsystems.atlassian.net/browse/NAS-138700)).
+- **USB and PCIe passthrough fixes** — A regression that prevented USB and PCIe device passthrough to containers and VMs is resolved in BETA.1 ([NAS-139045](https://ixsystems.atlassian.net/browse/NAS-139045), [NAS-139356](https://ixsystems.atlassian.net/browse/NAS-139356)).
+
+See [Containers]({{< ref "/SCALE/Containers/Containers.md" >}}) for configuration details.
+
+  </div>
+
+  <div data-tab-id="disk-health-management" data-tab-label="Drive Health Management">
+
+### Drive Health Management
+
+TrueNAS monitors the condition of installed HDD and SSD drives (SAS, SATA, and NVMe) through three integrated layers:
+
+- **ZFS** detects sudden failures in real time during active read and write operations and marks affected vdevs or disks as faulted immediately.
+- **TrueNAS Middleware** polls SMART data from every drive every 90 minutes. When a polled attribute crosses a failure threshold, TrueNAS generates an alert.
+- **Alert logic** filters incoming SMART and ZFS data to suppress known-benign attribute fluctuations, reducing false-positive alerts by approximately 50% compared to prior releases.
+
+Drive health status is visible on the [**Disk Health**]({{< ref "/SCALE/Storage/StorageDashboardScreens.md#disk-health-widget" >}}) card on the **Storage** dashboard. Active alerts appear in the **Alerts** panel with details on the affected disk and recommended next steps.
+
+Community Edition users can supplement automated monitoring with manual SMART tests run via cron jobs or the `smartctl` command-line tool. Third-party tools such as [Scrutiny](https://apps.truenas.com/catalog/scrutiny/) are also available from the TrueNAS Apps catalog.
+
+See [Drive Health Management]({{< ref "/SCALE/Storage/Disks/DriveHealthManagement.md" >}}) for full details.
+
   </div>
 
   <div data-tab-id="truenas-apps" data-tab-label="TrueNAS Apps">
@@ -157,11 +188,11 @@ initializeChangelogTableForTabs('26');
 
   <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
 
-### Upgrade Paths
+### Upgrade Paths (Anticipated)
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
-{{< include file="/static/includes/26UpgradeMethods.md" >}}
+{{< include file="/static/includes/27UpgradeMethods.md" >}}
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
   </div>  
@@ -203,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Click the component version number to see release notes for that component.
 
-{{< component-versions "26" >}}
+{{< component-versions "27" >}}
 
 \*TrueNAS (25.10 and later) includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
   These drivers work with Turing and later GPUs.
@@ -216,14 +247,12 @@ Click the component version number to see release notes for that component.
 ### OpenZFS Feature Flags
 
 TrueNAS integrates many features provided by the upstream [OpenZFS project](https://openzfs.org/wiki/Main_Page).
-Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.3.3) are listed below:
+Any new feature flags introduced since the previous OpenZFS version that was integrated into TrueNAS (OpenZFS 2.4.1) are listed below:
 
 {{< truetable class="tn-blue" >}}
 | Feature Flag | GUID | Notes |
 |--------------|------|-------|
-| `block_cloning_endian` | [com.truenas:block_cloning_endian](https://openzfs.github.io/openzfs-docs/man/v2.4/7/zpool-features.7.html#block_cloning_endian) | Corrects ZAP entry endianness issues in the Block Reference Table (BRT) used by block cloning. Read-only compatible. |
-| `dynamic_gang_header` | [com.klarasystems:dynamic_gang_header](https://openzfs.github.io/openzfs-docs/man/v2.4/7/zpool-features.7.html#dynamic_gang_header) | Enables larger gang headers based on pool sector size. Not read-only compatible; must be manually enabled. |
-| `physical_rewrite` | [com.truenas:physical_rewrite](https://openzfs.github.io/openzfs-docs/man/v2.4/7/zpool-features.7.html#physical_rewrite) | Enables physical block rewriting that preserves logical birth times, reducing incremental send stream sizes. Read-only compatible. |
+| n/a | [](https://openzfs.github.io/openzfs-docs/man/master/7/zpool-features.7.html#FLAG) |  |
 {{< /truetable >}}
 
 For more details on feature flags, see [OpenZFS Feature Flags](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/Feature%20Flags.html) and [OpenZFS zpool-feature.7](https://openzfs.github.io/openzfs-docs/man/7/zpool-features.7.html).
