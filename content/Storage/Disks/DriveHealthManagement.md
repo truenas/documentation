@@ -98,7 +98,7 @@ The manual SHORT test performs a quick, surface-level diagnostic check. It typic
 
 The manual LONG test performs a full drive surface scan for periodic, deep validation. It provides a thorough validation of the entire drive surface, but has a significant negative performance impact during the test. LONG tests can also produce false-positive failure results on healthy drives.
 
-We recommend scheduling SMART tests so that they do not overlap with other data protection tasks like [snapshot creation or removal]({{< ref "/Datasets/Snapshots/_index.md" >}}), or [pool scrubs](https://www.truenas.com/docs/scale/storage/pools/managepools/index.html#running-a-pool-data-integrity-check-scrub).
+We recommend scheduling SMART tests so that they do not overlap with other data protection tasks like [snapshot creation or removal]({{< ref "/Datasets/Snapshots/_index.md" >}}), or [pool scrubs]({{< relref "/Storage/Pools/ManagePools/#running-a-pool-data-integrity-check-scrub" >}}).
 
 To run a manual test, go to **System > Shell** and run:
 
