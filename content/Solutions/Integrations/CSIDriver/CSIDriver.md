@@ -1,6 +1,6 @@
 ---
 title: "CSI Driver Administrators Guide"
-description: "Provides Kubernetes cluster adminitrators with the information needed to deploy the TrueNAS CSI Driver integration with Kubernetes, including informatio on setting up StorageClasses."
+description: "Provides Kubernetes cluster administrators with the information needed to deploy the TrueNAS CSI Driver integration with Kubernetes, including information on setting up StorageClasses."
 weight: 20
 aliases:
 tags:
@@ -11,11 +11,11 @@ doctype: tutorial
 ---
 
 
-## Configuation Overview
+## Configuration Overview
 
 This article is for Kubernetes cluster administrators who perform the one-time configuration of Kubernetes that consists of:
 * Setting up each worker node that can use the CSI driver
-* Deploying the TruenAS CSI driver in Kubernetes
+* Deploying the TrueNAS CSI driver in Kubernetes
 
 After receiving the authentication credentials from the TrueNAS administrator, they then establish communication with TrueNAS using the API authentication key provided by TrueNAS and the TrueNAS system IP address.
 
@@ -38,13 +38,13 @@ The CSI driver does the work of communicating what is received from Kubernetes, 
 
 * Required packages on Kubernetes nodes:
   - For NFS: `nfs-common` (Debian/Ubuntu) or `nfs-utils` (RHEL/CentOS)
-  - For iSCSI: `open-iscsi`, `multipath-tools`
+  - For iSCSI: `open-iscsi` (Debian/Ubuntu) or `iscsi-initiator-utils` (RHEL/CentOS)
 
 * Privileges: Cluster admin access for installation
 
 #### TrueNAS Requirements
 
-* TrueNAS Version 26.0 or later
+* TrueNAS SCALE 25.10.0 or later
 
 * Services enabled:
   * NFS service (for NFS volumes)
@@ -86,9 +86,9 @@ Log in to TrueNAS:
       For iSCSI, set TCP port 3260.
    c. Click **Save**.
    d. Click on the enable-service toggle to turn on the **NFS** and/or **iSCSI** services based on your use case. 
-      If you installed the nfs-common package on the Kubernetes worker nodes, enable the NFS service. If you installed the iscsi-common package on the Kubernetes worker nodes, enable the iSCSI service.
+      If you installed the nfs-common package on the Kubernetes worker nodes, enable the NFS service. If you installed the open-iscsi package on the Kubernetes worker nodes, enable the iSCSI service.
 
-3. Create a new pool or locate a pool with enough storage to accomodate the Kubernetes cluster storage needs.
+3. Create a new pool or locate a pool with enough storage to accommodate the Kubernetes cluster storage needs.
    Go to **Storage Dashboard**, identify a pool with enough storage capacity to suit your use case, or click **Create Pool** to add a new pool for Kubernetes volumes.
    For more information on creating new pools, see [Creating Pools]({{< ref "CreatingPools" >}}). To increase storage in an existing pool, see [Expanding a Pool in Managing Pools]({{< ref "ManagePools" >}}).
   
@@ -131,14 +131,14 @@ First, download the container image and the **deploy/truenas-csi-driver.yaml** f
 
   After that, on either platform, the user creates StorageClass and PVC resources, but these are standard Kubernetes patterns, and not a driver-specific setup.
 
-The procedure below covers addng the API key and TrueNAS IP address to Kubernetes to establish communication, editing the deploy/yaml file, adding required packages, deploying the CSI driver, and setting up StoragClasses. 
+The procedure below covers adding the API key and TrueNAS IP address to Kubernetes to establish communication, editing the deploy/yaml file, adding required packages, deploying the CSI driver, and setting up StorageClasses.
 
-Kubernetes automatically communicates with TrueNAS, making stoarge requests, driver calls to the TrueNAS API, and TrueNAS creates the resources.
+Kubernetes automatically communicates with TrueNAS, making storage requests, driver calls to the TrueNAS API, and TrueNAS creates the resources.
 For more information on Kubernetes, refer to:
 - [Kubernetes Documentation Configuration - Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) 
 - [Kubernetes Documentation Configuration - ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/) 
 
-To deploy the CSI Driver, the Kubernetes cluster adminstrator does the following:
+To deploy the CSI Driver, the Kubernetes cluster administrator does the following:
 
 1. Install NFS packages on all nodes.
 
@@ -154,7 +154,7 @@ To deploy the CSI Driver, the Kubernetes cluster adminstrator does the following
 
    ```bash
    # Debian/Ubuntu
-   sudo apt-get install -y open-iscsi multipath-tools
+   sudo apt-get install -y open-iscsi
    sudo systemctl enable iscsid
    sudo systemctl start iscsid
 
@@ -193,7 +193,7 @@ To deploy the CSI Driver, the Kubernetes cluster adminstrator does the following
 
    Update Image (line ~188, ~345):
    ```yaml
-     image: wmohanlon/truenas-csi-driver:v1.0.0  # Or your registry path
+     image: ghcr.io/truenas/truenas-csi:latest  # Or your registry path
      imagePullPolicy: IfNotPresent
    ```
 
@@ -221,17 +221,17 @@ To deploy the CSI Driver, the Kubernetes cluster adminstrator does the following
    ```
    {{< /expand >}} 
 
-6. Verify authentication by checking controller logs for successful authentication.
+6. Verify the driver started by checking controller logs for the startup message.
 
    ```bash
-   kubectl logs -n truenas-csi -l app=truenas-csi-controller -c csi-controller | grep -i auth
+   kubectl logs -n truenas-csi -l app=truenas-csi-controller -c csi-controller | head -5
    ```
    {{< expand "Expected Output:" "v" >}}
    ```
-   Successfully authenticated with TrueNAS
-   Pool 'tank' validated successfully
+   "Starting TrueNAS CSI Driver" version="v1.0.2"
    ```
-  {{< /expand >}} 
+   A successful startup with no error messages indicates the driver is connected and authenticated.
+  {{< /expand >}}
 
 7. Create the StorageClasses for the package method used (NFS or iSCSI).
 
@@ -313,6 +313,7 @@ The following parameters are needed when configuring Kubernetes.
 |-----------|------|---------|-------------|
 | `protocol` | string | nfs | Storage protocol: "nfs" or "iscsi" |
 | `pool` | string | (from ConfigMap) | ZFS pool name (overrides default) |
+| `datasetPath` | string | - | Relative path under pool for datasets (e.g., "k8s/volumes") |
 | `compression` | string | lz4 | ZFS compression: lz4, gzip, zstd, off |
 
 #### NFS and iSCSI Parameters
@@ -324,6 +325,8 @@ The following parameters are needed when configuring Kubernetes.
 | `sync` | string | standard | ZFS sync: standard, always, disabled |
 | `nfs.hosts` | string | - | Comma-separated allowed hosts |
 | `nfs.networks` | string | - | Comma-separated allowed networks (CIDR) |
+| `nfs.mapAllUser` | string | root | User for NFS mapall (controls file ownership) |
+| `nfs.mapAllGroup` | string | wheel | Group for NFS mapall (controls file ownership) |
 
 **Example:**
 ```yaml
@@ -340,6 +343,7 @@ parameters:
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `volblocksize` | string | 16K | ZVOL block size: 4K, 8K, 16K, 32K, 64K, 128K |
+| `sparse` | string | false | Use sparse (thin-provisioned) ZVOLs |
 | `iscsi.blocksize` | string | 512 | iSCSI extent logical block size |
 | `iscsi.iqn-base` | string | (from ConfigMap) | Custom IQN prefix per StorageClass |
 

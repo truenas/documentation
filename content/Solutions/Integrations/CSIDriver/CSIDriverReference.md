@@ -1,6 +1,6 @@
 ---
 title: "CSI Driver Reference"
-description: "Provides information best practices, example StorageClasses, glossary of terms, troubleshooting  and diagnostic commands, and API commands related to the TrueNAS CSL Driver integration with Kubernetes."
+description: "Provides information on best practices, example StorageClasses, glossary of terms, troubleshooting and diagnostic commands, and API commands related to the TrueNAS CSI Driver integration with Kubernetes."
 weight: 40
 aliases:
 tags:
@@ -11,7 +11,7 @@ doctype: tutorial
 ---
 
 
-This article provides general reference information about the CSI Driver, a deployment checklist, capacity planning, troubshooting and diagnostic commands for resolving issues between Kubernetes and the CSI driver, workflows for NFS and iSCSI deployments of the CSI driver integration with Kubernetes, best practices, a glossary of terms, as well as upgrade and suggested deployment options.
+This article provides general reference information about the CSI Driver, a deployment checklist, capacity planning, troubleshooting and diagnostic commands for resolving issues between Kubernetes and the CSI driver, workflows for NFS and iSCSI deployments of the CSI driver integration with Kubernetes, best practices, a glossary of terms, as well as upgrade and suggested deployment options.
 
 This article provides information that is not included in the administration and user guide articles.
 
@@ -24,9 +24,9 @@ The following are important terms and foundational to how the CSI driver works w
 * **Pod** - A pod is the smallest deployable unit in Kubernetes. It contains one or more containers.
   It can be created and destroyed frequently. They need persistent storage to retain data beyond their lifecycle.
 
-* **Persistent Volume** - A persistent volume is a piece of storage in the cluster, provisioned by the Kurbernetes administrator or can be dynamically provisioned via storage classes (StorageClass). It exists independently of pods, and has a lifecycle independent of any pod that uses it.
+* **Persistent Volume** - A persistent volume is a piece of storage in the cluster, provisioned by the Kubernetes administrator or can be dynamically provisioned via storage classes (StorageClass). It exists independently of pods, and has a lifecycle independent of any pod that uses it.
 
-* **PersistentVolumClaims (PVC)** - A persistent volume claim (PVC) is a request for storage by a user or application. It specifies size, access mode, and storage class.
+* **PersistentVolumeClaims (PVC)** - A persistent volume claim (PVC) is a request for storage by a user or application. It specifies size, access mode, and storage class.
   Kubernetes finds or creates a matching PV. It acts like a *ticket* that entitles a pod to use storage. Think of it like this:
 
   PV = a physical parking space
@@ -149,6 +149,15 @@ Before deploying the CSI driver integration, review the following best practices
    ```
 
 * Backup Strategy
+  - Create a VolumeSnapshotClass before using snapshot features:
+    ```yaml
+    apiVersion: snapshot.storage.k8s.io/v1
+    kind: VolumeSnapshotClass
+    metadata:
+      name: truenas-snapshot-class
+    driver: csi.truenas.io
+    deletionPolicy: Delete
+    ```
   - Daily snapshots via CronJob
   - Export snapshots to an external backup system
   - Test restore procedures regularly
@@ -424,7 +433,7 @@ kubectl run nettest --image=busybox --rm -it --restart=Never -- \
 For information on alerts in Kubernetes and TrueNAS see:
 
 * Kubernetes
-  * [Resource Usage Monitoriing](https://kubernetes.io/docs/tasks/debug/debug-cluster/resource-usage-monitoring/)
+  * [Resource Usage Monitoring](https://kubernetes.io/docs/tasks/debug/debug-cluster/resource-usage-monitoring/)
 * TrueNAS Alert articles:
   - [Alert Screens]({{< ref "AlertsSettingsServiceScreen" >}})
   - [Alerts]({{< ref "/scale/toptoolbar/alerts/_index.md" >}}) 
@@ -613,6 +622,10 @@ For information on alerts in Kubernetes and TrueNAS see:
 
 
 ## Integration with Prometheus
+
+{{< hint type=note >}}
+The TrueNAS CSI driver does not currently expose a Prometheus metrics endpoint. The example below is provided for future reference when metrics support is added.
+{{< /hint >}}
 
 ```yaml
 # ServiceMonitor for driver metrics (if driver exposes metrics)

@@ -1,6 +1,6 @@
 ---
 title: "CSI Driver User Guide"
-description: "Provides information for Kubernetes develper/users of the TrueNAS CSI Driver."
+description: "Provides information for Kubernetes developer/users of the TrueNAS CSI Driver."
 weight: 25
 aliases:
 tags:
@@ -11,15 +11,15 @@ doctype: tutorial
 ---
 
 
-This guide is for developers/users suing a Kubernetes cluster that want to use the TrueNAS CSI driver to create and submit requests for storage to use in pods.
+This guide is for developers/users using a Kubernetes cluster that want to use the TrueNAS CSI driver to create and submit requests for storage to use in pods.
 It covers creating PersistentVolumeClaims, mounting storage volumes, and using the features available to TrueNAS storage users.
 
 For an overview of the Kubernetes/CSI driver integration see [TrueNAS CSI Driver]({{< ref "/solutions/integrations/csidriver/_index.md" >}})
 
-For reference material including a glossary of terms, see [CSI Driver Refernce]({{< ref "CSIDriverReference" >}})
+For reference material including a glossary of terms, see [CSI Driver Reference]({{< ref "CSIDriverReference" >}})
 
 [Kubernetes Cluster Administrators Guide]({{< ref "CSIDriver" >}}) provides instructions on configuring StorageClasses and the Kubernetes integration with the CSI driver.
-The process involves creating a yaml file stored locally, and then sumbitting it to create the PVC using `kubectl` commands.
+The process involves creating a yaml file stored locally, and then submitting it to create the PVC using `kubectl` commands.
 
 The Kubernetes uses the CSI driver to send the information from Kubernetes to TrueNAS. TrueNAS creates the storage volume based on the information in the PVC yaml file, and sends this back to Kubernetes through the CSI driver, where it can be mounted and used in a pod.
 
@@ -121,7 +121,7 @@ kubectl exec my-app -- cat /usr/share/nginx/html/index.html
    kubectl get pvc my-app-data
    ```
 
-2. Edit a PVC to request a lrger size. Change the storage size, then save and exit.
+2. Edit a PVC to request a larger size. Change the storage size, then save and exit.
    
    ```bash
    kubectl edit pvc my-app-data
@@ -348,7 +348,6 @@ spec:
   dataSource:
     name: app-data-prod
     kind: PersistentVolumeClaim
-    namespace: production  # Can clone across namespaces
 EOF
 ```
 
