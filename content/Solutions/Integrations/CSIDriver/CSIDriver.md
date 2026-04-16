@@ -1,6 +1,6 @@
 ---
 title: "CSI Driver Administrators Guide"
-description: "Provides Kubernetes cluster adminitrators with the information needed to deploy the TrueNAS CSI Driver integration with the Kubernetes, including informatio on setting up StorageClasses."
+description: "Provides Kubernetes cluster adminitrators with the information needed to deploy the TrueNAS CSI Driver integration with Kubernetes, including informatio on setting up StorageClasses."
 weight: 20
 aliases:
 tags:
@@ -25,7 +25,7 @@ The TrueNAS administrator does the one-time setup that consists of:
 * Turning on the appropriate service (nfs for file or iscsi for block storage requests)
 * Supplying the Kubernetes administrator with the API and IP address of the TrueNAS system
 
-Each Kubernetes cluster user(developer) creates a yaml file that specifies the volume size, access mode, StorageClass, etc., then submits this PVC request in Kubernetes using a kubectl command.
+Each Kubernetes cluster user (developer) creates a yaml file that specifies the volume size, access mode, StorageClass, etc., then submits this PVC request in Kubernetes using a kubectl command.
 TrueNAS receives the request, adds the requested volumes based on the StorageClass information received in the yaml file.
 
 The CSI driver does the work of communicating what is received from Kubernetes, passes it to TrueNAS, and then sends information from TrueNAS back to Kubernetes where users can mount the storage volume(s) requested.
@@ -82,19 +82,20 @@ Log in to TrueNAS:
 2. Enable the NFS service if using NFS, or enable the iSCSI service if using iSCSI.
    
    a. Go to **System > Services**.
-   b. Edit the service settings to provide the required port access. NFS set to type to TCP and port 2049, type UDP and port 2049. iSCSI type to TCP and port 3260.
+   b. Edit the service settings to provide the required port access. For the NFS service, set TCP port 2049, and set UDP port 2049.
+      For iSCSI, set TCP port 3260.
    c. Click **Save**.
    d. Click on the enable-service toggle to turn on the **NFS** and/or **iSCSI** services based on your use case. 
       If you installed the nfs-common package on the Kubernetes worker nodes, enable the NFS service. If you installed the iscsi-common package on the Kubernetes worker nodes, enable the iSCSI service.
 
 3. Create a new pool or locate a pool with enough storage to accomodate the Kubernetes cluster storage needs.
    Go to **Storage Dashboard**, identify a pool with enough storage capacity to suit your use case, or click **Create Pool** to add a new pool for Kubernetes volumes.
-   For more information on creating new pools, see [Creating Pools]({{< ref "CreatingPools" >}}). To increase storage in an existing pool, see [Exapnding a Pool in Managing Pools]({{< ref "ManagePools" >}}).
+   For more information on creating new pools, see [Creating Pools]({{< ref "CreatingPools" >}}). To increase storage in an existing pool, see [Expanding a Pool in Managing Pools]({{< ref "ManagePools" >}}).
   
 4. Verify the Websocket API port is set to port 443. Go to **System > General Settings**. The **Gui** card should show the Web Interface HTTPS port set to 443.
    If not, click **Settings**, locate the **Web Interface HTTPS Port** field and change the value to 443. Click **Save** after making a change.
 
-   Provide the path to the Kubernetes cluster administrator.
+   Provide the pool name to the Kubernetes cluster administrator.
 
 ### Verifying the Network Configuration
 
@@ -110,7 +111,7 @@ First, download the container image and the **deploy/truenas-csi-driver.yaml** f
 
 * Obtain the **deploy/truenas-csi-driver.yaml** file.
 
-  Download the raw download from https://raw.githubusercontent.com/truenas/truenas-csi/master/deploy/truenas-csi-driver.yaml
+  Download the raw YAML file from https://raw.githubusercontent.com/truenas/truenas-csi/master/deploy/truenas-csi-driver.yaml
 
   Or fetch it directly using the following command:
   
@@ -420,7 +421,7 @@ reclaimPolicy: Retain  # Keep data even if PVC deleted
     pool: "tank"
     compression: "lz4"
     sync: "standard"
-   nfs.networks: "10.0.0.0/8"  # Restrict to internal network
+    nfs.networks: "10.0.0.0/8"  # Restrict to internal network
   allowVolumeExpansion: true
   reclaimPolicy: Delete
   ```

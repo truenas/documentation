@@ -89,7 +89,7 @@ spec:
       claimName: my-app-data  # Reference the PVC
 ```
 
-### Apply a Volume in a Pod
+Then to apply a volume in a pod:
 
 ```bash
 kubectl apply -f pod.yaml
@@ -97,7 +97,7 @@ kubectl apply -f pod.yaml
 
 ## Verifying a Volume is Mounted
 
-These commands, check if a pod is running, verifies a mount inside a container, and then writes test data to and reads it back from the container.
+These commands check if a pod is running, verify a mount inside a container, and then write test data to and read it back from the container.
 
 ```bash
 # Check pod is running
@@ -262,7 +262,7 @@ These features are available to all cluster users with the appropriate StorageCl
 
 ### Creating Volume Snapshots for Backup and Restore
 
-The follow is a backup workflow:
+The following is a backup workflow:
 
 1. Create Pre-Upgrade Snapshot.
    
@@ -275,8 +275,8 @@ The follow is a backup workflow:
      namespace: production
    spec:
      volumeSnapshotClassName: truenas-snapshot-class
-   source:
-      persistentVolumeClaimName: postgres-data
+     source:
+       persistentVolumeClaimName: postgres-data
    EOF
    ```
 
@@ -286,7 +286,7 @@ The follow is a backup workflow:
    kubectl set image deployment/postgres postgres=postgres:15
    ```
 
-3. Restore if upgrade fails. Stop the application and then create a new volume form a snapshot.
+3. Restore if upgrade fails. Stop the application and then create a new volume from a snapshot.
    Next update the deployment to use the restored volume and then restart the application.
    
    ```bash
