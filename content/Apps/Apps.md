@@ -69,7 +69,7 @@ If you select a new pool in the **Pool** dropdown after previously configuring t
 **Migrate existing applications** migrates all installed applications to the new applications pool.
 
 {{< hint type=note >}}
-**Migrate existing applications** only affects data saved in the apps dataset, such as the installed app loacation and iXvolume storage.
+**Migrate existing applications** only affects data saved in the apps dataset, such as the installed app location and iXvolume storage.
 Data in mounted host paths is not migrated.
 {{< /hint >}}
 
@@ -204,11 +204,12 @@ Performing a bulk action update opens a dialog listing the apps with available u
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsBulkActionUpdateDialog.png" alt="App Bulk Update Dialog" id="App Bulk Update Dialog" >}}
 
-Select an application by clicking the radio button to the left of a listed application.
+Each app appears in a collapsible panel that displays the app name and current upstream version.
+Click the expand icon to view version details. A **Version** row appears when the upstream version changes. A **Revision** row shows the catalog revision change.
+A **Version to be updated to** dropdown appears for apps with multiple available revisions.
+A **View Upstream Release Notes** link appears when the app provides a changelog URL.
 
-Click the expand icon for listed app to show the **Version** dropdown and **Changelog** for the selected version.
-
-Update begins updating the applications one at a time. Apps status changes to STOPPED before it is updated, and then returns to RUNNING after the update completes.
+Click **Update** to begin updating the applications. Each app status changes to **Stopped** during the update and returns to **Running** when the update completes.
 
 ## Application Widgets
 
@@ -218,7 +219,7 @@ Information in the widgets changes based on the app row selected in the **Applic
 
 ### Application Info Widget
 
-The **Application Info** widget shows the name, (upstream) app version number, catalog version number, source link for the application, and train name.
+The **Application Info** widget shows the name, **Version** (upstream application version), **Revision** (TrueNAS catalog revision), source link for the application, and train name.
 It includes the **Edit**, **Delete**, **Roll Back** and **Web UI** buttons for the application.
 The <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown contains the **Update** and **Convert to custom app** buttons.
 
@@ -241,24 +242,36 @@ This deletes the application deployment but does not remove it from the catalog 
 
 #### Delete Apps
 
-The **Delete App** dialog asks for confirmation to delete the selected application.
+The **Delete** dialog requires you to type the application name to confirm deletion.
 
 {{< trueimage src="/images/SCALE/Apps/AppsDeleteAppDialog.png" alt="Delete Application Dialog" id="Delete Application Dialog" >}}
 
-**Remove iXVolumes** deletes hidden app storage from the apps pool.
-**Force-Remove iXVolumes** deletes app storage created on TrueNAS 24.04 and migrated to 24.10 or later.
+Type the application name exactly as shown in the confirmation field.
+The **Delete** button remains disabled until the name is entered correctly.
 
-**Remove Images** prunes Docker images of the deleted app.
+Before clicking **Delete**, configure the following options as needed:
 
-**Confirm** activates the **Continue** button. **Continue** initiates the delete operation.
+{{< truetable >}}
+| Option | Description |
+|--------|-------------|
+| **Remove iXVolumes** | Deletes hidden app storage from the apps pool. Only shown if the app has iXVolumes. |
+| **Force-Remove iXVolumes** | Deletes app storage created on TrueNAS 24.04 and migrated to 24.10 or later. Only shown when **Remove iXVolumes** is selected. Removes both legacy Kubernetes and current Docker data for the application. Use with caution. |
+| **Remove Images** | Prunes Docker images of the deleted app. Selected by default. |
+{{< /truetable >}}
+
+Click **Delete** to remove the application.
 
 #### Update Apps
 
-**Update** shows on the **Application Info** widget after clicking **Update All** on the **Installed** applications header.
-Both only show if TrueNAS detects an available update for an application.
-The application widget on the **Discover** screen also displays an update badge.
+**Update** shows on the **Application Info** widget after clicking **Update All Selected** on the **Installed** applications header.
+Both show only when TrueNAS detects an available update for an application.
+The application row on the **Installed** screen shows **Update available** when the upstream application version is changing, or **Revision available** when only the TrueNAS catalog revision is changing.
 
-**Update** opens an update window for the application that includes the **Version to be updated to** dropdown and **Changelog** options.
+**Update** opens an update dialog showing the version change.
+When the upstream application version is changing, the dialog shows a **Version** row with the current and new upstream versions.
+The dialog always shows a **Revision** row with the current and new catalog revision numbers.
+When multiple catalog revisions are available, a **Version to be updated to** dropdown appears with options in the format **Version: X / Revision: Y**.
+A **View Upstream Release Notes** link appears when the app provides a changelog URL.
 
 {{< trueimage src="/images/SCALE/Apps/AppUpdateWindow.png" alt="Update Application Window" id="Update Application Window" >}}
 
@@ -269,13 +282,13 @@ The **Update** state on the application row on the **Installed** screen changes 
 #### Convert to Custom App
 
 **Convert to custom app** on the <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown opens a dialog to convert an installed catalog application to a custom YAML application.
-Converting to a custom app direct editing to YAML configuration file for the app using the [Custom App Screens]({{< relref "/Apps/InstallCustomAppScreens.md" >}}).
+Converting to a custom app allows direct editing of the YAML configuration file for the app using the [Custom App Screens]({{< relref "/Apps/InstallCustomAppScreens.md" >}}).
 
 {{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppDialog.png" alt="Convert to Custom App Dialog" id="Convert to Custom App Dialog" >}}
 
 {{< hint type=warning title="Permanent Action" >}}
 **Convert to custom app** is a one-time, permanent operation.
-When converted, an custom application cannot be converted back to a catalog version.
+When converted, a custom application cannot be converted back to a catalog version.
 {{< /hint >}}
 
 **Cancel** closes the dialog without converting the application.
@@ -291,8 +304,8 @@ When converted, an custom application cannot be converted back to a catalog vers
 {{< trueimage src="/images/SCALE/Apps/RollBackDialog.png" alt="Roll Back Dialog" id="Roll Back Dialog" >}}
 
 The **Version** dropdown contains available app versions for roll back.
-The version numbers displayed are the version of the app in the TrueNAS catalog, equivalent to the **Version** displayed on the app information card.
-It is not equal to the **App Version** or the upstream release version.
+The version numbers displayed are the **Revision** of the app in the TrueNAS catalog, equivalent to the **Revision** displayed on the **Application Info** widget.
+This is the catalog revision, not the upstream **Version**.
 See [Understanding Versions](https://apps.truenas.com/managing-apps/discovering-apps/#understanding-versions) on the TrueNAS Apps Market for more information.
 
 **Roll back snapshots** restores the application data volume to match the selected version by rolling back to the snapshot for that version.
