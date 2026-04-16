@@ -4,6 +4,7 @@ description: "Provides information on system hardware and minimum requirements (
 weight: 20
 aliases:
  - /scale/introduction/scalehardwareguide/
+ - /scale/gettingstarted/scalehardwareguide/
 tags:
 - storage
 - network
