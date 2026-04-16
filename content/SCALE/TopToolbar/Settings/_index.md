@@ -30,7 +30,7 @@ The **Theme** settings customize the UI theme colors for the currently logged-in
 Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Solarized Dark**, **Midnight**, and **High Contrast**.
 Selecting an option immediately changes the UI to the selected color theme.
 
-**Session Timeout**, moved from the **System > Advanced Settings > Access** configuration screen, sets the number of seconds a session remains active or inactive before it is automatically ended by logging out the user.
+**Session Timeout** sets the number of seconds a session remains active or inactive before it is automatically ended by logging out the user.
 
 **Localization** sets the screen language, date format, and time format for the currently logged-in user account. To see the keyboard map and timezone, use the **System > General Settings > Localization** configuration screen.
 
