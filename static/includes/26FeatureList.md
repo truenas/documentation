@@ -40,7 +40,7 @@ See [Containers]({{< ref "/Containers/Containers.md" >}}) for configuration deta
 
 TrueNAS 26 introduces stateful SMB HA failover for Enterprise systems with High Availability (HA) configurations.
 When enabled in the SMB service configuration, TrueNAS maintains SMB session state across controller failover events, allowing SMB clients to recover existing connections without re-authentication after a failover.
-See [Enabling SMB Stateful Failover](/scale/scaletutorials/shares/smb/addmanagesmbshares/#enabling-smb-stateful-failover) for configuration details.
+See [Enabling SMB Stateful Failover]({{< relref "/Shares/SMB/AddManageSMBShares/#enabling-smb-stateful-failover" >}}) for configuration details.
 
 ### SMB Spotlight Search
 
@@ -50,7 +50,7 @@ Spotlight search is enabled per share in the SMB service configuration.
 ### OpenZFS 2.4
 
 TrueNAS 26 integrates OpenZFS 2.4, which introduces new capabilities including hybrid pool support for combining flash and HDD storage, physical block rewriting, and dynamic gang header improvements.
-See [OpenZFS Feature Flags](/scale/gettingstarted/versionnotes/#component-versions-feature-flags) for details on newly added feature flags.
+See [OpenZFS Feature Flags]({{< relref "/gettingstarted/versionnotes/#zfs-feature-flags" >}}) for details on newly added feature flags.
 
 ### Linux Kernel 6.18 LTS
 
