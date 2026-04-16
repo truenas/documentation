@@ -16,7 +16,7 @@ doctype: tutorial
 ---
 
 Linux containers, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
-Containers start quickly, use fewer system resources than [virtual machines (VMs)](/scale/virtualmachines/virtualmachines/), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
+Containers start quickly, use fewer system resources than [virtual machines (VMs)]({{< relref "/VirtualMachines/VirtualMachines.md" >}}), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
 {{< expand "What system resources do containers require?" "v" >}}
 {{< include file="/static/includes/ContainerRequirements.md" >}}
@@ -78,7 +78,7 @@ To configure default network settings:
    - **Automatic** to allow TrueNAS to create and manage a dedicated virtual bridge (`truenasbr0`) on the TrueNAS host using DHCP and routes their outbound traffic through the host via NAT. Change the defaults using the **IPv4 Network** and **IPv6 Network** fields if they conflict with your network.
    - Select an existing bridge interface to use that bridge for container networking.
 
-   See [Accessing NAS from VMs and Containers](/scale/network/containernasbridge) for information on creating bridge interfaces.
+   See [Accessing NAS from VMs and Containers]({{< relref "/Network/ContainerNASBridge.md" >}}) for information on creating bridge interfaces.
 
    {{< enterprise >}}
    Custom bridge selection is not available on High Availability systems. HA deployments always use **Automatic** to prevent issues that could interfere with controller failover.
