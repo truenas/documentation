@@ -1,6 +1,6 @@
 ---
 title: "CSI Driver Reference"
-description: "Provides information best practices, example StorageClasses, glossary of terms, troubleshooting  and diagnostic commands, and API commands rekated ti the TrueNAS CSL Driver intengration with Kubernetes."
+description: "Provides information best practices, example StorageClasses, glossary of terms, troubleshooting  and diagnostic commands, and API commands related to the TrueNAS CSL Driver integration with Kubernetes."
 weight: 40
 aliases:
 tags:
@@ -11,35 +11,37 @@ doctype: tutorial
 ---
 
 
-This article provide general reference material about the CSI Driver, resolving issues between Kuberenetes and the CSI driver, workflow and CSI driver to Kubernetes structural information and workflows, best practices, and a glossary of terms.
+This article provides general reference information about the CSI Driver, a deployment checklist, capacity planning, troubshooting and diagnostic commands for resolving issues between Kubernetes and the CSI driver, workflows for NFS and iSCSI deployments of the CSI driver integration with Kubernetes, best practices, a glossary of terms, as well as upgrade and suggested deployment options.
+
+This article provides information that is not included in the administration and user guide articles.
 
 ### Kubernetes Fundamentals
 
-Kubernetes is an open-source container orchestration platform that automates deployment, scaling, and management of containerized aplications.
+Kubernetes is an open-source container orchestration platform that automates deployment, scaling, and management of containerized applications.
 
 The following are important terms and foundational to how the CSI driver works with Kubernetes:
 
 * **Pod** - A pod is the smallest deployable unit in Kubernetes. It contains one or more containers.
   It can be created and destroyed frequently. They need persistent storage to retain data beyond their lifecycle.
 
-* **Persistent Volume** - A persistent volume is a piece of storage in the cluster, provisioned by the Kurbernetes adminstrator or can be dynamically provisioned via storage classes (StorageClass). It exists independently of pods, and has a lifecycle independent of any pod that uses it.
+* **Persistent Volume** - A persistent volume is a piece of storage in the cluster, provisioned by the Kurbernetes administrator or can be dynamically provisioned via storage classes (StorageClass). It exists independently of pods, and has a lifecycle independent of any pod that uses it.
 
 * **PersistentVolumClaims (PVC)** - A persistent volume claim (PVC) is a request for storage by a user or application. It specifies size, access mode, and storage class.
   Kubernetes finds or creates a matching PV. It acts like a *ticket* that entitles a pod to use storage. Think of it like this:
 
   PV = a physical parking space
-  PVC = a parking tikcet rquesting a space
+  PVC = a parking ticket requesting a space
   Pod = a car that parks in the space
 
 * **StorageClass** - A StorageClass defines classes of storage with different properties. They enable dynamic provisioning, specifying which provisioner to use (for example, TrueNAS CSI Driver), and contains parameters for that provisioner (pool name, compression, etc.).
 
-* **Container Storage Interface (CSI)** - A container storage interface (CSI) is an indutry standard for storage plugins in Kubernetes. They enable storage venders to write one plugin that works everywhere. They separate storage logic from Kubernetes core. The TrueNAS CSI driver implements this standard!
+* **Container Storage Interface (CSI)** - A container storage interface (CSI) is an industry standard for storage plugins in Kubernetes. They enable storage vendors to write one plugin that works everywhere. They separate storage logic from Kubernetes core. The TrueNAS CSI driver implements this standard!
 
 ### How it works
 
-A user creates a PVC requesting storage (creates a yaml file specifying, volume size, access mode, StorageClass, etc.).
+A user creates a PVC requesting storage (creates a YAML file specifying, volume size, access mode, StorageClass, etc.).
 Kubernetes calls the CSI driver CreateVolume function (executes the <code>kubectl apply -f <i>filename.yaml</i></code> command)
-The CSI driver creates storage on the backend (TrueNAS creates the volume per request in yaml file), and then returns volume information to Kubernetes.
+The CSI driver creates storage on the backend (TrueNAS creates the volume per request in YAML file), and then returns volume information to Kubernetes.
 Kubernetes then creates a PV and binds it to a PVC.
 A pod can now mount and use the volume.
 
@@ -64,10 +66,10 @@ Before deploying the CSI driver integration, review the following best practices
    - Node driver runs on all nodes automatically (DaemonSet)
 
 4. **Security**
-   - Use strong TrueNAS API key
+   - Use a strong TrueNAS API key
    - Rotate API keys periodically
    - Enable TLS verification in production (`truenasInsecure: "false"`)
-   - Restrict NFS networks parameter to cluster pod CIDR
+   - Restrict the NFS networks parameter to the cluster pod CIDR
 
 ### Storage Management Best Practices
 
@@ -90,7 +92,7 @@ Before deploying the CSI driver integration, review the following best practices
    - `lz4` (default) - Good balance of speed and compression
    - `off` - For pre-compressed data (videos, images, archives)
    - `gzip` or `zstd` - Higher compression for archives, backups
-   - Test with your data to determine best setting
+   - Test with your data to determine the best setting
 
 ### Application Usage Best Practices
 
@@ -148,7 +150,7 @@ Before deploying the CSI driver integration, review the following best practices
 
 * Backup Strategy
   - Daily snapshots via CronJob
-  - Export snapshots to external backup system
+  - Export snapshots to an external backup system
   - Test restore procedures regularly
 
    ```yaml
@@ -186,27 +188,27 @@ Before deploying the CSI driver integration, review the following best practices
 
 ### Performance Optimization Best Practices
 
-* Choose Right Protocol**
-   - **NFS:** Shared file access, ease of use, cross-platform
-   - **iSCSI:** Better performance for databases, single-node access
+* Choose the Right Protocol
+  * **NFS:** Shared file access, ease of use, cross-platform
+  * **iSCSI:** Better performance for databases, single-node access
 
-* Tune ZFS Properties**
-   - `recordsize`: Match application I/O patterns
+* Tune ZFS Properties
+  * `recordsize`: Match application I/O patterns
      - Database: 8K-16K
      - Large files: 128K-1M
-   - `sync`: Adjust based on durability vs performance needs
+  * `sync`: Adjust based on durability vs performance needs
      - `standard`: Good balance (default)
      - `always`: Maximum durability, slower writes
      - `disabled`: Faster, risk of data loss on crash
 
-* Volume Block Size (iSCSI)**
+* Volume Block Size (iSCSI)
    - `volblocksize`: Must match application needs
    - Cannot be changed after creation
    - Default 16K is good for most uses
    - Database: Match DB page size (8K for PostgreSQL)
 
-* Network Optimization**
-   - Use dedicated network for storage traffic (if possible)
+* Network Optimization
+   - Use a dedicated network for storage traffic (if possible)
    - 10GbE recommended for high throughput
    - MTU 9000 (jumbo frames) for better performance
 
@@ -261,7 +263,7 @@ Before deploying the CSI driver integration, review the following best practices
 
 ## Troubleshooting
 
-This section provides troubleshoot for common issues, and offers solutions to resolve them.
+This section provides troubleshooting for common issues, and offers solutions to resolve them.
 
 ### "Pool name is required but not configured"
 
@@ -288,13 +290,16 @@ kubectl rollout restart deployment truenas-csi-controller -n truenas-csi
 **Solution:**
 1. Generate new API key in TrueNAS (Settings → API Keys)
 2. Update Kubernetes secret:
+
    ```bash
    kubectl create secret generic truenas-api-credentials \
      --from-literal=api-key='NEW_KEY_HERE' \
      --namespace=truenas-csi \
      --dry-run=client -o yaml | kubectl apply -f -
    ```
+
 3. Restart controller:
+
    ```bash
    kubectl rollout restart deployment truenas-csi-controller -n truenas-csi
    ```
@@ -303,7 +308,7 @@ kubectl rollout restart deployment truenas-csi-controller -n truenas-csi
 
 **Cause:** Dataset name starts with `/` or contains invalid characters
 
-**Solution:** This is fixed in v1.0.0. If using older version, upgrade to latest driver.
+**Solution:** This is fixed in v1.0.0. If using older an version, upgrade to the latest driver.
 
 ### Connection Timeout to TrueNAS
 
@@ -333,6 +338,7 @@ kubectl run wstest --image=curlimages/curl --rm -it --restart=Never -- \
 1. Check NFS share in TrueNAS UI
 2. Verify "Authorized Networks" includes Kubernetes pod CIDR
 3. Update StorageClass to set network restriction:
+
    ```yaml
    parameters:
      nfs.networks: "10.244.0.0/16"  # Your pod CIDR
@@ -352,8 +358,8 @@ kubectl logs -n truenas-csi <node-pod> -c csi-node
 ```
 
 **Solution:**
-- Ensure `open-iscsi` package installed on all nodes
-- Ensure iscsid service enabled and started
+- Ensure `open-iscsi` package is installed on all nodes
+- Ensure iscsid service is enabled and started
 - Check iSCSI portal is reachable on port 3260
 
 ### Volume Expansion Stuck
@@ -413,6 +419,16 @@ kubectl run nettest --image=busybox --rm -it --restart=Never -- \
 
 ## Monitoring and Alerting
 
+ Monitoring the CSI driver integration requires watching both the Kubernetes cluster and TrueNAS. Kubernetes tracks driver health and storage operations, while TrueNAS monitors pool capacity and service availability.
+
+For information on alerts in Kubernetes and TrueNAS see:
+
+* Kubernetes
+  * [Resource Usage Monitoriing](https://kubernetes.io/docs/tasks/debug/debug-cluster/resource-usage-monitoring/)
+* TrueNAS Alert articles:
+  - [Alert Screens]({{< ref "AlertsSettingsServiceScreen" >}})
+  - [Alerts]({{< ref "/scale/toptoolbar/alerts/_index.md" >}}) 
+
 ### Metrics to Monitor
 
 - Driver pod health and restarts
@@ -429,6 +445,7 @@ kubectl run nettest --image=busybox --rm -it --restart=Never -- \
 - TrueNAS pool > 80% full
 - Authentication failures
 - Volume creation failures
+
 
 ## API References
 
@@ -552,7 +569,7 @@ kubectl run nettest --image=busybox --rm -it --restart=Never -- \
 
 3. CSI Node Plugin Mounts NFS
    Node Plugin executes:
-   mount -t nfs TRUENAS_IP:/mnt/pool/dataset /var/lib/kubelet/pods/.../volumes/.../mount
+   `mount -t nfs TRUENAS_IP:/mnt/pool/dataset /var/lib/kubelet/pods/.../volumes/.../mount`
 
 4. Bind Mount to Pod
    /var/lib/kubelet/pods/.../volumes/.../mount
@@ -574,10 +591,10 @@ kubectl run nettest --image=busybox --rm -it --restart=Never -- \
 3. Kubelet Calls NodeStageVolume
    Node Plugin:
    a. Discover iSCSI target
-      iscsiadm -m discovery -t sendtargets -p TRUENAS_IP:3260
+      `iscsiadm -m discovery -t sendtargets -p TRUENAS_IP:3260`
 
-   b. Login to iSCSI target
-      iscsiadm -m node -T <IQN> -p TRUENAS_IP:3260 --login
+   b. Log in to iSCSI target
+      `iscsiadm -m node -T <IQN> -p TRUENAS_IP:3260 --login`
 
    c. Wait for block device
       /dev/sdX appears
@@ -615,16 +632,17 @@ spec:
 ## Backup and Disaster Recovery
 
 **Volume Snapshots:**
-- Create daily snapshots via CronJob
-- Retain 7 daily, 4 weekly snapshots
-- Document restore procedures
+- Create daily snapshots via CronJob.
+- Retain seven daily, four weekly snapshots.
+- Document restore procedures.
 
 **TrueNAS Snapshots:**
-- Use TrueNAS snapshot tasks as additional backup layer
-- Replicate to secondary TrueNAS system
+- Use TrueNAS snapshot tasks as an additional backup layer.
+- Replicate to a secondary TrueNAS system.
 
 **Metadata Backup:**
-- Export PVC/PV definitions regularly
+Export PVC/PV definitions regularly.
+
   ```bash
   kubectl get pvc --all-namespaces -o yaml > pvc-backup.yaml
   kubectl get pv -o yaml > pv-backup.yaml
@@ -633,57 +651,57 @@ spec:
 ## Upgrade Strategy
 
 **Driver Upgrade:**
-1. Test new version in dev/staging cluster
-2. Create snapshots of critical volumes
-3. Update driver image in deployment
-4. Rolling update automatically replaces pods
-5. Verify existing volumes still accessible
-6. Test creating new volumes
+1. Test new version in dev/staging cluster.
+2. Create snapshots of critical volumes.
+3. Update driver image in deployment.
+4. Rolling update automatically replaces pods.
+5. Verify existing volumes are still accessible.
+6. Test creating new volumes.
 
 **TrueNAS Upgrade:**
-1. Check CSI driver compatibility with new TrueNAS version
-2. Perform TrueNAS upgrade during maintenance window
-3. Verify API connectivity post-upgrade
-4. Test volume operations
+1. Check the CSI driver compatibility with a new TrueNAS version.
+2. Perform TrueNAS upgrade during maintenance window.
+3. Verify API connectivity post-upgrade.
+4. Test volume operations.
 
 **Kubernetes Upgrade:**
-1. Check CSI specification compatibility
-2. Might need to update sidecar container versions
-3. Test in staging first
+1. Check CSI specification compatibility.
+2. Might need to update sidecar container versions.
+3. Test in staging first.
 
 ## Glossary
 
-**CSI (Container Storage Interface):** Industry standard specification for storage plugins in Kubernetes
+**CSI (Container Storage Interface):** Industry standard specification for storage plugins in Kubernetes.
 
-**PV (PersistentVolume):** A piece of storage in the cluster, provisioned by admin or dynamically
+**PV (PersistentVolume):** A piece of storage in the cluster, provisioned by an admin or dynamically.
 
-**PVC (PersistentVolumeClaim):** A request for storage by a user
+**PVC (PersistentVolumeClaim):** A request for storage by a user.
 
 **StorageClass:** Defines classes of storage with different QoS, backup policies, etc.
 
-**ZFS:** Advanced filesystem with features like snapshots, clones, compression, and data integrity
+**ZFS:** Advanced filesystem with features like snapshots, clones, compression, and data integrity.
 
-**ZVOL:** ZFS Volume - a block device created from ZFS pool
+**ZVOL:** ZFS Volume - a block device created from a ZFS pool.
 
-**Dataset:** ZFS filesystem entity that can store files or act as volume
+**Dataset:** ZFS filesystem entity that can store files or act as a volume.
 
-**NFS (Network File System):** Protocol for sharing files over network
+**NFS (Network File System):** Protocol for sharing files over a network.
 
-**iSCSI (Internet Small Computer Systems Interface):** Protocol for block-level storage over network
+**iSCSI (Internet Small Computer Systems Interface):** Protocol for block-level storage over a network.
 
-**IQN (iSCSI Qualified Name):** Unique identifier for iSCSI targets
+**IQN (iSCSI Qualified Name):** Unique identifier for iSCSI targets.
 
-**LUN (Logical Unit Number):** Identifier for iSCSI storage units
+**LUN (Logical Unit Number):** Identifier for iSCSI storage units.
 
-**Extent:** iSCSI term for the actual storage backing an iSCSI target
+**Extent:** iSCSI term for the actual storage backing an iSCSI target.
 
-**WebSocket:** Communication protocol for persistent, bi-directional connection
+**WebSocket:** Communication protocol for persistent, bi-directional connection.
 
-**Snapshot:** Read-only point-in-time copy of data (instant with ZFS)
+**Snapshot:** Read-only point-in-time copy of data (instant with ZFS).
 
-**Clone:** Writable copy of data created from snapshot
+**Clone:** Writable copy of data created from a snapshot.
 
-**Copy-on-Write (CoW):** ZFS technique where clones share data with source until modified
+**Copy-on-Write (CoW):** ZFS technique where clones share data with the source until modified.
 
 ## Appendix A: Sample Deployment for Common Applications
 

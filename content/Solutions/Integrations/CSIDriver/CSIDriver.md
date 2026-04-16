@@ -75,7 +75,7 @@ Log in to TrueNAS:
 
    Provide this to the Kubernetes cluster administrator, who should enter this key in Kubernetes along with the TrueNAS IP address to establish authenticated communication with TrueNAS.
 
-   For more information on TrueNAS API keys, see [Managing API Keys]({{< ref "/content/scale/toptoolbar/ManagingAPIKeys.md" >}})
+   For more information on TrueNAS API keys, see [Managing API Keys]({{< ref "ManagingAPIKeys" >}})
 
    To locate the IP address for TrueNAS, go to **System > Network**. The primary network interface is listed in the **Interfaces** card.
 
@@ -89,7 +89,7 @@ Log in to TrueNAS:
 
 3. Create a new pool or locate a pool with enough storage to accomodate the Kubernetes cluster storage needs.
    Go to **Storage Dashboard**, identify a pool with enough storage capacity to suit your use case, or click **Create Pool** to add a new pool for Kubernetes volumes.
-   For more information on creating new pools, see [Creating Pools]({{< ref "/content/scale/storage/pools/"CreatingPools.md" >}}). To increase storage in an existing pool, see [Exapnding a Pool in Managing Pools]({{< ref "/content/scale/storage/pools/ManagingPools.md" >}}).
+   For more information on creating new pools, see [Creating Pools]({{< ref "CreatingPools" >}}). To increase storage in an existing pool, see [Exapnding a Pool in Managing Pools]({{< ref "ManagePools" >}}).
   
 4. Verify the Websocket API port is set to port 443. Go to **System > General Settings**. The **Gui** card should show the Web Interface HTTPS port set to 443.
    If not, click **Settings**, locate the **Web Interface HTTPS Port** field and change the value to 443. Click **Save** after making a change.
@@ -102,12 +102,13 @@ Check with your network administrator to verify the Kubernetes cluster can commu
 
 ### Configuring Kubernetes
 
-First, download the container image and deply/yaml file found here:
+First, download the container image and the **deploy/truenas-csi-driver.yaml** file found here:
+
 * [Docker image file](http://quay.io/truenas_solutions/truenas-csi:latest)
 
    If doing full OpenShift, you can fetch it from the Red Hat catalog.
 
-* Obtain the deploy/truenas-csi-driver.yaml file.
+* Obtain the **deploy/truenas-csi-driver.yaml** file.
 
   Download the raw download from https://raw.githubusercontent.com/truenas/truenas-csi/master/deploy/truenas-csi-driver.yaml
 
@@ -122,6 +123,7 @@ First, download the container image and deply/yaml file found here:
   If using OpenShift, editing the YAML is not required. The user installs the operator from OperatorHub through the web console, then creates two small resources:
 
   1. A Secret with their API key
+
   2. A TrueNASCSI custom resource with their connection details (TrueNAS URL, pool name, etc.)
 
   Both of those can be created through the OpenShift console UI or via `oc apply`. The operator handles all the deployment details.
@@ -208,14 +210,15 @@ To deploy the CSI Driver, the Kubernetes cluster adminstrator does the following
    kubectl get pods -n truenas-csi
    kubectl get csidriver csi.truenas.io
    ```
-  {{< expand "Expected Output:" "v" >}}
-    ```
+
+   {{< expand "Expected Output:" "v" >}}
+   ```text
    NAME                                      READY   STATUS
    truenas-csi-controller-xxxxxxxxxx-xxxxx   6/6     Running
    truenas-csi-node-xxxxx                    3/3     Running
    truenas-csi-node-xxxxx                    3/3     Running
    ```
-  {{< /expand >}} 
+   {{< /expand >}} 
 
 6. Verify authentication by checking controller logs for successful authentication.
 
@@ -232,23 +235,23 @@ To deploy the CSI Driver, the Kubernetes cluster adminstrator does the following
 7. Create the StorageClasses for the package method used (NFS or iSCSI).
 
    {{< expand "Create NFS StorageClass:" "v" >}}
-    ```bash
-   kubectl apply -f - <<EOF
-   apiVersion: storage.k8s.io/v1
-   kind: StorageClass
-   metadata:
-     name: truenas-nfs
-   provisioner: csi.truenas.io
-   parameters:
-     protocol: "nfs"
-     pool: "tank"
-     compression: "lz4"
-     sync: "standard"
-   allowVolumeExpansion: true
-   reclaimPolicy: Delete
-   volumeBindingMode: Immediate
-   EOF
-   ```
+    ```
+    kubectl apply -f - <<EOF
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: truenas-nfs
+    provisioner: csi.truenas.io
+    parameters:
+      protocol: "nfs"
+      pool: "tank"
+      compression: "lz4"
+      sync: "standard"
+    allowVolumeExpansion: true
+    reclaimPolicy: Delete
+    volumeBindingMode: Immediate
+    EOF
+    ```
    {{< /expand >}}
 
    {{< expand "Create iSCSI StorageClass:" "v" >}}
@@ -457,9 +460,9 @@ parameters:
 allowVolumeExpansion: true
 reclaimPolicy: Retain
 ```
-{{< /expand >}}
+  {{< /expand >}}
 
-{{< expand "Media/video storage" "v" >}}
+  {{< expand "Media/video storage" "v" >}}
 ``` yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
@@ -475,7 +478,7 @@ parameters:
 allowVolumeExpansion: true
 reclaimPolicy: Retain
 ```
-{{< /expand >}}
+  {{< /expand >}}
 
 ####  ReclaimPolicy Explained
 

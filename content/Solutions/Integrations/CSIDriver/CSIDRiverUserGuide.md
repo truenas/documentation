@@ -14,7 +14,7 @@ doctype: tutorial
 This guide is for developers/users suing a Kubernetes cluster that want to use the TrueNAS CSI driver to create and submit requests for storage to use in pods.
 It covers creating PersistentVolumeClaims, mounting storage volumes, and using the features available to TrueNAS storage users.
 
-For an overview of the Kubernetes/CSI driver integration see [TrueNAS CSI Driver]({{< ref "/content/solutions/integrations/csidriver/_index.md" >}})
+For an overview of the Kubernetes/CSI driver integration see [TrueNAS CSI Driver]({{< ref "/solutions/integrations/csidriver/_index.md" >}})
 
 For reference material including a glossary of terms, see [CSI Driver Refernce]({{< ref "CSIDriverReference" >}})
 
@@ -58,9 +58,10 @@ Where *my-app-data* is the name of the yaml file (and PVC) created locally by th
 kubectl get pvc my-app-data
 ```
 {{< expand "Expected Output:" "v" >}}
+```text
 NAME          STATUS   VOLUME                                     CAPACITY   ACCESS MODES
 my-app-data   Bound    pvc-a1b2c3d4-e5f6-7890-abcd-ef1234567890   10Gi       RWX
-
+```
 Status Meanings:
 - `Pending` - Waiting for driver to create volume
 - `Bound` - Volume created and ready to use
@@ -116,9 +117,9 @@ kubectl exec my-app -- cat /usr/share/nginx/html/index.html
 
 1. Check the current size. The CAPACITY shows current size.
 
-```bash
-kubectl get pvc my-app-data
-```
+   ```bash
+   kubectl get pvc my-app-data
+   ```
 
 2. Edit a PVC to request a lrger size. Change the storage size, then save and exit.
    

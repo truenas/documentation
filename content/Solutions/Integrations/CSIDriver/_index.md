@@ -1,7 +1,7 @@
 ---
-title: "TrueNAS CSI Driver"
+title: "CSI Driver"
 description: "Provides overview information on the TrueNAS CSI driver inetegration with Kubernetes."
-weight: 35
+weight: 25
 aliases:
 tags:
 - CSI driver
@@ -9,7 +9,6 @@ tags:
 related: false
 doctype: reference
 ---
-
 
 
 ## CSI Driver Overview
