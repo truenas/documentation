@@ -17,7 +17,7 @@ Users can connect a keyboard and monitor to the system and enter a new password 
 Is there a default password for the system?
 Enterprise users are issued a password to enter if prompted for such a password after the system resets.
 Community users are not issued a default password and the system does not generate a default password for this purpose.
-If you cannot log into the UI  with the current administration password, connect a keyboard and monitor to the system server to reset the password.
+If you cannot log into the UI with the current administration password, connect a keyboard and monitor to the system server to reset the password.
 
 After logging into the system, recheck all system settings to verify the configurations are correct, and then test to verify the system is working as desired.
 When complete and the system is operating per the desired configuration, download and save the system configuration with the secret seed option selected and keep it in a secure location.
