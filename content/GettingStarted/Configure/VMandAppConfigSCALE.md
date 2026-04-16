@@ -68,7 +68,7 @@ Virtual machines provide complete isolation by running full operating systems wi
 
 {{< include file="/static/includes/VMRequirements.md" >}}
 
-See [Virtual Machines](/scale/virtualmachines/virtualmachines/) for VM setup and management information.
+See [Virtual Machines]({{< relref "/VirtualMachines/VirtualMachines.md" >}}) for VM setup and management information.
 
 ### Containers
 
