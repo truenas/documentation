@@ -20,15 +20,13 @@ keywords:
 doctype: tutorial
 ---
 
-
-
 The TrueNAS **General Settings** provide options to configure support, file a ticket or provide feedback on the UI or a feature, download a system debug, configure a graphic user interface (GUI), set UI and keyboard languages, and add system email.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralScreen.png" alt="General Settings Screen" id="General Settings Screen" >}}
 
 ## Configuring Support
 
-The **Support** widget shows information about the TrueNAS version and system hardware.
+The **Support** card shows information about the TrueNAS version and system hardware.
 Links to the open-source TrueNAS documentation, community forums, and official Enterprise licensing are provided.
 
 **Add License** opens a screen where you can paste a copy of your TrueNAS Enterprise license ([details]({{< ref "AddLicenseProactiveSupport" >}})).
@@ -40,8 +38,9 @@ After adding a license, the option changes to **Update License**.
 These options allow you to report a system bug or to send TrueNAS feedback on the UI and rate a screen. Feedback goes to the TrueNAS development team.
 An icon shows on new UI feature screens where TrueNAS is asking you to send feedback, and it allow you to capture a screenshot of that screen.
 
-**Proactive Support** shows for Enterprise-licensed systems.
-It opens the **Proactive Support** window, where you enter configuration settings to set up proactive support for an Enterprise system.
+Enterprise-licensed systems display a contextual banner based on the system support tier and contract status.
+Silver/Gold tier systems with proactive support not yet configured show a **Set up Proactive Support** banner with an **Enable** button.
+When proactive support is already active, a **Manage** button appears in the license info list to update contact settings.
 For information on configuring proactive support, see [Adding a License and Proactive Support]({{< ref "AddLicenseProactiveSupport" >}}).
 
 ## Sending Feedback
@@ -50,7 +49,7 @@ For information on configuring proactive support, see [Adding a License and Proa
 
 ## Configuring GUI Options
 
-The **GUI** widget allows users to configure the TrueNAS web interface address. Click **Settings** on the widget to open the **GUI Settings** configuration screen.
+The **GUI** card allows users to configure the TrueNAS web interface address. Click **Settings** on the widget to open the **GUI Settings** configuration screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralGuiSettings.png" alt="GUI Settings Screen" id="GUI Settings Screen" >}}
 
@@ -96,9 +95,9 @@ To show real-time console messages at the bottom of the browser window, select *
 
 ## Localizing the TrueNAS System
 
-Localizing the TrueNAS system consists of changing the UI language and the keyboard layout to support the selected language, setting the time zone to match where the TrueNAS server is located, and setting date and time formats.
+Localizing the TrueNAS system consists of changing the UI language and the keyboard layout to support the selected language and setting the time zone to match where the TrueNAS server is located. To set date and time formats, go to the top toolbar [**Settings > Preferences**]({{< ref "/TopToolbar/Settings/_index.md" >}}) screen.
 
-To change the Web UI on-screen language and set the keyboard to work with the selected language, click **Settings** on the **Localization** widget to open the **Localization Settings** configuration screen.
+To change the Web UI on-screen language and set the keyboard to work with the selected language, click **Settings** on the **Localization** card to open the **Localization Settings** configuration screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralLocalizationSettings.png" alt="Localization Settings Screen" id="Localization Settings Screen" >}}
 
@@ -112,7 +111,7 @@ Click **Save**.
 
 ## Setting Up System Email
 
-The **Email** widget displays information about current system mail settings.
+The **Email** card displays information about the current system mail settings.
 When configured, an automatic script sends a nightly email to the administrator account containing important information, such as the health of the disks.
 
 To configure the system email send method, click **Settings** to open the **Email Options** screen.
