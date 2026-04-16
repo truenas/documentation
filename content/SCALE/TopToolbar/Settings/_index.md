@@ -26,7 +26,7 @@ The **Preferences** screen settings configure the color theme, session duration 
 
 ### Customizing UI Theme and Localization
 
-The **Theme** settings, moved from the **System > General Settings > GUI** configuration screen, now show in the **Preferences** screen, which customizes the UI color theme for the session. for the currently logged-in user. 
+The **Theme** settings customize the UI theme colors for the currently logged-in user. 
 Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Solarized Dark**, **Midnight**, and **High Contrast**.
 Selecting an option immediately changes the UI to the selected color theme.
 
@@ -44,13 +44,12 @@ Click **Save** to set all changes for the currently logged-in user.
 
 TrueNAS automatically terminates the currently logged-in user session when the default session timeout expires and shows the TrueNAS login splash screen.
 
-To extend the allotted session time, go to the **Preferences** screen, and change the **Session Timeout** to a value that suits the use case for the logged-in user. 
+To extend the allotted session time, go to the **Preferences** screen and change the **Session Timeout** to a value that suits the use case for the logged-in user. 
 
 {{< hint type=tip >}}
 The default lifetime setting is 300 seconds or five minutes.
 
-The maximum is 2147482 seconds, or converting it to hours/minutes/seconds, 596 hours, 31 minutes, and 22 seconds.
-If converting it to days/hours/minutes/seconds, 24 days, 20 hours, 31 minutes, and 22 seconds.
+The maximum is 2147482 seconds, or 596 hours (24 days and 20 hours), 31 minutes, and 22 seconds.
 {{< /hint >}}
 
 Click **Save**.

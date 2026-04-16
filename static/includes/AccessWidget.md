@@ -1,6 +1,6 @@
 &NewLine;
 
-The **Access** widget shows a list of all active sessions, including the current logged-in user and the time it started.
+The **Access** widget shows a list of all active sessions, including the current logged-in user session and the time it started.
 
 The **Login Banner** shows the custom text entered on the **Access Settings** screen. This text shows before the login screen.
 When configured, users see the login banner and must click **Continue** to show the TrueNAS login splash screen.

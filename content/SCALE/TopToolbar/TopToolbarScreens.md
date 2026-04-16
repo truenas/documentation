@@ -97,7 +97,7 @@ The **Preferences** screen customizes the UI screens for the currently logged-in
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Theme** | Sets the UI color theme for the session. for the currently logged-in user. Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Solarized Dark**, **Midnight**, and **High Contrast**. Selecting an option immediately changes the UI to the selected color theme. |
+| **Theme** | Sets the UI color theme for the currently logged-in user. Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Solarized Dark**, **Midnight**, and **High Contrast**. Selecting an option immediately changes the UI to the selected color theme. |
 | **Session Timeout** | Sets the number of seconds a session remains active or inactive before it is automatically ended by logging out the user. |
 | **Language** | Sets the lauguage for the UI screen. The default setting is **English**, but it might be customized to the language based on the country of origin for an Enterprise customer. You can filter the list by typing in the field after clearing the default value, or use the scroll option to find and select a language. |
 | **Date Format** | Sets the desired date format for the UI. |
