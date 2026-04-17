@@ -169,6 +169,10 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 
 ### Current Known Issues
 
+* The **Send Feedback > Report a Bug** feature does not attach the debug file when **Attach Debug** is selected, and the UI does not display an error if the attachment fails ([NAS-140163](https://ixsystems.atlassian.net/browse/NAS-140163), [NAS-140237](https://ixsystems.atlassian.net/browse/NAS-140237)).
+  Ticket creation is not affected. To manually attach a debug file, generate one from **System > General Settings > Support > Save Debug** and upload it using the Private File Upload link automatically added as a comment on the created Jira ticket.
+  Resolved in 26-BETA.2.
+
 <a href="https://ixsystems.atlassian.net/issues?filter=14297" target="_blank">See the latest status on Jira</a> for public issues discovered in 26-BETA.1 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
