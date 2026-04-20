@@ -7,6 +7,7 @@ aliases:
  - /scale/dataprotection/cloudsynctasks/addcloudsynctasks/
  - /scale/scaleclireference/task/cloudsync/
  - /scale/scaleuireference/dataprotection/cloud-sync-tasks/
+ - /scale/scaletutorials/dataprotection/cloudsynctasks/addcloudsynctasks/
 weight: 20
 tags:
  - cloud

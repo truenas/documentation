@@ -7,7 +7,6 @@ aliases:
  - /scale/scaletutorials/virtualmachines/
  - /scale/scaletutorials/virtualization/
  - /scale/scaletutorials/virtualization/creatingmanagingvmsscale/
- - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
  - /scale/virtualization/creatingmanagingvmsscale/
 related: false
 keywords:

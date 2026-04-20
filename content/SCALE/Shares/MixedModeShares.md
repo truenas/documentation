@@ -9,6 +9,7 @@ tags:
 doctype: tutorial
 aliases:
  - /scale/shares/mixedmodeshares/
+ - /scale/scaletutorials/shares/mixedmodeshares/
 ---
 
 

@@ -4,7 +4,7 @@ description: "Provides general information on ACLs, and instructions on editing 
 weight: 20
 aliases:
  - /scale/scaletutorials/datasets/permissionsscale/
- - /scale/scaleuireference/storage/pools/permissionsscale
+
  - /scale/scaletutorials/storage/pools/permissionsscale
  - /scale/scaletutorials/storage/datasets/permissionsscale/
 tags:

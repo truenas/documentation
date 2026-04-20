@@ -7,6 +7,8 @@ related: false
 aliases:
  - /scale/printview
  - /scale/scaletutorials/systemsettings/printview/
+ - /scale/scaleuireference/printpreview/
+ - /scale/scaletutorials/scaletutorialsprint/
 ---
 
 <meta http-equiv="Refresh" content="0; url='/printview/scale/'" />

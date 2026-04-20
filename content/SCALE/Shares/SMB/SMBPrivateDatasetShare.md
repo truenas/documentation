@@ -4,6 +4,7 @@ description: "Provides instructions on using SMB Private Datasets Share as an al
 weight: 50
 aliases: 
  - /scale/shares/smb/smbprivatedatasetshare/
+ - /scale/scaletutorials/shares/smb/smbprivatedatasetshare/
  - /scale/shares/smb/smbshares/addsmbhomeshare
 tags:
 - smb

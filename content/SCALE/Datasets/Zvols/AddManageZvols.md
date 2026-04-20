@@ -6,6 +6,8 @@ aliases:
  - /scale/datasets/addmanagezvols/
  - /scale/storage/storagedashboardscreens/pools/zvolsscale/
  - /scale/storage/storageoverview/datasets/addmanagezvols/
+ - /scale/scaletutorials/datasets/addmanagezvols/
+ - /scale/scaletutorials/storage/datasets/addmanagezvols/
 tags: 
 - zvol
 - storage

@@ -5,6 +5,7 @@ weight: 10
 aliases:
  - /scale/scaletutorials/shares/smb/addsmbshares/
  - /scale/scaletutorials/shares/smb/managesmbshares/
+ - /scale/scaletutorials/shares/smb/addmanagesmbshares/
  - /scale/shares/smb/smbshares/
  - /scale/shares/smb/managesmbshares/
 tags:
