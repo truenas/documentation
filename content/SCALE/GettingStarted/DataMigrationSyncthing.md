@@ -140,7 +140,7 @@ The process of setting up data migration from an external NAS to TrueNAS consist
 
    Enter a clear identifying name, such as *INGEST*, and click **Save**.
 
-3. [Create a new dataset]({{< ref "/SCALE/Datasets/Datasets" >}}) on TrueNAS to be the target for the data ingest, for example, */mnt/tank/ingest*.
+3. [Create a new dataset]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) on TrueNAS to be the target for the data ingest, for example, */mnt/tank/ingest*.
 
     Click **Advanced Options** and set **ACL Type** to **SMB/NFSv4**.
     Set **ACL Mode** to **Restricted**.

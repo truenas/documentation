@@ -3,6 +3,7 @@ title: "Managing Certificates"
 description: "Provides information on adding or managing certificates in TrueNAS."
 weight: 10
 aliases: 
+ - /scale/credentials/certificates/certificates/
  - /scale/scaletutorials/credentials/certificates/certificatesscale/
 tags:
  - certificates

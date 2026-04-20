@@ -62,7 +62,7 @@ To create a dataset or zvol, you can click **Datasets** on the main navigation p
 
 Organize the pool with as many datasets or zvols you need according to your access and data sharing requirements before moving data into the pool.
 
-See [Adding or Managing Datasets]({{< ref "/SCALE/Datasets/Datasets" >}}) for more information on configuring datasets, or [Adding or Managing Zvols]({{< ref "AddManageZvols" >}}) for more information on zvols.
+See [Adding or Managing Datasets]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) for more information on configuring datasets, or [Adding or Managing Zvols]({{< ref "AddManageZvols" >}}) for more information on zvols.
 
 #### Adding a Dataset and Share
 TrueNAS provides the option to create the dataset and share at the same time.
