@@ -82,7 +82,7 @@ Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or la
 
 {{< include file="/static/includes/WebShare-SMBWarning.md" >}}
 
-You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< ref "/Datasets/Datasets" >}}) or create a dataset and the share using the **Add SMB** share screen.
+You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< ref "/Datasets/ManagingDatasets" >}}) or create a dataset and the share using the **Add SMB** share screen.
 This article covers adding the dataset using the **Add SMB** share screen.
 
 {{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
@@ -353,7 +353,7 @@ You have two options that modify ACL permissions for SMB shares:
 * **Edit Share ACL** modifies ACL permissions that apply to the SMB share.
 * **Edit Filesystem ACL** modifies ACL permissions at the share dataset level.
 
-See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< ref "/Datasets/Permissions/Permissions" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< ref "EditACLScreens" >}}) for more information on the dataset ACL editor screens and setting options.
+See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< ref "/Datasets/Permissions/ConfiguringACLs" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< ref "EditACLScreens" >}}) for more information on the dataset ACL editor screens and setting options.
 
 ### Configuring the SMB Share ACL
 

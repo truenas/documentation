@@ -3,6 +3,8 @@ title: "Creating and Managing Containers"
 description: "Tutorials for configuring the TrueNAS Containers feature, creating, and managing containers."
 geekdocCollapseSection: true
 weight: 20
+aliases:
+ - /containers/containers/
 related: false
 tags:
  - vm
@@ -16,7 +18,7 @@ doctype: tutorial
 ---
 
 Linux containers, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
-Containers start quickly, use fewer system resources than [virtual machines (VMs)]({{< relref "/VirtualMachines/VirtualMachines.md" >}}), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
+Containers start quickly, use fewer system resources than [virtual machines (VMs)]({{< relref "/VirtualMachines/ManagingVMs.md" >}}), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
 {{< expand "What system resources do containers require?" "v" >}}
 {{< include file="/static/includes/ContainerRequirements.md" >}}

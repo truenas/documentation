@@ -9,7 +9,7 @@ doctype: tutorial
 ---
 
 
-A ZFS Volume (zvol) is a [dataset]({{< ref "/Datasets/Datasets" >}}) that represents a block device or virtual disk drive.
+A ZFS Volume (zvol) is a [dataset]({{< ref "/Datasets/ManagingDatasets" >}}) that represents a block device or virtual disk drive.
 TrueNAS requires a zvol when configuring [iSCSI Shares]({{< ref "/Shares/iSCSI" >}}).
 Adding a virtual machine also creates a zvol to use for storage.
 
