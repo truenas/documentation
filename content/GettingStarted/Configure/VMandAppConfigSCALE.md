@@ -55,7 +55,7 @@ Adjust access permissions using the advanced options.
 ### Directory Services Configuration
 
 Certain directory services must be set up as part of SMB and NFS share configuration.
-See [Active Directory Screen]({{< ref "/Credentials/DirectoryServices/ActiveDirectory" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< ref "ConfigKerberos" >}}) for an outline of required Kerberos information.
+See [Active Directory Screen]({{< ref "/Credentials/DirectoryServices/DirectoryServicesScreens.md" >}}) for a better understanding of how to configure Active Directory and [Configuring Kerberos]({{< ref "ConfigKerberos" >}}) for an outline of required Kerberos information.
 For LDAP best practices see [Configuring LDAP]({{< ref "ConfigLDAP" >}}).
 
 ## Virtual Machine and Container Configuration
