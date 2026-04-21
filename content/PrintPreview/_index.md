@@ -4,6 +4,8 @@ description: "Shows all TrueNAS documentation in a single page for print or down
 weight: 1
 no_print: "true"
 related: false
+aliases:
+ - /scaletutorials/printview/
 ---
 
 <meta http-equiv="Refresh" content="0; url='/printview'" />

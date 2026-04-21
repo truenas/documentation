@@ -4,6 +4,7 @@ description: "Provides instructions on adding and managing administrator and use
 weight: 10
 aliases:
  - /scaletutorials/credentials/managelocalusersscale/
+ - /scaletutorials/credentials/rootlesslogin/
 tags:
 - users
 - accounts
