@@ -17,8 +17,7 @@ Legacy documentation for discontinued TrueNAS products is also archived here.
 
 <div class="docs-sections">
 
-{{< imagecard image="https://www.truenas.com/wp-content/uploads/2026/03/00-4ixga-0001_chassis-asm.39.png" title="V-Series" link="/hardware/vseries/"
-descr="High Availability (HA), hybrid or all-flash performance in a 4U form factor." >}}
+{{< imagecard image="https://www.truenas.com/wp-content/uploads/2026/03/00-4ixga-0001_chassis-asm.39.png" title="V-Series" link="/hardware/vseries/" descr="High Availability (HA), hybrid or all-flash performance in a 4U form factor." >}}
 
 {{< imagecard image="https://www.truenas.com/wp-content/uploads/2023/11/F100_Front_Top-2.png" title="F-Series" link="/hardware/fseries/"
 descr="High Availability (HA), all-flash performance in a 2U form factor." >}}
