@@ -30,7 +30,7 @@ It gives you additional flexibility to build or tune a share to your exact requi
 
 ### Before You Begin
 
-Before adding iSCSI shares, make sure you have already created a [zvol]({{< ref "AddManageZvols" >}}) or a [dataset]({{< ref "/Datasets/Datasets" >}}) with at least one file to share. Do not use capital letters or spaces in the names or path.
+Before adding iSCSI shares, make sure you have already created a [zvol]({{< ref "AddManageZvols" >}}) or a [dataset]({{< ref "/Datasets/ManagingDatasets" >}}) with at least one file to share. Do not use capital letters or spaces in the names or path.
 Take note of the path to the zvol or file.
 
 ## Creating a share with the iSCSI Wizard

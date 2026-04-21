@@ -2,6 +2,8 @@
 title: "Edit ACL Screen"
 description: "Describes the ACL permissions screens, settings for POSIX and NFSv4 ACLs, and the conditions that result in additional setting options."
 weight: 50
+aliases:
+ - /scaleuireference/storage/pools/permissionsscale
 tags:
  - acl
  - datasets

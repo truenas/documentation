@@ -3,6 +3,9 @@ title: "Apps"
 description: "Tutorials and UI reference to manage applications in TrueNAS."
 geekdocCollapseSection: true
 weight: 13
+aliases:
+ - /scaletutorials/apps/docker/
+ - /truenasapps
 tags:
 - apps
 related: false

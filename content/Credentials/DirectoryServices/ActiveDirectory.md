@@ -2,6 +2,8 @@
 title: "Active Directory Screens"
 description: "Provides information on the **Active Directory** configuration screens and settings."
 weight: 50
+aliases:
+ - /scaleuireference/credentials/directoryservices/activedirectory/
 tags:
 - activedirectory
 - kerberos

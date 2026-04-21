@@ -27,14 +27,14 @@ IP blocking, threat scoring, and snapshot-based recovery tools are available to 
 
 ### Containers
 
-[**Containers**]({{< relref "/Containers/Containers.md" >}}), introduced as an experimental feature in TrueNAS 25.04, are fully supported in TrueNAS 26.
+[**Containers**]({{< relref "/Containers/ManagingContainers.md" >}}), introduced as an experimental feature in TrueNAS 25.04, are fully supported in TrueNAS 26.
 Containers provide lightweight, isolated Linux environments that share the host kernel while maintaining their own file system, processes, and network configuration, using fewer system resources than virtual machines while starting quickly and scaling efficiently.
 
 TrueNAS 26 extends container support to Enterprise systems with High Availability (HA) configurations, enabling container failover between controllers.
 HA container failover requires a static IP configuration.
 
 Users migrating from TrueNAS CORE who previously relied on custom Jails can use containers as a supported migration path.
-See [Containers]({{< ref "/Containers/Containers.md" >}}) for configuration details.
+See [Containers]({{< ref "/Containers/ManagingContainers.md" >}}) for configuration details.
 
 ### SMB Stateful Failover
 

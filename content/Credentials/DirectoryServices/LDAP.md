@@ -2,6 +2,8 @@
 title: "LDAP Screens"
 description: "Provides information on the **LDAP** screen and widget settings."
 weight: 60
+aliases:
+ - /scaleuireference/credentials/directoryservices/ldap/
 tags:
 - ldap
 - directoryservices
