@@ -4,6 +4,7 @@ description: "Provides instructions configuring a network interface and other ne
 weight: 20
 aliases:
  - /scale/network/configureipv6/
+ - /scale/scaletutorials/network/configureipv6/
 tags:
 - network
 - interfaces

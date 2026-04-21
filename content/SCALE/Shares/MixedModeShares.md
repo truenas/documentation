@@ -9,6 +9,7 @@ tags:
 doctype: tutorial
 aliases:
  - /scale/shares/mixedmodeshares/
+ - /scale/scaletutorials/shares/mixedmodeshares/
 ---
 
 
@@ -143,7 +144,7 @@ The dataset name populates the **SMB Name** field and becomes the name of the SM
 {{< trueimage src="/images/SCALE/Datasets/AddMultimodeDataset.png" alt="Adding a Multi-Mode Dataset and Share" id="Adding a Multi-Mode Dataset and Share" >}}
 
 (Optional) Click **Advanced Options** to customize other dataset settings such as quotas, compression level, encryption, and case sensitivity.
-See [Creating Datasets]({{< ref "/SCALE/Datasets/Datasets#creating-a-dataset" >}}) for more information on adding and customizing datasets.
+See [Creating Datasets]({{< ref "/SCALE/Datasets/ManagingDatasets#creating-a-dataset" >}}) for more information on adding and customizing datasets.
 
 Click **Save**.
 TrueNAS creates the dataset and the SMB and NFS shares.

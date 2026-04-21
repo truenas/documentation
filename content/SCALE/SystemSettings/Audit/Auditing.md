@@ -4,6 +4,7 @@ description: "Provides information on the System and SMB Share auditing screens 
 weight: 20
 aliases:
  - /scale/scaletutorials/systemsettings/auditing/
+ - /scale/scaletutorials/systemsettings/auditingscale/
 tags:
  - auditing
  - system

@@ -7,6 +7,7 @@ aliases:
  - /scale/scaleuireference/storage/pools/poolcreatewizardscreens/
  - /scale/scaleclireference/storage/clipool/
  - /scale/storage/poolcreatewizardscreens/
+ - /scale/scaleuireference/storage/pools/fusionpoolsscale/
 tags: 
 - pools
 - storage
