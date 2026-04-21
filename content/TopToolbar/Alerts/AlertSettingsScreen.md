@@ -2,6 +2,9 @@
 title: "Alert Settings Screens"
 description: "The Alert Settings screen allows users to set the warning levels and frequency of alerts."
 weight: 10
+aliases:
+ - /scaleuireference/toptoolbar/alerts/alertsettingsscreen/
+ - /scaleuireference/toptoolbar/alerts/alertservicesscreen/
 tags:
 - alerts
 - toolbar

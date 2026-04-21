@@ -2,6 +2,9 @@
 title: "Using Shell"
 description: "Provides information on using the TrueNAS shell."
 weight: 20
+aliases:
+ - /scaletutorials/systemsettings/usescaleshell/
+ - /systemsettings/scaleshell/
 tags:
 - shell
 keywords:

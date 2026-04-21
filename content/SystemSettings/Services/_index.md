@@ -3,6 +3,8 @@ title: "Services"
 description: "Tutorials for TrueNAS services."
 geekdocCollapseSection: true
 weight: 50
+aliases:
+ - /scaletutorials/systemsettings/services/s3servicescale/
 tags:
  - services
 related: false

@@ -2,6 +2,11 @@
 title: "Drive Health Management"
 description: "Provides information and considerations for drive health."
 weight: 60
+aliases:
+ - /scaletutorials/systemsettings/services/smartservicesscale/
+ - /scaletutorials/systemsettings/services/smartscale/
+ - /scaletutorials/dataprotection/smarttestsscale/
+ - /dataprotection/smarttestsscale/
 tags:
 - disks
 keywords:

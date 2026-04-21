@@ -2,6 +2,8 @@
 title: "Setting Up SMB Private Dataset Shares"
 description: "Provides instructions on using SMB Private Datasets Share as an alternative to legacy SMB Home Shares."
 weight: 50
+aliases:
+ - /scaletutorials/shares/smb/smbprivatedatasetshare/
 tags:
 - smb
 doctype: tutorial
@@ -89,7 +91,7 @@ In general, when creating a simple SMB share and dataset, you can use either scr
 
 When adding a new share and dataset for a private dataset share, we recommend using the **Add SMB** screen to create a new share and dataset for private datasets, or for any other customized SMB share, rather than using the **Add Dataset** screen.
 
-We recommend using the [**Add Dataset** screen]({{< ref "/Datasets/Datasets" >}}) when you want to customize the dataset with the advanced setting options. After which, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
+We recommend using the [**Add Dataset** screen]({{< ref "/Datasets/ManagingDatasets" >}}) when you want to customize the dataset with the advanced setting options. After which, use the **Add SMB** or **Edit SMB** screen to create or customize an SMB share with presets and advanced options.
 
 {{< include file="/static/includes/ShareACLDialogs.md" >}}
 
@@ -107,7 +109,7 @@ You can change the admin user who is creating the private dataset share dataset 
 
 Alternatively, leave the **Owner** and **Owner Group** set to the root user and add a new user entry for the admin user who creates the private dataset shares.
 Give that admin user full access permissions.
-For more information on changing permissions, see [Storage Permissions]({{< ref "/Datasets/Permissions/Permissions.md" >}}).
+For more information on changing permissions, see [Storage Permissions]({{< ref "/Datasets/Permissions/ConfiguringACLs.md" >}}).
 
 #### Adding the Private Dataset Share and Dataset
 

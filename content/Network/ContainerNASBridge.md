@@ -2,6 +2,9 @@
 title: "Accessing NAS from VMs and Containers"
 description: "Provides instructions on how to create a bridge interface for virtual machines or applications and provides Linux and Windows examples."
 weight: 80
+aliases:
+ - /scaletutorials/network/containernasbridge/
+ - /scaletutorials/virtualization/accessingnasfromvm/
 tags:
  - vm
  - container
