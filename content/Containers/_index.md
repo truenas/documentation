@@ -3,6 +3,9 @@ title: "Containers"
 description: "Tutorials and UI reference to configure Linux containers in TrueNAS."
 geekdocCollapseSection: true
 weight: 11
+aliases:
+ - /scaletutorials/instances/
+ - /scaletutorials/containers/
 tags:
 - container
 - instances

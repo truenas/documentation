@@ -2,6 +2,8 @@
 title: "Setting Up SMB Private Dataset Shares"
 description: "Provides instructions on using SMB Private Datasets Share as an alternative to legacy SMB Home Shares."
 weight: 50
+aliases:
+ - /scaletutorials/shares/smb/smbprivatedatasetshare/
 tags:
 - smb
 doctype: tutorial

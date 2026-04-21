@@ -5,6 +5,10 @@ geekdocCollapseSection: true
 weight: 20
 aliases:
  - /virtualmachines/virtualmachines/
+ - /scaletutorials/virtualmachines/
+ - /scaletutorials/virtualization/
+ - /scaletutorials/virtualization/creatingmanagingvmsscale/
+ - /virtualization/creatingmanagingvmsscale/
 related: false
 keywords:
 - nas data storage

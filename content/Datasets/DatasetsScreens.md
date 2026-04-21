@@ -2,6 +2,9 @@
 title: "Datasets Screens"
 description: "Provides information on the Datasets screens and settings."
 weight: 70
+aliases:
+ - /scaleuireference/storage/datasets/importdatascreenscale/
+ - /scaleuireference/storage/datasets/datasetsscreensscale/
 tags: 
 - datasets
 - storage

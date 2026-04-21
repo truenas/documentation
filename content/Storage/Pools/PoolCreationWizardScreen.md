@@ -2,6 +2,8 @@
 title: "Pool Creation Wizard Screen"
 description: "Descriptions for settings and functions found in the Pool Creation Wizard."
 weight: 50
+aliases:
+ - /scaleuireference/storage/pools/fusionpoolsscale/
 tags: 
 - pools
 - storage
