@@ -2,6 +2,8 @@
 title: "Cloud Sync Tasks Screens"
 description: "Provides information on the Cloud Sync task screens and settings."
 weight: 20
+aliases:
+ - /scaleuireference/dataprotection/cloud-sync-tasks/
 tags:
 - cloud
 - backup

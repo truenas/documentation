@@ -4,6 +4,9 @@ description: "Tutorials for configuring TrueNAS SCALE virtualization features an
 geekdocCollapseSection: true
 weight: 12
 related: false
+aliases:
+ - /scaletutorials/virtualization/
+ - /scaletutorials/virtualization/creatingmanagingvmsscale/
 keywords:
 - nas data storage
 - software storage solutions
