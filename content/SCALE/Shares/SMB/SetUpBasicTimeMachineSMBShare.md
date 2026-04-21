@@ -43,7 +43,7 @@ Note that enabling a multi-user Time Machine does not automatically replicate th
 
 ### Creating the Share and Dataset
 
-You can either [create the dataset]({{< ref "/SCALE/Datasets/Datasets" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
+You can either [create the dataset]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
 We recommend using the **Add SMB** screen when setting up a Time Machine share, as it can create the dataset, enable the SMB2/3 protocol setting in the SMB service, and create the Time Machine share from the same screen.
 
 When you want to customize the dataset, use the **Add Dataset** screen to create the customized dataset and a basic SMB share.

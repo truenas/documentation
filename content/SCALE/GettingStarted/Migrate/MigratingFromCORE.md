@@ -4,6 +4,7 @@ description: "Provides instructions for TrueNAS community users to migrate from 
 weight: 15
 aliases:
  - /scale/gettingstarted/migratingfromcore/
+ - /gettingstarted/migrate/migratingfromcore/
 tags:
 - migrate
 - install

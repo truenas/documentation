@@ -4,6 +4,7 @@ description: "Articles describing the TrueNAS Apps screens and fields."
 geekdocCollapseSection: true
 weight: 20
 aliases:
+ - /scale/apps/apps/
  - /scale/scaleuireference/apps/
  - /scale/scaleuireference/apps/appsscreensscale/
  - /scale/scaleclireference/app/

@@ -41,7 +41,7 @@ See [Setting Up a Network VLAN]({{< ref "SettingUpVLAN" >}}) for more informatio
 
 Storage pool creation is part of the initial process of setting up storage.
 A TrueNAS dataset is a file system within a data storage pool.
-See [Setting Up Storage]({{< ref "SetUpStorageScale" >}}) to review storage pool creation and [Adding and Managing Datasets]({{< ref "/SCALE/Datasets/Datasets" >}}) for information on dataset configuration.
+See [Setting Up Storage]({{< ref "SetUpStorageScale" >}}) to review storage pool creation and [Adding and Managing Datasets]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) for information on dataset configuration.
 
 ### Shares Configuration
 
@@ -70,7 +70,7 @@ Virtual machines provide complete isolation by running full operating systems wi
 
 {{< include file="/static/includes/VMRequirements.md" >}}
 
-See [Virtual Machines]({{< relref "/SCALE/VirtualMachines/VirtualMachines.md" >}}) for VM setup and management information.
+See [Virtual Machines]({{< relref "/SCALE/VirtualMachines/ManagingVMs.md" >}}) for VM setup and management information.
 
 ### Containers
 
@@ -78,7 +78,7 @@ Linux containers, powered by LXC, offer lightweight, isolated environments that 
 
 {{< include file="/static/includes/ContainerRequirements.md" >}}
 
-See [Containers]({{< ref "/scale/containers/containers/" >}}) for Linux container configuration and management information.
+See [Containers]({{< ref "/SCALE/Containers/ManagingContainers.md" >}}) for Linux container configuration and management information.
 
 ## Application Configuration
 

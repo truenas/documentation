@@ -48,7 +48,7 @@ After selecting a disk, the cards show on the right side of the screen in the **
 The **ZFS Info** card for each device (disk drive) in the VDEV shows the name of the VDEV (**Parent**), the read, write, and checksum errors for that drive, and the **Detach** and **Offline** options.
 
 {{< columns >}}
-{{< trueimage src="/images/SCALE/Storage/ZvolInfoCard.png" alt="ZFS Info Card" id="ZFS Info Card" >}}
+{{< trueimage src="/images/SCALE/Storage/ZFSInfoCard.png" alt="ZFS Info Card" id="ZFS Info Card" >}}
 <--->
 {{< trueimage src="/images/SCALE/Storage/ZFSInfoCardWithExtendRemove.png" alt="ZFS Info Card With Extend and Remove" id="ZFS Info Card with Extend and Remove" >}}
 {{< /columns >}}
@@ -82,8 +82,6 @@ It might show on non-enterprise systems with self-encrypting drives, but not all
 The **Manage SED Password** link opens a **Manage SED Password** dialog, where you can enter a disk SED password to set the disk encryption password.
 
 {{< trueimage src="/images/SCALE/Storage/HardwareDiskEncryptionCard.png" alt="Hardware Disk Encryption Card" id="Hardware Disk Encryption Card" >}}
-
-{{< trueimage src="/images/SCALE/Storage/ManageSEDPasswordDialog.png" alt="Manage Disk SED Encryption Password" id="Manage Disk SED Encryption Password" >}}
 
 **Global SED Password** shows the status as set or not set.
 The **Manage Global SED Password** link opens the **[System Settings > Advanced]({{< ref "AdvancedSettingsScreen" >}})** screen, where you can change the global SED password that overrides the disk passwords.
