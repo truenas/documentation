@@ -2,6 +2,9 @@
 title: "Adding and Managing Datasets"
 description: "Provides instructions on creating and managing datasets."
 weight: 10
+aliases:
+ - /scaletutorials/datasets/datasetsscale/
+ - /datasets/datasets/
 tags:
  - datasets
  - storage

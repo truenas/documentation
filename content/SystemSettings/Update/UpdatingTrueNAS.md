@@ -2,6 +2,8 @@
 title: "Updating TrueNAS"
 description: "Provides instructions on updating TrueNAS releases in the UI."
 weight: 10
+aliases:
+ - /systemsettings/update/update/
 tags:
 - update
 keywords:

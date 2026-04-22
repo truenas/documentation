@@ -2,6 +2,9 @@
 title: "Setting Up System Email"
 description: "Provides instructions on configuring email using SMTP or GMail OAuth and setting up the email alert service in TrueNAS."
 weight: 30
+aliases:
+ - /scaletutorials/systemsettings/general/settingupsystememail/
+ - /scaletutorials/toptoolbar/settingupsystememail/
 tags:
  - email
  - alerts

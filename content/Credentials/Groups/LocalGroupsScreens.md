@@ -2,6 +2,8 @@
 title: "Groups Screens"
 description: "Provides information on the Groups screens and settings."
 weight: 50
+aliases:
+ - /scaleuireference/credentials/localgroupsscreens/
 tags:
  - groups
 doctype: reference

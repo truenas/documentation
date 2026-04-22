@@ -63,7 +63,7 @@ Visit [our guide](https://www.truenas.com/docs/contributing/) for information on
 ### 26-BETA.1 Notable Changes
 
 * Adds support for LXC containers in Enterprise High Availability (HA) configurations ([NAS-138309](https://ixsystems.atlassian.net/browse/NAS-138309)).
-  Containers can now fail over between HA controllers. HA container failover requires a static IP configuration. See [Containers]({{< ref "/Containers/Containers.md" >}}) for configuration details.
+  Containers can now fail over between HA controllers. HA container failover requires a static IP configuration. See [Containers]({{< ref "/Containers/ManagingContainers.md" >}}) for configuration details.
 
 * Adds GPU passthrough support for LXC containers ([NAS-138569](https://ixsystems.atlassian.net/browse/NAS-138569), [NAS-138570](https://ixsystems.atlassian.net/browse/NAS-138570), [NAS-138700](https://ixsystems.atlassian.net/browse/NAS-138700)).
   Users can assign NVIDIA and other supported GPU devices to LXC containers from the container configuration screen in the UI.
@@ -252,7 +252,7 @@ TrueNAS 26 adds the following container improvements:
 - **GPU passthrough** — NVIDIA and other supported GPU devices can now be assigned to LXC containers from the container configuration screen ([NAS-138569](https://ixsystems.atlassian.net/browse/NAS-138569), [NAS-138570](https://ixsystems.atlassian.net/browse/NAS-138570), [NAS-138700](https://ixsystems.atlassian.net/browse/NAS-138700)).
 - **USB and PCIe passthrough fixes** — A regression that prevented USB and PCIe device passthrough to containers and VMs is resolved in BETA.1 ([NAS-139045](https://ixsystems.atlassian.net/browse/NAS-139045), [NAS-139356](https://ixsystems.atlassian.net/browse/NAS-139356)).
 
-See [Containers]({{< ref "/Containers/Containers.md" >}}) for configuration details.
+See [Containers]({{< ref "/Containers/ManagingContainers.md" >}}) for configuration details.
 
   </div>
 

@@ -3,6 +3,8 @@ title: "Apps Screens"
 description: "Articles describing the TrueNAS Apps screens and fields."
 geekdocCollapseSection: true
 weight: 20
+aliases:
+ - /apps/apps/
 tags:
 - apps
 related: false

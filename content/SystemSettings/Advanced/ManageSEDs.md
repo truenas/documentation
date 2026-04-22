@@ -2,6 +2,8 @@
 title: "Configuring SED Settings"
 description: "Provides information on adding or modifying self-encrypting drive (SED) user and global passwords in TrueNAS."
 weight: 70
+aliases:
+ - /scaletutorials/systemsettings/advanced/managesedsscale/
 tags:
  - sed
  - disks

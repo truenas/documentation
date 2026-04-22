@@ -2,6 +2,8 @@
 title: "FTP Service Screen"
 description: "Provides information on the FTP services screens and settings."
 weight: 80
+aliases:
+ - /scaleuireference/systemsettings/services/ftpservicescreenscale/
 tags:
  - services
  - ftp
