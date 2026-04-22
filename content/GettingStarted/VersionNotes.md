@@ -512,6 +512,11 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: After updating the Fibre Channel initiator, stop and then start the iSCSI service in **System > Services** to apply the change to the running configuration.
 
+* Switching to the **General** update profile can display a TypeError on the **Update** screen ([NAS-140736](https://ixsystems.atlassian.net/browse/NAS-140736)).
+  When a TrueNAS version is promoted from **Early Adopter** to **General** availability, users already running that version who then change their update profile to **General** can see a `TypeError: 'NoneType' object is not subscriptable` error on the **Update** screen. The error persists after refreshing the page or logging out and back in, but clears after a system reboot.
+
+  Workaround: Reboot the system after changing the update profile to clear the error message.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=14131" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
