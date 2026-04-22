@@ -517,6 +517,8 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: Reboot the system after changing the update profile to clear the error message.
 
+  This issue is resolved in TrueNAS 26.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=14131" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
