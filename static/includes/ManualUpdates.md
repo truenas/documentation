@@ -1,6 +1,6 @@
 &NewLine;
 
-Manual update files are available from the [TrueNAS Download page](https://www.truenas.com/download-truenas-scale/). Use this option to install a specific build directly.
+Manual update files are available from the [TrueNAS Download page](https://www.truenas.com/download-truenas-scale/) and [Update Downloads](https://update-public.sys.truenas.net/). Use this option to install a specific build directly.
 
 Click **Install** to the right of **Manual Update**.
 The **Save configuration settings from this machine before updating?** window opens.
