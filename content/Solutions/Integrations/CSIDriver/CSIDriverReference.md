@@ -317,7 +317,7 @@ kubectl rollout restart deployment truenas-csi-controller -n truenas-csi
 
 **Cause:** Dataset name starts with `/` or contains invalid characters
 
-**Solution:** This is fixed in v1.0.0. If using older an version, upgrade to the latest driver.
+**Solution:** This is fixed in v1.0.0. If using an older version, upgrade to the latest driver.
 
 ### Connection Timeout to TrueNAS
 
