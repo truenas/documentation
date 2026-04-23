@@ -60,7 +60,7 @@ The **GUI** card allows users to configure the TrueNAS web interface address. Cl
 ### Changing the GUI SSL Certificate
 
 The system uses a self-signed certificate to enable encrypted web interface connections.
-To change the default certificate, create or import a certificate as described in [Managing Certificates]({{< ref "/SCALE/Credentials/Certificates/Certificates" >}}) to add it to the dropdown list of certificates available on the system. Select the certificate from the **GUI SSL Certificate** dropdown list.
+To change the default certificate, create or import a certificate as described in [Managing Certificates]({{< ref "/SCALE/Credentials/Certificates/ManagingCertificates" >}}) to add it to the dropdown list of certificates available on the system. Select the certificate from the **GUI SSL Certificate** dropdown list.
 
 ### Setting the Web Interface IP Address
 

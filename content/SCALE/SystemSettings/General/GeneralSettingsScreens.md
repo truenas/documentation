@@ -9,6 +9,7 @@ aliases:
  - /scale/scaleclireference/system/clisupport/
  - /scale/scaleclireference/system/clitruenas/
  - /scale/systemsettings/generalsettings/
+ - /scale/scaleuireference/systemsettings/generalsettingsscreens/
 tags:
  - settings
  - console

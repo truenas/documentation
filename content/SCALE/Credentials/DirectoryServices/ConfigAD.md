@@ -4,6 +4,7 @@ description: "Provides instructions on configuring Active Directory (AD) in True
 weight: 10
 aliases:
  - /scale/scaletutorials/credentials/directoryservices/configadscale/
+ - /scale/scaletutorials/credentials/directoryservices/configidmapscale/
 tags:
 - activedirectory
 - directoryservices

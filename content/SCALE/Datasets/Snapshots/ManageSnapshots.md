@@ -4,7 +4,7 @@ description: "Provides instructions on managing ZFS snapshots in TrueNAS."
 weight: 20
 aliases:
  - /scale/scaletutorials/datasets/managesnapshotsscale/
- - /scale/scaleuireference/storage/snapshotsscale/
+
  - /scale/scaletutorials/storage/snapshotsscale/
  - /scale/scaletutorials/storage/datasets/managesnapshotsscale/
  - /_includes/cloneandpromotesnapshotdataset/

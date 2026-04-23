@@ -2,7 +2,9 @@
 title: "Managing Groups"
 description: "Provides instructions on adding and managing groups."
 weight: 20
-aliases: /scale/credentials/localgroups/
+aliases:
+ - /scale/credentials/localgroups/
+ - /scale/scaletutorials/credentials/managelocalgroups/
 tags:
  - groups
 keywords:

@@ -5,6 +5,7 @@ weight: 80
 aliases: 
  - /scale/systemsettings/services/ftpservicescreen/
  - /scale/scaleclireference/service/cliftp/
+ - /scale/scaleuireference/systemsettings/services/ftpservicescreenscale/
 tags:
  - services
  - ftp

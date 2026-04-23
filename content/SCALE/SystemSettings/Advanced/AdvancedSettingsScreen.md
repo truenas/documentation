@@ -14,8 +14,6 @@ aliases:
  - /scale/scaleclireference/system/clisystemdataset/
  - /scale/scaleclireference/system/clitunable/
  - /scale/scaleclireference/task/clicronjob/
- - /scale/scaletutorials/dashboard/scaletimesync/
- - /scale/scaletutorials/systemsettings/services/smartservicesscale/
  - /scale/scaleuireference/systemsettings/services/smartservicesscreen/
 tags:
  - settings

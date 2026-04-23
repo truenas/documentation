@@ -5,6 +5,8 @@ weight: 20
 aliases:
  - /scale/credentials/manageusers/
  - /scale/credentials/credentialsoverview/managelocalusersscale/
+ - /scale/scaletutorials/credentials/manageusers/
+ - /scale/scaletutorials/credentials/managelocalusersscale/
 tags:
 - users
 - accounts
