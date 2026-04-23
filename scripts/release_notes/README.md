@@ -111,7 +111,7 @@ chmod +x update_version_notes.py
 
 **CSV naming convention:**
 Save your Jira export to `documentation/public/data/` named `{version}-changelog.csv`.
-Example: `public/data/25.10.2.2-changelog.csv`
+Example: `public/data/25.10.3-changelog.csv`
 The `prep` command finds it automatically.
 
 **VersionNotes.md placeholder:**

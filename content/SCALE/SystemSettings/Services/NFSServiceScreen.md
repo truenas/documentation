@@ -6,6 +6,7 @@ aliases:
  - /scale/systemsettings/services/nfsservicescreen/
  - /scale/shares/iscsi/nfs/nfsservicescreen/
  - /scale/scaleclireference/service/clinfs/
+ - /scale/scaleuireference/systemsettings/services/nfsservicescreen/
 tags:
  - nfs
  - services

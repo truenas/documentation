@@ -4,7 +4,7 @@ description: "Provides instructions on creating ZFS snapshots in TrueNAS."
 weight: 10
 aliases:
  - /scale/scaletutorials/datasets/creatingsnapshots/
- - /scale/scaleuireference/storage/snapshotsscale/
+
  - /scale/scaletutorials/storage/snapshotsscale/
  - /scale/scaletutorials/storage/datasets/creatingsnapshots/
 tags: 
@@ -22,7 +22,7 @@ doctype: tutorial
 
 {{< include file="/static/includes/SnapshotsIntroSnippet.md" >}}
 
-Taking snapshots requires the system have all [pools]({{< ref "CreatingPools" >}}), [datasets]({{< ref "/SCALE/Datasets/Datasets" >}}), and [zvols]({{< ref "AddManageZvols" >}}) already configured.
+Taking snapshots requires the system have all [pools]({{< ref "CreatingPools" >}}), [datasets]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}), and [zvols]({{< ref "AddManageZvols" >}}) already configured.
 
 ## Creating a Snapshot
 

@@ -258,6 +258,9 @@ majorVersions:
     releaseNotes: "https://www.truenas.com/docs/scale/25.10/gettingstarted/scalereleasenotes/"
     releaseName: "Goldeye"
     releases:
+      - name: "25.10.3"
+        link: "https://download.truenas.com/TrueNAS-SCALE-Goldeye/25.10.3/"
+        date: "2026-04-14"
       - name: "25.10.2.1"
         link: "https://download.truenas.com/TrueNAS-SCALE-Goldeye/25.10.2.1/"
         date: "2026-02-25"
