@@ -7,6 +7,7 @@ aliases:
  - /scale/systemsettings/services/servicesscreens/
  - /scale/systemsettings/servicesscale/
  - /scale/systemsettings/services/s3servicescale/
+ - /scale/scaletutorials/systemsettings/services/s3servicescale/
 tags:
  - services
 related: false

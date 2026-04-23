@@ -6,6 +6,8 @@ aliases:
  - /scale/shares/nfs/addingnfsshares/
  - /scale/shares/nfs/addingnfsshares/
  - /scale/shares/nfs/
+ - /scale/scaletutorials/shares/addingnfsshares/
+ - /scale/scaletutorials/shares/nfs/addingnfsshares/
 tags:
 - nfs
 - shares

@@ -5,7 +5,7 @@ weight: 40
 aliases:
  - /scale/scaletutorials/storage/managepoolsscale/
  - /scale/scaletutorials/storage/pools/managepoolsscale/
- - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
+
  - /scale/scaletutorials/dataprotection/scrubtasksscale/
 tags: 
 - pools
