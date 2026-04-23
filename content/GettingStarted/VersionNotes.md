@@ -175,7 +175,7 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 
 * **Containers** (LXC) created in earlier TrueNAS versions can fail to start after upgrading to 26-BETA.1, with an error indicating the init executable cannot be found ([NAS-140691](https://ixsystems.atlassian.net/browse/NAS-140691)).
   The upgrade migration script does not properly mount container ZFS datasets, leaving the container filesystem intact but inaccessible.
-  As a workaround, open the TrueNAS shell and run `zfs inherit canmount <pool>/.truenas_containers/containers/<container_name>` followed by `zfs mount <pool>/.truenas_containers/containers/<container_name>`. The first command may return a `'canmount' property cannot be inherited` error that can be ignored.
+  As a workaround, open the TrueNAS shell and run `zfs set canmount=on <pool>/.truenas_containers/containers/<container_name>` followed by `zfs mount <pool>/.truenas_containers/containers/<container_name>`.
   Resolved in 26-BETA.2.
 
 * SMB shares configured as the **Legacy Share** type with the recycle bin feature enabled can cause an SMB service crash when **Spotlight search** is active ([NAS-140749](https://ixsystems.atlassian.net/browse/NAS-140749)).
