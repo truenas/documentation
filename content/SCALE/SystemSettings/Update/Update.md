@@ -20,8 +20,8 @@ Update profiles control which TrueNAS releases the system checks for updates.
 Community Edition systems default to the highest profile available for the installed version.
 For example, a fresh install of a General release defaults to the General profile.
 
-TrueNAS Enterprise systems ship with the Mission Critical profile set by default.
-Enterprise users can select General or Mission Critical only.
+TrueNAS Enterprise systems ship with the **Mission Critical** profile set by default.
+Enterprise users can select **General** or **Mission Critical** only.
 
 The **Update** screen shows the installed version, other installation or update options, and user profiles.
 Some users can select a different profile option from the **Select an update profile** dropdown list.
@@ -64,8 +64,8 @@ Enterprise users can select **General** or **Mission Critical** only.
 Community Edition users can select **Developer**, **Early Adopter**, or **General**.
 
 The dropdown only shows profiles at or below the level of the currently installed version.
-A system on a General release can select General, Early Adopter, or Developer.
-A system on an Early Adopter release can select Early Adopter or Developer, but not General.
+A system on a General release profile can select **General**, **Early Adopter**, or **Developer**.
+A system on an **Early Adopter** release profile can select **Early Adopter** or **Developer**, but not **General**.
 Profiles above the current version level appear in the **Other Profiles (Not Available)** section and cannot be selected until the system runs a release at that profile level.
 
 {{< hint type=warning >}}
