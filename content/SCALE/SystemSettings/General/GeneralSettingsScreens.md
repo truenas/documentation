@@ -1,6 +1,6 @@
 ---
 title: "General Settings Screen"
-description: "Provides information on the General Settings screen, widgets, and configuration settings for getting support, changing console or the GUI, localization and keyboard setups, and system email."
+description: "Provides information on the General Settings screen, cards, and configuration settings for getting support, changing console or the GUI, localization and keyboard setups, and system email."
 weight: 50
 aliases:
  - /scale/systemsettings/generalsettingsscreens/
@@ -18,43 +18,55 @@ doctype: reference
 ---
 
 
-The **General Settings** screen has four widgets that show current general system settings and include buttons for related actions and configuration options. The widgets are:
+The **General Settings** screen has four cards that show current general system settings and include buttons for related actions and configuration options. The cards are:
 
-* **[Support](#support-widget)**
+* **[Support](#support-card)**
 * **[GUI](#gui-settings-screen)**
 * **[Localization](#localization-settings-screen)**
 * **[Email](#email-options-screen)**
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralScreen.png" alt="General Settings Screen" id="General Settings Screen" >}}
 
-Community systems show the same widgets, but are not eligible for Enterprise support options or licenses.
-The TrueNAS logo shows for the Community Edition of TrueNAS.
+Community systems show the same cards, but are not eligible for Enterprise support options or licenses.
+Enterprise systems show an image of the system model.
 
-## Support Widgets
+## Support Card
 
-The **Support** widget for Community Edition TrueNAS shows the version, model number of the CPU detected, system memory detected, a system serial number if configured, and links to the [Documentation Hub](https://www.truenas.com/docs/), [TrueNAS Forums](https://forums.truenas.com/), and offers [TrueNAS Licensing](https://www.ixsystems.com/support/) information.
+The **Support** card shows system information and provides access to support resources and actions.
+All systems show three buttons in the card header:
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralSupportWidget.png" alt="Support Widget" id="Support Widget" >}}
+* **File Ticket** opens a [feedback/report issue window](#send-feedback-window) where users can provide feedback or report an issue and save/attach a system debug file.
+* **Save Debug** starts downloading a system debug file to the local machine.
+* **Add License** (or **Update License** after a license is applied) opens the **[License](#license-screen)** screen. Requires Full Admin role.
 
-The Community Edition Support widget shows a TrueNAS icon instead of a system image available for TrueNAS Mini and other platforms sold by TrueNAS.
-Images of non-standard systems are not supported due to the number of different options available in the marketplace.
+### Community Edition Support Card
 
-**File Ticket** opens a [feedback/report issue window](#send-feedback-window) where users can provide feedback on the screen or report an issue and save/attach a system debug file.
+The **Support** card for TrueNAS Community Edition shows a banner with a link to the TrueNAS forums for community support, followed by system information including the OS version, system product, CPU model (if detected), memory, and system serial number (if configured).
 
-**Save Debug** starts downloading a system debug file to the local machine.
+{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSupportCard.png" alt="Support Card" id="Support Card" >}}
+
+A links row at the bottom of the card provides quick access to **Documentation**, **Forums**, and **Licensing** information.
 
 {{< enterprise>}}
-The **Support** widget on the **General Settings** screen for Enterprise customers shows system licenses applied to the system, the system model, serial, license numbers not shown for Community Edition of TrueNAS, and any additional hardware associated with the system.
+### Enterprise Support Card
 
-{{< trueimage src="/images/SCALE/SystemSettings/SystemGeneralSupportWidgetEnterprise.png" alt="Support Widget - Enterprise" id="Support Widget - Enterprise" >}}
+The **Support** card on the **General Settings** screen for Enterprise systems displays license details including contract type, expiration date, model, system serial, licensed serials, features, and any additional hardware.
+Licensed systems with recognized hardware display a product image at the top of the card.
 
-The **This is a production system** toggle, which shows only on TrueNAS Enterprise systems, opens the [**Update Production Status**](#update-production-status-dialog) dialog.
+{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSupportCardEnterprise.png" alt="Support Card - Enterprise" id="Support Card - Enterprise" >}}
 
-**Add License** opens the **[License](#license-screen)** screen.
-After adding a license, **Update License** replaces the **Add License** button.
+The **This is a production system** toggle, which shows only on TrueNAS Enterprise systems, appears alongside the **Model** field in the license info list.
+Enabling it opens the [**Update Production Status**](#update-production-status-dialog) dialog.
 
-**Get Support** dropdown shows two options: **File Ticket** and **Proactive Support** when the system is an Enterprise-licensed system.
-Non-Enterprise licensed systems only show the [**File Ticket**](#) option.
+### Support Banners
+
+The **Support** card displays a contextual banner depending on the system's license tier and support configuration:
+
+* **Contract expiring soon** — Shows when an active support contract expires within 14 days. Displays the number of days remaining and the expiration date, with a **Contact Us** link to renew.
+* **Set up Proactive Support** — Shows for Silver/Gold tier systems where proactive support is available but not yet enabled. Click **Enable** to open the [Proactive Support](#proactive-support-screen) configuration screen.
+* **Need help? Looking for support?** (Bronze tier) — Shows for systems where proactive support is not included. Provides an **Explore your options** link to review available support plans.
+
+When proactive support is active, the license info list includes a **Proactive Support: Enabled** row with a **Manage** button to update contact configuration.
 {{< /enterprise >}}
 
 ### Update Production Status Dialog
@@ -80,7 +92,7 @@ The **Rate this page** is the default selection after clicking the option to rat
 
 **Message** is a text entry field for a longer description of what steps were taken and the result. The field provides examples of what to enter. This content populates the Jira ticket description field after clicking **Login To Jira To Submit**.
 
-**Attach debug**, which is selected by default, downloads and attaches a system debug to the Private Attachment Area TrueNaS provides to secure user confidential data that is part of the debug file.
+**Attach debug**, which is selected by default, downloads and attaches a system debug to the Private Attachment Area TrueNAS provides to secure user confidential data that is part of the debug file.
 
 **Take screenshot of the current page**, selected by default, takes a screenshot of the current screen.
 
@@ -96,7 +108,7 @@ Select the **Rate this page** to show options to submit review feedback on a UI 
 
 Stars set a rating using one (lowest) to five (best) stars.
 
-**Message** is a text entry field for comments about the screen you are rating. Include what you like, don't like, works well, or does not work well, and your exerience with the screen.
+**Message** is a text entry field for comments about the screen you are rating. Include what you like, don't like, works well, or does not work well, and your experience with the screen.
 
 **Take screenshot of the current page**, selected by default, takes a screenshot of the current screen.
 
@@ -108,7 +120,7 @@ The **on our forum** link opens the [TrueNAS Community forum](https://forums.tru
 
 ### License Screen
 
-The **License** screen opens after clicking either **Add License** or **Update License** on the **Support** widget on the **General Settings** screen.
+The **License** screen opens after clicking either **Add License** or **Update License** on the **Support** card on the **General Settings** screen.
 It allows pasting a copy of your license into the form and saving it. 
 
 {{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseEntry.png" alt="License Entry" id="License Entry" >}}
@@ -116,9 +128,7 @@ It allows pasting a copy of your license into the form and saving it.
 **Reload Now** reloads the page.
 
 **End User License Agreement (EULA)** opens a copy of the TrueNAS end user license agreement.
-**I AGREE** digitally marks it signed, then closes the screen and updates the **Support** widget with the license and hardware information.
-
-{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsSCALESupportLicenseComplete.png" alt="Support Widget with License" id="Support Widget with License" >}}
+**I AGREE** digitally marks it signed, then closes the screen and updates the **Support** card with the license and hardware information.
 
 **This is a production system** indicates the system is used in a production, non-test environment.
 **Proceed** sends TrueNAS an email notification that the system is in production.
@@ -128,7 +138,7 @@ It allows pasting a copy of your license into the form and saving it.
 Silver/Gold coverage customers can enable proactive support.
 This feature automatically emails TrueNAS when certain conditions occur in a TrueNAS system.
 
-**Proactive Support** opens a window where you configure proactive support.
+Click **Enable** in the **Set up Proactive Support** banner, or **Manage** in the proactive support row (when already enabled), to open the proactive support configuration screen.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ProactiveSupportForm.png" alt="Proactive Support Form" id="Proactive Support Form" >}}
 
@@ -146,7 +156,6 @@ The **GUI Settings** screen shows configuration settings for the TrueNAS web int
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Theme** | Sets a color theme to the option selected from the dropdown list. Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Soloarized Dark**, **Midnight**, and **High Contrast**. Selecting an option immediately changes the UI to the selected color theme. |
 | **GUI SSL Certificate** | Sets the selected certificate as the SSH certificate. **truenas_default** is the default certificate. The system uses a self-signed certificate to enable encrypted web interface connections. **Manage Certificates** opens the [Certificates]({{< ref "/SCALE/Credentials/Certificates" >}}) screen. Certificates added or imported into TrueNAS show on this list. |
 | **Web Interface IPv4 Address** | Sets an IP address to limit the usage when accessing the administrative GUI. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
 | **Web Interface IPv6 Address** | Sets an IPv6 address from the dropdown list to limit usage when accessing the administrative GUI. The default is **::**. The built-in HTTP server binds to the wildcard address of **0.0.0.0** (any address) and issues an alert if the specified address becomes unavailable. |
@@ -161,10 +170,10 @@ The **GUI Settings** screen shows configuration settings for the TrueNAS web int
 
 ## Localization Settings Screen
 
-The **Localization** widget shows the current language, date, time format, time zone, and console keyboard map settings for the TrueNAS system.
+The **Localization** card shows the current time zone and console keyboard map settings for the TrueNAS system.
 Provides access to a configuration screen to customize settings.
 
-{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsLocalizationWidget.png" alt="Localization Widget" id="Localization Widget" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/GeneralSettingsLocalizationCard.png" alt="Localization Card" id="Localization Card" >}}
 
 **Settings** opens the **Localization Settings** configuration screen.
 
@@ -174,17 +183,14 @@ Provides access to a configuration screen to customize settings.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Language** | Sets the language for the UI screens. The default setting is **English** but might be customized to the language based on the country of origin for an Enterprise customer. Allows filtering the list by typing in the field after clearing the default value. Or scroll down to locate and select a language from the dropdown list. |
 | **Console Keyboard Map** | Sets a language for the keyboard layout, for example, **English (US)** for American English. Select an option on the dropdown list, or type in the field to filter the list to show matching languages. |
 | **Timezone** | Set the geographical time zone for the system. Allows filtering the list by typing in the field after clearing the default value. Or scroll down to locate and select a timezone from the dropdown list. |
-| **Date Format** | Sets the date format to the option selected on the dropdown list. |
-| **Time Format** | Sets the time format to the option selected on the dropdown list. |
 {{< /truetable >}}
 {{< /expand >}}
 
 ## Email Options Screen
 
-The **Email** widget shows the email configured on the system. **Settings** opens the **Email Options** configuration screen.
+The **Email** card shows the email configured on the system. **Settings** opens the **Email Options** configuration screen.
 Setting options change based on the selected send-mail method. Options:
 * [**SMTP**](#smtp) shows standard SMTP configuration settings.
 * [**GMail OAuth**](#gmail-oauth) shows the Gmail configuration options.

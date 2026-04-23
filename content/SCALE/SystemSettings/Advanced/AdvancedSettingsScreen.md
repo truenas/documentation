@@ -360,22 +360,10 @@ If the button is not clicked, TrueNAS terminates the session automatically and r
  **Configure** opens the **Access Settings** screen.
 
 ### Access Settings Screen
-The **Access Settings** screen allows users to configure the **Session Timeout** for the current account.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AccessSettingsScreen.png" alt="Access Settings Screen" id="Access Settings Screen" >}}
-
-Select a value that fits your needs and security requirements.
-Enter the value in seconds.
-
-{{< hint type=tip >}}
-The default lifetime setting is 300 seconds or five minutes.
-
-The maximum is 2147482 seconds or converting it to hours/minutes/seconds, 596 hours, 31 minutes, and 22 seconds.
-If converting it to days/hours/minutes/seconds, 24 days, 20 hours, 31 minutes, and 22 seconds.
-{{< /hint >}}
-
-The **Login Banner** field allows specifying a text message that the system shows before the TrueNAS login splash screen displays.
-**Continue** on the banner screen closes the screen, then shows the login splash screen.
+The **Access Settings** screen allows users to configure a login banner.
+**Login Banner** sets a text message that the system shows before the TrueNAS login splash screen displays.
+**Continue** on the banner screen, closes the screen before it shows the login splash screen.
 The maximum length of the banner text is 4096 characters, including spaces. Long text wraps and banner text can use carriage returns to break up long messages to improve readability.
 Leave **Login Banner** empty to show just the login screen without interruption by a banner screen.
 
