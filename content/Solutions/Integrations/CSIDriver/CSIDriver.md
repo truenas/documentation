@@ -64,6 +64,10 @@ The CSI driver does the work of communicating what is received from Kubernetes, 
 
 ### Configuring TrueNAS
 
+{{< hint type=tip title="Share Creation" >}}
+The CSI driver automatically creates datasets and NFS shares or iSCSI targets with UUID-based names, which are not human-readable. For example, a path like */mnt/Tank1/pvc-538b3b31-2619-4cda-837a-57a47c40e8df*. Do not modify or delete these auto-created shares or targets.
+{{< /hint >}}
+
 Log in to TrueNAS:
 
 1. Generate an API key for Kubernetes.
