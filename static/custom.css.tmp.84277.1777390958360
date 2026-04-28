@@ -59,7 +59,6 @@ mark {
   width: auto;
   display: block;
 }
-.tn-hub-black { display: none; }
 
 /* Sticky top menu — background set by page-type selectors below */
 .sticky {
@@ -75,7 +74,7 @@ mark {
 .stickyelement {
   max-width: 100rem;
   margin: 0 auto;
-  padding: .5rem 1rem;
+  padding: .5rem 1rem 0 1rem;
 }
 
 /* Navbar background by page type */
@@ -102,7 +101,7 @@ mark {
 .docsnav {
   display: flex;
   flex-wrap: nowrap;
-  padding: 0;
+  padding-top: .5rem;
   justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
@@ -250,39 +249,6 @@ mark {
 .docsnav-search-left  { border-radius: 30px 0 0 30px; }
 .docsnav-search-right { border-radius: 0 30px 30px 0; }
 .docsnav-search-btn i { font-size: 16px; }
-
-/* Home page (dark bg): search buttons are blue with white text */
-#sitenav:has(.docsnav-home) .docsnav-search-btn {
-  background: #0095d5;
-  color: white;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-#sitenav:has(.docsnav-home) .docsnav-search-btn::after {
-  background: #0095d5;
-}
-
-/* Home page logo: crossfade white → color wordmark on hover */
-#sitenav:has(.docsnav-home) .tn-nav-logo-link {
-  position: relative;
-}
-#sitenav:has(.docsnav-home) .tn-wordmark-white {
-  transition: opacity 0.25s ease;
-}
-#sitenav:has(.docsnav-home) .tn-wordmark-color {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-#sitenav:has(.docsnav-home) .tn-nav-logo-link:hover .tn-wordmark-white {
-  opacity: 0;
-}
-#sitenav:has(.docsnav-home) .tn-nav-logo-link:hover .tn-wordmark-color {
-  opacity: 1;
-}
 
 /* GeekDocs theme toggle icons — white on colored navbar */
 #gdoc-color-theme .gdoc-icon { fill: white; color: white; }
@@ -3511,55 +3477,17 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	.docshome {
 	  background-color: transparent;
     }
-	/* Docs pages: blue navbar unchanged in light mode — no overrides needed */
-	/* Nav buttons stay white (correct for blue bg) */
 	.truenas-docsnav-menubutton,
 	.docshome a,
 	.docshome a:visited,
 	#docsnav-intro {
 		color: white;
 	}
-
-	/* ── HOME PAGE ONLY: white navbar ── */
-	#sitenav:has(.docsnav-home) {
-		background: white;
-		box-shadow: 0 4px 12px rgba(0, 149, 213, 0.5);
+	.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton,
+	.truenas-navmenudropdown:hover + .truenas-docsnav-menubutton {
+		background-color: #0095d5;
+		color: white;
 	}
-	/* Logo: black wordmark, crossfades to color on hover */
-	#sitenav:has(.docsnav-home) .tn-wordmark-white { display: none; }
-	#sitenav:has(.docsnav-home) .tn-wordmark-black {
-		display: block;
-		transition: opacity 0.25s ease;
-	}
-	#sitenav:has(.docsnav-home) .tn-wordmark-color {
-		display: block;
-		position: absolute;
-		left: 0; top: 50%;
-		transform: translateY(-50%);
-		opacity: 0;
-		transition: opacity 0.25s ease;
-	}
-	#sitenav:has(.docsnav-home) .tn-nav-logo-link:hover .tn-wordmark-black { opacity: 0; }
-	#sitenav:has(.docsnav-home) .tn-nav-logo-link:hover .tn-wordmark-color { opacity: 1; }
-	/* Hub wordmark: black */
-	#sitenav:has(.docsnav-home) .tn-hub-white { display: none; }
-	#sitenav:has(.docsnav-home) .tn-hub-black { display: block; }
-	/* Nav buttons: dark text */
-	#sitenav:has(.docsnav-home) .truenas-docsnav-menubutton { color: #1a1a1a; }
-	#sitenav:has(.docsnav-home) .truenas-docsnav-menubutton:hover,
-	#sitenav:has(.docsnav-home) .truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton {
-		color: #0095d5;
-		background-color: transparent;
-	}
-	#sitenav:has(.docsnav-home) .truenas-docsnav-menubutton[disabled] {
-		color: rgba(0, 0, 0, 0.3);
-	}
-	/* Theme toggle: dark icons */
-	#sitenav:has(.docsnav-home) #gdoc-color-theme .gdoc-icon {
-		fill: #1a1a1a;
-		color: #1a1a1a;
-	}
-	/* Search buttons: blue with white text (global home-page rule already sets this) */
 	.docs-more-sections p,
 	.docs-sections p {
 		background-color: rgb(248, 249, 250);
@@ -3593,50 +3521,6 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
     .section-tab.active {
         background-color: rgb(248, 249, 250);
     }
-	/* Light mode dropdowns: white bg with dark text */
-	.truenas-navmenudropdown {
-		background-color: white;
-		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-	}
-	.truenas-dropdown-item {
-		color: #1a1a1a;
-	}
-	.truenas-navmenudropdown a.truenas-dropdown-item,
-	.truenas-navmenudropdown a.truenas-dropdown-item:visited {
-		color: #1a1a1a;
-	}
-	.truenas-dropdown-item:hover,
-	.truenas-navmenudropdown a.truenas-dropdown-item:hover {
-		color: #0095d5;
-		background-color: rgba(0, 0, 0, 0.04);
-	}
-	.dropdown-icon-svg {
-		fill: #1a1a1a;
-	}
-	.truenas-dropdown-item:hover .dropdown-icon-svg {
-		fill: #0095d5;
-	}
-	/* Invert white SVG icons to black on white dropdown bg */
-	.dropdown-icon-img {
-		filter: invert(1);
-	}
-	/* Black PNG (tn-icon-black.png) is already correct color, undo invert */
-	.dropdown-icon-invert {
-		filter: none;
-	}
-	/* Version dropdown: dark colors on white background */
-	.version-label {
-		color: rgba(0, 0, 0, 0.4);
-	}
-	.version-line {
-		border-top-color: rgba(0, 0, 0, 0.12);
-	}
-	.no-version-line {
-		border-top-color: rgba(0, 0, 0, 0.12);
-	}
-	.version-placeholder {
-		color: rgba(0, 0, 0, 0.4);
-	}
 }
 /* End Additional Automatic and Manual color scheme values */
 /* Adjust mermaid chart display size */
@@ -3786,153 +3670,188 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 
 /* Styling for Version Selector Sections */
 
-#versionDropdown {
-  padding: 6px 0;
-}
-
-.truenas-version-group {
-  padding: 2px 0;
-}
-
 .version-header {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 8px 16px 4px;
-  gap: 8px;
-}
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+  }
 
-.version-label {
-  flex-shrink: 0;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.45);
-  line-height: 1;
-}
+  .version-label {
+    flex-shrink: 0;
+    font-size: 0.9em;
+    color: white;
+    line-height: 1;
+  }
 
-.version-line {
-  flex: 1;
-  height: 0;
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  margin: 0;
-}
+  .version-line {
+    flex-grow: 1;
+    height: 1px;
+    border-top: 1px solid white;
+    margin-left: 5px;
+  }
 
-.no-version-line {
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  margin: 6px 16px;
-}
-
-.version-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  cursor: default;
-}
+  .no-version-line {
+    flex-grow: 1;
+    height: 1px;
+    border-top: 1px solid white;
+    margin: 0 5px;
+  }
 
 /* End Styling for Version Selector Sections */
 
-/* TrueNAS Apps Market and TrueNAS Connect — outline pill, green wipe on hover */
+/* Style TrueNAS Apps Market link as green button */
+.gdoc-nav a[href="https://apps.truenas.com/"],
+.gdoc-nav .gdoc-nav a[href="https://connect.truenas.com"] {
+    background-color: #71bf44 !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 15px !important;
+    display: block !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    margin: -.5em !important;
+    transition: all 0.3s ease !important;
+}
 
-/* span.flex is the visual button container */
+.gdoc-nav a[href="https://apps.truenas.com/"]:hover,
+.gdoc-nav a[href="https://connect.truenas.com"]:hover {
+    background-color: #5da639 !important;
+    border-color: #5da639 !important;
+    color: white !important;
+    text-decoration: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Ensure the icon is white and properly sized */
+.gdoc-nav a[href="https://apps.truenas.com/"] .gdoc-icon,
+.gdoc-nav a[href="https://connect.truenas.com"] .gdoc-icon {
+    color: white !important;
+    fill: white !important;
+    vertical-align: middle !important;
+}
+
+/* Dark mode adjustments for the Apps Market button */
+@media (prefers-color-scheme: dark) {
+    .gdoc-nav a[href="https://apps.truenas.com/"],
+    .gdoc-nav a[href="https://connect.truenas.com"] {
+        background-color: #71bf44 !important;
+        border-color: #71bf44 !important;
+    }
+
+    .gdoc-nav a[href="https://apps.truenas.com/"]:hover,
+    .gdoc-nav a[href="https://connect.truenas.com"]:hover {
+        background-color: #5da639 !important;
+        border-color: #5da639 !important;
+    }
+}
+
+:root[color-theme=dark] .gdoc-nav a[href="https://apps.truenas.com/"],
+    .gdoc-nav a[href="https://connect.truenas.com"] {
+    background-color: #71bf44 !important;
+    border-color: #71bf44 !important;
+}
+
+:root[color-theme=dark] .gdoc-nav a[href="https://apps.truenas.com/"]:hover,
+    .gdoc-nav a[href="https://connect.truenas.com"]:hover {
+    background-color: #5da639 !important;
+    border-color: #5da639 !important;
+}
+
+/* End TrueNAS Apps Market button styling */
+
+/* Style the parent span that contains both icon and link as green button */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) span.flex,
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex {
-    background: linear-gradient(100deg, #71bf44 50%, white 50%) !important;
-    background-size: 200% 100% !important;
-    background-position: 100% 0 !important;
-    color: #0095d5 !important;
-    border: 2px solid #0095d5 !important;
-    border-radius: 50px !important;
-    padding: 8px 20px !important;
+    background-color: #71bf44 !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    border-radius: 15px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-weight: 700 !important;
-    margin: -.25em 0 !important;
-    width: auto !important;
-    min-height: 38px !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    margin: -.5em !important;
+    transition: all 0.3s ease !important;
+    width: 75% !important;
+    min-height: 40px !important;
     box-sizing: border-box !important;
-    transition: background-position 0.25s ease, border-color 0.25s ease, color 0.25s ease !important;
-    cursor: pointer !important;
-}
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1):hover span.flex,
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2):hover span.flex {
-    background-position: 0 0 !important;
-    border-color: #71bf44 !important;
-    color: white !important;
-    transform: none !important;
-    box-shadow: none !important;
 }
 
-/* Inner link — transparent, inherits color from span.flex */
+/* Remove styling from the inner link since parent span is now the button */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) a,
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a {
     background: none !important;
     border: none !important;
     padding: 0 !important;
-    margin: 0 !important;
-    color: inherit !important;
+    margin: -.5em !important;
+    color: white !important;
     text-decoration: none !important;
-    font-weight: 700 !important;
+    font-weight: bold !important;
 }
+
+/* Hover effect moved to li to avoid nested hover conflicts */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1):hover span.flex,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2):hover span.flex {
+    background-color: #5da639 !important;
+    border-color: #5da639 !important;
+    color: white !important;
+    text-decoration: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Prevent any hover effects on nested elements that could conflict */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) label:hover,
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) a:hover,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) label:hover,
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a:hover {
     background: none !important;
     transform: none !important;
     box-shadow: none !important;
-    color: inherit !important;
 }
 
-/* Neutralize href-selector rules so they don't conflict with span.flex */
-.gdoc-nav a[href="https://apps.truenas.com/"],
-.gdoc-nav a[href="https://connect.truenas.com"] {
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    color: inherit !important;
-    border-radius: 0 !important;
-    transition: none !important;
-}
-.gdoc-nav a[href="https://apps.truenas.com/"]:hover,
-.gdoc-nav a[href="https://connect.truenas.com"]:hover {
-    background: none !important;
-    color: inherit !important;
-    transform: none !important;
-    box-shadow: none !important;
-}
-
-/* SVG icon: blue by default, white on hover */
+/* Style the original SVG icon to be white */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) svg.gdoc-icon {
-    fill: #0095d5 !important;
-    color: #0095d5 !important;
+    fill: white !important;
+    color: white !important;
     width: 20px !important;
     height: 20px !important;
     margin-right: 8px !important;
 }
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1):hover svg.gdoc-icon {
+
+/* Style the use element inside the SVG */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) svg use {
     fill: white !important;
-    color: white !important;
 }
 
-/* Hide empty icon on Connect, remove gap */
+/* Style the TrueNAS Connect button (nth-child(2)) - no icon, but same dimensions */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) svg.gdoc-icon {
-    display: none !important;
-}
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex {
-    gap: 0 !important;
+    display: none !important; /* Hide any empty icon elements */
 }
 
-/* Keep Apps and Connect at the top of the nav list */
+/* Ensure Connect button text is properly centered without icon */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex {
+    gap: 0 !important; /* Remove any gap since there's no icon */
+}
+
+/* Reorder the menu items - move Apps Market to the very top */
 .gdoc-nav section:last-child .gdoc-nav__list {
     display: flex !important;
     flex-direction: column !important;
 }
+
+/* Move Apps Market (2nd item) to be first */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1),
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) {
     order: -1 !important;
 }
+
+/* Keep all other items in their original order */
 .gdoc-nav section:last-child .gdoc-nav__list li:not(:nth-child(1)),
 .gdoc-nav section:last-child .gdoc-nav__list li:not(:nth-child(2)) {
     order: 0 !important;

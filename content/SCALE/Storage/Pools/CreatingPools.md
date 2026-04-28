@@ -44,7 +44,7 @@ TrueNAS recommends defaulting to a RAIDz layout generally and whenever a dRAID v
 
 Determining your specific storage requirements is a critical step before creating a pool.
 The [ZFS](https://www.truenas.com/docs/references/zfsprimer/) and [dRAID](https://www.truenas.com/docs/references/draidprimer/) primers provide a starting point to learn about the strengths and costs of different storage pool layouts.
-You can also use the [ZFS Capacity Calculator]({{< ref "/References/ZFSCapacityCalculator" >}}) and [ZFS Capacity Graph]({{< ref "/References/ZFSCapacityGraph" >}}) to compare configuration options.
+You can also use the [ZFS Capacity Calculator](https://docs.truenas.com/references/zfs-capacity-calculator/) and [ZFS Capacity Graph](https://docs.truenas.com/references/zfs-capacity-graph/) to compare configuration options.
 
 ### Data Encryption
 Security requirements can mean the data must be protected with additional [encryption]({{< ref "/SCALE/Datasets/Encryption" >}}).

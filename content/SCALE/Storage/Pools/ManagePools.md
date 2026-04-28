@@ -199,7 +199,7 @@ Extended VDEVs recover lost headroom because existing data is read and rewritten
 This can occur naturally over the lifetime of the pool as you modify or delete data.
 Replicate and rewrite the data to the extended pool to manually recover capacity.
 
-You can use the [RAIDZ Extension Calculator]({{< ref "/References/ExtensionCalculator" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
+You can use the [RAIDZ Extension Calculator](https://docs.truenas.com/references/extension-calculator/) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
 {{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 

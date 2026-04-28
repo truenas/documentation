@@ -19,7 +19,7 @@ These instructions describe a simple *mirrored* pool setup, where half the selec
 However, there are many configuration possibilities for your storage environment!
 
 You can read more about these options in [Creating Storage Pools]({{< ref "CreatingPools" >}}).
-You can also use the [ZFS Capacity Calculator]({{< ref "/References/ZFSCapacityCalculator" >}}) and [ZFS Capacity Graph]({{< ref "/References/ZFSCapacityGraph" >}}) to compare configuration options.
+You can also use the [ZFS Capacity Calculator](https://docs.truenas.com/references/zfs-capacity-calculator/) and [ZFS Capacity Graph](https://docs.truenas.com/references/zfs-capacity-graph/) to compare configuration options.
 
 ## Minimum Storage Requirements
 At minimum, the system needs at least two disks of identical size to create a mirrored storage pool.

@@ -34,7 +34,7 @@ h1 {display:none;}
 
 ---
 
-## 26 Featured Content
+## 27 Featured Content
 
   <div class="docs-sections">
     <p>
