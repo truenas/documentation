@@ -173,6 +173,16 @@ These are ongoing issues that can affect multiple versions in the 26 series.
   Ticket creation is not affected. To manually attach a debug file, generate one from **System > General Settings > Support > Save Debug** and upload it using the Private File Upload link automatically added as a comment on the created Jira ticket.
   Resolved in 26-BETA.2.
 
+* **Containers** (LXC) created in earlier TrueNAS versions can fail to start after upgrading to 26-BETA.1, with an error indicating the init executable cannot be found ([NAS-140691](https://ixsystems.atlassian.net/browse/NAS-140691)).
+  The upgrade migration script does not properly mount container ZFS datasets, leaving the container filesystem intact but inaccessible.
+  As a workaround, open the TrueNAS shell and run `zfs set canmount=on <pool>/.truenas_containers/containers/<container_name>` followed by `zfs mount <pool>/.truenas_containers/containers/<container_name>`.
+  Resolved in 26-BETA.2.
+
+* SMB shares configured as the **Legacy Share** type with the recycle bin feature enabled can cause an SMB service crash when **Spotlight search** is active ([NAS-140749](https://ixsystems.atlassian.net/browse/NAS-140749)).
+  The TrueNAS per-dataset recycle bin (vfs_recycle) keeps file handles open to prevent symlink race conditions during recycle operations. The Spotlight metadata service relies on a share connection that skips the normal file-close step during teardown, violating the expected shutdown order and triggering an assertion failure.
+  As a workaround, edit the affected share and change the **Share Purpose** from **Legacy Share** to one of the currently available options. The **Legacy Share** type and recycle bin feature are in the process of being deprecated and are no longer selectable in the UI.
+  Resolved in 26-BETA.2.
+
 <a href="https://ixsystems.atlassian.net/issues?filter=14297" target="_blank">See the latest status on Jira</a> for public issues discovered in 26-BETA.1 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
