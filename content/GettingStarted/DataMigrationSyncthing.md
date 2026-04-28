@@ -139,9 +139,14 @@ The process of setting up data migration from an external NAS to TrueNAS consist
    Enter a clear identifying name, such as *INGEST*, and click **Save**.
 
 3. [Create a new dataset]({{< ref "/Datasets/ManagingDatasets" >}}) on TrueNAS to be the target for the data ingest, for example, */mnt/tank/ingest*.
+    This dataset serves as the migration destination for both Syncthing instances.
 
     Click **Advanced Options** and set **ACL Type** to **SMB/NFSv4**.
     Set **ACL Mode** to **Restricted**.
+
+    {{< hint type=note >}}
+    These ACL settings are required on the migration target dataset. If using an existing dataset, verify these settings are configured before proceeding.
+    {{< /hint >}}
 
 4. Install the second instance of the Syncthing Enterprise app on TrueNAS.
 
@@ -214,6 +219,10 @@ The process of setting up data migration from an external NAS to TrueNAS consist
 
    Click **Advanced**.
    Enter the device address and port for the first Syncthing instance, in the format {{< cli >}}tcp://*ip*:*port*{{< /cli >}}.
+
+   {{< hint type=note >}}
+   The address requires `//` after `tcp:`. Entering `tcp:*ip*:*port*` without the slashes fails with a misleading error.
+   {{< /hint >}}
 
    {{< trueimage src="/images/SCALE/Apps/SyncthingAddDeviceAdvanced.png" alt="Add Device - Advanced" id="Add Device - Advanced" >}}
 
