@@ -2,6 +2,11 @@
 title: "Creating Pools"
 description: "Provides background considerations and a simple tutorial on creating storage pools in TrueNAS."
 weight: 20
+aliases:
+ - /scale/scaletutorials/storage/createpoolwizard/
+ - /scale/scaletutorials/storage/pools/createpoolscale/
+ - /scale/scaletutorials/storage/pools/createpoolwizard/
+ - /scale/storage/createpoolwizard/
 tags:
 - storage
 - pools
@@ -39,10 +44,10 @@ TrueNAS recommends defaulting to a RAIDz layout generally and whenever a dRAID v
 
 Determining your specific storage requirements is a critical step before creating a pool.
 The [ZFS](https://www.truenas.com/docs/references/zfsprimer/) and [dRAID](https://www.truenas.com/docs/references/draidprimer/) primers provide a starting point to learn about the strengths and costs of different storage pool layouts.
-You can also use the [ZFS Capacity Calculator](https://www.truenas.com/docs/references/zfscapacitycalculator/) and [ZFS Capacity Graph](https://www.truenas.com/docs/references/zfscapacitygraph/) to compare configuration options.
+You can also use the [ZFS Capacity Calculator](https://docs.truenas.com/references/zfs-capacity-calculator/) and [ZFS Capacity Graph](https://docs.truenas.com/references/zfs-capacity-graph/) to compare configuration options.
 
 ### Data Encryption
-Security requirements can mean the data must be protected with additional [encryption]({{< ref "/Datasets/Encryption" >}}).
+Security requirements can mean the data must be protected with additional [encryption]({{< ref "/SCALE/Datasets/Encryption" >}}).
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 

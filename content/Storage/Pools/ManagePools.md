@@ -2,6 +2,11 @@
 title: "Managing Pools"
 description: "Provides instructions on managing storage pools, VDEVs, and disks in TrueNAS."
 weight: 40
+aliases:
+ - /scale/scaletutorials/storage/managepoolsscale/
+ - /scale/scaletutorials/storage/pools/managepoolsscale/
+
+ - /scale/scaletutorials/dataprotection/scrubtasksscale/
 tags: 
 - pools
 - storage
@@ -78,7 +83,7 @@ Upgrading a storage pool is typically not required unless the new OpenZFS featur
 
 Do not do a pool-wide ZFS upgrade until you are ready to commit to this TrueNAS major version! You can not undo a pool upgrade, and you lose the ability to roll back to an earlier major version!
 
-The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< ref "/GettingStarted/VersionNotes.md#component-versions" >}}).
+The **Upgrade** button displays on the **Storage Dashboard** for existing pools after an upgrade to a new TrueNAS major version that includes new [OpenZFS feature flags]({{< ref "VersionNotes.md#component-versions" >}}).
 Newly created pools are always up to date with the OpenZFS feature flags available in the installed TrueNAS version.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardUpgradPoolConfirmationDialog.png" alt="Upgrade Pool Confirmation Dialog" id="Upgrade Pool Confirmation Dialog" >}}
@@ -101,7 +106,7 @@ Use **Scrub Now** on the **Storage Health** pool widget to start a pool data int
 
 Click **Scrub Now** to open the **Scrub Pool** dialog, then click **Start Scrub** to begin the process.
 
-If TrueNAS detects problems during the scrub operation, it corrects them or generates an [alert]({{< ref "/TopToolbar/Alerts" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it corrects them or generates an [alert]({{< ref "/SCALE/TopToolbar/Alerts" >}}) in the web interface.
 
 ### Scheduling Scrub Tasks
 
@@ -194,7 +199,7 @@ Extended VDEVs recover lost headroom because existing data is read and rewritten
 This can occur naturally over the lifetime of the pool as you modify or delete data.
 Replicate and rewrite the data to the extended pool to manually recover capacity.
 
-You can use the [RAIDZ Extension Calculator](https://www.truenas.com/docs/references/extensioncalculator/) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
+You can use the [RAIDZ Extension Calculator](https://docs.truenas.com/references/extension-calculator/) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
 {{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 
