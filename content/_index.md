@@ -148,12 +148,12 @@ h1 {display:none;}
     TrueNAS
   </h2>
   <div class="index-btn-row">
-    <a href="/scale/25.10/" class="idx-btn idx-btn-primary">Current (25.10)</a>
+    <a href="https://www.truenas.com/docs/scale/25.10/" class="idx-btn idx-btn-primary">Current (25.10)</a>
     <div class="idx-dropdown">
       <button class="idx-btn idx-btn-outline idx-dropdown-btn">Other Versions <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="flex-shrink:0"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <div class="idx-dropdown-panel">
         <div class="idx-dropdown-section">Next</div>
-        <a href="/scale/26/">26 (Development)</a>
+        <a href="https://www.truenas.com/docs/scale/26/">26 (Development)</a>
         <a href="/scale/">27 (Nightly)</a>
         <div class="idx-dropdown-section">Previous</div>
         <a href="https://www.truenas.com/docs/scale/25.04/">25.04</a>
@@ -202,7 +202,7 @@ h1 {display:none;}
     TrueCommand
   </h2>
   <div class="index-btn-row">
-    <a href="/truecommand/3.0/" class="idx-btn idx-btn-primary">Current</a>
+    <a href="https://www.truenas.com/docs/truecommand/3.0/" class="idx-btn idx-btn-primary">Current</a>
     <a href="/archive/" class="idx-btn idx-btn-outline">Archive</a>
   </div>
 </div>

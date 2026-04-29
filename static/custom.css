@@ -4010,3 +4010,79 @@ dialog.pum-modal::backdrop {
 .pum-modal-close:hover {
     opacity: 1;
 }
+
+/* Sidebar hub links section */
+.gdoc-nav--more .sidebar-hub-links {
+  padding: 0 0 1.5rem 0;
+}
+
+.gdoc-nav--more .sidebar-hub-divider {
+  margin: 0 0 .75rem;
+  border: none;
+  border-top: 1px solid var(--control-icons);
+  opacity: 0.4;
+}
+
+.gdoc-nav--more .sidebar-hub-logo-link {
+  display: block;
+  margin-bottom: .6rem;
+}
+
+.gdoc-nav--more .sidebar-hub-wordmark {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+.gdoc-nav--more .sidebar-hub-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gdoc-nav--more .sidebar-hub-nav li {
+  margin: 0;
+}
+
+.gdoc-nav--more .sidebar-hub-nav a {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .2rem 0;
+  font-size: .85rem;
+  color: var(--body-font-color);
+  text-decoration: none;
+}
+
+.gdoc-nav--more .sidebar-hub-nav a:hover {
+  color: #0095d5;
+  text-decoration: none;
+}
+
+.gdoc-nav--more .sidebar-hub-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: #0095d5;
+}
+
+.gdoc-nav--more .sidebar-hub-icon-img {
+  object-fit: contain;
+  fill: unset;
+}
+
+.gdoc-nav--more .sidebar-hub-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.gdoc-nav--more .sidebar-hub-icon-svg svg {
+  min-width: 18px;
+  height: 18px;
+  fill: #0095d5;
+}
