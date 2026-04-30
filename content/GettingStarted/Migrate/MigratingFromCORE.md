@@ -3,7 +3,6 @@ title: "Community Migrations"
 description: "Provides instructions for TrueNAS community users to migrate from FreeBSD- to Linux-based TrueNAS versions. Migration methods include using an ISO or manual update file."
 weight: 15
 aliases:
- - /scale/gettingstarted/migratingfromcore/
  - /gettingstarted/migrate/migratingfromcore/
 tags:
 - migrate
