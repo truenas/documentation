@@ -1,148 +1,4 @@
 <nav class="sidebar-fixed">
-  <h2>{{ i18n "nav_navigation" }}</h2>
-  {{ partial "search" . }}
-  {{ partial "search-form" . }}
-
-  <!-- Static chatbot button -->
-<div style="margin-top: 15px; margin-bottom: 10px;">
-  <button id="chatbot-open-button" style="padding: 10px 20px; background-color: #0095d5; color: white; border: none; cursor: pointer; border-radius: 15px; display: flex; align-items: center; gap: 10px; transition: opacity 0.3s;">
-    <span id="chatbot-button-icon" style="display: flex; vertical-align: middle;">
-      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="book" class="svg-inline--fa fa-book" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 20px; height: 20px;">
-        <path fill="currentColor" d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path>
-      </svg>
-    </span>
-    <span>AI-Powered Search</span>
-  </button>
-</div>
-
-<style>
-  #chatbot-open-button:hover {
-    opacity: 0.8; /* Adjust the opacity for the hover effect */
-  }
-</style>
-
-<!-- Chatbot Initialization Script -->
-<script type="text/javascript">
-  window.DocsBotAI = window.DocsBotAI || {};
-
-  DocsBotAI.init = function(c) {
-    return new Promise(function(e, o) {
-      var t = document.createElement("script");
-      t.type = "text/javascript";
-      t.async = true;
-      t.src = "https://widget.docsbot.ai/chat.js";
-      var n = document.getElementsByTagName("script")[0];
-      n.parentNode.insertBefore(t, n);
-      t.addEventListener("load", function() {
-        window.DocsBotAI.mount({
-          id: c.id,
-          supportCallback: c.supportCallback,
-          identify: c.identify,
-          options: c.options,
-          signature: c.signature
-        });
-
-        // Attach the click event to the static button to open the chatbot
-        document.getElementById("chatbot-open-button").addEventListener("click", function() {
-          if (window.DocsBotAI.open) {
-            window.DocsBotAI.open();  // Open the chatbot without toggling or changing icons
-          } else {
-            console.error("Chatbot open method not available.");
-          }
-        });
-
-        e(); // Resolve the promise
-      });
-      t.addEventListener("error", function(t) {
-        o(t.message);
-      });
-    });
-  };
-
-  DocsBotAI.init({
-    id: "c6l7vGyugnoP9SSSoNXy/h6qDF4J2h3xfHKO9Nm6r",
-    options: {
-      customCSS: `
-        .docsbot-wrapper {
-          display: flex;
-          flex-direction: column;
-          width: 75%;
-          max-width: 750px;
-          max-height: 75vh;
-          position: fixed;
-          left: 35% !important;
-          top: 10% !important;
-          z-index: 1000 !important;
-          box-sizing: border-box;
-        }
-        .docsbot-content {
-          flex: 1 1 auto;
-          overflow-y: auto;
-        }
-        .docsbot-input {
-          flex-shrink: 0;
-          padding: 10px;
-          box-sizing: border-box;
-        }
-        .floating-button {
-          display: none !important;
-        }
-        .docsbot-chat-header {
-          display: flex;
-          align-items: center;
-          padding: 5px 10px;
-          transition: height 0.3s ease, padding 0.3s ease;
-        }
-        .docsbot-chat-header-content {
-          text-align: center;
-          transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        
-        /* Minimize header when viewport height is below 600px */
-        @media (max-height: 600px) {
-          .docsbot-chat-header {
-            height: 50px; /* Minimized height */
-            padding: 2px 5px;
-          }
-          .docsbot-chat-header-content h1 {
-            font-size: 14px;
-          }
-          .docsbot-chat-header-content span {
-            display: none; /* Hides the description text */
-          }
-        }
-        
-        /* Adjust layout for smaller screens (optional adjustments) */
-        @media (max-width: 1200px) {
-          .docsbot-wrapper {
-            left: 10% !important;
-            top: 10% !important;
-          }
-        }
-
-        .mobile-close-button {
-          display: flex !important; /* Forces the button to be visible */
-          background: #0095d5;
-          align-items: center;
-          padding: 5px 10px;
-          justify-content: center;
-          border-radius: inherit;
-          position: fixed;
-          box-shadow: none;
-        }
-
-        .mobile-close-button:hover {
-          cursor: pointer;
-        }
-
-        .mobile-close-button:hover svg {
-          transform: scale(1.2);
-        }
-
-      `,
-    }
-  });    
-</script>
 
   <section class="gdoc-nav--main">
     {{ if .Site.Params.GeekdocMenuBundle }}
@@ -175,10 +31,58 @@
     </section>
   {{ end }}
 
-
   <section class="gdoc-nav--more">
-    {{ if .Site.Data.menu.more.more }}
-      {{ partial "menu-bundle" (dict "current" . "source" .Site.Data.menu.more.more) }}
-    {{ end }}
+    <div class="sidebar-hub-links">
+      <hr class="sidebar-hub-divider">
+      <a href="https://docs.truenas.com/" class="sidebar-hub-logo-link" target="_blank" rel="noopener">
+        <img src="/images/docs-hub-wordmark-color.svg" alt="TrueNAS Documentation Hub" class="sidebar-hub-wordmark">
+      </a>
+      <ul class="sidebar-hub-nav">
+        <li>
+          <a href="https://www.truenas.com/docs/" target="_blank" rel="noopener">
+            <img src="/images/Truenas_icon.png" alt="" class="sidebar-hub-icon sidebar-hub-icon-img">
+            TrueNAS
+          </a>
+        </li>
+        <li>
+          <a href="https://connect.truenas.com/" target="_blank" rel="noopener">
+            <span class="sidebar-hub-icon sidebar-hub-icon-svg">
+              {{ with resources.Get "icons/tnc-icon-black.svg" }}{{ (. | minify).Content | safeHTML }}{{ end }}
+            </span>
+            TrueNAS Connect
+          </a>
+        </li>
+        <li>
+          <a href="https://www.truenas.com/docs/hardware/" target="_blank" rel="noopener">
+            <svg class="sidebar-hub-icon" viewBox="0 0 24 24"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg>
+            Products
+          </a>
+        </li>
+        <li>
+          <a href="https://api.truenas.com/" target="_blank" rel="noopener">
+            <svg class="sidebar-hub-icon" viewBox="0 0 24 24"><path d="M14,12L12,14L10,12L12,10L14,12M12,6L14.12,8.12L16.62,5.62L12,1L7.38,5.62L9.88,8.12L12,6M6,12L8.12,9.88L5.62,7.38L1,12L5.62,16.62L8.12,14.12L6,12M18,12L15.88,14.12L18.38,16.62L23,12L18.38,7.38L15.88,9.88L18,12M12,18L9.88,15.88L7.38,18.38L12,23L16.62,18.38L14.12,15.88L12,18Z"/></svg>
+            TrueNAS API
+          </a>
+        </li>
+        <li>
+          <a href="https://apps.truenas.com/" target="_blank" rel="noopener">
+            <svg class="sidebar-hub-icon" viewBox="0 0 24 24"><path d="M16,20H20V16H16M16,14H20V10H16M10,8H14V4H10M16,8H20V4H16M10,14H14V10H10M4,14H8V10H4M4,20H8V16H4M10,20H14V16H10M4,8H8V4H4V8Z"/></svg>
+            TrueNAS Apps Market
+          </a>
+        </li>
+        <li>
+          <a href="https://security.truenas.com/" target="_blank" rel="noopener">
+            <svg class="sidebar-hub-icon" viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"/></svg>
+            Security Reports
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.truenas.com/software-status/" target="_blank" rel="noopener">
+            <svg class="sidebar-hub-icon" viewBox="0 0 24 24"><path d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M9,17H7V10H9V17M13,17H11V7H13V17M17,17H15V13H17V17Z"/></svg>
+            Software Status
+          </a>
+        </li>
+      </ul>
+    </div>
   </section>
 </nav>

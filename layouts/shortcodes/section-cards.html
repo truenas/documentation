@@ -1,103 +1,57 @@
-<!-- This is a row of 4 product cards with tab buttons to switch between three different major versions.
-     Links relevant to that major version become visible when a card's tab button is clicked.
-	 Tabs are labeled "Previous", "Stable", and "Next" and the links within these sections need to be adjusted as new major versions release.
-	 -->
+<!-- Version navigation cards: Community Edition and Hardware/Enterprise -->
+
+<!-- Community Box -->
 <div class="docs-sections">
-<!-- CORE Box -->
-  <div class="section-box" id="core-section">
-    <div class="box-image">
-      <img src="/images/truenas_core-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
-    </div>
-    <p><b>CORE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup></b></p>
-    <div class="section-tabs">
-      <div class="section-tab" id="core-prev-tab">Previous</div>
-      <div class="section-tab active" id="core-stable-tab">Stable</div>
-      <div class="section-tab" id="core-next-tab">Next</div>
-    </div>
-    <div class="section-tab-content" id="core-previous">
-      <a href="https://www.truenas.com/docs/files/CORE12.0Docs.pdf">12.0 Documentation (Archived)</a>
-	  <br><a href="https://www.truenas.com/docs/archive/corereleasenotes/12.0/12.0u2/">12.0-U2 Release Notes (Enterprise Availability)</a>
-	  <br><a href="https://www.truenas.com/docs/archive/corereleasenotes/12.0/12.0release/">12.0 Release Notes</a>
-    </div>
-    <div class="section-tab-content" id="core-stable" style="display:none;">
-	  <a href="https://www.truenas.com/docs/core/13.0/">13.0 Home</a>
-	  <br><a href="https://www.truenas.com/docs/core/13.0/gettingstarted/corereleasenotes/">13.0 Release Notes</a>
-	  <br><a href="https://www.truenas.com/docs/core/13.0/gettingstarted/">Getting Started Guide</a>
-	  <br><a href="https://www.truenas.com/docs/core/13.0/coretutorials/">Configuration Tutorials</a>
-    </div>
-    <div class="section-tab-content" id="core-next" style="display:none;">
-      <a href="https://www.truenas.com/docs/core/">Unstable Nightly Builds Home</a>
-    </div>
-  </div>
-<!-- SCALE Box -->
   <div class="section-box" id="scale-section">
     <div class="box-image">
-      <img src="/images/truenas_scale-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+      <img src="/images/Truenas_community_edition_logos_2025_Logo_Full_Color_Rgb_1-29-25.png" style="padding-bottom:1.4rem;box-shadow: none;">
     </div>
-    <p><b>SCALE<sup class="section-sup">TM</sup> | Enterprise<sup class="section-sup">TM</sup></b></p>
     <div class="section-tabs">
       <div class="section-tab" id="scale-prev-tab">Previous</div>
-      <div class="section-tab active" id="scale-stable-tab">Stable</div>
+      <div class="section-tab active" id="scale-stable-tab">Current</div>
       <div class="section-tab" id="scale-next-tab">Next</div>
     </div>
     <div class="section-tab-content" id="scale-previous">
-	  <a href="https://www.truenas.com/docs/scale/22.12/">22.12 Home</a>
-	  <br><a href="https://www.truenas.com/docs/scale/22.12/gettingstarted/scalereleasenotes">22.12 Release Notes</a>
-	  <br><a href="https://www.truenas.com/docs/scale/22.12/gettingstarted/">Getting Started Guide</a>
+      <a href="https://www.truenas.com/docs/scale/25.04/">25.04</a>
+      <hr class="section-divider">
+      <a href="https://www.truenas.com/docs/core/13.0/">13.0</a>
+      <hr class="section-divider">
+      <a href="/archive/">Archive</a>
     </div>
     <div class="section-tab-content" id="scale-stable" style="display:none;">
-	  <a href="https://www.truenas.com/docs/scale/23.10/">23.10 Home</a>
-	  <br><a href="https://www.truenas.com/docs/scale/23.10/gettingstarted/scalereleasenotes/">23.10 Release Notes</a>
-	  <br><a href="https://www.truenas.com/docs/scale/23.10/gettingstarted/23.10upgrades/">23.10 Upgrades</a>
-	  <br><a href="https://www.truenas.com/docs/scale/23.10/gettingstarted/">Getting Started Guide</a>
+      <a href="/scale/25.10/">25.10</a>
+      <br><a href="/scale/25.10/gettingstarted/scalereleasenotes/">25.10 Release Notes</a>
     </div>
     <div class="section-tab-content" id="scale-next" style="display:none;">
-	  <a href="https://www.truenas.com/docs/scale/">Unstable Nightly Builds Home</a>
+      <a href="/scale/26/">26 (Development)</a>
+      <br><a href="/scale/">27 (Nightly)</a>
     </div>
   </div>
-<!-- TrueCommand Box -->
-  <div class="section-box" id="truecommand-section">
-    <div class="box-image">
-      <img src="/images/truecommand-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
-    </div>
-    <p><b>Container | Cloud</b></p>
-    <div class="section-tabs">
-      <div class="section-tab" id="tc-prev-tab">Previous</div>
-      <div class="section-tab active"id="tc-stable-tab">Stable</div>
-      <div class="section-tab" id="tc-next-tab">Next</div>
-    </div>
-    <div class="section-tab-content" id="tc-previous">
-      <a href="https://www.truenas.com/docs/files/TrueCommand2.0Documentation.pdf">2.0 Documentation (Archived)</a>
-	  <br><a href="https://www.truenas.com/docs/archive/tcreleasenotes/2.0/">2.0 Release Notes (Archived)</a>
-    </div>
-    <div class="section-tab-content" id="tc-stable" style="display:none;">
-	  <a href="https://www.truenas.com/docs/truecommand/2.3/">2.3 Home</a>
-	  <br><a href="/truecommand/2.3/tcgettingstarted/tcreleasenotes/">2.3 Release Notes</a>
-	  <br><a href="/truecommand/2.3/tcgettingstarted/">Getting Started</a>
-	  <br><a href="/truecommand/2.3/administration/">Administration</a>
-    </div>
-    <div class="section-tab-content" id="tc-next" style="display:none;">
-	  <a href="/truecommand/tcgettingstarted/tcreleasenotes/">3.0.0 Release Notes</a>
-	  <br><a href="/truecommand/tcgettingstarted/">Getting Started</a>
-	  <br><a href="/truecommand/userguide/">User Guide</a>
-	  <br><a href="/truecommand/adminguide/">Administrator Guide</a>
-    </div>
-  </div>
-<!-- Systems Box -->
+
+<!-- Enterprise / Hardware Box -->
   <div class="section-box" id="systems-section">
     <div class="box-image">
-      <img src="/images/truenas_enterprise-logo-full-color-rgb.png" style="padding-bottom:.5rem;box-shadow: none;">
+      <img src="/images/Truenas_enterprise_logo_2025_Logo_Full_Color_Rgb_1-29-25.png" style="padding-bottom:.5rem;box-shadow: none;">
     </div>
-    <p><b>TrueNAS<sup class="section-sup">®</sup> Systems</b></p>
     <div class="section-tabs">
-      <div class="section-tab mute" disabled>&emsp;&emsp;&ensp;</div>
-      <div class="section-tab active"id="tn-systems-hardware">Hardware</div>
-	    <div class="section-tab mute" disabled>&emsp;&emsp;&ensp;</div>
+      <div class="section-tab" id="ent-prev-tab">Previous</div>
+      <div class="section-tab" id="ent-stable-tab">Current</div>
+      <div class="section-tab active" id="ent-systems-hardware">Products</div>
     </div>
-    <div class="section-tab-content" id="tn-systems-hardware">
-      <a href="/hardware/">Systems Overview</a>
+    <div class="section-tab-content" id="ent-previous-content" style="display:none;">
+      <a href="https://www.truenas.com/docs/scale/24.10/">24.10</a>
+      <hr class="section-divider">
+      <a href="https://www.truenas.com/docs/core/13.0/">13.0</a>
+      <hr class="section-divider">
+      <a href="/archive/">Archive</a>
+    </div>
+    <div class="section-tab-content" id="ent-stable-content" style="display:none;">
+      <a href="/scale/25.10/">25.10</a>
+      <br><a href="/scale/25.10/gettingstarted/scalereleasenotes/">25.10 Release Notes</a>
+    </div>
+    <div class="section-tab-content" id="ent-products-content">
+      <a href="/hardware/">Products Overview</a>
       <br><a href="/hardware/stencils/">Visio Stencils</a>
-      <br><a href="/hardware/notices/">Notices</a>
       <br><a href="/hardware/legacyhardware/">Legacy Systems</a>
     </div>
   </div>
@@ -122,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     tabs[tabIndex].classList.add("active");
   }
 
-  const sectionBoxes = document.querySelectorAll(".section-box:not(#systems-section)");
+  const sectionBoxes = document.querySelectorAll(".section-box");
   sectionBoxes.forEach(box => {
     const tabs = box.querySelectorAll(".section-tab");
     tabs.forEach((tab, index) => {
