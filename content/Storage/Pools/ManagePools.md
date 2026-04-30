@@ -101,7 +101,7 @@ Use **Scrub Now** on the **Storage Health** pool widget to start a pool data int
 
 Click **Scrub Now** to open the **Scrub Pool** dialog, then click **Start Scrub** to begin the process.
 
-If TrueNAS detects problems during the scrub operation, it corrects them or generates an [alert]({{< ref "/SCALE/TopToolbar/Alerts" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it corrects them or generates an [alert]({{< ref "/TopToolbar/Alerts" >}}) in the web interface.
 
 ### Scheduling Scrub Tasks
 

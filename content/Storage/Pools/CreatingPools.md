@@ -42,7 +42,7 @@ The [ZFS](https://www.truenas.com/docs/references/zfsprimer/) and [dRAID](https:
 You can also use the [ZFS Capacity Calculator](https://docs.truenas.com/references/zfs-capacity-calculator/) and [ZFS Capacity Graph](https://docs.truenas.com/references/zfs-capacity-graph/) to compare configuration options.
 
 ### Data Encryption
-Security requirements can mean the data must be protected with additional [encryption]({{< ref "/SCALE/Datasets/Encryption" >}}).
+Security requirements can mean the data must be protected with additional [encryption]({{< ref "/Datasets/Encryption" >}}).
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
