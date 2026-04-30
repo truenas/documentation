@@ -4,6 +4,7 @@ description: "Provides basic instructions on adding backup cloud credentials and
 weight: 10
 aliases:
  - /scale/credentials/backupcredentials/addcloudcredentials/
+ - /scale/scaletutorials/credentials/backupcredentials/addcloudcredentials/
 tags:
  - cloud
  - credentials

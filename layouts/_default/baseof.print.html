@@ -1,10 +1,9 @@
-{{ if or (in .Section "CORE") (in .Section "SCALE") (in .Section "TrueCommand") (in .Section "Solutions") }}
-  {{ $hasRedirect := false }}
-  {{ with .Content }} <!-- Check the content for the meta refresh tag -->
-    {{ $hasRedirect = findRE "<meta\\s+http-equiv=\"refresh\"" . }}
-  {{ end }}
+{{ $hasRedirect := false }}
+{{ with .Content }} <!-- Check the content for the meta refresh tag -->
+  {{ $hasRedirect = findRE "<meta\\s+http-equiv=\"refresh\"" . }}
+{{ end }}
 
-  {{ if not $hasRedirect }}
+{{ if not $hasRedirect }}
     <!DOCTYPE html>
     <html lang="{{ .Site.Language.Lang }}" class="no-js">
       <head>
@@ -33,5 +32,4 @@
         </div>
       </body>
     </html>
-  {{ end }}
 {{ end }}

@@ -7,6 +7,7 @@ aliases:
  - /scale/scaleuireference/storage/datasets/snapshotsscreens/
  - /scale/scaleclireference/storage/clisnapshot/
  - /scale/datasets/snapshotsscreens/
+ - /scale/scaleuireference/storage/snapshotsscale/
 tags:
 - snapshots
 - datasets

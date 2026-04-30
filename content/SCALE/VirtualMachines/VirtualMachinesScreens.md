@@ -5,6 +5,7 @@ weight: 40
 aliases:
  - /scale/scaleuireference/virtualmachinesscreens/
  - /scale/scaleuireference/virtualizationscreens/
+ - /scale/scaleuireference/virtualization/creatingmanagingvmsscale/
 tags:
  - vm
  - gpu

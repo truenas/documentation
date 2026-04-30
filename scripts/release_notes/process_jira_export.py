@@ -218,7 +218,7 @@ class JiraTicketProcessor:
                 return []
 
             # PRs following TrueNAS convention include the version in the title:
-            # "NAS-XXXXX / 25.10.2.2 / Fix description"
+            # "NAS-XXXXX / 25.10.3 / Fix description"
             # Prefer version-specific PRs; fall back to all closed PRs if none found.
             version_prs = []
             other_prs = []

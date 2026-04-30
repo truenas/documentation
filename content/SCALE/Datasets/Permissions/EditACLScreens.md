@@ -8,6 +8,7 @@ aliases:
  - /scale/scaleclireference/filesystem/
  - /scale/scaleclireference/filesystem/cliacltemplate/
  - /scale/datasets/editaclscreens/
+ - /scale/scaleuireference/storage/pools/permissionsscale
 tags:
  - acl
  - datasets

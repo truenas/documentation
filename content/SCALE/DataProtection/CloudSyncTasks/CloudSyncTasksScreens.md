@@ -6,6 +6,7 @@ aliases:
  - /scale/dataprotection/cloudsynctasks/cloudsynctasksscreens/
  - /scale/dataprotection/cloudsynctasks/cloud-sync-tasks/
  - /scale/scaleclireference/task/cloudsync/
+ - /scale/scaleuireference/dataprotection/cloudsynctasksscreensscale/
 tags:
 - cloud
 - backup

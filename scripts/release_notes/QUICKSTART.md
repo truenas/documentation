@@ -48,7 +48,7 @@ $env:GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"
 ### Before You Start: Two Conventions to Know
 
 > **CSV naming:** Save your Jira export as `{version}-changelog.csv` in `documentation/public/data/`.
-> Example: `public/data/25.10.2.2-changelog.csv`
+> Example: `public/data/25.10.3-changelog.csv`
 > The `prep` command looks for this file automatically.
 
 > **VersionNotes.md placeholder:** The new version tab must contain exactly this placeholder:

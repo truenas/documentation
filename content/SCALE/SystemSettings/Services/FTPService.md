@@ -29,7 +29,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset]({{< ref "/SCALE/Datasets/Datasets" >}}) to use as storage for files.
+Go to **Storage** to add a new [dataset]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) to use as storage for files.
 
 Next, add a new user. Go to **Credentials > Users** and click **Add** to create a local user on the TrueNAS.
 
@@ -78,6 +78,7 @@ To confine FTP sessions to the home directory of a local user, select **chroot**
 - Enable **Allow Anonymous Login** to allow anonymous connections without authentication
 
 Do *not* allow anonymous access unless it is necessary.
+
 Enable TLS when possible (especially when exposing FTP to a WAN).
 TLS creates [FTPS](https://tools.ietf.org/html/rfc4217) for better security.
 

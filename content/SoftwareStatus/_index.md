@@ -115,7 +115,7 @@ Legacy releases can only be used by downloading the .iso file and freshly instal
   <div data-tab-id="documentation-lifecycle" data-tab-label="Documentation Lifecycle">
 
 The TrueNAS team maintains and regularly updates documentation for current and in-development versions of TrueNAS software. For documentation purposes, current and future releases are those [recommended](#which-truenas-version-is-recommended) for one or more user types.
-See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycleSCALE" >}}) for an overview of the TrueNAS release process, versioning scheme, and how versions reach end of life.
+See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycle" >}}) for an overview of the TrueNAS release process, versioning scheme, and how versions reach end of life.
 
 {{< include file="/static/includes/DocLifecycle.md" >}}
 

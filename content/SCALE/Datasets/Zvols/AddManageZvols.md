@@ -6,6 +6,8 @@ aliases:
  - /scale/datasets/addmanagezvols/
  - /scale/storage/storagedashboardscreens/pools/zvolsscale/
  - /scale/storage/storageoverview/datasets/addmanagezvols/
+ - /scale/scaletutorials/datasets/addmanagezvols/
+ - /scale/scaletutorials/storage/datasets/addmanagezvols/
 tags: 
 - zvol
 - storage
@@ -13,7 +15,7 @@ doctype: tutorial
 ---
 
 
-A ZFS Volume (zvol) is a [dataset]({{< ref "/SCALE/Datasets/Datasets" >}}) that represents a block device or virtual disk drive.
+A ZFS Volume (zvol) is a [dataset]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) that represents a block device or virtual disk drive.
 TrueNAS requires a zvol when configuring [iSCSI Shares]({{< ref "/SCALE/Shares/iSCSI" >}}).
 Adding a virtual machine also creates a zvol to use for storage.
 
@@ -27,6 +29,20 @@ Select the root or non-root parent dataset where you want to add the zvol, and t
 {{< trueimage src="/images/SCALE/Datasets/DatasetsScreenWithZvolWidgets.png" alt="Dataset Tree Table and Zvol Widgets" id="Dataset Tree Table and Zvol Widgets" >}}
 
 Enter a name that does not exceed 60 characters, enter a number and letter for the unit of measure in **Size**, and then click **Save**.
+
+## Adding a Zvol for a Fusion Pool
+
+First, add the [pool with a Metadata VDEV]({{< ref "CreatingFusionPools" >}}).
+
+Select the root dataset of the pool (with the metadata VDEV), then click **Add Zvol**.
+
+Enter a name and size for the zvol, then scroll down to the **Use Metadata (Special) VDEVs** setting.
+
+Select **On** to enable storing data blocks in the special allocation class.
+The **Threshold** field appears. Enter a maximum block size (1 byte to 16 MiB) for blocks to store in the special class.
+The default threshold is 16 MiB. Blocks smaller than or equal to the threshold are assigned to the special allocation class; larger blocks are assigned to the regular class.
+
+Click **Save**.
 
 ## Managing Zvols
 
