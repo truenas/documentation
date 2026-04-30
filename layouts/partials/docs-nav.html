@@ -1,16 +1,17 @@
 <div class="container stickyelement" id="stickymenu">
   <div class="stickybackground">
-    <div class="docsnav">
-      <span class="docshome"><a href="https://www.truenas.com/docs/">Documentation Hub</a></span>
-      <div class="truenas-menubar" style="float:right;">
+    <div class="docsnav {{ if .IsHome }}docsnav-home{{ else }}docsnav-docs{{ end }}">
+      <a href="https://www.truenas.com/docs/" class="tn-nav-logo-link" aria-label="TrueNAS Documentation">
+        <img src="/images/truenas-wordmark-white.svg" class="tn-nav-logo tn-wordmark-white" alt="TrueNAS">
+        <img src="/images/truenas-wordmark-black.svg" class="tn-nav-logo tn-wordmark-black" alt="TrueNAS">
+        <img src="/images/truenas-wordmark-color.svg" class="tn-nav-logo tn-wordmark-color" alt="TrueNAS">
+      </a>
+      <div class="truenas-menubar">
         <div class="truenas-docsnav-menuitem" id="products" onmouseover="showProductOptions()" onmouseout="hideProductOptions()">
-          <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Product <i class="fa fa-angle-down"></i></button>
+          <button class="truenas-docsnav-menubutton" id="productButton" data-product-id="">Software <i class="fa fa-angle-down"></i></button>
           <div class="truenas-navmenudropdown" id="productDropdown">
             <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS')" data-id="truenas">TrueNAS</div>
-            <a class="truenas-dropdown-item" href="https://apps.truenas.com" target="_blank">TrueNAS Apps</a>
-            <a class="truenas-dropdown-item" href="https://connect.truenas.com" target="_blank">TrueNAS Connect</a>
             <div class="truenas-dropdown-item" onclick="selectProduct('TrueCommand')" data-id="truecommand">TrueCommand</div>
-            <div class="truenas-dropdown-item" onclick="selectProduct('TrueNAS Systems')" data-id="hardware">TrueNAS Systems</div>
           </div>
         </div>
         <div class="truenas-docsnav-menuitem" id="versions" onmouseover="showVersionOptions()" onmouseout="hideVersionOptions()">
@@ -19,23 +20,47 @@
             <!-- Version dropdown options dynamically load -->
           </div>
         </div>
-        <!-- Search Buttons (Split Design) -->
-        <div class="docsnav-search-container">
-          <button id="search-trigger" class="docsnav-search-btn docsnav-search-left" aria-label="Keyword Search" title="Keyword Search">
-            <i class="fa fa-search"></i>
-            <span>Keyword Search</span>
+        <!-- Hub dropdown -->
+        <div class="truenas-docsnav-menuitem" id="hub-nav" onmouseover="showHubOptions()" onmouseout="hideHubOptions()">
+          <button class="truenas-docsnav-menubutton truenas-hub-button" id="hubNavButton" aria-label="Documentation Hub">
+            <img src="/images/hub-wordmark-white.svg" class="tn-hub-wordmark tn-hub-white" alt="Documentation Hub">
+            <img src="/images/hub-wordmark-black.svg" class="tn-hub-wordmark tn-hub-black" alt="Documentation Hub">
+            <i class="fa fa-angle-down" style="margin-left:4px;"></i>
           </button>
-          <button id="chatbot-open-button" class="docsnav-search-btn docsnav-search-right" aria-label="Conversational Search" title="Conversational Search">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <!-- Chat bubble -->
-              <path d="M20 2H4C2.9 2 2 2.9 2 4V16C2 17.1 2.9 18 4 18H7L12 22L17 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
-              <!-- Three dots inside (typing indicator) -->
-              <circle cx="8" cy="10" r="1.5" fill="currentColor"/>
-              <circle cx="12" cy="10" r="1.5" fill="currentColor"/>
-              <circle cx="16" cy="10" r="1.5" fill="currentColor"/>
-            </svg>
-            <span>AI Search</span>
-          </button>
+          <div class="truenas-navmenudropdown" id="hubDropdown">
+            <a class="truenas-dropdown-item" href="https://docs.truenas.com/">
+              <img src="/images/hub-home-icon-white.svg" class="dropdown-icon-img" alt="">
+              Home
+            </a>
+            <a class="truenas-dropdown-item" href="https://www.truenas.com/docs/">
+              <img src="/images/tn-icon-black.png" class="dropdown-icon-img dropdown-icon-invert" alt="">
+              TrueNAS Docs
+            </a>
+            <a class="truenas-dropdown-item" href="https://connect.truenas.com/" target="_blank" rel="noopener">
+              <img src="/images/tnc-icon-white.svg" class="dropdown-icon-img" alt="">
+              TrueNAS Connect
+            </a>
+            <a class="truenas-dropdown-item" href="https://www.truenas.com/docs/hardware/" target="_blank" rel="noopener">
+              <svg class="dropdown-icon-svg" viewBox="0 0 24 24"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg>
+              Products
+            </a>
+            <a class="truenas-dropdown-item" href="https://api.truenas.com/" target="_blank" rel="noopener">
+              <svg class="dropdown-icon-svg" viewBox="0 0 24 24"><path d="M14,12L12,14L10,12L12,10L14,12M12,6L14.12,8.12L16.62,5.62L12,1L7.38,5.62L9.88,8.12L12,6M6,12L8.12,9.88L5.62,7.38L1,12L5.62,16.62L8.12,14.12L6,12M18,12L15.88,14.12L18.38,16.62L23,12L18.38,7.38L15.88,9.88L18,12M12,18L9.88,15.88L7.38,18.38L12,23L16.62,18.38L14.12,15.88L12,18Z"/></svg>
+              TrueNAS API
+            </a>
+            <a class="truenas-dropdown-item" href="https://apps.truenas.com/" target="_blank" rel="noopener">
+              <svg class="dropdown-icon-svg" viewBox="0 0 24 24"><path d="M16,20H20V16H16M16,14H20V10H16M10,8H14V4H10M16,8H20V4H16M10,14H14V10H10M4,14H8V10H4M4,20H8V16H4M10,20H14V16H10M4,8H8V4H4V8Z"/></svg>
+              TrueNAS Apps Market
+            </a>
+            <a class="truenas-dropdown-item" href="https://security.truenas.com/" target="_blank" rel="noopener">
+              <svg class="dropdown-icon-svg" viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"/></svg>
+              Security Reports
+            </a>
+            <a class="truenas-dropdown-item" href="https://docs.truenas.com/software-status/" target="_blank" rel="noopener">
+              <svg class="dropdown-icon-svg" viewBox="0 0 24 24"><path d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M9,17H7V10H9V17M13,17H11V7H13V17M17,17H15V13H17V17Z"/></svg>
+              Software Status
+            </a>
+          </div>
         </div>
         <!-- disable placeholder translate element for future work <div id="google_translate_element"></div> -->
         <span id="gdoc-color-theme" style="display:flex;align-items:center;justify-content:center;">
@@ -52,6 +77,22 @@
             <use xlink:href="#gdoc_brightness_auto"></use>
           </svg>
         </span>
+        <!-- Search Buttons (Split Design) -->
+        <div class="docsnav-search-container">
+          <button id="search-trigger" class="docsnav-search-btn docsnav-search-left" aria-label="Keyword Search" title="Keyword Search">
+            <i class="fa fa-search"></i>
+            <span>Keyword Search</span>
+          </button>
+          <button id="chatbot-open-button" class="docsnav-search-btn docsnav-search-right" aria-label="Conversational Search" title="Conversational Search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 2H4C2.9 2 2 2.9 2 4V16C2 17.1 2.9 18 4 18H7L12 22L17 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <circle cx="8" cy="10" r="1.5" fill="currentColor"/>
+              <circle cx="12" cy="10" r="1.5" fill="currentColor"/>
+              <circle cx="16" cy="10" r="1.5" fill="currentColor"/>
+            </svg>
+            <span>AI Search</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -234,14 +275,14 @@
         versionUpdated = true;
       }
     } else {
-      productButton.innerHTML = 'Product <i class="fa fa-angle-down"></i>';
+      productButton.innerHTML = 'Software <i class="fa fa-angle-down"></i>';
     }
   
     if (!versionUpdated) {
       versionButton.innerHTML = 'Version <i class="fa fa-angle-down"></i>';
     }
   
-    versionDropdown.textContent = 'Choose a Product';
+    versionDropdown.innerHTML = '<div class="truenas-dropdown-item version-placeholder">Choose a product</div>';
   }
   
   updateDropdownPlaceholderText();  
@@ -578,6 +619,14 @@
   function hideVersionOptions() {
     var productDropdown = document.getElementById('versionDropdown');
     productDropdown.style.display = 'none';
+  }
+
+  function showHubOptions() {
+    document.getElementById('hubDropdown').style.display = 'block';
+  }
+
+  function hideHubOptions() {
+    document.getElementById('hubDropdown').style.display = 'none';
   }
 
   function updateProductVersionOptions() {
