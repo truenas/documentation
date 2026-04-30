@@ -2,10 +2,14 @@
 p,h1,h2,h3,h4,th,td,a,body {
   font-family: "Inter", sans-serif;
 }
+mark {
+    background-color: #09b5ff;
+  }
 /* Adjust overall site height */
 .wrapper {
     display: flex;
     flex-direction: column;
+	min-height: 103vh;
 }
 /* Adjust site width */
 .container {
@@ -18,258 +22,295 @@ p,h1,h2,h3,h4,th,td,a,body {
   display: flex;
 }
 .gdoc-page {
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+	flex: 1;
     padding: 1rem 2rem 0rem 0rem;
 	flex-grow: 1;
 }
 
 /* ========== SITENAV (DOCS NAV BAR) STYLES ========== */
-/* Site Nav Bar */
-.docshome {
+
+/* TrueNAS logo link */
+.tn-nav-logo-link {
+  display: flex;
+  align-items: center;
   flex: 1;
-  float: left;
-  color: black;
-}
-.docshome a,
-.docshome a:visited {
-  color: black;
-  font-size: xx-large;
-  font-weight: 600;
-}
-.docshome a:hover {
-  color: #0095d5;
-}
-.docs-load-button {
-	background: #23afe4;
-	color: white;
-	cursor: pointer;
-	width: 3rem;
-	height: 2rem;
-	font-weight: bold;
-	border: 0px;
-	margin: 0 13px 0 13px;
-}
-.docs-load-button[disabled] {
-	background: #23afe4;
-	color: rgba(128, 128, 128, 0.5);
-	pointer-events: none;
-}
-#docssearch {
-	display: flex;
-	float: right;
-	justify-content:center;
-	align-items:center;
-	padding-left: 1rem;
-}
-#docssearch [disabled]{
-	color: rgba(128, 128, 128, 0.5);
-	pointer-events: none;
-}
-#docssearchbutton {
-	color: white;
-	background: #23afe4;
-}
-.truenas-navmenudropdown {
-    display: none;
-    position: absolute;
-	color: white;
-    background-color: #0095d5;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 10;
-}
-/* Normalize link-based dropdown items to behave like the divs */
-.truenas-navmenudropdown a.truenas-dropdown-item {
-  text-decoration: none;   /* remove underline */
-  color: inherit;          /* use same base color as div items */
-}
-
-.truenas-navmenudropdown a.truenas-dropdown-item:visited {
-  color: inherit;          /* prevent purple visited */
-}
-
-.truenas-navmenudropdown a.truenas-dropdown-item:hover {
-  text-decoration: none;   /* keep underline off */
-  color: #bbb;             /* match div hover color */
-}
-.truenas-dropdown-item {
-  cursor: pointer;
-  font-family: "din-2014";
-  font-size: 17px;
-  font-weight: 500;
-  color: white;
-  padding: 12px 16px;
   text-decoration: none;
-  display: table;
 }
-.truenas-dropdown-item:hover {
-  color: #bbb;
+.tn-nav-logo {
+  height: 36px;
+  width: auto;
+  max-width: 220px;
 }
-.truenas-docs-menuitem:hover .truenas-navmenudropdown {display: block;}
-.truenas-docs-menuitem:hover .truenas-docsnav-menubutton {background-color: #0e0e0e;color:#31beec;}
+@media (max-width: 1024px) { .tn-nav-logo { height: 30px; } }
+@media (max-width: 768px)  { .tn-nav-logo { height: 26px; } }
 
-.sidebar-fixed {
-    position: sticky;
-    top: 0;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-}
+/* Logo wordmark variants — navbar is always on a colored bg, show white */
+.tn-wordmark-black, .tn-wordmark-color { display: none; }
+.tn-wordmark-white { display: block; }
 
-/* Webkit (Safari and Chrome) */
-.sidebar-fixed::-webkit-scrollbar {
-    width: 4px;
+/* Hub wordmark in menubar button */
+.truenas-hub-button {
+  padding: 6px 8px !important;
+  display: flex !important;
+  align-items: center !important;
 }
-.sidebar-fixed::-webkit-scrollbar-thumb {
-    background: var(--accent-color);
+.tn-hub-wordmark {
+  height: 16px;
+  width: auto;
+  display: block;
 }
-.sidebar-fixed::-webkit-scrollbar-track {
-    background: transparent;
-}
-/* Docsnav Search Buttons (Split Design) */
-.docsnav-search-container {
-    display: flex;
-    gap: 2px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
+.tn-hub-black { display: none; }
 
-.docsnav-search-btn {
-    background-color: #0095d5;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    font-size: 14px;
-    font-weight: 500;
-    white-space: nowrap;
-}
-
-.docsnav-search-left {
-    border-radius: 15px 0 0 15px;
-}
-
-.docsnav-search-right {
-    border-radius: 0 15px 15px 0;
-}
-
-.docsnav-search-btn:hover {
-    background-color: #007ab8;
-}
-
-.docsnav-search-btn:active {
-    background-color: #006094;
-}
-
-.docsnav-search-btn i {
-    font-size: 16px;
-}
-/* Sticky top menu */
+/* Sticky top menu — background set by page-type selectors below */
 .sticky {
-    position: fixed;
-    top: 0;
-    z-index: 5;
-    margin: 0 auto;
-    padding: .5rem 1rem .5rem 1rem;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	background: white;
-	min-width: -webkit-fill-available;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  margin: 0 auto;
+  padding: .5rem 1rem .5rem 1rem;
+  width: 100%;
 }
 .stickyelement {
-    max-width: 100rem;
-	margin: 0 auto;
-	padding: .5rem 1rem 0rem 1rem;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: .5rem 1rem;
 }
-#sitenav {
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:center;
-	align-items:center;
-	gap: 1rem;
-}
-/* At mobile breakpoint, align hamburger to left */
-@media screen and (max-width: 68rem) {
-	#sitenav {
-		justify-content: space-between;
-	}
-}
-.docsnav {
-	display:flex;
-	flex-wrap:wrap;
-	padding-top:.5rem;
-	justify-content:center;
-	align-items:center;
-	margin: 0 auto;
-}
-/* Override inline float:right on truenas-menubar and make it display items horizontally */
-.docsnav .truenas-menubar {
-	float: none !important;
-	display: flex !important;
-	align-items: center !important;
-	gap: 10px !important;
-	flex-wrap: nowrap !important;
-}
-.truenas-docsnav-menubutton {
-    background-color: white;
-    padding: 13px 0 13px 0;
-    border: none;
-    font-family: "din-2014";
-	font-size: 18px;
-    font-weight: bold;
-}
-#productButton {
-	display: inline-block;
-}
-#productButton,
-#productDropdown {
-	width: 12rem;
-	text-align: center;
-}
-#versionButton {
-	display: inline-block;
-}
-#versionButton,
-#versionDropdown {
-	width: 7rem;
-	text-align: center;
-}
-.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton,
-.truenas-navmenudropdown:hover + .truenas-docsnav-menubutton {
-  color: white;
+
+/* Navbar background by page type */
+#sitenav:has(.docsnav-docs) {
   background: #0095d5;
+  box-shadow: 0 2px 8px rgba(0, 149, 213, 0.35);
+}
+#sitenav:has(.docsnav-home) {
+  background: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 149, 213, 0.5);
+}
+
+#sitenav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+@media screen and (max-width: 68rem) {
+  #sitenav { justify-content: space-between; }
+  main.container { padding-top: 1.75rem; }
+}
+
+.docsnav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+.docsnav .truenas-menubar {
+  float: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Nav buttons — transparent/white on colored navbar */
+.truenas-docsnav-menubutton {
+  background: transparent;
+  color: white;
+  padding: 10px 6px;
+  border: none;
+  font-family: "din-2014", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.truenas-docsnav-menubutton:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton {
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
 }
 .truenas-docsnav-menubutton[disabled] {
-	color: rgba(128, 128, 128, 0.5);
-	pointer-events: none;
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
 }
-.truenas-column-header {
-	color: #0095D5;
-	font-weight: bold;
-    margin-bottom: 0;
+
+#productButton { display: inline-block; }
+#productButton { width: auto; text-align: left; }
+#versionButton { display: inline-block; }
+#versionButton { width: auto; text-align: left; }
+
+/* Dropdowns — dark in dark/auto mode, overridden to white in light mode */
+.truenas-navmenudropdown {
+  display: none;
+  position: absolute;
+  color: white;
+  background-color: #1a1a1a;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  z-index: 100;
+  min-width: 200px;
+  border-top: 2px solid #0095d5;
 }
-#docsnav-intro {
-	padding-right: 2px;
-	font-size: 18px;
-	font-weight: bold;
+
+.truenas-dropdown-item {
+  cursor: pointer;
+  font-family: "din-2014", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.gdoc-header__link {
-    float:left;
+.truenas-dropdown-item:hover,
+.truenas-navmenudropdown a.truenas-dropdown-item:hover {
+  color: #31beec;
+  background-color: rgba(255, 255, 255, 0.06);
+  text-decoration: none;
 }
-.menubar-link {
-	padding-right: 1.5rem;
+.truenas-navmenudropdown a.truenas-dropdown-item {
+  text-decoration: none;
+  color: white;
 }
-@media screen and (max-width:800px) {
-	.docshome {
-		text-align: center;
-	}
-	#gdoc-color-theme {
-		flex:1;
-	}
+.truenas-navmenudropdown a.truenas-dropdown-item:visited {
+  color: white;
+}
+
+/* Icons inside hub dropdown items */
+.dropdown-icon-svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  flex-shrink: 0;
+}
+.truenas-dropdown-item:hover .dropdown-icon-svg {
+  fill: #31beec;
+}
+.dropdown-icon-img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.dropdown-icon-invert {
+  filter: invert(1);
+}
+
+/* Hub dropdown positioning */
+#hubDropdown { min-width: 220px; }
+
+/* Search Buttons — white pill with green wipe on hover */
+.docsnav-search-container {
+  display: flex;
+  gap: 0;
+  margin-left: 4px;
+}
+.docsnav-search-btn {
+  background: white;
+  color: #0095d5;
+  border: 1px solid white;
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.docsnav-search-btn::after {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: white;
+  z-index: -2;
+  border-radius: inherit;
+}
+.docsnav-search-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -10%; width: 0; bottom: -2px;
+  background: #71bf44;
+  transition: width 0.25s ease;
+  transform: skewX(-10deg);
+  z-index: -1;
+}
+.docsnav-search-btn:hover::before { width: 125%; }
+.docsnav-search-btn:hover { border-color: #71bf44 !important; color: white !important; }
+.docsnav-search-left  { border-radius: 30px 0 0 30px; }
+.docsnav-search-right { border-radius: 0 30px 30px 0; }
+.docsnav-search-btn i { font-size: 16px; }
+
+/* Home page (dark bg): search buttons are blue with white text */
+#sitenav:has(.docsnav-home) .docsnav-search-btn {
+  background: #0095d5;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+#sitenav:has(.docsnav-home) .docsnav-search-btn::after {
+  background: #0095d5;
+}
+
+/* Home page logo: crossfade white → color wordmark on hover */
+#sitenav:has(.docsnav-home) .tn-nav-logo-link {
+  position: relative;
+}
+#sitenav:has(.docsnav-home) .tn-wordmark-white {
+  transition: opacity 0.25s ease;
+}
+#sitenav:has(.docsnav-home) .tn-wordmark-color {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+#sitenav:has(.docsnav-home) .tn-nav-logo-link:hover .tn-wordmark-white {
+  opacity: 0;
+}
+#sitenav:has(.docsnav-home) .tn-nav-logo-link:hover .tn-wordmark-color {
+  opacity: 1;
+}
+
+/* GeekDocs theme toggle icons — white on colored navbar */
+#gdoc-color-theme .gdoc-icon { fill: white; color: white; }
+
+/* Sidebar scrollbar */
+.sidebar-fixed {
+  position: sticky;
+  top: 0;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+}
+.sidebar-fixed::-webkit-scrollbar       { width: 4px; }
+.sidebar-fixed::-webkit-scrollbar-thumb { background: var(--accent-color); }
+.sidebar-fixed::-webkit-scrollbar-track { background: transparent; }
+
+.truenas-column-header { color: #0095D5; font-weight: bold; margin-bottom: 0; }
+#docsnav-intro  { padding-right: 2px; font-size: 18px; font-weight: bold; }
+.gdoc-header__link { float: left; }
+.menubar-link { padding-right: 1.5rem; }
+
+@media screen and (max-width: 800px) {
+  .tn-nav-logo-link { flex: unset; }
+  #gdoc-color-theme { flex: 1; }
+}
+.gdoc-nav__control {
+    display: none;
 }
 /* Adjust Nav sidebar */
 .gdoc-nav {
@@ -285,7 +326,15 @@ p,h1,h2,h3,h4,th,td,a,body {
         margin-top: 4em;
     }
     .gdoc-nav__control {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        position: absolute;
+        top: calc(100% + 0.6rem);
+        left: 0;
+        color: white;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        z-index: 10;
     }
 	#menu-control:checked~main .gdoc-nav nav,#menu-control:checked~main .gdoc-page {
         transform: translateX(18rem)
@@ -293,10 +342,10 @@ p,h1,h2,h3,h4,th,td,a,body {
     #menu-control:checked~main .gdoc-page {
         opacity: .25
     }
-    #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_menu {
+    #menu-control:checked~#sitenav .gdoc-nav__control svg.gdoc-icon.gdoc_menu {
         display: none
     }
-    #menu-control:checked~.gdoc-header .gdoc-nav__control svg.gdoc-icon.gdoc_arrow_back {
+    #menu-control:checked~#sitenav .gdoc-nav__control svg.gdoc-icon.gdoc_arrow_back {
         display: inline-block
     }
     #menu-header-control:checked~.gdoc-header .gdoc-brand {
@@ -1923,6 +1972,13 @@ p,h1,h2,h3,h4,th,td,a,body {
     }
     .truenas-mediamenu:hover .truenas-menudropdown {display: block;}
 	.truenas-mediamenu:hover .truenas-menubutton {background-color: black;color:white;}
+	#productButton, #productDropdown {
+		width: fit-content;
+	}
+}
+@media screen and (max-width: 737px) {
+}
+@media screen and (max-width: 388px) {
 }
 svg.gdoc-icon {
 	width: 1.5rem;
@@ -2128,6 +2184,43 @@ svg.gdoc-icon {
     background-color: rgba(255,102,102,.1);
 }
 /* End print view styling */
+/* Adjust code blocks rendering */
+
+/* Ensure the code block takes the necessary styles */
+.gdoc-markdown code,
+.gdoc-markdown code.language-yaml {
+	color: var(--body-font-color);
+	background-color: var(--accent-color-lite);
+}
+
+/* Ensure the pre block resizes to fit the code inside it */
+.gdoc-markdown pre,
+.gdoc-markdown pre.chroma {
+    display: inline-block; /* Make the container adjust to content */
+    max-width: 100%; /* Set the maximum width to 100% */
+    white-space: pre-wrap; /* Ensure long lines wrap if needed */
+    word-wrap: break-word; /* Break long words if needed */
+}
+
+/* Additional rule to ensure pre.chroma adjusts its size to fit the code inside */
+pre.chroma {
+    width: auto;
+}
+
+/* Ensure the higher-level container resizes to fit the pre and code inside it */
+.highlight.gdoc-post__codecontainer {
+    display: inline-block; /* Make the container adjust to content */
+    max-width: 100%; /* Set the maximum width to 100% */
+    width: auto; /* Ensure the container width adjusts to fit content */
+}
+
+/* End adjustment of code rendering */
+/* Add display styling for <file> tags */
+.gdoc-markdown file {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+/* End display styling for <file> tags */
 /* Begin archive drop down styling */
 /* Dropdown Button */
 .dropbtn {
@@ -2203,12 +2296,11 @@ svg.gdoc-icon {
 /* Standardized table style */
 .truetable {
   border-collapse: collapse;
-  max-width: 100%;
+  margin: 0 auto;
 }
-
 .truetable td, .truetable th {
-  border: 2px solid #e3e3e2;
-  padding: 8px;
+  border: .5px solid var(--accent-color);
+  padding: .5rem;
 }
 .truetable th {
   text-align: left;
@@ -2240,34 +2332,49 @@ svg.gdoc-icon {
     background-color: #0095d5;
     color: white;
 }
-
-:root {
-    --color-scheme: light;
-  }
-  
-  @media screen and (prefers-color-scheme: dark) {
-    :root {
-      --color-scheme: dark;
-      --body-font-color: #f0f3f5;
-    }
-    .truetable {
-      background-color: #212529;
-    }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
-    }
-    .truetable tr:nth-child(even){background-color: #303030;}
-	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
-    .truetable tr:hover {background-color: #444;color:white;}
-    .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
-    }
-  }
-    
 /* End standardized table styling */
+
+/* Style for the container of tables with class "component-versions-table" */
+
+/* Set background color for the top row and left column */
+.component-versions-table th,
+.component-versions-table td:first-child {
+  background-color: #0095d5;
+  color: white;
+  font-weight: 600;
+}
+
+/* Exclude the first cell (top-left) from the background color */
+.component-versions-table th:first-child {
+  background-color: var(--body-background);
+  border-top: none;
+  border-left: none;
+}
+
+/* Apply border styles to match truetable */
+.component-versions-table {
+  border-collapse: collapse;
+}
+
+.component-versions-table td,
+.component-versions-table th {
+  border: .5px solid var(--accent-color);
+  padding: .5rem;
+}
+
+/* Highlight individual cells (excluding first column and header row) on hover */
+.component-versions-table td:not(:first-child):hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Prevent header row from being highlighted on hover */
+.component-versions-table thead tr:hover {
+  background-color: transparent; /* Ensure header row stays unaffected */
+}
+
+/* End style for the container of tables with class "component-versions-table" */
+
 /* Standardize image styling */
 .trueimg {
 	justify-content:center;
@@ -2275,10 +2382,8 @@ svg.gdoc-icon {
 .gdoc-markdown img {
 	max-width: 75%;
 	height: auto;
+    max-height: 800px;
 	align-items: center;
-}
-.gdoc-markdown img:hover {
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 .trueimg figcaption {
 	text-align: center;
@@ -2299,17 +2404,57 @@ svg.gdoc-icon {
   }
 /* End adjustment of code rendering */
 
-/* Styling for expands */
+/* Add display styling for <file> tags */
+.gdoc-markdown file {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+/* End display styling for <file> tags */
+
 .truenas-enterprise__text {
-	color: black;
+	padding: .25rem 1rem;
 }
-.gdoc-expand {
-	color: black;
-	background: #f0f3f5;
+/* Styling for expands */
+.expand-title {
+    color: var(--link-color);
+	padding: .5rem 0 .5rem 0;
 }
-.gdoc-expand__head {
-	background: #e0e7eb;
+.expand-title:hover::before {
 }
+/* Style the summary (title) when details is open */
+.expand-title::after {
+}
+/* End Styling for expands */
+/* Start inline-code block style */
+.cli-cmd {
+  display: inline-block; /* Set to inline-block to make it inline with text */
+  position: relative; /* Set the parent element to relative positioning */
+}
+
+.cli-cmd-copy {
+  position: absolute;
+  top: 0rem; /* Adjust the top position as needed */
+  right: -1.4rem;
+  border: none;
+  cursor: pointer;
+  z-index: 1; /* Ensure the button is on top of the cli-cmd element */
+  display: none;
+  background-color: var(--body-background);
+  color: var(--body-font-color);
+  padding-top: .32rem;
+}
+
+.cli-cmd:hover .cli-cmd-copy {
+  display: block; /* Show the copy button when cli-cmd is hovered */
+}
+
+.cli-cmd-copy:hover {
+  background-color: var(--accent-color);
+}
+.checkmark {
+  color: var(--code-copy-success-color);
+}
+/* End inline-code block style */
 /* Adjust read time and last mod div */
 .docs-read_mod {
 	display:flex;
@@ -2318,30 +2463,31 @@ svg.gdoc-icon {
 	justify-content:flex-start;
 	margin:0;
 	padding:0;
+	font-size: small;
 }
 /* End read time and last mod div adjustments */
 /* Start Dark Mode adjustments */
     @media screen and (prefers-color-scheme: dark) {
         .gdoc-expand {
-        background-color: #303030;
+        background-color: #212c32;
         color: #c2cfd7;
         }
 
         .gdoc-expand__head {
         background-color: #c2cfd7;
-        color: black;
+        color: #464646;
         }
     }
 /* End Dark Mode adjustments */
 /* End Styling for expands */
-
-/* Adjust search bar for all color modes */
-#search input {
-    background-color: white;
-    color: black;
-    border-color: #0095d5;
-  }
-/* End Adjust search bar for all color modes */
+/* Children shortcode line adjust */
+.children.children-li {
+	line-height: 1rem;
+}
+.truenas-articlelist {
+	line-height: 1rem;
+}
+/* End Children shortcode line adjust */
 /* Docs Products Nav Boxes */
 .docs-sections {
   display: grid;
@@ -2349,12 +2495,17 @@ svg.gdoc-icon {
   gap: 2rem;
   padding: 1rem;
 }
-@media screen and (max-width:50rem) {
+@media screen and (max-width:99rem) {
+	.docs-sections {
+		grid-template-columns: auto auto auto;
+	}
+}
+@media screen and (max-width:83rem) {
 	.docs-sections {
 		grid-template-columns: auto auto;
 	}
 }
-@media screen and (max-width:25rem) {
+@media screen and (max-width:50rem) {
 	.docs-sections {
 		grid-template-columns: auto;
 	}
@@ -2474,8 +2625,8 @@ a.section-box:hover {
 	text-align: center;
 }
 .prod-card-img {
-	width: 10em;
-	height: 15em!important;
+	width: 7.5em;
+	height: 11.25em!important;
 	object-fit: contain;
 }
 .box-image > img:hover {
@@ -2488,33 +2639,52 @@ a.section-box:hover {
 	margin-block-end: .5rem;
 }
 
+/* Section box link styling */
+.section-box a {
+	color: #0095d5;
+	text-decoration: none;
+}
+
+.section-box a:hover {
+	color: #36bdeb;
+	text-decoration: none;
+}
+
+.section-box a:visited {
+	color: #0095d5;
+	text-decoration: none;
+}
+
+.section-box a:visited:hover {
+	color: #36bdeb;
+	text-decoration: none;
+}
+
 /* Style for tab navigation */
 .section-tabs {
   display: flex;
   justify-content: center;
-  background-color: #0095d5;
+  background-color: var(--accent-color);
 }
 /* Style for individual tab */
 .section-tab {
   padding: .5rem .5rem;
   margin: 0 5px;
   cursor: pointer;
-  background-color: #0095d5;
-  color: white;
+  background-color: var(--accent-color);
   font-weight: 600;
-  border-top: solid;
-  border-top-color: #0095d5;
-
+  border: 2px solid transparent;
+  box-sizing: border-box;
 }
 .section-tab-content {
 	padding-top: .25rem;
 	text-align: center;
 }
 .section-tab.active {
-    background-color: rgb(248, 249, 250);
-    color: #0095d5;
-    border-top: solid;
-    border-top-color: #0095d5;
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid transparent;
 }
 .mute {
 	color:#0095d5;
@@ -2522,8 +2692,15 @@ a.section-box:hover {
 }
 /* Adjust input elements for calculator */
 .monitor {
-    color: var(--body-font-color); /* Adjust text color as needed */
-  } 
+    color: var(--body-font-color);
+    background-color: var(--body-background);
+  }
+input[type='radio']  {
+    accent-color: #0095d5;
+}
+input[type='checkbox']  {
+    accent-color: #0095d5;
+}
 /* End Adjust input elements for calculator */
 
 /* Style for tables with class "inputs" */
@@ -3134,37 +3311,74 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
     border-color: #0095d5;
   }
 /* End Adjust search bar for all color modes */
-/* Custom table style for Product page intro section */
-.product-intro-table {
-	max-width: 100%;
-	border-collapse: collapse;
-}
-.product-intro-table tbody,
-.product-intro-table tr,
-.product-intro-table td {
-	border: none;
-	background: var(--body-background);
-	border-bottom: none !important;
-}
-/* End custom table style for Product page intro section */
-.prodintronote {
+/* Product page intro banner */
+.prodintro-banner {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
+	gap: 2rem;
+	background: linear-gradient(to right, #00141d, #005e86);
+	padding: 2rem 2.5rem;
+	border-radius: 6px;
+	margin-bottom: 1.5rem;
+	min-height: 220px;
 }
-.prodnoteicon {
-	flex: .2;
-	text-align: left;
-	margin-right: .25rem;
-}
-.prodnotetext {
+.prodintro-banner__content {
 	flex: 1;
 }
-.prodbanner > img {
-	max-width: 100%;
-	align-items: center;
-	max-height: 75%;
-	margin-bottom: 1rem;
+.prodintro-banner__content h1 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	line-height: 1.15;
+	color: #ffffff;
+	margin: 0 0 0.5rem 0;
 }
+.prodintro-subtitle {
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.95);
+	margin: 0.25rem 0 0 0;
+}
+.prodintro-tagline {
+	font-size: 0.9rem;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.75);
+	margin: 0.25rem 0 0 0;
+}
+.prodintro-banner__image {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.prodintro-banner__image img {
+	max-width: 100%;
+	max-height: 180px;
+	width: auto;
+	height: auto;
+}
+@media (max-width: 768px) {
+	.prodintro-banner {
+		flex-direction: column;
+	}
+}
+.prodintro-btn {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0.6rem 1.4rem;
+	background-color: #0095d5;
+	color: #ffffff !important;
+	border-radius: 2rem;
+	font-weight: 600;
+	font-size: 0.9rem;
+	text-decoration: none !important;
+	transition: background-color 0.2s ease;
+}
+.prodintro-btn:hover {
+	background-color: #007ab5;
+	color: #ffffff !important;
+}
+/* End product page intro banner */
 /* Adjust geekdoc properties list title style */
 .gdoc-props__title {
 	font-family: "Inter", sans-serif;
@@ -3177,13 +3391,16 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 }
 /* Additional Automatic and Manual color scheme values */
 @media screen and (prefers-color-scheme: dark) {
-	.stickyelement,
+    hr {
+        background: var(--body-font-color) !important;
+        height: 1.5px;
+      }
+    .stickyelement,
 	.stickybackground,
 	.sticky,
 	.docsnav,
-	.truenas-docsnav-menubutton,
 	.docshome {
-	  background-color: #29363e;
+	  background-color: transparent;
 	}
 	.truenas-docsnav-menubutton,
 	.docshome a,
@@ -3198,14 +3415,17 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 		color: #e8edf0;
 		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 		transition: 0.3s;
+        accent-color: #c2cfd7;
+	}
+	.docs-sections p {
+		box-shadow: none;
 	}
 	.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton,
 	.truenas-navmenudropdown:hover + .truenas-docsnav-menubutton {
 		background-color: #0095d5;
 		color: white;
 	}
-	.docs-more-sections > p:hover,
-	.docs-sections > p:hover {
+	.docs-more-sections > p:hover {
 		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	}
 	.docs-sections a,
@@ -3221,16 +3441,31 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	#search input::placeholder {
 		color: #c2cfd7;
 	}
+	.section-box{
+		background-color: #475d6b;
+	}
+    .section-tab {
+        color: white;
+    }
+    .section-tab.active {
+        background-color: #475d6b;
+    }
+}
+@media screen and (prefers-color-scheme: light) {
+    .section-tab {
+        color: var(--body-font-color);
+    }
+    .section-tab.active {
+        background-color: rgb(248, 249, 250);
+    }
 }
 :root[color-theme=dark] {
-	--body-font-color: #f0f3f5;
 	.stickyelement,
 	.stickybackground,
 	.sticky,
 	.docsnav,
-	.truenas-docsnav-menubutton,
 	.docshome {
-	  background-color: #29363e;
+	  background-color: transparent;
 	}
 	.truenas-docsnav-menubutton,
 	.docshome a,
@@ -3247,11 +3482,9 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	.docs-sections p {
 		background-color: #475d6b;
 		color: #c2cfd7;
-		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-		transition: 0.3s;
 	}
-	.docs-more-sections > p:hover,
-	.docs-sections > p:hover {
+	.docs-sections > p:hover,
+	.docs-more-sections p:hover {
 		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	}
 	.docs-sections a,
@@ -3269,28 +3502,18 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	#search-input::placeholder {
 		color: #c2cfd7;
 	}
-	.gdoc-expand {
-        background-color: #303030;
-        color: #c2cfd7;
-    }
 	.gdoc-expand__head {
         background-color: #c2cfd7;
-        color: black;
+        color: #464646;
     }
-	.truetable {
-      background-color: #212529;
+	.section-box{
+		background-color: #475d6b;
+	}
+    .section-tab {
+        color: white;
     }
-    .truetable td, .truetable th {
-      border-color: #c2cfd7;
-      color: #ddd;
-    }
-    .truetable tr:nth-child(even){background-color: #303030;}
-    .truetable tr:hover {background-color: #444;color:white;}
-	.truetable tr:nth-child(even):hover {background-color: #444;color: white;}
-    .truetable tr:hover a {}
-    .truetable th {
-      background-color: #0095d5;
-      color: #fff;
+    .section-tab.active {
+        background-color: #475d6b;
     }
 }
 :root[color-theme=light] {
@@ -3298,25 +3521,66 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	.stickybackground,
 	.sticky,
 	.docsnav,
-	.truenas-docsnav-menubutton,
 	.docshome {
-	  background-color: white;
-	}
+	  background-color: transparent;
+    }
+	/* Docs pages: blue navbar unchanged in light mode — no overrides needed */
+	/* Nav buttons stay white (correct for blue bg) */
 	.truenas-docsnav-menubutton,
 	.docshome a,
 	.docshome a:visited,
 	#docsnav-intro {
-		color: black;
-	}
-	.truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton,
-	.truenas-navmenudropdown:hover + .truenas-docsnav-menubutton {
-		background-color: #0095d5;
 		color: white;
 	}
+
+	/* ── HOME PAGE ONLY: white navbar ── */
+	#sitenav:has(.docsnav-home) {
+		background: white;
+		box-shadow: 0 4px 12px rgba(0, 149, 213, 0.5);
+	}
+	/* Logo: black wordmark, crossfades to color on hover */
+	#sitenav:has(.docsnav-home) .tn-wordmark-white { display: none; }
+	#sitenav:has(.docsnav-home) .tn-wordmark-black {
+		display: block;
+		transition: opacity 0.25s ease;
+	}
+	#sitenav:has(.docsnav-home) .tn-wordmark-color {
+		display: block;
+		position: absolute;
+		left: 0; top: 50%;
+		transform: translateY(-50%);
+		opacity: 0;
+		transition: opacity 0.25s ease;
+	}
+	#sitenav:has(.docsnav-home) .tn-nav-logo-link:hover .tn-wordmark-black { opacity: 0; }
+	#sitenav:has(.docsnav-home) .tn-nav-logo-link:hover .tn-wordmark-color { opacity: 1; }
+	/* Hub wordmark: black */
+	#sitenav:has(.docsnav-home) .tn-hub-white { display: none; }
+	#sitenav:has(.docsnav-home) .tn-hub-black { display: block; }
+	/* Nav buttons: dark text */
+	#sitenav:has(.docsnav-home) .truenas-docsnav-menubutton { color: #1a1a1a; }
+	#sitenav:has(.docsnav-home) .truenas-docsnav-menubutton:hover,
+	#sitenav:has(.docsnav-home) .truenas-docsnav-menuitem:hover .truenas-docsnav-menubutton {
+		color: #0095d5;
+		background-color: transparent;
+	}
+	#sitenav:has(.docsnav-home) .truenas-docsnav-menubutton[disabled] {
+		color: rgba(0, 0, 0, 0.3);
+	}
+	/* Theme toggle: dark icons */
+	#sitenav:has(.docsnav-home) #gdoc-color-theme .gdoc-icon {
+		fill: #1a1a1a;
+		color: #1a1a1a;
+	}
+	/* Search buttons: blue with white text (global home-page rule already sets this) */
 	.docs-more-sections p,
 	.docs-sections p {
 		background-color: rgb(248, 249, 250);
 		color: #555;
+	}
+	.docs-sections > p:hover,
+	.docs-more-sections p:hover {
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	}
 	.docs-sections a,
 	.docs-sections a:visited,
@@ -3333,37 +3597,90 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 	#search-input::placeholder {
 		color: #555;
 	}
-	.gdoc-expand {
-        background-color: #f0f3f5;
-        color: black;
+	.section-box {
+		background-color: rgb(248, 249, 250);
+	}
+    .section-tab {
+        color: var(--body-font-color);
     }
-    .gdoc-expand__head {
-        background-color: #e0e7eb;
-        color: black;
+    .section-tab.active {
+        background-color: rgb(248, 249, 250);
     }
-	.truetable {
+	/* Light mode dropdowns: white bg with dark text */
+	.truenas-navmenudropdown {
 		background-color: white;
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 	}
-	.truetable td,
-	.truetable th {
-		color: #555;
+	.truenas-dropdown-item {
+		color: #1a1a1a;
 	}
-	.truetable tr:hover {background-color: #e0e7eb;color: #555;}
-	.truetable tr:nth-child(even):hover {background-color: #e0e7eb;color: #555;}
-	.truetable tr:nth-child(even){background-color: #f6f6f5;}
-	.truetable tr:hover a {}
-	.truetable th {
-		background-color: #0095d5;
-		color: white;
+	.truenas-navmenudropdown a.truenas-dropdown-item,
+	.truenas-navmenudropdown a.truenas-dropdown-item:visited {
+		color: #1a1a1a;
+	}
+	.truenas-dropdown-item:hover,
+	.truenas-navmenudropdown a.truenas-dropdown-item:hover {
+		color: #0095d5;
+		background-color: rgba(0, 0, 0, 0.04);
+	}
+	.dropdown-icon-svg {
+		fill: #1a1a1a;
+	}
+	.truenas-dropdown-item:hover .dropdown-icon-svg {
+		fill: #0095d5;
+	}
+	/* Invert white SVG icons to black on white dropdown bg */
+	.dropdown-icon-img {
+		filter: invert(1);
+	}
+	/* Black PNG (tn-icon-black.png) is already correct color, undo invert */
+	.dropdown-icon-invert {
+		filter: none;
+	}
+	/* Version dropdown: dark colors on white background */
+	.version-label {
+		color: rgba(0, 0, 0, 0.4);
+	}
+	.version-line {
+		border-top-color: rgba(0, 0, 0, 0.12);
+	}
+	.no-version-line {
+		border-top-color: rgba(0, 0, 0, 0.12);
+	}
+	.version-placeholder {
+		color: rgba(0, 0, 0, 0.4);
 	}
 }
 /* End Additional Automatic and Manual color scheme values */
-/* Children shortcode line adjust */
-.children.children-li {
-	line-height: 1rem;
+/* Adjust mermaid chart display size */
+pre.gdoc-mermaid.mermaid.mermaid_sizing {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--body-background);
 }
-.truenas-articlelist {
-	line-height: 1rem;
+/* Theme-aware edition logos in release lists */
+/* Default light mode - no filter needed */
+.edition-logo {
+    /* Images are already dark for light backgrounds */
+}
+
+/* Manual dark mode selection - invert to white */
+:root[color-theme="dark"] .edition-logo {
+    filter: brightness(0) invert(1);
+}
+
+/* System preference dark mode fallback */
+@media (prefers-color-scheme: dark) {
+    :root:not([color-theme]) .edition-logo {
+        filter: brightness(0) invert(1);
+    }
+}
+
+/* Additional variable colors */
+:root[color-theme='light'] {
+  --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for the light theme */
 }
 :root[color-theme='dark'] {
   --enterprise-title: rgb(52, 58, 64); /* Define --enterprise-title for the dark theme */
@@ -3482,177 +3799,303 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 
 /* Styling for Version Selector Sections */
 
+#versionDropdown {
+  padding: 6px 0;
+}
+
+.truenas-version-group {
+  padding: 2px 0;
+}
+
 .version-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 5px;
-  }
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 16px 4px;
+  gap: 8px;
+}
 
-  .version-label {
-    flex-shrink: 0;
-    font-size: 0.9em;
-    color: white;
-    line-height: 1;
-  }
+.version-label {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1;
+}
 
-  .version-line {
-    flex-grow: 1;
-    height: 1px;
-    border-top: 1px solid white;
-    margin-left: 5px;
-  }
+.version-line {
+  flex: 1;
+  height: 0;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 0;
+}
 
-  .no-version-line {
-    flex-grow: 1;
-    height: 1px;
-    border-top: 1px solid white;
-    margin: 0 5px;
-  }
+.no-version-line {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 6px 16px;
+}
+
+.version-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: default;
+}
 
 /* End Styling for Version Selector Sections */
 
-/* Style TrueNAS Apps Market link as green button */
-.gdoc-nav a[href="https://apps.truenas.com/"],
-.gdoc-nav .gdoc-nav a[href="https://connect.truenas.com"] {
-    background-color: #71bf44 !important;
-    color: white !important;
-    padding: 10px 20px !important;
-    border-radius: 15px !important;
-    display: block !important;
-    text-align: center !important;
-    font-weight: bold !important;
-    text-decoration: none !important;
-    margin: -.5em !important;
-    transition: all 0.3s ease !important;
-}
+/* TrueNAS Apps Market and TrueNAS Connect — outline pill, green wipe on hover */
 
-.gdoc-nav a[href="https://apps.truenas.com/"]:hover,
-.gdoc-nav a[href="https://connect.truenas.com"]:hover {
-    background-color: #5da639 !important;
-    border-color: #5da639 !important;
-    color: white !important;
-    text-decoration: none !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Ensure the icon is white and properly sized */
-.gdoc-nav a[href="https://apps.truenas.com/"] .gdoc-icon,
-.gdoc-nav a[href="https://connect.truenas.com"] .gdoc-icon {
-    color: white !important;
-    fill: white !important;
-    vertical-align: middle !important;
-}
-
-/* Dark mode adjustments for the Apps Market button */
-@media (prefers-color-scheme: dark) {
-    .gdoc-nav a[href="https://apps.truenas.com/"],
-    .gdoc-nav a[href="https://connect.truenas.com"] {
-        background-color: #71bf44 !important;
-        border-color: #71bf44 !important;
-    }
-
-    .gdoc-nav a[href="https://apps.truenas.com/"]:hover,
-    .gdoc-nav a[href="https://connect.truenas.com"]:hover {
-        background-color: #5da639 !important;
-        border-color: #5da639 !important;
-    }
-}
-
-:root[color-theme=dark] .gdoc-nav a[href="https://apps.truenas.com/"],
-    .gdoc-nav a[href="https://connect.truenas.com"] {
-    background-color: #71bf44 !important;
-    border-color: #71bf44 !important;
-}
-
-:root[color-theme=dark] .gdoc-nav a[href="https://apps.truenas.com/"]:hover,
-    .gdoc-nav a[href="https://connect.truenas.com"]:hover {
-    background-color: #5da639 !important;
-    border-color: #5da639 !important;
-}
-
-/* End TrueNAS Apps Market button styling */
-
-/* Style the parent span that contains both icon and link as green button */
+/* span.flex is the visual button container */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) span.flex,
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex {
-    background-color: #71bf44 !important;
-    color: white !important;
-    padding: 10px 20px !important;
-    border-radius: 15px !important;
+    background: linear-gradient(100deg, #71bf44 50%, white 50%) !important;
+    background-size: 200% 100% !important;
+    background-position: 100% 0 !important;
+    color: #0095d5 !important;
+    border: 2px solid #0095d5 !important;
+    border-radius: 50px !important;
+    padding: 8px 20px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    text-align: center !important;
-    font-weight: bold !important;
-    text-decoration: none !important;
-    margin: -.5em !important;
-    transition: all 0.3s ease !important;
+    font-weight: 700 !important;
+    margin: -.25em 0 !important;
     width: auto !important;
+    min-height: 38px !important;
+    box-sizing: border-box !important;
+    transition: background-position 0.25s ease, border-color 0.25s ease, color 0.25s ease !important;
+    cursor: pointer !important;
+}
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1):hover span.flex,
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2):hover span.flex {
+    background-position: 0 0 !important;
+    border-color: #71bf44 !important;
+    color: white !important;
+    transform: none !important;
+    box-shadow: none !important;
 }
 
-/* Remove styling from the inner link since parent span is now the button */
+/* Inner link — transparent, inherits color from span.flex */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) a,
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a {
     background: none !important;
     border: none !important;
     padding: 0 !important;
-    margin: -.5em !important;
-    color: white !important;
+    margin: 0 !important;
+    color: inherit !important;
     text-decoration: none !important;
-    font-weight: bold !important;
+    font-weight: 700 !important;
 }
-
-/* Hover effect moved to li to avoid nested hover conflicts */
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1):hover span.flex,
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2):hover span.flex {
-    background-color: #5da639 !important;
-    border-color: #5da639 !important;
-    color: white !important;
-    text-decoration: none !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Prevent any hover effects on nested elements that could conflict */
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) label:hover,
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) a:hover,
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) label:hover,
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) a:hover {
     background: none !important;
     transform: none !important;
     box-shadow: none !important;
+    color: inherit !important;
 }
 
-/* Style the original SVG icon to be white */
+/* Neutralize href-selector rules so they don't conflict with span.flex */
+.gdoc-nav a[href="https://apps.truenas.com/"],
+.gdoc-nav a[href="https://connect.truenas.com"] {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: inherit !important;
+    border-radius: 0 !important;
+    transition: none !important;
+}
+.gdoc-nav a[href="https://apps.truenas.com/"]:hover,
+.gdoc-nav a[href="https://connect.truenas.com"]:hover {
+    background: none !important;
+    color: inherit !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* SVG icon: blue by default, white on hover */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) svg.gdoc-icon {
-    fill: white !important;
-    color: white !important;
+    fill: #0095d5 !important;
+    color: #0095d5 !important;
     width: 20px !important;
     height: 20px !important;
     margin-right: 8px !important;
 }
-
-/* Style the use element inside the SVG */
-.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1) svg use {
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1):hover svg.gdoc-icon {
     fill: white !important;
+    color: white !important;
 }
 
-/* Reorder the menu items - move Apps Market to the very top */
+/* Hide empty icon on Connect, remove gap */
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) svg.gdoc-icon {
+    display: none !important;
+}
+.gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) span.flex {
+    gap: 0 !important;
+}
+
+/* Keep Apps and Connect at the top of the nav list */
 .gdoc-nav section:last-child .gdoc-nav__list {
     display: flex !important;
     flex-direction: column !important;
 }
-
-/* Move Apps Market (2nd item) to be first */
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(1),
 .gdoc-nav section:last-child .gdoc-nav__list li:nth-child(2) {
     order: -1 !important;
 }
-
-/* Keep all other items in their original order */
 .gdoc-nav section:last-child .gdoc-nav__list li:not(:nth-child(1)),
 .gdoc-nav section:last-child .gdoc-nav__list li:not(:nth-child(2)) {
     order: 0 !important;
+}
+
+/* =========================================
+   PUM Modal (Product User Manual lightbox)
+   ========================================= */
+dialog.pum-modal {
+    border: none;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+dialog.pum-modal::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.pum-modal-card {
+    position: relative;
+    width: min(90vw, 420px);
+    padding-bottom: 1.25rem;
+}
+
+.pum-modal-card b {
+    display: block;
+    line-height: 1.4;
+}
+
+.pum-modal-english-btn {
+    display: block;
+    margin: 0.75rem 0 0;
+    padding: 0.75rem 1rem;
+    background-color: #1194d2;
+    color: #fff !important;
+    border-radius: 16px;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 1.25rem !important;
+    text-align: center;
+}
+
+.pum-modal-english-btn:hover {
+    opacity: 0.85;
+}
+
+.pum-modal-card .box-image {
+    padding-top: 2rem;
+    padding-bottom: 1.25rem;
+}
+
+.pum-modal-card .prod-card-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 50vh;
+}
+
+.pum-modal-close {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 0.4rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+    opacity: 0.85;
+}
+
+.pum-modal-close:hover {
+    opacity: 1;
+}
+
+/* Sidebar hub links section */
+.gdoc-nav--more .sidebar-hub-links {
+  padding: 0 0 1.5rem 0;
+}
+
+.gdoc-nav--more .sidebar-hub-divider {
+  margin: 0 0 .75rem;
+  border: none;
+  border-top: 1px solid var(--control-icons);
+  opacity: 0.4;
+}
+
+.gdoc-nav--more .sidebar-hub-logo-link {
+  display: block;
+  margin-bottom: .6rem;
+}
+
+.gdoc-nav--more .sidebar-hub-wordmark {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+.gdoc-nav--more .sidebar-hub-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gdoc-nav--more .sidebar-hub-nav li {
+  margin: 0;
+}
+
+.gdoc-nav--more .sidebar-hub-nav a {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .2rem 0;
+  font-size: .85rem;
+  color: var(--body-font-color);
+  text-decoration: none;
+}
+
+.gdoc-nav--more .sidebar-hub-nav a:hover {
+  color: #0095d5;
+  text-decoration: none;
+}
+
+.gdoc-nav--more .sidebar-hub-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: #0095d5;
+}
+
+.gdoc-nav--more .sidebar-hub-icon-img {
+  object-fit: contain;
+  fill: unset;
+}
+
+.gdoc-nav--more .sidebar-hub-icon-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.gdoc-nav--more .sidebar-hub-icon-svg svg {
+  min-width: 18px;
+  height: 18px;
+  fill: #0095d5;
 }

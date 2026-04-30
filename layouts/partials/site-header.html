@@ -1,7 +1,7 @@
 {{ partial "truenas-header.html" . }}
 
 <nav id="sitenav">
-    {{ partial "docs-nav" }}
+    {{ partial "docs-nav" .Root }}
     {{ if .MenuEnabled }}
     <label for="menu-control" class="gdoc-nav__control" id="leftnavbutton" tabindex="0" style="padding:0 1rem 0 1rem;">
         <svg class="gdoc-icon gdoc_menu">
