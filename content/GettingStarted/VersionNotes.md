@@ -183,6 +183,11 @@ These are ongoing issues that can affect multiple versions in the 26 series.
   As a workaround, edit the affected share and change the **Share Purpose** from **Legacy Share** to one of the currently available options. The **Legacy Share** type and recycle bin feature are in the process of being deprecated and are no longer selectable in the UI.
   Resolved in 26-BETA.2.
 
+* GPU isolation and GPU passthrough to virtual machines do not function correctly after upgrading to 26-BETA.1 if a GPU was previously isolated in **System > Advanced Settings** or added to a VM ([NAS-140687](https://ixsystems.atlassian.net/browse/NAS-140687)).
+  A regression in the upgrade script silently fails to apply required initramfs customizations for GPU device isolation, leaving the GPU in an unavailable state after the upgrade. Affected systems encounter a "device is not available" error when attempting to start a VM with a passed-through GPU, or find that GPU isolation does not take effect.
+  Workaround: Remove the GPU from the VM in the UI, then remove the GPU isolation entry from **System > Advanced Settings**. Re-add the GPU in **System > Advanced Settings**, reboot the system, then re-add the GPU to the VM.
+  Resolved in 26-BETA.2.
+
 <a href="https://ixsystems.atlassian.net/issues?filter=14297" target="_blank">See the latest status on Jira</a> for public issues discovered in 26-BETA.1 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
