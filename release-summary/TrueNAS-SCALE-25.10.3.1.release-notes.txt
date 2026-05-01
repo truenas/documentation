@@ -1,0 +1,9 @@
+## TrueNAS 25.10.3.1
+
+This is a small maintenance release containing fixes primarily affecting TrueNAS Enterprise systems and users.
+
+<!-- Placeholder: Add bullet points when Jira tickets become public -->
+
+**Pre-Update Actions:** None required when updating from 25.10.3.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.3.1)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
