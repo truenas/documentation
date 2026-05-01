@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.3"
+    anchor: "25.10.3.1"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,6 +34,20 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="25.10.3.1" data-tab-label="25.10.3.1">
+
+<!-- Release date placeholder -->
+
+The TrueNAS team is pleased to release TrueNAS 25.10.3.1!
+This is a small maintenance release containing fixes primarily affecting TrueNAS Enterprise systems and users.
+
+**Notable changes:**
+
+<!-- Placeholder: Add notable changes when tickets become public -->
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14398" target="_blank">TrueNAS 25.10.3.1 (Goldeye) Changelog</a> in Jira.
+
+  </div>
   <div data-tab-id="25.10.3" data-tab-label="25.10.3">
 
 April 14, 2026
@@ -519,7 +533,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   This issue is resolved in TrueNAS 26.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=14131" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues?filter=14399" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -545,7 +559,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.3');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.3.1');
 });
 </script>
 
