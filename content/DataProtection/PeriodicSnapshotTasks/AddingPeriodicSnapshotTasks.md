@@ -84,6 +84,8 @@ Some applications limit filename or path length, and there might be limitations 
 Always consider future uses and ensure the name given to a periodic snapshot is acceptable.
 {{< /hint >}}
 
+{{< include file="/static/includes/FilesystemNameLengthNote.md" >}}
+
 ### Setting Snapshot Lifetimes
 
 A snapshot lifetime value defines how long the snapshot schedule ignores that snapshot when it looks for obsolete snapshots to remove.
