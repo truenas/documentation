@@ -7,6 +7,8 @@ A snapshot and any files it contains are not accessible or searchable if the sna
 The data within the snapshot is safe but to make the snapshot accessible again shorten the mount path.
 {{< /hint >}}
 
+{{< include file="/static/includes/FilesystemNameLengthNote.md" >}}
+
 Users can browse and search any files they have permission to access throughout the entire dataset snapshot collection.
 
 When creating a snapshot, permissions or ACLs set on files within that snapshot might limit access to the files.
