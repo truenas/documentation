@@ -39,11 +39,12 @@ jump_to_buttons:
 <!-- Release date placeholder -->
 
 The TrueNAS team is pleased to release TrueNAS 25.10.3.1!
-This is a small maintenance release containing fixes primarily affecting TrueNAS Enterprise systems and users.
+This release mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a Linux kernel vulnerability in the AEAD cryptographic socket interface, and includes additional fixes primarily affecting TrueNAS Enterprise systems and users.
 
 **Notable changes:**
 
-<!-- Placeholder: Add notable changes when tickets become public -->
+* Mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a CVSS 7.8 local privilege escalation vulnerability in the Linux kernel AEAD cryptographic socket interface (CWE-669: Incorrect Resource Transfer Between Spheres).
+  While the specific attack vector does not directly affect ZFS, TrueNAS integrates the upstream kernel patch as a security best practice. The fix reverts AEAD socket operations to out-of-place mode, eliminating the incorrect resource transfer between memory spheres that the vulnerability exploits.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14398" target="_blank">TrueNAS 25.10.3.1 (Goldeye) Changelog</a> in Jira.
 
