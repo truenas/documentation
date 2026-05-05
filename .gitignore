@@ -12,6 +12,9 @@ scripts/release_notes/output/
 scripts/release_notes/config.yaml
 *.backup
 
+# Superpowers specs and plans
+docs/superpowers/
+
 # Python
 __pycache__/
 *.py[cod]
