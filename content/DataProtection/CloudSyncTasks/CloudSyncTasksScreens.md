@@ -221,4 +221,6 @@ The **Edit Cloud Sync Task** screen **Advanced Remote Options** screen has an ad
 | **Bandwidth limit** | Sets the bandwidth limit. Enter a single bandwidth limit or bandwidth limit schedule in rclone format. For example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. Separate entries by pressing <kbd>Enter</kbd>. You can specify units with the beginning letter **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
 {{< /truetable >}}
 
+{{< include file="/static/includes/FilesystemNameLengthNote.md" >}}
+
 {{< include file="/static/includes/FilenameEncryption.md" >}}

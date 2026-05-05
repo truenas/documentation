@@ -83,10 +83,12 @@ Settings change based on the option (**Module** or **SSH**) set in **Rsync Mode*
 | **Connect using** | (Required) When **Rsync Mode** is set to **SSH**, shows two options: <br><li>**SSH private key stored in user's home directory** - The user entered in **User** must have an SSH private key added and stored in the home directory for the user. Create the SSH connection and keypair, download the keys, then add the private key to the user in the UI and to the home directory either from the **Shell** using Linux CLI commands or while in an SSH session with the system. <br><li>**SSH connection from the keychain** - Requires creating an [SSH connection and keypair]({{< ref "AddSSHConnectionKeyPair" >}}) before setting up the rsync task. Shows the **SSH Connection** dropdown list showing SSH connections configured in the system.</li> |
 | **SSH Connection** | Shows when **Rsync Mode** is set to **SSH**, and **Connect Using** is set to **SSH connecton from the keychain**. Shows a dropdown list of SSH connections added in TrueNAS. Sets the rsync task to use the selected SSH connection to authenticate sync operations with the remote server. |
 | **Remote SSH Port** |  (Required) If **Rsync Mode** is set to **SSH**, enter the SSH port number of the remote system. By default, **22** is reserved in TrueNAS. |
-| **Remote Path** | Enter an existing path on the remote host. Maximum path length is 255 characters. |
+| **Remote Path** | Enter an existing path on the remote host. Maximum path length is 255 bytes. |
 | **Validate Remote Path** | Shows when **Rsync Mode** is set to **SSH**. Set to test the remote server connection and verify that the defined **Remote Path** exists. |
 {{< /truetable >}}
 {{< /expand >}}
+
+{{< include file="/static/includes/FilesystemNameLengthNote.md" >}}
 
 ### Schedule and More Options
 

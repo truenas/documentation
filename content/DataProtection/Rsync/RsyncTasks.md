@@ -91,7 +91,9 @@ You can use the SSS connection created in [Setting Up an SSH Connection](#settin
 
    If the connection fails, the system lets you know what is wrong so you can correct the issue with the connection.
 
-6. Enter the full path to the dataset on the remote server in **Remote Path**. The maximum path length is 255 characters.
+6. Enter the full path to the dataset on the remote server in **Remote Path**. The maximum path length is 255 bytes.
+
+{{< include file="/static/includes/FilesystemNameLengthNote.md" >}}
 
    To confirm the remote server is reachable and the path exists, leave **Validate Remote Path** selected.
 
