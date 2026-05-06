@@ -3,8 +3,9 @@ title: "Configuring ACL Permissions"
 description: "Provides general information on ACLs, and instructions on editing and viewing ACL permissions using the ACL editor screens."
 weight: 20
 aliases:
+ - /scale/datasets/permissions/permissions/
  - /scale/scaletutorials/datasets/permissionsscale/
- - /scale/scaleuireference/storage/pools/permissionsscale
+
  - /scale/scaletutorials/storage/pools/permissionsscale
  - /scale/scaletutorials/storage/datasets/permissionsscale/
 tags:
@@ -37,6 +38,12 @@ The **Dataset Preset** setting on the **Add Dataset** screen determines the type
 Datasets created with the **Generic** dataset preset have the ACL type set to a POSIX (Unix) ACL.
 Datasets created with the **SMB** dataset preset have the ACL type set to an NFSv4 ACL.
 SMB shares require the more robust configurations in an NFSv4 ACL.
+
+{{< hint type="important" title="SMB Shares Require NFSv4 ACLs" >}}
+Only use NFSv4 ACLs with SMB shares.
+Using POSIX ACLs with SMB shares can result in unexpected permissions behavior.
+{{< /hint >}}
+
 For most cases, a POSIX ACL is all you need.
 If you want the more granular ACL controls in the NFSv4 ACL, you can create a dataset using the **SMB** dataset preset without creating an SMB share, or you can use the **ACL Type** option on the **Add Dataset > Advanced Options** screen to change a dataset using the **Generic** preset from a POSIX to NFSv4 ACL.
 For a more in-depth explanation of ACLs and configurations in TrueNAS, see our [ACL Primer](https://www.truenas.com/docs/references/aclprimer/).
@@ -190,7 +197,7 @@ To ensure functionality, add an ACE for the `truenas_container_unpriv_root` user
 
 For container environments, verify that the ACL includes an entry for `truenas_container_unpriv_root` with the required access to any dataset paths used by the container.
 
-See [Granting Root Access to Host Paths]({{< relref "/SCALE/Containers/Containers.md#granting-root-access-to-host-paths" >}}) for more information.
+See [Granting Root Access to Host Paths]({{< relref "/SCALE/Containers/ManagingContainers.md#granting-root-access-to-host-paths" >}}) for more information.
 {{< /hint >}}
 
 ## Configuring an NFSv4 ACL

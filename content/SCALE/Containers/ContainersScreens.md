@@ -299,7 +299,7 @@ File system devices allow containers to read and write data to TrueNAS datasets 
 
 For existing filesystem devices, the <span class="material-icons">more_vert</span> actions menu includes options to **Edit** or **Delete** the filesystem device.
 
-See [Configuring Filesystem Devices]({{< relref "/SCALE/Containers/Containers.md#configuring-filesystem-devices" >}}) in the Containers tutorial for configuration procedures.
+See [Configuring Filesystem Devices]({{< relref "/SCALE/Containers/ManagingContainers.md#configuring-filesystem-devices" >}}) in the Containers tutorial for configuration procedures.
 
 ### NIC Devices Card
 
@@ -369,5 +369,5 @@ For detailed field descriptions, see the **[Add Container Screen](#add-container
 
 In High Availability configurations, containers with autostart enabled automatically restart on the new active controller after a failover.
 Ensure containers have static IP addresses configured to maintain network connectivity after failover.
-See [Containers in High Availability Environments]({{< relref "/SCALE/Containers/Containers.md#containers-in-high-availability-environments" >}}) for details.
+See [Containers in High Availability Environments]({{< relref "/SCALE/Containers/ManagingContainers.md#configuring-containers-in-high-availability-environments" >}}) for details.
 {{< /enterprise >}}

@@ -14,6 +14,7 @@ aliases:
   - /core/solutions/integrations/vmware/truenasvcenterplugin/
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.4.0/
+  - /releasenotes/vcenterplugin/3.4.0/
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.3.0/
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.2.0/
   - /solutions/integrations/vmware/truenasvcenterplugin/releasenotes/3.1.0/  

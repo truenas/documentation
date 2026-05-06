@@ -6,6 +6,7 @@ aliases:
  - /scale/dataprotection/cloudsynctasks/cloudsynctasksscreens/
  - /scale/dataprotection/cloudsynctasks/cloud-sync-tasks/
  - /scale/scaleclireference/task/cloudsync/
+ - /scale/scaleuireference/dataprotection/cloudsynctasksscreensscale/
 tags:
 - cloud
 - backup
@@ -222,5 +223,7 @@ The **Edit Cloud Sync Task** screen **Advanced Remote Options** screen has an ad
 | **Transfers** | Sets the option for the number of simultaneous file transfers based on the available bandwidth and destination system performance to the option selected on the dropdown list. Options: **Low Bandwidth(4)**, **Medium Bandwidth (8)**, **High Bandwidth(16)**, and **Custom**. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
 | **Bandwidth limit** | Sets the bandwidth limit. Enter a single bandwidth limit or bandwidth limit schedule in rclone format. For example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. Separate entries by pressing <kbd>Enter</kbd>. You can specify units with the beginning letter **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
 {{< /truetable >}}
+
+{{< include file="/static/includes/FilesystemNameLengthNote.md" >}}
 
 {{< include file="/static/includes/FilenameEncryption.md" >}}

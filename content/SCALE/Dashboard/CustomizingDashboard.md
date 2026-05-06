@@ -4,6 +4,7 @@ description: "Tutorials related to using the TrueNAS Dashboard. Includes instruc
 weight: 10
 aliases:
  - /scale/scaletutorials/dashboard/
+ - /scale/scaletutorials/dashboard/scaletimesync/
 tags:
 - dashboard
 related: true

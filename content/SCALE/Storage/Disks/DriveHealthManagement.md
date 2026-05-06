@@ -2,6 +2,11 @@
 title: "Drive Health Management"
 description: "Describes how TrueNAS monitors drive health using SMART polling and ZFS event detection, and explains alert types, manual testing options, and Enterprise considerations."
 weight: 60
+aliases:
+ - /scale/scaletutorials/dataprotection/smarttestsscale/
+ - /scale/dataprotection/smarttestsscale/
+ - /scale/scaletutorials/systemsettings/services/smartscale/
+ - /scale/scaletutorials/systemsettings/services/smartservicesscale/
 tags:
 - disks
 keywords:
