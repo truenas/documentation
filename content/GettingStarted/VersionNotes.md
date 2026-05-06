@@ -46,6 +46,9 @@ This release mitigates [CVE-2026-31431](https://security.truenas.com/link/?refer
 * Mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a CVSS 7.8 local privilege escalation vulnerability in the Linux kernel AEAD cryptographic socket interface (CWE-669: Incorrect Resource Transfer Between Spheres).
   While the specific attack vector does not directly affect ZFS, TrueNAS integrates the upstream kernel patch as a security best practice. The fix reverts AEAD socket operations to out-of-place mode, eliminating the incorrect resource transfer between memory spheres that the vulnerability exploits.
 
+* Fixes Kerberos-secured NFS mounts failing after HA failover or system reboot when the NFS service is not configured to start automatically ([NAS-138933](https://ixsystems.atlassian.net/browse/NAS-138933)).
+  When the NFS service did not have **Start Automatically** enabled, gssproxy failed to initialize when the service was started manually after a reboot or failover, causing `/proc/net/rpc/use-gss-proxy` to return 0. Kerberos-secured NFS mounts (krb5, krb5i, and krb5p) were unavailable as a result. This affected systems joined to both FreeIPA and Active Directory.
+
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14398" target="_blank">TrueNAS 25.10.3.1 (Goldeye) Changelog</a> in Jira.
 
   </div>
