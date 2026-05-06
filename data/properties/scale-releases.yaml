@@ -30,7 +30,7 @@ majorVersions:
       - name: "25.10.3.1"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.3.1"
-        releaseDate: "TBD"
+        releaseDate: "2026-05-06"
         latest: true
       - name: "25.10.3"
         type: "Maintenance"
