@@ -10,7 +10,6 @@ doctype: tutorial
 ---
 
 
-
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
 
 TrueNAS uses predefined setting options to establish an SMB share that fits a predefined purpose, such as a basic Time Machine share.
