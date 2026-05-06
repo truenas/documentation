@@ -11,11 +11,6 @@ tags:
 doctype: tutorial
 ---
 
-
-{{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
-
-{{< include file="/static/includes/TimeMachineMultiprotocol.md" >}}
-
 ## About Multi-Protocol Shares
 
 A multi-protocol or mixed-mode NFS and SMB share supports both NFS and SMB protocols for sharing data.
