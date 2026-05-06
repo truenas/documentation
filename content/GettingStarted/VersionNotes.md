@@ -36,7 +36,7 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.3.1" data-tab-label="25.10.3.1">
 
-<!-- Release date placeholder -->
+May 6, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.3.1!
 This release mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a Linux kernel vulnerability in the AEAD cryptographic socket interface, and includes additional fixes primarily affecting TrueNAS Enterprise systems and users.
