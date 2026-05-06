@@ -1,6 +1,6 @@
 ---
 title: "F-Series"
-weight: 10
+weight: 11
 hide_title: true
 description: "NAS storage suited for performance projects, virtualization, M&E, and analytics. Highly available ZFS with dual port NVMe Gen4 SSDs, Copy-on-Write, snapshots, and RAID-Z."
 keywords: 
