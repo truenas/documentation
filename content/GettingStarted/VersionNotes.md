@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.3"
+    anchor: "25.10.3.1"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,6 +34,24 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="25.10.3.1" data-tab-label="25.10.3.1">
+
+May 7, 2026
+
+The TrueNAS team is pleased to release TrueNAS 25.10.3.1!
+This release mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a Linux kernel vulnerability in the AEAD cryptographic socket interface, and includes additional fixes primarily affecting TrueNAS Enterprise systems and users.
+
+**Notable changes:**
+
+* Mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a CVSS 7.8 local privilege escalation vulnerability in the Linux kernel AEAD cryptographic socket interface (CWE-669: Incorrect Resource Transfer Between Spheres).
+  While the specific attack vector does not directly affect ZFS, TrueNAS integrates the upstream kernel patch as a security best practice. The fix reverts AEAD socket operations to out-of-place mode, eliminating the incorrect resource transfer between memory spheres that the vulnerability exploits.
+
+* Fixes Kerberos-secured NFS mounts failing after HA failover or system reboot when the NFS service is not configured to start automatically ([NAS-138933](https://ixsystems.atlassian.net/browse/NAS-138933)).
+  When the NFS service did not have **Start Automatically** enabled, gssproxy failed to initialize when the service was started manually after a reboot or failover, causing `/proc/net/rpc/use-gss-proxy` to return 0. Kerberos-secured NFS mounts (krb5, krb5i, and krb5p) were unavailable as a result. This affected systems joined to both FreeIPA and Active Directory.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14398" target="_blank">TrueNAS 25.10.3.1 (Goldeye) Changelog</a> in Jira.
+
+  </div>
   <div data-tab-id="25.10.3" data-tab-label="25.10.3">
 
 April 14, 2026
@@ -519,7 +537,12 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   This issue is resolved in TrueNAS 26.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=14131" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+* The **Reload** button in the new license confirmation dialog does not reload the web interface ([NAS-140931](https://ixsystems.atlassian.net/browse/NAS-140931)).
+  After applying a new license, the confirmation dialog appears with a **Reload** button. Clicking **Reload** does not trigger a page reload; the license is applied correctly but the web interface continues to display the pre-license state until the page is manually refreshed.
+
+  Workaround: After applying a new license, manually refresh the browser page to update the web interface.
+
+<a href="https://ixsystems.atlassian.net/issues?filter=14399" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -545,7 +568,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.3');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.3.1');
 });
 </script>
 

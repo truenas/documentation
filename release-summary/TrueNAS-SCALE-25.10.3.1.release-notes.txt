@@ -1,0 +1,9 @@
+## TrueNAS 25.10.3.1
+
+This release mitigates CVE-2026-31431, a Linux kernel vulnerability in the AEAD cryptographic socket interface, and includes additional fixes primarily affecting TrueNAS Enterprise systems and users.
+
+- **Security:** Mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431) (CVSS 7.8), a local privilege escalation vulnerability in the Linux kernel AEAD cryptographic socket interface. While the specific attack vector does not directly affect ZFS, TrueNAS integrates the upstream kernel patch as a security best practice.
+
+**Pre-Update Actions:** None required when updating from 25.10.3.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.3.1)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
