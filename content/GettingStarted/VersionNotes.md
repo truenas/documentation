@@ -49,6 +49,9 @@ This release mitigates [CVE-2026-31431](https://security.truenas.com/link/?refer
 * Fixes Kerberos-secured NFS mounts failing after HA failover or system reboot when the NFS service is not configured to start automatically ([NAS-138933](https://ixsystems.atlassian.net/browse/NAS-138933)).
   When the NFS service did not have **Start Automatically** enabled, gssproxy failed to initialize when the service was started manually after a reboot or failover, causing `/proc/net/rpc/use-gss-proxy` to return 0. Kerberos-secured NFS mounts (krb5, krb5i, and krb5p) were unavailable as a result. This affected systems joined to both FreeIPA and Active Directory.
 
+* Restores SNMP visibility for ZFS filesystem datasets and adds a new MIB table covering the full dataset tree.
+  A long-standing regression caused the SNMP agent to report only zvols, silently omitting filesystem datasets from network monitoring tools such as Zabbix and Nagios. The SNMP agent now enumerates the complete dataset tree. A new `datasetTable` MIB entry exposes both filesystems and zvols with index, descriptor, and used, available, and referenced byte counts. The existing `zvolTable` is unchanged, so monitoring configurations that already poll it continue to work.
+
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14398" target="_blank">TrueNAS 25.10.3.1 (Goldeye) Changelog</a> in Jira.
 
   </div>
