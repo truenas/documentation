@@ -537,6 +537,11 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   This issue is resolved in TrueNAS 26.
 
+* The **Reload** button in the new license confirmation dialog does not reload the web interface ([NAS-140931](https://ixsystems.atlassian.net/browse/NAS-140931)).
+  After applying a new license, the confirmation dialog appears with a **Reload** button. Clicking **Reload** does not trigger a page reload; the license is applied correctly but the web interface continues to display the pre-license state until the page is manually refreshed.
+
+  Workaround: After applying a new license, manually refresh the browser page to update the web interface.
+
 <a href="https://ixsystems.atlassian.net/issues?filter=14399" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
