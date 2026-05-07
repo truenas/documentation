@@ -168,32 +168,30 @@ If the dataset does not yet have an NFS share, continue with steps 6–8.
 
 After creating the multiprotocol share using either method, complete the following steps.
 
-### Editing the NFS Share
+### Configuring the NFS Share
 
-After creating the multiprotocol share, you can customize the NFS share further. Go to **Shares** and edit the NFS share.
+Go to **Shares** and edit the NFS share to configure additional settings.
 
 1. Select the new share listed on **Unix (NFS) Shares** widget, click on the <span class="material-icons">more_vert</span> icon and then click **Edit**.
    The **Edit NFS** screen opens with the **Basic Options** settings showing.
 
-    {{< trueimage src="/images/SCALE/Shares/EditNFSMultiProtocolShare.png" alt="Edit NFS Multi-Protocol Share" id="Edit NFS Multi-Protocol Share" >}}
+    {{< trueimage src="/images/SCALE/Shares/EditNFSMultiProtocolShare.png" alt="Edit NFS Multiprotocol Share" id="Edit NFS Multiprotocol Share" >}}
 
-2. Enable Kerberos security. Click **Advanced Options**.
-    Select **KRB5** from the **Security** dropdown to enable the Kerberos ticket generated when you [joined Active Directory](#securing-nfs-access).
+2. If you are using Active Directory, we recommend enabling Kerberos security. Click **Advanced Options** and select **KRB5** from the **Security** dropdown.
+   This applies the Kerberos ticket generated when you [joined Active Directory](#securing-nfs-access).
 
    {{< trueimage src="/images/SCALE/Shares/EditNFSShareAdvancedSecuritySetting.png" alt="Advanced Options Security Settings" id="Advanced Options Security Settings" >}}
 
-    If needed, select **Read-Only** to prohibit writing to the share.
+3. (Optional) Select **Read-Only** to prevent clients from writing to the share.
+   Use this to expose the share as a read-only data source, for example when multiple teams need access to the same files but only one should be able to modify them.
 
-3. Click **Save**.
-
-Start or restart the service when prompted.
+4. Click **Save**.
 
 ### Adjusting the Dataset ACL
 
-After creating the multiprotocol share, adjust the dataset permission or use the SMB file system permissions to match the container and users configured in AD, if applicable.
+Use the **Edit ACL** screen to verify that users and groups who need access to the share have the correct permissions.
 
-You can modify dataset permissions from the **Shares** screen using <span class="material-icons">security</span> **Edit Filesystem ACL** to open the [**Edit ACL**](#edit-filesystem-acl-screen) screen.
-Select the share row on the widget, then click the security icon to open the dataset ACL editor.
+To open the ACL editor from the **Shares** screen, select the share row on the **Windows (SMB) Shares** widget and click <span class="material-icons">security</span> **Edit Filesystem ACL**.
 
 {{< hint type=note >}}
 Editing the dataset ACL sets permissions for both the SMB and NFS shares.
@@ -201,21 +199,21 @@ Editing the dataset ACL sets permissions for both the SMB and NFS shares.
 
 {{< trueimage src="/images/SCALE/Shares/EditMultimodeShareDatasetPermissions.png" alt="Editing Share Dataset ACL" id="Editing Share Dataset ACL" >}}
 
-Or go to **Datasets**, select the dataset row created for the multi-protocol share on the **Datasets** table, then scroll down to the **Permissions** widget for the dataset.
+Alternatively, go to **Datasets**, select the dataset row created for the multiprotocol share on the **Datasets** table, then scroll down to the **Permissions** widget for the dataset.
 Click **Edit** to open the **Edit ACL** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/EditMultimodeDatasetPermissions.png" alt="Editing Multi-Mode Dataset Permissions" id="Editing Multi-Mode Dataset Permissions" >}}
 
-Check the **Access Control List** to see if the AD group you created is on the list and has the correct permissions.
-If not, add this Access Control Entry (ACE) item on the **Edit ACL** screen for the multiprotocol dataset (or each share).
+Review the **Access Control List** to verify the required users or groups are present with the correct permissions.
+If not, add an Access Control Entry (ACE).
 
-1. Enter **Group** in the **Who** field or use the dropdown list to select **Group**.
+1. Select **User** or **Group** from the **Who** dropdown. If using Active Directory, select **Group** and enter your AD group.
 
-2. Type or select the appropriate group in the **Group** field.
+2. Enter or select the user or group name in the field below.
 
-3. Verify **Full Control** displays in **Permissions**. If not, select it from the dropdown list.
+3. Set the appropriate level in the **Permissions** dropdown. Select **Full Control** to grant full read and write access.
 
-4. Click **Save Access Control List** to add the ACE item or save changes.
+4. Click **Save Access Control List** to apply the changes.
 
 See [Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}) for more information on editing dataset permissions.
 
