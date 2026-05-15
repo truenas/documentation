@@ -42,6 +42,10 @@ Enter the password for this account.
 * Verify name resolution.
   Go to **Network > Global Network Settings** to verify your TrueNAS network DNS name servers are configured with the target domain controller address that you plan to add on the **Active Directory** screen.
 
+* Verify the domain controller has a valid PTR record in DNS.
+
+  TrueNAS performs a reverse DNS (PTR) lookup on the domain controller IP address during the domain join process. Kerberized services broadly require domain controllers to be resolvable via reverse DNS — without a valid PTR record, service behavior is unpredictable. Windows typically creates PTR records for domain controllers automatically, but confirm the record exists and resolves correctly before attempting to join.
+
 * Change the default hostname of the system from **truenas** to the name assigned to the TrueNAS system.
 
 * [Set time synchronization](#setting-time-synchronization)
