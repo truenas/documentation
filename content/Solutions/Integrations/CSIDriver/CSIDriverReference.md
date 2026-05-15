@@ -7,7 +7,7 @@ tags:
 - CSI driver
 - Kubernetes
 related: false
-doctype: tutorial
+doctype: reference
 ---
 
 
