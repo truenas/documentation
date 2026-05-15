@@ -21,8 +21,7 @@ Kubernetes is an open-source container orchestration platform that automates dep
 
 The following are important terms and foundational to how the CSI driver works with Kubernetes:
 
-* **Pod** - A pod is the smallest deployable unit in Kubernetes. It contains one or more containers.
-  It can be created and destroyed frequently. They need persistent storage to retain data beyond their lifecycle.
+* **Pod** - A pod is the smallest deployable unit in Kubernetes. It contains one or more containers. Because pods can be created and destroyed frequently, they need persistent storage to retain data beyond their lifecycle.
 
 * **Persistent Volume** - A persistent volume is a piece of storage in the cluster, provisioned by the Kubernetes administrator or can be dynamically provisioned via storage classes (StorageClass). It exists independently of pods, and has a lifecycle independent of any pod that uses it.
 
@@ -35,11 +34,11 @@ The following are important terms and foundational to how the CSI driver works w
 
 * **StorageClass** - A StorageClass defines classes of storage with different properties. They enable dynamic provisioning, specifying which provisioner to use (for example, TrueNAS CSI Driver), and contains parameters for that provisioner (pool name, compression, etc.).
 
-* **Container Storage Interface (CSI)** - A container storage interface (CSI) is an industry standard for storage plugins in Kubernetes. They enable storage vendors to write one plugin that works everywhere. They separate storage logic from Kubernetes core. The TrueNAS CSI driver implements this standard!
+* **Container Storage Interface (CSI)** - A container storage interface (CSI) is an industry standard for storage plugins in Kubernetes. It enables storage vendors to write one plugin that works everywhere, and separates storage logic from Kubernetes core. The TrueNAS CSI driver implements this standard.
 
 ### How it works
 
-A user creates a PVC requesting storage (creates a YAML file specifying, volume size, access mode, StorageClass, etc.).
+A user creates a PVC requesting storage (creates a YAML file specifying volume size, access mode, StorageClass, etc.).
 Kubernetes calls the CSI driver CreateVolume function (executes the <code>kubectl apply -f <i>filename.yaml</i></code> command)
 The CSI driver creates storage on the backend (TrueNAS creates the volume per request in YAML file), and then returns volume information to Kubernetes.
 Kubernetes then creates a PV and binds it to a PVC.
@@ -47,7 +46,7 @@ A pod can now mount and use the volume.
 
 ## Best Practices
 
-Before deploying the CSI driver integration, review the following best practices sessions to assist with planning the implementation in Kubernetes.
+Before deploying the CSI driver integration, review the following best practices sections to assist with planning the implementation in Kubernetes.
 
 ### Deployment Best Practices
 
@@ -684,13 +683,7 @@ Export PVC/PV definitions regularly.
 
 ## Glossary
 
-**CSI (Container Storage Interface):** Industry standard specification for storage plugins in Kubernetes.
-
-**PV (PersistentVolume):** A piece of storage in the cluster, provisioned by an admin or dynamically.
-
-**PVC (PersistentVolumeClaim):** A request for storage by a user.
-
-**StorageClass:** Defines classes of storage with different QoS, backup policies, etc.
+For definitions of Kubernetes terms (Pod, Persistent Volume, PersistentVolumeClaim, StorageClass, Container Storage Interface), see [Kubernetes Fundamentals](#kubernetes-fundamentals).
 
 **ZFS:** Advanced filesystem with features like snapshots, clones, compression, and data integrity.
 

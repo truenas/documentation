@@ -25,7 +25,7 @@ The TrueNAS administrator does the one-time setup that consists of:
 * Turning on the appropriate service (nfs for file or iscsi for block storage requests)
 * Supplying the Kubernetes administrator with the API and IP address of the TrueNAS system
 
-Each Kubernetes cluster user (developer) creates a yaml file that specifies the volume size, access mode, StorageClass, etc., then submits this PVC request in Kubernetes using a kubectl command.
+Each Kubernetes cluster user (developer) creates a YAML file that specifies the volume size, access mode, StorageClass, etc., then submits this PVC request in Kubernetes using a kubectl command.
 TrueNAS receives the request, adds the requested volumes based on the StorageClass information received in the yaml file.
 
 The CSI driver does the work of communicating what is received from Kubernetes, passes it to TrueNAS, and then sends information from TrueNAS back to Kubernetes where users can mount the storage volume(s) requested.
@@ -52,7 +52,7 @@ The CSI driver does the work of communicating what is received from Kubernetes, 
 
 * Network connectivity - Kubernetes nodes must reach TrueNAS IP
 
-* Storage pool - provide at least one ZFS pool with space available to meet the users needs
+* Storage pool - provide at least one ZFS pool with space available to meet user needs
 
 * API key with administrative privileges to authenticate Kubernetes connections
 
@@ -72,7 +72,7 @@ Log in to TrueNAS:
 
 1. Generate an API key for Kubernetes.
    
-   a. Click on **Settings** on the top toolbar, then click **My API Keys** to open the **User API Keys** screen.
+   a. Click **Settings** on the top toolbar, then click **My API Keys** to open the **User API Keys** screen.
    b. Click **Add**, enter a name for the key, for example, *Kubernetes* or *CSI driver*.
    c. Click **Save**. 
    d. Copy the key to a txt file or a document you keep secured, and backed up regularly.
@@ -89,14 +89,14 @@ Log in to TrueNAS:
    b. Edit the service settings to provide the required port access. For the NFS service, set TCP port 2049, and set UDP port 2049.
       For iSCSI, set TCP port 3260.
    c. Click **Save**.
-   d. Click on the enable-service toggle to turn on the **NFS** and/or **iSCSI** services based on your use case. 
+   d. Click the enable-service toggle to turn on the **NFS** and/or **iSCSI** services based on your use case. 
       If you installed the nfs-common package on the Kubernetes worker nodes, enable the NFS service. If you installed the open-iscsi package on the Kubernetes worker nodes, enable the iSCSI service.
 
 3. Create a new pool or locate a pool with enough storage to accommodate the Kubernetes cluster storage needs.
    Go to **Storage Dashboard**, identify a pool with enough storage capacity to suit your use case, or click **Create Pool** to add a new pool for Kubernetes volumes.
    For more information on creating new pools, see [Creating Pools]({{< ref "CreatingPools" >}}). To increase storage in an existing pool, see [Expanding a Pool in Managing Pools]({{< ref "ManagePools" >}}).
   
-4. Verify the Websocket API port is set to port 443. Go to **System > General Settings**. The **Gui** card should show the Web Interface HTTPS port set to 443.
+4. Verify the WebSocket API port is set to port 443. Go to **System > General Settings**. The **GUI** card should show the Web Interface HTTPS port set to 443.
    If not, click **Settings**, locate the **Web Interface HTTPS Port** field and change the value to 443. Click **Save** after making a change.
 
    Provide the pool name to the Kubernetes cluster administrator.
