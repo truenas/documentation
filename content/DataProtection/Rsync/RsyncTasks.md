@@ -146,7 +146,7 @@ Enable the SSH service on the remote system according to the configuration proce
 ## Setting Up an Rsync Task Using Module Mode 
 
 Before you create an rsync task in module mode, you must [define at least one module](#defining-an-rsync-module) per [rsyncd.conf(5)](https://www.samba.org/ftp/rsync/rsyncd.conf.html) on the remote rsync server.
-The [Rsync Daemon](https://apps.truenas.com/catalog/rsyncd/) application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
+The [Rsync Daemon](https://apps.truenas.com/catalog/rsyncd_community/) application is available in situations where configuring TrueNAS as an rsync server with an rsync module is necessary.
 
 After configuring the remote server with rsync and a module, configure the rsync task in TrueNAS.
 
@@ -160,7 +160,7 @@ If the non-TruNAS remote server includes an rsync service, make sure it is turne
 2. Create an rsync module.
 
    If the remote system is not a TrueNAS and has an rsync app installed, create a module according to the configuration process for that app and system.
-   If the remote system is not a TrueNAS, install an rsync app, such as [Rsyncd](https://apps.truenas.com/catalog/rsyncd/), and configure it per the instructions for the app and your remote non-TrueNAS system.
+   If the remote system is not a TrueNAS, install an rsync app, such as [Rsyncd](https://apps.truenas.com/catalog/rsyncd_community/), and configure it per the instructions for the app and your remote non-TrueNAS system.
 
    If the remote system is another TrueNAS, install an rsync app.
    Debian-based TrueNAS systems include the **Rsync Daemon** app in the Community app catalog.
