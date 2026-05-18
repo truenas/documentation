@@ -18,13 +18,6 @@ When TrueSearch is enabled in the WebShare service configuration, all active sha
 Encrypted datasets are excluded from indexing.
 Passkey authentication options provide flexible access control for WebShare users.
 
-### Ransomware Defense
-
-TrueNAS Ransomware Defense is a security service that monitors SMB and NFS file shares in real time and automatically responds to ransomware attacks to protect data stored on the TrueNAS system.
-The service is available through [TrueNAS Connect](https://connect.truenas.com/) and uses multiple detection methods, including honeypot decoy files, suspicious behavior analysis, encryption signature identification, and snapshot comparison to track unusual data changes.
-When a threat is detected, configurable protection responses can automatically disable affected shares, set them to read-only, restrict access, or pause snapshot deletion to preserve recovery points.
-IP blocking, threat scoring, and snapshot-based recovery tools are available to investigate incidents, remediate threats, and restore data.
-
 ### Containers
 
 [**Containers**]({{< relref "/Containers/ManagingContainers.md" >}}), introduced as an experimental feature in TrueNAS 25.04, are fully supported in TrueNAS 26.
