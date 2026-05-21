@@ -412,7 +412,7 @@ Unless you need a specific setting or are configuring a unique network environme
 {{< enterprise >}}
 SMB Stateful Failover requires an Enterprise license and a High Availability (HA) configuration.
 When enabled, this setting is incompatible with:
-- **Enable SMB1 support**
+- **Minimum Protocol** set to **SMB1**
 - Any share using the **Multi-Protocol Share** or **Legacy Share** purpose
 - Any auxiliary SMB parameters
 {{< /enterprise >}}

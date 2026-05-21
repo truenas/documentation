@@ -178,7 +178,7 @@ For detailed information about group validation and troubleshooting disabled sha
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Enable Logging** | Enables audit logging for the SMB share and displays two additional options: **Watch List** and **Ignore List**. This controls whether audit messages are generated for the share after configuring at least one list. <br>Note: Auditing is not available when SMB1 support is enabled for the server. <br>Starting in TrueNAS 25.10.1, shares are automatically disabled in the running configuration if the watch or ignore lists contain invalid groups. |
+| **Enable Logging** | Enables audit logging for the SMB share and displays two additional options: **Watch List** and **Ignore List**. This controls whether audit messages are generated for the share after configuring at least one list. <br>Note: Auditing is not available when **Minimum Protocol** is set to **SMB1** for the server. <br>Starting in TrueNAS 25.10.1, shares are automatically disabled in the running configuration if the watch or ignore lists contain invalid groups. |
 | **Watch List** | Specifies groups to audit. Click the field to display the dropdown list of group options. Auditing applies only to user accounts that are members of groups in this list. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence, and operations are audited. |
 | **Ignore List** | Specifies groups to exclude from auditing. Click the field to display the dropdown list of group options. If the same user belongs to groups in both the **Watch List** and **Ignore List**, the watch list takes precedence and operations are audited. |
 {{< /truetable >}}
