@@ -1,6 +1,6 @@
 ---
 title: "Adding a License and Proactive Support"
-description: "Provides instructions for TrueNAS Enterprise users to add their system license and set up proactive support."
+description: "Provides instructions for TrueNAS users on how to obtain a system fingerprint, obtain and add a system license, and set up proactive support."
 weight: 20
 aliases:
  - /scale/scaletutorials/systemsettings/general/addlicenseproactivesupport/
@@ -14,7 +14,27 @@ doctype: tutorial
 ---
 
 
+As of the TrueNAS 26.0 release and later, licenses are available to all TrueNAS users and customers. License availability fits into three groups:
+* TrueNAS Enterprise customers - Systems provided by TrueNAS and managed through TrueNAS Support.
+* TrueNAS Commercial users - Systems not provided by TrueNAS, and with licenses issued through TrueNAS Support.
+* TrueNAS Community users - Systems not provided by TrueNAS, and with licenses obtained through TrueNAS Connect accounts.
+
+A system fingerprint, obtained through the TrueNAS UI, is required for a license.
+
+## Obtaining a TrueNAS Fingerprint
+
+As of the 26.0 release, the TrueNAS UI provides a fingerprint function that obtains the system information required to acquire a TrueNAS license for features available to TrueNAS Enterprise users.
+
+To manually obtain a system fingerprint, go to **System > General Settings** and click on the **System Fingerprint** view option on the **Support** card.
+The copy option allows you to copy and paste the fingerprint information into a message to TrueNAS Support, or you can provide TrueNAS Support with access to your system to obtain the fingerprint required to obtain a license.
+After TrueNAS Support provides the feature license, add it to your TrueNAS system as described in [Adding A TrueNAS Enterprise License](#adding-a-truenas-enterprise-license).
+
+Community user TrueNAS Connect accounts obtain the TrueNAS system fingerprint through an automated process.
+
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+
 ## Adding a TrueNAS Enterprise License
+
 For users with a valid TrueNAS license, click **Add License**.
 Copy your license into the box and click **Save**.  
 
@@ -37,6 +57,7 @@ This sends an email to iXsystems declaring that the system is in production.
 While not required for declaring the system is in production, TrueNAS has the option to include an initial debug with the email that can assist support in the future.
 
 ## Setting Up Proactive Support
+
 Silver/Gold Coverage Customers can enable iXsystems Proactive Support.
 This feature automatically emails iXsystems when certain conditions occur in a TrueNAS system.
 
