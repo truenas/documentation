@@ -54,4 +54,9 @@ After mounting the SMB share:
 4. Enter search terms.
    Spotlight supports searching by file name, file content, and file type.
 
+{{< hint type=note >}}
+TrueSearch filters out the keywords *BEFORE*, *AND*, and *THE* by default.
+Use different search terms when testing Spotlight search functionality.
+{{< /hint >}}
+
 Search results appear as files are found in the TrueSearch index.
