@@ -55,17 +55,19 @@ TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 * **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.
 
 * {{< expand "Tiering" "v" >}}
+{{< enterprise >}}
 **Tiering** openes the **Tiering** screen.
 
 {{< trueimage src="/images/SCALE/Storage/TieringScreen.png" alt="TieringScreen" id="TieringScreen" >}}
 
 The **Enable** checkbox activates tiering for shared datasets.
 The **Max Concurrent Jobs** field allows you to limit the max amount of concurrent ZFS rewrite jobs.
-The **Max Used Percentage** field allows you to set the dataset capacity at which rewrite operations will abort. 
+The **Max Used Percentage** field allows you to set the dataset capacity at which rewrite operations abort. 
 
-{{< hint type=note >}}
-Enabling tiering changes share behavior. SMB shares and Webshares will no longer export child datasets.
+{{< hint type=caution title="Shares will be locked to a single dataset" >}}
+Once tiering is on, SMB shares and Webshares stop following nested datasets. Each share will expose only its own dataset, and any child datasets under it will no longer be visible to clients through that share. Create a separate share for each dataset you want to expose.
 {{< /hint >}}
+{{< /enterprise >}}
 {{< /expand >}}
 
 * **Create Pool** opens the **[Pool Creation Wizard]({{< ref "PoolCreationWizardScreen" >}})**.
