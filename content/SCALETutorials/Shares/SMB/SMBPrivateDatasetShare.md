@@ -25,7 +25,7 @@ See [Replacing SMB Home Shares](#replacing-smb-home-shares) below for more infor
 ### Adding a Share User
 
 The share user is the individual user account for the private dataset share.
-You can manually create this user as described below or by using a directory server (FreeIPA, LDAP, or Active Directory).
+You can manually create this user as described below or by using a directory server (FreeIPA or Active Directory).
 Users who require access to an SMB share must be created with the **SMB Access** granted.
 TrueNAS assigns this level of access to new users by default, but administrators can disable/enable this manually on the **Add User** or **Edit User** screen.
 
@@ -48,7 +48,7 @@ Resolve any issues with Active Directory before proceeding. If Active Directory 
 {{< /expand >}}
 
 {{< expand "Adding Share Users with Directory Services" "v" >}}
-You can use Active Directory or LDAP to create the share users.
+You can use Active Directory to create the share users.
 
 ### Creating the Private Dataset Share
 
