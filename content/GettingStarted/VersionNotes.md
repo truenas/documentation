@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.3.1"
+    anchor: "25.10.4"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,25 +34,19 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="25.10.3.1" data-tab-label="25.10.3.1">
+  <div data-tab-id="25.10.4" data-tab-label="25.10.4">
 
-May 7, 2026
+June 2, 2026
+<!-- TENTATIVE release date (slated 2-June-2026) — confirm before publishing -->
 
-The TrueNAS team is pleased to release TrueNAS 25.10.3.1!
-This release mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a Linux kernel vulnerability in the AEAD cryptographic socket interface, and includes additional fixes primarily affecting TrueNAS Enterprise systems and users.
+The TrueNAS team is pleased to release TrueNAS 25.10.4!
 
 **Notable changes:**
 
-* Mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a CVSS 7.8 local privilege escalation vulnerability in the Linux kernel AEAD cryptographic socket interface (CWE-669: Incorrect Resource Transfer Between Spheres).
-  While the specific attack vector does not directly affect ZFS, TrueNAS integrates the upstream kernel patch as a security best practice. The fix reverts AEAD socket operations to out-of-place mode, eliminating the incorrect resource transfer between memory spheres that the vulnerability exploits.
+<!-- Notable changes placeholder -->
 
-* Fixes Kerberos-secured NFS mounts failing after HA failover or system reboot when the NFS service is not configured to start automatically ([NAS-138933](https://ixsystems.atlassian.net/browse/NAS-138933)).
-  When the NFS service did not have **Start Automatically** enabled, gssproxy failed to initialize when the service was started manually after a reboot or failover, causing `/proc/net/rpc/use-gss-proxy` to return 0. Kerberos-secured NFS mounts (krb5, krb5i, and krb5p) were unavailable as a result. This affected systems joined to both FreeIPA and Active Directory.
-
-* Restores SNMP visibility for ZFS filesystem datasets and adds a new MIB table covering the full dataset tree.
-  A long-standing regression caused the SNMP agent to report only zvols, silently omitting filesystem datasets from network monitoring tools such as Zabbix and Nagios. The SNMP agent now enumerates the complete dataset tree. A new `datasetTable` MIB entry exposes both filesystems and zvols with index, descriptor, and used, available, and referenced byte counts. The existing `zvolTable` is unchanged, so monitoring configurations that already poll it continue to work.
-
-<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14398" target="_blank">TrueNAS 25.10.3.1 (Goldeye) Changelog</a> in Jira.
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=XXXXX" target="_blank">TrueNAS 25.10.4 (Goldeye) Changelog</a> in Jira.
+<!-- TODO: replace filter=XXXXX with the 25.10.4 Jira changelog filter ID -->
 
   </div>
   <div data-tab-id="25.10.3" data-tab-label="25.10.3">
@@ -90,6 +84,28 @@ The TrueNAS team is pleased to release TrueNAS 25.10.3!
 * Documentation improvement: Adds [Drive Health Management](#disk-health-management) documentation covering how TrueNAS 25.10 monitors drive health through ZFS real-time failure detection, automated 90-minute SMART polling, and improved alert filtering. Also covers manual SMART test scheduling options available to TrueNAS Community Edition users. See the [Drive Health Management tutorial]({{< ref "/SCALETutorials/Storage/Disks/DriveHealthManagement.md" >}}) for full details.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14130" target="_blank">TrueNAS 25.10.3 (Goldeye) Changelog</a> in Jira.
+
+{{< expand "25.10.3.1 Notable Changes" "v" >}}
+
+May 7, 2026
+
+The TrueNAS team is pleased to release TrueNAS 25.10.3.1!
+This release mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a Linux kernel vulnerability in the AEAD cryptographic socket interface, and includes additional fixes primarily affecting TrueNAS Enterprise systems and users.
+
+**Notable changes:**
+
+* Mitigates [CVE-2026-31431](https://security.truenas.com/link/?reference=CVE-2026-31431), a CVSS 7.8 local privilege escalation vulnerability in the Linux kernel AEAD cryptographic socket interface (CWE-669: Incorrect Resource Transfer Between Spheres).
+  While the specific attack vector does not directly affect ZFS, TrueNAS integrates the upstream kernel patch as a security best practice. The fix reverts AEAD socket operations to out-of-place mode, eliminating the incorrect resource transfer between memory spheres that the vulnerability exploits.
+
+* Fixes Kerberos-secured NFS mounts failing after HA failover or system reboot when the NFS service is not configured to start automatically ([NAS-138933](https://ixsystems.atlassian.net/browse/NAS-138933)).
+  When the NFS service did not have **Start Automatically** enabled, gssproxy failed to initialize when the service was started manually after a reboot or failover, causing `/proc/net/rpc/use-gss-proxy` to return 0. Kerberos-secured NFS mounts (krb5, krb5i, and krb5p) were unavailable as a result. This affected systems joined to both FreeIPA and Active Directory.
+
+* Restores SNMP visibility for ZFS filesystem datasets and adds a new MIB table covering the full dataset tree.
+  A long-standing regression caused the SNMP agent to report only zvols, silently omitting filesystem datasets from network monitoring tools such as Zabbix and Nagios. The SNMP agent now enumerates the complete dataset tree. A new `datasetTable` MIB entry exposes both filesystems and zvols with index, descriptor, and used, available, and referenced byte counts. The existing `zvolTable` is unchanged, so monitoring configurations that already poll it continue to work.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14398" target="_blank">TrueNAS 25.10.3.1 (Goldeye) Changelog</a> in Jira.
+
+{{< /expand >}}
 
   </div>
   <div data-tab-id="25.10.2" data-tab-label="25.10.2">
@@ -571,7 +587,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.3.1');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.4');
 });
 </script>
 
