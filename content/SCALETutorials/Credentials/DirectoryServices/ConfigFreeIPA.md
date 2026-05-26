@@ -13,13 +13,6 @@ keywords:
 
 TrueNAS provides the option to configure a FreeIPA directory service client using the **LDAP** configuration screen under **Credentials > Directory Services**.
 
-{{< expand "Does LDAP work with SMB?" "v" >}}
-LDAP authentication for SMB shares is disabled unless you configured and populated the LDAP directory with Samba attributes.
-The most popular script for performing this task is `smbldap-tools`.
-TrueNAS needs to be able to validate the full certificate chain (no self-signed certificates).
-TrueNAS does not support non-CA certificates.
-{{< /expand >}}
-
 {{< hint type=note >}}
 You can have either Active Directory or LDAP configured on TrueNAS, but not both.
 {{< /hint >}}

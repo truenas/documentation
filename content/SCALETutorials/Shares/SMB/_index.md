@@ -55,8 +55,8 @@ When an SMB share is configured but not working or is in an error state, AD cann
 Creating an SMB share on your system requires adding the share and then getting it working.
 
 1. [Create the SMB share user account](#creating-the-smb-share-user-account).
-   You can also use directory services like Active Directory or LDAP to provide additional user accounts.
-   If setting up an external SMB share, we recommend using Active Directory or LDAP, or at a minimum synchronizing the user accounts between systems.
+   You can also use Active Directory to provide additional user accounts.
+   If setting up an external SMB share, we recommend using Active Directory, or at a minimum synchronizing the user accounts between systems.
 
 2. [Create the SMB share and dataset](#adding-an-smb-share-and-dataset).
 
@@ -356,7 +356,7 @@ This feature allows admins to see and connect to any TrueNAS system with externa
 
 Create the SMB share on another TrueNAS server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
 
-We recommend using Active Directory or LDAP when creating user accounts, but at a minimum synchronize user accounts between the system with the share (*system1*) and on the TrueNAS system where you set up the external share (for example, *system2*).
+We recommend using Active Directory when creating user accounts, but at a minimum synchronize user accounts between the system with the share (*system1*) and on the TrueNAS system where you set up the external share (for example, *system2*).
 
 On *system2*, enter the host name or IP address of the system hosting the SMB share (*system1*) and the name given the share on that system as **EXTERNAL:*ip address*&bsol;*sharename*** in **Path**, then change **Name** to EXTERNAL with no special characters.
 
