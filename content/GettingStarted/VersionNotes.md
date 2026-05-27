@@ -45,8 +45,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.4!
 
 <!-- Notable changes placeholder -->
 
-<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=XXXXX" target="_blank">TrueNAS 25.10.4 (Goldeye) Changelog</a> in Jira.
-<!-- TODO: replace filter=XXXXX with the 25.10.4 Jira changelog filter ID -->
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14508" target="_blank">TrueNAS 25.10.4 (Goldeye) Changelog</a> in Jira.
 
   </div>
   <div data-tab-id="25.10.3" data-tab-label="25.10.3">
@@ -561,7 +560,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: After applying a new license, manually refresh the browser page to update the web interface.
 
-<a href="https://ixsystems.atlassian.net/issues?filter=14399" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues?filter=14509" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
