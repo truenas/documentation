@@ -22,11 +22,11 @@ A system fingerprint, obtained through the TrueNAS UI, is required for a license
 
 ## Obtaining a TrueNAS System Fingerprint
 
-The TrueNAS UI provides a fingerprint function to obtain the system information required to acquire a TrueNAS license for features available to TrueNAS Enterpriseusers.
+The TrueNAS UI provides a fingerprint function to obtain the system information required to acquire a TrueNAS license for features available to TrueNAS Enterprise users.
 
 To access your system fingerprint, go to **System > General Settings** and click on the **System Fingerprint** view option on the **Support** card.
 
-Enterprise users should contact TrueNAS Support for more information on the licensing process and with any additional questions.
+Enterprise users should contact TrueNAS Support through the Customer Service Portal.
 
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 
