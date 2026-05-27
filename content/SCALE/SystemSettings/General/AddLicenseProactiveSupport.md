@@ -14,24 +14,26 @@ doctype: tutorial
 ---
 
 
-As of the TrueNAS 26.0 release and later, licenses are available to all TrueNAS users and customers. License availability fits into three groups:
+As of the TrueNAS 26.0 release, licenses are available to all TrueNAS users and customers. License availability fits into three groups:
 * TrueNAS Enterprise customers - Systems provided by TrueNAS and managed through TrueNAS Support.
 * TrueNAS Commercial users - Systems not provided by TrueNAS, and with licenses issued through TrueNAS Support.
 * TrueNAS Community users - Systems not provided by TrueNAS, and with licenses obtained through TrueNAS Connect accounts.
 
 A system fingerprint, obtained through the TrueNAS UI, is required for a license.
 
-## Obtaining a TrueNAS Fingerprint
+## Obtaining a TrueNAS System Fingerprint
 
-As of the 26.0 release, the TrueNAS UI provides a fingerprint function that obtains the system information required to acquire a TrueNAS license for features available to TrueNAS Enterprise users.
+The TrueNAS UI provides a fingerprint function to obtain the system information required to acquire a TrueNAS license for features available to TrueNAS Enterprise and Commercial users.
 
-To manually obtain a system fingerprint, go to **System > General Settings** and click on the **System Fingerprint** view option on the **Support** card.
-The copy option allows you to copy and paste the fingerprint information into a message to TrueNAS Support, or you can provide TrueNAS Support with access to your system to obtain the fingerprint required to obtain a license.
-After TrueNAS Support provides the feature license, add it to your TrueNAS system as described in [Adding A TrueNAS Enterprise License](#adding-a-truenas-enterprise-license).
+To access your system fingerprint, go to **System > General Settings** and click on the **System Fingerprint** view option on the **Support** card.
 
-Community user TrueNAS Connect accounts obtain the TrueNAS system fingerprint through an automated process.
+Enterprise and Commercial users should contact TrueNAS Support for more information on the licensing process and with any additional questions.
 
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+
+After TrueNAS Support provides the license, add it to your TrueNAS system as described in [Adding A TrueNAS Enterprise License](#adding-a-truenas-enterprise-license).
+
+Community users with TrueNAS Connect accounts can acquire the system fingerprint as part of the license enrollment process. 
 
 ## Adding a TrueNAS Enterprise License
 
