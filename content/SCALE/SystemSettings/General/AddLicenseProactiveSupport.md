@@ -14,20 +14,19 @@ doctype: tutorial
 ---
 
 
-As of the TrueNAS 26.0 release, licenses are available to all TrueNAS users and customers. License availability fits into three groups:
+As of the TrueNAS 26.0 release, licenses are available to all TrueNAS users and customers. License availability is provided tos:
 * TrueNAS Enterprise customers - Systems provided by TrueNAS and managed through TrueNAS Support.
-* TrueNAS Commercial users - Systems not provided by TrueNAS, and with licenses issued through TrueNAS Support.
 * TrueNAS Community users - Systems not provided by TrueNAS, and with licenses obtained through TrueNAS Connect accounts.
 
 A system fingerprint, obtained through the TrueNAS UI, is required for a license.
 
 ## Obtaining a TrueNAS System Fingerprint
 
-The TrueNAS UI provides a fingerprint function to obtain the system information required to acquire a TrueNAS license for features available to TrueNAS Enterprise and Commercial users.
+The TrueNAS UI provides a fingerprint function to obtain the system information required to acquire a TrueNAS license for features available to TrueNAS Enterpriseusers.
 
 To access your system fingerprint, go to **System > General Settings** and click on the **System Fingerprint** view option on the **Support** card.
 
-Enterprise and Commercial users should contact TrueNAS Support for more information on the licensing process and with any additional questions.
+Enterprise users should contact TrueNAS Support for more information on the licensing process and with any additional questions.
 
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 
