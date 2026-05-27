@@ -72,7 +72,11 @@ For an **NFSv4** ACL, click **Use Preset ACL** on the **Edit ACL** screen to acc
 {{< trueimage src="/images/SCALE/Datasets/NFS4SelectAPresetACLWindow.png" alt="NFS4 Select a Preset ACL" id="NFS4 Select a Preset ACL" >}}
 
 The **ACL Type** setting determines the pre-configured options presented on the **Default ACL Options** dropdown list on each of these windows.
-For POSIX, the options are **POSIX_OPEN**, **POSIX_RESTRICTED**, or **POSIX_HOME**. For NFSv4, the options are **NFS4_OPEN**, **NFS4_RESTRICTED**, **NFS4_HOME**, and **NFS4_DOMAIN_HOME**.
+For POSIX, the options are **POSIX_OPEN**, **POSIX_RESTRICTED**, **POSIX_HOME**, and **POSIX_ADMIN**.
+For NFSv4, the options are **NFS4_OPEN**, **NFS4_RESTRICTED**, **NFS4_HOME**, **NFS4_DOMAIN_HOME**, and **NFS4_ADMIN**.
+
+rueNAS built-in presets automatically include entries for the `builtin_users` and `builtin_administrators` groups.
+Systems joined to Active Directory also include domain users and domain admins entries. User-created presets are not affected.
 
 {{< truetable >}}
 | Setting | Description |
