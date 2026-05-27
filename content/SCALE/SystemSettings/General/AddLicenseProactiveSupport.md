@@ -14,7 +14,7 @@ doctype: tutorial
 ---
 
 
-As of the TrueNAS 26.0 release, licenses are available to all TrueNAS users and customers. License availability is provided tos:
+As of the TrueNAS 26.0 release, licenses are available to all TrueNAS users and customers. License availability is provided to:
 * TrueNAS Enterprise customers - Systems provided by TrueNAS and managed through TrueNAS Support.
 * TrueNAS Community users - Systems not provided by TrueNAS, and with licenses obtained through TrueNAS Connect accounts.
 
