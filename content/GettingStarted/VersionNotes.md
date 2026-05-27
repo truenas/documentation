@@ -40,10 +40,39 @@ June 2, 2026
 <!-- TENTATIVE release date (slated 2-June-2026) — confirm before publishing -->
 
 The TrueNAS team is pleased to release TrueNAS 25.10.4!
+This release updates the Linux kernel and Samba to address multiple security vulnerabilities, and includes data integrity, NFS, iSCSI, networking, and Active Directory fixes.
 
 **Notable changes:**
 
-<!-- Notable changes placeholder -->
+* Updates the Linux kernel to the latest 6.12 LTS release (v6.12.91).
+  This update mitigates several kernel vulnerabilities, including the Dirty-Frag local privilege escalation ([CVE-2026-43284](https://security.truenas.com/link/?reference=CVE-2026-43284) and [CVE-2026-43500](https://security.truenas.com/link/?reference=CVE-2026-43500)), a ptrace privilege issue ([CVE-2026-46333](https://www.cve.org/CVERecord?id=CVE-2026-46333)), and the related Fragnesia privilege escalation in the ESP-in-TCP path ([CVE-2026-46300](https://www.cve.org/CVERecord?id=CVE-2026-46300)). It also enables additional CPU side-channel mitigations.
+
+* Updates Samba to version 4.22.10 to address multiple security vulnerabilities.
+  This Samba maintenance release resolves several CVEs, including a missing access check that let read-only users set or delete reparse point attributes ([CVE-2026-1933](https://security.truenas.com/link/?reference=CVE-2026-1933)) and a flaw in the WORM (Write Once, Read Many) module that allowed protected files to be overwritten by renaming a new file over them ([CVE-2026-2340](https://security.truenas.com/link/?reference=CVE-2026-2340)). The update also includes the remaining upstream Samba security fixes from this release. See the [Samba 4.22.10 release notes](https://www.samba.org/samba/history/samba-4.22.10.html) for the complete list.
+
+* Fixes a potential double free when freeing blocks cloned after deduplication table pruning.
+  Blocks created through block cloning could be freed more than once if their deduplication table (DDT) entries had already been pruned, because the free path did not check the block reference table (BRT) first.
+
+* Fixes virtual machines stored on NFSv4.1 datasets failing to power on.
+  A change introduced in 25.10.2.1 could cause the NFSv4 change cookie to move backward after a file left the cache due to memory pressure, a remount, or a reboot. NFSv4.1 clients that depend on a monotonic change cookie, notably VMware ESXi, rejected the affected files. A virtual machine stored on an NFSv4.1-exported ZFS dataset then failed to power on with the error "The file specified is not a virtual disk." This release reverts that change while a complete fix is finalized upstream.
+
+* Fixes a kernel crash in the iSCSI target layer during SCSI bus or LUN resets.
+  A use-after-free in the clustered locking path of the iSCSI target could crash the system during a SCSI reset, most often on Enterprise High Availability (HA) systems while a peer controller was leaving the cluster. The target layer now waits for lock teardown to complete before releasing the associated memory.
+
+* Improves iSCSI LUN replacement during High Availability failover.
+  On Enterprise HA systems, cleanup of a replaced LUN could stall during failover while a peer controller was being evicted from the cluster, which blocked later LUN replacements. Cleanup is now held until the cluster coordination it depends on has finished.
+
+* Fixes a validation error that blocked static network configuration on some High Availability systems.
+  On HA-capable systems, saving a static network configuration could incorrectly fail with "Enabling DHCPv4/v6 on HA systems is unsupported" even when DHCP was not being enabled. This affected fresh installs before any interface had a saved configuration. The check now triggers only when DHCP or IPv6 autoconfiguration is explicitly enabled.
+
+* Improves Active Directory rejoin, reset, and recovery handling.
+  This release hardens the Active Directory rejoin and directory services reset operations, improves domain controller selection on systems with more than one available controller, and produces clearer diagnostics when a join or authentication problem occurs.
+
+* Fixes ZFS automatic snapshots not being created after a Time Machine backup until the Mac reconnects.
+  When a Time Machine SMB share has automatic snapshots enabled, recent macOS versions (Tahoe and later) sometimes keep the SMB session open after a backup completes instead of disconnecting, which prevented the post-backup ZFS snapshot from being taken until the client reconnected or restarted. The snapshot logic is updated to handle these persistent Time Machine sessions.
+
+* Reduces excessive winbind log messages for failed user and group lookups.
+  When Active Directory is enabled, looking up a user or group that does not exist (for example through `getpwnam` or `getgrnam`) generated a warning for every failed lookup, which could rapidly fill the winbind log. These messages are now logged at informational level instead of as warnings.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14508" target="_blank">TrueNAS 25.10.4 (Goldeye) Changelog</a> in Jira.
 
