@@ -83,6 +83,10 @@ majorVersions:
     name: "TrueNAS 25.10 - Goldeye"
     releaseName: "Goldeye"
     releases:
+      - name: "25.10.4"
+        type: "Maintenance"
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.4"
+        releaseDate: "TBD"
       - name: "25.10.3.1"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.3.1"
@@ -116,6 +120,10 @@ majorVersions:
     name: "TrueNAS 26"
     releaseName: "26"
     releases:
+      - name: "26-BETA.2"
+        type: "Early Release"
+        link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.2"
+        releaseDate: "TBD"
       - name: "26-BETA.1"
         type: "Early Release"
         link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.1"
@@ -131,5 +139,5 @@ majorVersions:
     releases:
       - name: "27 Nightlies"
         type: "Experimental"
-        link: ""
+        link: "https://www.truenas.com/docs/scale/27/gettingstarted/versionnotes/"
         releaseDate: "Ongoing"
