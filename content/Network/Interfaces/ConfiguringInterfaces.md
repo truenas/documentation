@@ -197,3 +197,40 @@ To switch back to using DHCP:
 
 If the test network operation fails or the system times out, your system returns to the network settings before you attempted the change.
 Edit the global network settings and click save, then edit the interface and click save. Test the network changes again.
+
+### Setting FEC Mode
+
+{{< enterprise >}}
+FEC Mode configuration is available in [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/) systems. Administrators should contact TrueNAS Enterprise Support before changing network settings.
+
+{{< expand "Contacting TrueNAS Enterprise Support" "v" >}}
+{{< include file="/static/includes/iXsystemsSupportContact.md" >}}
+{{< /expand >}}
+{{< /enterprise >}}
+
+Forward Error Correction (FEC) is a link-layer mechanism that detects and corrects transmission errors on high-speed Ethernet connections, such as 25 GbE and 100 GbE links. The TrueNAS network interface card (NIC) and the upstream switch must agree on the FEC mode for the link to come up. In most environments, the NIC negotiates the correct mode automatically.
+
+TrueNAS does not set an FEC mode by default. The NIC uses the factory-default behavior, which is typically automatic negotiation. Set the mode to **AUTO** to explicitly direct the NIC to negotiate.
+
+The **FEC Mode** dropdown on the **Edit Interface** screen shows only when both of these conditions are true:
+* The interface is a physical NIC, not a bridge, link aggregation, or VLAN.
+* The NIC reports at least one supported FEC mode.
+
+TrueNAS reads the supported modes from the NIC when you open the **Edit Interface** screen. The dropdown lists only the modes valid for that hardware.
+
+{{< hint type=warning >}}
+An FEC mode mismatch with the upstream switch can disconnect the interface from the network. Change this setting only when TrueNAS Support directs you to, for troubleshooting link negotiation failures.
+{{< /hint >}}
+
+To change the FEC mode for an interface:
+
+1. Go to **System > Network**. Click <i class="material-icons" aria-hidden="true" title="edit">edit</i> **Edit** on the <span class="material-icons">more_vert</span> menu for the interface to open the **Edit Interface** screen.
+
+   If the **FEC Mode** dropdown does not appear, the NIC does not support FEC.
+
+2. Select the FEC mode from the **FEC Mode** dropdown.
+   The dropdown lists only the modes the NIC supports. See [Network Interface Screens]({{< ref "NetworkInterfaceScreens.md" >}}) for descriptions of each mode.
+
+3. Click **Apply**. The test changes options show on the **Network** screen.
+
+4. Test the change as described in [Testing Network Interface Changes](#testing-network-interface-changes). Verify the system is reachable on the network.
