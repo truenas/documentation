@@ -120,8 +120,14 @@ Select an option from the **Security** dropdown. If you select **KRB5** security
 
 ## Editing an NFS Share
 
-To edit an existing NFS share, go to **Shares > Unix (NFS) Shares** and click the share you want to edit.
-The **Edit NFS** screen settings are identical to the share creation options, but you cannot create a new dataset.
+To manage an NFS share, click <span class="material-icons">more_vert</span> dropdown list to the right of each share to see the options for the share you want to manage. Options are:
+
+* **Edit** opens the **Edit NFS Share** screen where you can change settings for the share.
+* **Delete** opens a delete confirmation dialog. Use this to delete the share and remove it from the system. Delete does not affect shared data.
+
+{{< enterprise >}}
+**Change Storage Tier** opens the **Change Storage Tier** dialogue. Use this to migrate the share and its associated dataset from one storage tier to another.
+{{< /enterprise >}}
 
 ## Starting the NFS Service
 

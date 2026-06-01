@@ -1,7 +1,7 @@
 ---
 title: "Storage Dashboard Screens"
 description: "Provides information on the Storage Dashboard widgets and options for pools, devices, and disks listed on this screen."
-weight: 40 
+weight: 50 
 aliases:
  - /scale/scaleuireference/storage/pools/
  - /scale/scaleclireference/storage/
@@ -61,8 +61,8 @@ TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 {{< trueimage src="/images/SCALE/Storage/TieringScreen.png" alt="TieringScreen" id="TieringScreen" >}}
 
 The **Enable** checkbox activates tiering for shared datasets.
-The **Max Concurrent Jobs** field allows you to limit the max amount of concurrent ZFS rewrite jobs.
-The **Max Used Percentage** field allows you to set the dataset capacity at which rewrite operations abort. 
+The **Max Concurrent Jobs** field allows you to limit the maximum number (from 1 to 10) of tier migration jobs that may run simultaneously. Additional jobs are queued and started as running jobs complete.
+The **Max Used Percentage** field allows you to set the dataset capacity (between 70% and 95%) at which migration jobs abort. This setting guards against filling the pool when the job's copy-on-write activity expands allocated space.
 
 {{< hint type=caution title="Shares will be locked to a single dataset" >}}
 Once tiering is on, SMB shares and Webshares stop following nested datasets. Each share will expose only its own dataset, and any child datasets under it will no longer be visible to clients through that share. Create a separate share for each dataset you want to expose.

@@ -1,12 +1,12 @@
 ---
 title: "Storage Tiering"
 description: "Provides information on setting up Storage Tiering."
-weight: 20 
+weight: 30 
 aliases:
 tags:
 - pools
 - storage
-- scrub
+- tiering
 - storage provisioning
 - fusion pools
 doctype: tutorial
@@ -21,7 +21,9 @@ Users can also transparently migrate data between tiers without breaking share a
 
 To use Tiering, you must, configure and acivate the Tiering feature, create a fusion pool, create a dataset in the fusion pool, then create shares for tiering use. 
 
-
+{{< hint type=tip title="Using Preexisting Pools" >}}
+If your goal is to consolidate SSD drives from one pool into another pool as part of enabling Storage Tiering, follow the [Storage Tiering Migration Guide]({{< ref "/SCALE/Storage/Pools/StorageTieringPoolMigration" >}}) instead. That procedure adds tiering-specific preflight items, a topology change to the Pool A special class, and a third phase covering tier migration jobs.
+{{< /hint >}}
 
 ## Configure Tiering
 
@@ -106,4 +108,3 @@ To change storage tiers from the datasets screen, click **Change** in the datase
 {{< trueimage src="/images/SCALE/Datasets/ChangeStorageTier.png" alt="Change Storage Tier" id="Change Storage Tier" >}}
 
 When changing storage tiers, you can select whether you want to migrate existing data to the new storage tier. This may take some time depending on the amount of data.
-
