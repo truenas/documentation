@@ -216,6 +216,8 @@ The **FEC Mode** dropdown on the **Edit Interface** screen shows only when both 
 * The interface is a physical NIC, not a bridge, link aggregation, or VLAN.
 * The NIC reports at least one supported FEC mode.
 
+The **Add Interface** screen creates only virtual interfaces - bridges, link aggregations, and VLANs - none of which support FEC. TrueNAS detects physical interfaces from the hardware, so FEC Mode appears only when you edit an existing physical interface.
+
 TrueNAS reads the supported modes from the NIC when you open the **Edit Interface** screen. The dropdown lists only the modes valid for that hardware.
 
 {{< hint type=warning >}}
