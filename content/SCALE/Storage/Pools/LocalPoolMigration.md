@@ -31,7 +31,7 @@ The work is divided into two phases:
 **Phase 2: Migration** — the actual data and configuration move, followed by destroying Pool B.
 
 {{< hint type=tip title="ZFS Storage Tiering" >}}
-If the post-migration goal is to consolidate Pool B drives into Pool A as part of enabling [Storage Tiering]({{< ref "/SCALE/Storage/PerformanceTiering" >}}), follow the [Storage Tiering Migration Guide]({{< ref "/SCALE/Storage/Pools/StorageTieringPoolMigration" >}})  instead. That procedure adds tiering-specific preflight items, a topology change to the Pool A special class, and a third phase covering tier migration jobs.
+If the post-migration goal is to consolidate Pool B drives into Pool A as part of enabling [Storage Tiering]({{< ref "/SCALE/Storage/StorageTiering" >}}), follow the [Storage Tiering Migration Guide]({{< ref "/SCALE/Storage/Pools/StorageTieringPoolMigration" >}})  instead. That procedure adds tiering-specific preflight items, a topology change to the Pool A special class, and a third phase covering tier migration jobs.
 {{< /hint >}}
 
 ## Phase 1: Preflight
@@ -45,7 +45,7 @@ Complete these tasks approximately one week before the scheduled maintenance win
 - [Move the system dataset]({{< ref "/SCALE/SystemSettings/Advanced/AdvancedSettings.md#managing-the-system-dataset" >}}) to Pool A if it is not located there already.
 - [Configure local replication tasks]({{< ref "/SCALE/DataProtection/Replication/LocalReplication" >}}) for data from Pool B to Pool A. Ensure your Pool B dataset hierarchy is set up to avoid name collisions with existing datasets in Pool A.
 - Be prepared to reconfiguration local storage paths after they change pools.
-- [Reconfigure apps](https://apps.truenas.com/managing-apps/managing-installed-apps/#migrating-existing-applications), [containers]({{< ref"/SCALE/containers/containers" >}}), and [VMs]({{< ref "/SCALE/virtualmachines/addmanagevmdevices/" >}}) to use Pool A.
+- [Reconfigure apps](https://apps.truenas.com/managing-apps/managing-installed-apps/#migrating-existing-applications), [containers]({{< ref "/SCALE/Containers/Containers" >}}), and [VMs]({{< ref "/SCALE/virtualmachines/addmanagevmdevices/" >}}) to use Pool A.
 - Move local user account home directories from Pool B to Pool A.
 - Schedule and confirm an uninterrupted 4-hour maintenance window for the migration.
 - If you are using multi-layered ZFS encryption, [contact support](https://www.truenas.com/support/) before continuing.

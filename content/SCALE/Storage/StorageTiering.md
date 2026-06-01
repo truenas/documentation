@@ -9,7 +9,7 @@ tags:
 - tiering
 - storage provisioning
 - fusion pools
-doctype: tutorial
+doctype: how-to
 ---
 
 {{< enterprise >}}
@@ -61,7 +61,7 @@ For more general information and best practices on fusion pools, see [Creating F
 
 ## Create Datasets for Tiering
 
-Go to Datasets, select the fusion pool you made, and click Add Dataset. [Enter the values you want for the dataset configuration]({{< ref "/SCALE/Datasets/Datasets" >}}) and save it.
+Go to Datasets, select the fusion pool you made, and click Add Dataset. [Enter the values you want for the dataset configuration]({{< ref "/SCALE/Datasets/Datasets.md" >}}) and save it.
 
 After creating a dataset, you can see which storage tier the dataset is on in the **Details** card.
 
