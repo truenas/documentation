@@ -83,7 +83,7 @@ When using TrueNAS as a VMware datastore:
 ### VMware Snapshots on TrueNAS
 
 When TrueNAS is used as a VMware datastore, you can coordinate creating and using ZFS and VMware snapshots.
-See [VMware-Snapshots](https://www.truenas.com/docs/scale/scaletutorials/dataprotection/creatingvmwaresnapshots/) for details.
+See [VMware-Snapshots]({{< relref "/SCALE/DataProtection/VMware/CreatingVMwareSnapshots.md" >}}) for details.
 
 ## vStorage APIs for Array Integration (VAAI) for iSCSI
 

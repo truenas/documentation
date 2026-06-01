@@ -4,6 +4,7 @@ description: "Provides information on adding or modifying self-encrypting drive 
 weight: 70
 aliases:
  - /scale/systemsettings/advanced/manageseds/
+ - /scale/scaletutorials/systemsettings/advanced/managesedsscale/
 tags:
  - sed
  - disks

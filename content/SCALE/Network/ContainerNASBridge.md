@@ -6,6 +6,8 @@ aliases:
  - /scale/network/containernasbridge/
  - /scale/containers/virtualization/accessingnasfromvm/
  - /scale/reporting/virtualization/accessingnasfromvm/
+ - /scale/scaletutorials/virtualization/accessingnasfromvm/
+ - /scale/scaletutorials/network/containernasbridge/
 tags:
  - vm
  - container

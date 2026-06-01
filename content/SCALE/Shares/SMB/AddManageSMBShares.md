@@ -5,6 +5,7 @@ weight: 10
 aliases:
  - /scale/scaletutorials/shares/smb/addsmbshares/
  - /scale/scaletutorials/shares/smb/managesmbshares/
+ - /scale/scaletutorials/shares/smb/addmanagesmbshares/
  - /scale/shares/smb/smbshares/
  - /scale/shares/smb/managesmbshares/
 tags:
@@ -33,8 +34,8 @@ Creating an SMB share on your system requires adding the share and then getting 
 
 1. [Create the SMB share user account](#creating-smb-share-user-accounts).
 
-   You can manually add user accounts or use directory services like Active Directory or LDAP to provide additional user accounts.
-   If setting up an external SMB share, we recommend using Active Directory or LDAP, or at a minimum, synchronizing the user accounts between systems.
+   You can manually add user accounts or use Active Directory to provide additional user accounts.
+   If setting up an external SMB share, we recommend using Active Directory, or at a minimum, synchronizing the user accounts between systems.
 
 2. [Create the SMB share and dataset](#adding-an-smb-share-and-dataset).
 
@@ -87,7 +88,7 @@ Migrate legacy Samba domains to Active Directory before upgrading to 24.10 or la
 
 {{< include file="/static/includes/WebShare-SMBWarning.md" >}}
 
-You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< ref "/SCALE/Datasets/Datasets" >}}) or create a dataset and the share using the **Add SMB** share screen.
+You can create an SMB share while [creating a dataset on the **Add Dataset** screen]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) or create a dataset and the share using the **Add SMB** share screen.
 This article covers adding the dataset using the **Add SMB** share screen.
 
 {{< include file="/static/includes/AppsSMBErrorWarning.md" >}}
@@ -362,7 +363,7 @@ You have two options that modify ACL permissions for SMB shares:
 * **Edit Share ACL** modifies ACL permissions that apply to the SMB share.
 * **Edit Filesystem ACL** modifies ACL permissions at the share dataset level.
 
-See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< ref "/SCALE/Datasets/Permissions/Permissions" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< ref "EditACLScreens" >}}) for more information on the dataset ACL editor screens and setting options.
+See the [ACL Primer](https://www.truenas.com/docs/references/aclprimer/) for general information on Access Control Lists (ACLs) in general, the [Permissions]({{< ref "/SCALE/Datasets/Permissions/ConfiguringACLs" >}}) article for more details on configuring ACLs, and [**Edit ACL** Screen]({{< ref "EditACLScreens" >}}) for more information on the dataset ACL editor screens and setting options.
 
 ### Configuring the SMB Share ACL
 
@@ -507,7 +508,7 @@ This feature allows admins to see and connect to any TrueNAS system with externa
 
 Create the SMB share on another TrueNAS remote server (for example, *system1*), as described in [Adding an SMB Share](#adding-an-smb-share) above.
 
-We recommend using Active Directory or LDAP when creating user accounts, but at a minimum, synchronize user accounts between the system with the share (*system1*) and on the TrueNAS system where you set up the external share (for example, *system2*).
+We recommend using Active Directory when creating user accounts, but at a minimum, synchronize user accounts between the system with the share (*system1*) and on the TrueNAS system where you set up the external share (for example, *system2*).
 
 On *system2* (the local system), select **External Share**, enter the full domain name or IP address, and the share name.
 Separate the server and share name with the `\` character. Example: *192.168.0.200\SHARE* in **Remote Path**.
