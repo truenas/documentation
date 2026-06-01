@@ -2,7 +2,8 @@
 title: "Configuring SMB Service"
 description: "Provides instructions on configuring the SMB service in TrueNAS."
 weight: 30
-aliases: /scale/scaleuireference/shares/smb/smbservicesscreen/
+aliases:
+ - /scale/scaletutorials/systemsettings/services/smbservicescale/
 tags:
  - smb
  - services
@@ -27,7 +28,7 @@ Enter the name of the TrueNAS host system if not the default displayed in **NetB
 
 Enter any alias name or names that do not exceed 15 characters in the **NetBIOS Alias** field. Separate each alias name with a space between them.
 
-Enter a name that matches the Windows workgroup name in **Workgroup**. TrueNAS detects and sets the correct workgroup from these services when unconfigured with enabled Active Directory or LDAP active.
+Enter a name that matches the Windows workgroup name in **Workgroup**. TrueNAS detects and sets the correct workgroup when Active Directory is configured and the field is left unset.
 
 {{< include file="/static/includes/NetBIOSValidationWarning.md" >}}
 

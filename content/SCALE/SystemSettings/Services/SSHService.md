@@ -103,7 +103,7 @@ When global 2FA is enabled with the SSH 2FA option, two-factor authentication ap
 Users without a configured 2FA secret can use password-based SSH without providing a 2FA code, even when global SSH 2FA is enabled.
 Key-based SSH authentication is not affected by 2FA settings.
 
-See [Managing Global 2FA](https://www.truenas.com/docs/scale/scaletutorials/systemsettings/advanced/manageglobal2fascale/) for more information.
+See [Managing Global 2FA]({{< relref "/SCALE/SystemSettings/Advanced/ManageGlobal2FA.md" >}}) for more information.
 
 ### Using SFTP Connections
 

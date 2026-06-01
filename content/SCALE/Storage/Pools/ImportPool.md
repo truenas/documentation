@@ -6,7 +6,7 @@ aliases:
  - /scale/scaletutorials/storage/importpoolscale/
  - /scale/scaletutorials/storage/datasets/importpoolscale/
  - /scale/scaletutorials/storage/datasets/importingdata/
- - /scale/scaleuireference/storage/datasets/importdatascreenscale/
+
  - /scale/scaletutorials/storage/pools/importpoolscale/
 tags:
  - install

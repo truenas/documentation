@@ -13,6 +13,8 @@ aliases:
  - /scale/systemsettings/general/settingupsystememail/
  - /scale/gettingstarted/scalesystememail/
  - /scale/toptoolbar/settingupsystememail/
+ - /scale/scaletutorials/toptoolbar/settingupsystememail/
+ - /scale/scaletutorials/systemsettings/general/settingupsystememail/
 doctype: tutorial
 ---
 

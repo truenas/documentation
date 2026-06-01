@@ -12,10 +12,7 @@ doctype: tutorial
 ---
 
 
-
 {{< include file="/static/includes/RootLevelDatasetShareWarning.md" >}}
-
-{{< include file="/static/includes/TimeMachineMultiprotocol.md" >}}
 
 TrueNAS uses predefined setting options to establish an SMB share that fits a predefined purpose, such as a basic Time Machine share.
 
@@ -32,19 +29,21 @@ To set up a basic time machine share:
 
 After creating the share, start or restart the SMB service.
 
-When accessing from a Windows client, having more than 512 snapshots on the TrueNAS box can lead to performance issues, as the Windows client often attempts to load all snapshots into the Windows **Previous Versions** tab.
+When accessing from a Windows client, having more than 512 snapshots on the TrueNAS box can lead to performance issues.
+The Windows client often attempts to load all snapshots into the **Previous Versions** tab.
 To avoid this, users should maintain fewer than 512 snapshots or consider accessing from a non-Windows client.
 Alternatively, configure snapshot lifetimes or create an automatic deletion policy via the [Periodic Snapshot Tasks screen]({{< ref "AddingPeriodicSnapshotTasks" >}}). This screen helps users manage the snapshot count more effectively.
 
 The latest maintained Mac OS versions allow setting the maximum Time Machine backup size from the Mac OS UI.
 Setting this from the client side is generally recommended for better share flexibility and Mac OS coordination.
 
-Note that enabling a multi-user Time Machine does not automatically replicate the backup data to another pool or offsite system. To protect against data loss, configure a **[Replication Task](https://www.truenas.com/docs/scale/scaletutorials/dataprotection/replication/)** that includes the dataset used by the Time Machine share.
+Note that enabling a multi-user Time Machine does not automatically replicate the backup data to another pool or offsite system. To protect against data loss, configure a **[Replication Task]({{< relref "/SCALE/DataProtection/Replication/" >}})** that includes the dataset used by the Time Machine share.
 
 ### Creating the Share and Dataset
 
-You can either [create the dataset]({{< ref "/SCALE/Datasets/Datasets" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
-We recommend using the **Add SMB** screen when setting up a Time Machine share, as it can create the dataset, enable the SMB2/3 protocol setting in the SMB service, and create the Time Machine share from the same screen.
+You can either [create the dataset]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) to use for the share on the **Add Dataset** screen and the share, or create the dataset when you add the share on the **Add SMB** screen.
+We recommend using the **Add SMB** screen when setting up a Time Machine share.
+From this screen, you can create the dataset, enable the SMB2/3 protocol setting in the SMB service, and create the Time Machine share.
 
 When you want to customize the dataset, use the **Add Dataset** screen to create the customized dataset and a basic SMB share.
 After saving, go to **Shares**, select the SMB share, and click **Edit** to change the purpose to **Time Machine Share**.
@@ -72,7 +71,7 @@ Set the **Purpose** to **Time Machine Share**.
 
 {{< trueimage src="/images/SCALE/Shares/AddSMBTimeMachineBasic.png" alt="Add Basic Time Machine Share" id="Add Basic Time Machine Share" >}}
 
-**Enabled** is selected by default to allow sharing of this path when the SMB service is activated.
+TrueNAS selects **Enabled** by default to allow sharing of this path when you start the SMB service.
 Clearing this option disables the share but does not delete the configuration.
 
 Click **Advanced Options** to finish customizing the share, then click **Save**.
@@ -81,12 +80,15 @@ Start or restart the SMB service when prompted.
 
 ### Modifying the SMB Service
 
-You can configure the SMB service before you add the share, or you can enable this setting from the Add SMB or Edit SMB screens while adding the share or modifying an existing share. The system prompts you to restart the service after modifying the SMB service or adding/changing a share configuration.
+You can configure the SMB service before adding the share.
+Alternatively, enable the setting from the **Add SMB** or **Edit SMB** screens while creating or modifying a share.
+The system prompts you to restart the service after modifying the SMB service or adding/changing a share configuration.
 
 Click on the <i class="fa fa-ellipsis-v" aria-hidden="true" title="Options"></i> on the **Windows (SMB) Share** widget, then click **Config Service** to open the **SMB Service** screen.
 
 Go to **System > Services** and scroll down to **SMB**.
-When using the **Services** screen, click the <span class="iconify" data-icon="mdi:stop-circle" title="Stop Service">Stop Service</span> button to turn off the SMB service if it is running, then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit** to open the **SMB** service settings screen.
+On the **Services** screen, if the SMB service is running, click the <span class="iconify" data-icon="mdi:stop-circle" title="Stop Service">Stop Service</span> button to turn it off.
+Then click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> **Edit** to open the **SMB** service settings screen.
 
 1. Click **Advanced Settings**.
 

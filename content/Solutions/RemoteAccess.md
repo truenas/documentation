@@ -90,4 +90,4 @@ Using the **Addresses** listed for TrueNAS, you can reach your TrueNAS host, inc
 
 ### Installing Wireguard in TrueNAS
 
-Wireguard can be setup and configured by installing the **WG Easy** application in the TrueNAS app catalog. [Click here](https://apps.truenas.com/catalog/wg-easy/) for more detailed information on setting up and configuring the app.
+Wireguard can be setup and configured by installing the **WG Easy** application in the TrueNAS app catalog. [Click here](https://apps.truenas.com/catalog/wg-easy_stable/) for more detailed information on setting up and configuring the app.

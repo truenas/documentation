@@ -2,6 +2,11 @@
 title: "Drive Health Management"
 description: "Describes how TrueNAS monitors drive health using SMART polling and ZFS event detection, and explains alert types, manual testing options, and Enterprise considerations."
 weight: 60
+aliases:
+ - /scale/scaletutorials/dataprotection/smarttestsscale/
+ - /scale/dataprotection/smarttestsscale/
+ - /scale/scaletutorials/systemsettings/services/smartscale/
+ - /scale/scaletutorials/systemsettings/services/smartservicesscale/
 tags:
 - disks
 keywords:
@@ -129,6 +134,6 @@ To run the command, use
 
 ### Third-Party Tools
 
-Additional drive introspection and analysis tools [are available outside of TrueNAS](https://apps.truenas.com/catalog/scrutiny/).
+Additional drive introspection and analysis tools [are available outside of TrueNAS](https://apps.truenas.com/catalog/scrutiny_community/).
 These tools can supplement DHM data with more detailed vendor-specific diagnostics.
 Consult the documentation for any third-party tool before running it against drives in an active ZFS pool.

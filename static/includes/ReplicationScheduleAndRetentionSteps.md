@@ -7,10 +7,14 @@
   
    {{< trueimage src="/images/SCALE/DataProtection/CreateReplicationTaskSetSchedule.png" alt="Set Replication Task Schedule" id="Set Replication Task Schedule" >}}
 
-8. Select the **Destination Snapshot Lifetime** option to specify how long TrueNAS should store copied snapshots in the destination dataset before TrueNAS deletes it.
+8. Select the destination and source snapshot retention options.
+   The **Destination Snapshot Lifetime** option specifies how long TrueNAS should store copied snapshots in the destination dataset before TrueNAS deletes it.
    **Same as Source** is selected by default.
    Select **Never Delete** to keep all snapshots until you delete them manually.
    Select **Custom** to show two additional settings, then enter the number of the duration you select from the dropdown list. For example, *2 Weeks*.
+
+   The **Source Snapshot Lifetime** sets how long Truenas should store snapshots on the source system before TrueNAS deletes it.
+   Set the duration and select the unit of time. The default retention period is two weeks.
   
 9. Click **Save**.
 

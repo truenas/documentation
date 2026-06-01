@@ -166,7 +166,7 @@ Internal references use the `ref` shortcode to look up a file by name, or the `r
 If linking to file names that are not unique, you must also include the path to that file. For example:
 
 ```
-[Creating a new Dataset]({{\< ref "/SCALE/Datasets/Datasets" >}})
+[Creating a new Dataset]({{\< ref "/SCALE/Datasets/ManagingDatasets" >}})
 ```
 
 Linking to the index file of an article bundle requires using the generic linking syntax to point to the article location:
