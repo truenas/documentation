@@ -1,10 +1,10 @@
 &NewLine;
 
 TrueNAS supports macOS Spotlight search on SMB shares through the TrueSearch indexing service.
-When enabled, macOS users can use native Finder search to quickly locate files on mounted SMB shares.
+After enabling Spotlight on the SMB service, macOS users can use native Finder search to quickly locate files on mounted SMB shares.
 
 {{< hint type=note >}}
-Spotlight search requires an Enterprise license or TrueNAS Connect configuration.
+Spotlight search requires a TrueNAS Enterprise license or a configured TrueNAS Connect integration.
 If neither is configured, the **Enable Search (Spotlight)** setting is disabled and a notice displays with a link to configure TrueNAS Connect.
 {{< /hint >}}
 
@@ -12,7 +12,7 @@ If neither is configured, the **Enable Search (Spotlight)** setting is disabled 
 
 1. Go to **System Settings > Services** and locate the **SMB** service row.
 
-2. Click the <span class="material-icons">edit</span> **Configure** icon to open the **SMB Service** screen.
+2. Click the <span class="material-icons" aria-hidden="true" title="Edit">edit</span> **Configure** icon to open the **SMB Service** screen.
 
 3. Click **Advanced Settings** to expand the advanced options.
 
@@ -20,12 +20,12 @@ If neither is configured, the **Enable Search (Spotlight)** setting is disabled 
 
 5. Click **Save**.
 
-After enabling, TrueSearch indexes all enabled SMB shares.
-Encrypted datasets are excluded from indexing to protect sensitive data.
+After saving, TrueSearch begins indexing every active SMB share.
+TrueSearch excludes encrypted datasets from indexing to protect sensitive data.
 
 {{< hint type=important >}}
-TrueSearch indexes all enabled SMB shares globally.
-You cannot enable indexing for individual shares.
+TrueSearch indexes every active SMB share.
+You cannot enable indexing per share.
 {{< /hint >}}
 
 ### Mounting an SMB Share on macOS
@@ -49,14 +49,17 @@ After mounting the SMB share:
 2. Press <kbd>Cmd</kbd>+<kbd>F</kbd> or click the search icon in the Finder window.
 
 3. Click the SMB share name in the search bar to set the search scope to the mounted share.
-   Spotlight search does not return results from SMB shares when searching **This Mac**.
+
+   {{< hint type=note >}}
+   Spotlight does not return results from SMB shares when the search scope is set to **This Mac**.
+   {{< /hint >}}
 
 4. Enter search terms.
    Spotlight supports searching by file name, file content, and file type.
 
 {{< hint type=note >}}
 TrueSearch filters out the keywords *BEFORE*, *AND*, and *THE* by default.
-Use different search terms when testing Spotlight search functionality.
+Queries containing these words return results as if those words were not in the query.
 {{< /hint >}}
 
-Search results appear as files are found in the TrueSearch index.
+Results appear as TrueSearch returns matches.
