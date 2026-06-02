@@ -71,7 +71,7 @@ When using a preset and customising the ACL, select the preset first and then cu
 Selecting the preset after adding new ACL entries (ACEs) erases any ACEs added to the ACL, requiring you to re-enter them.
 Click **Save Access Control List** when you are done configuring the ACL.
 In most cases, the owner user and group should remain set to **root**, but you can change this to the primary admin user and group account with full privileges.
-Add ACE items for users, groups, directories, etc., not included in preset configurations to customize access permissions to the dataset.
+Add ACE items for users, groups, directories, etc., not included in preset configurations, to customize access permissions to the dataset.
 
 When adding a dataset using the SMB preset for a share or just setting up an NFSv4 ACL, TrueNAS shows the **Set ACL for this dataset** dialog after you save the dataset.
 Click **Go to ACL Manager** to configure the ACL.
@@ -118,6 +118,8 @@ After selecting a preset, click **Continue** to close the preset window and show
 Next [add ACL entries](#adding-posix-acl-entries).
 
 ### POSIX Preset Options
+
+{{< include file="/static/includes/ACLBuiltinPresets.md" >}}
 
 * **POSIX_OPEN** - Gives the owner and group full dataset control. All other accounts can modify the dataset contents.
   Use for collaborative datasets where multiple users need read/write access.
@@ -166,7 +168,7 @@ To allow a system administrator access, either change the owner and owner group 
 
 To change the owner and owner group:
 
-Select the **Owner** user from the **User** dropdown list. To filter the list of users begin typing the name in the field.
+Select the **Owner** user from the **User** dropdown list. To filter the list of users, begin typing the name in the field.
 Click **Apply Owner** to apply the change.
 Next, change the **Owner Group** in the same manner as changing the owner.
 Click **Apply Group** to apply the group change.
@@ -203,10 +205,10 @@ See [Granting Root Access to Host Paths]({{< relref "/SCALE/Containers/ManagingC
 ## Configuring an NFSv4 ACL
 
 Selecting **SMB** in the **Dataset Preset** field on the **Add Dataset** screen applies an NFSv4 ACL type to the dataset.
-You can use the **SMB** dataset preset and choose to not create an SMB share as the easiest way to apply an NFSv4 ACL to a dataset, or you can leave **Dataset Preset** set to **Generic**, click **Advanced Options**, scroll down to the **ACL Type** field, and select NFSv4 to apply this to the dataset.
+You can use the **SMB** dataset preset and choose not to create an SMB share as the easiest way to apply an NFSv4 ACL to a dataset, or you can leave **Dataset Preset** set to **Generic**, click **Advanced Options**, scroll down to the **ACL Type** field, and select NFSv4 to apply this to the dataset.
 
 After applying the NFSv4 ACL type to a dataset, you must configure the ACL.
-If you uset the **ACL Type** setting on the **Add Dataset > Advanced Options** screen for a dataset with the **Generic** preset to change to an NFSv4 ACL, the **Permissions** widget for the dataset shows **Unix Permission** until you configure the NFSv4 ACL.
+If you use the **ACL Type** setting on the **Add Dataset > Advanced Options** screen for a dataset with the **Generic** preset to change to an NFSv4 ACL, the **Permissions** widget for the dataset shows **Unix Permission** until you configure the NFSv4 ACL.
 
 {{< trueimage src="/images/SCALE/Datasets/PermissionsWidgetUnixACL.png" alt="Permissions Widget Showing Unix ACL" id="Permissions Widget Showing Unix ACL" >}}
 
@@ -214,13 +216,13 @@ The **Permissions** widget for datasets with the **SMB** preset shows **NFSv4 pe
 
 {{< trueimage src="/images/SCALE/Datasets/PermissionsWidgetNFSv4ACL.png" alt="Permissions Widget for an NFSv4 ACL" id="Permissions Widget for an NFSv4 ACL" >}}
 
-To edit or configure an NFSv4 ACL, select the dataset on the dataset tree table, then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
+To edit or configure an NFSv4 ACL, select the dataset in the dataset tree table, then click **Edit** on the **Permissions** widget to open the **Edit ACL** screen.
 
 {{< trueimage src="/images/SCALE/Datasets//EditACLScreenNFSv4Type.png" alt="Edit ACL for NFSv4 ACL" id="Edit ACL for NFSv4 ACL" >}}
 
 You can change the owner and owner group, and/or change, add, or delete an ACE item on the **Access Control List**.
 
-Either change the owner and owner group to the admin user on your system with full administration privileges or add the admin user name as an ACE item on the Access Control List.
+Either change the owner and owner group to the admin user on your system with full administration privileges, or add the admin user name as an ACE item on the Access Control List.
 This allows the admin user to make functional changes for the dataset and child datasets nested under it.
 For example, when configuring shares and private dataset shares. 
 
@@ -229,7 +231,9 @@ To rewrite the current ACL with a standardized preset, click **Use Preset** on t
 Select the preset option, then click **Continue** to apply the preset.
 Presets load pre-configured permissions to match general permissions situations.
 
-### NFSv4 ACL Presets 
+### NFSv4 ACL Presets
+
+{{< include file="/static/includes/ACLBuiltinPresets.md" >}}
 
 * **NFS4_OPEN** gives the owner and group full dataset control. All other accounts can modify the dataset contents.
 * **NFS4_RESTRICTED** gives the owner full dataset control. The group can modify the dataset contents.

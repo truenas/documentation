@@ -67,8 +67,8 @@ Interface settings configure the network interface name, type, and IP address as
 |---------|-------------|
 | **Type** | (Required) Only shows on the **Add Interface** screen. Sets the type of interface based on the selection on the dropdown list. Options are: <br><li> **Bridge** - Creates a logical link between multiple networks. <br><li>**Link Aggregation** (bond) - Combines multiple network connections into a single interface. <br><li>**VLAN** - Partitions and isolates a segment of the connection. <br></li>Each type of interface shows additional configuration settings for that type. The type cannot be changed after clicking **Apply**, and testing and accepting the interface change. |
 | **Name** | (Required) Accepts manual or copy/paste entry of a name for the interface. Names must use the format bond*X* for a link aggregation, vlan*X* for a VLAN, or br*X* for a bridge, and where *X* is a number representing a non-parent interface. Assign the first interface of any type the appropriate name plus zero, for example, **br0** for the first bridge interface created. You cannot change the interface name after clicking **Apply**. After saving, **Name** becomes a read-only field when editing an interface. |
-| **Description** | Accepts manual or copy/paste entry of a description for the interface. Descritpions can provide additional information about how the interface is used or what it connects to. |
-| **DHCP** | Enable DHCP, allowing it to assign IP addresses to the interface. Shows two options: **Get IP Address Automatically from DHCP** and **Define Static IP Addresses**. reate a static IPv4 or IPv6 configuration.  |
+| **Description** | Accepts manual or copy/paste entry of a description for the interface. Descriptions can provide additional information about how the interface is used or what it connects to. |
+| **DHCP** | Enable DHCP, allowing it to assign IP addresses to the interface. Shows two options: **Get IP Address Automatically from DHCP** and **Define Static IP Addresses**. |
 | **Get IP Address Automatically from DHCP** | Allows DHCP to assign the IP address for the interface. Only one interface can be configured using DHCP. |
 | **Define Static IP Addresses** | Allows adding a static IP address to the interface using the **Static IP Addresses** fields. |
 | **Static IP Addresses** | Shows IP address and netmask (CIDR) fields after clicking **Add**. Click **Add** for each static IP address to add to/associate with the interface. |
@@ -83,7 +83,12 @@ Use **Description** to further define or clarify how or where the bridge is used
 
 {{< trueimage src="/images/SCALE/Network/AddInterfaceBridgeSettings.png" alt="Bridge Interface Settings" id="Bridge Interface Settings" >}}
 
-**Bridge Members** sets the network interfaces to include in the bridge to the option selected on the dropdown list. |
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Bridge Members** | (Required) Select the network interfaces to include as members of the bridge. The dropdown lists interfaces eligible for bridging. |
+| **Enable Learning** | Select to enable MAC address learning. With learning enabled, the bridge records the MAC address of each incoming frame along with the member interface it arrived on. The bridge then uses this table to send outbound traffic only to the relevant member instead of flooding it to every member. Selected by default. Disable only in specialized configurations where the default learning behavior conflicts with how the bridge is being used, such as when a bridge member might not be available when the bridge starts. |
+{{< /truetable >}}
 
 ### Link Aggregation Settings
 

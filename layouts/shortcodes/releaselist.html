@@ -21,78 +21,91 @@
           <div class="major-version-content {{ $name }}-major-version-content" id="{{ $name }}-majorVersion{{ $index }}" style="padding-left: 1.5rem; padding-right: 1.5rem; display: {{ if eq $index $defaultTab }}block{{ else }}none{{ end }};">
             <p><b>{{ $majorVersion.name }}</b></p>
 
-            {{- $latestEntries := where $majorVersion.releases "latest" true }}
-            {{- $nonLatestEntries := where $majorVersion.releases "latest" false }}
-
-            {{- if $latestEntries }}
-              <b class="flex flex-wrap align-center gdoc-props__meta">
-                Latest:
-              </b>
-              {{- range $latestEntries }}
-                <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
-                  {{- if and (.link) (.name) }}
-                    <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
-                  {{- else }}
-                    <span class="gdoc-props__title">{{ .name }}</span>
-                  {{- end }}
-
-                  {{- with .type }}
-                    <span class="gdoc-props__tag note" style="margin-left: 0.5rem;">{{ . }}</span>
-                  {{- end }}
-
-                  {{- if .releaseDate }}
-                    <span class="gdoc-props__tag">{{ if or (eq .releaseDate "") (eq .releaseDate "TBD") }}TBD{{ else }}{{ dateFormat "2 January 2006" .releaseDate }}{{ end }}</span>
-                  {{- end }}
-                </dt>
-                <dd style="margin-left: .5rem;">
-                  <div class="gdoc-props__description">
-                    {{- with .description }}
-                      {{- $desc := . }}
-                      {{- if reflect.IsMap $desc }}
-                        {{- $desc = (index $desc $.Site.Language.Lang) }}
-                      {{- end }}
-                      {{ $desc | $.Page.RenderString }}
-                    {{- end }}
-                  </div>
-                </dd>
-              {{- end }}
-
-              {{- if $nonLatestEntries }}
-                <hr width="33%" style="margin: 1rem 0;">
+            {{/* Bucket each release by parsing releaseDate against now.
+                 Sentinel strings ("", "TBD", "Ongoing") -> Anticipated.
+                 Dated entries: future -> Anticipated, shipped -> Latest (most recent) or Previous (older). */}}
+            {{- $now := now }}
+            {{- $shipped := slice }}
+            {{- $anticipatedAll := slice }}
+            {{- range $majorVersion.releases }}
+              {{- $rd := .releaseDate }}
+              {{- if or (eq $rd "") (eq $rd "TBD") (eq $rd "Ongoing") }}
+                {{- $anticipatedAll = $anticipatedAll | append . }}
+              {{- else }}
+                {{- $d := time $rd }}
+                {{- if gt $d.Unix $now.Unix }}
+                  {{- $anticipatedAll = $anticipatedAll | append . }}
+                {{- else }}
+                  {{- $shipped = $shipped | append . }}
+                {{- end }}
               {{- end }}
             {{- end }}
 
-            {{- if $nonLatestEntries }}
-              <b class="flex flex-wrap align-center gdoc-props__meta">
-                Anticipated:
-              </b>
-              {{- range $nonLatestEntries }}
-                <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
-                  {{- if and (.link) (.name) }}
-                    <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
-                  {{- else }}
-                    <span class="gdoc-props__title">{{ .name }}</span>
-                  {{- end }}
+            {{- $shippedSorted := sort $shipped "releaseDate" "desc" }}
+            {{- $latest := slice }}
+            {{- $previous := slice }}
+            {{- range $i, $e := $shippedSorted }}
+              {{- if eq $i 0 }}{{- $latest = $latest | append $e }}
+              {{- else }}{{- $previous = $previous | append $e }}{{- end }}
+            {{- end }}
 
-                  {{- with .type }}
-                    <span class="gdoc-props__tag note">{{ . }}</span>
-                  {{- end }}
+            {{/* Anticipated ordering: dated future entries first (ascending), then TBD, then Ongoing. */}}
+            {{- $datedAnt := slice }}
+            {{- $tbdAnt := slice }}
+            {{- $ongoingAnt := slice }}
+            {{- range $anticipatedAll }}
+              {{- if eq .releaseDate "Ongoing" }}{{- $ongoingAnt = $ongoingAnt | append . }}
+              {{- else if or (eq .releaseDate "TBD") (eq .releaseDate "") }}{{- $tbdAnt = $tbdAnt | append . }}
+              {{- else }}{{- $datedAnt = $datedAnt | append . }}{{- end }}
+            {{- end }}
+            {{- $anticipated := sort $datedAnt "releaseDate" "asc" }}
+            {{- range $tbdAnt }}{{- $anticipated = $anticipated | append . }}{{- end }}
+            {{- range $ongoingAnt }}{{- $anticipated = $anticipated | append . }}{{- end }}
 
-                  {{- if .releaseDate }}
-                    <span class="gdoc-props__tag">{{ if or (eq .releaseDate "") (eq .releaseDate "TBD") }}TBD{{ else }}{{ dateFormat "2 January 2006" .releaseDate }}{{ end }}</span>
-                  {{- end }}
-                </dt>
-                <dd style="margin-left: .5rem;">
-                  <div class="gdoc-props__description">
-                    {{- with .description }}
-                      {{- $desc := . }}
-                      {{- if reflect.IsMap $desc }}
-                        {{- $desc = (index $desc $.Site.Language.Lang) }}
-                      {{- end }}
-                      {{ $desc | $.Page.RenderString }}
+            {{- $sections := slice (dict "label" "Latest:" "entries" $latest) (dict "label" "Anticipated:" "entries" $anticipated) (dict "label" "Previous:" "entries" $previous) }}
+            {{- $rendered := 0 }}
+            {{- range $sections }}
+              {{- if .entries }}
+                {{- if gt $rendered 0 }}
+                  <hr width="33%" style="margin: 1rem 0;">
+                {{- end }}
+                <b class="flex flex-wrap align-center gdoc-props__meta">
+                  {{ .label }}
+                </b>
+                {{- range .entries }}
+                  <dt class="flex flex-wrap align-center gdoc-props__meta" style="margin-left: .5rem;">
+                    {{- if and (.link) (.name) }}
+                      <a href="{{ .link }}" class="gdoc-props__title">{{ .name }}</a>
+                    {{- else }}
+                      <span class="gdoc-props__title">{{ .name }}</span>
                     {{- end }}
-                  </div>
-                </dd>
+
+                    {{- with .type }}
+                      <span class="gdoc-props__tag note" style="margin-left: 0.5rem;">{{ . }}</span>
+                    {{- end }}
+
+                    {{- if .releaseDate }}
+                      <span class="gdoc-props__tag">
+                        {{- if or (eq .releaseDate "") (eq .releaseDate "TBD") -}}TBD
+                        {{- else if eq .releaseDate "Ongoing" -}}Ongoing
+                        {{- else -}}{{ dateFormat "2 January 2006" .releaseDate }}
+                        {{- end -}}
+                      </span>
+                    {{- end }}
+                  </dt>
+                  <dd style="margin-left: .5rem;">
+                    <div class="gdoc-props__description">
+                      {{- with .description }}
+                        {{- $desc := . }}
+                        {{- if reflect.IsMap $desc }}
+                          {{- $desc = (index $desc $.Site.Language.Lang) }}
+                        {{- end }}
+                        {{ $desc | $.Page.RenderString }}
+                      {{- end }}
+                    </div>
+                  </dd>
+                {{- end }}
+                {{- $rendered = add $rendered 1 }}
               {{- end }}
             {{- end }}
           </div>
