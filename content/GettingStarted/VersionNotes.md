@@ -36,8 +36,7 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.4" data-tab-label="25.10.4">
 
-June 2, 2026
-<!-- TENTATIVE release date (slated 2-June-2026) — confirm before publishing -->
+June 3, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.4!
 This release updates the Linux kernel and Samba to address multiple security vulnerabilities, and includes data integrity, NFS, iSCSI, networking, and Active Directory fixes.
