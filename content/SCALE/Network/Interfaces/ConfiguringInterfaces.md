@@ -212,6 +212,8 @@ Forward Error Correction (FEC) is a link-layer mechanism that detects and correc
 
 TrueNAS does not set an FEC mode by default. The NIC uses the factory-default behavior, which is typically automatic negotiation. Set the mode to **AUTO** to explicitly direct the NIC to negotiate.
 
+{{< trueimage src="/images/SCALE/Network/EditInterfaceFECMode.png" alt="Edit Interface screen showing the FEC Mode dropdown" id="Edit Interface FEC Mode Dropdown" >}}
+
 The **FEC Mode** dropdown on the **Edit Interface** screen shows only when both of these conditions are true:
 * The interface is a physical NIC, not a bridge, link aggregation, or VLAN.
 * The NIC reports at least one supported FEC mode.
