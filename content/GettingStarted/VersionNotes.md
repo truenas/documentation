@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "26.0.0-beta.1"
+    anchor: "26.0.0-beta.2"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -37,6 +37,28 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="26.0.0-beta.2" data-tab-label="26-BETA.2 Notable Changes">
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
+June 16, 2026
+
+The TrueNAS team is pleased to release TrueNAS 26-BETA.2!
+<!-- Intro paragraph to be filled in -->
+
+<!-- Special thanks paragraph to be filled in -->
+
+### 26-BETA.2 Notable Changes
+
+<!-- Notable changes placeholder -->
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=XXXXX" target="_blank">TrueNAS 26-BETA.2 Changelog</a> in Jira.
+
+  </div>
+
   <div data-tab-id="26.0.0-beta.1" data-tab-label="26-BETA.1 Notable Changes">
 
 {{< hint type=warning title="Early Release Software" >}}
@@ -221,7 +243,7 @@ For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" 
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.0.0-beta.1');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.0.0-beta.2');
 });
 </script>
 
@@ -302,13 +324,6 @@ See [Drive Health Management]({{< ref "/Storage/Disks/DriveHealthManagement.md" 
   <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
 
 ### Upgrade Paths
-
-{{< hint type=important title="25.10 Upgrade Path" >}}
-Upgrading from TrueNAS 25.10 to 26-BETA.1 is not available in the TrueNAS UI until TrueNAS 25.10.3 is released.
-Users on TrueNAS 25.10 who wish to test 26-BETA.1 before that time can manually install or upgrade by downloading directly:
-- [TrueNAS-26.0.0-BETA.1.iso](https://iso.sys.truenas.net/TrueNAS-26-BETA/26.0.0-BETA.1/TrueNAS-26.0.0-BETA.1.iso)
-- [TrueNAS-26.0.0-BETA.1.update](https://update-public.sys.truenas.net/TrueNAS-26-BETA/TrueNAS-26.0.0-BETA.1.update)
-{{< /hint >}}
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
