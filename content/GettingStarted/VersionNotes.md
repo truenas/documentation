@@ -56,7 +56,7 @@ The TrueNAS team is pleased to release TrueNAS 26-BETA.2!
 
 <!-- Notable changes placeholder -->
 
-<a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=XXXXX" target="_blank">TrueNAS 26-BETA.2 Changelog</a> in Jira.
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14541" target="_blank">TrueNAS 26-BETA.2 Changelog</a> in Jira.
 
   </div>
 
@@ -211,7 +211,7 @@ These are ongoing issues that can affect multiple versions in the 26 series.
   Workaround: Remove the GPU from the VM in the UI, then remove the GPU isolation entry from **System > Advanced Settings**. Re-add the GPU in **System > Advanced Settings**, reboot the system, then re-add the GPU to the VM.
   Resolved in 26-BETA.2.
 
-<a href="https://ixsystems.atlassian.net/issues?filter=14297" target="_blank">See the latest status on Jira</a> for public issues discovered in 26-BETA.1 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues?filter=14542" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
