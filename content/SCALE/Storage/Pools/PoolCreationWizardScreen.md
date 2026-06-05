@@ -168,7 +168,11 @@ The **Metadata** wizard screen settings configure a special allocation class VDE
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
 
 {{< expand "Common Pool Creation Wizard Settings" "v" >}}
-The **Layout** dropdown list includes the **Stripe**, **Mirror**, **RAIDZ1**, **RAIDZ2**, **RAIDZ3**, **dRAID1**, **dRAID2**, and **dRAID3** types.
+The **Layout** dropdown list includes the **Mirror**, **RAIDZ1**, **RAIDZ2**, and **RAIDZ3** types.
+
+{{< hint type="important" >}}
+Match the Metadata VDEV redundancy level to the data VDEV redundancy level. For example, if data VDEVs use RAIDZ2, use RAIDZ2 or a three-way mirror for the Metadata VDEV. Pool creation fails when the Metadata VDEV redundancy is lower than the data VDEV redundancy.
+{{< /hint >}}
 
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
@@ -182,7 +186,11 @@ Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDedupScreen.png" alt="Pool Creation Wizard Dedup Screen" id="Pool Creation Wizard Dedup Screen" >}}
 
 {{< expand "Common Pool Creation Wizard Settings" "v" >}}
-The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
+The **Layout** dropdown list includes the **Mirror**, **RAIDZ1**, **RAIDZ2**, and **RAIDZ3** types.
+
+{{< hint type="important" >}}
+Match the Dedup VDEV redundancy level to the data VDEV redundancy level. Pool creation fails when the Dedup VDEV redundancy is lower than the data VDEV redundancy.
+{{< /hint >}}
 
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
