@@ -296,6 +296,9 @@ majorVersions:
     releaseName: "26"
     releaseNotes: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/"
     releases:
+      - name: "26-BETA.2"
+        link: "https://iso.sys.truenas.net/TrueNAS-26-BETA/26.0.0-BETA.2/"
+        date: "2026-06-16"
       - name: "26-BETA.1"
         link: "https://iso.sys.truenas.net/TrueNAS-26-BETA/26.0.0-BETA.1/"
         date: "2026-04-07"
