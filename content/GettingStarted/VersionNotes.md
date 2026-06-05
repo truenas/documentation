@@ -66,6 +66,15 @@ The TrueNAS team is pleased to release TrueNAS 26-BETA.2!
 * Improves visibility of important pool states such as **resilvering** in the web interface ([NAS-139007](https://ixsystems.atlassian.net/browse/NAS-139007)).
   Pool states like resilvering, scrubbing, and degraded operations were not prominently displayed. The Storage dashboard and pool status screens now surface these states with clearer indicators so administrators can identify maintenance activity at a glance.
 
+* Improves webshell access control with per-shell-type role checks and adds audit logging for shell sessions ([NAS-141011](https://ixsystems.atlassian.net/browse/NAS-141011)).
+  Webshell sessions for containers, VMs, and apps previously wrapped commands in `sudo -H -u <user>`, which failed against root-owned libvirt and Docker sockets. Users with the `FULL_ADMIN` role but without unrestricted sudo encountered Polkit errors and broken shells. Webshell authorization now uses per-shell-type role checks (`VM_WRITE`, `CONTAINER_WRITE`, `APPS_WRITE`) alongside the existing webshell privilege, and shell sessions emit `WEBSHELL_AUTHENTICATION` and `WEBSHELL_LOGOUT` audit events.
+
+* Improves the built-in ACL preset templates by auto-including local and directory service user and admin groups ([NAS-140530](https://ixsystems.atlassian.net/browse/NAS-140530)).
+  When a built-in preset such as `NFS4_RESTRICTED` is applied through **Use Preset**, TrueNAS now adds entries for `builtin_users` and `builtin_administrators` — and, on systems joined to Active Directory, the corresponding domain users and domain admins groups. The expanded ACL appears on screen before save so administrators can remove any entries they do not want. User-created templates are unaffected.
+
+* Improves the performance of directory listings on SMB shares from macOS clients ([NAS-141125](https://ixsystems.atlassian.net/browse/NAS-141125)).
+  When macOS Finder lists a directory with the AAPL extensions enabled, the previous code path added three syscalls per file entry to probe the AppleDouble resource fork size. The probe now reuses the directory enumeration's existing file descriptor with a single syscall, reducing roughly two syscalls per file and producing noticeable listing speedups on directories with many entries.
+
 * Fixes the **Map User And Group IDs** option on LXC containers not working ([NAS-140766](https://ixsystems.atlassian.net/browse/NAS-140766)).
   A blocker bug prevented containers configured with user and group ID mapping from applying those mappings to the container filesystem. The mapping now applies correctly when the container starts.
 
@@ -92,6 +101,9 @@ The TrueNAS team is pleased to release TrueNAS 26-BETA.2!
 
 * Fixes a regression in 26-BETA.1 that blocked virtual machine cloning ([NAS-140792](https://ixsystems.atlassian.net/browse/NAS-140792)).
   Users could not clone existing VMs through the UI in BETA.1. VM cloning is restored in BETA.2.
+
+* Fixes the **GUI SSL Certificate** field on **System Settings > General > GUI Settings** failing to save the selected certificate after upgrade from 25.10 to 26-BETA.1 ([NAS-140354](https://ixsystems.atlassian.net/browse/NAS-140354)).
+  The field displayed `None` even after a certificate was selected, and attempting to save other GUI settings produced a validation error stating the required certificate field was empty. The backend change in BETA.1 that returned the certificate as a numeric ID instead of a full object is now paired with a `ui_certificate_name` response field, so the UI can display and save the selected certificate correctly.
 
 * Fixes an error that blocked saving E-Mail options when **GMail OAuth** is selected ([NAS-140306](https://ixsystems.atlassian.net/browse/NAS-140306)).
   Users configuring outbound email with GMail OAuth could not save the configuration. The save action now completes successfully.
@@ -146,6 +158,9 @@ The TrueNAS team is pleased to release TrueNAS 26-BETA.2!
 
 * Fixes the **Alerts** panel opening behind an active slide-in form ([NAS-140108](https://ixsystems.atlassian.net/browse/NAS-140108)).
   When a configuration slide-in was open, clicking the alerts icon opened the alerts panel below the slide-in, where users could not see or interact with it. The alerts panel now opens above the slide-in.
+
+* Removes a legacy USB boot detection workaround that could add a 15-second delay to system boot ([NAS-140745](https://ixsystems.atlassian.net/browse/NAS-140745)).
+  A workaround introduced in 2021 to address an early SCALE alpha boot-pool import race on USB boot disks injected `ZFS_INITRD_POST_MODPROBE_SLEEP=15` into `/etc/default/zfs` on systems where any boot-pool vdev appeared to be on a USB bus. USB boot is no longer a supported TrueNAS configuration, and the workaround is removed. Systems upgraded from a version that wrote the sleep line have it stripped automatically.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14541" target="_blank">TrueNAS 26-BETA.2 Changelog</a> in Jira.
 
