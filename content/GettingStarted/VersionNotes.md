@@ -337,13 +337,33 @@ initializeChangelogTableForTabs('26');
 
 {{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
 
-* {{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
+* The TrueNAS REST API is removed in TrueNAS 26. Systems still using the REST API must migrate to the JSON-RPC 2.0 WebSocket API before upgrading. See [API Improvements](#api-improvements) for migration guidance and details about API authentication improvements in TrueNAS 26.
 
-  {{< include file="/static/includes/APIDocs.md" >}}
+  </div>
 
-  You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
-  Click **API Docs** to view API documentation.
-  
+  <div data-tab-id="api-improvements" data-tab-label="API Improvements">
+
+### API Improvements in TrueNAS 26
+
+#### REST API Removal
+
+{{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
+
+{{< include file="/static/includes/APIDocs.md" >}}
+
+You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
+Click **API Docs** to view API documentation.
+
+#### Improved API Authentication
+
+TrueNAS 26 introduces `auth.login_ex` as a unified WebSocket API authentication method that supports password (`PASSWORD_PLAIN`), API key (`API_KEY_PLAIN`), OTP token (`OTP_TOKEN`), and the new SCRAM-SHA-512 (`SCRAM`) mechanism. SCRAM provides mutual authentication between client and server without transmitting raw key material.
+
+The legacy `auth.login` and `auth.login_with_api_key` methods are deprecated and scheduled for removal in TrueNAS 27. Their functionality is fully replaced by `auth.login_ex`, which continues to support `API_KEY_PLAIN` and the other non-SCRAM mechanisms beyond TrueNAS 27. SCRAM is the recommended choice for new clients that can adopt it.
+
+See the [SCRAM Authentication primer](https://github.com/truenas/middleware/blob/stable/26/docs/source/accounts/scram_authentication.rst) for guidance on implementing SCRAM in custom API clients and migrating pre-TrueNAS 26 API keys to the optimized precomputed format.
+
+For the full list of deprecated and removed API methods, see [Feature Deprecations]({{< ref "Deprecations" >}}).
+
   </div>
 
   <div data-tab-id="containers-virtual-machines" data-tab-label="Containers and Virtual Machines">

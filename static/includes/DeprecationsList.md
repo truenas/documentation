@@ -61,7 +61,11 @@ The [`pool.ddt_prefetch`](https://api.truenas.com/v25.10/api_methods_pool.ddt_pr
 The [`auth.login`](https://api.truenas.com/v26.0/api_methods_auth.login.html) and [`auth.login_with_api_key`](https://api.truenas.com/v26.0/api_methods_auth.login_with_api_key.html) methods are deprecated and scheduled for removal in TrueNAS 27. Migrate to [`auth.login_ex`](https://api.truenas.com/v26.0/api_methods_auth.login_ex.html):
 
 - Replace `auth.login` with `auth.login_ex` using `mechanism="PASSWORD_PLAIN"`. For two-factor authentication, follow with [`auth.login_ex_continue`](https://api.truenas.com/v26.0/api_methods_auth.login_ex_continue.html) using `mechanism="OTP_TOKEN"`.
-- Replace `auth.login_with_api_key` with `auth.login_ex` using `mechanism="API_KEY_PLAIN"` (or `mechanism="SCRAM"` for SCRAM-based authentication).
+- Replace `auth.login_with_api_key` with `auth.login_ex` using `mechanism="API_KEY_PLAIN"` (or `mechanism="SCRAM"` for stronger mutual authentication).
+
+Removing the legacy `auth.login` and `auth.login_with_api_key` entry points does not affect `API_KEY_PLAIN` or the other non-SCRAM mechanisms on `auth.login_ex`, which remain supported beyond TrueNAS 27.
+
+See the [SCRAM Authentication primer](https://github.com/truenas/middleware/blob/stable/26/docs/source/accounts/scram_authentication.rst) for guidance on implementing SCRAM in custom API clients and migrating pre-TrueNAS 26 API keys to the optimized precomputed format.
 
 #### Pool Scrub Methods
 
