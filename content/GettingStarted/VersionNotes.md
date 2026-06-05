@@ -337,11 +337,11 @@ initializeChangelogTableForTabs('26');
 
 {{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
 
-* The TrueNAS REST API is removed in TrueNAS 26. Systems still using the REST API must migrate to the JSON-RPC 2.0 WebSocket API before upgrading. See [API Improvements](#api-improvements) for migration guidance and details about API authentication improvements in TrueNAS 26.
+* The TrueNAS REST API is removed in TrueNAS 26. Systems still using the REST API must migrate to the JSON-RPC 2.0 WebSocket API before upgrading. See [API Changes](#api-changes) for migration guidance and details about API authentication improvements in TrueNAS 26.
 
   </div>
 
-  <div data-tab-id="api-improvements" data-tab-label="API Improvements">
+  <div data-tab-id="api-changes" data-tab-label="API Changes">
 
 ### API Improvements in TrueNAS 26
 

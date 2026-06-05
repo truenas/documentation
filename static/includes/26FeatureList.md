@@ -49,8 +49,8 @@ See [OpenZFS Feature Flags]({{< relref "/gettingstarted/versionnotes/#zfs-featur
 
 TrueNAS 26 ships with Linux Kernel 6.18, enabling support for new hardware and receiving long-term maintenance and security updates from the upstream kernel project.
 
-### API Improvements
+### API Changes
 
 TrueNAS 26 removes the deprecated REST API and modernizes the JSON-RPC 2.0 WebSocket API with improved authentication methods, including SCRAM-SHA-512 mutual authentication for API keys.
 
-See [API Improvements](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#api-improvements) for migration guidance.
+See [API Changes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#api-changes) for migration guidance.
