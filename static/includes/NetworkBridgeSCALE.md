@@ -32,8 +32,8 @@ To set up a bridge interface:
    Enter the IP address and select the netmask for the interface edited in step 4 above. Refer to the screenshot if you do not remember the IP address and netmask.
    
    d. Select the interface name in **Bridge Members**. You only need to add the interface name edited in step 4 above.
-   Leave **Enable Learning** selected unless you want to defer interface learning until runtime.
-   Disabling learning prevents premature state transitions and potential issues during system startup.
+   Leave **Enable Learning** selected for normal use. With learning enabled, the bridge learns which MAC addresses are reachable through each member and sends traffic only to the relevant member. Without learning, the bridge floods all traffic to every member instead. Disable this option only when a bridge member might not be available at startup, to prevent the bridge from learning incorrect addresses before all members are up.
+   See [Bridge Settings]({{< ref "NetworkInterfaceScreens.md" >}}#bridge-settings) for details on both settings.
 
    e. Click **Save**.
 

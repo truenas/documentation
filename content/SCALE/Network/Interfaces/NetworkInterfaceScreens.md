@@ -65,15 +65,16 @@ Interface settings configure the network interface name, type, and IP address as
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Type** | (Required) Only shows on the **Add Interface** screen. Sets the type of interface based on the selection on the dropdown list. Options are: <br><li> **Bridge** - Creates a logical link between multiple networks. <br><li>**Link Aggregation** (bond) - Combines multiple network connections into a single interface. <br><li>**VLAN** - Partitions and isolates a segment of the connection. <br></li>Each type of interface shows additional configuration settings for that type. The type cannot be changed after clicking **Apply**, and testing and accepting the interface change. |
+| **Type** | (Required) Only shows on the **Add Interface** screen. Sets the type of interface based on the selection on the dropdown list. Options are:<ul><li>**Bridge** - Creates a logical link between multiple networks.</li><li>**Link Aggregation** (bond) - Combines multiple network connections into a single interface.</li><li>**VLAN** - Partitions and isolates a segment of the connection.</li></ul>Each type of interface shows additional configuration settings for that type. The type cannot be changed after clicking **Apply**, and testing and accepting the interface change. |
 | **Name** | (Required) Accepts manual or copy/paste entry of a name for the interface. Names must use the format bond*X* for a link aggregation, vlan*X* for a VLAN, or br*X* for a bridge, and where *X* is a number representing a non-parent interface. Assign the first interface of any type the appropriate name plus zero, for example, **br0** for the first bridge interface created. You cannot change the interface name after clicking **Apply**. After saving, **Name** becomes a read-only field when editing an interface. |
-| **Description** | Accepts manual or copy/paste entry of a description for the interface. Descritpions can provide additional information about how the interface is used or what it connects to. |
-| **DHCP** | Enable DHCP, allowing it to assign IP addresses to the interface. Shows two options: **Get IP Address Automatically from DHCP** and **Define Static IP Addresses**. reate a static IPv4 or IPv6 configuration.  |
+| **Description** | Accepts manual or copy/paste entry of a description for the interface. Descriptions can provide additional information about how the interface is used or what it connects to. |
+| **DHCP** | Enable DHCP, allowing it to assign IP addresses to the interface. Shows two options: **Get IP Address Automatically from DHCP** and **Define Static IP Addresses**. |
 | **Get IP Address Automatically from DHCP** | Allows DHCP to assign the IP address for the interface. Only one interface can be configured using DHCP. |
 | **Define Static IP Addresses** | Allows adding a static IP address to the interface using the **Static IP Addresses** fields. |
 | **Static IP Addresses** | Shows IP address and netmask (CIDR) fields after clicking **Add**. Click **Add** for each static IP address to add to/associate with the interface. |
 | **Autoconfigure IPv6** | Select to automatically configure the IPv6 address with [rtsol(8)](https://man.cx/rtsol(8)). Only one interface can be configured this way. |
 | **MTU** | Sets the maximum transmission unit (MTU), which is the largest protocol data unit that can be communicated. The largest workable MTU size varies  with network interfaces and equipment. 1500 and 9000 are standard Ethernet MTU sizes. Leaving blank restores the field to the default value of **1500**. |
+| **FEC Mode** | (Enterprise only) Sets the Forward Error Correction (FEC) mode for a physical interface. Only shows on the **Edit Interface** screen for physical interfaces that support FEC. Does not appear for bridges, link aggregations, or VLANs. The available modes depend on the network interface card (NIC) and can include:<ul><li>**AUTO** - The NIC negotiates the best FEC mode based on cable and port capabilities.</li><li>**OFF** - Disables FEC.</li><li>**RS** - Reed-Solomon FEC, often used for 25 GbE and 100 GbE NICs.</li><li>**BASER** - BaseR FEC (also called FireCode).</li><li>**LLRS** - Low Latency Reed-Solomon FEC, used for 25GBASE-KR/CR.</li></ul>Changes to this setting can disconnect the interface from the network. See [Setting FEC Mode]({{< ref "ConfiguringInterfaces.md#setting-fec-mode" >}}) for guidance on when to use it. |
 {{< /truetable >}}
 
 ### Bridge Settings
@@ -83,7 +84,12 @@ Use **Description** to further define or clarify how or where the bridge is used
 
 {{< trueimage src="/images/SCALE/Network/AddInterfaceBridgeSettings.png" alt="Bridge Interface Settings" id="Bridge Interface Settings" >}}
 
-**Bridge Members** sets the network interfaces to include in the bridge to the option selected on the dropdown list. |
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Bridge Members** | (Required) Select the network interfaces to include as members of the bridge. The dropdown lists interfaces eligible for bridging. |
+| **Enable Learning** | Select to enable MAC address learning. With learning enabled, the bridge records the MAC address of each incoming frame along with the member interface it arrived on. The bridge then uses this table to send outbound traffic only to the relevant member instead of flooding it to every member. Selected by default. Disable only in specialized configurations where the default learning behavior conflicts with how the bridge is being used, such as when a bridge member might not be available when the bridge starts. |
+{{< /truetable >}}
 
 ### Link Aggregation Settings
 
@@ -95,8 +101,8 @@ Use **Description** to further define or clarify how or where the link aggregati
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Link Aggregation Protocol** | The protocol determines the outgoing and incoming traffic ports. Shows a dropdown list with three link aggregation protocol options:  <br><li>**LACP** - Use if the network switch is capable of active LACP (this is the recommended protocol). **LACP** shows additional settings.<br><li>**Failover** - Use if the network switch does not support active LACP. This is the default protocol choice and is only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting. <br<li>**Loadbalance** - Use to set up loadbalancing. This does not use any other link aggregation settings.</li> |
-| **Link Aggregation Interfaces** | (Required) Shows a dropdown list of interfaces in the system. Select the interfaces to use in the aggregation.<br> Warning! Link Aggregation creation fails if any of the selected interfaces are manually configured!<br><li>Failover shows the interfaces that can be enabled for failover. Enabling the toggle select the interface.<br><li>Loadbalance shows the **Transmit Hash Policy** setting. |
+| **Link Aggregation Protocol** | The protocol determines the outgoing and incoming traffic ports. Shows a dropdown list with three link aggregation protocol options:<ul><li>**LACP** - Use if the network switch is capable of active LACP (this is the recommended protocol). **LACP** shows additional settings.</li><li>**Failover** - Use if the network switch does not support active LACP. This is the default protocol choice and is only used if the network switch does not support active LACP. **Failover** uses only the **Link Aggregation Interfaces** setting.</li><li>**Loadbalance** - Use to set up loadbalancing. This does not use any other link aggregation settings.</li></ul> |
+| **Link Aggregation Interfaces** | (Required) Shows a dropdown list of interfaces in the system. Select the interfaces to use in the aggregation.<br>Warning! Link Aggregation creation fails if any of the selected interfaces are manually configured!<ul><li>Failover shows the interfaces that can be enabled for failover. Enabling the toggle select the interface.</li><li>Loadbalance shows the **Transmit Hash Policy** setting.</li></ul> |
 | **Transmit Hash Policy** | Shows when the protocol is set to **LCAP** or **Loadbalance**. Dropdown list shows three hash policy options, **LAYER2**, **LAYER2+3** the default, or **LAYER3+4**. |
 | **LACPDU Rate** | Shows when the protocol is set to **LCAP**. Shows a dropdown list with two options: **Slow** or **Fast**. |
 {{< /truetable >}}
