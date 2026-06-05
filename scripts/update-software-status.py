@@ -5,12 +5,6 @@ Updates software_status_config.yaml with latest version recommendations.
 Fetches data from both the legacy CDN (update.sys.truenas.net) for 25.10
 and earlier trains, and the new CDN (auto-public.sys.truenas.net) for 26+.
 Uses cascading profile logic: MISSION_CRITICAL > GENERAL > EARLY_ADOPTER > DEVELOPER
-
-CLEANUP TODO: When 25.04 is no longer a recommended version, remove:
-1. The compressed anchor format branch in version_to_anchor() (pre-25.10)
-2. The 'scalereleasenotes' doc_path branch in get_doc_url_components() (pre-25.10)
-3. TrueNAS-SCALE-Fangtooth from additional_trains in software_status_config.yaml
-4. The version_to_anchor() pre-25.10 comment block
 """
 
 import requests
@@ -20,59 +14,29 @@ import argparse
 from pathlib import Path
 
 def version_to_anchor(version):
-    """Convert version string to documentation anchor.
-
-    - 25.10+ and 26+: anchor is the version string as-is (e.g. "25.10.2.1", "26.0.0")
-    - Pre-25.10: anchor is compressed (periods removed) (e.g. "25.04.2.6" -> "250426")
-
-    The pre-25.10 branch is retained for 25.04 support.
-    Remove when 25.04 is no longer a recommended version (see CLEANUP TODO in module docstring).
-    """
-    version_match = re.match(r'^(\d+)\.(\d+)', version)
-    if not version_match:
-        return version
-
-    major = int(version_match.group(1))
-    minor = int(version_match.group(2))
-
-    if major > 25 or (major == 25 and minor >= 10):
-        # 25.10+ and 26+: use version string as-is
-        return version
-    else:
-        # Pre-25.10: compressed format (remove periods)
-        # Remove when 25.04 is no longer recommended
-        return version.replace('.', '')
+    """Convert version string to documentation anchor (version string as-is)."""
+    return version
 
 def get_doc_url_components(version):
     """Extract URL path version, doc path, and anchor for a release version.
 
     Returns (url_path_version, doc_path, anchor) or None if version cannot be parsed.
 
-    Three version ranges, each with different URL conventions:
-    - 26+:     URL uses major only (e.g. "26"), path is "versionnotes"
-    - 25.10:   URL uses major.minor (e.g. "25.10"), path is "versionnotes"
-    - Pre-25.10: URL uses major.minor, path is "scalereleasenotes", anchor is compressed
-                 TODO: Remove this branch once 25.04 is no longer recommended
+    - 26+:   URL uses major only (e.g. "26"), path is "versionnotes"
+    - 25.10: URL uses major.minor (e.g. "25.10"), path is "versionnotes"
     """
     version_match = re.match(r'^(\d+)\.(\d+)', version)
     if not version_match:
         return None
 
     major = int(version_match.group(1))
-    minor = int(version_match.group(2))
     major_minor = version_match.group(0)
     anchor = version_to_anchor(version)
 
     if major >= 26:
-        # 26+: new versioning scheme (26.0.0, 26.1.0, ...), URL uses major only
         return str(major), 'versionnotes', anchor
-    elif major == 25 and minor >= 10:
-        # 25.10: URL uses major.minor
-        return major_minor, 'versionnotes', anchor
     else:
-        # Pre-25.10: different path and compressed anchor
-        # TODO: Remove once 25.04 is no longer recommended
-        return major_minor, 'scalereleasenotes', anchor
+        return major_minor, 'versionnotes', anchor
 
 
 def parse_version_for_sorting(version):
