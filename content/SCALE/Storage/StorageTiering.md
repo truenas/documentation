@@ -16,8 +16,13 @@ doctype: how-to
 This feature is only available on TrueNAS Enterprise systems.
 {{< /enterprise >}}
 
-Storage Tiering is a share-level toggle that lets admin users decide whether to write data to flash performance tiers or regular HDD tiers within a fusion pool at any time. 
-Users can also transparently migrate data between tiers without breaking share access paths.
+Storage Tiering is a share-level toggle that lets admin users decide whether to write data to flash performance tiers or regular HDD tiers within a fusion pool at any time.
+
+{{< expand "What is a Fusion Pool?" "v" >}}
+{{< include file="/static/includes/FusionPoolsIntro.md" >}}
+{{< /expand >}}
+
+Users can also transparently migrate datasets between tiers without breaking share access paths.
 
 To use Tiering, you must, configure and acivate the Tiering feature, create a fusion pool, create a dataset in the fusion pool, then create shares for tiering use. 
 
@@ -47,7 +52,7 @@ Create your data VDEV, then click on the **Special** option to add disks to the 
 
 {{< trueimage src="/images/SCALE/Storage/AddSpecialVDEV.png" alt="Pool Creation Wizard Special Screen" id="Pool Creation Wizard Special Screen" >}}
 
-We recommend you configure the Special VDEV layout to have parity with the Data VDEV, but for performance reasons, you can make a different type of VDEV (like a mirror of SSDs).
+We recommend configuring the Special VDEV layout with a level of redundancy similar to the Data VDEV. However, you can use different types of VDEVs (such as a 10WZ2 HDD Data VDEV paired with a 5WZ1 Special SSD VDEV) for performance reasons.
 
 Click **Save And Go To Review**, then click **Save** to create the VDEV.
 
@@ -56,6 +61,10 @@ After enabling Tiering and creating a fusion pool, you will be able to see your 
 {{< trueimage src="/images/SCALE/Storage/TieringUsage.png" alt="Storage Dashboard Tiering Usage" id="Storage Dashboard Tiering Usage" >}}
 
 For more general information and best practices on fusion pools, see [Creating Fusion Pools]({{< ref "/SCALE/Storage/Pools/CreatingFusionPools" >}}).
+
+{{< hint type=note title="L2ARC and ZFS-Intent Log" >}}
+With tiering active, TrueNAS uses L2ARC for the Regular Tier data and, unless specifically configured, uses the ZFS Intent Log (ZIL) for the Performance Tier.
+{{< /hint >}}
 
 
 
@@ -108,3 +117,7 @@ To change storage tiers from the datasets screen, click **Change** in the datase
 {{< trueimage src="/images/SCALE/Datasets/ChangeStorageTier.png" alt="Change Storage Tier" id="Change Storage Tier" >}}
 
 When changing storage tiers, you can select whether you want to migrate existing data to the new storage tier. This may take some time depending on the amount of data.
+
+You can see migration progress on the **Data Migration** card. You can aslo abort in-progress tier migrations by clicking **Abort**. If you close the **Data Migration** card, you can see the job status again by finding the active migration in the [**Running Jobs** window]({{< ref "/SCALE/TopToolbar/JobsScreens" >}}).
+
+{{< trueimage src="/images/SCALE/Storage/TierMigrationInProgress.png" alt="Tier Migration In Progress" id="Tier Migration In Progress" >}}

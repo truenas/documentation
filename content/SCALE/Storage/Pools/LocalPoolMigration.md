@@ -58,7 +58,7 @@ Complete these checks immediately before the migration work begins.
 - Verify you have OOBM/IPMI access to the system (or both controllers on HA systems) as well as SSH access.
 - Download a [system configuration backup]({{< ref "/SCALE/systemsettings/advanced/managesysconfig/#downloading-the-file" >}}), including the secret seed.**
 - Download a [system debug]({{< ref "/SCALE/systemsettings/general/generalsettings/" >}}).
-- Ensure no client systems are connected to services shared by Pool B.
+- [Ensure no client systems are connected to services shared by Pool B]({{< ref "/SCALE/datasets/datasetsscreens/#dataset-tree-table" >}}).
 - Stop all sharing services exporting data from Pool B. **Do not delete the share configuration.**
 - Stop all Pool B replication jobs that are not the local replication jobs you created for this migration. <br> **Do not delete the job configuration.**
 - [Issue a final snapshot]({{< ref "/SCALE/datasets/snapshots/creatingsnapshots/" >}}) and local replication to ensure all data on Pool B is fully replicated to Pool A.
@@ -164,7 +164,7 @@ For replicated datasets and zvols, you may need to change them to read-write bef
 
 6. Destroy Pool B from the WebUI. Go to **Storage** and click **Disconnect** on Pool B. Select **Delete Pool**. then confirm the export and click **Disconnect**. 
 
-You can now reuse the drives freed from Pool B for your new use case (extending Pool A, creating new pools, etc.).
+You can now reuse the drives freed from Pool B for your new use case (extending Pool A, creating new pools, [creating a fusion pool for storage tiering]({{< ref "/SCALE/Storage/Pools/CreatingFusionPools" >}}), etc.).
 
 {{< hint type=caution title="Pool Topology" >}}
 Any topology changes you make to Pool A (such as adding vdevs) are permanent. Thouroughly review the all new topology changes before applying them.

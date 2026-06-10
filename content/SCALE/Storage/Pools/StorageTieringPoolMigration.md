@@ -85,7 +85,7 @@ Complete these checks immediately before migration work begins.
 - Verify you have IPMI access to the system (or both controllers on HA systems) as well as SSH access.
 - Download a [system configuration backup]({{< ref "/SCALE/systemsettings/advanced/managesysconfig/#downloading-the-file" >}}), including the secret seed.**
 - Download a [system debug]({{< ref "/SCALE/systemsettings/general/generalsettings/" >}}).
-- Ensure no client systems are connected to services shared by Pool B.
+- [Ensure no client systems are connected to services shared by Pool B]({{< ref "/SCALE/datasets/datasetsscreens/#dataset-tree-table" >}}).
 - Stop all sharing services exporting data from Pool B. **Do not delete the share configuration.**
 - Stop all Pool B replication jobs that are not the local replication jobs you created for this migration. <br> **Do not delete the job configuration.**
 - [Issue a final snapshot]({{< ref "/SCALE/datasets/snapshots/creatingsnapshots/" >}}) and local replication to ensure all data on Pool B is fully replicated to Pool A.
