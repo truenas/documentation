@@ -86,6 +86,8 @@ A cloned VM shows on the Virtual Machines list with the extension **_clone0**. C
 
 The **Serial Shell** button opens the **VM Serial Shell** screen, where you can enter commands for the selected virtual machine.
 
+{{< include file="/static/includes/WebShellAccessRoles.md" >}}
+
 {{< trueimage src="/images/SCALE/Virtualization/VMSerialShellScreen.png" alt="Serial Shell" id="Serial Shell" >}}
 
 The **Virtual Machines** breadcrumb in the header to returns to the **Virtual Machine** screen.
