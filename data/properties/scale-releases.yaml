@@ -92,7 +92,7 @@ majorVersions:
       - name: "26-BETA.2"
         type: "Early Release"
         link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.2"
-        releaseDate: "2026-06-16"
+        releaseDate: "2026-06-17"
       - name: "26-BETA.1"
         type: "Early Release"
         link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.1"
