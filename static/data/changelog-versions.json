@@ -3,6 +3,7 @@
     "label": "26",
     "versions": [
       { "value": "all", "label": "26 (All)", "filename": "26-changelog.csv" },
+      { "value": "26-BETA.2", "label": "26-BETA.2", "filename": "26.0.0-beta.2-changelog.csv" },
       { "value": "26-BETA.1", "label": "26-BETA.1", "filename": "26.0.0-beta.1-changelog.csv" }
     ],
     "defaultVersion": "all"
