@@ -345,6 +345,8 @@ The **Tools** card provides quick access to the container shell.
 
 **Shell** opens a **Container Shell** session for command-line interaction with the container. The shell is only available when the container is running.
 
+{{< include file="/static/includes/WebShellAccessRoles.md" >}}
+
 ## Edit Container Screen
 
 The **Edit Container: *Container*** screen includes most settings from the **[Add Container Screen](#add-container-screen)** except **Image**, **Pool**, and **ID Map Type**.
