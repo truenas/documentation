@@ -301,6 +301,9 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 * Creating a new dataset with the **SMB**, **Multiprotocol**, or **Apps** preset can take several seconds to complete on TrueNAS 26-BETA.1 and 26-BETA.2 ([NAS-141154](https://ixsystems.atlassian.net/browse/NAS-141154), [NAS-141161](https://ixsystems.atlassian.net/browse/NAS-141161)).
   A performance regression from TrueNAS 25.10 in the per-credential access check that runs during dataset creation causes the noticeable delay. Dataset creation completes successfully.
   Resolved in 26-RC.1.
+* The **Backup Tasks** dashboard card does not display **TrueCloud Backup** or **Periodic Snapshot** tasks, even when those tasks are configured and have completed successfully.
+  The tasks run normally and appear as expected on the **Data Protection** screen; only the dashboard card omits them.
+  Other task types, such as Replication and Cloud Sync, appear on the card as expected.
 
 <a href="https://ixsystems.atlassian.net/issues?filter=14542" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
 
