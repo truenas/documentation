@@ -13,24 +13,24 @@ doctype: reference
 ---
 
 
-The **Rsync Task** widget on the **Data Protection** screen shows rsync tasks configured on the TrueNAS system.
+The **Rsync Task** card on the **Data Protection** screen shows rsync tasks configured on the TrueNAS system.
 It provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS and an rsync backup server.
 Rsync tasks are an effective method to back up data to a remote location.
 
-## Rsync Task Widget
+## Rsync Task Card
 
-The **Rsync Tasks** widget shows a description of rsync tasks until the first task is configured. After that, it shows a list of the tasks configured on the system, with details about each task and the task status.
+The **Rsync Tasks** card shows a description of rsync tasks until the first task is configured. After that, it shows a list of the tasks configured on the system, with details about each task and the task status.
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">
     <div style="flex: 1;">
-      <img src="/images/SCALE/DataProtection/RsyncTaskWidgetNoTasks.png" alt="Rsync Task Widget No Task" style="width: 100%; max-width: 400px; height: auto;">
+      <img src="/images/SCALE/DataProtection/RsyncTaskWidgetNoTasks.png" alt="Rsync Task Card No Task" style="width: 100%; max-width: 400px; height: auto;">
     </div>
     <div style="flex: 1;">
-      <img src="/images/SCALE/DataProtection/RsyncTaskWidget.png" alt="Rsync Task Widget with Tasks" style="width: 100%; max-width: 400px; height: auto;">
+      <img src="/images/SCALE/DataProtection/RsyncTaskWidget.png" alt="Rsync Task Card with Tasks" style="width: 100%; max-width: 400px; height: auto;">
     </div>
   </div>
   
-The widget header opens the [**Rsync Task**](#rsync-task-screen) screen.
+The card header opens the [**Rsync Task**](#rsync-task-screen) screen.
 
 **Add** opens the **[Add Rsync Task](#add-and-edit-rsync-task-screens)** screen.
 
