@@ -24,6 +24,8 @@ Add disks to the **Data** vdev, then click on the **Metadata** option to add a d
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
 
+Select a layout that matches or exceeds the redundancy level of the data VDEV. For example, if the data VDEV uses RAIDZ2, select RAIDZ2 or a three-way mirror for the Metadata VDEV. Pool creation fails when the Metadata VDEV redundancy is lower than the data VDEV redundancy.
+
 Click **Save And Go To Review**, then click **Save** to create the VDEV.
 
 {{< include file="/static/includes/FusionPoolsCommonContent.md" >}}
