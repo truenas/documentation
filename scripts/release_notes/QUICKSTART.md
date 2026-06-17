@@ -47,8 +47,8 @@ $env:GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"
 
 ### Before You Start: Two Conventions to Know
 
-> **CSV naming:** Save your Jira export as `{version}-changelog.csv` in `documentation/public/data/`.
-> Example: `public/data/25.10.3-changelog.csv`
+> **CSV naming:** Save your Jira export as `{version}-changelog.csv` in `documentation/static/data/`.
+> Example: `static/data/25.10.3-changelog.csv`
 > The `prep` command looks for this file automatically.
 
 > **VersionNotes.md placeholder:** The new version tab must contain exactly this placeholder:
@@ -64,7 +64,7 @@ $env:GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"
 
 1. Open your Jira filter for the release
 2. Click **Export** → **Export CSV (all fields)**
-3. Save as `documentation/public/data/25.10.X-changelog.csv`
+3. Save as `documentation/static/data/25.10.X-changelog.csv`
 
 ### Step 2: Run prep (5 minutes)
 
@@ -163,7 +163,7 @@ jump_to_buttons:
 
 ### "CSV file not found"
 
-The `prep` command looks for `public/data/{version}-changelog.csv`.
+The `prep` command looks for `static/data/{version}-changelog.csv`.
 Save your Jira export there, named exactly `{version}-changelog.csv`.
 
 ### "notable-changes.md not found"
