@@ -67,7 +67,7 @@ Enable SSH on both the local host TrueNAS and the remote destination system.
 
 You can use the SSH connection created in [Using an SSH Connection](#using-an-ssh-connection) or create a new connection while configuring the rsync task.
 
-1. Go to **Data Protection** and click **Add** on the **Rsync Tasks** widget to open the **Add Rsync Task** screen.
+1. Go to **Data Protection** and click **Add** on the **Rsync Tasks** card to open the **Add Rsync Task** screen.
 
    {{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceRemoteSSH.png" alt="Add Rsync Task - SSH Mode" id="Add Rsync Task - SSH Mode" >}}
 
@@ -108,16 +108,16 @@ You can use the SSH connection created in [Using an SSH Connection](#using-an-ss
 
 8. Leave **Enabled** selected. Clear the checkbox to disable the task without deleting the configuration.
 
-9. Click **Save**. The system verifies the SSH connection and adds the task to the **Rsync Tasks** widget.
+9. Click **Save**. The system verifies the SSH connection and adds the task to the **Rsync Tasks** card.
 
-To run the rsync task at any time, select it on the **Rsync Tasks** widget, click <span class="material-icons">more_vert</span> for the task, and select **Run Now**.
+To run the rsync task at any time, select it on the **Rsync Tasks** card, click <span class="material-icons">more_vert</span> for the task, and select **Run Now**.
 
 ### Using an SSH Connection
 
 The TrueNAS UI allows users to select an existing SSH connection or to create a new connection while configuring the task.
 The **New SSH Connection** screen opened using the **Add New** option in the rsync task and accessed while on the **Backup Credentials** screen are essentially the same and show the same setting options.
 
-To set up a new SSH connection before adding an rsync task, go to **Credentials > Backup Credentials** and click **Add** on the **SSH Connections** widget.
+To set up a new SSH connection before adding an rsync task, go to **Credentials > Backup Credentials** and click **Add** on the **SSH Connections** card.
 See [Adding SSH Credentials]({{< ref "AddSSHConnectionKeyPair" >}}) for more information on adding SSH Connections and key pairs.
 
 To add a new connection while configuring the rsync task on the **Add Rsync Task** screen, set the mode to **SSH**, select **SSH connection from the keychain**, and then select **Add New** on the **SSH Connection** dropdown list. The **New SSH Connection** screen opens.
@@ -172,7 +172,7 @@ If the non-TrueNAS remote server includes an rsync service, make sure it is turn
 
    When the remote system is a Debian-based TrueNAS system, go to **Apps > Discover Apps** and search for the **Rsync Daemon** app.
    
-   Click on the widget, and then click **Install** to open the installation wizard.
+   Click on the card, and then click **Install** to open the installation wizard.
 
    To add a module, click **Add** to the right of **Rsync Modules**, then:
    1. Assign a name. This name is added in the **Add Rsync Task** screen on your TrueNAS system when you set up a task using **Module** in the **Rsync Mode** field.
@@ -194,7 +194,7 @@ To configure the rsync task using module mode, you need:
 * The IP address or host name for the remote server
 * The path to the dataset
 
-1. Go to **Data Protection** and click **Add** on the **Rsync Tasks** widget to open the **Add Rsync Task** screen.
+1. Go to **Data Protection** and click **Add** on the **Rsync Tasks** card to open the **Add Rsync Task** screen.
 
    {{< trueimage src="/images/SCALE/DataProtection/AddRsyncTaskSourceAndRemoteSettings.png" alt="Add Rsync Task - Module Mode" id="Add Rsync Task - Module Mode" >}}
 
@@ -228,4 +228,4 @@ To configure the rsync task using module mode, you need:
 
 9. Click **Save**.
 
-To run the rsync task at any time, select it on the **Rsync Tasks** widget, click <span class="material-icons">more_vert</span> for the task, and select **Run Now**.
+To run the rsync task at any time, select it on the **Rsync Tasks** card, click <span class="material-icons">more_vert</span> for the task, and select **Run Now**.
