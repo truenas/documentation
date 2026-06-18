@@ -48,7 +48,7 @@ HA primary and standby controller event logs are downloadable from either the pr
 
 ### Session and User Auditing Events
 
-Session and user auditing events include authentication, method call, and sudo accept/reject events.
+Session and user auditing events include authentication, method call, sudo accept/reject, and web shell events.
 
 {{< expand "Authentication Events" "v" >}}
 Audit messages are generated every time a client logs into the TrueNAS UI or an SSH session or makes changes to user credentials.
@@ -61,8 +61,18 @@ Audit messages are generated every time a currently logged-in user creates a new
 {{< /expand >}}
 
 {{< expand "Sudo Accept or Reject Events" "v" >}}
-Generated every time a user logs into a shell session and uses sudo to perform a command as root, or is denied sudo permission.
+Sudo accept or reject events are generated every time a user logs into a shell session and uses sudo to perform a command as root, or is denied sudo permission.
 The event data for a sudo event includes the command.
+{{< /expand >}}
+
+{{< expand "Web Shell Authentication Events" "v" >}}
+Web shell authentication events are generated every time a user attempts to open a web shell, for both successful and denied attempts.
+The event data includes the shell type (host, app, container, or VM), the target resource, the user name, and, for a denied attempt, the reason for the denial.
+{{< /expand >}}
+
+{{< expand "Web Shell Logout Events" "v" >}}
+Web shell logout events are generated when an authenticated web shell session disconnects.
+The event data includes the shell type (host, app, container, or VM), the target resource, and the user name.
 {{< /expand >}}
 
 ### SMB Auditing Events

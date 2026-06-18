@@ -45,6 +45,12 @@ Spotlight search is enabled per share in the SMB service configuration.
 TrueNAS 26 integrates OpenZFS 2.4, which introduces new capabilities including hybrid pool support for combining flash and HDD storage, physical block rewriting, and dynamic gang header improvements.
 See [OpenZFS Feature Flags]({{< relref "/gettingstarted/versionnotes/#zfs-feature-flags" >}}) for details on newly added feature flags.
 
-### Linux Kernel 6.18 LTS
+### Linux Kernel 6.18
 
-TrueNAS 26 ships with Linux Kernel 6.18 LTS, enabling support for new hardware and receiving long-term maintenance and security updates from the upstream kernel project.
+TrueNAS 26 ships with Linux Kernel 6.18, enabling support for new hardware and receiving long-term maintenance and security updates from the upstream kernel project.
+
+### API Changes
+
+TrueNAS 26 removes the deprecated REST API and modernizes the JSON-RPC 2.0 WebSocket API with improved authentication methods, including SCRAM-SHA-512 mutual authentication for API keys.
+
+See [API Changes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#api-changes) for migration guidance.

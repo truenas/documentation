@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "26.0.0-beta.1"
+    anchor: "26.0.0-beta.2"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -37,6 +37,135 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="26.0.0-beta.2" data-tab-label="26-BETA.2 Notable Changes">
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
+June 17, 2026
+<!-- Tentative release date — confirm and update before publication. -->
+
+The TrueNAS team is pleased to release TrueNAS 26-BETA.2!
+<!-- Intro paragraph to be filled in -->
+
+<!-- Special thanks paragraph to be filled in -->
+
+### 26-BETA.2 Notable Changes
+
+* Adds **Forward Error Correction (FEC)** mode as a configurable network interface setting on both Community Edition and Enterprise systems ([NAS-139477](https://ixsystems.atlassian.net/browse/NAS-139477), [NAS-140329](https://ixsystems.atlassian.net/browse/NAS-140329)).
+  Network interfaces that support FEC can now have the FEC mode configured directly from the interface settings in the UI.
+
+* Adds the ability to view the reason for each system reboot on the local node ([NAS-139412](https://ixsystems.atlassian.net/browse/NAS-139412)).
+  TrueNAS now stores the cause of each reboot — for example, user-initiated, kernel panic, or scheduled update — so administrators can review reboot history when they investigate system events.
+
+* Adds the missing `en_US.UTF-8` locale to TrueNAS 26 ([NAS-140692](https://ixsystems.atlassian.net/browse/NAS-140692)).
+  The default English UTF-8 locale was not present in BETA.1, which could cause encoding errors for applications, scripts, and containers that depend on it. The locale is now available system-wide.
+
+* Improves visibility of important pool states such as **resilvering** in the web interface ([NAS-139007](https://ixsystems.atlassian.net/browse/NAS-139007)).
+  Pool states like resilvering, scrubbing, and degraded operations were not prominently displayed. The Storage dashboard and pool status screens now surface these states with clearer indicators so administrators can identify maintenance activity at a glance.
+
+* Improves webshell access control with per-shell-type role checks and adds audit logging for shell sessions ([NAS-141011](https://ixsystems.atlassian.net/browse/NAS-141011)).
+  Webshell sessions for containers, VMs, and apps previously wrapped commands in `sudo -H -u <user>`, which failed against root-owned libvirt and Docker sockets. Users with the `FULL_ADMIN` role but without unrestricted sudo encountered Polkit errors and broken shells. Webshell authorization now uses per-shell-type role checks (`VM_WRITE`, `CONTAINER_WRITE`, `APPS_WRITE`) alongside the existing webshell privilege, and shell sessions emit `WEBSHELL_AUTHENTICATION` and `WEBSHELL_LOGOUT` audit events.
+
+* Improves the built-in ACL preset templates by auto-including local and directory service user and admin groups ([NAS-140530](https://ixsystems.atlassian.net/browse/NAS-140530)).
+  When a built-in preset such as `NFS4_RESTRICTED` is applied through **Use Preset**, TrueNAS now adds entries for `builtin_users` and `builtin_administrators` — and, on systems joined to Active Directory, the corresponding domain users and domain admins groups. The expanded ACL appears on screen before save so administrators can remove any entries they do not want. User-created templates are unaffected.
+
+* Improves the performance of directory listings on SMB shares from macOS clients ([NAS-141125](https://ixsystems.atlassian.net/browse/NAS-141125)).
+  When macOS Finder lists a directory with the AAPL extensions enabled, the previous code path added three syscalls per file entry to probe the AppleDouble resource fork size. The probe now reuses the directory enumeration's existing file descriptor with a single syscall, reducing roughly two syscalls per file and producing noticeable listing speedups on directories with many entries.
+
+* Fixes the **Map User And Group IDs** option on LXC containers not working ([NAS-140766](https://ixsystems.atlassian.net/browse/NAS-140766)).
+  A blocker bug prevented containers configured with user and group ID mapping from applying those mappings to the container filesystem. The mapping now applies correctly when the container starts.
+
+* Fixes false **failed a SMART selftest** alerts that appeared after upgrading from TrueNAS 24.10 (Electric Eel) to 25.10 (Goldeye) or later ([NAS-140652](https://ixsystems.atlassian.net/browse/NAS-140652)).
+  Stale SMART data carried over during the upgrade triggered false-positive alerts on drives that had no actual SMART test failures. Affected systems no longer receive these alerts.
+
+* Fixes a timeout in NVMe namespace delete operations on drives that contain written data ([NAS-140748](https://ixsystems.atlassian.net/browse/NAS-140748)).
+  The `disk_resize` operation could hang or fail when it removed namespaces on NVMe drives with existing data. The delete operation now completes reliably regardless of the amount of data on the namespace.
+
+* Fixes an out-of-memory condition triggered by `posix_fadvise(POSIX_FADV_SEQUENTIAL)` on ZFS datasets ([NAS-140587](https://ixsystems.atlassian.net/browse/NAS-140587)).
+  Applications that hinted sequential access on large files could cause the system to exhaust memory and trigger the OOM killer. The ZFS sequential prefetch path is updated so the hint no longer leads to runaway memory use.
+
+* Fixes the SMB service crash on Legacy Share types with the recycle bin feature enabled when **Spotlight search** is active ([NAS-140749](https://ixsystems.atlassian.net/browse/NAS-140749)).
+  The TrueNAS per-dataset recycle bin (vfs_recycle) keeps file handles open to prevent symlink race conditions, while the Spotlight metadata service relied on a share connection that skipped the normal file-close step during teardown. The mismatched shutdown order triggered an assertion failure and crashed the SMB service. The service shutdown order is corrected so the recycle bin and Spotlight can coexist.
+
+* Fixes an issue where LXC containers from earlier TrueNAS versions could not start after upgrade to TrueNAS 26 ([NAS-140691](https://ixsystems.atlassian.net/browse/NAS-140691)).
+  The upgrade migration script did not properly mount container ZFS datasets, leaving the container filesystem intact but inaccessible and causing the init executable to appear missing. The migration script now mounts datasets correctly so containers start without manual intervention.
+
+* Fixes GPU isolation and GPU passthrough to virtual machines after upgrade from earlier TrueNAS versions to 26 ([NAS-140687](https://ixsystems.atlassian.net/browse/NAS-140687)).
+  A regression in the upgrade script silently failed to apply required initramfs customizations for GPU device isolation, leaving the GPU in an unavailable state after the upgrade. Systems with a previously isolated GPU encountered a "device is not available" error when starting a VM with a passed-through GPU, or found that GPU isolation did not take effect. The upgrade script now applies the required customizations correctly so GPU isolation and passthrough work without manual recovery.
+
+* Fixes the **Send Feedback > Report a Bug** feature failing to attach the debug file when **Attach Debug** is selected ([NAS-140163](https://ixsystems.atlassian.net/browse/NAS-140163), [NAS-140237](https://ixsystems.atlassian.net/browse/NAS-140237)).
+  The debug attachment could silently fail with no error in the UI, while ticket creation still succeeded without the debug file. The UI now uploads the debug file correctly and reports failures so users know when a manual attachment is needed.
+
+* Fixes a regression in 26-BETA.1 that blocked virtual machine cloning ([NAS-140792](https://ixsystems.atlassian.net/browse/NAS-140792)).
+  Users could not clone existing VMs through the UI in BETA.1. VM cloning is restored in BETA.2.
+
+* Fixes the **GUI SSL Certificate** field on **System Settings > General > GUI Settings** failing to save the selected certificate after upgrade from 25.10 to 26-BETA.1 ([NAS-140354](https://ixsystems.atlassian.net/browse/NAS-140354)).
+  The field displayed `None` even after a certificate was selected, and attempting to save other GUI settings produced a validation error stating the required certificate field was empty. The backend change in BETA.1 that returned the certificate as a numeric ID instead of a full object is now paired with a `ui_certificate_name` response field, so the UI can display and save the selected certificate correctly.
+
+* Fixes an error that blocked saving E-Mail options when **GMail OAuth** is selected ([NAS-140306](https://ixsystems.atlassian.net/browse/NAS-140306)).
+  Users configuring outbound email with GMail OAuth could not save the configuration. The save action now completes successfully.
+
+* Fixes the inability to pass Intel GPU devices through to LXC containers ([NAS-140421](https://ixsystems.atlassian.net/browse/NAS-140421)).
+  Intel GPU devices did not appear in the device picker for LXC containers, preventing assignment. The full set of supported GPU devices, including Intel, now appears and can be assigned.
+
+* Fixes the inability to add ISO files to virtual machines through the creation wizard or by manually adding a CDROM device ([NAS-140446](https://ixsystems.atlassian.net/browse/NAS-140446)).
+  ISO files could not be attached to VMs either at initial creation or by manually adding a CDROM device after creation. ISO attachment now works in both flows.
+
+* Fixes a bug where NVMe namespace resize operations dropped the list of attached controllers ([NAS-140497](https://ixsystems.atlassian.net/browse/NAS-140497)).
+  When a namespace was resized, the original controller attachment configuration was discarded and had to be reconfigured manually. The namespace resize now preserves controller attachments.
+
+* Fixes incorrect storage usage estimates on the **Snapshots** screen ([NAS-140637](https://ixsystems.atlassian.net/browse/NAS-140637)).
+  Storage usage values displayed on snapshot rows did not reflect actual consumption. Usage estimates now calculate and display correctly.
+
+* Fixes a VM XML configuration error caused by duplicate USB controllers with the same index when a VM contains two or more USB devices ([NAS-140626](https://ixsystems.atlassian.net/browse/NAS-140626)).
+  Adding multiple USB devices to a VM produced a libvirt XML conflict that could prevent the VM from starting. USB device controllers now use unique indexes.
+
+* Fixes several TrueSearch and macOS Spotlight integration issues on SMB and NFS shares ([NAS-140952](https://ixsystems.atlassian.net/browse/NAS-140952), [NAS-141078](https://ixsystems.atlassian.net/browse/NAS-141078), [NAS-140932](https://ixsystems.atlassian.net/browse/NAS-140932)).
+  TrueSearch from macOS Spotlight failed to return results on supported SMB shares, search activity could trigger NFS timeout issues on the same system, and the WebShare service did not toggle TrueSearch support correctly when reloaded with SIGHUP. All three issues are resolved.
+
+* Fixes USB device passthrough to virtual machines ([NAS-139548](https://ixsystems.atlassian.net/browse/NAS-139548)).
+  A regression caused USB passthrough to fail on some VM configurations. USB passthrough now works reliably across supported devices.
+
+* Fixes stale container entries that remained in the UI after the host pool was disconnected ([NAS-140621](https://ixsystems.atlassian.net/browse/NAS-140621)).
+  Container names continued to appear in the UI after the pool that hosted them was disconnected, even though the underlying containers were gone. The container list now refreshes to reflect the current pool state.
+
+* Fixes middleware not propagating configuration changes to the kernel `nvmet` subsystem ([NAS-140266](https://ixsystems.atlassian.net/browse/NAS-140266)).
+  NVMe-over-Fabrics target configuration changes made through the UI did not always apply to the running kernel target. Middleware now reliably updates `nvmet` when target settings change.
+
+* Fixes LXC containers reporting a generic hostname instead of the configured container name ([NAS-140185](https://ixsystems.atlassian.net/browse/NAS-140185)).
+  Containers reported their hostname as `LXCNAME` regardless of the name set in TrueNAS. The container hostname now matches the name shown in the UI.
+
+* Fixes an error that blocked edits to user accounts that belong to the `docker` group ([NAS-139955](https://ixsystems.atlassian.net/browse/NAS-139955)).
+  Editing a user account that included `docker` group membership returned an error and prevented saving. User edits now succeed regardless of `docker` group membership.
+
+* Fixes the encryption dialog refusing to save when a validation error occurs on a hidden field ([NAS-140293](https://ixsystems.atlassian.net/browse/NAS-140293)).
+  Users could be blocked from saving the encryption configuration by a validation error on a field that was not visible in the current dialog state. The dialog now allows saving when hidden field errors do not apply.
+
+* Fixes the **Manual Update** screen linking to a 404 page for the manual image installation guide ([NAS-140366](https://ixsystems.atlassian.net/browse/NAS-140366)).
+  The **See the manual image installation guide** link pointed at an outdated URL that no longer exists. The link now points to the correct documentation.
+
+* Fixes Cloud Sync tasks targeting custom S3-compatible endpoints failing after the 25.10 upgrade ([NAS-140383](https://ixsystems.atlassian.net/browse/NAS-140383)).
+  A signing behavior change in 25.10 broke custom S3 backup destinations on non-AWS providers. Compatibility with non-AWS S3 providers is restored.
+
+* Fixes dashboard widgets not rendering on some systems upgraded from 25.10.2 ([NAS-139966](https://ixsystems.atlassian.net/browse/NAS-139966)).
+  Dashboard widgets could fail to load after the upgrade because of stale widget configuration data. The widget configuration is migrated correctly so the dashboard renders without intervention.
+
+* Fixes incorrect sort order on the **Virtual Machines** screen when sorting by the **Running** column ([NAS-140501](https://ixsystems.atlassian.net/browse/NAS-140501)).
+  Sorting VMs by running state did not group running and stopped VMs predictably. The sort now produces a consistent grouped order.
+
+* Fixes the **Alerts** panel opening behind an active slide-in form ([NAS-140108](https://ixsystems.atlassian.net/browse/NAS-140108)).
+  When a configuration slide-in was open, clicking the alerts icon opened the alerts panel below the slide-in, where users could not see or interact with it. The alerts panel now opens above the slide-in.
+
+* Removes a legacy USB boot detection workaround that could add a 15-second delay to system boot ([NAS-140745](https://ixsystems.atlassian.net/browse/NAS-140745)).
+  A workaround introduced in 2021 to address an early SCALE alpha boot-pool import race on USB boot disks injected `ZFS_INITRD_POST_MODPROBE_SLEEP=15` into `/etc/default/zfs` on systems where any boot-pool vdev appeared to be on a USB bus. USB boot is no longer a supported TrueNAS configuration, and the workaround is removed. Systems upgraded from a version that wrote the sleep line have it stripped automatically.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14541" target="_blank">TrueNAS 26-BETA.2 Changelog</a> in Jira.
+
+  </div>
+
   <div data-tab-id="26.0.0-beta.1" data-tab-label="26-BETA.1 Notable Changes">
 
 {{< hint type=warning title="Early Release Software" >}}
@@ -169,26 +298,14 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 
 ### Current Known Issues
 
-* The **Send Feedback > Report a Bug** feature does not attach the debug file when **Attach Debug** is selected, and the UI does not display an error if the attachment fails ([NAS-140163](https://ixsystems.atlassian.net/browse/NAS-140163), [NAS-140237](https://ixsystems.atlassian.net/browse/NAS-140237)).
-  Ticket creation is not affected. To manually attach a debug file, generate one from **System > General Settings > Support > Save Debug** and upload it using the Private File Upload link automatically added as a comment on the created Jira ticket.
-  Resolved in 26-BETA.2.
+* Creating a new dataset with the **SMB**, **Multiprotocol**, or **Apps** preset can take several seconds to complete on TrueNAS 26-BETA.1 and 26-BETA.2 ([NAS-141154](https://ixsystems.atlassian.net/browse/NAS-141154), [NAS-141161](https://ixsystems.atlassian.net/browse/NAS-141161)).
+  A performance regression from TrueNAS 25.10 in the per-credential access check that runs during dataset creation causes the noticeable delay. Dataset creation completes successfully.
+  Resolved in 26-RC.1.
+* The **Backup Tasks** dashboard card does not display **TrueCloud Backup** or **Periodic Snapshot** tasks, even when those tasks are configured and have completed successfully.
+  The tasks run normally and appear as expected on the **Data Protection** screen; only the dashboard card omits them.
+  Other task types, such as Replication and Cloud Sync, appear on the card as expected.
 
-* **Containers** (LXC) created in earlier TrueNAS versions can fail to start after upgrading to 26-BETA.1, with an error indicating the init executable cannot be found ([NAS-140691](https://ixsystems.atlassian.net/browse/NAS-140691)).
-  The upgrade migration script does not properly mount container ZFS datasets, leaving the container filesystem intact but inaccessible.
-  As a workaround, open the TrueNAS shell and run `zfs set canmount=on <pool>/.truenas_containers/containers/<container_name>` followed by `zfs mount <pool>/.truenas_containers/containers/<container_name>`.
-  Resolved in 26-BETA.2.
-
-* SMB shares configured as the **Legacy Share** type with the recycle bin feature enabled can cause an SMB service crash when **Spotlight search** is active ([NAS-140749](https://ixsystems.atlassian.net/browse/NAS-140749)).
-  The TrueNAS per-dataset recycle bin (vfs_recycle) keeps file handles open to prevent symlink race conditions during recycle operations. The Spotlight metadata service relies on a share connection that skips the normal file-close step during teardown, violating the expected shutdown order and triggering an assertion failure.
-  As a workaround, edit the affected share and change the **Share Purpose** from **Legacy Share** to one of the currently available options. The **Legacy Share** type and recycle bin feature are in the process of being deprecated and are no longer selectable in the UI.
-  Resolved in 26-BETA.2.
-
-* GPU isolation and GPU passthrough to virtual machines do not function correctly after upgrading to 26-BETA.1 if a GPU was previously isolated in **System > Advanced Settings** or added to a VM ([NAS-140687](https://ixsystems.atlassian.net/browse/NAS-140687)).
-  A regression in the upgrade script silently fails to apply required initramfs customizations for GPU device isolation, leaving the GPU in an unavailable state after the upgrade. Affected systems encounter a "device is not available" error when attempting to start a VM with a passed-through GPU, or find that GPU isolation does not take effect.
-  Workaround: Remove the GPU from the VM in the UI, then remove the GPU isolation entry from **System > Advanced Settings**. Re-add the GPU in **System > Advanced Settings**, reboot the system, then re-add the GPU to the VM.
-  Resolved in 26-BETA.2.
-
-<a href="https://ixsystems.atlassian.net/issues?filter=14297" target="_blank">See the latest status on Jira</a> for public issues discovered in 26-BETA.1 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues?filter=14542" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -221,7 +338,7 @@ For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" 
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.0.0-beta.1');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.0.0-beta.2');
 });
 </script>
 
@@ -242,13 +359,33 @@ initializeChangelogTableForTabs('26');
 
 {{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
 
-* {{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
+* The TrueNAS REST API is removed in TrueNAS 26. Systems still using the REST API must migrate to the JSON-RPC 2.0 WebSocket API before upgrading. See [API Changes](#api-changes) for migration guidance and details about API authentication improvements in TrueNAS 26.
 
-  {{< include file="/static/includes/APIDocs.md" >}}
+  </div>
 
-  You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
-  Click **API Docs** to view API documentation.
-  
+  <div data-tab-id="api-changes" data-tab-label="API Changes">
+
+### API Improvements in TrueNAS 26
+
+#### REST API Removal
+
+{{< include file="/static/includes/RESTAPIDeprecationNotice.md" >}}
+
+{{< include file="/static/includes/APIDocs.md" >}}
+
+You can access TrueNAS API documentation in the web interface by clicking <i class="material-icons" aria-hidden="true" title="laptop" style="vertical-align: top;">laptop</i> **My API Keys** on the top right toolbar <i class="material-icons" aria-hidden="true">account_circle</i> user settings dropdown menu to open the **User API Keys** screen.
+Click **API Docs** to view API documentation.
+
+#### Improved API Authentication
+
+TrueNAS 26 introduces `auth.login_ex` as a unified WebSocket API authentication method that supports password (`PASSWORD_PLAIN`), API key (`API_KEY_PLAIN`), OTP token (`OTP_TOKEN`), and the new SCRAM-SHA-512 (`SCRAM`) mechanism. SCRAM provides mutual authentication between client and server without transmitting raw key material.
+
+The legacy `auth.login` and `auth.login_with_api_key` methods are deprecated and scheduled for removal in TrueNAS 27. Their functionality is fully replaced by `auth.login_ex`, which continues to support `API_KEY_PLAIN` and the other non-SCRAM mechanisms beyond TrueNAS 27. SCRAM is the recommended choice for new clients that can adopt it.
+
+See the [SCRAM Authentication primer](https://github.com/truenas/middleware/blob/stable/26/docs/source/accounts/scram_authentication.rst) for guidance on implementing SCRAM in custom API clients and migrating pre-TrueNAS 26 API keys to the optimized precomputed format.
+
+For the full list of deprecated and removed API methods, see [Feature Deprecations]({{< ref "Deprecations" >}}).
+
   </div>
 
   <div data-tab-id="containers-virtual-machines" data-tab-label="Containers and Virtual Machines">
@@ -302,13 +439,6 @@ See [Drive Health Management]({{< ref "/Storage/Disks/DriveHealthManagement.md" 
   <div data-tab-id="upgrade-paths" data-tab-label="Upgrade Paths">
 
 ### Upgrade Paths
-
-{{< hint type=important title="25.10 Upgrade Path" >}}
-Upgrading from TrueNAS 25.10 to 26-BETA.1 is not available in the TrueNAS UI until TrueNAS 25.10.3 is released.
-Users on TrueNAS 25.10 who wish to test 26-BETA.1 before that time can manually install or upgrade by downloading directly:
-- [TrueNAS-26.0.0-BETA.1.iso](https://iso.sys.truenas.net/TrueNAS-26-BETA/26.0.0-BETA.1/TrueNAS-26.0.0-BETA.1.iso)
-- [TrueNAS-26.0.0-BETA.1.update](https://update-public.sys.truenas.net/TrueNAS-26-BETA/TrueNAS-26.0.0-BETA.1.update)
-{{< /hint >}}
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
