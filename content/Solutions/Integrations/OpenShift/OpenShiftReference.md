@@ -16,9 +16,9 @@ This article provides general reference information about the TrueNAS OpenShift 
 
 Use this article alongside the [OpenShift Operator Administrators Guide]({{< ref "OpenShiftOperator" >}}) and [OpenShift Operator User Guide]({{< ref "OpenShiftOperatorUserGuide" >}}) for complete deployment information.
 
-### OpenShift Storage Concepts
+## OpenShift Storage Concepts
 
-OpenShift uses Kubernetes under the hood as an open-source container orchestration platform that automates deployment, scaling, and management of containerized applications. The OpenShift Operator packages and manages the TrueNAS CSI Driver, providing a native OpenShift deployment experience through OperatorHub.
+OpenShift is built on Kubernetes, an open-source container orchestration platform that automates deployment, scaling, and management of containerized applications. The OpenShift Operator packages and manages the TrueNAS CSI Driver, providing a native OpenShift deployment experience through OperatorHub.
 
 The following are important terms and foundational to how OpenShift (Kubernetes) and the TrueNAS CSI driver provides storage:
 
@@ -39,7 +39,7 @@ The following are important terms and foundational to how OpenShift (Kubernetes)
 
 * **Container Storage Interface (CSI)** - A container storage interface (CSI) is an industry standard for storage plugins in Kubernetes. It enables storage vendors to write one plugin that works everywhere, and separates storage logic from Kubernetes core. The TrueNAS CSI driver implements this standard.
 
-### How it works
+## How It Works
 
 The process begins with a user requesting storage by creating a PVC YAML file using `oc apply -f filename.yaml` that specifies volume size, access mode, StorageClass.
 After this, OpenShift detects the new PVC and calls the TrueNAS CSI driver CreateVolume function.
@@ -51,7 +51,7 @@ Finally, the pod can now mount and use the volume.
 
 The `TrueNASCSI` custom resource configures the CSI driver deployment.
 
-Use this full YAML records in place of those in the [OpenShift Operator Administrators Guide]({{< ref "OpenShiftOperator" >}}) if your deployment requires the extra parameters.
+Use these full YAML records in place of those in the [OpenShift Operator Administrators Guide]({{< ref "OpenShiftOperator" >}}) if the deployment requires the extra parameters.
 
 ### Full Specification
 
@@ -135,7 +135,7 @@ status:
 
 ## StorageClasses Configuration
 
-Use these full YAML records in place of those in the [OpenShift Operator Administrators Guide]({{< ref "OpenShiftOperator" >}}) if your deployment requires the extra parameters.
+Use these full YAML records in place of those in the [OpenShift Operator Administrators Guide]({{< ref "OpenShiftOperator" >}}) if the deployment requires the extra parameters.
 
 ### NFS StorageClass
 

@@ -21,7 +21,7 @@ Cluster administrators perform the one-time configuration that consists of:
 * Verifying your network firewall and DNS is correctly configured
 * Configuring TrueNAS authentication and storage for the CSI driver
 * Installing the OpenShift Operator in your cluster
-* Adding the StorageClasses (NFS and/or iSCSI)
+* Adding the StorageClasses (NFS, iSCSI, or both)
 
 The TrueNAS administrator does the one-time setup that consists of:
 * Creating an API key for OpenShift authentication
@@ -31,8 +31,8 @@ The TrueNAS administrator does the one-time setup that consists of:
 
 After receiving the authentication credentials from the TrueNAS administrator, establish communication with TrueNAS using the API authentication key provided by TrueNAS and the TrueNAS system IP address.
 
-Each OpenShift cluster user (developer) creates a Persistent Volume Claims (PVC) YAML file that specifies the volume size, access mode, StorageClass, etc., then submits this PVC request in OpenShift using an oc command.
-TrueNAS receives the request, adds the requested volumes based on the StorageClass information received in the yaml file.
+Each OpenShift cluster user (developer) creates a Persistent Volume Claim (PVC) YAML file that specifies the volume size, access mode, StorageClass, and other settings, then submits this PVC request in OpenShift using an `oc` command.
+TrueNAS receives the request and adds the requested volumes based on the StorageClass information received in the YAML file.
 
 The OpenShift Operator communicates what is received from the cluster, passes it to TrueNAS, and then sends information from TrueNAS back to the cluster where users can mount the storage volume(s) requested.
 
@@ -53,9 +53,9 @@ The OpenShift Operator communicates what is received from the cluster, passes it
   - DNS resolving correctly for cluster endpoints 
 
 * Network Requirements:
-  - TCP 443 - OpenShift nodes → Truenas (WebSocket API)
-  - TCP 2049 — OpenShift nodes → TrueNAS (NFS, if used)
-  - TCP 3260 — OpenShift nodes → TrueNAS (iSCSI, if used)
+  - TCP 443 - OpenShift nodes to TrueNAS (WebSocket API)
+  - TCP 2049 - OpenShift nodes to TrueNAS (NFS, if used)
+  - TCP 3260 - OpenShift nodes to TrueNAS (iSCSI, if used)
   - Firewall that allows OpenShift pod network CIDR to reach TrueNAS
 
 ## Configuring TrueNAS for OpenShift
@@ -71,11 +71,11 @@ Log in to TrueNAS as a user with full administration privileges:
    a. Click **Settings** on the top toolbar, then click **My API Keys** to open the **User API Keys** screen.
    b. Click **Add**, enter a name for the key, for example, *OpenShift Operator*.
    c. Click **Save**. 
-   d. Copy the key to a txt file or a document kept secure, and backed up regularly.
+   d. Copy the key to a text file or a document kept secure and backed up regularly.
 
    Provide the API key to the cluster administrator, who should enter this key along with the TrueNAS IP address to establish authenticated communication with TrueNAS.
 
-   For more information on TrueNAS API keys, see [Managing API Keys]({{< ref "ManagingAPIKeys" >}})
+   For more information on TrueNAS API keys, see [Managing API Keys]({{< ref "ManagingAPIKeys" >}}).
 
    To locate the IP address for TrueNAS, go to **System > Network**. The primary network interface is listed in the **Interfaces** card.
 
@@ -86,10 +86,10 @@ Log in to TrueNAS as a user with full administration privileges:
       - For the NFS service, set TCP port 2049, and set UDP port 2049.
       - For iSCSI, set TCP port 3260.
    c. Click **Save**.
-   d. Click the enable-service toggle to turn on the **NFS** and/or **iSCSI** services based on your use case.
+   d. Click the enable-service toggle to turn on the **NFS** or **iSCSI** services, or both, based on your use case.
 
    {{< hint type=tip >}}
-   Creating  NFS or iSCSI shares is not necccessary, just enable the services.
+   Creating NFS or iSCSI shares is not necessary. Enable the services only.
    {{< /hint >}}
      
 3. Create a new pool or locate a pool with enough storage to accommodate the OpenShift cluster storage needs.
@@ -98,9 +98,9 @@ Log in to TrueNAS as a user with full administration privileges:
    For more information on creating new pools, see [Creating Pools]({{< ref "CreatingPools" >}}).
    To increase storage in an existing pool, see [Expanding a Pool in Managing Pools]({{< ref "ManagePools" >}}).
 
-   Provide the pool name to the cluster administrator
+   Provide the pool name to the cluster administrator.
   
-4. Verify the WebSocket API port is set to port 443. 
+4. Verify the WebSocket API port is set to port 443.
 
    Go to **System > General Settings**.
    The **GUI** card should show the **Web Interface HTTPS** port set to **443**, if not:
@@ -110,7 +110,7 @@ Log in to TrueNAS as a user with full administration privileges:
 
 ### Installing the TrueNAS OpenShift Operator
  
-This procedure covers adding the API key and TrueNAS IP address to the Openshift Operator to establish communication, and setting up StorageClasses.
+This procedure covers adding the API key and TrueNAS IP address to the OpenShift Operator to establish communication, and setting up StorageClasses.
 
 1. Install the Operator from OperatorHub.
 
@@ -121,12 +121,12 @@ This procedure covers adding the API key and TrueNAS IP address to the Openshift
    e. Select options:
      - **Update channel**: stable
      - **Installation mode**: All namespaces on the cluster
-     - **Installed Namespace**: openshift-operators (Update channel, Installation mode, Installed Namespace).
+     - **Installed Namespace**: openshift-operators
    f. Click **Install**. Wait for the operator to install and show **Succeeded**.
 
 2. Create the API credentials secret.
-   If using OpenShift, editing the YAML is not required. The custer admin user installs the Operator from OperatorHub through the web console.
-   Then uses the OpenShift console UI or the `oc` and `oc apply` to: 
+   Editing the YAML directly is not required. The cluster admin user installs the Operator from OperatorHub through the web console.
+   The admin then uses the OpenShift console UI or the `oc apply` command to: 
    
    a. Create the secret.
 
@@ -238,8 +238,8 @@ This procedure covers adding the API key and TrueNAS IP address to the Openshift
    volumeBindingMode: Immediate
    ```
    {{< expand "Additional YAML Parameters" "v" >}}
-   The YAML record provided is complete but you have the option to add additional parameters base on your use case:
-   * iscsiIQNBase - Specifes the base IQN for iSCSI targets. Defaults to iqn.2005-10.org.freenas.ctl.
+   The YAML record provided is complete, but you have the option to add additional parameters based on your use case:
+   * iscsiIQNBase - Specifies the base IQN for iSCSI targets. Defaults to iqn.2005-10.org.freenas.ctl.
    * driverImage - Specifies a custom driver image version.
    * controllerReplicas - Specifies the number of controller pod replicas. Default is 1.
    * nodeSelector - Limits CSI pod scheduling to nodes matching the specified labels.
@@ -277,11 +277,11 @@ To uninstall the OpenShift Operator:
 
 2. Uninstall the Operator.
 
-   a. Navigate to **Operators** → **Installed Operators**.
+   a. Navigate to **Operators > Installed Operators**.
    b. Find **TrueNAS CSI Driver**.
    c. Click the three dots menu and select **Uninstall Operator**.
 
-3. (Optional) Clean Up after uninstalling by deleting the namespace and secrets:
+3. (Optional) Clean up after uninstalling by deleting the namespace and secrets:
    
    ```bash
    oc delete namespace truenas-csi

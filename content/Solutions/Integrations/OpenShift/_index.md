@@ -38,22 +38,22 @@ The TrueNAS OpenShift driver is Red Hat certified and available directly from Op
 
 ### Benefits of the OpenShift Driver with TrueNAS
 
-Deploying the OpenShift Operator with TrueNAS for storage provides the benefits of ZFS storage volumes, features, and functionality by using the storage infrastructure already owned and managed, which becomes the persistent storage backend for their OpenShift workloads.
-No separate storage solution is needed for the container platform. 
-Your existing TrueNAS becomes enterprise-grade persistent storage for OpenShift with minimal configuration required.
-All storage, whether for traditional workloads or containerized OpenShift applications, is managed from TrueNAS. One pool, one admin interface, one set of ZFS capabilities serving everything.
+The OpenShift Operator uses an existing TrueNAS system as the persistent storage backend for OpenShift workloads.
+No separate storage solution is needed for the container platform, and the existing TrueNAS requires minimal configuration.
+TrueNAS manages all storage, both traditional workloads and containerized OpenShift applications, from a single pool and administrative interface.
 
-The Operator automatically creates storage volumes on-demand from OpenShift, and leverages ZFS capabilities such as snapshots, clones, and compression in OpenShift.
-The Operator provides native OpenShift integration via industry-standard CSI specifications.
-ZFS benefits flow through to containers — snapshots, clones, compression, thin provisioning — these aren't just Kubernetes features, they're ZFS features that TrueNAS already does exceptionally well, now available to OpenShift workloads automatically.
+The Operator creates storage volumes on demand from OpenShift and provides native OpenShift integration through the industry-standard CSI specification.
+ZFS capabilities such as snapshots, clones, compression, and thin provisioning are available to OpenShift workloads automatically.
 
 The OpenShift Operator supports both file (NFS) and block (iSCSI) storage protocols.
-The OpenShift Operator allows organizations to maximize their existing TrueNAS investment by extending it to OpenShift workloads
+It allows organizations to extend an existing TrueNAS system to OpenShift workloads.
 
-Storage administrators set up TrueNAS and the storage guardrails (StorageClasses), and thereafter developers can create the storage volumes they need through YAML files, bypassing the need to submit IT requests for the storage they need.
-Dynamic provisioning means less admin overhead as the Operator handles dataset/share/target creation automatically.
-The TrueNAS admin sets up the pool and hands off the API key. The storage is created and cleans itself up as OpenShift needs it.
-All OpenShift-provisioned volumes show up as datasets in TrueNAS, so the storage admin has full visibility into what is used.
+Storage administrators set up TrueNAS and the StorageClasses.
+Developers then create the storage volumes they need through YAML files, without submitting IT requests.
+Dynamic provisioning reduces administrative overhead, because the Operator creates the dataset, share, and target automatically.
+The TrueNAS administrator sets up the pool and provides the API key.
+TrueNAS creates the storage and removes it automatically as OpenShift needs it.
+All OpenShift-provisioned volumes appear as datasets in TrueNAS, so the storage administrator has full visibility into what is used.
 
 The TrueNAS OpenShift Operator is ideal for:
 * Stateful applications in OpenShift, like databases (PostgreSQL, MySQL, MongoDB), content management systems, CI/CD build caches, and application persistence.

@@ -17,11 +17,11 @@ These storage requests use PersistentVolumeClaim (PVC) YAML files submitted with
 
 It covers creating PersistentVolumeClaims, mounting storage volumes, and using the features available to TrueNAS storage users.
 
-For an overview of the OpenShift Operator/CSI driver integration see [OpenShift Operator]({{< ref "/solutions/integrations/OpenShift/_index.md" >}})
+For an overview of the OpenShift Operator/CSI driver integration see [OpenShift Operator]({{< ref "/solutions/integrations/OpenShift/_index.md" >}}).
 
 For StorageClass configuration and Operator installation, see [OpenShift Operator Administrators Guide]({{< ref "OpenShiftOperator" >}}).
 
-For reference material including a glossary of terms, see [OpenShift Operator Reference]({{< ref "OpenShiftReference" >}})
+For reference material including a glossary of terms, see [OpenShift Operator Reference]({{< ref "OpenShiftReference" >}}).
 
 The OpenShift Operator sends storage requests to TrueNAS via the CSI driver.
 TrueNAS creates the storage volume based on the information in the PVC yaml file and returns volume information to OpenShift, where it can be mounted and used in a project.
@@ -157,7 +157,9 @@ oc exec my-app -- cat /usr/share/nginx/html/index.html
    # Watch CAPACITY column increase to 20Gi
    ```
 
-   **Note:** For iSCSI volumes, you might need to restart the pod for the filesystem resize to take effect.
+   {{< hint type=note >}}
+   For iSCSI volumes, you might need to restart the pod for the file system resize to take effect.
+   {{< /hint >}}
 
 ### Creating a Snapshot
 
@@ -232,7 +234,7 @@ oc apply -f restore-pvc.yaml
 oc wait --for=jsonpath='{.status.phase}'=Bound pvc/my-app-restore --timeout=120s
 ```
 
-**Result:** New volume with data from snapshot
+This creates a new volume with the data from the snapshot.
 
 ### Cloning an Existing Volume
 
@@ -260,7 +262,7 @@ oc apply -f clone-pvc.yaml
 oc wait --for=jsonpath='{.status.phase}'=Bound pvc/my-app-clone --timeout=120s
 ```
 
-**Result:** New independent volume with copy of source data
+This creates a new, independent volume with a copy of the source data.
 
 ## Advanced Features
 
@@ -324,6 +326,7 @@ spec:
     kind: VolumeSnapshot
     apiGroup: snapshot.storage.k8s.io
 EOF
+```
    {{< /expand >}}
 
    Update deployment to use restored volume
@@ -342,7 +345,7 @@ EOF
 
 #### Cloning Production Data to Staging
 
-**Benefits:**
+Cloning a volume to staging provides these benefits:
 - Instant copy via ZFS clones
 - Minimal storage overhead (copy-on-write)
 - Staging has real production data for testing
