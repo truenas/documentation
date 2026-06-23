@@ -22,7 +22,7 @@ This automation reduces the process from ~2 hours to ~15 minutes.
 ```
 ┌──────────────────────────────────────────────┐
 │ 1. Export CSV from Jira Filter               │
-│    Save as public/data/{version}-changelog.csv│
+│    Save as static/data/{version}-changelog.csv│
 │    (Manual step - ~2 minutes)                │
 └────────────────┬─────────────────────────────┘
                  │
@@ -110,8 +110,8 @@ chmod +x update_version_notes.py
 ### Prerequisites: Two Conventions
 
 **CSV naming convention:**
-Save your Jira export to `documentation/public/data/` named `{version}-changelog.csv`.
-Example: `public/data/25.10.2.2-changelog.csv`
+Save your Jira export to `documentation/static/data/` named `{version}-changelog.csv`.
+Example: `static/data/25.10.3-changelog.csv`
 The `prep` command finds it automatically.
 
 **VersionNotes.md placeholder:**
@@ -127,7 +127,7 @@ See [Adding a New Version Tab](#adding-a-new-version-tab).
 
 1. Navigate to the Jira filter for your release
 2. Click **Export** → **Export CSV (all fields)**
-3. Save as `documentation/public/data/{version}-changelog.csv`
+3. Save as `documentation/static/data/{version}-changelog.csv`
 
 ### Step 2: Run prep
 
