@@ -1,6 +1,6 @@
 &NewLine;
 
-Fusion Pools are also known as ZFS allocation classes, ZFS special vdevs, and metadata vdevs (**Metadata** vdev type on the **Pool Manager** screen).
+A fusion pool is a hybrid storage pool that mixes slow, high-capacity spinning hard drives (HDDs) and fast, low-latency solid-state drives (SSDs or NVMes) within a single ZFS storage pool to improve performance. Fusion pools are also known as ZFS allocation classes, ZFS special vdevs, and metadata vdevs (**Metadata** vdev type on the **Pool Manager** screen).
 
 {{< expand "What is a special VDEV?" "v" >}}
 A special VDEV can store metadata such as file locations and allocation tables.
