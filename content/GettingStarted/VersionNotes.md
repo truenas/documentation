@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.4"
+    anchor: "25.10.5"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,6 +34,22 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="25.10.5" data-tab-label="25.10.5">
+
+<!-- TODO: Set release date, e.g. Month Day, 2026 -->
+Month Day, 2026
+
+The TrueNAS team is pleased to release TrueNAS 25.10.5!
+<!-- TODO: One- to two-sentence summary describing the focus of this release (security updates, areas of fixes, etc.). -->
+
+**Notable changes:**
+
+<!-- Notable changes placeholder -->
+
+<!-- TODO: Replace XXXXX with the 25.10.5 Jira changelog filter ID. -->
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=XXXXX" target="_blank">TrueNAS 25.10.5 (Goldeye) Changelog</a> in Jira.
+
+  </div>
   <div data-tab-id="25.10.4" data-tab-label="25.10.4">
 
 June 3, 2026
