@@ -91,6 +91,27 @@ The **Add Replication Task** configuration screen opens.
 
 7. Click **Save**.
 
+### Setting up Replication with SSH+NETCAT
+
+When setting **Transport** to **SSH+NETCAT**, the replication administration user on the remote system requires passwordless `sudo` access for both <file>/usr/sbin/zfs</file> and <file>/usr/bin/python3</file>. The automatic SSH configuration only grants sudo rights for <file>/usr/sbin/zfs</file>. Without the additional `python3` entry, the task fails with:
+
+**[EFAULT] Unknown SSH+NETCAT transport error: 'sudo: a terminal is required to read the password**
+
+First, verify the root user password is enabled on the remote TrueNAS system.
+Go to **Credentials > Users**, select the root user, and confirm the password is not disabled and has a password set.
+
+Next, add the required `sudo` entry on the remote TrueNAS system:
+
+1. Log in to the remote system as root through an SSH session or use the TrueNAS **Shell**.
+2. Run `visudo` to open the <file>sudoers</file> file.
+3. Add the following line for the replication user, replacing *username* with the actual user:
+
+   <code><i>username</i> ALL=(ALL) NOPASSWD: /usr/bin/python3</code>
+4. Save and exit.
+
+You can then create the replication task on the local system using the **Add Replication Task** screen.
+Click **Add** on the **Data Protection > Replication** card to open the wizard, then click **Advanced Replication Task** to open the **Add Replication Task** screen.
+
 ### Setting a Replication Compression Level
 
 Options for compressing data, adding a bandwidth limit, or other data stream customizations are available.
