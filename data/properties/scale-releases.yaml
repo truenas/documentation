@@ -83,6 +83,10 @@ majorVersions:
     name: "TrueNAS 25.10 - Goldeye"
     releaseName: "Goldeye"
     releases:
+      - name: "25.10.5"
+        type: "Maintenance"
+        link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.5"
+        releaseDate: "2026-07-02"
       - name: "25.10.4"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.4"
