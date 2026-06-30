@@ -36,15 +36,27 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.5" data-tab-label="25.10.5">
 
-<!-- TODO: Set release date, e.g. Month Day, 2026 -->
-Month Day, 2026
+July 2, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.5!
-<!-- TODO: One- to two-sentence summary describing the focus of this release (security updates, areas of fixes, etc.). -->
+This release updates the Linux kernel to address local privilege escalation vulnerabilities. It also fixes a console memory leak, incorrect drive health data, stalled TrueCloud Backup jobs, and share ACL edits.
 
 **Notable changes:**
 
-<!-- Notable changes placeholder -->
+* Updates the Linux kernel to the latest 6.12 LTS release (v6.12.94) ([NAS-141384](https://ixsystems.atlassian.net/browse/NAS-141384), [NAS-141588](https://ixsystems.atlassian.net/browse/NAS-141588)).
+  TrueNAS 25.10.5 advances the kernel from the previous release through v6.12.93 to v6.12.94. This update mitigates several kernel vulnerabilities, including the [SharedFrag local privilege escalation](https://security.truenas.com/scale/impact-statements/cve-2026-43503-shared-frag/) (CVE-2026-43503) and the [PeditCOW local privilege escalation](https://security.truenas.com/scale/impact-statements/cve-2026-46331-pedit-cow/) (CVE-2026-46331), along with additional upstream security and stability fixes.
+
+* Fixes a memory leak in the console CLI process that could cause system-wide out-of-memory crashes ([NAS-141238](https://ixsystems.atlassian.net/browse/NAS-141238)).
+  The CLI process running on the system console (`getty@tty1`) could leak a large amount of memory over time, eventually exhausting system RAM and triggering out-of-memory (OOM) kills that affected other processes. The leak is fixed so the console CLI no longer consumes excess memory.
+
+* Fixes faulty parsing of `smartctl` output that could produce incorrect drive health information ([NAS-141215](https://ixsystems.atlassian.net/browse/NAS-141215)).
+  TrueNAS could misread the output of the `smartctl` utility when collecting SMART data from drives, which could lead to inaccurate disk health reporting. The parsing logic is corrected so SMART attributes are read reliably.
+
+* Fixes TrueCloud Backup jobs that could hang indefinitely and hide restic error messages ([NAS-141287](https://ixsystems.atlassian.net/browse/NAS-141287)).
+  A `KeyError` while reading restic progress output caused TrueCloud Backup to discard all restic error messages, so failing jobs could appear stuck with no explanation. TrueNAS now handles the progress output correctly and surfaces the underlying restic errors.
+
+* Fixes an issue that prevented editing a share ACL ([NAS-139535](https://ixsystems.atlassian.net/browse/NAS-139535)).
+  Attempts to edit the ACL on a share could fail, which blocked permission changes. Editing share ACLs now works as expected.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14579" target="_blank">TrueNAS 25.10.5 (Goldeye) Changelog</a> in Jira.
 
