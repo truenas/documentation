@@ -1,0 +1,11 @@
+## TrueNAS 25.10.5
+
+This maintenance release updates the Linux kernel to address local privilege escalation vulnerabilities. It also fixes a console memory leak, incorrect drive health data, stalled TrueCloud Backup jobs, and share ACL edits.
+
+- **Security:** Updates the Linux kernel to v6.12.94, mitigating the [SharedFrag](https://security.truenas.com/scale/impact-statements/cve-2026-43503-shared-frag/) (CVE-2026-43503, CVSS 8.8) and [PeditCOW](https://security.truenas.com/scale/impact-statements/cve-2026-46331-pedit-cow/) (CVE-2026-46331, CVSS 7.8) local privilege escalation vulnerabilities, along with additional upstream security and stability fixes.
+- **Critical Bug Fixes:** Fixes a memory leak in the console CLI process (getty@tty1) that could exhaust system RAM and trigger system-wide out-of-memory (OOM) kills affecting other processes.
+- **Additional Fixes:** Corrects faulty parsing of smartctl output that could produce inaccurate drive health information, resolves TrueCloud Backup jobs that could hang indefinitely while hiding restic error messages, and fixes an issue that prevented editing a share ACL.
+
+**Pre-Update Actions:** None required when updating from 25.10.4.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.5)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
