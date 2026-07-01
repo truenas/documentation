@@ -304,6 +304,7 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 * The **Backup Tasks** dashboard card does not display **TrueCloud Backup** or **Periodic Snapshot** tasks, even when those tasks are configured and have completed successfully.
   The tasks run normally and appear as expected on the **Data Protection** screen; only the dashboard card omits them.
   Other task types, such as Replication and Cloud Sync, appear on the card as expected.
+* Upgrading to TrueNAS 26 can disrupt two-factor authentication (2FA) for accounts with a token interval set through the API to a value other than 30 or 60 seconds. TrueNAS 26 supports only these two intervals and clears the stored 2FA secret for any affected account during the upgrade. The web interface always uses a 30-second interval, so accounts set up through the UI are not affected. See [Two-Factor Authentication](#two-factor-authentication) for who is affected and how to restore access.
 
 <a href="https://ixsystems.atlassian.net/issues?filter=14542" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
 
@@ -361,6 +362,8 @@ initializeChangelogTableForTabs('26');
 
 * The TrueNAS REST API is removed in TrueNAS 26. Systems still using the REST API must migrate to the JSON-RPC 2.0 WebSocket API before upgrading. See [API Changes](#api-changes) for migration guidance and details about API authentication improvements in TrueNAS 26.
 
+{{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
+
   </div>
 
   <div data-tab-id="api-changes" data-tab-label="API Changes">
@@ -385,6 +388,31 @@ The legacy `auth.login` and `auth.login_with_api_key` methods are deprecated and
 See the [SCRAM Authentication primer](https://github.com/truenas/middleware/blob/stable/26/docs/source/accounts/scram_authentication.rst) for guidance on implementing SCRAM in custom API clients and migrating pre-TrueNAS 26 API keys to the optimized precomputed format.
 
 For the full list of deprecated and removed API methods, see [Feature Deprecations]({{< ref "Deprecations" >}}).
+
+  </div>
+
+  <div data-tab-id="two-factor-authentication" data-tab-label="Two-Factor Authentication">
+
+### Two-Factor Authentication Interval Change
+
+TrueNAS 26 restricts the two-factor authentication (2FA) token interval to 30 or 60 seconds. TrueNAS 26 validates Time-based One-Time Password (TOTP) login codes and accepts only these two intervals.
+
+The web interface always sets a 30-second interval, so accounts that set up 2FA through the UI are never affected. Only the API can set a different interval value. Such an interval worked for web interface logins in earlier releases, but stops working after upgrading to TrueNAS 26. Both local accounts and directory services (Active Directory or LDAP) accounts are in scope.
+
+During the upgrade, TrueNAS clears the stored 2FA secret and resets the interval to 30 for any affected account. That account has no working 2FA until the user sets up 2FA again.
+
+To avoid any interruption, affected users re-enroll before upgrading. Go to **Credentials > Two Factor Auth**, click **Renew 2FA Secret**, then scan the new QR code with an authenticator app. The renewed secret uses the default 30-second interval. If you are not sure whether an account is affected, renew the 2FA secret for that account anyway. A renewal is safe for accounts that are not affected.
+
+To restore 2FA for an affected account after upgrading:
+
+- On standard systems, where 2FA is not required to log in, the user signs in with their password, then re-enrolls 2FA at **Credentials > Two Factor Auth**.
+- On systems that require 2FA to log in (for example, STIG mode), an administrator issues a one-time password for the affected user. An administrator who can still sign in generates it at **Credentials > Users**: select the affected user, then click **Generate One-Time Password** on the **Password** widget. If every administrator is locked out, an administrator with console access generates it from the console:
+
+  {{< cli >}}  
+  midclt call auth.generate_onetime_password '{"username": "*account-name*"}'
+  {{< /cli >}}
+
+  Replace {{< cli >}}*account-name*{{< /cli >}} with the name of the affected user account. The command returns a one-time password (for example, `1_nIaCpK-OhJPNQ-I6BfKr-29CyQB`). The user enters it in place of their password at the login screen, then reconfigures 2FA at **Credentials > Two Factor Auth**.
 
   </div>
 
@@ -423,16 +451,6 @@ Drive health status is visible on the [**Disk Health**]({{< ref "/Storage/Storag
 Community Edition users can supplement automated monitoring with manual SMART tests run via cron jobs or the `smartctl` command-line tool. Third-party tools such as [Scrutiny](https://apps.truenas.com/catalog/scrutiny_community/) are also available from the TrueNAS Apps catalog.
 
 See [Drive Health Management]({{< ref "/Storage/Disks/DriveHealthManagement.md" >}}) for full details.
-
-  </div>
-
-  <div data-tab-id="truenas-apps" data-tab-label="TrueNAS Apps">
-
-### TrueNAS Apps
-
-{{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
-
-{{< include file="/static/includes/apps-market-ad-banner.md" >}}
 
   </div>
 
