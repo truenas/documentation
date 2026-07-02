@@ -126,7 +126,7 @@ The **Add Replication Task** configuration screen opens.
 
 When setting **Transport** to **SSH+NETCAT**, the replication administration user on the remote system requires passwordless `sudo` access for both <file>/usr/sbin/zfs</file> and <file>/usr/bin/python3</file>. The automatic SSH configuration only grants sudo rights for <file>/usr/sbin/zfs</file>. Without the additional `python3` entry, the task fails with:
 
-**[EFAULT] Unknown SSH+NETCAT transport error: 'sudo: a terminal is required to read the password**
+**[EFAULT] Unknown SSH+NETCAT transport error: 'sudo: a terminal is required to read the password'**
 
 First, verify the root user password is enabled on the remote TrueNAS system.
 Go to **Credentials > Users**, select the root user, and confirm the password is not disabled and has a password set.
