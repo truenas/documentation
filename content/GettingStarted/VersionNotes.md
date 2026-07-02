@@ -304,7 +304,7 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 * The **Backup Tasks** dashboard card does not display **TrueCloud Backup** or **Periodic Snapshot** tasks, even when those tasks are configured and have completed successfully.
   The tasks run normally and appear as expected on the **Data Protection** screen; only the dashboard card omits them.
   Other task types, such as Replication and Cloud Sync, appear on the card as expected.
-* Upgrading to TrueNAS 26 can disrupt two-factor authentication (2FA) for accounts with a token interval set through the API to a value other than 30 or 60 seconds. TrueNAS 26 supports only these two intervals and clears the stored 2FA secret for any affected account during the upgrade. The web interface always uses a 30-second interval, so accounts set up through the UI are not affected. See [Two-Factor Authentication](#two-factor-authentication) for who is affected and how to restore access.
+* Upgrading to TrueNAS 26 can disrupt two-factor authentication (2FA) for any account with a stored token interval other than 30 or 60 seconds. TrueNAS 26 supports only these two intervals and clears the stored 2FA secret for any affected account during the upgrade. A non-standard interval can come from the API, or from the global 2FA interval setting in TrueNAS releases before 24.04, which applied a single interval to every 2FA account on the system and persists across upgrades. The current web interface always uses a 30-second interval. See [Two-Factor Authentication](#two-factor-authentication) for who is affected and how to restore access.
 
 <a href="https://ixsystems.atlassian.net/issues?filter=14542" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
 
@@ -397,7 +397,7 @@ For the full list of deprecated and removed API methods, see [Feature Deprecatio
 
 TrueNAS 26 restricts the two-factor authentication (2FA) token interval to 30 or 60 seconds. TrueNAS 26 validates Time-based One-Time Password (TOTP) login codes and accepts only these two intervals.
 
-The web interface always sets a 30-second interval, so accounts that set up 2FA through the UI are never affected. Only the API can set a different interval value. Such an interval worked for web interface logins in earlier releases, but stops working after upgrading to TrueNAS 26. Both local accounts and directory services (Active Directory or LDAP) accounts are in scope.
+A non-standard interval could have been set through the API, or through the global 2FA setting in TrueNAS releases before 24.04, where the web interface exposed an editable interval field that applied a single value to every 2FA account on the system. That value persists across upgrades. The current web interface always sets a 30-second interval and no longer exposes this field, so 2FA configured through the UI on TrueNAS 24.04 or later uses the supported 30-second interval. A non-standard interval worked for web interface logins in earlier releases but stops working after upgrading to TrueNAS 26. Both local accounts and directory services (Active Directory or LDAP) accounts are in scope.
 
 During the upgrade, TrueNAS clears the stored 2FA secret and resets the interval to 30 for any affected account. That account has no working 2FA until the user sets up 2FA again.
 
