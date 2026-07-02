@@ -16,9 +16,9 @@ related: false
 The TrueNAS OpenShift operator is an official TrueNAS product that enables Red Hat OpenShift customers to use their clusters to dynamically provision, manage, and consume storage from TrueNAS storage systems.
 
 {{< expand "What is OpenShift Operator?" "v" >}}
-Red Hat OpenShift Operator is an enterprise Kubernetes platform that provides a complete, certified environment for deploying and managing containerized applications across on-premises, cloud, and edge infrastructure.
+Red Hat OpenShift is an enterprise Kubernetes platform that provides a complete, certified environment for deploying and managing containerized applications across on-premises, cloud, and edge infrastructure.
 
-The OpenShift Operator packages and manages the TrueNAS CSI Driver, providing a native OpenShift deployment experience through OperatorHub.
+The TrueNAS OpenShift Operator packages and manages the TrueNAS CSI driver, providing a native OpenShift deployment experience through OperatorHub.
 
 OpenShift includes the Operator Lifecycle Manager (OLM) and OperatorHub, which is a built-in marketplace for certified software.
 Operators extend OpenShift with custom resource types.
@@ -36,7 +36,7 @@ It consists of:
 
 The TrueNAS OpenShift driver is Red Hat certified and available directly from OperatorHub.
 
-### Benefits of the OpenShift Driver with TrueNAS
+### Benefits of the OpenShift Operator with TrueNAS
 
 The OpenShift Operator uses an existing TrueNAS system as the persistent storage backend for OpenShift workloads.
 No separate storage solution is needed for the container platform, and the existing TrueNAS requires minimal configuration.
