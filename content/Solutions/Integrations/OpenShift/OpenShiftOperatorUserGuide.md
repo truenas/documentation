@@ -173,7 +173,7 @@ metadata:
   name: my-app-snapshot-20250102
   namespace: default
 spec:
-  volumeSnapshotClassName: truenas-snapshot-class
+  volumeSnapshotClassName: truenas-snapclass
   source:
     persistentVolumeClaimName: my-app-data
 ```
@@ -283,7 +283,7 @@ metadata:
   name: db-before-upgrade
   namespace: production
 spec:
-  volumeSnapshotClassName: truenas-snapshot-class
+  volumeSnapshotClassName: truenas-snapclass
   source:
     persistentVolumeClaimName: postgres-data
 ```
