@@ -76,6 +76,7 @@ To confine FTP sessions to the home directory of a local user, select **chroot**
 - Enable **Allow Anonymous Login** to allow anonymous connections without authentication
 
 Do *not* allow anonymous access unless it is necessary.
+
 Enable TLS when possible (especially when exposing FTP to a WAN).
 TLS creates [FTPS](https://tools.ietf.org/html/rfc4217) for better security.
 

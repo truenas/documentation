@@ -1,0 +1,23 @@
+## TrueNAS 26.0.0-BETA.2
+===This is a BETA release of software available to early adopters who wish to evaluate new features===
+
+TrueNAS 26-BETA.2 builds on BETA.1 with new API authentication capabilities, additional network and usability features, and fixes for the BETA.1 known issues and regressions.
+
+==**Breaking Changes:** The REST API is removed in TrueNAS 26. Migrate all integrations to the WebSocket API before upgrading.==
+
+- **New Features:**
+  - SCRAM-SHA-512 mutual authentication for API keys via the new auth.login_ex method. Legacy auth.login and auth.login_with_api_key methods are deprecated for removal in TrueNAS 27.
+  - Forward Error Correction (FEC) mode configurable on network interfaces (Community Edition and Enterprise).
+  - System reboot reasons recorded and viewable on the local node.
+- **Improvements:**
+  - Per-shell-type RBAC checks and audit logging for webshell sessions (containers, VMs, apps, and host).
+  - Built-in ACL preset templates auto-include local and directory service user and admin groups for immediate usability.
+  - Directory listing performance on SMB shares from macOS clients (significantly fewer syscalls per file with AAPL extensions).
+  - Pool state visibility improved with clearer indicators for resilvering, scrubbing, and degraded operations.
+- **Critical Bug Fixes:** Resolved the BETA.1 known issues for the Spotlight/SMB Legacy Share crash, LXC container start failure after upgrade, GPU isolation and passthrough breakage after upgrade, and Send Feedback debug attachment failure. Fixed the BETA.1 regressions that blocked VM cloning and prevented saving the GUI SSL Certificate, the blocker LXC Map User And Group IDs failure, false SMART selftest alerts after upgrade from 24.10/25.10, NVMe namespace delete timeouts on drives with written data, and a posix_fadvise-triggered OOM condition on ZFS datasets.
+
+=== **Key Known Issues:** No known issues currently reported. ===
+
+**Pre-Update Actions:** This is an early release intended for testing and feedback. Do not use for critical tasks or in production environments. Migrate any REST API integrations to the [WebSocket API](https://api.truenas.com/) before upgrading.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.2)** | **[Known Issues](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**

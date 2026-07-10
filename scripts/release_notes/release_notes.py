@@ -34,9 +34,9 @@ def version_to_slug(version: str) -> str:
 def default_csv_path(version: str) -> Path:
     """Return the expected CSV path for a given version.
 
-    Convention: documentation/public/data/{version}-changelog.csv
+    Convention: documentation/static/data/{version}-changelog.csv
     """
-    return (SCRIPTS_DIR / ".." / ".." / "public" / "data" / f"{version}-changelog.csv").resolve()
+    return (SCRIPTS_DIR / ".." / ".." / "static" / "data" / f"{version}-changelog.csv").resolve()
 
 
 def output_dir(version: str) -> Path:

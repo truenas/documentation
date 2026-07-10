@@ -18,13 +18,6 @@ When TrueSearch is enabled in the WebShare service configuration, all active sha
 Encrypted datasets are excluded from indexing.
 Passkey authentication options provide flexible access control for WebShare users.
 
-### Ransomware Defense
-
-TrueNAS Ransomware Defense is a security service that monitors SMB and NFS file shares in real time and automatically responds to ransomware attacks to protect data stored on the TrueNAS system.
-The service is available through [TrueNAS Connect](https://connect.truenas.com/) and uses multiple detection methods, including honeypot decoy files, suspicious behavior analysis, encryption signature identification, and snapshot comparison to track unusual data changes.
-When a threat is detected, configurable protection responses can automatically disable affected shares, set them to read-only, restrict access, or pause snapshot deletion to preserve recovery points.
-IP blocking, threat scoring, and snapshot-based recovery tools are available to investigate incidents, remediate threats, and restore data.
-
 ### Containers
 
 [**Containers**]({{< relref "/Containers/ManagingContainers.md" >}}), introduced as an experimental feature in TrueNAS 25.04, are fully supported in TrueNAS 26.
@@ -52,6 +45,12 @@ Spotlight search is enabled per share in the SMB service configuration.
 TrueNAS 26 integrates OpenZFS 2.4, which introduces new capabilities including hybrid pool support for combining flash and HDD storage, physical block rewriting, and dynamic gang header improvements.
 See [OpenZFS Feature Flags]({{< relref "/gettingstarted/versionnotes/#zfs-feature-flags" >}}) for details on newly added feature flags.
 
-### Linux Kernel 6.18 LTS
+### Linux Kernel 6.18
 
-TrueNAS 26 ships with Linux Kernel 6.18 LTS, enabling support for new hardware and receiving long-term maintenance and security updates from the upstream kernel project.
+TrueNAS 26 ships with Linux Kernel 6.18, enabling support for new hardware and receiving long-term maintenance and security updates from the upstream kernel project.
+
+### API Changes
+
+TrueNAS 26 removes the deprecated REST API and modernizes the JSON-RPC 2.0 WebSocket API with improved authentication methods, including SCRAM-SHA-512 mutual authentication for API keys.
+
+See [API Changes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#api-changes) for migration guidance.

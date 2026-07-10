@@ -157,20 +157,22 @@ The **Cache** wizard screen settings configure a ZFS L2ARC read-cache VDEV.
 {{< /expand >}}
 
 ### Metadata (Optional)
-<!-- comment out tag for setting automation {id="pool_create_metadata"} -->
 
 The **Metadata** wizard screen settings configure a special allocation class VDEV. Metadata VDEVs are used to speed up metadata and blocks below configured size. Use when creating a fusion pool.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
 
 {{< expand "Common Pool Creation Wizard Settings" "v" >}}
-The **Layout** dropdown list includes the **Stripe**, **Mirror**, **RAIDZ1**, **RAIDZ2**, **RAIDZ3**, **dRAID1**, **dRAID2**, and **dRAID3** types.
+The **Layout** dropdown list includes the **Mirror**, **RAIDZ1**, **RAIDZ2**, and **RAIDZ3** types.
+
+{{< hint type="important" >}}
+Match the Metadata VDEV redundancy level to the data VDEV redundancy level. For example, if data VDEVs use RAIDZ2, use RAIDZ2 or a three-way mirror for the Metadata VDEV. Pool creation fails when the Metadata VDEV redundancy is lower than the data VDEV redundancy.
+{{< /hint >}}
 
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
 ### Dedup (Optional)
-<!-- comment out tag for setting automation {id="pool_create_dedup"} -->
 
 The **Dedup** wizard screen settings configure a deduplication VDEV. A Dedup VDEV stores de-duplication tables.
 Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
@@ -178,13 +180,16 @@ Size dedup VDEVs as *x* GiB for each *x* TiB of general storage.
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardDedupScreen.png" alt="Pool Creation Wizard Dedup Screen" id="Pool Creation Wizard Dedup Screen" >}}
 
 {{< expand "Common Pool Creation Wizard Settings" "v" >}}
-The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
+The **Layout** dropdown list includes the **Mirror**, **RAIDZ1**, **RAIDZ2**, and **RAIDZ3** types.
+
+{{< hint type="important" >}}
+Match the Dedup VDEV redundancy level to the data VDEV redundancy level. Pool creation fails when the Dedup VDEV redundancy is lower than the data VDEV redundancy.
+{{< /hint >}}
 
 {{< include file="/static/includes/PoolCreationWizardCommonSettings.md" >}}
 {{< /expand >}}
 
 ### Manual Selection Screen
-<!-- comment out tag for setting automation {id="pool_create_manual-select"} -->
 
 The **Manual Selection** screen shows settings to add a **Data** VDEV **Layout** and the individual disks available to add to the new VDEV.
 You can filter disks by type or size.

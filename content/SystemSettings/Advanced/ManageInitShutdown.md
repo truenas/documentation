@@ -31,7 +31,7 @@ Click **Add** to open the **Add Init/Shutdown Script** configuration screen.
 
 Enter a description and then select **Command** or **Script** from the **Type** dropdown list. Selecting **Script** displays additional options.
 
-Enter the command string in **Command**, or if using a script, enter or use the browse to the path in **Script**. The script runs using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page").
+Enter the command string in **Command**, or if using a script, enter or use the browse to the path in **Script**. The script must have the execute bit set. By default scripts run using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page"), but you can run a script under a different interpreter by including a shebang line (for example, `#!/bin/bash`) as the first line of the script.
 
 Select the option from the **When** dropdown list for the time this command or script runs.
 

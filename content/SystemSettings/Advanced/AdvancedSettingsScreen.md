@@ -224,7 +224,7 @@ Any script listed is a link that opens the **[Edit Init/Shutdown Script](#add-or
 | **Description** | Comments about this script. |
 | **Type** | Select *Command* for an executable or *Script* for an executable script. |
 | **Command** | Enter the command with any options. |
-| **Script** | Select the script. The script runs using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page"). |
+| **Script** | Select the script. Scripts run using [dash(1)](https://manpages.debian.org/testing/dash/sh.1.en.html "dash(1) Page") by default, or under the interpreter named in the shebang line of the script (for example, `#!/bin/bash`). |
 | **When** | Select when the command or script runs from the dropdown list. Options are **Pre Init** for early in the boot process, after mounting file systems and starting networking. **Post Init** runs at the end of the boot process before Linux services start. **Shutdown** runs during the system power-off process. Scripts in the same category (for example, multiple Post Init scripts) run sequentially in the order in which the user added them. |
 | **Enabled** | Select to enable this script. When left cleared, it disables the script without deleting it. |
 | **Timeout** | Automatically stop the script or command after the specified number of seconds. |
@@ -347,22 +347,10 @@ If the button is not clicked, TrueNAS terminates the session automatically and r
  **Configure** opens the **Access Settings** screen.
 
 ### Access Settings Screen
-The **Access Settings** screen allows users to configure the **Session Timeout** for the current account.
 
-{{< trueimage src="/images/SCALE/SystemSettings/AccessSettingsScreen.png" alt="Access Settings Screen" id="Access Settings Screen" >}}
-
-Select a value that fits your needs and security requirements.
-Enter the value in seconds.
-
-{{< hint type=tip >}}
-The default lifetime setting is 300 seconds or five minutes.
-
-The maximum is 2147482 seconds or converting it to hours/minutes/seconds, 596 hours, 31 minutes, and 22 seconds.
-If converting it to days/hours/minutes/seconds, 24 days, 20 hours, 31 minutes, and 22 seconds.
-{{< /hint >}}
-
-The **Login Banner** field allows specifying a text message that the system shows before the TrueNAS login splash screen displays.
-**Continue** on the banner screen closes the screen, then shows the login splash screen.
+The **Access Settings** screen allows users to configure a login banner.
+**Login Banner** sets a text message that the system shows before the TrueNAS login splash screen displays.
+**Continue** on the banner screen, closes the screen before it shows the login splash screen.
 The maximum length of the banner text is 4096 characters, including spaces. Long text wraps and banner text can use carriage returns to break up long messages to improve readability.
 Leave **Login Banner** empty to show just the login screen without interruption by a banner screen.
 
