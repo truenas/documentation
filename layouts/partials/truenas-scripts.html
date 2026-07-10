@@ -5,13 +5,48 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileDropdown = document.querySelector('.truenas-mobile-dropdown');
   const closeButton = document.querySelector('.mobile-menu-close');
 
-  // Clone desktop dropdowns into mobile sections
+  // Flatten desktop dropdowns into plain text-link lists for the mobile panel
   const menuMapping = {
     'products': 'desktop-products',
     'solutions': 'desktop-solutions',
     'support': 'desktop-support',
-    'company': 'desktop-company'
+    'company': 'desktop-company',
+    'signin': 'desktop-signin'
   };
+
+  // Pick a clean text label for a desktop link (product/edition/connect cards carry
+  // their name in the image alt or a <b>/.edition-title; plain links use their text).
+  function getLinkLabel(a) {
+    var img = a.querySelector('img');
+    if (img && img.alt && img.alt.trim()) return img.alt.trim();
+    var b = a.querySelector('b, .edition-title');
+    if (b && b.textContent.trim()) return b.textContent.trim();
+    return a.textContent.replace(/\s+/g, ' ').trim();
+  }
+
+  // Build a plain vertical list of text links (keeping column sub-headers) from a
+  // desktop dropdown, in document order.
+  function flattenDropdown(dropdown) {
+    var container = document.createElement('div');
+    container.className = 'mobile-submenu';
+    var nodes = dropdown.querySelectorAll('.truenas-column-header, a');
+    nodes.forEach(function(node) {
+      if (node.classList.contains('truenas-column-header')) {
+        var h = document.createElement('div');
+        h.className = 'mobile-submenu-header';
+        h.textContent = node.textContent.trim();
+        container.appendChild(h);
+      } else {
+        var link = document.createElement('a');
+        link.href = node.getAttribute('href');
+        if (node.getAttribute('target')) link.target = node.getAttribute('target');
+        link.className = 'mobile-submenu-link';
+        link.textContent = getLinkLabel(node);
+        container.appendChild(link);
+      }
+    });
+    return container;
+  }
 
   Object.keys(menuMapping).forEach(function(mobileId) {
     const mobileSection = document.querySelector('.mobile-menu-section[data-menu="' + mobileId + '"]');
@@ -20,8 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mobileSection && desktopItem) {
       const desktopDropdown = desktopItem.querySelector('.truenas-menudropdown');
       if (desktopDropdown) {
-        const clonedDropdown = desktopDropdown.cloneNode(true);
-        mobileSection.appendChild(clonedDropdown);
+        mobileSection.appendChild(flattenDropdown(desktopDropdown));
       }
     }
   });
