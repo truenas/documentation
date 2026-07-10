@@ -197,7 +197,7 @@ This results in a permissions error if `pam_open_session()` is called by an appl
 {{< /hint >}}
 
 ### Adding Share Users with Directory Services
-You can use Active Directory or LDAP to create share users.
+You can use Active Directory to create SMB share users.
 
 If not already created, add a pool, then join Active Directory.
 
