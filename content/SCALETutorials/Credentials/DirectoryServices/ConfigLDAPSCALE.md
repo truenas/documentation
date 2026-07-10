@@ -15,13 +15,6 @@ An LDAP server provides directory services for finding network resources like us
 
 {{< include file="/static/includes/DirectoryServiceConflictAdmonition.md" >}}
 
-{{< expand "Does LDAP work with SMB?" "v" >}}
-LDAP authentication for SMB shares is disabled unless you configured and populated the LDAP directory with Samba attributes.
-The most popular script for performing this task is `smbldap-tools`.
-TrueNAS needs to be able to validate the full certificate chain (no self-signed certificates).
-TrueNAS does not support non-CA certificates.
-{{< /expand >}}
-
 ## Configuring LDAP
 
 To configure TrueNAS to use an LDAP directory server:

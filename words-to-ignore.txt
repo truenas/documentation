@@ -2440,3 +2440,6 @@ Netlink
 MII
 ZVOLs
 netlink
+DM-SMR
+HA-SMR
+HM-SMR

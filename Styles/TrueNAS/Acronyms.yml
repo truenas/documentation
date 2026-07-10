@@ -55,6 +55,7 @@ exceptions:
   - DHCP
   - DIF
   - DMA
+  - DM-SMR
   - DNS
   - DVD
   - ECC
@@ -80,8 +81,10 @@ exceptions:
   - GORM
   - GPU
   - GUI
+  - HA-SMR
   - HBA
   - HCI
+  - HM-SMR
   - HPC
   - HPE
   - HSTS

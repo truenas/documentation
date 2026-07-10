@@ -1,0 +1,13 @@
+## TrueNAS 25.10.4
+
+This maintenance release updates the Linux kernel and Samba to address multiple security vulnerabilities, and includes ZFS data integrity, NFS, iSCSI, networking, and Active Directory fixes.
+
+- **Security:** Updates the Linux kernel to v6.12.91 and Samba to 4.22.10, mitigating multiple CVEs. Kernel updates include the Dirty-Frag local privilege escalation, a ptrace privilege issue, and the related Fragnesia ESP-in-TCP privilege escalation. Samba updates address a missing access check that let read-only users alter reparse point attributes and a WORM module flaw that allowed protected files to be overwritten through rename.
+- **Critical Bug Fixes:** Fixes a potential ZFS double free when freeing blocks cloned after deduplication table pruning, virtual machines stored on NFSv4.1 datasets failing to power on under VMware ESXi, and a kernel crash in the iSCSI target during SCSI bus or LUN resets on Enterprise High Availability (HA) systems.
+- **HA and Networking Improvements:** Improves iSCSI LUN replacement during HA failover by holding cleanup until cluster coordination completes, and resolves a validation error that incorrectly blocked static network configuration on HA-capable systems when DHCP was not being enabled.
+- **Active Directory Improvements:** Hardens directory rejoin, reset, and recovery handling, improves domain controller selection on systems with multiple controllers, and produces clearer diagnostics when a join or authentication problem occurs.
+- **Additional Fixes:** Resolves ZFS automatic snapshots not being created after a Time Machine backup until the Mac reconnects on macOS Tahoe and later, and reduces excessive winbind log warnings for failed user and group lookups.
+
+**Pre-Update Actions:** None required when updating from 25.10.3.1.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.4)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
