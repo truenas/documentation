@@ -342,6 +342,8 @@ The option to access the log and the shell remain available for stopped applicat
 
 The **Shell** <span class="iconify" data-icon="mdi:console" title="Shell">Shell</span> button opens the **Container Shell** screen.
 
+{{< include file="/static/includes/WebShellAccessRoles.md" >}}
+
 {{< trueimage src="/images/SCALE/Apps/AppsPodShellScreen.png" alt="Container Shell Screen" id="Container Shell Screen" >}}
 
 The **Volume Mounts** <span class="material-icons">folder_open</span> button opens the [**Volume Mounts**](#volume-mounts) dialog.

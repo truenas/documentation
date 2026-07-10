@@ -224,7 +224,7 @@ It allows you to set up a new SSH connection for the remote system.
 
 ### When Wizard Screen
 
-The **When** wizard screen sets the schedule for running the task and the retention period for keeping the replicated snapshots.
+The **When** wizard screen sets the schedule for running the task and the retention period for keeping replicated snapshots.
 **Replication Schedule** and **Destination Snapshot Lifetime** options change the setting displayed on the screen.
 
 #### Replication Schedule Options
@@ -244,26 +244,27 @@ The **Replication Schedule** options set when to run the task based on the sched
 {{< /truetable >}}
 {{< /expand >}}
 
-#### Destination Snapshot Lifetime Options
-
-The **Destination Snapshot Lifetime** setting determines how long the replicated snapshot is retained on the destination server.  
+#### Snapshot Lifetimes
 
 {{< hint type=note title="Snapshot Preservation" >}}
 TrueNAS always preserves the latest snapshot so replication can resume later.
 If you delete a dataset or zvol on the source, you must manually delete the replicated dataset or zvol and the most recent snapshot on the destination.
 {{< /hint >}}
 
-{{< trueimage src="/images/SCALE/DataProtection/AddReplicationTaskWhenRunOnceCustomLifetime.png" alt="Add Replication Task When Custom Lifetime" id="Add Replication Task When Custom Lifetime" >}}
+**Source Snapshot Lifetime** specifies how long TrueNAS retains a source snapshot before TrueNAS deleteds it. The default lifetime is two weeks.
+**Unit** sets the time measure, such as hours, days, weeks, etc. The digit entered in the other time field sets the number of units.
+
+**Destination Snapshot Lifetime** specifies how long TrueNAS retains a replicated snapshot in the dataset on the destination server.  
 
 {{< expand "Destination Snapshot Lifetime Settings" "v" >}}
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Same as Source** | Select to use the configured snapshot Lifetime value from the source dataset periodic snapshot task. |
-| **Never Delete** | Select to never delete snapshots from the destination system. |
-| **Custom** | Select to define how long the snapshot remains on the destination system. Displays the number of and measure of time fields to set the schedule. |
-| Number of | Enter a numeric value to work with the measure of time selection to set the custom lifetime of the snapshot. |
-| Measure of time | Select the option for **Hours**, **Days**, **Weeks**, **Months**, or **Years** to work with the number-of field to set the custom lifetime of the snapshot. |
+| **Same as Source** | Uses the configured snapshot lifetime value from the source dataset periodic snapshot task. |
+| **Never Delete** | Never deletes snapshots from the destination system. |
+| **Custom** | Defines how long the snapshot remains on the destination system. Shows the number-of and measure-of-time fields to set the schedule. |
+| Number-of | Enter a numeric value to work with the measure of time selection to set the custom lifetime of the snapshot. |
+| Measure-of-time | Select the option for **Hours**, **Days**, **Weeks**, **Months**, or **Years** to work with the number-of field to set the custom lifetime of the snapshot. |
 {{< /truetable >}}
 {{< /expand >}}
 

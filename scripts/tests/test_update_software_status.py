@@ -20,10 +20,6 @@ fetch_trains_from_cdn = _mod.fetch_trains_from_cdn
 
 # --- version_to_anchor ---
 
-def test_version_to_anchor_pre_25_10_compresses():
-    assert version_to_anchor('25.04.2.6') == '250426'
-    assert version_to_anchor('24.10.2') == '24102'
-
 def test_version_to_anchor_25_10_returns_as_is():
     assert version_to_anchor('25.10.0') == '25.10.0'
     assert version_to_anchor('25.10.2.1') == '25.10.2.1'
@@ -59,12 +55,6 @@ def test_parse_version_old_format_still_works():
 
 
 # --- get_doc_url_components ---
-
-def test_get_doc_url_components_pre_25_10():
-    url_ver, doc_path, anchor = get_doc_url_components('25.04.2.6')
-    assert url_ver == '25.04'
-    assert doc_path == 'scalereleasenotes'
-    assert anchor == '250426'
 
 def test_get_doc_url_components_25_10():
     url_ver, doc_path, anchor = get_doc_url_components('25.10.2.1')

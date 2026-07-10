@@ -34,6 +34,8 @@ When disabled, encryption does not hide file names or directory structure, file 
 When enabled, file names are encrypted, file names are limited to 143 characters, the directory structure is visible, and files with identical names have identical uploaded names.
 File names can use sub-paths, single-copy files, and shortcuts to shorten the directory recursion.
 
+{{< include file="/static/includes/FilesystemNameLengthNote.md" >}}
+
 ### Troubleshooting Transfer Mode Problems
 
 **Sync** keeps all the files identical between the two storage locations.

@@ -35,7 +35,7 @@ Regardless of what type of share you create, you need to create the user and dat
 
 Share users have permissions to access the share. You can create the user before or after you create the share.
 
-Administrators can provision share users using a directory server such as Active Directory or LDAP.
+Administrators can provision SMB share users from Active Directory, or non-SMB share users from LDAP.
 The administration user can create a limited administration user with only the ability to manage shares.
 See [Using Administration Logins]({{< ref "AdminRoles" >}}) for more information on administration roles.
 

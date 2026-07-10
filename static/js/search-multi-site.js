@@ -110,10 +110,11 @@ class MultiSiteSearch {
   }
 
   detectCurrentDocsVersionFromUrl() {
-    // Try to detect version from URL (e.g., /docs/scale/25.04/ or /scale/25.04/)
-    const urlMatch = window.location.pathname.match(/\/(?:docs\/)?(?:scale\/)?(\d+\.\d+)/);
+    // Try to detect version from URL. Accepts both decimal (25.04, 25.10)
+    // and integer (26, 27) base version names.
+    const urlMatch = window.location.pathname.match(/\/(?:docs\/)?(?:scale\/)?(\d+(?:\.\d+)?)/);
     if (urlMatch) {
-      const version = urlMatch[1]; // e.g., "25.04"
+      const version = urlMatch[1]; // e.g., "25.04" or "26"
       return version;
     }
 
@@ -135,47 +136,67 @@ class MultiSiteSearch {
       }
 
       const yamlText = await response.text();
-
-      // Parse YAML to find the "Current" lifecycle version
-      // Look for the lifecycle: "Current" section and extract the version from the link
       const lines = yamlText.split('\n');
+
+      // Preferred schema: every lifecycle has a `state:` field. Collect the lifecycle keys
+      // marked `state: "ga"` (e.g., "25.10", "26") and return the highest by version order.
+      const gaVersions = [];
+      let pendingLifecycle = null;
+      for (const line of lines) {
+        const lifecycleMatch = line.match(/^\s*-\s*lifecycle:\s*"([^"]+)"/);
+        if (lifecycleMatch) {
+          pendingLifecycle = lifecycleMatch[1];
+          continue;
+        }
+        if (pendingLifecycle && /^\s*state:\s*"ga"/.test(line)) {
+          if (/^\d+(?:\.\d+)?$/.test(pendingLifecycle)) {
+            gaVersions.push(pendingLifecycle);
+          }
+          pendingLifecycle = null;
+        }
+      }
+      if (gaVersions.length > 0) {
+        gaVersions.sort((a, b) => {
+          const ap = a.split('.').map(Number);
+          const bp = b.split('.').map(Number);
+          for (let i = 0; i < Math.max(ap.length, bp.length); i++) {
+            const ax = ap[i] || 0;
+            const bx = bp[i] || 0;
+            if (ax !== bx) return ax - bx;
+          }
+          return 0;
+        });
+        return gaVersions[gaVersions.length - 1];
+      }
+
+      // Legacy schema fallback: `lifecycle: "Current"` with version inferred from first link.
       let inCurrentSection = false;
-
-      for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
-
-        // Detect lifecycle: "Current"
+      for (const line of lines) {
         if (line.includes('lifecycle:') && line.includes('"Current"')) {
           inCurrentSection = true;
           continue;
         }
-
-        // If we're in the Current section and find a link, extract version
         if (inCurrentSection && line.includes('link:')) {
-          // Extract version from link like "https://www.truenas.com/docs/scale/25.04/..."
-          const linkMatch = line.match(/\/scale\/(\d+\.\d+)\//);
+          const linkMatch = line.match(/\/scale\/(\d+(?:\.\d+)?)\//);
           if (linkMatch) {
-            return linkMatch[1]; // e.g., "25.04"
+            return linkMatch[1];
           }
         }
-
-        // Exit Current section if we hit another lifecycle
         if (inCurrentSection && line.includes('lifecycle:') && !line.includes('"Current"')) {
           break;
         }
       }
 
-      // Fallback to hardcoded default
-      return '25.04';
+      return '25.10';
     } catch (error) {
       console.error('Error fetching current version from YAML:', error);
-      return '25.04'; // Fallback default
+      return '25.10'; // Fallback default
     }
   }
 
   setDefaultVersionCheckbox() {
     // Determine which version to select
-    let versionToSelect = this.currentDocsVersion || this.currentVersionFromYaml || '25.04';
+    let versionToSelect = this.currentDocsVersion || this.currentVersionFromYaml || '25.10';
 
     // Find and check the appropriate checkbox
     const docsVersionCheckboxes = document.querySelectorAll('.docs-version-option input[type="checkbox"]');
@@ -310,7 +331,7 @@ class MultiSiteSearch {
 
     // Try to load default docs index on init (for faster first search)
     try {
-      const defaultVersion = this.currentDocsVersion || this.currentVersionFromYaml || '25.04';
+      const defaultVersion = this.currentDocsVersion || this.currentVersionFromYaml || '25.10';
       const defaultDocsKey = `docs-${defaultVersion}`;
       await this.loadIndex(defaultDocsKey);
     } catch (error) {

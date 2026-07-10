@@ -4,26 +4,26 @@ table_data:
       version: Not Available
       link: null
     community:
-      version: 26.0.0-BETA.1
-      link: https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-BETA.1
+      version: 26 Nightly
+      link: https://iso.sys.truenas.net/TrueNAS-26-Nightlies/
   early_adopter:
     enterprise:
       version: Not Available
       link: null
     community:
-      version: 26.0.0-BETA.1
-      link: https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-BETA.1
+      version: 26.0.0-BETA.2
+      link: https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-BETA.2
   general:
     enterprise:
-      version: 25.10.3
-      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.3
+      version: 25.10.4
+      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.4
     community:
-      version: 25.10.3
-      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.3
+      version: 25.10.4
+      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.4
   mission_critical:
     enterprise:
-      version: 25.04.2.6
-      link: https://www.truenas.com/docs/scale/25.04/gettingstarted/scalereleasenotes/#250426
+      version: 25.10.4
+      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.4
     community:
       version: Not Available
       link: null
@@ -31,9 +31,6 @@ api_config:
   base_url: https://update.sys.truenas.net/scale/
   new_base_url: https://auto-public.sys.truenas.net/
   trains_file: trains_v2.json
-  additional_trains:
-    TrueNAS-SCALE-Fangtooth:
-      description: TrueNAS SCALE Fangtooth 25.04 [release]
 profiles:
   developer: DEVELOPER
   early_adopter: EARLY_ADOPTER

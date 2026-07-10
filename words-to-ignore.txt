@@ -1215,6 +1215,9 @@ subquestions
 solidigm
 vrrp
 SMR
+DM-SMR
+HA-SMR
+HM-SMR
 ACPI
 nvdimms
 sudoers

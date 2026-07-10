@@ -16,13 +16,3 @@ The **Network** screen also provides access to IPMI channels. IPMI only shows on
 To access the **Network** screen, go to **System** on the main navigation menu, then click **Network**.
 
 {{< trueimage src="/images/SCALE/Network/Network.png" alt="Network Screen" id="Network Screen" >}}
-
-The articles listed below provide more information on **Network** screen widgets and screens.
-
-<div class="noprint">
-
-## Additional Network Articles
-
-{{< children depth="2" description="true" >}}
-
-</div>

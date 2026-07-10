@@ -73,10 +73,12 @@ The **Search UI** global search bar allows users to search for screens and eleme
 
 ### Settings
 
-The <span class="material-icons">account_circle</span> **Settings** button displays a menu of general system settings options.
-The options are **Change Password**, **Two-Factor Authentication** (when Global 2FA is enabled), **My API Keys**, **Guide**, and **Log Out**.
+The <span class="material-icons">account_circle</span> **Settings** button shows a menu of general system settings options.
+The options are **Change Password**, **Preferences**, **Two-Factor Authentication** (when Global 2FA is enabled), **My API Keys**, **Guide**, and **Log Out**.
 
-The <span class="material-icons">dialpad</span> **Change Password** button displays a dialog where you can change the login password for the currently logged-in administrator password.
+The <span class="material-icons">dialpad</span> **Change Password** button displays a dialog where you can change the login password for the currently logged-in administrator.
+
+The <span class="material-icons">settings</span> **Preferences** option opens a screen with **Theme**, **Session Timeout**, and **Localization** settings to customize the UI for the currently logged in user account.
 
 The <span class="iconify" data-icon="mdi:two-factor-authentication"></span> **Two-Factor Authentication** button displays only when Global 2FA is enabled and opens the [**Two Factor Auth**]({{< ref "2FAScreen" >}}) screen. Users can also access this screen from **Credentials > Two Factor Auth**.
 
@@ -85,6 +87,22 @@ The <span class="material-icons">laptop</span> **My API Keys** button displays t
 The <span class="material-icons">library_books</span> **Guide** button opens the TrueNAS Documentation Hub website in a new browser tab.
 
 The <span class="material-icons">exit_to_app</span> **Log Out** button logs the current user out of the TrueNAS UI.
+
+#### Preferences Screen Settings
+
+The **Preferences** screen customizes the UI screens for the currently logged-in user.
+
+{{< trueimage src="/images/SCALE/Dashboard/PreferencesScreen.png" alt="Preferences Screen" id="Preferences Screen" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Theme** | Sets the UI color theme for the currently logged-in user. Options are: **ixDark** (default option), **ixBlue**, **Dracula**, **Nord**, **Paper**, **Solarized Dark**, **Midnight**, and **High Contrast**. Selecting an option immediately changes the UI to the selected color theme. |
+| **Session Timeout** | Sets the number of seconds a session remains active or inactive before it is automatically ended by logging out the user. |
+| **Language** | Sets the lauguage for the UI screen. The default setting is **English**, but it might be customized to the language based on the country of origin for an Enterprise customer. You can filter the list by typing in the field after clearing the default value, or use the scroll option to find and select a language. |
+| **Date Format** | Sets the desired date format for the UI. |
+| **Time Format** | Sets the desired time format for the UI. |
+{{< /truetable >}}
 
 ### Power
 

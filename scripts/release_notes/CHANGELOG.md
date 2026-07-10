@@ -136,6 +136,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `release_notes.py` — Default CSV path now resolves to `documentation/static/data/{version}-changelog.csv` (previously `public/data/`). `public/data/` is a Hugo build artifact and is gitignored, so the prior default required either a Hugo build between dropping the CSV and running `prep`, or dropping the CSV into the build dir where it could be blown away on the next clean build. `static/data/` is the source-controlled location the team actually uses.
+- `README.md`, `QUICKSTART.md` — Updated CSV path references from `public/data/` to `static/data/`.
+- `test_release_notes.py` — Updated expected path to match new default. Fixed two pre-existing assertions that compared a `25.10.3` slug against `25_10_2_2`; the intent was clearly `25.10.2.2 -> 25_10_2_2` and `25.10.3 -> 25_10_3`.
+
 ### Planned Features
 
 **Version 1.1.0 (Q2 2026):**
