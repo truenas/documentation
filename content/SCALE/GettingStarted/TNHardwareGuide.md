@@ -73,6 +73,8 @@ SMR drives come in three variants, and TrueNAS handles each differently:
 See also: [WD Red SMR vs CMR Tested: Avoid Red SMR](https://www.servethehome.com/wd-red-smr-vs-cmr-tested-avoid-red-smr/) and [We put Western Digital’s dreaded SMR Red drive to the test](https://arstechnica.com/gadgets/2020/06/western-digitals-smr-disks-arent-great-but-theyre-not-garbage/).
 
 Consult your drive manufacturer, such as [Western Digital](https://support-en.wd.com/app/answers/detailweb/a_id/50697/~/steps-to-determine-if-an-internal-drive-uses-cmr-or-smr-technology) or [Seagate](https://www.seagate.com/products/cmr-smr-list/), to determine whether a disk uses CMR or SMR technology and which SMR variant.
+
+The vendor pages linked above each cover only one brand, and you have to know the manufacturer first. Some product lines also ship both CMR and DM-SMR variants under nearly identical model numbers, so a cross-vendor list like the [NAS CMR/SMR drive list](https://www.nasdisks.com/cmr-smr/) can make it easier to check a specific model before buying.
 {{< /hint >}}
 
   </div>
