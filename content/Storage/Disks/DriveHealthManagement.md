@@ -19,7 +19,7 @@ doctype: tutorial
 Drive Health Management (DHM) in TrueNAS monitors the condition of installed HDD and SSD drives (SAS, SATA, and NVMe) and alerts you when action is required. TrueNAS manages drive health with three layers:
 
 - **ZFS** detects sudden failures in real time during active read and write operations.
-- **TrueNAS Middleware** automatically polls SMART (Self-Monitoring, Analysis, and Reporting Technology) data in each drive
+- **TrueNAS Middleware** automatically polls SMART (Self-Monitoring, Analysis, and Reporting Technology) data in each drive.
 - **TrueNAS Middleware** handles the alert logic and provides actionable notifications.
 
 TrueNAS DHM is designed to:
@@ -84,7 +84,7 @@ Click an alert to expand it and view details, including the affected disk, the a
 {{< /truetable >}}
 
 
-## SMART Tests Options for Community Edition
+## SMART Test Options for Community Edition
 
 {{< hint type=note >}}
 TrueNAS handles SMART testing through its automated DHM polling.
