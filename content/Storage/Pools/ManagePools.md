@@ -133,6 +133,9 @@ To manage disks in a pool, click on the VDEV to expand it and show the disks in 
 Click on a disk to see the widgets for that disk.
 You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
+To edit disk settings such as the description, power management, and SED options, click **Edit Disk** to open the **Edit Disk** screen.
+See [Edit Disk Screen]({{< ref "/SCALE/Storage/Disks/DisksScreen.md#edit-disk-screen" >}}) for details.
+
 See [Replacing Disks]({{< ref "ReplacingDisks" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
 ## Expanding a Pool
