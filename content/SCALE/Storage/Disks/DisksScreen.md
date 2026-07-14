@@ -144,7 +144,24 @@ Click **Edit Disk** on the **[Devices]({{< ref "VDEVScreens" >}})** screen to op
 | Setting | Description |
 |---------|-------------|
 | **HDD Standby** | Shows a list of options or leave set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
-| **Advanced Power Management (APM)** | Sets the APM level that controls power management behavior when drives are idle, not maximum performance capabilities. When drives are actively accessed, they operate at full performance regardless of the APM setting. Lower-numbered levels prioritize power savings during idle periods, while higher levels prioritize quick response times. Power management profile options: <br><li>**Disabled** (the default setting) <br><li>**Level 1 - Minimum power usage with Standby (spindown)** <br><li>**Level 64 - Intermediate power usage with Standby** <br><li>**Level 127 - Maximum power usage with Standby** <br><li>**Level 128 - Minimum power usage without Standby (no spindown)** <br><li>**Level 192 - Intermediate power usage without Standby** <br><li>**Level 254 - Maximum performance, maximum power usage**</li> |
+| **Advanced Power Management (APM)** | Sets the Advanced Power Management (APM) level, a feature of the ATA storage standard that balances how much power the drive uses while idle against how quickly it responds. Select a level from the dropdown list. See the table below for a description of each level. |
+{{< /truetable >}}
+
+APM affects the drive only while it is idle.
+When the drive is actively reading or writing, it runs at full performance regardless of the APM level.
+
+The following table describes each level:
+
+{{< truetable >}}
+| Level | Description |
+|-------|-------------|
+| **Disabled** | Turns off Advanced Power Management. The drive follows its own default power behavior. This is the default setting. |
+| **Level 1 - Minimum power usage with Standby (spindown)** | Saves the most power, with the lowest draw and the least heat and noise. Responds the slowest. |
+| **Level 64 - Intermediate power usage with Standby** | Weighted toward power saving, with limited responsiveness. |
+| **Level 127 - Maximum power usage with Standby** | A midpoint setting, with power use kept in check. |
+| **Level 128 - Minimum power usage without Standby (no spindown)** | A midpoint setting, tuned for quicker access. |
+| **Level 192 - Intermediate power usage without Standby** | Weighted toward responsiveness, with higher power use. |
+| **Level 254 - Maximum performance, maximum power usage** | Delivers the most responsiveness, with the highest draw. The drive stays ready. |
 {{< /truetable >}}
 
 ### SED Password <!-- tag for ui ref automation {id="disk_edit-sed"} -->
