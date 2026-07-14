@@ -800,9 +800,9 @@ p,h1,h2,h3,h4,th,td,a,body {
 .truenas-menudropdown a {
   font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   color: #2b2b2b;
-  padding: 6px 10px;
+  padding: 9px 10px;
   text-decoration: none;
   display: block;
   transition: color 0.3s ease;
@@ -896,7 +896,7 @@ p,h1,h2,h3,h4,th,td,a,body {
 }
 
 .truenas-edition-button img {
-  width: 80px !important;
+  width: 100px !important;
   height: auto !important;
   flex-shrink: 0 !important;
 }
@@ -1013,9 +1013,9 @@ p,h1,h2,h3,h4,th,td,a,body {
 #TrueNASHeader .gdoc-brand__img {
   display: block !important;
   visibility: visible !important;
-  width: 276px;
-  height: auto;
-  max-width: 276px;
+  width: auto;
+  height: 36px;
+  max-width: 240px;
   opacity: 1 !important;
 }
 
@@ -3656,3 +3656,90 @@ div.draid-grid-table-container::-webkit-scrollbar-track {
 .gdoc-nav section:last-child .gdoc-nav__list li:not(:nth-child(2)) {
     order: 0 !important;
 }
+
+/* Sign In dropdown — TrueNAS blue links, lighter-blue hover (matches truenas.com) */
+#TrueNASHeader .truenas-menudropdown.truenas-signin-dropdown a { color: #0095D5 !important; }
+#TrueNASHeader .truenas-menudropdown.truenas-signin-dropdown a:hover { color: #31beec !important; }
+[color-mode="dark"] #TrueNASHeader .truenas-menudropdown.truenas-signin-dropdown a { color: #0095D5 !important; }
+[color-mode="dark"] #TrueNASHeader .truenas-menudropdown.truenas-signin-dropdown a:hover { color: #31beec !important; }
+:root[color-theme=light] #TrueNASHeader .truenas-menudropdown.truenas-signin-dropdown a { color: #0095D5 !important; }
+:root[color-theme=light] #TrueNASHeader .truenas-menudropdown.truenas-signin-dropdown a:hover { color: #31beec !important; }
+
+
+/* Sign In - outline pill (white/blue -> green/white on hover); ordered after Get A Quote */
+#TrueNASHeader #desktop-signin { order: 1; }
+#TrueNASHeader .truenas-signin-button {
+  background: #ffffff;
+  border: 1px solid #0095d5;
+  color: #0095d5;
+  padding: 13px 30px;
+  border-radius: 30px;
+  margin-left: 10px;
+  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+#TrueNASHeader .truenas-signin-button:hover {
+  background: #71bf44;
+  border-color: #0095d5;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1180px) {
+  /* Hide the top-bar Get A Quote + Sign In pills; both are now sections in the panel */
+  #TrueNASHeader .truenas-menubar > .truenas-menuitem { display: none !important; }
+  /* Get A Quote menu row (single link, no dropdown) */
+  .mobile-menu-cta { text-decoration: none; }
+}
+
+/* Get A Quote mobile row is an <a>, so header #TrueNASHeader a color rules make it light-on-white (invisible). Force it dark like the sibling <span> titles. */
+#TrueNASHeader .mobile-menu-cta { color: #2b2b2b !important; }
+[color-mode="dark"] #TrueNASHeader .mobile-menu-cta { color: #2b2b2b !important; }
+:root[color-theme=light] #TrueNASHeader .mobile-menu-cta { color: #2b2b2b !important; }
+#TrueNASHeader .mobile-menu-cta { font-weight: 600 !important; font-family: inherit !important; text-decoration: none !important; }
+#TrueNASHeader .mobile-menu-cta:hover { color: #2b2b2b !important; text-decoration: none !important; }
+
+/* TrueNAS Connect banner in Products dropdown: logo + tagline on one line, white text on blue (matches truenas.com) */
+#TrueNASHeader .truenas-connect-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background-color: #0095d5;
+  padding: 0.7rem 1.1rem;
+  margin-top: 0.5rem;
+  text-decoration: none !important;
+  transition: background-color 0.3s ease;
+}
+#TrueNASHeader .truenas-menudropdown a.truenas-connect-banner:hover { background-color: #71bf44 !important; }
+[color-mode="dark"] #TrueNASHeader .truenas-menudropdown a.truenas-connect-banner:hover { background-color: #71bf44 !important; }
+:root[color-theme=light] #TrueNASHeader .truenas-menudropdown a.truenas-connect-banner:hover { background-color: #71bf44 !important; }
+#TrueNASHeader .truenas-connect-banner img { height: 24px; width: auto; flex-shrink: 0; }
+#TrueNASHeader .truenas-connect-banner span { color: #ffffff !important; font-weight: 600; font-size: 14px; white-space: nowrap; font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif; }
+
+/* Mobile panel: flattened plain text-link submenus (replaces cloned desktop panels) */
+.mobile-menu-section .mobile-submenu { display: none; }
+.mobile-menu-section.expanded .mobile-submenu { display: block; padding: 4px 0 10px; }
+.mobile-submenu-header {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #7a7a7a;
+  padding: 12px 16px 4px;
+}
+#TrueNASHeader .mobile-submenu-link {
+  display: block;
+  padding: 9px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none !important;
+  color: #2b2b2b !important;
+  font-family: "Inter iX", Helvetica, Arial, Lucida, sans-serif;
+}
+[color-mode="dark"] #TrueNASHeader .mobile-submenu-link { color: #2b2b2b !important; }
+:root[color-theme=light] #TrueNASHeader .mobile-submenu-link { color: #2b2b2b !important; }
+#TrueNASHeader .mobile-submenu-link:hover { color: #0095d5 !important; text-decoration: none !important; }
+[color-mode="dark"] #TrueNASHeader .mobile-submenu-link:hover { color: #0095d5 !important; }
+:root[color-theme=light] #TrueNASHeader .mobile-submenu-link:hover { color: #0095d5 !important; }
