@@ -208,8 +208,6 @@ Consider setting the following alerts for STIG compliance:
 |  | **Certificate Revoked** | Set alert preferences to notify you of certificate revocations so you can promptly obtain a new certificate. |
 |  | **Web UI HTTPS Certificate Setup Failed** | Set alert level preferences to send notifications when the web UI HTTPS certificate setup fails to promptly address issues that impact the security of HTTPS access to the TrueNAS web UI. |
 | **Directory Services** | **Active Directory Domain Validation Failed** | Set the alert level preference to send notifications when Active Directory domain verification fails to promptly investigate and take corrective action. |
-| **Key Management Interoperability Protocol (KMIP)** | **Failed to Communicate with KMIP Server** | Set alert level preference to send notifications when a communication failure with the KMIP server occurs to promptly diagnose and correct issues. |
-|  | <li>**Failed to Sync SED Global Password with KMIP Server**<br><li>**Failed to sync SED Keys with KMIP Server**<br><li>**Failed to Sync ZFS Keys with KMIP Server**</li> | Set the alert level preference to send notifications when the SED global password fails to sync with the KMIP server to promptly diagnose and correct password and/or sync issues.|
 | **Sharing** | <li>**Deprecated Service Configuration Detected**<br><li>**Deprecated Service is Running**</li> | Set alert preferences to notify you when the system detects deprecated services or configurations. Consult release notes and tutorials for information on affected Share protocols and their replacements. |
 |  | <li>**IP Addresses Bound to an iSCSI Portal Were Not Found**<br><li>**NFS Services Could Not Bind to Specific IP Addresses Using 0.0.0**<br><li>**NFS shares reference hosts that could not be resolved**</li> | Set alert preferences to notify you of failed or missing network connections so you can update configurations promptly. |
 |  | **NTLMv1 authentication has been attempted in the last 24 hours** | Set alert preferences to notify you when NTLMv1 authentication occurs between TrueNAS and Windows servers. NTLMv1 provides some session security, message integrity, and confidentiality but lacks the robustness of modern protocols and remains vulnerable to replay and brute-force attacks. Investigate any NTLMv1 usage promptly and upgrade to more secure authentication methods. |
@@ -218,6 +216,10 @@ Consider setting the following alerts for STIG compliance:
 | **System** | <li>**Admin User is Overriden**<br><li>**Administrator account activity**<br><li>**SSH Login Failures**</li> | Set alert preferences to notify you when TrueNAS detects administrator activity in web UI and SSH sessions. These alerts help you identify potential unauthorized access to TrueNAS features, functions, system configuration, and data storage. |
 |  | **The Web Interface Could Not Bind to Configured Address** | Set the alert level preference to send notifications when TrueNAS detects problems binding to any network address. Address incorrectly configured network addresses promptly to maintain secure communication between TrueNAS and other remote servers. |
 {{< /truetable >}}
+<!-- DOCS-2693 KMIP returned to draft for TrueNAS 26; reintroduce in TrueNAS 27
+| **Key Management Interoperability Protocol (KMIP)** | **Failed to Communicate with KMIP Server** | Set alert level preference to send notifications when a communication failure with the KMIP server occurs to promptly diagnose and correct issues. |
+|  | <li>**Failed to Sync SED Global Password with KMIP Server**<br><li>**Failed to sync SED Keys with KMIP Server**<br><li>**Failed to Sync ZFS Keys with KMIP Server**</li> | Set the alert level preference to send notifications when the SED global password fails to sync with the KMIP server to promptly diagnose and correct password and/or sync issues.|
+-->
 
 ### Network Security
 

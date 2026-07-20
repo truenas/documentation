@@ -9,6 +9,7 @@ keywords:
 - enterprise storage solution
 - nas storage 
 doctype: tutorial
+draft: true
 aliases:
  - /scale/scaletutorials/credentials/configuringkmipscale/
 ---
