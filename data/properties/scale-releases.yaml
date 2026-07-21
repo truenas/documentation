@@ -86,7 +86,7 @@ majorVersions:
       - name: "25.10.5"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.5"
-        releaseDate: "2026-07-02"
+        releaseDate: "2026-07-23"
       - name: "25.10.4"
         type: "Maintenance"
         link: "https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.4"
