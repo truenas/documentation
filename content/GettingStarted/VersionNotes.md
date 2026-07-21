@@ -36,15 +36,15 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.5" data-tab-label="25.10.5">
 
-July 2, 2026
+July 23, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.5!
-This release updates the Linux kernel to address local privilege escalation vulnerabilities. It also fixes a console memory leak, incorrect drive health data, stalled TrueCloud Backup jobs, and share ACL edits.
+This release updates the Linux kernel to address local privilege escalation and other security vulnerabilities. It also fixes a console memory leak, incorrect drive health data, stalled TrueCloud Backup jobs, SSH key handling for replication and cloud credentials, alert email delivery, and share ACL edits.
 
 **Notable changes:**
 
-* Updates the Linux kernel to the latest 6.12 LTS release (v6.12.94) ([NAS-141384](https://ixsystems.atlassian.net/browse/NAS-141384), [NAS-141588](https://ixsystems.atlassian.net/browse/NAS-141588)).
-  TrueNAS 25.10.5 advances the kernel from the previous release through v6.12.93 to v6.12.94. This update mitigates several kernel vulnerabilities, including the [SharedFrag local privilege escalation](https://security.truenas.com/scale/impact-statements/cve-2026-43503-shared-frag/) (CVE-2026-43503) and the [PeditCOW local privilege escalation](https://security.truenas.com/scale/impact-statements/cve-2026-46331-pedit-cow/) (CVE-2026-46331), along with additional upstream security and stability fixes.
+* Updates the Linux kernel to the latest 6.12 LTS release (v6.12.95) ([NAS-141384](https://ixsystems.atlassian.net/browse/NAS-141384), [NAS-141588](https://ixsystems.atlassian.net/browse/NAS-141588), [NAS-141696](https://ixsystems.atlassian.net/browse/NAS-141696)).
+  TrueNAS 25.10.5 advances the kernel from the previous release through v6.12.93, v6.12.94, and v6.12.95. This update mitigates several kernel vulnerabilities, including the [SharedFrag local privilege escalation](https://security.truenas.com/scale/impact-statements/cve-2026-43503-shared-frag/) (CVE-2026-43503) and the [PeditCOW local privilege escalation](https://security.truenas.com/scale/impact-statements/cve-2026-46331-pedit-cow/) (CVE-2026-46331). The v6.12.95 update adds further high-severity upstream fixes, including an out-of-bounds read in the rxrpc ACK parser ([CVE-2026-53151](https://www.cve.org/CVERecord?id=CVE-2026-53151)), use-after-free issues in network bonding ([CVE-2026-31419](https://www.cve.org/CVERecord?id=CVE-2026-31419) and [CVE-2026-52975](https://www.cve.org/CVERecord?id=CVE-2026-52975)), a use-after-free in eventpoll ([CVE-2026-46242](https://www.cve.org/CVERecord?id=CVE-2026-46242)), an IPv6 tunnel network namespace issue ([CVE-2026-52909](https://www.cve.org/CVERecord?id=CVE-2026-52909)), an SCTP UDP-tunnel handling fix ([CVE-2026-53070](https://www.cve.org/CVERecord?id=CVE-2026-53070)), and a SELinux overlayfs access-check bypass ([CVE-2026-46054](https://www.cve.org/CVERecord?id=CVE-2026-46054)), along with additional upstream security and stability fixes.
 
 * Fixes a memory leak in the console CLI process that could cause system-wide out-of-memory crashes ([NAS-141238](https://ixsystems.atlassian.net/browse/NAS-141238)).
   The CLI process running on the system console (`getty@tty1`) could leak a large amount of memory over time, eventually exhausting system RAM and triggering out-of-memory (OOM) kills that affected other processes. The leak is fixed so the console CLI no longer consumes excess memory.
@@ -54,6 +54,12 @@ This release updates the Linux kernel to address local privilege escalation vuln
 
 * Fixes TrueCloud Backup jobs that could hang indefinitely and hide restic error messages ([NAS-141287](https://ixsystems.atlassian.net/browse/NAS-141287)).
   A `KeyError` while reading restic progress output caused TrueCloud Backup to discard all restic error messages, so failing jobs could appear stuck with no explanation. TrueNAS now handles the progress output correctly and surfaces the underlying restic errors.
+
+* Fixes several SSH key handling issues affecting remote replication and cloud credentials ([NAS-141677](https://ixsystems.atlassian.net/browse/NAS-141677)).
+  Removing an SSH key pair now correctly updates SFTP cloud credentials that used that key. Encrypted SSH private keys are rejected more consistently during validation, and remote SSH semi-automatic setup returns a clear error when the selected key pair is missing or invalid. SSH pairing with TrueNAS 13 systems during remote replication setup now works correctly.
+
+* Fixes alert emails that were not RFC 5322 compliant and could be rejected by mail providers ([NAS-141699](https://ixsystems.atlassian.net/browse/NAS-141699)).
+  Alert notification emails did not conform to RFC 5322, so some providers such as Gmail bounced them and administrators did not receive the alerts. TrueNAS now generates compliant messages so alert emails are delivered reliably.
 
 * Fixes an issue that prevented editing a share ACL ([NAS-139535](https://ixsystems.atlassian.net/browse/NAS-139535)).
   Attempts to edit the ACL on a share could fail, which blocked permission changes. Editing share ACLs now works as expected.
@@ -641,7 +647,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.4');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.5');
 });
 </script>
 
