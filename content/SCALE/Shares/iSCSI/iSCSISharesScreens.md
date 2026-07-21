@@ -103,7 +103,7 @@ The iSCSI wizard **Protocol Options** screen shows settings to add a portal and 
 | Setting | Description |
 |---------|-------------|
 | **Portal** | Sets the portal for the target and extent. Shows a dropdown list with the **Create New** option and lists existing portals on the system available for the target and extent. Selecting **Create New** shows the **IP Address** field and **Add** button. **Add** shows another **IP Address** field each time it is clicked to allow adding multiple portals. |
-| **IP Address** | Sets the network address used for the portal. The dropdown list shows several options for setting up a portal: <br><li>**0.0.0.0** - Listens on all IPv4 addresses. <br><li>**::** - Listens on all IPv6 addresses. <br><li>TrueNAS server IP address - Uses the IP address assigned to the primary network interface for the TrueNAS server being configured.</li>|
+| **IP Address** | Sets the network address used for the portal. The dropdown list shows several options for setting up a portal: <ul><li>**0.0.0.0** - Listens on all IPv4 addresses.</li><li>**::** - Listens on all IPv6 addresses.</li><li>TrueNAS server IP address - Uses the IP address assigned to the primary network interface for the TrueNAS server being configured.</li></ul>|
 | **Initiators** | Initiators send commands over the TCP/IP network to the target and receive responses from the target. Leave blank to allow all (recommended) or enter a list of initiator host names (to limit access). Separate each host name by pressing <kbd>Enter</kbd> after entering each host name. |
 {{< /truetable >}}
 {{< /expand >}}
