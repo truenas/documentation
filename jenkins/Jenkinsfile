@@ -20,8 +20,12 @@ pipeline {
           env.OUTPUT_DIR      = (cfg.OUTPUT_DIR ?: '').trim()
           env.DEPLOY_SCRIPT   = (cfg.DEPLOY_SCRIPT ?: '').trim()
           env.PAGEFIND_GLOB   = (cfg.PAGEFIND_GLOB ?: '').trim()
-          echo "branch=${env.BRANCH_NAME} publish=${env.PUBLISH_TO_PROD} out=${env.OUTPUT_DIR} deploy=${env.DEPLOY_SCRIPT}"
-          if (env.PUBLISH_TO_PROD == 'true' && !env.OUTPUT_DIR) {
+          env.ARCHIVED        = (cfg.ARCHIVED ?: 'false').trim()
+          echo "branch=${env.BRANCH_NAME} publish=${env.PUBLISH_TO_PROD} archived=${env.ARCHIVED} out=${env.OUTPUT_DIR} deploy=${env.DEPLOY_SCRIPT}"
+          if (env.ARCHIVED == 'true') {
+            echo 'ARCHIVED=true — this version is frozen. Build and Deploy are skipped; the live symlink is maintained by the Nightly Maintenance reconcile.'
+          }
+          if (env.PUBLISH_TO_PROD == 'true' && env.ARCHIVED != 'true' && !env.OUTPUT_DIR) {
             error 'PUBLISH_TO_PROD=true but OUTPUT_DIR is empty — refusing to publish to an undefined path.'
           }
         }
@@ -29,6 +33,7 @@ pipeline {
     }
 
     stage('Build') {
+      when { expression { env.ARCHIVED != 'true' } }   // frozen versions are not rebuilt
       steps {
         sh 'npm install -D --save autoprefixer'
         sh 'npm install -D --save postcss-cli'
@@ -42,7 +47,12 @@ pipeline {
     }
 
     stage('Deploy') {
-      when { environment name: 'PUBLISH_TO_PROD', value: 'true' }
+      when {
+        allOf {
+          environment name: 'PUBLISH_TO_PROD', value: 'true'
+          expression { env.ARCHIVED != 'true' }   // frozen versions are not re-published here
+        }
+      }
       options { lock('docs1-deploy') }        // cross-branch mutex (spec 3.5)
       stages {
 
