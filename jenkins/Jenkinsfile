@@ -9,7 +9,6 @@ pipeline {
 
   environment {
     HUGO_ENV = 'production'
-    ALERT_EMAIL = 'docs@truenas.com'          // docs-team Google Group (role alias)
   }
 
   stages {
@@ -72,18 +71,14 @@ pipeline {
     }
   }
 
+  // Failure alerting deferred (DOCS-2686): the Mailer 'mail' step throws
+  // NoSuchMethodError against the installed Mailer plugin version, and no
+  // Jenkins->Slack integration exists; fixing either needs Jenkins-admin.
+  // For now rely on the RED build status. Wire up email (mail/emailext) or
+  // Slack once IT updates the Mailer plugin — tracked as a DOCS-2686 follow-up.
   post {
     failure {
-      mail to: env.ALERT_EMAIL,
-           subject: "[DOCS BUILD FAILED] ${env.JOB_NAME} #${env.BUILD_NUMBER} (${env.BRANCH_NAME})",
-           body: "A Docs Versioned Sites build failed; the site may not be fully published.\n\n" +
-                 "Branch: ${env.BRANCH_NAME}\nBuild:  ${env.BUILD_URL}\n\n" +
-                 "Publish/Symlink/Purge fail-fast, so a red build here means rsync/symlink/purge did not all complete. Check the console, fix, and re-run."
-    }
-    fixed {
-      mail to: env.ALERT_EMAIL,
-           subject: "[DOCS BUILD RECOVERED] ${env.JOB_NAME} #${env.BUILD_NUMBER} (${env.BRANCH_NAME})",
-           body: "A previously failing Docs Versioned Sites build is green again.\n\nBranch: ${env.BRANCH_NAME}\nBuild:  ${env.BUILD_URL}"
+      echo 'Build FAILED — see console output. Automated alerting is pending an IT plugin fix (Mailer); no email/Slack sent.'
     }
   }
 }
