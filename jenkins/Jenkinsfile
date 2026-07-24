@@ -9,6 +9,7 @@ pipeline {
 
   environment {
     HUGO_ENV = 'production'
+    ALERT_EMAIL = 'docs@truenas.com'          // docs-team Google Group (role alias)
   }
 
   stages {
@@ -73,18 +74,16 @@ pipeline {
 
   post {
     failure {
-      withCredentials([string(credentialsId: 'docs-slack-webhook', variable: 'HOOK')]) {
-        sh '''curl -s -X POST -H 'Content-type: application/json' \
-          --data "{\\"text\\":\\":x: Docs Versioned Sites — ${JOB_NAME} #${BUILD_NUMBER} FAILED (${BRANCH_NAME}) ${BUILD_URL}\\"}" \
-          "$HOOK" || true'''
-      }
+      mail to: env.ALERT_EMAIL,
+           subject: "[DOCS BUILD FAILED] ${env.JOB_NAME} #${env.BUILD_NUMBER} (${env.BRANCH_NAME})",
+           body: "A Docs Versioned Sites build failed; the site may not be fully published.\n\n" +
+                 "Branch: ${env.BRANCH_NAME}\nBuild:  ${env.BUILD_URL}\n\n" +
+                 "Publish/Symlink/Purge fail-fast, so a red build here means rsync/symlink/purge did not all complete. Check the console, fix, and re-run."
     }
     fixed {
-      withCredentials([string(credentialsId: 'docs-slack-webhook', variable: 'HOOK')]) {
-        sh '''curl -s -X POST -H 'Content-type: application/json' \
-          --data "{\\"text\\":\\":white_check_mark: Docs Versioned Sites — ${JOB_NAME} #${BUILD_NUMBER} recovered (${BRANCH_NAME})\\"}" \
-          "$HOOK" || true'''
-      }
+      mail to: env.ALERT_EMAIL,
+           subject: "[DOCS BUILD RECOVERED] ${env.JOB_NAME} #${env.BUILD_NUMBER} (${env.BRANCH_NAME})",
+           body: "A previously failing Docs Versioned Sites build is green again.\n\nBranch: ${env.BRANCH_NAME}\nBuild:  ${env.BUILD_URL}"
     }
   }
 }
