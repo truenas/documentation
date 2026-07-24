@@ -1,0 +1,90 @@
+pipeline {
+  agent { label 'hugo-pr' }
+
+  options {
+    disableConcurrentBuilds()                 // no same-branch races (spec 3.5)
+    buildDiscarder(logRotator(numToKeepStr: '15'))
+    timestamps()
+  }
+
+  environment {
+    HUGO_ENV = 'production'
+  }
+
+  stages {
+    stage('Load config') {
+      steps {
+        script {
+          def cfg = readProperties file: 'jenkins/docs-build.env'
+          env.PUBLISH_TO_PROD = (cfg.PUBLISH_TO_PROD ?: 'false').trim()
+          env.OUTPUT_DIR      = (cfg.OUTPUT_DIR ?: '').trim()
+          env.DEPLOY_SCRIPT   = (cfg.DEPLOY_SCRIPT ?: '').trim()
+          env.PAGEFIND_GLOB   = (cfg.PAGEFIND_GLOB ?: '').trim()
+          echo "branch=${env.BRANCH_NAME} publish=${env.PUBLISH_TO_PROD} out=${env.OUTPUT_DIR} deploy=${env.DEPLOY_SCRIPT}"
+          if (env.PUBLISH_TO_PROD == 'true' && !env.OUTPUT_DIR) {
+            error 'PUBLISH_TO_PROD=true but OUTPUT_DIR is empty — refusing to publish to an undefined path.'
+          }
+        }
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'npm install -D --save autoprefixer'
+        sh 'npm install -D --save postcss-cli'
+        sh 'hugo -d public --gc --minify --cleanDestinationDir'
+        script {
+          if (env.PAGEFIND_GLOB) {
+            sh "npx pagefind --site \"public\" --glob \"{${env.PAGEFIND_GLOB}}/**/*.html\""
+          }
+        }
+      }
+    }
+
+    stage('Deploy') {
+      when { environment name: 'PUBLISH_TO_PROD', value: 'true' }
+      options { lock('docs1-deploy') }        // cross-branch mutex (spec 3.5)
+      stages {
+
+        stage('Publish') {                    // same node as Build -> has public/
+          steps {
+            sh """rsync -rvza -e 'ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' \
+              --delete --exclude='pdf/' --exclude='PRs/' --exclude='CNAME' --exclude='download/' \
+              public/ docs@10.242.64.28:/var/www/html/${env.OUTPUT_DIR}"""
+          }
+        }
+
+        stage('Symlink') {
+          when { expression { env.DEPLOY_SCRIPT?.trim() } }   // empty => skip (e.g. master)
+          agent { label 'security' }
+          steps {
+            retry(3) { sh "/root/docs-hugo/${env.DEPLOY_SCRIPT}" }
+          }
+        }
+
+        stage('Purge') {
+          steps {
+            retry(3) { build job: '/Documentation/PurgeCDNIfInValidState', wait: true }
+          }
+        }
+      }
+    }
+  }
+
+  post {
+    failure {
+      withCredentials([string(credentialsId: 'docs-slack-webhook', variable: 'HOOK')]) {
+        sh '''curl -s -X POST -H 'Content-type: application/json' \
+          --data "{\\"text\\":\\":x: Docs Versioned Sites — ${JOB_NAME} #${BUILD_NUMBER} FAILED (${BRANCH_NAME}) ${BUILD_URL}\\"}" \
+          "$HOOK" || true'''
+      }
+    }
+    fixed {
+      withCredentials([string(credentialsId: 'docs-slack-webhook', variable: 'HOOK')]) {
+        sh '''curl -s -X POST -H 'Content-type: application/json' \
+          --data "{\\"text\\":\\":white_check_mark: Docs Versioned Sites — ${JOB_NAME} #${BUILD_NUMBER} recovered (${BRANCH_NAME})\\"}" \
+          "$HOOK" || true'''
+      }
+    }
+  }
+}
