@@ -67,6 +67,7 @@ Go to **System > Network**, and click **Settings** on the **Network Configuratio
 6. Click **Save**. The **Network Configuration** widget on the **Network** screen shows the new settings.
 
 <!-- Commenting out this section until more information on what each service allows or requires, then use a snippet for this content in the UI  and here.
+DOCS-2693 KMIP returned to draft for TrueNAS 26; reintroduce in TrueNAS 27 (this already-commented section includes a KMIP service list item).
 ## Setting Up External Communication for Services
 
 Use the **Global Configuration Outbound Network** settings to add services for external communication capability.
