@@ -58,8 +58,15 @@ pipeline {
 
         stage('Publish') {                    // same node as Build -> has public/
           steps {
+            // The version symlinks live INSIDE the shared docs1 root (docs1/scale/26,
+            // docs1/core/13.3, docs1/truecommand/3.0 ...). master publishes to docs1 with
+            // --delete, which would wipe those symlinks. Exclude the version dirs (any
+            // <product>/<digit...>) so master only manages its own content and never touches
+            // the version symlinks (owned by version deploys + the nightly reconcile).
+            // No-op for version-branch publishes (their target dirs have no such subdirs).
             sh """rsync -rvza -e 'ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' \
               --delete --exclude='pdf/' --exclude='PRs/' --exclude='CNAME' --exclude='download/' \
+              --exclude='/scale/[0-9]*' --exclude='/core/[0-9]*' --exclude='/truecommand/[0-9]*' \
               public/ docs@10.242.64.28:/var/www/html/${env.OUTPUT_DIR}"""
           }
         }
