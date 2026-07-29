@@ -28,6 +28,11 @@ pipeline {
           if (env.PUBLISH_TO_PROD == 'true' && env.ARCHIVED != 'true' && !env.OUTPUT_DIR) {
             error 'PUBLISH_TO_PROD=true but OUTPUT_DIR is empty — refusing to publish to an undefined path.'
           }
+          // self-documenting: label each build by its role (shows in build history / Blue Ocean)
+          currentBuild.description =
+              (env.ARCHIVED == 'true')        ? 'ARCHIVED — frozen, not rebuilt' :
+              (env.PUBLISH_TO_PROD != 'true') ? 'STAGED — build only, not published' :
+                                                "PUBLISHED → /var/www/html/${env.OUTPUT_DIR}"
         }
       }
     }
