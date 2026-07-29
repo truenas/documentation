@@ -58,15 +58,16 @@ pipeline {
 
         stage('Publish') {                    // same node as Build -> has public/
           steps {
-            // The version symlinks live INSIDE the shared docs1 root (docs1/scale/26,
-            // docs1/core/13.3, docs1/truecommand/3.0 ...). master publishes to docs1 with
-            // --delete, which would wipe those symlinks. Exclude the version dirs (any
-            // <product>/<digit...>) so master only manages its own content and never touches
-            // the version symlinks (owned by version deploys + the nightly reconcile).
+            // The version symlinks live INSIDE the shared docs1 root. master publishes to docs1
+            // with --delete, which would wipe them, and master has no step to recreate them.
+            // Exclude every version dir so master only manages its own content and never touches
+            // the version symlinks (owned by version deploys + the nightly reconcile):
+            //   /scale|core|truecommand/[0-9]*  = existing product-prefixed versions (scale/26, core/13.3, truecommand/3.0)
+            //   /[0-9]*                          = future bare top-level versions (docs/27, docs/28, ... — scale prefix retired)
             // No-op for version-branch publishes (their target dirs have no such subdirs).
             sh """rsync -rvza -e 'ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' \
               --delete --exclude='pdf/' --exclude='PRs/' --exclude='CNAME' --exclude='download/' \
-              --exclude='/scale/[0-9]*' --exclude='/core/[0-9]*' --exclude='/truecommand/[0-9]*' \
+              --exclude='/scale/[0-9]*' --exclude='/core/[0-9]*' --exclude='/truecommand/[0-9]*' --exclude='/[0-9]*' \
               public/ docs@10.242.64.28:/var/www/html/${env.OUTPUT_DIR}"""
           }
         }
