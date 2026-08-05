@@ -95,8 +95,8 @@ Log in to TrueNAS as a user with full administration privileges:
 3. Create a new pool or locate a pool with enough storage to accommodate the OpenShift cluster storage needs.
    Go to **Storage Dashboard**, identify a pool with enough storage capacity to suit your use case, or click **Create Pool** to add a new pool for OpenShift volumes.
 
-   For more information on creating new pools, see [Creating Pools]({{< ref "CreatingPools" >}}).
-   To increase storage in an existing pool, see [Expanding a Pool in Managing Pools]({{< ref "ManagePools" >}}).
+   For more information on creating new pools, see [Creating Pools]({{< ref "CreatePoolWizard" >}}).
+   To increase storage in an existing pool, see [Expanding a Pool in Managing Pools]({{< ref "ManagePoolsScale" >}}).
 
    Provide the pool name to the cluster administrator.
   
