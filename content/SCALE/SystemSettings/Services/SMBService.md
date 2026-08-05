@@ -32,7 +32,7 @@ Enter a name that matches the Windows workgroup name in **Workgroup**. TrueNAS d
 
 {{< include file="/static/includes/NetBIOSValidationWarning.md" >}}
 
-If using SMB1 clients, select **Enable SMB1 support** to allow legacy SMB1 clients to connect to the server. Note: SMB1 is deprecated. We advise upgrading clients to operating system versions that support modern SMB protocols.
+Use **Minimum Protocol** to set the minimum SMB version the server accepts from clients. The default **SMB2** is appropriate for most environments. Select **SMB1 – legacy clients (not recommended)** only when an older client requires SMB1 connections. SMB1 is deprecated, and selecting it disables audit logging and prevents setting transport encryption to **Required**. We advise upgrading legacy clients to operating system versions that support modern SMB protocols. Select **SMB3 – modern clients only** to restrict access to clients that support the SMB3 dialect family, but note this could break access for embedded devices that only support SMB2.
 
 If you plan to use the insecure and vulnerable NTLMv1 encryption, select **NTLMv1 Auth** to allow [smbd](https://www.samba.org/samba/docs/current/man-html/smbd.8.html) attempts to authenticate users.
 This setting enables backward compatibility with older versions of Windows, but we do not recommend it. Do not use on untrusted networks.
@@ -61,7 +61,7 @@ Click in the **Transport Encryption Behavior** field to select the option and be
 * **Default - follow upstream/TrueNAS default**
 * **Negotiate - only encrypt transport if explicitly requested by the SMB client**
 * **Desired - encrypt transport if supported by client during session negotiation**
-* **Required - always encrypt transport (rejecting access if client does not support encryption - incompatible with SMB1 server `enable_smb1`)**
+* **Required - always encrypt transport (rejecting access if client does not support encryption - incompatible with Minimum Protocol set to SMB1)**
 
 Select the **Default** option to use the TrueNAS current behavior.
 If set to default, there is no technical limitation preventing an SMB client from negotiating an encrypted session if required.

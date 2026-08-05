@@ -94,6 +94,7 @@ The **Other Settings** allow setting an HTTP proxy and any host name database pr
 | **Allow All Except** | Allows all system services to communicate externally except for the services selected on the dropdown list. A dropdown list shows the services you select to deny external communication. |
 {{< /truetable >}}
 <!-- comment out until information on what is allowed for each service, and if there are any other requirements associated with the selections.
+DOCS-2693 KMIP returned to draft for TrueNAS 26; reintroduce in TrueNAS 27 (this already-commented block includes a KMIP service row).
 {{< expand "Allowed Services" "v">}}
 Selecting any of these services either allows or denies external communications when selected on the dropdown list for **Allow Specific** or **Allow All Except**. Service options:
 {{< truetable >}}

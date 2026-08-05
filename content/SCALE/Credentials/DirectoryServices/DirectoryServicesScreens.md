@@ -367,9 +367,9 @@ The **LDAP Configuration** section settings define the connection parameters and
 |---------|-------------|
 | **Server URLs** | Specifies the hostname or IP address of the LDAP server. Separate entries by pressing <kbd>Enter</kbd>. Multiple URLs create an LDAP failover priority list. If a host does not respond, TrueNAS tries the next host until it establishes a connection. If using a cloud service LDAP server, do not include the full URL. |
 | **Base DN** | The top level of the LDAP directory tree to use when searching for resources. For example, *dc=test,dc=org*. |
-| **Start TLS** | Encrypts the LDAP connection with STARTTLS on the default LDAP port *389*. Options for encrypting the LDAP connection:<br><li>**OFF** - Does not encrypt the LDAP connection.<br><li>**ON**- Encrypts the LDAP connection with SSL on port 636.<br><li>**START_TLS**- Encrypts the LDAP connection with STARTTLS on the default LDAP port 389</li>. |
+| **Start TLS** | Encrypts the LDAP connection with STARTTLS on the default LDAP port *389*. Options for encrypting the LDAP connection:<ul><li>**OFF** - Does not encrypt the LDAP connection.</li><li>**ON**- Encrypts the LDAP connection with SSL on port 636.</li><li>**START_TLS**- Encrypts the LDAP connection with STARTTLS on the default LDAP port 389</li></ul>. |
 | **Validate Certificates** | Verifies certificate authenticity when connecting to the LDAP server, when enabled. |
-| **Schema** | Sets the LDAP NSS schema. Options are **RFC2307** or **RFC2307BIS**.<br><li>**RFC2307** — Standard Unix attributes schema. Compatible with most LDAP servers, including OpenLDAP.<br><li>**RFC2307BIS** — Extended schema that supports nested group membership. Use if your LDAP server is configured with RFC2307bis.</li> |
+| **Schema** | Sets the LDAP NSS schema. Options are **RFC2307** or **RFC2307BIS**.<ul><li>**RFC2307** — Standard Unix attributes schema. Compatible with most LDAP servers, including OpenLDAP.</li><li>**RFC2307BIS** — Extended schema that supports nested group membership. Use if your LDAP server is configured with RFC2307bis.</li></ul> |
 {{< /truetable >}}
 {{< /expand >}}
 

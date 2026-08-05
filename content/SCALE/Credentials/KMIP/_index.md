@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight: 90
 aliases:
  - /scale/credentials/kmip/
+draft: true
 related: false
 ---
 

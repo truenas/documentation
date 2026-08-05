@@ -168,7 +168,7 @@ This setting is available at container creation only and cannot be changed after
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **ID Map Type** | Sets the UID/GID mapping mode for the container from the options:<br><li>**Default** (Recommended): Maps the container root (UID 0) to the unprivileged host user **truenas_container_unpriv_root** (UID 2147000001). All other container UIDs are offset by the same amount (e.g., container UID 1000 becomes host UID 2147001001). Provides security isolation while allowing normal container operations.<br><li>**Isolated**: Uses the same offset as default but shifts the base further by a per-container slice value, ensuring no two containers share host UID ranges. Use when multiple containers access the same host datasets and non-overlapping UID ranges are required. TrueNAS automatically assigns a unique slice if none is specified.<br><li>**Privileged**: Applies no UID/GID mapping — container UIDs map directly to the same UIDs on the host. Container root (UID 0) becomes host root. Use only when an application explicitly requires direct UID mapping. </li> |
+| **ID Map Type** | Sets the UID/GID mapping mode for the container from the options:<ul><li>**Default** (Recommended): Maps the container root (UID 0) to the unprivileged host user **truenas_container_unpriv_root** (UID 2147000001). All other container UIDs are offset by the same amount (e.g., container UID 1000 becomes host UID 2147001001). Provides security isolation while allowing normal container operations.</li><li>**Isolated**: Uses the same offset as default but shifts the base further by a per-container slice value, ensuring no two containers share host UID ranges. Use when multiple containers access the same host datasets and non-overlapping UID ranges are required. TrueNAS automatically assigns a unique slice if none is specified.</li><li>**Privileged**: Applies no UID/GID mapping — container UIDs map directly to the same UIDs on the host. Container root (UID 0) becomes host root. Use only when an application explicitly requires direct UID mapping.</li></ul> |
 {{< /truetable >}}
 
 {{< hint type=warning title="Privileged ID Mapping Warning" >}}
@@ -185,7 +185,7 @@ Allows containers to perform specific privileged operations without granting ful
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Capabilities Policy** | Sets the default policy for container capabilities:<br><li>**DEFAULT** (Recommended): Keeps most capabilities but drops dangerous ones (sys_module, sys_time, mknod, audit_control, mac_admin). Provides security while allowing normal container operations.<br><li>**ALLOW**: Grants all capabilities. Use when containers need broad system access, but reduces security isolation. |
+| **Capabilities Policy** | Sets the default policy for container capabilities:<ul><li>**DEFAULT** (Recommended): Keeps most capabilities but drops dangerous ones (sys_module, sys_time, mknod, audit_control, mac_admin). Provides security while allowing normal container operations.</li><li>**ALLOW**: Grants all capabilities. Use when containers need broad system access, but reduces security isolation.</li></ul> |
 {{< /truetable >}}
 
 {{< hint type=note >}}
@@ -347,6 +347,8 @@ The **Tools** card provides quick access to the container shell.
 {{< trueimage src="/images/SCALE/Virtualization/ContainersToolsWidget.png" alt="Tools Card" id="Tools Card" >}}
 
 **Shell** opens a **Container Shell** session for command-line interaction with the container. The shell is only available when the container is running.
+
+{{< include file="/static/includes/WebShellAccessRoles.md" >}}
 
 ## Edit Container Screen
 

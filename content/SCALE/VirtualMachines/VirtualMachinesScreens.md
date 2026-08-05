@@ -88,6 +88,8 @@ A cloned VM shows on the Virtual Machines list with the extension **_clone0**. C
 
 The **Serial Shell** button opens the **VM Serial Shell** screen, where you can enter commands for the selected virtual machine.
 
+{{< include file="/static/includes/WebShellAccessRoles.md" >}}
+
 {{< trueimage src="/images/SCALE/Virtualization/VMSerialShellScreen.png" alt="Serial Shell" id="Serial Shell" >}}
 
 The **Virtual Machines** breadcrumb in the header to returns to the **Virtual Machine** screen.
@@ -226,7 +228,7 @@ The **Network Interface** settings specify the network adapter type, MAC address
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Adapter Type** | Sets the adapter type to the option selected on the dropdown list. Options are:<br><li>**Intel e82545 (e1000)** - Emulates the same Intel Ethernet card and provides compatibility with most operating systems.<br><li>**VirtIO** - Provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers.</li> |
+| **Adapter Type** | Sets the adapter type to the option selected on the dropdown list. Options are:<ul><li>**Intel e82545 (e1000)** - Emulates the same Intel Ethernet card and provides compatibility with most operating systems.</li><li>**VirtIO** - Provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers.</li></ul> |
 | **Mac Address** | Shows the MAC address automatically entered by TrueNAS. Enter the desired address into the field to override the randomized MAC address. |
 | **Attach NIC** | Sets the physical interface to associate with the VM selected on the dropdown list. |
 | **Trust Guest Filters** | Enables and allows the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Enabling **Trust Guest Filters** has security risks because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. Disabled by default. |
@@ -355,7 +357,7 @@ Shows the raw file settings, including file location, size, disk sector size, an
 |---------|-------------|
 | **Raw File** | Shows two fields. A file browser field and a blank field that populates with what is selected in the file browser directly below it. Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to expand or collapse the directory branches as you browse to and select the location of the file on the system. |
 | **Disk sector size** | Sets the disk sector size to the option selected on the dropdown list. Options are **Default**, which uses the ZFS volume values, **512**, or **4096**. Setting a sector size changes both the logical and physical sector size. |
-| **Mode** | Sets the drive type to the option selected on the dropdown list. Options are: <br><li>**AHCI** - Emulates an AHCI hard disk for better software compatibility. <br><li>**VirtIO** - Uses paravirtualized drivers and can provide better performance, but the operating system installed in the VM must support VirtIO disk devices.</li>. |
+| **Mode** | Sets the drive type to the option selected on the dropdown list. Options are: <ul><li>**AHCI** - Emulates an AHCI hard disk for better software compatibility.</li><li>**VirtIO** - Uses paravirtualized drivers and can provide better performance, but the operating system installed in the VM must support VirtIO disk devices.</li></ul>. |
 | **Raw filesize** | Text field that accepts manual entry of a number for the size of the file in GiB. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -398,7 +400,7 @@ The **Export Disk to Image** window shows a file browser and other settings to c
 |---------|-------------|
 | **Destination Directory** | Sets the path to the desired dataset/directory where you want to export the image file. Enter the mount path, or use the file browser to browse to and select the mount path. When you click on the dataset/directory, the system selects it and populates the blank field directly above the file browser field. |
 | **Image Name** | Shows the name for the exported image file. The system automatically adds the appropriate file extension based on the format you select in **Image Format**. |
-| **Image Format** | Sets the type of image the system creates and adds the file extension to the name in **Image Name**. Options are: <br><li>**QCOW2 - QEMU Copy On Write** <br><li>**QED - QEMU Enhanced Disk** <br><li>**RAW - Raw Disk Image** <br><li>**VDI - VirtualBox Disk Image** <br><li>**VHDX - Hyper-V Virtual Hard Disk** <br><li>**VMDK - VMware Virtual Machine Disk**</li> |
+| **Image Format** | Sets the type of image the system creates and adds the file extension to the name in **Image Name**. Options are: <ul><li>**QCOW2 - QEMU Copy On Write**</li><li>**QED - QEMU Enhanced Disk**</li><li>**RAW - Raw Disk Image**</li><li>**VDI - VirtualBox Disk Image**</li><li>**VHDX - Hyper-V Virtual Hard Disk**</li><li>**VMDK - VMware Virtual Machine Disk**</li></ul> |
 {{< /truetable >}}
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}

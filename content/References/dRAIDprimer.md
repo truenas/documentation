@@ -168,7 +168,7 @@ When using dRAID, consider these factors:
 * dRAID does not support partial-stripe writes.
 
 * Small-block writes to dRAID vdev are padded with zeros to span a redundancy group, which creates a lot of wasted space.
-  Include special allocations class vdevs (i.e., L2ARCs, SLOGs, and metadata) in a dRAID layout to handle this type of IO.
+  Add special allocation class vdevs (L2ARC, SLOG, and metadata) to a pool that uses dRAID data vdevs to handle this type of IO. The special vdevs themselves use mirror or RAIDZ layouts, not dRAID. Match the redundancy level of any metadata or dedup vdev to the parity level of the dRAID data vdev.
 
 * You cannot add virtual spares after creating the vdev because spare disks are distributed into the dRAID vdev.
 
