@@ -162,7 +162,6 @@ The following table describes each level:
 | **Level 128 - Minimum power usage without Standby (no spindown)** | A midpoint setting, tuned for quicker access. |
 | **Level 192 - Intermediate power usage without Standby** | Weighted toward responsiveness, with higher power use. |
 | **Level 254 - Maximum performance, maximum power usage** | Delivers the most responsiveness, with the highest draw. The drive stays ready. |
-{{< /truetable >}}
 
 ### SED Password <!-- tag for ui ref automation {id="disk_edit-sed"} -->
 

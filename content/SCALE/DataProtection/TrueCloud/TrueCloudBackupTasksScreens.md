@@ -212,5 +212,5 @@ The following environment variables can be used in pre and post-scripts.
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Transfer Settings** | Select the option from the dropdown list to set the number of simultaneous file transfers to allow. Options:<br><li>**Default** - Select to use the Restic PACK_SIZE of 16 Mib and READ_CONCURRENCY to two files.<br><li>**Perfromance** - Select to set the Restic PACK_SIZE to 29 MiB and READ_CONCURRENCY to two files.<br><li>**Fast Storage** - Select to set the Restic PACK_SIZE to 58 MiB and READ_CONCURRENCY to 100 files.</li>  |
+| **Transfer Settings** | Select the option from the dropdown list to set the number of simultaneous file transfers to allow. Options:<ul><li>**Default** - Select to use the Restic PACK_SIZE of 16 Mib and READ_CONCURRENCY to two files.</li><li>**Perfromance** - Select to set the Restic PACK_SIZE to 29 MiB and READ_CONCURRENCY to two files.</li><li>**Fast Storage** - Select to set the Restic PACK_SIZE to 58 MiB and READ_CONCURRENCY to 100 files.</li></ul>  |
 {{< /truetable >}}
