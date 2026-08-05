@@ -138,7 +138,7 @@ The **Add Target** and **Edit Target** screens show the same configuration setti
 |---------|-------------|
 | **Target Name** | Enter the name for the target using up to 64 lowercase alphanumeric and special characters. Allowed characters are dot (.), dash (-), and colon (:). A name longer than 64 characters is not allowed. See the “Constructing iSCSI names using the iqn.format” section of [RFC3721](https://tools.ietf.org/html/rfc3721.html). The base name (from Target Global Configuration) is automatically prepended if the target name does not start with iqn. |
 | **Target Alias** | Enter an optional user-friendly name. |
-| **Mode** | **Mode** shows three options for a target:<br><li>**iSCSI** - Select to create a standard iSCSI share target.<br><li>**Fibre Channel** - Select to configure an iSCSI target that includes fibre channel.<br><li>**Both** - Select to use both modes.</li> |
+| **Mode** | **Mode** shows three options for a target:<ul><li>**iSCSI** - Select to create a standard iSCSI share target.</li><li>**Fibre Channel** - Select to configure an iSCSI target that includes fibre channel.</li><li>**Both** - Select to use both modes.</li></ul> |
 | **Authorized Networks** | Authorized networks allow communication between initiators (client computers) and iSCSI targets (storage devices) over the IP network. **Add** shows the **Network** field. |
 | **Network** | Shows after clicking **Add** to the right of **Authorized Networks**. Enter the IP address for the network and select the netmask (CIDR) from the dropdown list. Adds the network address to the authorized network list. |
 | **Do not connect to a fibre channel port** | Select to create an iSCSI share and target withoug fibre channel. |
