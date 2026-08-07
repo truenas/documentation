@@ -348,7 +348,7 @@ To manage an SMB share, click <span class="material-icons">more_vert</span> drop
 * **Delete** opens a delete confirmation dialog. Use this to delete the share and remove it from the system. Delete does not affect shared data.
 
 {{< enterprise >}}
-**Change Storage Tier** opens the **Change Storage Tier** dialogue. Use this to migrate the share and its associated dataset from one storage tier to another.
+**Change Storage Tier** opens the **Change Storage Tier** dialog. Use this to migrate the share and its associated dataset from one storage tier to another.
 {{< /enterprise >}}
 
 ## Configuring SMB Auditing

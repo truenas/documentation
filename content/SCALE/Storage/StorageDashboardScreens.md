@@ -56,16 +56,18 @@ TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 
 * {{< expand "Tiering" "v" >}}
 {{< enterprise >}}
-**Tiering** openes the **Tiering** screen.
+**Tiering** opens the **Tiering** screen.
 
 {{< trueimage src="/images/SCALE/Storage/TieringScreen.png" alt="TieringScreen" id="TieringScreen" >}}
 
-The **Enable** checkbox activates tiering for shared datasets.
-The **Max Concurrent Jobs** field allows you to limit the maximum number (from 1 to 10) of tier migration jobs that may run simultaneously. Additional jobs are queued and started as running jobs complete.
-The **Max Used Percentage** field allows you to set the dataset capacity (between 70% and 95%) at which migration jobs abort. This setting guards against filling the pool when the job's copy-on-write activity expands allocated space.
+**Enable** activates tiering for shared datasets.
+
+**Max Concurrent Jobs** sets a limit to the maximum number (from 1 to 10) of tier migration jobs that can run simultaneously. Additional jobs are queued and started as running jobs are completed.
+
+**Max Used Percentage** sets the dataset capacity (between 70% and 95%) at which migration jobs abort. This setting guards against filling the pool when the job copy-on-write activity expands allocated space.
 
 {{< hint type=caution title="Shares will be locked to a single dataset" >}}
-Once tiering is on, SMB shares and Webshares stop following nested datasets. Each share will expose only its own dataset, and any child datasets under it will no longer be visible to clients through that share. Create a separate share for each dataset you want to expose.
+When tiering is on, SMB shares and WebShares stop following nested datasets. Each share exposes only its own dataset, and any child datasets under it are no longer visible to clients through that share. Create a separate share for each dataset you want to expose.
 {{< /hint >}}
 {{< /enterprise >}}
 {{< /expand >}}
@@ -73,7 +75,7 @@ Once tiering is on, SMB shares and Webshares stop following nested datasets. Eac
 * **Create Pool** opens the **[Pool Creation Wizard]({{< ref "PoolCreationWizardScreen" >}})**.
 
 * {{< expand "Disconnect Button" "v" >}}
-The **Disconnect** button opens a **Disconnect Pool: *poolname*** window with two options: **Export Pool** and **Delete Pool**.
+**Disconnect** opens a **Disconnect Pool: *poolname*** window with two options: **Export Pool** and **Delete Pool**.
 Each option changes what shows in this window.
 
 The **Disconnect Pool** window shows a different warning statement below the delete and export options.
