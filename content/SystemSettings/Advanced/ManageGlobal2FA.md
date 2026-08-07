@@ -41,7 +41,7 @@ We strongly recommend ensuring Network Time Protocol (NTP) is functional before 
 
 {{< expand "What is 2FA and why should I enable it?" "v" >}}
 2FA adds an extra layer of security to your system to prevent someone from logging in, even if they have your password.
-2FA requires you to verify your identity using a randomized six-digit code that regenerates every 30 seconds (unless modified) to use when you log in.
+2FA requires you to verify your identity using a randomized six-digit code that regenerates every 30 seconds to use when you log in.
 
 Enabling global 2FA prompts users to set up their individual 2FA secrets but does not require it unless the system is in STIG compatibility mode.
 {{< /expand >}}
@@ -196,7 +196,7 @@ Enter the code from the mobile device (without the space) in the login window an
 
 {{< trueimage src="/images/SCALE/Login/2faSigninSplashScreen.png" alt="2FA Signin Splash Screen" id="2FA Splash Screen" >}}
 
-TOTP codes regenerate every 30 seconds (by default). If a code expires while you are entering it, wait for your authenticator app to display a new code and retry.
+TOTP codes regenerate every 30 seconds. If a code expires while you are entering it, wait for your authenticator app to display a new code and retry.
 
 ### Logging In Using SSH
 
