@@ -1,7 +1,7 @@
 ---
 title: "Pool Creation Wizard Screen"
 description: "Descriptions for settings and functions found in the Pool Creation Wizard."
-weight: 50
+weight: 70
 aliases:
  - /scale/scaleuireference/storage/poolcreatewizardscreens/
  - /scale/scaleuireference/storage/pools/poolcreatewizardscreens/
@@ -70,7 +70,7 @@ Losing the encryption key file results in lost data you cannot recover.
 {{< /hint >}}
 
 {{< enterprise >}}
-### General Info with SED Encryption 
+### General Info with SED Encryption
 <!-- comment out tag for setting automation {id="pool_create_general-info-sed"} -->
 
 Enterprise systems licensed for and containing SED encryption can use the Self Encryption Drives (SED) encryption type. 
@@ -221,7 +221,7 @@ Drag disks to the VDEV to add them.
 | TrueNAS System | Click to expand and show the list of available disks in the system. Filter options change the disks displayed on this list. |
 {{< /truetable >}}
 
-### Review 
+### Review
 <!-- comment out tag for setting automation {id="pool_create_review"} -->
 
 The **Review** wizard screen shows a summary of VDEVs in the pool configuration.

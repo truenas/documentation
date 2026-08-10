@@ -1,7 +1,7 @@
 ---
 title: "Creating Pools"
 description: "Provides background considerations and a simple tutorial on creating storage pools in TrueNAS."
-weight: 20
+weight: 10
 aliases:
  - /scale/scaletutorials/storage/createpoolwizard/
  - /scale/scaletutorials/storage/pools/createpoolscale/
