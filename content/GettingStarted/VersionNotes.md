@@ -36,7 +36,7 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.6" data-tab-label="25.10.6">
 
-Month DD, YYYY
+August 13, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.6!
 This release updates the Linux kernel and NVIDIA GPU driver to address security vulnerabilities and maintain driver support. It also fixes Fibre Channel crashes on Enterprise systems, an NFS server hang, false drive self-test alerts, deduplication table pruning errors, and directory services configuration changes.
