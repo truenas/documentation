@@ -49,9 +49,6 @@ This release updates the Linux kernel and NVIDIA GPU driver to address security 
 * Updates the NVIDIA GPU driver to version 580.173.02 ([NAS-142008](https://ixsystems.atlassian.net/browse/NAS-142008)).
   The 570 driver branch included in earlier releases reached end of life and does not build against the 6.12.99 kernel. TrueNAS now ships the 580 long-term support branch, which NVIDIA supports through June 2028.
 
-* Fixes a kernel panic that could reboot or boot loop a standby controller that uses Fibre Channel ([NAS-142003](https://ixsystems.atlassian.net/browse/NAS-142003)).
-  On Enterprise High Availability (HA) systems with Fibre Channel ALUA, the internal read TrueNAS uses to emulate the SCSI COMPARE AND WRITE command could return a check condition with a stale response length, which triggered a kernel bug check and panicked the controller. VMware ESXi hosts that issue VMFS heartbeats over Fibre Channel were the most common trigger. The completion path now clears the response length so the panic no longer occurs.
-
 * Fixes crashes when Fibre Channel target mode starts or stops ([NAS-142014](https://ixsystems.atlassian.net/browse/NAS-142014), [NAS-142018](https://ixsystems.atlassian.net/browse/NAS-142018)).
   If the Fibre Channel target driver detached while the adapter still delivered traffic, an incoming login or abort request could reference memory that was already released and crash the system. TrueNAS now checks for this condition and drops or rejects the request instead. TrueNAS also reports an error and leaves target mode disabled when target registration fails, rather than enabling the port anyway.
 
