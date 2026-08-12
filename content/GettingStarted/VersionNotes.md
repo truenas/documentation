@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.5"
+    anchor: "25.10.6"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,6 +34,48 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="25.10.6" data-tab-label="25.10.6">
+
+August 12, 2026
+
+The TrueNAS team is pleased to release TrueNAS 25.10.6!
+This release updates the Linux kernel and NVIDIA GPU driver to address security vulnerabilities and maintain driver support. It also fixes Fibre Channel crashes on Enterprise systems, an NFS server hang, false drive self-test alerts, deduplication table pruning errors, and directory services configuration changes.
+
+**Notable changes:**
+
+* Updates the Linux kernel to the latest 6.12 LTS release (v6.12.99) ([NAS-142007](https://ixsystems.atlassian.net/browse/NAS-142007)).
+  TrueNAS 25.10.6 advances the kernel from v6.12.95 in the previous release to v6.12.99. This update includes fixes for more than 250 upstream CVEs, including several critical issues in components TrueNAS uses: a reference count underflow in the TCP request socket queue ([CVE-2026-53260](https://www.cve.org/CVERecord?id=CVE-2026-53260)), an NFS server failure to release layout state after an unsuccessful lease request ([CVE-2026-53399](https://www.cve.org/CVERecord?id=CVE-2026-53399)), out-of-bounds reads in the NVMe target discovery log page and authentication reply handling ([CVE-2026-64320](https://www.cve.org/CVERecord?id=CVE-2026-64320) and [CVE-2026-64319](https://www.cve.org/CVERecord?id=CVE-2026-64319)), unbounded transfer lengths in the `siw` and `rtrs-srv` RDMA drivers ([CVE-2026-64268](https://www.cve.org/CVERecord?id=CVE-2026-64268) and [CVE-2026-64269](https://www.cve.org/CVERecord?id=CVE-2026-64269)), a traffic control action handling issue ([CVE-2026-64530](https://www.cve.org/CVERecord?id=CVE-2026-64530)), a BPF device map issue with fragmented frames ([CVE-2026-64355](https://www.cve.org/CVERecord?id=CVE-2026-64355)), and an out-of-bounds read in TIPC broadcast acknowledgment handling ([CVE-2026-64450](https://www.cve.org/CVERecord?id=CVE-2026-64450)).
+
+* Updates the NVIDIA GPU driver to version 580.173.02 ([NAS-142008](https://ixsystems.atlassian.net/browse/NAS-142008)).
+  The 570 driver branch included in earlier releases reached end of life and does not build against the 6.12.99 kernel. TrueNAS now ships the 580 long-term support branch, which NVIDIA supports through June 2028.
+
+* Fixes crashes when Fibre Channel target mode starts or stops ([NAS-142014](https://ixsystems.atlassian.net/browse/NAS-142014), [NAS-142018](https://ixsystems.atlassian.net/browse/NAS-142018)).
+  If the Fibre Channel target driver detached while the adapter still delivered traffic, an incoming login or abort request could reference memory that was already released and crash the system. TrueNAS now checks for this condition and drops or rejects the request instead. TrueNAS also reports an error and leaves target mode disabled when target registration fails, rather than enabling the port anyway.
+
+* Fixes an NFS server hang that could stop the server from expiring clients ([NAS-142112](https://ixsystems.atlassian.net/browse/NAS-142112)).
+  A leaked callback reference on an NFSv4 delegation could leave client teardown waiting forever. After this happened, no further NFSv4 client cleanup could complete, and the `rpc.nfsd` process could not be stopped without a system reboot. A brief network interruption on a client that held a write delegation was enough to trigger it. This release includes two upstream kernel fixes that prevent the leak.
+
+* Fixes false drive self-test failure alerts and errors when TrueNAS reads drive SMART data ([NAS-140652](https://ixsystems.atlassian.net/browse/NAS-140652), [NAS-141951](https://ixsystems.atlassian.net/browse/NAS-141951)).
+  TrueNAS read the oldest NVMe self-test result instead of the newest, so some drives raised a "failed a SMART selftest" alert for a test that did not fail. A drive that returned a self-test entry without a status also produced a `KeyError` that filled `/var/log/middlewared.log` with errors and stopped the SMART alert check from completing. TrueNAS now handles both cases so self-test alerts reflect actual drive results.
+
+* Fixes several issues with deduplication table (DDT) pruning ([NAS-142045](https://ixsystems.atlassian.net/browse/NAS-142045)).
+  Pruning could select the wrong entries when the target age matched a histogram boundary, and the youngest age bin did not start at zero, so the age of recent entries could be misjudged. Counters could also overflow on tables with more than two billion entries. Pruning now uses the time the histogram build starts as the age cutoff and handles large tables correctly.
+
+* Fixes the **Save** button that stayed unavailable on the directory services configuration screen ([NAS-138641](https://ixsystems.atlassian.net/browse/NAS-138641)).
+  After an upgrade from 25.04 to 25.10, the **Save** button in **Credentials > Directory Services** could stay greyed out no matter which setting changed, which blocked all directory services configuration changes. The button now becomes available when a setting changes.
+
+* Adds the ability to change the ALUA setting when the standby controller is unreachable ([NAS-142057](https://ixsystems.atlassian.net/browse/NAS-142057)).
+  On Enterprise HA systems, TrueNAS blocked changes to the ALUA setting when it could not reach the standby controller. Administrators can now turn ALUA on or off while the standby controller is down.
+
+* Improves failover speed by moving a remote disk scan out of the critical failover path ([NAS-141988](https://ixsystems.atlassian.net/browse/NAS-141988), [NAS-140406](https://ixsystems.atlassian.net/browse/NAS-140406)).
+  On Enterprise HA systems, failover asked the other controller to rescan its disks before it imported the pool, which could stall failover for a minute or more while services stayed offline. The request now runs outside the critical failover section and does not wait for a response.
+
+* Fixes audit entry parsing that could restart the audit handler ([NAS-139610](https://ixsystems.atlassian.net/browse/NAS-139610)).
+  A local authentication event could produce an audit message with a `hostname` value that contained spaces and its own key and value pairs. The audit parser did not expect this format, which raised an exception and forced `truenas_audit_handler` to restart. The parser now handles these messages correctly.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14650" target="_blank">TrueNAS 25.10.6 (Goldeye) Changelog</a> in Jira.
+
+  </div>
   <div data-tab-id="25.10.5" data-tab-label="25.10.5">
 
 July 23, 2026
@@ -609,6 +651,11 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: After updating the Fibre Channel initiator, stop and then start the iSCSI service in **System > Services** to apply the change to the running configuration.
 
+* Sorting is unavailable on the **Fibre Channel Ports** screen, and search does not match every column. <!-- NAS-142142 -->
+  The **Fibre Channel Ports** tab does not provide sortable column headers, unlike the other iSCSI share tabs such as **Targets**, **Extents**, and **Initiators**. Clicking a column header does not reorder the list. The search field also does not match values in every displayed column, so a search for a target name can return no results even when that target shows in the table.
+
+  Workaround: None. All configured ports remain listed on the screen.
+
 * Switching to the **General** update profile can display a TypeError on the **Update** screen ([NAS-140736](https://ixsystems.atlassian.net/browse/NAS-140736)).
   When a TrueNAS version is promoted from **Early Adopter** to **General** availability, users already running that version who then change their update profile to **General** can see a `TypeError: 'NoneType' object is not subscriptable` error on the **Update** screen. The error persists after refreshing the page or logging out and back in, but clears after a system reboot.
 
@@ -621,7 +668,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: After applying a new license, manually refresh the browser page to update the web interface.
 
-<a href="https://ixsystems.atlassian.net/issues?filter=14580" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues?filter=14652" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -647,7 +694,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.5');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.6');
 });
 </script>
 
