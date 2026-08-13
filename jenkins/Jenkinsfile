@@ -1,0 +1,107 @@
+pipeline {
+  agent { label 'hugo-pr' }
+
+  options {
+    disableConcurrentBuilds()                 // no same-branch races (spec 3.5)
+    buildDiscarder(logRotator(numToKeepStr: '15'))
+    timestamps()
+  }
+
+  environment {
+    HUGO_ENV = 'production'
+  }
+
+  stages {
+    stage('Load config') {
+      steps {
+        script {
+          def cfg = readProperties file: 'jenkins/docs-build.env'
+          env.PUBLISH_TO_PROD = (cfg.PUBLISH_TO_PROD ?: 'false').trim()
+          env.OUTPUT_DIR      = (cfg.OUTPUT_DIR ?: '').trim()
+          env.DEPLOY_SCRIPT   = (cfg.DEPLOY_SCRIPT ?: '').trim()
+          env.PAGEFIND_GLOB   = (cfg.PAGEFIND_GLOB ?: '').trim()
+          env.ARCHIVED        = (cfg.ARCHIVED ?: 'false').trim()
+          echo "branch=${env.BRANCH_NAME} publish=${env.PUBLISH_TO_PROD} archived=${env.ARCHIVED} out=${env.OUTPUT_DIR} deploy=${env.DEPLOY_SCRIPT}"
+          if (env.ARCHIVED == 'true') {
+            echo 'ARCHIVED=true — this version is frozen. Build and Deploy are skipped; the live symlink is maintained by the Nightly Maintenance reconcile.'
+          }
+          if (env.PUBLISH_TO_PROD == 'true' && env.ARCHIVED != 'true' && !env.OUTPUT_DIR) {
+            error 'PUBLISH_TO_PROD=true but OUTPUT_DIR is empty — refusing to publish to an undefined path.'
+          }
+          // self-documenting: label each build by its role (shows in build history / Blue Ocean)
+          currentBuild.description =
+              (env.ARCHIVED == 'true')        ? 'ARCHIVED — frozen, not rebuilt' :
+              (env.PUBLISH_TO_PROD != 'true') ? 'STAGED — build only, not published' :
+                                                "PUBLISHED → /var/www/html/${env.OUTPUT_DIR}"
+        }
+      }
+    }
+
+    stage('Build') {
+      when { expression { env.ARCHIVED != 'true' } }   // frozen versions are not rebuilt
+      steps {
+        sh 'npm install -D --save autoprefixer'
+        sh 'npm install -D --save postcss-cli'
+        sh 'hugo -d public --gc --minify --cleanDestinationDir'
+        script {
+          if (env.PAGEFIND_GLOB) {
+            sh "npx pagefind --site \"public\" --glob \"{${env.PAGEFIND_GLOB}}/**/*.html\""
+          }
+        }
+      }
+    }
+
+    stage('Deploy') {
+      when {
+        allOf {
+          environment name: 'PUBLISH_TO_PROD', value: 'true'
+          expression { env.ARCHIVED != 'true' }   // frozen versions are not re-published here
+        }
+      }
+      options { lock('docs1-deploy') }        // cross-branch mutex (spec 3.5)
+      stages {
+
+        stage('Publish') {                    // same node as Build -> has public/
+          steps {
+            // The version symlinks live INSIDE the shared docs1 root. master publishes to docs1
+            // with --delete, which would wipe them, and master has no step to recreate them.
+            // Exclude every version dir so master only manages its own content and never touches
+            // the version symlinks (owned by version deploys + the nightly reconcile):
+            //   /scale|core|truecommand/[0-9]*  = existing product-prefixed versions (scale/26, core/13.3, truecommand/3.0)
+            //   /[0-9]*                          = future bare top-level versions (docs/27, docs/28, ... — scale prefix retired)
+            // No-op for version-branch publishes (their target dirs have no such subdirs).
+            sh """rsync -rvza -e 'ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' \
+              --delete --exclude='pdf/' --exclude='PRs/' --exclude='CNAME' --exclude='download/' \
+              --exclude='/scale/[0-9]*' --exclude='/core/[0-9]*' --exclude='/truecommand/[0-9]*' --exclude='/[0-9]*' \
+              public/ docs@10.242.64.28:/var/www/html/${env.OUTPUT_DIR}"""
+          }
+        }
+
+        stage('Symlink') {
+          when { expression { env.DEPLOY_SCRIPT?.trim() } }   // empty => skip (e.g. master)
+          agent { label 'security' }
+          steps {
+            retry(3) { sh "/root/docs-hugo/${env.DEPLOY_SCRIPT}" }
+          }
+        }
+
+        stage('Purge') {
+          steps {
+            retry(3) { build job: '/Documentation/PurgeCDNIfInValidState', wait: true }
+          }
+        }
+      }
+    }
+  }
+
+  // Failure alerting deferred (DOCS-2686): the Mailer 'mail' step throws
+  // NoSuchMethodError against the installed Mailer plugin version, and no
+  // Jenkins->Slack integration exists; fixing either needs Jenkins-admin.
+  // For now rely on the RED build status. Wire up email (mail/emailext) or
+  // Slack once IT updates the Mailer plugin — tracked as a DOCS-2686 follow-up.
+  post {
+    failure {
+      echo 'Build FAILED — see console output. Automated alerting is pending an IT plugin fix (Mailer); no email/Slack sent.'
+    }
+  }
+}
