@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "26.0.0-beta.2"
+    anchor: "26.0.0-beta.3"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -37,6 +37,147 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="26.0.0-beta.3" data-tab-label="26-BETA.3 Notable Changes">
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
+August 18, 2026
+<!-- Tentative release date — confirm and update before publication. -->
+
+The TrueNAS team is pleased to release TrueNAS 26-BETA.3!
+<!-- Intro paragraph to be filled in -->
+
+<!-- Special thanks paragraph to be filled in -->
+
+### 26-BETA.3 Notable Changes
+
+* Fixes crashes on systems that use Fibre Channel target mode ([NAS-142014](https://ixsystems.atlassian.net/browse/NAS-142014), [NAS-142018](https://ixsystems.atlassian.net/browse/NAS-142018)).
+  The QLogic Fibre Channel target driver could follow a null target operations pointer from interrupt paths, and target mode could stay partly enabled after target registration failed. The driver now checks the pointer before it uses it and fails target enable when registration does not succeed.
+
+* Fixes cloud backup tasks that could stop the `middlewared` event loop and silently disable every scheduled task ([NAS-141948](https://ixsystems.atlassian.net/browse/NAS-141948)).
+  The cloud backup progress thread updated job progress from outside the event loop, which stopped the loop while the `middlewared` service still reported as active. Cron jobs continued to fire and log, but every scheduled task did nothing and raised no error. Progress updates now run on the event loop.
+
+* Fixes a memory leak in the console CLI that could exhaust system memory ([NAS-141238](https://ixsystems.atlassian.net/browse/NAS-141238)).
+  Continuous input on the physical console, such as a stuck key on an attached keyboard, made the CLI process grow to tens of gigabytes of RAM until the kernel out-of-memory killer stopped it. Console CLI memory use is now bounded regardless of how much input arrives.
+
+* Fixes upgrades to TrueNAS 26 that leave Active Directory non-functional ([NAS-141469](https://ixsystems.atlassian.net/browse/NAS-141469)).
+  On an Active Directory member server, the directory cache could go FAULTED after the post-upgrade reboot and winbind could fail to start, which locked users out until an administrator left and rejoined the domain. A related defect also logged a false message once an hour that the machine account password changed. The member state now survives the upgrade.
+
+* Fixes faulty parsing of `smartctl` output that filled `/var/log/middlewared.log` with errors ([NAS-141215](https://ixsystems.atlassian.net/browse/NAS-141215), [NAS-141951](https://ixsystems.atlassian.net/browse/NAS-141951)).
+  Systems updated to 25.10.5 logged repeated parse errors from drive health checks. The parser handles the full range of `smartctl` output so drive health checks complete without errors.
+
+* Improves failover speed by moving the remote disk retaste call out of the failover event ([NAS-141988](https://ixsystems.atlassian.net/browse/NAS-141988)).
+  A remote disk scan ran inside the critical failover path, where it could delay failover while services stayed offline. The scan now runs outside that path.
+
+* Fixes a database migration failure when updating from TrueNAS 25.04.2.6 to 25.10.3.1 ([NAS-141221](https://ixsystems.atlassian.net/browse/NAS-141221)).
+  The update stopped a few seconds after it started with an `[EFAULT]` error from the `migrate` command. The migration now completes so the update finishes.
+
+* Fixes an upgrade that forced the update profile to **Mission Critical** on Enterprise systems ([NAS-140905](https://ixsystems.atlassian.net/browse/NAS-140905)).
+  A database migration set the update profile to **Mission Critical** on every Enterprise system, regardless of the profile the running version actually used. The system then raised a warning that the running system version profile did not match the selected update profile. The migration now keeps the profile that the system already used.
+
+* Fixes replication failures for source systems that host a container when the task uses **Full Filesystem Replication** ([NAS-140878](https://ixsystems.atlassian.net/browse/NAS-140878)).
+  After an upgrade to TrueNAS 26, a replication task to a remote system on an earlier release could fail with an error about a failure to transfer all children of the container dataset. Turning off **Full Filesystem Replication** avoided the failure. These tasks now complete.
+
+* Fixes several issues with the SSH credentials used for replication ([NAS-141677](https://ixsystems.atlassian.net/browse/NAS-141677)).
+  The system now updates SFTP cloud credentials when the SSH key pair they use is removed, rejects encrypted SSH private keys consistently during validation, returns a clear error when semi-automatic remote setup uses a key pair that no longer exists or is invalid, and completes SSH pairing with TrueNAS 13 systems during remote replication setup.
+
+* Fixes Active Directory domain join failures caused by combined IPv4 and IPv6 PTR record updates ([NAS-140548](https://ixsystems.atlassian.net/browse/NAS-140548)).
+  `nsupdate` sent IPv4 and IPv6 PTR records in a single transaction, which returned a NOTZONE error and stopped the domain join. The records now go out in separate transactions.
+
+* Fixes SMB advertising file permissions that the file system does not enforce ([NAS-141608](https://ixsystems.atlassian.net/browse/NAS-141608)).
+  ZFS does not let the `owner@`, `group@`, and `everyone@` entries carry `WRITE_ACL` or `WRITE_OWNER`, but Samba still reported those rights to clients. Samba now advertises only the rights the file system enforces, so SMB and NFS clients see the same permissions. Entries for named users and groups keep these rights.
+
+* Improves the speed of dataset creation with the **SMB**, **Multiprotocol**, and **Apps** presets ([NAS-141154](https://ixsystems.atlassian.net/browse/NAS-141154), [NAS-141161](https://ixsystems.atlassian.net/browse/NAS-141161)).
+  Creating a dataset with one of these presets could take several seconds on 26-BETA.1 and 26-BETA.2 because of the per-credential access check that runs during creation. Batched access probes restore normal dataset creation speed.
+
+* Adds support for dedicated spares on pools that use dRAID vdevs ([NAS-140629](https://ixsystems.atlassian.net/browse/NAS-140629), [NAS-141277](https://ixsystems.atlassian.net/browse/NAS-141277)).
+  Pool creation validation blocked dedicated spares on dRAID pools. Both the web interface and the middleware validation now allow this configuration.
+
+* Adds spare activation for special and dedup vdevs ([NAS-141201](https://ixsystems.atlassian.net/browse/NAS-141201)).
+  A failed device in a special or dedup vdev did not activate an available spare, which matters more as special vdevs come into wider use. Spares now activate for these vdev types.
+
+* Fixes the pool creation screen offering disks that SED encryption excludes ([NAS-141096](https://ixsystems.atlassian.net/browse/NAS-141096)).
+  Disk selection during pool creation did not filter for SED encryption. The disk list now applies the filter.
+
+* Adds the `all_sed` property to `zpool.query` and corrects how stripe vdevs appear under the pool topology ([NAS-141113](https://ixsystems.atlassian.net/browse/NAS-141113), [NAS-141114](https://ixsystems.atlassian.net/browse/NAS-141114)).
+  API consumers could not tell whether every disk in a pool used SED encryption, and stripe vdevs appeared incorrectly in the reported topology. Both are corrected in the API response.
+
+* Fixes the maximum data transfer size applied to 9500 TriMode devices ([NAS-140978](https://ixsystems.atlassian.net/browse/NAS-140978)).
+  The driver did not apply the 2M limit that these devices report. An upstream fix is included so transfers stay within the supported size.
+
+* Fixes the storage screens showing a normal vdev status when a drive in that vdev is FAULTED ([NAS-140955](https://ixsystems.atlassian.net/browse/NAS-140955)).
+  A faulted drive did not change the vdev status, so an administrator had to expand each vdev to find the problem. The vdev status now reflects a faulted drive, as it already did for an unavailable drive.
+
+* Fixes a false alert that an SMB share is unavailable because it uses a locked dataset ([NAS-141461](https://ixsystems.atlassian.net/browse/NAS-141461)).
+  A `ShareLocked` alert could persist after boot for a share on an encrypted dataset, even though the dataset was unlocked and the share worked normally. The alert now clears when the dataset unlocks during boot.
+
+* Fixes the misnamed **Save** button on the dataset unlock screen ([NAS-141286](https://ixsystems.atlassian.net/browse/NAS-141286)).
+  The button that applies a passphrase to unlock a dataset was labeled **Save**, which implied that the passphrase was stored. The button is now labeled **Unlock**.
+
+* Fixes custom app updates and private registry support for authenticated Docker registries ([NAS-141149](https://ixsystems.atlassian.net/browse/NAS-141149), [NAS-141553](https://ixsystems.atlassian.net/browse/NAS-141553)).
+  Custom app updates failed when the image came from a registry that requires authentication, and registries that use `htpasswd` authentication were not supported. Both authentication paths now work.
+
+* Fixes TrueCloud Backup errors that showed only `error.message` and jobs that could hang without end ([NAS-141287](https://ixsystems.atlassian.net/browse/NAS-141287)).
+  The progress reader looked for a flat `error.message` field, but restic nests the text inside an `error` object, so every restic error turned into a `KeyError` and the real message never reached the user or the job log. Errors now report the text that restic returns.
+
+* Fixes a `dtype` error that prevented pool selection for containers ([NAS-141234](https://ixsystems.atlassian.net/browse/NAS-141234)).
+  Virtual machine and container device settings are stored encrypted. On a system restored from a configuration whose encryption secret no longer matched, these settings decrypted to empty values and failed validation, so the form returned only `dtype` and the containers feature stayed unusable. Devices that cannot be decrypted are now dropped when the encryption secret resets.
+
+* Fixes the arrow keys in the container shell ([NAS-140957](https://ixsystems.atlassian.net/browse/NAS-140957)).
+  Up, Down, Left, and Right did not work in the container shell, which stopped command history and line edits. The arrow keys now work as expected.
+
+* Fixes missing IPv6 connectivity in LXC containers on a clean install ([NAS-141468](https://ixsystems.atlassian.net/browse/NAS-141468)).
+  A clean install of 26.0.0-BETA.2 enabled IPv4 forwarding but left IPv6 forwarding disabled on the host, so a container on the default `truenas0` bridge received an IPv6 default route but could not reach IPv6 networks. IPv6 forwarding is now enabled.
+
+* Fixes WS-Discovery so the system appears in the Windows network browser ([NAS-141440](https://ixsystems.atlassian.net/browse/NAS-141440)).
+  A system running 26.0.0-BETA.2 did not show up in network discovery, even with the same configuration that worked on 26.0.0-BETA.1. Discovery works again.
+
+* Fixes IPv6 autoconfiguration settings that did not apply after the `dhcpcd` migration ([NAS-141208](https://ixsystems.atlassian.net/browse/NAS-141208), [NAS-141386](https://ixsystems.atlassian.net/browse/NAS-141386)).
+  An interface with **Autoconfigure IPv6** disabled still received extra IPv6 default routes, and SLAAC stayed active on an interface with DHCP enabled. Both settings now apply as configured.
+
+* Fixes the **Save** button staying inactive when the device order changes in a virtual machine ([NAS-140791](https://ixsystems.atlassian.net/browse/NAS-140791)).
+  A change to **Device Order** on a VM device did not activate **Save**, so the new order could not be applied on 26.0.0-BETA.1. The change now saves.
+
+* Fixes virtual machines left suspended after a periodic snapshot task ([NAS-141124](https://ixsystems.atlassian.net/browse/NAS-141124)).
+  A VM with disks on a dataset covered by a periodic snapshot task could stay suspended without end, and it could only be resumed or powered off. These VMs now return to a running state.
+
+* Fixes certificate deletion blocked by TrueNAS Connect ([NAS-141224](https://ixsystems.atlassian.net/browse/NAS-141224)).
+  Deleting a certificate could fail with a message that TrueNAS Connect uses it, even after the system was removed from TrueNAS Connect and the force option was used. A certificate that TrueNAS Connect no longer uses now deletes.
+
+* Fixes false alerts that report a corrupted audit database ([NAS-140907](https://ixsystems.atlassian.net/browse/NAS-140907)).
+  Malformed JSON in an SMB audit table made the NTLMv1 and legacy SMB protocol alert checks fail, which raised a corrupted audit database alert after corruption on a data pool. The alert checks now handle these entries.
+
+* Fixes the **time** field on system audit events ([NAS-141949](https://ixsystems.atlassian.net/browse/NAS-141949)).
+  Audit entries for `svc=SYSTEM` events recorded a time about seven hours behind UTC because the field used a fixed offset instead of the system time zone. Entries for `svc=MIDDLEWARE` and `svc=SMB` were already correct. System audit entries now record the correct time.
+
+* Fixes the **CPU Temp** dashboard widget reporting a temperature that is too high ([NAS-141578](https://ixsystems.atlassian.net/browse/NAS-141578)).
+  The widget combined the per-core readings incorrectly on CPUs with simultaneous multithreading, so the single displayed value grew further above the true temperature as the system warmed up. The per-core bars were always correct. The aggregate value now matches the per-core readings.
+
+* Fixes the location of the deprecated API key warning ([NAS-141272](https://ixsystems.atlassian.net/browse/NAS-141272)).
+  API keys that use SHA256 are marked as deprecated, but the warning appeared on the **Users** screen instead of the **API Keys** screen where the affected keys are listed. The warning now shows with the API keys.
+
+* Fixes the console menu shutdown and reboot options that asked for a reason ([NAS-141144](https://ixsystems.atlassian.net/browse/NAS-141144)).
+  The web interface no longer asks for a shutdown reason, but console menu option 10 for shutdown and option 9 for reboot still required one. Neither option asks for a reason now.
+
+* Fixes `reporting.get_data` returning no data in some cases ([NAS-141166](https://ixsystems.atlassian.net/browse/NAS-141166)).
+  API calls for reporting data could come back empty. The endpoint now returns the requested data.
+
+* Fixes the **Japan** time zone selection ([NAS-140810](https://ixsystems.atlassian.net/browse/NAS-140810)).
+  Selecting **Japan** as the system time zone did not apply. The time zone now applies.
+
+* Fixes a failed Rsync task alert that remains after the task is deleted ([NAS-140840](https://ixsystems.atlassian.net/browse/NAS-140840)).
+  The alert for a failed Rsync task stayed in the notification panel after the task was removed, and it returned after a page reload even when dismissed. Removing a task now clears its alerts.
+
+* Updates the NVIDIA GPU driver to [580.173.02](https://www.nvidia.com/en-us/drivers/details/273160/), the current Long Term Support Branch (LTSB).
+  This version number is lower than the driver in 26-BETA.2, but it extends the support window for a more stable product. 26-BETA.2 shipped a 590 New Feature Branch driver, which is intended for early adopters and reaches end of life in December 2026. The 580 LTSB is supported until August 2028.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14654" target="_blank">TrueNAS 26-BETA.3 Changelog</a> in Jira.
+
+  </div>
+
   <div data-tab-id="26.0.0-beta.2" data-tab-label="26-BETA.2 Notable Changes">
 
 {{< hint type=warning title="Early Release Software" >}}
@@ -298,15 +439,12 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 
 ### Current Known Issues
 
-* Creating a new dataset with the **SMB**, **Multiprotocol**, or **Apps** preset can take several seconds to complete on TrueNAS 26-BETA.1 and 26-BETA.2 ([NAS-141154](https://ixsystems.atlassian.net/browse/NAS-141154), [NAS-141161](https://ixsystems.atlassian.net/browse/NAS-141161)).
-  A performance regression from TrueNAS 25.10 in the per-credential access check that runs during dataset creation causes the noticeable delay. Dataset creation completes successfully.
-  Resolved in 26-RC.1.
 * The **Backup Tasks** dashboard card does not display **TrueCloud Backup** or **Periodic Snapshot** tasks, even when those tasks are configured and have completed successfully.
   The tasks run normally and appear as expected on the **Data Protection** screen; only the dashboard card omits them.
   Other task types, such as Replication and Cloud Sync, appear on the card as expected.
 * Upgrading to TrueNAS 26 can disrupt two-factor authentication (2FA) for any account with a stored token interval other than 30 or 60 seconds. TrueNAS 26 supports only these two intervals and clears the stored 2FA secret for any affected account during the upgrade. A non-standard interval can come from the API, or from the global 2FA interval setting in TrueNAS releases before 24.04, which applied a single interval to every 2FA account on the system and persists across upgrades. The current web interface always uses a 30-second interval. See [Two-Factor Authentication](#two-factor-authentication) for who is affected and how to restore access.
 
-<a href="https://ixsystems.atlassian.net/issues?filter=14542" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=14655" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -339,7 +477,7 @@ For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" 
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.0.0-beta.2');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.0.0-beta.3');
 });
 </script>
 
