@@ -45,12 +45,10 @@ Do not use early-release software for critical tasks.
 {{< /hint >}}
 
 August 18, 2026
-<!-- Tentative release date — confirm and update before publication. -->
 
 The TrueNAS team is pleased to release TrueNAS 26-BETA.3!
-<!-- Intro paragraph to be filled in -->
-
-<!-- Special thanks paragraph to be filled in -->
+This release updates the Linux kernel and OpenZFS, moves the NVIDIA GPU driver to the Long Term Support Branch for a longer support window, and adds dedicated spares for dRAID pools and spare activation for special and dedup vdevs.
+It also fixes upgrade issues that affected Active Directory and Enterprise update profiles, a cloud backup defect that stopped all scheduled tasks, Fibre Channel target mode crashes, and container, virtual machine, and networking issues.
 
 ### 26-BETA.3 Notable Changes
 
@@ -186,12 +184,8 @@ Do not use early-release software for critical tasks.
 {{< /hint >}}
 
 June 17, 2026
-<!-- Tentative release date — confirm and update before publication. -->
 
 The TrueNAS team is pleased to release TrueNAS 26-BETA.2!
-<!-- Intro paragraph to be filled in -->
-
-<!-- Special thanks paragraph to be filled in -->
 
 ### 26-BETA.2 Notable Changes
 
