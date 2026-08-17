@@ -100,9 +100,6 @@ It also fixes upgrade issues that affected Active Directory and Enterprise updat
 * Fixes the pool creation screen offering disks that SED encryption excludes ([NAS-141096](https://ixsystems.atlassian.net/browse/NAS-141096)).
   Disk selection during pool creation did not filter for SED encryption. The disk list now applies the filter.
 
-* Adds the `all_sed` property to `zpool.query` and corrects how stripe vdevs appear under the pool topology ([NAS-141113](https://ixsystems.atlassian.net/browse/NAS-141113), [NAS-141114](https://ixsystems.atlassian.net/browse/NAS-141114)).
-  API consumers could not tell whether every disk in a pool used SED encryption, and stripe vdevs appeared incorrectly in the reported topology. Both are corrected in the API response.
-
 * Fixes the maximum data transfer size applied to 9500 TriMode devices ([NAS-140978](https://ixsystems.atlassian.net/browse/NAS-140978)).
   The driver did not apply the 2M limit that these devices report. An upstream fix is included so transfers stay within the supported size.
 
@@ -112,9 +109,6 @@ It also fixes upgrade issues that affected Active Directory and Enterprise updat
 * Fixes a false alert that an SMB share is unavailable because it uses a locked dataset ([NAS-141461](https://ixsystems.atlassian.net/browse/NAS-141461)).
   A `ShareLocked` alert could persist after boot for a share on an encrypted dataset, even though the dataset was unlocked and the share worked normally. The alert now clears when the dataset unlocks during boot.
 
-* Fixes the misnamed **Save** button on the dataset unlock screen ([NAS-141286](https://ixsystems.atlassian.net/browse/NAS-141286)).
-  The button that applies a passphrase to unlock a dataset was labeled **Save**, which implied that the passphrase was stored. The button is now labeled **Unlock**.
-
 * Fixes custom app updates and private registry support for authenticated Docker registries ([NAS-141149](https://ixsystems.atlassian.net/browse/NAS-141149), [NAS-141553](https://ixsystems.atlassian.net/browse/NAS-141553)).
   Custom app updates failed when the image came from a registry that requires authentication, and registries that use `htpasswd` authentication were not supported. Both authentication paths now work.
 
@@ -123,9 +117,6 @@ It also fixes upgrade issues that affected Active Directory and Enterprise updat
 
 * Fixes a `dtype` error that prevented pool selection for containers ([NAS-141234](https://ixsystems.atlassian.net/browse/NAS-141234)).
   Virtual machine and container device settings are stored encrypted. On a system restored from a configuration whose encryption secret no longer matched, these settings decrypted to empty values and failed validation, so the form returned only `dtype` and the containers feature stayed unusable. Devices that cannot be decrypted are now dropped when the encryption secret resets.
-
-* Fixes the arrow keys in the container shell ([NAS-140957](https://ixsystems.atlassian.net/browse/NAS-140957)).
-  Up, Down, Left, and Right did not work in the container shell, which stopped command history and line edits. The arrow keys now work as expected.
 
 * Fixes missing IPv6 connectivity in LXC containers on a clean install ([NAS-141468](https://ixsystems.atlassian.net/browse/NAS-141468)).
   A clean install of 26.0.0-BETA.2 enabled IPv4 forwarding but left IPv6 forwarding disabled on the host, so a container on the default `truenas0` bridge received an IPv6 default route but could not reach IPv6 networks. IPv6 forwarding is now enabled.
@@ -145,29 +136,8 @@ It also fixes upgrade issues that affected Active Directory and Enterprise updat
 * Fixes certificate deletion blocked by TrueNAS Connect ([NAS-141224](https://ixsystems.atlassian.net/browse/NAS-141224)).
   Deleting a certificate could fail with a message that TrueNAS Connect uses it, even after the system was removed from TrueNAS Connect and the force option was used. A certificate that TrueNAS Connect no longer uses now deletes.
 
-* Fixes false alerts that report a corrupted audit database ([NAS-140907](https://ixsystems.atlassian.net/browse/NAS-140907)).
-  Malformed JSON in an SMB audit table made the NTLMv1 and legacy SMB protocol alert checks fail, which raised a corrupted audit database alert after corruption on a data pool. The alert checks now handle these entries.
-
 * Fixes the **time** field on system audit events ([NAS-141949](https://ixsystems.atlassian.net/browse/NAS-141949)).
   Audit entries for `svc=SYSTEM` events recorded a time about seven hours behind UTC because the field used a fixed offset instead of the system time zone. Entries for `svc=MIDDLEWARE` and `svc=SMB` were already correct. System audit entries now record the correct time.
-
-* Fixes the **CPU Temp** dashboard widget reporting a temperature that is too high ([NAS-141578](https://ixsystems.atlassian.net/browse/NAS-141578)).
-  The widget combined the per-core readings incorrectly on CPUs with simultaneous multithreading, so the single displayed value grew further above the true temperature as the system warmed up. The per-core bars were always correct. The aggregate value now matches the per-core readings.
-
-* Fixes the location of the deprecated API key warning ([NAS-141272](https://ixsystems.atlassian.net/browse/NAS-141272)).
-  API keys that use SHA256 are marked as deprecated, but the warning appeared on the **Users** screen instead of the **API Keys** screen where the affected keys are listed. The warning now shows with the API keys.
-
-* Fixes the console menu shutdown and reboot options that asked for a reason ([NAS-141144](https://ixsystems.atlassian.net/browse/NAS-141144)).
-  The web interface no longer asks for a shutdown reason, but console menu option 10 for shutdown and option 9 for reboot still required one. Neither option asks for a reason now.
-
-* Fixes `reporting.get_data` returning no data in some cases ([NAS-141166](https://ixsystems.atlassian.net/browse/NAS-141166)).
-  API calls for reporting data could come back empty. The endpoint now returns the requested data.
-
-* Fixes the **Japan** time zone selection ([NAS-140810](https://ixsystems.atlassian.net/browse/NAS-140810)).
-  Selecting **Japan** as the system time zone did not apply. The time zone now applies.
-
-* Fixes a failed Rsync task alert that remains after the task is deleted ([NAS-140840](https://ixsystems.atlassian.net/browse/NAS-140840)).
-  The alert for a failed Rsync task stayed in the notification panel after the task was removed, and it returned after a page reload even when dismissed. Removing a task now clears its alerts.
 
 * Updates the NVIDIA GPU driver to [580.173.02](https://www.nvidia.com/en-us/drivers/details/273160/), the current Long Term Support Branch (LTSB).
   This version number is lower than the driver in 26-BETA.2, but it extends the support window for a more stable product. 26-BETA.2 shipped a 590 New Feature Branch driver, which is intended for early adopters and reaches end of life in December 2026. The 580 LTSB is supported until August 2028.
