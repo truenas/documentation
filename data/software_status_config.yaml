@@ -22,8 +22,8 @@ table_data:
       link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.6
   mission_critical:
     enterprise:
-      version: 25.10.4
-      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.4
+      version: 25.10.6
+      link: https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.6
     community:
       version: Not Available
       link: null
