@@ -58,6 +58,9 @@ Using a global password for all SEDs is strongly recommended to simplify deploym
 
 SED passwords are used during initial setup and for unlocking SEDs.
 
+A system configuration backup includes SED passwords only when you download the configuration file with the **Export Password Secret Seed** option selected.
+For a full list of what a configuration backup includes, see [Configuration Backup Contents]({{< relref "ManageSysConfig.md#configuration-backup-contents" >}}).
+
 ### Configuring Global SED Settings
 
 {{< include file="/static/includes/SEDGlobalPW.md" >}}
