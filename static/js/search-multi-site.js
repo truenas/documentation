@@ -7,13 +7,22 @@ const searchConfig = {
   indexes: {
     // TrueNAS Documentation versions
     // NOTE: Default version is determined dynamically from URL or scale-releases.yaml
-    'docs-26': {
+    'docs-27': {
       url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/pagefind/',
       name: 'TrueNAS Documentation',
-      displayName: 'TrueNAS 26 Nightly',
-      version: '26 Nightly',
+      displayName: 'TrueNAS 27 Nightly',
+      version: '27 Nightly',
       icon: LOCAL_TESTING ? '/favicon/TN-favicon-32x32.png' : 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 1,
+      group: 'docs'
+    },
+    'docs-26': {
+      url: 'https://www.truenas.com/docs/scale/26/pagefind/',
+      name: 'TrueNAS Documentation',
+      displayName: 'TrueNAS 26',
+      version: '26',
+      icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
+      priority: 2,
       group: 'docs'
     },
     'docs-25.10': {
@@ -22,7 +31,7 @@ const searchConfig = {
       displayName: 'TrueNAS 25.10',
       version: '25.10',
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
-      priority: 2,
+      priority: 3,
       group: 'docs'
     },
     'docs-25.04': {
@@ -31,7 +40,7 @@ const searchConfig = {
       displayName: 'TrueNAS 25.04',
       version: '25.04',
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
-      priority: 3,
+      priority: 4,
       group: 'docs'
     },
     'docs-24.10': {
@@ -40,7 +49,7 @@ const searchConfig = {
       displayName: 'TrueNAS 24.10',
       version: '24.10',
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
-      priority: 4,
+      priority: 5,
       group: 'docs'
     },
     // Other sites (non-expandable)
