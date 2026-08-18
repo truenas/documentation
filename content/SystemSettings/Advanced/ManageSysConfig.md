@@ -21,8 +21,8 @@ TrueNAS allows users to manage the system configuration by uploading or download
 
 The **Manage Configuration** option on the **System > Advanced Settings** screen provides three options:
 
-* **Download File** that downloads your system configuration settings to a file on your system.
-* **Upload File** that allows you to upload a replacement configuration file.
+* **Download File** downloads your system configuration settings to a file on your system.
+* **Upload File** allows you to upload a replacement configuration file.
 * **Reset to Defaults** resets system configuration settings back to factory settings.
 
 ### Downloading the File
@@ -89,7 +89,7 @@ If you do not save the secret seed by downloading the system config file, variou
 Without the secret seed, encrypted fields are set to empty values. For example, SMB via local accounts and apps.
 Always select the option to save the secret seed when downloading the system config file!
 
-Uploading a configuration file from a FreeBSD-based release wipes any existing administrative users and replaces with the original root user and password from the uploaded configuration file.
+Uploading a configuration file from a FreeBSD-based release wipes any existing administrative users and replaces them with the original root user and password from the uploaded configuration file.
 To secure the system after restoring from a FreeBSD-based TrueNAS config file, log in with the original root user credentials, recreate an administrative account, and finally re-disable the root account password.
 
 ### Resetting to Defaults
