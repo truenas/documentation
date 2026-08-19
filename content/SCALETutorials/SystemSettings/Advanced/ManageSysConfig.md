@@ -39,11 +39,13 @@ A downloaded configuration file always contains the full settings database.
 The **Export Password Secret Seed** option determines whether TrueNAS can restore the sensitive, encrypted fields in that database.
 
 The secret seed (the <file>pwenc_secret</file> file) is the key TrueNAS uses to decrypt protected fields in the configuration database.
-When you download the configuration file without the secret seed and later restore it, TrueNAS cannot decrypt these fields.
-It generates a new secret seed and clears the affected values.
-It empties some values and removes others entirely.
-For example, it disables SMB authentication for all local users and deletes saved cloud and SSH connection credentials.
-Download the file with the secret seed to keep these values on restore.
+When you restore a configuration file that does not include the secret seed, TrueNAS generates a new seed and cannot read those fields.
+It handles the affected settings in two ways:
+
+* TrueNAS deletes some items entirely, such as cloud credentials, SSH keychain credentials, Kerberos keytabs, and any replication or rsync task that uses an SSH connection.
+* It empties the values of others, such as SED passwords, certificate private keys, iSCSI CHAP secrets, two-factor authentication (2FA) secrets, and service passwords. The item remains, but the sensitive value it needs is blank.
+
+TrueNAS also disables SMB authentication for all local user accounts.
 
 In this table, **Yes** means the item is present and usable after a restore.
 TrueNAS does not store items marked **Never** in the configuration file, so back them up separately.
@@ -54,6 +56,7 @@ TrueNAS does not store items marked **Never** in the configuration file, so back
 | User and root or admin login passwords | Yes | Yes |
 | API keys | Yes | Yes |
 | Local user SMB (NT) password hashes | No | Yes |
+| Two-factor authentication (2FA) secrets | No | Yes |
 | Global and per-disk SED passwords | No | Yes |
 | ZFS encryption keys (key-type datasets and pools) | No | Yes |
 | ZFS encryption passphrases (passphrase-type datasets) | Never | Never |
@@ -85,9 +88,8 @@ The **Upload File** option gives users the ability to replace the current system
 
 {{< include file="/static/includes/WhyUploadConfig.md" >}}
 
-If you do not save the secret seed by downloading the system config file, various services can break due to missing information.
-Without the secret seed, encrypted fields are set to empty values. For example, SMB via local accounts and apps.
-Always select the option to save the secret seed when downloading the system config file!
+Upload a configuration file that includes the secret seed whenever possible.
+For details on what TrueNAS preserves with and without the seed, see [Configuration Backup Contents](#configuration-backup-contents).
 
 Uploading a configuration file from a FreeBSD-based release wipes any existing administrative users and replaces with the original root user and password from the uploaded configuration file.
 To secure the system after restoring from a FreeBSD-based TrueNAS config file, log in with the original root user credentials, recreate an administrative account, and finally re-disable the root account password.
