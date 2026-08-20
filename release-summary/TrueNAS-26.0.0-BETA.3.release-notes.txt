@@ -1,0 +1,18 @@
+## TrueNAS 26.0.0-BETA.3
+===This a BETA release of software available to early adopters who wish to evaluate new features===
+This includes OS component updates, new ZFS spare capabilities, and fixes for upgrade and scheduled task regressions.
+- ==**Breaking Changes (updating from 25.10.X):** The REST API is removed in TrueNAS 26. Migrate integrations to the WebSocket API before upgrading.==
+- **New Features:**
+  - Dedicated spares on pools that use dRAID vdevs.
+  - Spare activation for special and dedup vdevs.
+- **Improvements:** Linux kernel 6.18.42, OpenZFS 2.4.3, Nvidia driver moved to the 580 LTSB (lower version than BETA.2, supported through August 2028), faster dataset creation with the SMB/Multiprotocol/Apps presets, faster failover.
+- **Critical Bug Fixes:** Resolved a cloud backup defect that silently stopped all scheduled tasks, Fibre Channel target mode crashes, a console CLI memory leak causing OOM kills, and Active Directory upgrades requiring a manual rejoin.
+=== **Key Known Issues:** Updating from 25.10.X disrupts two-factor authentication for accounts with a token interval other than 30 or 60 seconds. ===
+
+**Pre-Update Actions (updating from 25.10.X):**
+  - Verify two-factor authentication accounts use a 30 or 60 second token interval.
+  - Migrate REST API integrations to the [WebSocket API](https://api.truenas.com/).
+
+**Pre-Update Actions (updating from 26.0.0-BETA.1 or BETA.2):** None required.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.3)** | **[Known Issues](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
