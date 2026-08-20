@@ -100,7 +100,7 @@ majorVersions:
       - name: "26-BETA.3"
         type: "Early Release"
         link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.3"
-        releaseDate: "2026-08-21"
+        releaseDate: "2026-08-20"
       - name: "26-BETA.2"
         type: "Early Release"
         link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.2"
