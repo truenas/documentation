@@ -11,8 +11,8 @@ table_data:
       version: Not Available
       link: null
     community:
-      version: 26.0.0-BETA.2
-      link: https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-BETA.2
+      version: 26.0.0-BETA.3
+      link: https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-BETA.3
   general:
     enterprise:
       version: 25.10.6
