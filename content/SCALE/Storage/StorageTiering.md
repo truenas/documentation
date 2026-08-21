@@ -33,6 +33,12 @@ If your goal is to consolidate SSD drives from one pool into another pool as par
 
 ## Configuring Tiering
 
+{{< hint type=note title="Datasets with a Custom Special Small Blocks Threshold" >}}
+On a preexisting pool, a dataset can have the ZFS `special_small_blocks` property set to a non-zero value lower than the dataset record size. TrueNAS assigns a dataset to the performance tier only when the threshold is equal to or greater than the record size, so it flags these datasets as regular.
+
+Review these datasets before you enable tiering. For a dataset you want in the regular tier, click **Edit** on the dataset and set [**Use Metadata (Special) VDEVs**]({{< ref "/SCALE/Datasets/DatasetsScreens.md#other-options-section" >}}) to **Off**. This changes only where TrueNAS writes new data, so [contact support](https://www.truenas.com/support/) to move data that is already on the special vdev. After tiering is on, this setting no longer displays on the dataset **Edit** screen, and you change the threshold through the [**Change Storage Tier**](#changing-storage-tiers) action.
+{{< /hint >}}
+
 Go to **Storage** and click **Tiering**.
 
 {{< trueimage src="/images/SCALE/Storage/TieringScreen.png" alt="Tiering Screen" id="Tiering Screen" >}}
@@ -51,11 +57,11 @@ Create your data VDEV, then click on the **Special** option to add disks to the 
 
 {{< trueimage src="/images/SCALE/Storage/AddSpecialVDEV.png" alt="Pool Creation Wizard Special Screen" id="Pool Creation Wizard Special Screen" >}}
 
-We recommend configuring the **Special** VDEV layout with a level of redundancy similar to the data VDEV. However, you can use different types of VDEVs (such as a 10WZ2 HDD Data VDEV paired with a 5WZ1 Special SSD VDEV) for performance reasons.
+We recommend that you configure the **Special** VDEV layout with a level of redundancy similar to the data VDEV. However, you can use different types of VDEVs (such as a 10WZ2 HDD Data VDEV paired with a 5WZ1 Special SSD VDEV) for performance reasons.
 
 Click **Save And Go To Review**, then click **Create Pool** to create the VDEV.
 
-After enabling tiering and creating a fusion pool, you can see your Performance and Regular tier capacity usage on the **Storage Dashboard**.
+After you enable tiering and create a fusion pool, you can see your Performance and Regular tier capacity usage on the **Storage Dashboard**.
 
 {{< trueimage src="/images/SCALE/Storage/TieringUsage.png" alt="Storage Dashboard Tiering Usage" id="Storage Dashboard Tiering Usage" >}}
 
@@ -69,7 +75,7 @@ With tiering active, TrueNAS uses L2ARC for the regular tier data and, unless sp
 
 Go to **Datasets**, select the fusion pool you created, and click **Add Dataset**. [Enter the values you want for the dataset configuration]({{< ref "/SCALE/Datasets/ManagingDatasets.md" >}}) and save it.
 
-After creating a dataset, the **Details** card shows which storage tier the dataset is on. 
+After you create a dataset, the **Details** card shows which storage tier the dataset is on. 
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetDetailsTiering.png" alt="Dataset Details Tiering" id="Dataset Details Tiering" >}}
 
@@ -78,27 +84,27 @@ You can create as many datasets in the fusion pool as you need to suit your diff
 ## Creating Shares
 
 Storage tiering works with SMB and NFS sharing. You can create as many shares for fusion pool datasets as you need for your different storage tier purposes.
-For example, you can have one share/dataset for regular tier cold storage on HDDs, and another share/dataset for a performance tier with fast reads and writes on SSDs.
+For example, you can have one share and dataset for regular tier cold storage on HDDs, and another share and dataset for a performance tier with fast reads and writes on SSDs.
 
 ### Creating an SMB Share for Tiering
 
-Go to **Shares > Windows (SMB) Shares** and click **Add**. Select a share purpose and select the dataset created for tiering as the path. After you have [configured the rest of the share settings]({{< ref "/SCALE/Shares/SMB/AddManageSMBShares" >}}), click **Save**.
+Go to **Shares > Windows (SMB) Shares** and click **Add**. Select a share purpose and select the dataset you created for tiering as the path. After you [configure the rest of the share settings]({{< ref "/SCALE/Shares/SMB/AddManageSMBShares" >}}), click **Save**.
 
-**Storage Tier** on the **Windows (SMB) Shares** card and the **Shares > SMB** screen show the tiering level the dataset is set to, performance or regular.
+**Storage Tier** on the **Windows (SMB) Shares** card and the **Shares > SMB** screen shows the tier level of the dataset, performance or regular.
 
 {{< trueimage src="/images/SCALE/Shares/SMBTieringStatus.png" alt="SMB Tiering Status" id="SMB Tiering Status" >}}
 
 ### Creating an NFS Share for Tiering
 
-Go to **Shares > UNIX (NFS) Shares** and click **Add**. Select the dataset created for tiering as the path. After you have [configured the rest of the share settings]({{< ref "/SCALE/Shares/NFS/AddingNFSShares" >}}), click **Save**.
+Go to **Shares > UNIX (NFS) Shares** and click **Add**. Select the dataset you created for tiering as the path. After you [configure the rest of the share settings]({{< ref "/SCALE/Shares/NFS/AddingNFSShares" >}}), click **Save**.
 
-**Storage Tier** on the **UNIX (NFS) Shares** card and the **Shares > NFS** screen show which tiering level the dataset is set to, performance or regular.
+**Storage Tier** on the **UNIX (NFS) Shares** card and the **Shares > NFS** screen shows the tier level of the dataset, performance or regular.
 
 {{< trueimage src="/images/SCALE/Shares/NFSTieringStatus.png" alt="NFS Tiering Status" id="NFS Tiering Status" >}}
 
 ## Changing Storage Tiers
 
-When you want to change from regular tier to performance (for faster reads/writes to SSDs), or performance tier to regular (for slower read/writes to HDDs), you can do so from either the **Datasets** screen or the **Shares** screen.
+When you want to change from the regular tier to performance (for faster reads and writes to SSDs), or from the performance tier to regular (for slower reads and writes to HDDs), you can do so from either the **Datasets** screen or the **Shares** screen.
 
 To change storage tiers from the **Datasets** screen, select the dataset used in your tiering configuration, click **Change** on the dataset **Details** card.
 
@@ -106,8 +112,8 @@ To change storage tiers from the SMB or NFS shares screens, click <span class="m
 
 {{< trueimage src="/images/SCALE/Datasets/ChangeStorageTier.png" alt="Change Storage Tier" id="Change Storage Tier" >}}
 
-When changing storage tiers, you can select whether you want to migrate existing data to the new storage tier. This can take some time to complete depending on the amount of data in the dataset.
+When you change storage tiers, you can select whether you want to migrate existing data to the new storage tier. This can take some time to complete depending on the amount of data in the dataset.
 
-Migration progress shows on the **Data Migration** card. To abort in-progress tier migrations, click **Abort**. If you close the **Data Migration** card, you can see the job status again by finding the active migration in the [**Running Jobs** window]({{< ref "/SCALE/TopToolbar/JobsScreens" >}}).
+Migration progress shows on the **Data Migration** card. To abort in-progress tier migrations, click **Abort**. If you close the **Data Migration** card, find the active migration in the [**Running Jobs** window]({{< ref "/SCALE/TopToolbar/JobsScreens" >}}) to see the job status again.
 
 {{< trueimage src="/images/SCALE/Storage/TierMigrationInProgress.png" alt="Tier Migration In Progress" id="Tier Migration In Progress" >}}
