@@ -116,7 +116,7 @@ The **Edit** screen **General Settings** specifies the basic settings for a VM. 
 | **Boot Method** | Select the boot method option from the dropdown list. Select **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
 | **Shutdown Timeout** | Enter the time, in seconds, the system waits for the VM to cleanly shut down. During the shutdown, the system powers off the VM after the shutdown timeout entered expires. |
 | **Start on Boot** | Select to start this VM when the system boots. |
-| **Enable Hyper-V Enlightenments** | Shows for VMs set for Windows OS. KVM implements Hyper-V Enlightenments for Windows guests. These features make Windows think they are running on a Hyper-V-compatible hypervisor and use Hyper-V-specific features. In some cases, enabling these enlightenments might improve the usability and performance for the guest. |
+| **Enable Hyper-V Enlightenments** | Shows for VMs set for Windows OS. KVM implements [Hyper-V]({{< ref "/Solutions/Integrations/Hyper-V" >}}) Enlightenments for Windows guests. These features make Windows think they are running on a Hyper-V-compatible hypervisor and use Hyper-V-specific features. In some cases, enabling these enlightenments might improve the usability and performance for the guest. |
 | **Enable Secure Boot** | Turns on the secure boot function in TrueNAS. Only available when using the wizard to create a new VM; it is not available on the edit screen. Some operating systems, like Windows 11, might not require secure boot. |
 | **Enable Trusted Platform Module (TPM)** | Turns on the Trusted Platform Module (TPM) for enhanced security features in TrueNAS. TPM provides hardware-based cryptographic security functions. Some operating systems, like Windows 11, might require enabling this option. |
 {{< /truetable >}}
@@ -175,7 +175,7 @@ The **Operating System** settings specify the VM operating system type, the time
 | Setting | Description |
 |---------|-------------|
 | **Guest Operating System** | (Required) Sets the operating system for the VM operating system to the option selected on the dropdown list. Options are **Windows**, which adds the **Enable Hyper-V Enlightenments** option. **Linux**, and **FreeBSD**. |
-| **Enable Hyper-V Enlightenments** | Only shows when **Guest Operating System** is set to **Windows**. When enabled, the VM emulates a Hyper-V-compatible hypervisor for the Windows guest operating system and makes some Hyper-V-specific features available. |
+| **Enable Hyper-V Enlightenments** | Only shows when **Guest Operating System** is set to **Windows**. When enabled, the VM emulates a [Hyper-V]({{< ref "/Solutions/Integrations/Hyper-V" >}})-compatible hypervisor for the Windows guest operating system and makes some Hyper-V-specific features available. |
 | **Name** | (Required) Text entry field that accepts manual or copy/paste entry of a name for the VM that consists of alphanumeric characters. |
 | **Description** | (Optional) Text entry field that accepts manual or copy/paste entry of a brief description about the VM. For example, the type of OS for the VM or the purpose of the VM. |
 | **System Clock** | (Required) Sets the VM system clock to the option selected on the dropdown list. Options are: **Local**, which uses the TrueNAS SCALE system clock setting, or **UTC**, which uses the Coordinated Universal Time clock. The default is **Local**. |
