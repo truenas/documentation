@@ -183,7 +183,7 @@ The pool with the system dataset, and the state of the pool, shows in the dialog
 **Existing Pool** shows the **Existing Pool** dropdown list of pools on the system.
 
 **Add Disks** opens the **Pool Creation Wizard** when **New Pool** is selected. It opens the **Add VDEVs to Pool** wizard when **Existing Pool** is selected.
-The **Storage** link in the breadcrumb at the top of the screen returns you to the **Storage Dashboard** to cancel out of adding to a new or existing pool.
+The **Storage** link in the breadcrumb at the top of the screen returns you to the **Storage Dashboard** to cancel adding to a new or existing pool.
 
 If you attempt to use a disk assigned in an exported pool, a warning message prompts you to select a different disk.
 
