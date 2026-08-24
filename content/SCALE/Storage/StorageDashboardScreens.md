@@ -62,11 +62,11 @@ TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 
 **Enable** activates tiering for shared datasets.
 
-**Max Concurrent Jobs** sets a limit to the maximum number (from 1 to 10) of tier migration jobs that can run simultaneously. Additional jobs are queued and started as running jobs are completed.
+**Max Concurrent Jobs** sets a limit to the maximum number (from 1 to 10) of tier migration jobs that can run simultaneously. TrueNAS queues additional jobs and starts them as running jobs complete.
 
 **Max Used Percentage** sets the dataset capacity (between 70% and 95%) at which migration jobs abort. This setting guards against filling the pool when the job copy-on-write activity expands allocated space.
 
-{{< hint type=caution title="Shares will be locked to a single dataset" >}}
+{{< hint type=caution title="Shares are locked to a single dataset" >}}
 When tiering is on, SMB shares and WebShares stop following nested datasets. Each share exposes only its own dataset, and any child datasets under it are no longer visible to clients through that share. Create a separate share for each dataset you want to expose.
 {{< /hint >}}
 {{< /enterprise >}}
@@ -80,9 +80,9 @@ Each option changes what shows in this window.
 
 The **Disconnect Pool** window shows a different warning statement below the delete and export options.
 The **Delete Pool** warning states all data is deleted from the pool, and instructs users to back up critical data before deleting the pool.
-The **Export Pool** warning states you lose access to data in the exported pool until you import the pool, and instructs users to back up criical data before exporting the pool.
+The **Export Pool** warning states you lose access to data in the exported pool until you import the pool, and instructs users to back up critical data before exporting the pool.
 
-Expand the **System dataset will be moved off this pool** message to shows the full statement about the system dataset.
+Expand the **System dataset will be moved off this pool** message to show the full statement about the system dataset.
 
 {{< hint type=important >}}
 Exporting/deleting can be a destructive process!
@@ -183,7 +183,7 @@ The pool with the system dataset, and the state of the pool, shows in the dialog
 **Existing Pool** shows the **Existing Pool** dropdown list of pools on the system.
 
 **Add Disks** opens the **Pool Creation Wizard** when **New Pool** is selected. It opens the **Add VDEVs to Pool** wizard when **Existing Pool** is selected.
-The **Storage** link in the breadcrumb at the top of the screen returns you to the **Storage Dashboard** to cancel out of adding to a new or existing pool.
+The **Storage** link in the breadcrumb at the top of the screen returns you to the **Storage Dashboard** to cancel adding to a new or existing pool.
 
 If you attempt to use a disk assigned in an exported pool, a warning message prompts you to select a different disk.
 
