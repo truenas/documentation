@@ -19,14 +19,20 @@
             <p><b>{{ $majorVersion.name }}</b></p>
 
             {{/* Bucket each release by parsing releaseDate against now.
-                 Sentinel strings ("", "TBD", "Ongoing") -> Anticipated.
+                 Sentinel strings "" and "TBD" -> Anticipated.
+                 "Ongoing" (nightly builds) -> its own Ongoing section, because those builds are
+                 already available but are not a dated release. Drop the entry once the version
+                 reaches stable and the section stops rendering on its own.
                  Dated entries: future -> Anticipated, shipped -> Latest (most recent) or Previous (older). */}}
             {{- $now := now }}
             {{- $shipped := slice }}
             {{- $anticipatedAll := slice }}
+            {{- $ongoing := slice }}
             {{- range $majorVersion.releases }}
               {{- $rd := .releaseDate }}
-              {{- if or (eq $rd "") (eq $rd "TBD") (eq $rd "Ongoing") }}
+              {{- if eq $rd "Ongoing" }}
+                {{- $ongoing = $ongoing | append . }}
+              {{- else if or (eq $rd "") (eq $rd "TBD") }}
                 {{- $anticipatedAll = $anticipatedAll | append . }}
               {{- else }}
                 {{- $d := time $rd }}
@@ -46,20 +52,17 @@
               {{- else }}{{- $previous = $previous | append $e }}{{- end }}
             {{- end }}
 
-            {{/* Anticipated ordering: dated future entries first (ascending), then TBD, then Ongoing. */}}
+            {{/* Anticipated ordering: dated future entries first (ascending), then TBD. */}}
             {{- $datedAnt := slice }}
             {{- $tbdAnt := slice }}
-            {{- $ongoingAnt := slice }}
             {{- range $anticipatedAll }}
-              {{- if eq .releaseDate "Ongoing" }}{{- $ongoingAnt = $ongoingAnt | append . }}
-              {{- else if or (eq .releaseDate "TBD") (eq .releaseDate "") }}{{- $tbdAnt = $tbdAnt | append . }}
+              {{- if or (eq .releaseDate "TBD") (eq .releaseDate "") }}{{- $tbdAnt = $tbdAnt | append . }}
               {{- else }}{{- $datedAnt = $datedAnt | append . }}{{- end }}
             {{- end }}
             {{- $anticipated := sort $datedAnt "releaseDate" "asc" }}
             {{- range $tbdAnt }}{{- $anticipated = $anticipated | append . }}{{- end }}
-            {{- range $ongoingAnt }}{{- $anticipated = $anticipated | append . }}{{- end }}
 
-            {{- $sections := slice (dict "label" "Latest:" "entries" $latest) (dict "label" "Anticipated:" "entries" $anticipated) (dict "label" "Previous:" "entries" $previous) }}
+            {{- $sections := slice (dict "label" "Latest:" "entries" $latest) (dict "label" "Anticipated:" "entries" $anticipated) (dict "label" "Ongoing:" "entries" $ongoing) (dict "label" "Previous:" "entries" $previous) }}
             {{- $rendered := 0 }}
             {{- range $sections }}
               {{- if .entries }}
