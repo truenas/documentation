@@ -83,7 +83,7 @@ Callouts are grouped into several classes.
 
 {{< expand "All TrueNAS releases callouts" "v" >}}
 * Update to https://update-master.ixsystems.com/ or https://update.ixsystems.com/
-* Enterprise Proactive support to https://support-proxy.ixsystems.com
+* Enterprise Proactive support to https://support-proxy.truenas.com
 * Email to the address set in the TrueNAS UI as configured for administration users, and for alerts
 
 TrueNAS uses Sentry to collect anonymous Javascript crash reports from your Web Interface browser session to https://7ac3e76fe2a94f77a58e1c38ea6b42d9@sentry.ixsystems.com/4
