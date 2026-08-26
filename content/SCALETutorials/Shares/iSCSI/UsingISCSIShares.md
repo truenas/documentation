@@ -93,6 +93,12 @@ For example, `sudo mount /dev/sdb1 /mnt` mounts the iSCSI device */dev/sdb1* to 
 ## Using the iSCSI Share with Windows
 
 This section provides instructions on setting up Windows iSCSI Initiator Client to work with TrueNAS iSCSI shares.
+
+{{< hint type=note >}}
+Hyper-V hosts that connect to a TrueNAS system with high availability (HA) require additional multipath and failover cluster tuning.
+See [Hyper-V Best Practices](https://www.truenas.com/docs/solutions/integrations/hyper-v/).
+{{< /hint >}}
+
 {{< expand "Click here for more information" "v" >}}
 To access the data on the iSCSI share, clients need to use iSCSI Initiator software. An iSCSI Initiator client is pre-installed in Windows 7 to 10 Pro, and Windows Server 2008, 2012, and 2019. Windows Professional Edition is usually required.
 
