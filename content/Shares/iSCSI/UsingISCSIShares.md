@@ -98,7 +98,7 @@ This section provides instructions on setting up Windows iSCSI Initiator Client 
 
 {{< hint type=note >}}
 Hyper-V hosts that connect to a TrueNAS system with high availability (HA) require additional multipath and failover cluster tuning.
-See [Hyper-V Best Practices]({{< ref "/Solutions/Integrations/Hyper-V" >}}).
+See [Hyper-V Best Practices](https://www.truenas.com/docs/solutions/integrations/hyper-v/).
 {{< /hint >}}
 
 {{< expand "Click here for more information" "v" >}}
