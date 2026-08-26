@@ -174,7 +174,7 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
 
 2. Browse to select the dataset/directory using the file browser. Click on the dataset/directory to select it and populate the mount path field.
 3. Select the image format from the **Image Format** dropdown list.
-   Available formats include QCOW2 (QEMU Copy On Write), QED (QEMU Enhanced Disk), RAW (Raw Disk Image), VDI (VirtualBox Disk Image), VHDX ([Hyper-V]({{< ref "/Solutions/Integrations/Hyper-V" >}}) Virtual Hard Disk), and VMDK (VMware Virtual Machine Disk).
+   Available formats include QCOW2 (QEMU Copy On Write), QED (QEMU Enhanced Disk), RAW (Raw Disk Image), VDI (VirtualBox Disk Image), VHDX (Hyper-V Virtual Hard Disk), and VMDK (VMware Virtual Machine Disk).
    The system automatically adds the appropriate file extension to the name in **Image Name**.
 4. Click **Export**. The system saves the disk as an image in the location you specified in **Destination Directory**.
 
