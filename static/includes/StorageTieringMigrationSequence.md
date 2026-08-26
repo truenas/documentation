@@ -85,10 +85,10 @@ Complete these checks immediately before you begin migration work.
    Change the **Local Path** to the new location on Pool A.
    {{< /expand >}}
 
-5. Review [local user account home directories]({{< ref "/SCALE/credentials/users/manageusers/#expand-6" >}}) to confirm no accounts use paths on Pool B.
+5. Review [local user account home directories]({{< ref "/credentials/users/manageusers/#expand-6" >}}) to confirm no accounts use paths on Pool B.
 
 {{< hint type=danger title="Critical Checkpoint" >}}
-At this point, you have reconfigured the server so that all shares, tasks, and user home directories are on Pool A. However, you can still revert all changes with the [configuration file]({{< ref "/SCALE/systemsettings/advanced/managesysconfig/#uploading-the-file" >}}) you previously saved. Before you continue, use test clients to verify that all data is accessible at the new Pool A paths.
+At this point, you have reconfigured the server so that all shares, tasks, and user home directories are on Pool A. However, you can still revert all changes with the [configuration file]({{< ref "/systemsettings/advanced/managesysconfig/#uploading-the-file" >}}) you previously saved. Before you continue, use test clients to verify that all data is accessible at the new Pool A paths.
 
 For replicated datasets and zvols, you might need to change them to read-write before the customer can validate access.
 {{< /hint >}}
