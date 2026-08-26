@@ -97,6 +97,10 @@ majorVersions:
     name: "TrueNAS 26"
     releaseName: "26"
     releases:
+      - name: "26-RC.1"
+        type: "Early Release"
+        link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-rc.1"
+        releaseDate: "TBD"
       - name: "26-BETA.3"
         type: "Early Release"
         link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.3"
@@ -118,6 +122,10 @@ majorVersions:
     name: "TrueNAS 27"
     releaseName: "27"
     releases:
+      - name: "27-BETA.1"
+        type: "Early Release"
+        link: "https://www.truenas.com/docs/scale/27/gettingstarted/versionnotes/#27.0.0-beta.1"
+        releaseDate: "TBD"
       - name: "27 Nightlies"
         type: "Experimental"
         link: "https://www.truenas.com/docs/scale/27/gettingstarted/versionnotes/"
