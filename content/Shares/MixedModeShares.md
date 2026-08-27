@@ -61,19 +61,12 @@ Select only **NFSv4** on the **Enabled Protocols** dropdown list.
 For security hardening, we recommend disabling the **NFSv3** protocol.
 Select **Require Kerberos for NFSv4** if you are using Active Directory.
 
-If Active Directory is already joined to the TrueNAS server, click **Save**, then reopen the **NFS** service screen.
-Click **Add SPN** to open the **Add Kerberos SPN Entry** dialog.
-
-{{< trueimage src="/images/SCALE/SystemSettings/ServicesNFSAddKerberosSPNEntry.png" alt="Add Kerberos SPN Entry" id="Add Kerberos SPN Entry" >}}
-
-Click **Yes** when prompted to add a service principal name (SPN) entry.
-Enter the AD domain administrator user name and password in **Name** and **Password**.
+Click **Save**, then start the NFS service.
 
 {{< hint type=tip >}}
-TrueNAS automatically applies SPN credentials if you enable the NFS service with **Require Kerberos for NFSv4** selected before joining Active Directory.
+TrueNAS automatically generates and applies the Kerberos service principal name (SPN) for the NFS service when the system joins Active Directory or FreeIPA.
+No manual SPN configuration is required.
 {{< /hint >}}
-
-Click **Save**, then start the NFS service.
 
 {{< trueimage src="/images/SCALE/Shares/NFSWidgetOptions.png" alt="Unix (NFS) Shares Widget Options" id="Unix (NFS) Shares Widget Options" >}}
 
