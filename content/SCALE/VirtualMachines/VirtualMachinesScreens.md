@@ -151,7 +151,7 @@ The <span class="material-icons">more_vert</span> at the right of each device ro
   Settings vary based on the type of device selected in **Device Type**. See **[Add Device](#devices-add-screens)** screen.
   **Device Type** only displays on the **Add Device** screens.
 
-* **Delete** - Opens the **Delete Device** dialog.
+* **Delete** - Opens the **Delete Device** dialog. **Force Delete** in this dialog deletes the device even if it is currently in use.
 
 * **Details** - Opens an information dialog showing the port, type, bind IP, and other details about the device.
 
@@ -230,7 +230,7 @@ The **Network Interface** settings specify the network adapter type, MAC address
 |---------|-------------|
 | **Adapter Type** | Sets the adapter type to the option selected on the dropdown list. Options are:<ul><li>**Intel e82545 (e1000)** - Emulates the same Intel Ethernet card and provides compatibility with most operating systems.</li><li>**VirtIO** - Provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers.</li></ul> |
 | **Mac Address** | Shows the MAC address automatically entered by TrueNAS. Enter the desired address into the field to override the randomized MAC address. |
-| **Attach NIC** | Sets the physical interface to associate with the VM selected on the dropdown list. |
+| **Attach NIC** | Sets the network interface to associate with the VM to the option selected on the dropdown list. Options include physical interfaces and any [bridge interfaces]({{< ref "ContainerNASBridge" >}}) configured on the system. Attach a bridge interface if the VM needs to communicate with the TrueNAS host, for example to reach a share on this system. |
 | **Trust Guest Filters** | Enables and allows the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Enabling **Trust Guest Filters** has security risks because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. Disabled by default. |
 {{< /truetable >}}
 {{< /expand >}}
@@ -305,7 +305,7 @@ VM network interface card settings show when **Device Type** is set to **NIC**.
 | **Adapter Type** | (Required) Sets the emulator type to the option selected in the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. **VirtIO** provides better performance for systems with VirtIO paravirtualized network driver support. |
 | **MAC Address** | Shows the default auto-generated random MAC address the VM receives. Enter a custom address to override the default. |
 | **Generate** | Generates a new randomized address in **MAC Address**. |
-| **NIC To attach** | Sets a physical interface to associate with the VM to the device selected on the dropdown list. |
+| **NIC To attach** | Sets the network interface to associate with the VM to the option selected on the dropdown list. Options include physical interfaces and any [bridge interfaces]({{< ref "ContainerNASBridge" >}}) configured on the system. |
 | **Trust Guest Filters** | Allows the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks because it allows the virtual server to change its MAC address and receive all frames delivered to this address. The default setting is not enabled. |
 {{< /truetable >}}
 {{< /expand >}}
