@@ -1,6 +1,6 @@
 ---
 title: "Creating and Managing Virtual Machines"
-description: "Tutorials for configuring TrueNAS SCALE virtualization features and creating virtual machines."
+description: "Tutorials for configuring TrueNAS virtualization features and creating virtual machines."
 geekdocCollapseSection: true
 weight: 20
 aliases:
@@ -91,7 +91,15 @@ If you have not yet added a virtual machine to your system, clicking **Add Virtu
 
    Do not allocate too much memory to a VM. Activating a VM with all available memory allocated to it can slow the host system or prevent other VMs from starting.
 
-   Leave **CPU Mode** set to **Custom** if you want to select a CPU model.
+   **CPU Mode** defaults to **Custom**, which keeps VM behavior predictable no matter what hardware it runs on. This includes a future hardware upgrade or a restore to a different system. Switch to **Host Model** or **Host Passthrough** only if this VM has CPU-intensive requirements that justify trading that portability for performance closer to the host CPU.
+
+   {{< expand "What does CPU Mode control?" "v" >}}
+   **Custom** emulates a specific CPU model you select in **CPU Model**. The VM behaves the same way regardless of which system runs it.
+
+   **Host Model** emulates a CPU that closely matches the CPU on this system, adding compatible features on top of it. This gives near-native performance while remaining more portable than **Host Passthrough**.
+
+   **Host Passthrough** gives the VM direct access to the CPU on this system and every feature it supports, for the best possible performance. Moving this VM to different hardware later might change its behavior or fail, since the VM configuration is tied to the exact CPU on this system.
+   {{< /expand >}}
 
    Use **Memory Size** and **Minimum Memory Size** to specify how much RAM to dedicate to this VM.
    To dedicate a fixed amount of RAM, enter a value (minimum 256 MiB) in the **Memory Size** field and leave **Minimum Memory Size** empty.
@@ -261,7 +269,7 @@ Modify settings as needed to suit your use case.
    {{< truetable >}}
    | Setting | Description |
    |---------|-------------|
-   | Attach NIC | Select the physical interface to associate with the VM. |
+   | Attach NIC | Select the physical interface used for this example. |
    {{< /truetable >}}
 
    **Installation Media**
@@ -420,7 +428,7 @@ Confirm the ping is successful.
 ### Accessing TrueNAS Storage From a VM
 
 By default, VMs are unable to communicate directly with the host NAS.
-If you want to access your TrueNAS SCALE directories from a VM, for example,  to connect to a TrueNAS data share, you have multiple options.
+If you want to access your TrueNAS directories from a VM, for example, to connect to a TrueNAS data share, you have multiple options.
 
 If your system has more than one physical interface, you can assign your VMs to a NIC other than the primary one your TrueNAS server uses.
 This method makes communication more flexible but does not offer the potential speed of a bridge.

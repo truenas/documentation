@@ -27,9 +27,9 @@ Clicking the **Running** toggle for a stopped VM restarts it, or you can click o
 
 To access the devices for a VM, click on the VM row on the **Virtual Machines** screen to expand the VM, then click on **Devices** to open the **Devices** screen showing the devices for the selected VM.
 
-Click **Add** to create a new device>
+Click **Add** to create a new device.
 To edit an existing device, click on the <span class="material-icons">more_vert</span> at the right of each device row, click **Edit** to open the **Edit Device** screen.
-Click **Delete** to open a delete confirmation dialog. t
+Click **Delete** to open a delete confirmation dialog.
 
 ### Editing a Device
 
@@ -83,14 +83,16 @@ Deleting a device removes it from the list of available devices for the selected
 To delete a device:
 
 1. Stop the VM if it is running, then click **Devices** to open the **Devices** screen showing the devices for the selected VM.
-2. Click on the <span class="material-icons">more_vert</span> icon to the right of the device and then **Delete** to open the delete confirmation dialog for that display device.
+2. Click on the <span class="material-icons">more_vert</span> icon to the right of the device and then **Delete** to open the delete confirmation dialog for that device.
    The dialog shows the name or identifier for the selected device. The example below shows *undefined 8* as the name.
 
    {{< trueimage src="/images/SCALE/Virtualization/DeleteVMDevice.png" alt="Delete Virtual Machine Device" id="Delete Virtual Machine Device" >}}
 
-3. Select **Force Delete** to force the system to delete the device (for example, device is a CD-ROM).
-   When deleting a disk, it forces the system to delete the zvol even if other devices or services are using it or are affiliated with the zvol device.
-4. Click **Delete Device**.
+3. (Optional) Select **Force Delete** to remove the device even if it is currently in use.
+4. For a disk device, select **Delete zvol device** to also delete the underlying zvol, then type the zvol name shown in the field that appears to confirm.
+   For a raw file device, select **Delete raw file** to also delete the underlying raw disk file.
+   Leave these deselected to remove the device but keep its underlying zvol or raw file.
+5. Click **Delete Device**.
 
 ### Changing the Device Order
 
@@ -116,10 +118,9 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
 2. Enter or browse to select the mount path to the CD-ROM device.
    Click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt** to expand or collapse the directory tree.
 3. Enter a new number that represents where in the boot sequence you want to place this device in **Device Order**.
-4. Enter a new number that represents where in the boot sequence you want to place this device in **Device Order**.
    The lower the number, the higher the device is in the boot sequence.
-5. Click **Save**.
-6. Click on the **Virtual Machines** breadcrumb at the top of the screen, and restart the VM.
+4. Click **Save**.
+5. Click on the **Virtual Machines** breadcrumb at the top of the screen, and restart the VM.
 
 ### Adding a NIC Device Type
 
@@ -134,7 +135,7 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
    Choose **Intel e82585 (e1000)** for maximum compatibility with most operating systems.
    If the guest OS supports VirtIO paravirtualized network drivers, choose **VirtIO** for better performance.
 4. Click **Generate** to have TrueNAS populate **MAC Address** with a new random MAC address to replace the default random address, or enter your own custom address.
-5. Select a physical interface on your TrueNAS system from the **NIC To Attach** dropdown list.
+5. Select a physical interface or bridge interface on your TrueNAS system from the **NIC To Attach** dropdown list.
 6. (Optional) Select **Trust Guest Filters** to allow the virtual server to change its MAC address and join multicast groups.
    This is required for the IPv6 Neighbor Discovery Protocol (NDP).
 
@@ -158,8 +159,8 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
    **Default** uses the ZFS volume values.
 5. Enter a new number that represents where in the boot sequence you want to place this device in **Device Order**.
    The lower the number, the higher the device is in the boot sequence.
-7. Click **Save**.
-4. Click on the **Virtual Machines** breadcrumb at the top of the screen, and restart the VM.
+6. Click **Save**.
+7. Click on the **Virtual Machines** breadcrumb at the top of the screen, and restart the VM.
 
 ### Exporting a Disk to an Image
 
