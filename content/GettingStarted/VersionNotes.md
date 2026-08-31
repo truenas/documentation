@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.6"
+    anchor: "25.10.7"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,6 +34,19 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
+  <div data-tab-id="25.10.7" data-tab-label="25.10.7">
+
+September 1, 2026
+
+The TrueNAS team is pleased to release TrueNAS 25.10.7!
+
+**Notable changes:**
+
+<!-- Notable changes placeholder -->
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14691" target="_blank">TrueNAS 25.10.7 (Goldeye) Changelog</a> in Jira.
+
+  </div>
   <div data-tab-id="25.10.6" data-tab-label="25.10.6">
 
 August 12, 2026
@@ -76,7 +89,9 @@ This release updates the Linux kernel and NVIDIA GPU driver to address security 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14650" target="_blank">TrueNAS 25.10.6 (Goldeye) Changelog</a> in Jira.
 
   </div>
-  <div data-tab-id="25.10.5" data-tab-label="25.10.5">
+  <div data-tab-id="25.10.1-25.10.5" data-tab-label="25.10.1 – 25.10.5">
+
+{{< expand "25.10.5 Notable Changes" "v" >}}
 
 July 23, 2026
 
@@ -108,8 +123,9 @@ This release updates the Linux kernel to address local privilege escalation and 
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14579" target="_blank">TrueNAS 25.10.5 (Goldeye) Changelog</a> in Jira.
 
-  </div>
-  <div data-tab-id="25.10.4" data-tab-label="25.10.4">
+{{< /expand >}}
+
+{{< expand "25.10.4 Notable Changes" "v" >}}
 
 June 3, 2026
 
@@ -150,8 +166,9 @@ This release updates the Linux kernel and Samba to address multiple security vul
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14508" target="_blank">TrueNAS 25.10.4 (Goldeye) Changelog</a> in Jira.
 
-  </div>
-  <div data-tab-id="25.10.3" data-tab-label="25.10.3">
+{{< /expand >}}
+
+{{< expand "25.10.3 Notable Changes" "v" >}}
 
 April 14, 2026
 
@@ -209,8 +226,9 @@ This release mitigates [CVE-2026-31431](https://security.truenas.com/link/?refer
 
 {{< /expand >}}
 
-  </div>
-  <div data-tab-id="25.10.2" data-tab-label="25.10.2">
+{{< /expand >}}
+
+{{< expand "25.10.2 Notable Changes" "v" >}}
 
 February 19, 2026
 
@@ -294,8 +312,9 @@ This is a small maintenance release to fix NIC bonding disruptions and SMB Legac
 
 {{< /expand >}}
 
-  </div>
-  <div data-tab-id="25.10.1" data-tab-label="25.10.1">
+{{< /expand >}}
+
+{{< expand "25.10.1 Notable Changes" "v" >}}
 
 December 18, 2025
 
@@ -339,6 +358,8 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
   The **Save** button no longer disables when clearing these access options.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=13697" target="_blank">TrueNAS 25.10.1 (Goldeye) Changelog</a> in Jira.
+
+{{< /expand >}}
 
   </div>
   <div data-tab-id="25.10.0" data-tab-label="25.10.0">
@@ -668,7 +689,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: After applying a new license, manually refresh the browser page to update the web interface.
 
-<a href="https://ixsystems.atlassian.net/issues?filter=14652" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues?filter=14692" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -694,7 +715,7 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.6');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '25.10.7');
 });
 </script>
 
