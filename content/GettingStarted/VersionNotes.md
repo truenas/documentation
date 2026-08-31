@@ -36,13 +36,59 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.7" data-tab-label="25.10.7">
 
-September 1, 2026
+September 2, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.7!
 
 **Notable changes:**
 
-<!-- Notable changes placeholder -->
+* Updates the Linux kernel to the latest 6.12 LTS release (v6.12.105).
+  TrueNAS 25.10.7 advances the kernel from v6.12.99 in the previous release to v6.12.105.
+
+* Fixes a kernel panic in the NFS server that could occur when a client's dropped connection caused the same request to arrive twice ([NAS-142560](https://ixsystems.atlassian.net/browse/NAS-142560)).
+  If an NFSv4.1 client lost its connection twice in quick succession, two copies of the same request could reach the server at the same time. Both were read from the session reply cache, but one thread could also modify that cached entry while the other read it, which caused a NULL pointer dereference and crashed the system. TrueNAS now leaves the cached reply untouched when replaying it.
+
+* Fixes a crash that could occur when unregistering an iSCSI target while a peer controller was leaving the cluster ([NAS-142264](https://ixsystems.atlassian.net/browse/NAS-142264)).
+  On Enterprise HA systems, target unregistration during failover could follow a stale list pointer if another teardown ran at the same time, which crashed the system or corrupted memory. The affected code now restarts its list walk from the beginning after each removal instead of relying on a saved position.
+
+* Fixes a crash that could occur when a task management command arrived while an iSCSI session was being reassigned to a new access control group ([NAS-142258](https://ixsystems.atlassian.net/browse/NAS-142258)).
+  An `ABORT_TASK` or other task management request received during session reassignment could dereference a pointer that was temporarily cleared, which crashed the task management thread. TrueNAS now keeps the previous access control group installed until the reassignment finishes.
+
+* Fixes a crash in the iSER (iSCSI over RDMA) target driver that could occur when a connection closed during active I/O ([NAS-142161](https://ixsystems.atlassian.net/browse/NAS-142161)).
+  A response posted just before a connection closed could be released twice, and the second release read from memory that had already been reused, which crashed the target. TrueNAS now tracks response ownership correctly so this cannot happen.
+
+* Fixes a crash that could occur when a Fibre Channel target driver was unloaded while a target's enabled state was still being changed ([NAS-142126](https://ixsystems.atlassian.net/browse/NAS-142126)).
+  A queued request to enable or disable a target could still run after the target began unregistering, which re-armed a port whose driver was already partially torn down and crashed the system. TrueNAS now blocks queued work for a target once it starts unregistering.
+
+* Fixes an Enterprise HA networking issue that could let both controllers become active for the same IPv6 virtual IP ([NAS-142303](https://ixsystems.atlassian.net/browse/NAS-142303)).
+  The VRRP service listened for advertisements on the wrong IPv6 address, so it never received the peer controller's advertisements and considered itself the primary controller for every IPv6 VIP. TrueNAS now binds the listener to the correct address so failover state is tracked correctly.
+
+* Improves resilience to brief Non-Transparent Bridge (NTB) interruptions on Enterprise HA systems ([NAS-142152](https://ixsystems.atlassian.net/browse/NAS-142152)).
+  A short NTB packet loss event could trigger an unnecessary cluster reset. TrueNAS now waits up to 60 seconds for the NTB link to recover before treating the peer controller as down.
+
+* Updates ZFS 2.3 from version 2.3.4 to 2.3.9 ([NAS-142153](https://ixsystems.atlassian.net/browse/NAS-142153), [NAS-142538](https://ixsystems.atlassian.net/browse/NAS-142538)).
+  This update includes upstream fixes for silent read corruption after block cloning, data loss during redacted replication send, zvol sync writes that did not reach the ZIL, incomplete dRAID rebuilds, and a permission check gap that let a caller open a device without read access. There is no on-disk format change.
+
+* Fixes intermittent "permission denied" errors on NFS shares for users in Active Directory or LDAP environments ([NAS-142228](https://ixsystems.atlassian.net/browse/NAS-142228)).
+  A brief winbind or SSSD outage could cause the kernel to cache an empty group list for a user. This stripped that user of access to any share that depended on group membership for up to 30 minutes, even after the directory service recovered. TrueNAS no longer treats these empty replies as valid.
+
+* Fixes an issue where a single unreachable container registry could stop TrueNAS from checking for app updates ([NAS-142192](https://ixsystems.atlassian.net/browse/NAS-142192)).
+  If one registry returned an unexpected error, such as a certificate mismatch, the update check stopped for every remaining app. Affected apps could not be upgraded from the web interface until a later check succeeded. TrueNAS now logs the error for the failing image and continues checking the rest.
+
+* Reduces unnecessary restarts of the `ix-vendor` service caused by routine IPv6 network activity ([NAS-142227](https://ixsystems.atlassian.net/browse/NAS-142227)).
+  Routers that send frequent IPv6 router advertisements could cause TrueNAS to treat each address lifetime refresh as a new address change, restarting the service every few seconds. TrueNAS now recognizes these refreshes and ignores them.
+
+* Fixes a serialization error in the reporting API when aggregated data was not requested ([NAS-142197](https://ixsystems.atlassian.net/browse/NAS-142197)).
+  Calls to `reporting.get_data` with aggregation disabled failed validation and logged a serialization warning instead of returning a clean result. This affected features, such as Dashboard graphs, that request non-aggregated reporting data.
+
+* Fixes an issue where testing an alert service could hide the real reason the test failed ([NAS-140259](https://ixsystems.atlassian.net/browse/NAS-140259)).
+  A coding error in the alert service test handler raised an unrelated error before the actual failure reason could be reported, so users saw a misleading message instead of the real cause of a failed test.
+
+* Fixes Cloud Sync tasks that failed to run when cloud credentials contained certain special characters ([NAS-142234](https://ixsystems.atlassian.net/browse/NAS-142234)).
+  Some characters in credential values could produce an invalid rclone configuration file, which caused the Cloud Sync task to fail. TrueNAS now escapes these characters when generating the configuration.
+
+* Fixes the snapshot task **Lifetime** field accepting invalid values of `0` and `-1` ([NAS-142610](https://ixsystems.atlassian.net/browse/NAS-142610)).
+  The web interface allowed a snapshot task to be saved with a lifetime of zero or a negative number, neither of which is a valid retention period. The field now rejects these values.
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14691" target="_blank">TrueNAS 25.10.7 (Goldeye) Changelog</a> in Jira.
 
