@@ -61,3 +61,32 @@ Click **Save**.
 
 Start the NFS service.
 When TrueNAS is already connected to [Active Directory]({{< ref "/SCALE/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/SCALE/Credentials/DirectoryServices" >}}).
+
+### Setting Up a Service Principal Name (SPN)
+
+TrueNAS allows configuring a Service Principal Name (SPN) on the **NFS** service screen when the TrueNAS is joined to Active Directory and AD is healthy in TrueNAS, and when NFSv4 is selected in **Enabled Protocols**, and **Require Kerberos for NFSv4** is enabled.
+
+{{< expand "What is an SPN?" "v" >}}
+A Service Principal Name (SPN) is how Kerberos identifies a specific service instance on a specific host so a client can request a ticket for it.
+
+Think of it as the address for the NFS service in Kerberos terms, which is specified as <code>service-class/hostname[:port]</code>, for example *nfs/truenas-box.domain.com*.
+
+When a client wants to talk to that NFS server using Kerberos auth, it asks the AD domain controller (KDC) for a ticket for that exact SPN.
+The KDC can only issue the ticket if the SPN is registered to a security principal in AD (usually a computer account or a dedicated service account).
+
+Adding the SPN registers the *nfs/truenas-box.domain.com* in AD and stores the corresponding keytab entry locally so the NFS service can decrypt tickets presented for it.
+Without this registration, clients requesting Kerberos-secured NFSv4 get an auth failure because the ticket request has nowhere to resolve to.
+Registering the SPN entry is creating the AD registration and the local keytab entry via nfs.add_principal, using AD admin credentials with rights to write SPNs.
+
+{{< /expand >}}
+
+After setting up the NFS service and saving changes, open the NFS service screen again to see **Set SPN** active at the bottom of the screen to the right of **Save**.
+
+Click **Set SPN** to open the first of two dialogs. Select **Yes** on the first **Enable Kerberos SPN Entry** dialog, to open the second dialog.
+
+{{< trueimage src="/images/SCALE/SystemSettings/AddKerberosSPNEntryDialog.png" alt="Add Kerberos SPN Entry Dialog" id="Add Kerberos SPN Entry Dialog" >}}
+
+Enter the name of the AD admin account name and the password is for this account, and then click **Submit**.
+
+Authentication is against the AD account and not the TrueNAS administrator account in the TrueNAS database.
+AD owns the SPN, not TrueNAS.
