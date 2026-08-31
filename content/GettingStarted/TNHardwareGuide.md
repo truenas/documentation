@@ -168,7 +168,7 @@ For example, using a single SSD as an L2ARC is ineffective in front of a pool of
 As for capacity, 5x to 20x more than the RAM size is a good guideline.
 High-end TrueNAS systems can have NVMe-based L2ARC in double-digit terabyte sizes.
 
-Remember that for every data block in the L2ARC, the primary ARC needs an 88-byte entry.
+Remember that for every data block in the L2ARC, the primary ARC needs a 96-byte entry.
 Poorly-designed systems can cause an unexpected fill-up in the ARC and reduce performance.
 For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of metadata storage in the primary ARC.
 
