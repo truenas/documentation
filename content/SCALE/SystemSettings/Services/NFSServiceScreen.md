@@ -49,15 +49,15 @@ Select **Start Automatically** to activate the NFS service when TrueNAS boots.
 | Setting | Description |
 |---------|-------------|
 | **Enabled Protocols** | Sets the NFS service protocol to NFSv3, NFSv4, or both. When NFSv4 is selected, **NFSv3 ownership model for NFSv4** clears, allowing you to select or leave it clear. |
-| **NFSv4 DNS Domain** | Overrides the default DNS domain for NFSv4. Specifies the domain in idmapd.conf. Select to use a value to override the default DNS domain name for NFSv4. When AD is joined and healthy, NFSv4 is selected as an enabled protocol, setting this shows **Set SPN** to the right of **Save**. |
+| **NFSv4 DNS Domain** | Overrides the default DNS domain for NFSv4. Specifies the domain in idmapd.conf. Select to use a value to override the default DNS domain name for NFSv4. When AD is joined and healthy, NFSv4 is selected as an enabled protocol, setting this shows **Add SPN** to the right of **Save**. |
 | **NFSv3 ownership model for NFSv4** | Enables NFSv4 ACL support without requiring the client and the server to sync users and groups. Becomes selectable after selecting **NFSv4**. Deactivates **Manage Groups Server-side**. |
 | **Require Kerberos for NFSv4** | Forces NFS shares to fail if a Kerberos ticket is unavailable. |
 {{< /truetable >}}
 
 #### SPN Entry Settings
 
-**Set SPN** only shows on the **NFS** service screen when AD is joined and healty, NFSv4 is selected in **Enabled Protocols**, and **Require Kerberos for NFSv4** is enabled.
-After saving settings and reopening the **NFS** service screen, the **Set SPN** button becomes active. Clicking this opens the first **Add Kerberos SPN Entry** dialog. Clicking **Yes** in the fist dialog opens the second **Add Kerberos SPN entry** dialog where you add the credentials.
+**ADD SPN** only shows on the **NFS** service screen when AD is joined and hhealty, NFSv4 is selected in **Enabled Protocols**, and **Require Kerberos for NFSv4** is enabled.
+After saving settings and reopening the **NFS** service screen, the **Add SPN** button becomes active. Clicking this opens the first **Add Kerberos SPN Entry** dialog. Clicking **Yes** in the fist dialog opens the second **Add Kerberos SPN Entry** dialog where you add the credentials.
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddKerberosSPNEntryDialog.png" alt="Add Kerberos SPN Entry Dialog" id="Add Kerberos SPN Entry Dialog" >}}
 
