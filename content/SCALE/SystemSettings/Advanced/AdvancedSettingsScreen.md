@@ -522,7 +522,9 @@ High Availability (HA) systems restart the standby controller and then show a pr
 
 **Enable FIPS** enables or disables FIPS enforcement in TrueNAS.
 
-**Enable General Purpose OS STIG compatibility mode** enables or disables the STIG compliance implementation in TrueNAS. It requires two-factor authentication for an admin user with full permissions before enabling STIG compatibility.
+**Enable General Purpose OS STIG compatibility mode** enables or disables the STIG compliance implementation in TrueNAS.
+This function requires two-factor authentication and configuring a one-time password for a full-permissions admin user before enabling STIG compatibility.
+The one-time password option is found on the **Credntials > Users** screen. After selecting the user, **Generate One-Time Password** shows on the **Password** card. 
 
 The following are administrator password settings:
 {{< truetable >}}

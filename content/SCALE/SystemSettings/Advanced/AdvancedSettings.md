@@ -236,9 +236,20 @@ When STIG (and FIPS) are enabled, auditing includes these events:
 * Security object modifications and attempts to modify security objects
 {{< /expand >}}
 
+<!-- commenting out configuring STIG and FIPS due to an issue experienced by Enterprise customer that is under current investigation 
+
 ### Configuring STIG and FIPS
 
-To set up FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
+To set up FIPS or STIG compliance on a TrueNAS server, you must first configure a one-time password for the admin user with full permissions, and then enabke two-factor authentication for that admin user.
+When that user logs into TrueNAS the first time with the OTP, TrueNAS prompts that user to set up two-factor authenticatiuon.
+This is time sensitive and must occur with in 24 hours after saving the one-time password.
+
+After administrator sets up 2FA they are assigned a 2FA authentication.
+Also configure any additional current admin users for 2FA before configuring STIG
+
+The administrator with 2FA must generate a one-time password (OTP) for any other new or existing admin user that is not yet configured with 2FA and send them the password.
+They have 24 hours to login, using the OTP, and then TrueNaS configures two-factor authentication (2FA) for them at login.
+These users are prompted to configure two-factor authentication the first time they log in after having the one-time password configured.
 
 After configuring two-factor authentication, go to **System > Advanced Settings** and locate the **Security** card.
 
@@ -253,7 +264,7 @@ The system prompts you to restart.
 ![SecurityFIPSSTIGRestartDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRestartDialog.png "Restart Require Dialog")
 
 The system restart takes several minutes to complete before showing the login screen.
-Highly Available (HA) systems must restart each storage controller before STIG mode is fully enabled.
+Highly Available (HA) systems must restart each storage controller before STIG mode is fully enabled. -->
 
 ### TrueNAS Administrator Password Rules
 
