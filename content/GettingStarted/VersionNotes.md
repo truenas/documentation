@@ -43,7 +43,6 @@ The TrueNAS team is pleased to release TrueNAS 25.10.7!
 **Notable changes:**
 
 * Updates the Linux kernel to the latest 6.12 LTS release (v6.12.105).
-  TrueNAS 25.10.7 advances the kernel from v6.12.99 in the previous release to v6.12.105.
 
 * Fixes a kernel panic in the NFS server that could occur when a client's dropped connection caused the same request to arrive twice ([NAS-142560](https://ixsystems.atlassian.net/browse/NAS-142560)).
   If an NFSv4.1 client lost its connection twice in quick succession, two copies of the same request could reach the server at the same time. Both were read from the session reply cache, but one thread could also modify that cached entry while the other read it, which caused a NULL pointer dereference and crashed the system. TrueNAS now leaves the cached reply untouched when replaying it.
