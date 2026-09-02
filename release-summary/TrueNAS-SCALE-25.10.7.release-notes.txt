@@ -1,0 +1,12 @@
+## TrueNAS 25.10.7
+
+This maintenance release updates the Linux kernel and ZFS, and fixes several crashes affecting Enterprise HA, iSCSI, and Fibre Channel systems, along with NFS, Active Directory, Apps, and Cloud Sync issues.
+
+- **Security:** Updates the Linux kernel to v6.12.105.
+- **Critical Bug Fixes:** Fixes crashes in the NFS server, the iSCSI target layer (two separate issues), the iSER (iSCSI over RDMA) target driver, and the Fibre Channel target driver during unregistration, and updates ZFS 2.3 to version 2.3.9, resolving silent read corruption after block cloning, data loss during redacted replication send, zvol sync writes not reaching the ZIL, and incomplete dRAID rebuilds.
+- **HA Improvements:** Fixes an IPv6 VRRP issue that could let both controllers become active for the same virtual IP, and improves tolerance for brief Non-Transparent Bridge (NTB) interruptions so they no longer trigger unnecessary cluster resets.
+- **Additional Fixes:** Fixes intermittent "permission denied" errors on NFS shares for Active Directory and LDAP users after a brief directory service outage, fixes an issue where a single unreachable container registry could block Apps update checks for all other apps, reduces unnecessary ix-vendor service restarts caused by routine IPv6 network activity, fixes a reporting API serialization error affecting Dashboard graphs, fixes an issue where testing an alert service could hide the real failure reason, fixes Cloud Sync tasks failing when credentials contained special characters, and fixes the snapshot task Lifetime field accepting invalid values.
+
+**Pre-Update Actions:** None required when updating from 25.10.6.
+
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#25.10.7)** | **[Known Issues](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
