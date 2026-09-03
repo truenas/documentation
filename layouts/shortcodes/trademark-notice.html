@@ -6,4 +6,6 @@
 <p class="trademark-notice"><small><em>MinIO is a trademark of the MinIO Corporation.</em></small></p>
 {{ else if $aistor }}
 <p class="trademark-notice"><small><em>AIStor is a trademark of the MinIO Corporation.</em></small></p>
+{{ else }}
+{{- errorf "trademark-notice requires minio=\"true\" and/or aistor=\"true\": %s" .Position }}
 {{ end }}
