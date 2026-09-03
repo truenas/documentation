@@ -1012,3 +1012,5 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeHugoTabs('component-tab-content-source', 'component-tabs-container', 'software-component-versions');
 });
 </script>
+
+{{< trademark-notice minio="true" >}}
