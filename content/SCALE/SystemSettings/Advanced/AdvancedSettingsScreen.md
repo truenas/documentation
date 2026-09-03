@@ -308,7 +308,7 @@ By default, new installations use several existing NTP servers. TrueNAS supports
 | **Prefer** | Enables preference for highly accurate NTP servers with time monitoring hardware. Only use with highly accurate NTP servers. |
 | **Min Poll** | Sets the minimum polling interval in seconds as a power of 2, like 6 means 2^6 = 64 seconds. The minimum value is **6**. |
 | **Max Poll** | Sets the maximum polling interval in seconds as a power of 2, like 10 means 2^10 = 1024 seconds. The default is **10**, and the maximum value is **17**. |
-| **Force** | Forces addition of the NTP server even if currently unreachable. |
+| **Force** | Forces addition of an NTP server address that cannot currently be reached (e.g., pre-configuring a server that is not provisioned yet, or one that is temporarily unreachable but expected to work later) even if currently unreachable. |
 {{< /truetable >}}
 {{< /expand >}}
 

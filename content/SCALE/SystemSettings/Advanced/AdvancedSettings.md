@@ -97,6 +97,9 @@ The **NTP Servers** card allows users to add Network Time Protocol (NTP) servers
 These sync the local system time with an accurate external reference.
 By default, new installations use several existing NTP servers. TrueNAS supports adding custom NTP servers.
 
+Use **Force** when entering and NTP server address that cannot currently be reached (e.g., pre-configuring a server that is not provisioned yet, or one that is temporarily unreachable but expected to work later). **Force** should activate the **Save** button and allow the entry.
+If the **Save** button does not activate, clear the entry, enable **Force** and renter the NTP server address.
+
 ## Managing the System Dataset
 
 **Storage** card shows the pool configured as the system dataset pool and allows users to select a different storage pool to hold the system dataset.
