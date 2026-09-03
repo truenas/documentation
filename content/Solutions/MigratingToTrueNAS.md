@@ -35,6 +35,8 @@ vMotion uses block-level storage protocols to move data. If you prefer to use iS
 
 ## Cloud Migration
 
-Migrating via the cloud is another option. Services like minIO, S3, and Google Drive (among many others) can move your files and data from one NAS to another. Utilities like [rclone](https://rclone.org/) facilitate migration through cloud storage platforms.
+Migrating via the cloud is another option. Services like **MinIO™**, S3, and Google Drive (among many others) can move your files and data from one NAS to another. Utilities like [rclone](https://rclone.org/) facilitate migration through cloud storage platforms.
 
 Be aware that cloud storage can be expensive when moving large amounts of data.
+
+{{< trademark-notice minio="true" >}}
