@@ -9,6 +9,9 @@
 
       <section class="gdoc-markdown">
         {{ .Summary }}
+        {{ if or .Params.trademarkMinio .Params.trademarkAistor }}
+          {{ partial "trademark-notice.html" (dict "minio" (.Params.trademarkMinio | default false) "aistor" (.Params.trademarkAistor | default false)) }}
+        {{ end }}
       </section>
 
       <div class="gdoc-post__readmore">
