@@ -5,6 +5,7 @@ geekdocCollapseSection: true
 weight:
 aliases: 
 tags:
+trademarkMinio: true
 ---
 
 This section has tutorials for using the **MinIO™** apps available for TrueNAS SCALE.
