@@ -480,3 +480,5 @@ This first public release version of TrueNAS 25.04 (Fangtooth) has software comp
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=11745" target="_blank">Click here to see the latest information</a> about public issues discovered in 25.04-BETA.1 that are being resolved in a future TrueNAS release.
 {{< /expand >}}
+
+{{< trademark-notice minio="true" >}}
