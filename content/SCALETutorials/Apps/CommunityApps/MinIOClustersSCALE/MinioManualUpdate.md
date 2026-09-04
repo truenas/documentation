@@ -7,6 +7,7 @@ tags:
 - scaleminio
 - scaledocker
 - scaleapps
+trademarkMinio: true
 ---
 
 
@@ -14,12 +15,12 @@ tags:
 
 
 {{< hint info >}}
-This article applies to the public release of the **MinIO Official Charts** application.
+This article applies to the public release of the **MinIO™ Official Charts** application.
 {{< /hint >}}
 
 ## Manual Update Overview
 
-MinIO fails to deploy if you update your version 2022-10-24_1.6.58 Minio app to 2022-10-29_1.6.59 or later using the TrueNAS web UI.
+MinIO fails to deploy if you update your version 2022-10-24_1.6.58 MinIO app to 2022-10-29_1.6.59 or later using the TrueNAS web UI.
 
 Your app logs display an error similar to the following:
 
@@ -199,3 +200,5 @@ Restart the new app to finish migrating.
 When complete and the app is running, restart any share services.
 
 {{< taglist tag="scaleminio" limit="10" >}}
+
+{{< trademark-notice minio="true" >}}
