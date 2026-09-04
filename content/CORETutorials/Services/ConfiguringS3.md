@@ -8,3 +8,5 @@ tags:
 ---
 
 {{< include file="/static/includes/S3Deprecation.md" >}}
+
+{{< trademark-notice minio="true" >}}
