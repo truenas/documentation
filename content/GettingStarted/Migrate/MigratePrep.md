@@ -76,7 +76,7 @@ CORE Enterprise customers are encouraged to contact Support for assistance with 
    If there are issues after a clean install of SCALE from an <file>iso</file> file or you are not using DHCP for network and interface configuration, use the information from your CORE settings to configure your SCALE network settings and to reconfigure your static IPs or aliases.
       {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
-6. Migrate the deprecated S3 MinIO service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
+6. Migrate the deprecated S3 **MinIO™** service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
    This is a lengthy process depending on the amount of data stored while using the S3 service.
    Read and follow instructions in [Migrating MinIO Data from CORE to SCALE](https://www.truenas.com/docs/solutions/miniocoretoscale/)!
 
@@ -179,3 +179,5 @@ Note the UID and GID for this new user to enter in the application configuration
 
 After disabling the WebDAV service and clearing any existing share configurations from the **Shares > WebDAV** screen in Bluefin, install the **WebDAV** application to recreate your shares using the CORE service settings from your notes. Use the **webdav** user and group in control, and the UID and GID (**666**) in the application.
 {{< /expand >}}
+
+{{< trademark-notice minio="true" >}}
