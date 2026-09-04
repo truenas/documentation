@@ -7,11 +7,12 @@ tags:
 - scaleapps
 - scaledocker
 - scalecatalog
+trademarkMinio: true
 ---
 
 {{< toc >}}
 
-TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved Docker apps that includes Plex, [MinIO]({{< relref "MinIOClustersSCALE.md" >}}), Nextcloud, [Chia]({{< relref "Chia.md" >}}), and IPFS.
+TrueNAS SCALE comes with a pre-built official catalog of iXsystems-approved Docker apps that includes Plex, [**MinIO™**]({{< relref "MinIOClustersSCALE.md" >}}), Nextcloud, [Chia]({{< relref "Chia.md" >}}), and IPFS.
 
 Users can also configure custom apps catalogs, although iXsystems does not directly support any non-official apps in a custom catalog.
 
@@ -59,3 +60,5 @@ Click **Save**.
 
 {{< taglist tag="scaleapps" limit="10" >}}
 {{< taglist tag="scalecatalog" limit="10" title="Related Catalog Articles" >}}
+
+{{< trademark-notice minio="true" >}}

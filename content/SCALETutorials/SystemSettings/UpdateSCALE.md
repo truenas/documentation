@@ -5,6 +5,7 @@ weight: 10
 alias:
 tags:
 - scaleupdate
+trademarkMinio: true
 ---
 
 {{< toc >}}
@@ -97,7 +98,7 @@ Create a new dataset on the same pool as the **ix-applications** dataset (the po
 
    * The **ix-applications** dataset to restore the migration JSON files to the earlier version.
    * A recursive replication of the **ix-applications** dataset to see the docker snapshot.
-   * Snapshots of any datasets that deployed apps use for storage, such as the MinIO app **data** dataset.
+   * Snapshots of any datasets that deployed apps use for storage, such as the **MinIO™** app **data** dataset.
 
    If a Bluefin app uses host path(s) to existing datasets, such as with the MinIO and the **/data** dataset, create and run remote replication tasks for these datasets.
    If you nested these datasets for apps under a parent dataset, set up a recursive remote replication of the parent dataset to create the snapshots of all the nested child datasets the apps use.
@@ -165,3 +166,5 @@ Wait for the apps to return to the **Active** state.
 {{< /expand >}}
 
 {{< taglist tag="scaleupdate" limit="10" >}}
+
+{{< trademark-notice minio="true" >}}
