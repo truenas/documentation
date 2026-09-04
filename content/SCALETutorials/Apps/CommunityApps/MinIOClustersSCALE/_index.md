@@ -7,8 +7,10 @@ aliases:
 tags:
 ---
 
-This section has tutorials for using the MinIO apps available for TrueNAS SCALE.
+This section has tutorials for using the **MinIO™** apps available for TrueNAS SCALE.
 
 ## Section Contents
 
 {{< children depth="2" description="true" >}}
+
+{{< trademark-notice minio="true" >}}
