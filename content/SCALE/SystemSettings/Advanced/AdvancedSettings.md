@@ -243,7 +243,7 @@ When STIG (and FIPS) are enabled, auditing includes these events:
 
 ### Configuring STIG and FIPS
 
-To set up FIPS or STIG compliance on a TrueNAS server, you must first configure a one-time password for the admin user with full permissions, and then enabke two-factor authentication for that admin user.
+To set up FIPS or STIG compliance on a TrueNAS server, you must first configure a one-time password for the admin user with full permissions, and then enable two-factor authentication for that admin user.
 When that user logs into TrueNAS the first time with the OTP, TrueNAS prompts that user to set up two-factor authenticatiuon.
 This is time sensitive and must occur with in 24 hours after saving the one-time password.
 
