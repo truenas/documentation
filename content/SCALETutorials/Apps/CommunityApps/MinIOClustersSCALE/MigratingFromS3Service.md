@@ -7,12 +7,13 @@ tags:
 - scaleminio
 - scales3service
 - enterprise
+trademarkMinio: true
 ---
 
 
 {{< toc >}}
 
-This tutorial provides instructions on migrating from the MinIO S3 Filesystem service deployed through the TrueNAS S3 service, deprecated in SCALE Bluefin and removed in Cobia, to the latest release of the MinIO Server application in Bluefin.
+This tutorial provides instructions on migrating from the **MinIO™** S3 Filesystem service deployed through the TrueNAS S3 service, deprecated in SCALE Bluefin and removed in Cobia, to the latest release of the MinIO Server application in Bluefin.
 
 MinIO has deprecated both the S3 Gateway and Filesystem services.
 MinIO no longer supports these offerings, do not provide a direct upgrade path for either, and require users to migrate from these S3 services to a later release of the MinIO Server.
@@ -204,3 +205,5 @@ This procedure uses the MinIO Client (MC), TrueNAS SCALE, and the MinIO web port
 
 {{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
 {{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
+
+{{< trademark-notice minio="true" >}}
