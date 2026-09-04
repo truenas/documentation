@@ -601,4 +601,5 @@ This has software component updates and new features that are in the polishing p
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10588" target="_blank">Click here to see the latest information on Jira</a> about public issues discovered in 24.10-BETA.1 that are being resolved in a future TrueNAS release.
 {{< /expand >}}
+
 {{< trademark-notice minio="true" >}}
