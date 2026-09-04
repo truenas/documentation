@@ -20,7 +20,7 @@ weight: 3
 
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or enabled to start on boot.
-  Users should move any production data away from the S3 service storage location before migrating to TrueNAS 24.04 or newer, which has MinIO applications available.
+  Users should move any production data away from the S3 service storage location before migrating to TrueNAS 24.04 or newer, which has **MinIO™** applications available.
   See also [Feature Deprecations]({{< ref "Deprecations" >}}).
 
 * SAS Multipath is supported *as-is* and receives no further maintenance updates.
@@ -127,7 +127,7 @@ The improvements include:
 Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and scheduled for removal in CORE 13.3.
 Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
 Users should plan to use a separately maintained MinIO app available from TrueNAS 22.12 or newer releases or otherwise move any production data away from the S3 service storage location.
-Enterprise customers can contact iX Support for assistance with moving away from S3 or Minio services in TrueNAS 13.0.
+Enterprise customers can contact iX Support for assistance with moving away from S3 or MinIO services in TrueNAS 13.0.
 
 ### TrueNAS 13.0-U6 Changelog
 
@@ -1375,3 +1375,5 @@ Please use CLI commands carefully and **always back up critical data** before at
 	root@examplemini[~]#
    ```
 {{< /expand >}}
+
+{{< trademark-notice minio="true" >}}
