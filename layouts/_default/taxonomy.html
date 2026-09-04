@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{ range .Paginator.Pages }}
-    <article class="gdoc-post" data-pagefind-ignore>
+    <article class="gdoc-post">
       <header class="gdoc-post__header">
         <h1 class="gdoc-post__title">
           <a href="{{ .RelPermalink }}">{{ partial "utils/title" . }}</a>
