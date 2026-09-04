@@ -80,7 +80,7 @@ If you must use a USB type device, verify you can access files on the device bef
    If there are issues after a clean install of SCALE from an <file>iso</file> file or you are not using DHCP for network and interface configuration, use the information from your CORE settings to configure your SCALE network settings and to reconfigure your static IPs or aliases.
       {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
-6. Migrate the deprecated S3 MinIO service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
+6. Migrate the deprecated S3 **MinIO™** service (if in use). See [services deprecated in SCALE](#migrating-from-deprecated-services).
    This is a lengthy process depending on the amount of data stored while using the S3 service.
    Read and follow instructions in [Migrating MinIO Data from CORE to SCALE](https://www.truenas.com/docs/solutions/miniocoretoscale/)!
 
@@ -93,3 +93,5 @@ If you must use a USB type device, verify you can access files on the device bef
 
 After completing the steps that apply to your CORE system listed above, download the [SCALE ISO file](https://www.truenas.com/download-tn-scale/) and save it to your computer.
 Burn the iso to a USB drive (see **Installing on Physical Hardware** in [Installing SCALE]({{< ref "InstallingSCALE.md#installing-on-physical-hardware" >}})) when upgrading a physical system.
+
+{{< trademark-notice minio="true" >}}
