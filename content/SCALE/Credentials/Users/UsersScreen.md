@@ -94,6 +94,8 @@ The **Password** widget for the **truenas_admin** and admin users not currently 
 
 **Copy to Clipboard** copies the key to the clipboard so you can paste it into a text file and save it for use later when TrueNAS prompts you to enter it.
 
+<!-- Note, Configuring STIG Or FIPS requires a one-time password to be configured for the user of these features. The OTP lasts 24hrs before it times out. Configure the OTP before setting up 2fa for that user! -->
+
 #### Access Widget
 
 The **Access** widget has three sections: last action, password status, and any roles, API keys, or access privileges granted to SSH and shell, and shows the Shell settings and access path.

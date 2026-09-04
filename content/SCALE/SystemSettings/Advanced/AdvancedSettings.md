@@ -66,9 +66,9 @@ The **Add Tunable** screen shows the settings.
 
 Select the tunable type from the **Type** dropdown list.
 There are three options:
- * **SYSCTL** - Linux kernel parameters (called sysctl variables) that tune low-level kernel behavior across networking, memory management, virtual memory, file descriptors, security hardening and more that affect the entire system. Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately. Best used for general system performance, network stack, memory pressure, security hardening (e.g., against SYN floods: `net.ipv4.tcp_syncookies=1`). Variables persist across system remboots if set in config files.Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) loader value in **Value**.
- * **UDEV** - UDEV rules, which are dynamic device manager configurations that run with when the kernel detects hardware events (e.g, disk plugged in, USB device attached, block device created). Variables are applied per device or per subsystem. They are ideal for hardware-specific tuning, especially disks/SSDs in ZFS pools e.g., forcing consistent I/O scheduler, readahead, or queue depth on pool drives to avoid defaults that hurt ZFS performance.They are permanent when the rule file exists, and rules re-apply automatically on device add/remove operations.
- * **ZFS** - OpenZFS module parameters for the ZFS kernel module on Linux. They control ZFS-specific behavior like ARC caching, compression, I/O scheduling, prefetching, recordsize limits and more. Use for fine-tuning ZFS performance, memory usage (AREC/L2ARC), compression, dedup, scrub/resilver behavior, and I/O patterns. They only apply to ZFS filesystem/modules. Runtime changes are lost on reboot or module reloads.
+ * **SYSCTL** - Linux kernel parameters (called sysctl variables) that tune low-level kernel behavior across networking, memory management, virtual memory, file descriptors, security hardening and more that affect the entire system. Sysctl tunables configure kernel module parameters while the system runs and generally take effect immediately. Best used for general system performance, network stack, memory pressure, security hardening (e.g., against SYN floods: `net.ipv4.tcp_syncookies=1`). Variables persist across system reboots if set in config files. Enter a [sysctl](https://man7.org/linux/man-pages/man8/sysctl.8.html) loader value in **Value**.
+ * **UDEV** - UDEV rules, which are dynamic device manager configurations that run with when the kernel detects hardware events (e.g, disk plugged in, USB device attached, block device created). Variables are applied per device or per subsystem. They are ideal for hardware-specific tuning, especially disks/SSDs in ZFS pools e.g., forcing a consistent I/O scheduler, readahead, or queue depth on pool drives to avoid defaults that hurt ZFS performance. They are permanent when the rule file exists, and rules re-apply automatically on device add/remove operations.
+ * **ZFS** - OpenZFS module parameters for the ZFS kernel module on Linux. They control ZFS-specific behavior like ARC caching, compression, I/O scheduling, prefetching, recordsize limits, and more. Use for fine-tuning ZFS performance, memory usage (AREC/L2ARC), compression, dedup, scrub/resilver behavior, and I/O patterns. They only apply to ZFS filesystem/modules. Runtime changes are lost on reboot or module reloads.
 
 Enter the variable name in **Variable**, the value for the variable in **Value**, and a short description in **Description**. See examples below for each tunable type.<br>
 
@@ -97,6 +97,9 @@ The **NTP Servers** card allows users to add Network Time Protocol (NTP) servers
 These sync the local system time with an accurate external reference.
 By default, new installations use several existing NTP servers. TrueNAS supports adding custom NTP servers.
 
+Use **Force** when entering and NTP server address that cannot currently be reached (e.g., pre-configuring a server that is not provisioned yet, or one that is temporarily unreachable but expected to work later). **Force** should activate the **Save** button and allow the entry.
+If the **Save** button does not activate, clear the entry, enable **Force** and renter the NTP server address.
+
 ## Managing the System Dataset
 
 **Storage** card shows the pool configured as the system dataset pool and allows users to select a different storage pool to hold the system dataset.
@@ -121,8 +124,8 @@ If the encrypted pool already has a passphrase set, you cannot move the system d
 
 #### Changing Resilvering Priority
 
-To set a different resiliver priority, select **Run Resilvering At Higher Priority At Certain Times**.
-Two additional setting options show that allow you to configure the day and time range for resilvering to run.
+To set a different resilver priority, select **Run Resilvering At Higher Priority At Certain Times**.
+Two additional setting options are shown that allow configuring the day and time range for resilvering to run.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemStorageConfigScreenResilverSettings.png" alt="Resilver Priority Settings" id="Resilver Priority Settings" >}}
 
@@ -142,7 +145,7 @@ Enter a number for the maximum number of simultaneous replication tasks you want
 
 ## Managing Allowed IP Addresses
 
-Use the **System > Advanced Settings** screen **Allowed IP Addresses** configuration screen to restrict access to the TrueNAS web UI and API.
+Use the **System > Advanced Settings > Allowed IP Addresses** configuration screen to restrict access to the TrueNAS web UI and API.
 
 Entering an IP address limits access to the system to only the address(es) entered here. To allow unrestricted access to all IP addresses, leave this list empty.
 
@@ -190,13 +193,11 @@ See [NVIDIA Drivers Card]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSet
 {{< enterprise >}}
 Only Enterprise-licensed systems show the **Security** card and have access to the STIG and FIPS settings.
 
-Administrators considering enabling STIG and FIPS security settings should contact TrueNAS Support before making any changes.
+Administrators considering enabling STIG and FIPS security settings should contact TrueNAS Support before making any changes!
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
-
-{{< /enterprise >}}
 
 ### STIG and FIPS Considerations
 
@@ -238,9 +239,20 @@ When STIG (and FIPS) are enabled, auditing includes these events:
 * Security object modifications and attempts to modify security objects
 {{< /expand >}}
 
+<!-- commenting out configuring STIG and FIPS due to an issue experienced by Enterprise customer that is under current investigation 
+
 ### Configuring STIG and FIPS
 
-To set up FIPS or STIG compliance on a TrueNAS server, you must first configure two-factor authentication for an admin user with full permissions.
+To set up FIPS or STIG compliance on a TrueNAS server, you must first configure a one-time password for the admin user with full permissions, and then enable two-factor authentication for that admin user.
+When that user logs into TrueNAS the first time with the OTP, TrueNAS prompts that user to set up two-factor authentication.
+This is time sensitive and must occur with in 24 hours after saving the one-time password.
+
+After administrator sets up 2FA they are assigned a 2FA authentication.
+Also configure any additional current admin users for 2FA before configuring STIG
+
+The administrator with 2FA must generate a one-time password (OTP) for any other new or existing admin user that is not yet configured with 2FA and send them the password.
+They have 24 hours to login, using the OTP, and then TrueNaS configures two-factor authentication (2FA) for them at login.
+These users are prompted to configure two-factor authentication the first time they log in after having the one-time password configured.
 
 After configuring two-factor authentication, go to **System > Advanced Settings** and locate the **Security** card.
 
@@ -255,11 +267,11 @@ The system prompts you to restart.
 ![SecurityFIPSSTIGRestartDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRestartDialog.png "Restart Require Dialog")
 
 The system restart takes several minutes to complete before showing the login screen.
-Highly Available (HA) systems must restart each storage controller before STIG mode is fully enabled.
+Highly Available (HA) systems must restart each storage controller before STIG mode is fully enabled. -->
 
 ### TrueNAS Administrator Password Rules
 
-The remaining options are for setting TrueNAS administrator password rules.
+The remaining options on the **System Security** configuration screen are for setting TrueNAS administrator password rules.
 Options include defining a password lifetime, types of characters that must be present in the password, how many characters must be present in a valid password, and how many previously used passwords to remember for an account and prevent reuse in a new password.
 
 Adjust these as needed for your security requirements.
@@ -267,6 +279,7 @@ Enabling STIG compatibility mode requires specific minimum values for these sett
 
 Note that TrueNAS begins warning all local account types (administrator, full admin, read-only, and sharing-only) seven days before password expiration. After expiration, the account locks and requires administrative action to unlock.
 
+{{< /enterprise >}}
 <div class="noprint">
 
 ## Additional Content
