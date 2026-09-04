@@ -29,15 +29,15 @@ To prevent any loss of service, customers with Silver or Gold level support cont
 * OpenVPN Client has no equivalent application
 * Rsyncd Server replaced by **rsyncd]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
 <--->
-* S3 replaced by **[minio]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
+* S3 replaced by **[MinIO™]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
 * WebDAV replaced by **[webdav]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
 * TFTP replaced by **[tftpd-hpa]({{< relref "/SCALETutorials/Apps/_index.md" >}})**
 
 {{< /columns >}}
 {{< hint type="info" title="S3 Service Replacement" >}}
 Due to the [MinIO filesystem mode deprecation](https://min.io/docs/minio/container/operations/install-deploy-manage/migrate-fs-gateway.html) and update methodology, older versions of MinIO are not updatable to newer versions and require additional update steps.
-This impacts moving from the built-in **S3** service to the **Minio** application.
-See [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/) in the TrueNAS SCALE 22.12 (Bluefin) documentation for a detailed, TrueNAS-specific, tutorial for moving configuration and storage data from the built-in **S3** service to the latest **Minio** version, available from the Community App Catalog.
+This impacts moving from the built-in **S3** service to the **MinIO** application.
+See [Migrating from MinIO S3](https://www.truenas.com/docs/scale/22.12/scaletutorials/apps/communityapps/minioclustersscale/migratingfroms3service/) in the TrueNAS SCALE 22.12 (Bluefin) documentation for a detailed, TrueNAS-specific, tutorial for moving configuration and storage data from the built-in **S3** service to the latest **MinIO** version, available from the Community App Catalog.
 {{< /hint >}}
 
 ## Obtaining a Release
@@ -408,3 +408,5 @@ Open the changelog in Jira to see the <span class="iconify" data-icon="mdi:expor
 
 <a href="https://ixsystems.atlassian.net/issues/?filter=10361&atlOrigin=eyJpIjoiN2ExNTQ5YmE0NmNkNGQyN2FiMTJmYmJlOWIwZWI0ZjIiLCJwIjoiaiJ9" target="_blank">Click here to see the latest information</a> about issues discovered in 23.10-BETA.1 that are being resolved in a future TrueNAS SCALE release.
 {{< /expand >}}
+
+{{< trademark-notice minio="true" >}}

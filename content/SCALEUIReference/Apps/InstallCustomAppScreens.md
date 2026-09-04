@@ -77,7 +77,7 @@ Check the documentation for the application you want to install for entry point 
 | Setting | Description |
 |---------|-------------|
 | **Container CMD**| Click **Add** to display a **Command** field. |
-| **Command** | Enter a container command. For example, if adding MinIO, enter *SERVER*. |
+| **Command** | Enter a container command. For example, if adding **MinIO™**, enter *SERVER*. |
 | **Container Args** | Click **Add** to display an argument entry **Arg** field. Click again to add another argument. |
 | **Argument** | Enter an argument. For example, if adding MinIO, enter the IP and port string such as *http://0.0.0.0/9000/data*.|
 {{< /truetable >}}
@@ -298,3 +298,5 @@ Select **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)** to disp
 {{< /expand >}}
 
 {{< taglist tag="scaledocker" limit="10" title="Related Custom App Articles" >}}
+
+{{< trademark-notice minio="true" >}}
