@@ -1,0 +1,9 @@
+{{ $minio := .minio | default false }}
+{{ $aistor := .aistor | default false }}
+{{ if and $minio $aistor }}
+<p class="trademark-notice"><small><em>MinIO and AIStor are trademarks of the MinIO Corporation.</em></small></p>
+{{ else if $minio }}
+<p class="trademark-notice"><small><em>MinIO is a trademark of the MinIO Corporation.</em></small></p>
+{{ else if $aistor }}
+<p class="trademark-notice"><small><em>AIStor is a trademark of the MinIO Corporation.</em></small></p>
+{{ end }}
