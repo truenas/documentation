@@ -19,7 +19,7 @@ Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the de
 Beginning in CORE 13.0-U6, Enterprise customers with the S3 service running or enabled are prevented from upgrading to 13.3.
 {{< /enterprise >}}
 
-Users should plan to migrate to a separately maintained MinIO application in TrueNAS 22.12 or newer or otherwise move any production data away from the S3 service storage location.
+Users should plan to migrate to a separately maintained **MinIO™** application in TrueNAS 22.12 or newer or otherwise move any production data away from the S3 service storage location.
 Migrating from the built-in S3 service to the separately maintained application could result in an extended data migration window and potential disruption to S3 data access.
 
 ## SAS Multipath
@@ -38,3 +38,5 @@ Users should avoid creating and managing SAS multipath scenarios with TrueNAS.
 
 The web UI **Shell** is removed in CORE 13.3.
 Users can continue to access the shell using [SSH]({{< ref "ConfiguringSSH" >}}) or a physical system connection with serial cable or other direct method.
+
+{{< trademark-notice minio="true" >}}
