@@ -8,6 +8,7 @@ tags:
 - scaleminio
 - tcclustering
 - scaleconfig
+trademarkMinio: true
 ---
 
 {{< toc >}}
@@ -22,8 +23,10 @@ Clustering is considered experimental and should not be used in a production env
 
 TrueNAS SCALE provides a few options for setting up system clustering:
 
-* [MinIO-created distributed clustering of TrueNAS SCALE systems]({{< relref "MinIOClustering.md" >}}).
+* [**MinIO™**-created distributed clustering of TrueNAS SCALE systems]({{< relref "MinIOClustering.md" >}}).
 
 * [Clustering and sharing SCALE volumes with TrueCommand](https://www.truenas.com/docs/solutions/integrations/smbclustering/).
 
 {{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}
+
+{{< trademark-notice minio="true" >}}
