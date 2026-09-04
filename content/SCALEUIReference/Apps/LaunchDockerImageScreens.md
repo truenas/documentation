@@ -6,6 +6,7 @@ aliases:
 tags:
  - scaledocker
  - scaleapps
+trademarkMinio: true
 ---
 
 {{< toc >}}
@@ -58,7 +59,7 @@ Check the documentation for the application you want to install using a Docker I
 | Setting | Description |
 |---------|-------------|
 | **Configure Container CMD**| Click **Add** to display a **Command** field. |
-| **Command** | Enter container command. For example, if adding MinIO, enter *SERVER*. |
+| **Command** | Enter container command. For example, if adding **MinIO™**, enter *SERVER*. |
 | **Configure Container Args** | Click **Add** to display an argument entry **Arg** field. Click again to add more arguments. |
 | **Argument** | Enter an argument. For example, if adding MinIO, enter the IP and port string such as *http://0.0.0.0/9000/data*.|
 {{< /truetable >}}
@@ -220,3 +221,5 @@ The **Resource Limits** setting specifies the limits you want to place on the Ku
 The **Portal Configuration** setting specifies whether to **Enable WebUI Portal (only supported in TrueNAS SCALE Bluefin)**.
 
 {{< taglist tag="scaledocker" limit="10" >}}
+
+{{< trademark-notice minio="true" >}}
