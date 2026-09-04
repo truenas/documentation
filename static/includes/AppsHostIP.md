@@ -147,7 +147,7 @@ All applications added after this date also support this feature.
 * Minecraft  
 * Minecraft Bedrock  
 * MineOS  
-* Minio  
+* **MinIO™**  
 * Mumble  
 * N8N  
 * Navidrome  
