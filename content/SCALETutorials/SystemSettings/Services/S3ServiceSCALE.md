@@ -6,6 +6,7 @@ alias:
 tags:
 - scales3
 - scaleminio
+trademarkMinio: true
 ---
 
 
@@ -13,7 +14,7 @@ tags:
 
 {{< include file="/static/includes/SCALEServiceDeprecationNotice.md" >}}
 
-Follow the migration and installation instructions in [Migrating from S3 Service]({{< relref "MigratingFromS3Service.md" >}}) and [Configuring MinIO Enterprise]({{< relref "ConfigMinioEnterprise.md" >}}) to move from the deprecated S3 service.
+Follow the migration and installation instructions in [Migrating from S3 Service]({{< relref "MigratingFromS3Service.md" >}}) and [Configuring **MinIO™** Enterprise]({{< relref "ConfigMinioEnterprise.md" >}}) to move from the deprecated S3 service.
 
 S3 allows you to connect to TrueNAS from a networked client system with the MinIO browser, s3cmd, or S3 browser.
 
@@ -105,3 +106,5 @@ It is possible to access, create new buckets, or upload files to created buckets
 
 
 {{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
+
+{{< trademark-notice minio="true" >}}
