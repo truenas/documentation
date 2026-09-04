@@ -307,3 +307,4 @@ You can enter a new setting in fields that include a preprogrammed default.
 {{< children depth="2" description="true" >}}
 
 </div>
+{{< trademark-notice minio="true" >}}
