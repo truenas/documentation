@@ -27,7 +27,7 @@ aliases:
 
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
-  Users should move any production data away from the S3 service storage location before migrating to TrueNAS 24.04 or newer, which have MinIO applications available.
+  Users should move any production data away from the S3 service storage location before migrating to TrueNAS 24.04 or newer, which have **MinIO™** applications available.
   See also [Feature Deprecations]({{< ref "Deprecations" >}}).
 
 * The web UI **Shell** is removed in CORE 13.3. Users can continue to access the shell using [SSH]({{< ref "ConfiguringSSH" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
@@ -189,7 +189,7 @@ Notable changes:
 
 * Due to security vulnerabilities and maintainability issues, the S3 service is deprecated in TrueNAS CORE 13.0 and removed in CORE 13.3 ([NAS-127694](https://ixsystems.atlassian.net/browse/NAS-127694)).
   Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the deprecated service is either actively running or is enabled to start on boot.
-  Users should move any production data away from the S3 service storage location and consider migrating to TrueNAS 24.04 or newer releases that have Minio Applications available.
+  Users should move any production data away from the S3 service storage location and consider migrating to TrueNAS 24.04 or newer releases that have MinIO Applications available.
   See also [Feature Deprecations]({{< ref "Deprecations" >}}).
 
 * The web UI **Shell** is removed in CORE 13.3. Users can continue to access the shell using [SSH]({{< ref "ConfiguringSSH" >}}) or a physical system connection with serial cable or other direct method ([NAS-124392](https://ixsystems.atlassian.net/browse/NAS-124392)).
@@ -220,3 +220,5 @@ TrueNAS Enterprise HA customers should not upgrade to 13.3-BETA1 at this time.
 <a href="https://ixsystems.atlassian.net/issues/?filter=10549" target="_blank">Click here to see the latest information</a> about public issues discovered in 13.3-BETA1 that are being resolved in a future TrueNAS CORE release.
 
 {{< /expand >}}
+
+{{< trademark-notice minio="true" >}}
