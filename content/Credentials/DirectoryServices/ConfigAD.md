@@ -20,6 +20,7 @@ doctype: tutorial
 {{< include file="/static/includes/DirectoryServiceConflictAdmonition.md" >}}
 
 ## Configuring TrueNAS Active Directory Access
+
 The Active Directory (AD) service shares resources in a Windows network.
 AD provides authentication and authorization services for the users in a network, eliminating the need to recreate the user accounts on TrueNAS.
 
@@ -31,6 +32,7 @@ Joining an AD domain also configures the Privileged Access Manager (PAM) to let 
 Users can configure AD services on Windows or Unix-like operating systems using [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
 
 ### Preparing to Configure AD in TrueNAS
+
 Before configuring Active Directory (AD) in TrueNAS:
 
 You need to know the hostname assigned to the TrueNAS system. The default value is **truenas**.
@@ -54,6 +56,7 @@ After taking these actions, you can [connect to the Active Directory domain](#co
 {{< include file="/static/includes/NetBIOSValidationWarning.md" >}}
 
 ### Setting Time Synchronization
+
 Active Directory relies on the time-sensitive [Kerberos](https://tools.ietf.org/html/rfc1510) protocol.
 TrueNAS adds the AD domain controller with the [PDC Emulator FSMO Role](https://support.microsoft.com/en-us/help/197132/active-directory-fsmo-roles-in-windows) as the preferred NTP server during the domain join process.
 If your environment requires something different, go to **System > Advanced Settings**, click **Add** to open the **NTP Servers** screen, then add a new or edit a listed server.
@@ -198,6 +201,7 @@ If the cache becomes out of sync or fewer users than expected are available in t
 The name in **TrueNAS Hostname** should match the name in **Hostname** on the **Network > Global Configuration** screen.
 
 ## Disabling Active Directory
+
 To disable your AD server connection without deleting your configuration or leaving the AD domain, click **Settings** in the **Active Directory** widget to open the **Active Directory** settings screen.
 Clear the **Enable Service** checkbox and click **Save** to disable the AD service.
 
@@ -207,8 +211,13 @@ Click **Configure Directory Services** to open the **Directory Services Configur
 Select **Enable Service** again, and click **Save** to reactivate your connection to your AD server.
 
 ## Leaving Active Directory
+
 Users must cleanly leave an Active Directory for TrueNAS to delete the configuration.
 To cleanly leave AD, click **Leave Domain** on the **Active Directory** settings screen to remove the AD object.
 Remove the computer account and associated DNS records from the Active Directory.
 
 If the AD server moves or shuts down without you using **Leave Domain**, TrueNAS does not remove the AD object, and you have to clean up the Active Directory.
+
+### Rolling Back to Earlier Boot Environments with AD Joined
+
+{{< include file="/static/includes/ADandBERollBacks.md" >}}
