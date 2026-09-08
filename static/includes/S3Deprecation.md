@@ -7,7 +7,7 @@ Beginning in CORE 13.0-U6, the CORE web interface generates an alert when the de
 {{< enterprise >}}
 Beginning in CORE 13.0-U6, Enterprise customers with the S3 service running or enabled are prevented from upgrading to the next major version.
 
-Please contact iX Support to review options for migrating to a TrueNAS release that has Minio applications available.
+Please contact iX Support to review options for migrating to a TrueNAS release that has **MinIO™** applications available.
 
 {{< expand "Contacting Support" "v" >}}
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
