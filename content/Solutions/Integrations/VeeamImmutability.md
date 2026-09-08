@@ -27,7 +27,7 @@ For more detailed information on Veeam Immutability, see [How Immutability Works
 ## What is Required to Configure Veeam Immutability?
 
 * Obtain and apply the TrueNAS Enterprise license for VMs and Applications to your TrueNAS Enterprise system.
-* Deploy the MinIO Enterprise app.
+* Deploy the **MinIO™** Enterprise app.
   You can deploy the MinIO Enterprise app as S3 object storage or configure a cluster to use for S3 object storage.
   To deploy a cluster follow the instructions in the [MinIO MNMD tutorial](https://apps.truenas.com/resources/minio-enterprise-mnmd/).
   A cluster consists of four systems (nodes), each with four datasets (representing drives in the cluster configuration).
@@ -77,3 +77,5 @@ Enter the NFS service settings if desired and enter the ports Veeam should suer 
 Veeam automatically installs additional components if needed. Click **Next**, review the configuration, and then click **Finish**.
 
 Create a new backup job in Veeam if desired. See [Creating Immutable Configuration Backups](https://helpcenter.veeam.com/docs/backup/vsphere/config_backup_immutable.html) for more information.
+
+{{< trademark-notice minio="true" >}}
