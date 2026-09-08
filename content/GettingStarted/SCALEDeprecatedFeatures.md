@@ -6,3 +6,5 @@ aliases: /scale/scaletutorials/systemsettings/services/lldpservicesscale/
 ---
 
 {{< include file="/static/includes/BluefinDeprecated.md" >}}
+
+{{< trademark-notice minio="true" >}}

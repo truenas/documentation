@@ -188,7 +188,7 @@ iXsystems is pleased to release TrueNAS SCALE 22.12.3!
 
 22.12.3 includes many new features and improved functionality that span new applications for deprecated services, change to SMB service, additional tools for troubleshooting, and web UI improvements. Changes include:
 
-* New applications for deprecated SCALE services Dynamic DNS, TFTP, OpenVPN, WebDAV, rsync daemon, and S3 MinIO.
+* New applications for deprecated SCALE services Dynamic DNS, TFTP, OpenVPN, WebDAV, rsync daemon, and S3 **MinIO™**.
 * Multichannel capabilities added to the SMB configuration form
 * Updates to the Dashboard R50 image
 * Updates to the latest Linux v5.15 kernel branch
@@ -1083,7 +1083,7 @@ SCALE 22.12-RC.1 introduces a change in Applications. Users upgrading to 22.12-R
 
 MinIO has removed backwards compatibility with version 2022-10-24_1.6.58.
 
-MinIO fails to deploy if you update your version 2022-10-24_1.6.58 Minio app to 2022-10-29_1.6.59 or later using the TrueNAS web UI. Use the app roll back function and return to 2022-10-24_1.6.58 to make your MinIO app functional again.
+MinIO fails to deploy if you update your version 2022-10-24_1.6.58 MinIO app to 2022-10-29_1.6.59 or later using the TrueNAS web UI. Use the app roll back function and return to 2022-10-24_1.6.58 to make your MinIO app functional again.
 See the [MinIO Migration documentation](https://min.io/docs/minio/kubernetes/upstream/operations/install-deploy-manage/migrate-fs-gateway.html#procedure) to manually update your MinIO app to the latest version without losing functionality.
 {{< /expand >}}
 
@@ -1919,3 +1919,5 @@ Online updates are created every 2 hours and are available in the SCALE UI onlin
 
 * [ISO Installation Files](https://download.truenas.com/truenas-scale-bluefin-nightly/ "SCALE Angelfish Nightly .iso files")
 * [Manual Update File](https://update.freenas.org/scale/TrueNAS-SCALE-Bluefin-Nightlies/TrueNAS-SCALE-Bluefin-Nightly.update)
+
+{{< trademark-notice minio="true" >}}

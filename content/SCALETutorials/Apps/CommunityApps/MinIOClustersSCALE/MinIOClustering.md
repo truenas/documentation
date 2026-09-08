@@ -7,13 +7,14 @@ tags:
 - scaleminio
 - scaleapps
 - scaleclustering
+trademarkMinio: true
 ---
 
 {{< toc >}}
 
 
 {{< hint info >}}
-This article applies to the public release of the **MinIO Official Charts** application.
+This article applies to the public release of the **MinIO™ Official Charts** application.
 {{< /hint >}}
 
 On TrueNAS SCALE 20.12-ALPHA and later, users can create a MinIO S3 distributed instance to scale out and handle individual node failures. A node is a single TrueNAS storage system in a cluster.
@@ -89,7 +90,7 @@ Use the /data path that the following steps set up.
 
 Enter the MinIO S3 root user in **Root User** and the S3 password in **Root Password**. 
 
-Next, create the **Minio Environment Variables**. Click **Add** twice to enter two blocks of settings. 
+Next, create the **MinIO Environment Variables**. Click **Add** twice to enter two blocks of settings. 
 
 ![AppsMinIOEnvironmentVariables](/images/SCALE/22.12/AppsMinIOEnvironmentVariables.png "MinIO Environment Variables")
 
@@ -143,3 +144,5 @@ Log in with the **ROOT_USER** and **ROOT_PASSWORD** keys you created as Containe
 
 {{< taglist tag="scaleminio" limit="10" >}}
 {{< taglist tag="scaleclustering" limit="10" title="Related Clustering Articles" >}}
+
+{{< trademark-notice minio="true" >}}

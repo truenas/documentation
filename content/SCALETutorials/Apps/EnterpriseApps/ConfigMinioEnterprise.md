@@ -6,13 +6,14 @@ aliases:
 tags:
 - scaleminio
 - scaleenterprise
+trademarkMinio: true
 ---
 
 
 {{< toc >}}
 
 {{< enterprise >}}
-The instructions in this article apply to the Official TrueNAS Enterprise MinIO application. 
+The instructions in this article apply to the Official TrueNAS Enterprise **MinIO™** application. 
 This smaller version of MinIO has been tested and polished for a safe and supportable experience for TrueNAS Enterprise customers. 
 To use the complete MinIO app without iXsystems support, see the application that is available in the Community Apps catalog.
 
@@ -102,3 +103,5 @@ Follow the instructions in [Installing MinIO Enterprise](#installing-minio-enter
 
 {{< taglist tag="scaleminio" limit="10" title="Related MinIO Articles" >}}
 {{< taglist tag="scaleenterprise" limit="10" title="Related Enterprise Articles" >}}
+
+{{< trademark-notice minio="true" >}}
