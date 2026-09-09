@@ -28,3 +28,5 @@ Many of the TrueNAS tutorials in this section cover configuring the TrueNAS side
 {{< children description="true" depth="2" >}}
 
 </div>
+
+{{< trademark-notice minio="true" >}}

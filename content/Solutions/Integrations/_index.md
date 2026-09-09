@@ -18,3 +18,5 @@ Integrations discusses how TrueNAS can work with different third-party applicati
 {{< children description="true" depth="2" >}}
 
 </div>
+
+{{< trademark-notice minio="true" >}}

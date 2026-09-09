@@ -3,6 +3,7 @@ pipeline {
 
   options {
     disableConcurrentBuilds()                 // no same-branch races (spec 3.5)
+    skipDefaultCheckout()                     // we do our own checkout below (DOCS-2704)
     buildDiscarder(logRotator(numToKeepStr: '15'))
     timestamps()
   }
@@ -12,6 +13,36 @@ pipeline {
   }
 
   stages {
+    stage('Checkout') {
+      // Serializes the SCM checkout across concurrently-triggered branch builds on the shared
+      // agent. Root-caused (DOCS-2704, 2026-09-02): simultaneous git fetches from multiple
+      // branches intermittently fail DNS resolution for github.com on this node; every serial
+      // retry succeeded. Retry only on that specific signature — a real failure (bad ref, auth,
+      // corrupted branch state) still fails fast instead of being masked by blind retries.
+      options {
+        lock('docs-checkout')
+        timeout(time: 5, unit: 'MINUTES')
+      }
+      steps {
+        script {
+          def maxAttempts = 3
+          for (int i = 1; i <= maxAttempts; i++) {
+            try {
+              checkout scm
+              break
+            } catch (e) {
+              def isDnsFlake = e.toString().contains('Could not resolve host')
+              if (!isDnsFlake || i == maxAttempts) {
+                throw e
+              }
+              echo "Checkout failed (attempt ${i}/${maxAttempts}), likely transient DNS — retrying in 10s: ${e.message}"
+              sleep(time: 10, unit: 'SECONDS')
+            }
+          }
+        }
+      }
+    }
+
     stage('Load config') {
       steps {
         script {

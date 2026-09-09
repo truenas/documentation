@@ -108,7 +108,7 @@ Please contact Support for assistance!
    If there are issues after a clean install from an <file>iso</file> file, or if you are not using DHCP for network and interface configuration, use the recorded information from your previous settings to configure your network settings and reconfigure your static IPs or aliases after migrating.
       {{< include file="/static/includes/NetworkInstallRequirementsSCALE.md" >}}
 
-7. Offline the deprecated S3 MinIO service (if in use).
+7. Offline the deprecated S3 **MinIO™** service (if in use).
    This might require a manual data backup and restore strategy.
    Enterprise customers can contact iX Support to discuss migration and backup strategies.
 
@@ -196,3 +196,5 @@ Note the UID and GID for this new user to enter in the application configuration
 
 After disabling the WebDAV service and clearing any existing share configurations from the **Shares > WebDAV** screen in Bluefin, install the **WebDAV** application to recreate your shares using the service settings from your notes. Use the **webdav** user and group in control, and the UID and GID (**666**) in the application.
 {{< /expand >}}
+
+{{< trademark-notice minio="true" >}}
