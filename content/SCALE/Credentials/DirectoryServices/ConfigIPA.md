@@ -52,23 +52,23 @@ Configure TrueNAS to use an IPA directory server:
 
    {{< trueimage src="/images/SCALE/Credentials/DirectoryServicesCredentialConfig.png" alt="Credential Configuration" id="Credential Configuration" >}}
 
-   * Select **Kerberos User** from the **Credential Type** dropdown list. Required.
+   * Select required **Kerberos User** from the **Credential Type** dropdown list.
 
-   * Enter the IPA user account username in **Username**. Required.
+   * Enter the required IPA user account username in **Username**.
 
-   * Enter the password for the user account in **Password**. Required.
+   * Enter the required password for the user account in **Password**.
 
 5. Enter the **IPA Configuration** settings:
 
    {{< trueimage src="/images/SCALE/Credentials/IPAConfigurationSettings.png" alt="IPA Configuration" id="IPA Configuration" >}}
 
-   * Enter the IPA server hostname or IP address in **Target Server**. Required.
+   * Enter the required IPA server hostname or IP address in **Target Server**.
 
-   * Enter the hostname for your TrueNAS system in **TrueNAS Hostname**. Required.
+   * Enter the required hostname for your TrueNAS system in **TrueNAS Hostname**.
 
-   * Enter the domain name in **Domain**. Required.
+   * Enter the required domain name in **Domain**.
 
-   * Enter the base distinguished name for the IPA directory in **Base DN**. Required. For example, *dc=example,dc=com*.
+   * Enter the required base distinguished name for the IPA directory in **Base DN**. For example, *dc=example,dc=com*.
 
    * (Optional) Select the **Validate Certificates** checkbox to verify certificate authenticity when connecting to the IPA server. TrueNAS validates the full certificate chain when this option is selected.
 
