@@ -136,6 +136,26 @@ To use two-factor authentication with an administrator account, configure and en
 If you have the root user configured with a password and it is enabled, you can SSH into the system as the root user.
 Disable the root user password and only use a local administrator account for more security.
 
+## Allowing Directory Service Users WebUI Access
+
+{{< enterprise >}}
+Enterprise-licensed systems include the **Allow Directory Service users to access WebUI** option on the **System > Advanced Settings > Access Settings** configuration screen.
+
+To configure this access, first add the selected AD users to a group that is granted a TrueNAS privilege that permits it, then enable the **Allow Directory Service users to access WebUI** option on the **Access Settings** screen. This option only shows on Enterprise-licensed systems.
+
+{{< trueimage src="/images/SCALE/SystemSettings/AccessSettingsScreenEnterprise.png" alt="Access Settings Screen Enterprise Systems" id="Access Settings Screen Enterprise Systens" >}}
+
+After TrueNAS joins AD, it automatically creates a new privilege entry in the **Privileges** screen table, and this privilege is automatically populated with the domain admins group for the domain.
+For example, if the domain is *ad03.mydomain.net*, then you should see a group of that name listed as well as any of the groups AD creates on the system.
+You can edit this privilege by selecting the table row and clicking **Edit**.
+Never modify the settings for the standard pre-defined privileges (listed below)! Changing these pre-defined roles can result in lost access to the UI!
+
+Pre-defined TrueNAS privileges are:
+* **Read-Only Administrator** - Allows the user to view settings but not make changes in the UI.
+* **Sharing Administrator** - Allows the user to create new shares and the share dataset.
+* **Local Administrator** - Gives full control (read/write/exeute permissions) to the user.
+{{< /enterprise >}}
+
 ## Administrator Logins and TrueCommand
 
 Administrator logins work with TrueCommand, but you need to set up the TrueNAS connection using an [API key]({{< ref "ManagingAPIKeys" >}}).

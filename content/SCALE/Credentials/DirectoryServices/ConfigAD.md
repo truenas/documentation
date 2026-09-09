@@ -31,6 +31,11 @@ Joining an AD domain also configures the Privileged Access Manager (PAM) to let 
 
 Users can configure AD services on Windows or Unix-like operating systems using [Samba version 4](https://wiki.samba.org/index.php/Setting_up_Samba_as_an_Active_Directory_Domain_Controller#Provisioning_a_Samba_Active_Directory).
 
+{{< hint type=tip title="Allowing Directory Service Users WebUI Access" >}}
+
+Enterprise-licensed systems include the **Allow Directory Service users to access WebUI** option on the **System > Advanced Settings > Access Settings** configuration screen. For more information on how to configure this, see [Allowing Directory Service Users WebUI Access]({{< ref "AdminRoles" >}})
+{{< /hint >}}
+
 ### Preparing to Configure AD in TrueNAS
 Before configuring Active Directory (AD) in TrueNAS:
 
