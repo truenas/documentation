@@ -116,6 +116,13 @@ The **System Boot** screen status changes to **Reboot** and the current **Active
 Activating and booting into an older environment restores only that environment state. Any changes made there do not carry forward into newer environments.
 {{< /hint >}}
 
+### Rolling Back a Boot Environment
+
+{{< include file="/static/includes/ADandBERollBacks.md" >}}
+
+To roll back to a previous Debian-Linux based boot environment, click the **Activate** icon for the environment you want to roll back to, then restart the system.
+See [Migrating CORE to SCALE]({{< ref "MigratingFromCore" >}}) for information on rolling back or reverting to FreeBSD-based releases.
+
 ### Cloning a Boot Environment
 
 Cloning copies the selected boot environment into a new inactive boot environment that preserves the **boot-pool** state at the clone-creation time.
