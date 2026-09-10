@@ -72,7 +72,9 @@ Please contact Support for assistance!
 
    <input type="checkbox"> Credentials - Copy or write down the credentials for SSH connections and keypairs, and any configured cloud service backup providers if you do not have the credential settings saved in other files kept secured outside of TrueNAS.
 
-   <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
+   <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, rsync tasks, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
+
+   <input type="checkbox"> SNMP v3 service settings - Write down or take a screenshot of the SNMP service V3 settings to use after migrating.
    
    TrueNAS uses SSH connections in data protection tasks, so data protection tasks (especially replication tasks) might require reconfiguration in some cases.
    After migrating to 25.10, SSH connections have failed with an authentication error in some cases.
