@@ -74,6 +74,8 @@ Please contact Support for assistance!
    <input type="checkbox"> Credentials - Copy or write down the credentials for SSH connections and keypairs, and any configured cloud service backup providers if you do not have the credential settings saved in other files kept secured outside of TrueNAS.
 
    <input type="checkbox"> Data protection tasks - Write down or take screenshots of replication, rsync tasks, periodic snapshots, cloud sync, or other task settings to reconfigure these after migrating.
+
+   <input type="checkbox"> SNMP v3 service settings - Write down or take a screenshot of the SNMP service V3 settings to use after migrating.
    
    TrueNAS uses SSH connections in data protection tasks, so data protection tasks (especially replication tasks) might require reconfiguration in some cases.
    After migrating to 25.10, SSH connections have failed with an authentication error in some cases.
@@ -114,7 +116,10 @@ Please contact Support for assistance!
 
 8. Back up any critical data.
 
-9. Download your [system configuration file](https://www.truenas.com/docs/core/coretutorials/systemconfiguration/usingconfigurationbackups/) and a [debug file](https://www.truenas.com/docs/core/uireference/system/advanced/).
+9. Verify AD is in a healthy state, if TrueNAS is joined to AD. Migrating with AD healthy and joined should not result in desynchronization issues.
+   The stored secret should move forward to the upgraded release without issues.
+
+10. Download your [system configuration file](https://www.truenas.com/docs/core/coretutorials/systemconfiguration/usingconfigurationbackups/) and a [debug file](https://www.truenas.com/docs/core/uireference/system/advanced/).
    After updating to the latest publicly available release of TrueNAS 13.0 (or 13.3 for community users) and making any changes to user accounts or any other settings, download these files and keep them in a safe place and where you can access them if you need to revert with a clean install using the TrueNAS 13.0 or 13.3 <file>iso</file> file.
 
 {{< enterprise >}}

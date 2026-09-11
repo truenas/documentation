@@ -38,6 +38,8 @@ The process requires an extended maintenance window, requires executing steps in
 
 Depending on system configuration, migrating can be more or less complicated.
 
+If your FreeBSD based system is joined to Active Directory, leave AD before migrating to a Debian-based release to avoid desynchronization issues that can result between release types.
+
 ## Migration Methods
 
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
@@ -136,3 +138,12 @@ Use the information gathered during your preparation to migrate to restore setti
 ## Recreating the Admin User Account
 
 {{< include file="/static/includes/AddAdminUserAccount.md" >}}
+
+## Reverting Back to FreeBSD-Based Releases
+
+In the event you need to revert to the FreeBSD-based release and you are joined to Active Directory, first leave AD, then clean-install the FreeBSD-based version, and upload the system config file to recover. Rejoin AD. Verify the system is configured as desired, and AD is healthy.
+Save a new debug file, then save the system configuration file with the secret seed. Use the procedures above to migrate to the latest Debian-Linux version of TrueNAS.
+
+## SNMP v3 Service Migration
+
+{{< include file="/static/includes/SNMPv3ServiceMigrationInstructions.md" >}}

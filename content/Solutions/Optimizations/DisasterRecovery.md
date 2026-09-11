@@ -42,7 +42,7 @@ TrueNAS can copy, pull, and sync data to a variety of cloud-based data storage s
 
 ![CloudBackupImage](/images/Solutions/CloudBackupImage.png)
 
-For larger datasets, TrueNAS systems are [more cost-effective](https://www.ixsystems.com/blog/private-cloud-truenas/) long term than cloud offerings, including Amazon AWS. For this reason, using TrueNAS as a backup target for protecting cloud-based data, e.g., from AWS, Dropbox, or Google Drive, is ideal because data stored in TrueNAS will get scrubbed, checked, and retained with an unlimited number of snapshots available.
+For larger datasets, TrueNAS systems are [more cost-effective](https://www.truenas.com/blog/private-cloud-truenas/) long term than cloud offerings, including Amazon AWS. For this reason, using TrueNAS as a backup target for protecting cloud-based data, e.g., from AWS, Dropbox, or Google Drive, is ideal because data stored in TrueNAS will get scrubbed, checked, and retained with an unlimited number of snapshots available.
 
 ![TrueNASBackingUpCloud](/images/Solutions/TrueNASBackingUpCloud.png)
 {{< /tab >}}
