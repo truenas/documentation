@@ -5,13 +5,22 @@ Updates software_status_config.yaml with latest version recommendations.
 Fetches data from both the legacy CDN (update.sys.truenas.net) for 25.10
 and earlier trains, and the new CDN (auto-public.sys.truenas.net) for 26+.
 Uses cascading profile logic: MISSION_CRITICAL > GENERAL > EARLY_ADOPTER > DEVELOPER
+
+Exit codes: 0 = clean run. 1 = something needs attention (an unexpected
+error, both CDNs unreachable, or a profile that should have resolved to a
+version didn't) — the config's existing data for anything unresolved is
+left untouched, and details are appended to software-status-error.log for
+the nightly-maintenance pipeline to pick up as a build artifact.
 """
 
 import requests
 import yaml
 import re
+import sys
+import time
 import argparse
 from pathlib import Path
+from datetime import datetime, timezone
 
 def version_to_anchor(version):
     """Convert version string to documentation anchor (version string as-is)."""
@@ -160,25 +169,81 @@ def find_versions_with_cascade(available_trains, train_releases, profiles_config
 
     return profile_results
 
+def fetch_json(url, attempts=3, backoff_seconds=2):
+    """GET a URL and parse it as JSON, retrying on transient failures.
+
+    A network error or a malformed JSON body on an otherwise-200 response is
+    treated as transient (e.g. a torn read of a file being rewritten upstream
+    — exactly what broke the 2026-08-18 run) and retried. A clean non-2xx
+    status is returned immediately with no retry, since that's a real,
+    deterministic answer rather than flakiness.
+
+    Returns (status_code, data, error):
+      - success:            (200, {...}, None)
+      - clean HTTP failure: (404, None, 'HTTP 404')
+      - exhausted retries:  (<last status or None>, None, '<reason>')
+    """
+    error = None
+    status_code = None
+    for attempt in range(1, attempts + 1):
+        try:
+            response = requests.get(url, timeout=10)
+        except requests.RequestException as e:
+            error = f"{type(e).__name__}: {e}"
+            status_code = None
+        else:
+            status_code = response.status_code
+            if status_code != 200:
+                return status_code, None, f"HTTP {status_code}"
+            try:
+                return status_code, response.json(), None
+            except ValueError as e:
+                error = f"malformed JSON: {e}"
+
+        if attempt < attempts:
+            print(f"    ⟲ attempt {attempt}/{attempts} failed ({error}), retrying in {backoff_seconds}s...")
+            time.sleep(backoff_seconds)
+
+    return status_code, None, error
+
+
+def log_error(message):
+    """Append a timestamped failure entry to software-status-error.log.
+
+    Jenkins picks this file up as a build artifact, so it's the one place a
+    human will see details after the fact even though the console log has
+    already scrolled by.
+    """
+    error_log_path = Path(__file__).parent / 'software-status-error.log'
+    timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
+
+    with open(error_log_path, 'a') as error_log:
+        error_log.write(f"\n{'='*70}\n")
+        error_log.write(f"Timestamp: {timestamp}\n")
+        error_log.write(f"{message}\n")
+        error_log.write(f"{'='*70}\n")
+
+    print(f"Error details written to: {error_log_path}")
+
+
 def fetch_trains_from_cdn(base_url, trains_file, label='CDN'):
     """Fetch trains_v2.json from a CDN base URL.
 
     Returns (trains_dict, redirections_dict).
     Returns (None, {}) on any failure so callers can handle partial CDN outages.
     """
-    try:
-        url = f'{base_url}{trains_file}'
-        response = requests.get(url, timeout=10)
-        data = response.json()
-        trains = data.get('trains', {})
-        redirections = data.get('trains_redirection', {})
-        print(f'  ✓ {label}: {len(trains)} trains found')
-        if redirections:
-            print(f'    {len(redirections)} redirection(s): {list(redirections.keys())}')
-        return trains, redirections
-    except Exception as e:
-        print(f'  ✗ {label}: {e}')
+    url = f'{base_url}{trains_file}'
+    _, data, error = fetch_json(url)
+    if error:
+        print(f'  ✗ {label}: {error}')
         return None, {}
+
+    trains = data.get('trains', {})
+    redirections = data.get('trains_redirection', {})
+    print(f'  ✓ {label}: {len(trains)} trains found')
+    if redirections:
+        print(f'    {len(redirections)} redirection(s): {list(redirections.keys())}')
+    return trains, redirections
 
 
 def build_merged_train_list(new_trains, new_redirections, old_trains, additional_trains):
@@ -255,7 +320,8 @@ def main():
             print("\n" + "="*70)
             print("⚠️  Both CDNs failed. Cannot determine available trains.")
             print("="*70 + "\n")
-            return
+            log_error("Both CDNs failed - could not fetch trains_v2.json from either endpoint.")
+            sys.exit(1)
 
         available_trains, train_cdn_map = build_merged_train_list(
             new_trains or {}, new_redirections, old_trains or {}, additional_trains
@@ -267,39 +333,38 @@ def main():
 
         print("\nStep 2: Fetching releases from each train...")
         train_releases = {}
+        fetch_failures = {}  # train_name -> reason, for the unresolved-profile report below
 
         for train_name in available_trains:
             cdn_source = train_cdn_map.get(train_name, 'old')
             base_url = new_base_url if cdn_source == 'new' else legacy_base_url
 
-            try:
-                releases_url = f'{base_url}{train_name}/releases.json'
-                releases_response = requests.get(releases_url, timeout=10)
+            releases_url = f'{base_url}{train_name}/releases.json'
+            _, releases, error = fetch_json(releases_url)
 
-                if releases_response.status_code == 200:
-                    releases = releases_response.json()
+            if releases is not None:
+                train_releases[train_name] = releases
+                print(f"  ✓ {train_name} [{cdn_source}]: {len(releases)} releases")
+                profiles_found = set(info.get('profile', 'NO_PROFILE') for info in releases.values())
+                print(f"    Profiles: {sorted(profiles_found)}")
+                continue
+
+            if cdn_source == 'new' and legacy_base_url:
+                # New CDN failed for this train — fall back to legacy CDN
+                print(f"  ↩ {train_name}: new CDN failed ({error}), trying legacy CDN...")
+                fallback_url = f'{legacy_base_url}{train_name}/releases.json'
+                _, releases, fallback_error = fetch_json(fallback_url)
+                if releases is not None:
                     train_releases[train_name] = releases
-                    print(f"  ✓ {train_name} [{cdn_source}]: {len(releases)} releases")
+                    print(f"  ✓ {train_name} [old-fallback]: {len(releases)} releases")
                     profiles_found = set(info.get('profile', 'NO_PROFILE') for info in releases.values())
                     print(f"    Profiles: {sorted(profiles_found)}")
-                elif cdn_source == 'new' and legacy_base_url:
-                    # New CDN listed this train but has no releases.json yet — fall back to legacy CDN
-                    print(f"  ↩ {train_name}: new CDN returned {releases_response.status_code}, trying legacy CDN...")
-                    fallback_url = f'{legacy_base_url}{train_name}/releases.json'
-                    fallback_response = requests.get(fallback_url, timeout=10)
-                    if fallback_response.status_code == 200:
-                        releases = fallback_response.json()
-                        train_releases[train_name] = releases
-                        print(f"  ✓ {train_name} [old-fallback]: {len(releases)} releases")
-                        profiles_found = set(info.get('profile', 'NO_PROFILE') for info in releases.values())
-                        print(f"    Profiles: {sorted(profiles_found)}")
-                    else:
-                        print(f"  ✗ {train_name}: HTTP {fallback_response.status_code} on both CDNs")
-                else:
-                    print(f"  ✗ {train_name}: HTTP {releases_response.status_code}")
-            except Exception as e:
-                print(f"  ✗ {train_name}: {e}")
-        
+                    continue
+                error = f"{error} on new CDN, {fallback_error} on legacy CDN"
+
+            print(f"  ✗ {train_name}: {error}")
+            fetch_failures[train_name] = error
+
         # Step 3: Find best versions for each profile using cascading logic
         print("\nStep 3: Finding best versions with cascading logic...")
         updates_made = []
@@ -403,7 +468,38 @@ def main():
                 print(f"\n[DRY-RUN] No updates needed")
             else:
                 print(f"\n- No updates needed")
-        
+
+        # Step 5: Flag any profile that still has no resolvable version.
+        # Every profile normally has a supplying train, so a gap here means
+        # something upstream broke this run (as opposed to e.g. "Enterprise
+        # skipped for developer", which is expected and handled above, not
+        # a None result). Surface it loudly instead of letting a partially
+        # resolved run report back as a clean, silent success.
+        unresolved_profiles = [name for name, result in profile_results.items() if result is None]
+
+        if unresolved_profiles:
+            print("\n" + "="*70)
+            print("⚠️  UNRESOLVED PROFILE(S) — no version found this run")
+            print("="*70)
+            for profile_name in unresolved_profiles:
+                print(f"  - {profile_name} (existing config value left unchanged)")
+            if fetch_failures:
+                print("\n  Train fetch failures that may explain the gap:")
+                for train_name, reason in fetch_failures.items():
+                    print(f"    - {train_name}: {reason}")
+            print("="*70 + "\n")
+
+            log_error(
+                "Unresolved profiles: " + ", ".join(unresolved_profiles) + "\n"
+                "Train fetch failures: " + (
+                    "; ".join(f"{t}: {r}" for t, r in fetch_failures.items()) or "none"
+                )
+            )
+
+            # Exit non-zero so Jenkins marks the build UNSTABLE (not a hard
+            # failure) — Reconcile/Purge still run. See nightly-maintenance.groovy.
+            sys.exit(1)
+
     except Exception as e:
         # Make API failure VERY visible in console output
         print("\n" + "="*70)
@@ -413,24 +509,11 @@ def main():
         print("Keeping existing static data in software_status_config.yaml")
         print("="*70 + "\n")
 
-        # Write error to log file for Jenkins artifact
-        error_log_path = Path(__file__).parent / 'software-status-error.log'
-        from datetime import datetime
-        timestamp = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
+        log_error(f"Error Type: {type(e).__name__}\nError Message: {e}")
 
-        with open(error_log_path, 'a') as error_log:
-            error_log.write(f"\n{'='*70}\n")
-            error_log.write(f"Timestamp: {timestamp}\n")
-            error_log.write(f"Error Type: {type(e).__name__}\n")
-            error_log.write(f"Error Message: {e}\n")
-            error_log.write(f"{'='*70}\n")
-
-        print(f"Error details written to: {error_log_path}")
-
-        # Exit with success (0) to allow build to continue
-        # Config file is unchanged, so no PR will be created
-        import sys
-        sys.exit(0)
+        # Exit non-zero so Jenkins marks the build UNSTABLE (not a hard
+        # failure) — Reconcile/Purge still run. See nightly-maintenance.groovy.
+        sys.exit(1)
 
 if __name__ == '__main__':
     main()
