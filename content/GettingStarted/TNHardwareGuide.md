@@ -25,7 +25,7 @@ This guide will go over the minimum hardware requirements and offer suggestions 
 ## Storage Considerations
 
 The heart of any storage system is the symbiotic pairing of the file system and physical storage devices.
-The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.ixsystems.com/blog/openzfs-vs-the-competition/) and makes effective use of spinning-disk storage, all-flash storage, or a mix of both.
+The ZFS file system in TrueNAS provides the [best available data protection of any file system at any cost](https://www.truenas.com/blog/openzfs-vs-the-competition/) and makes effective use of spinning-disk storage, all-flash storage, or a mix of both.
 ZFS is prepared for the eventual failure of storage devices and is highly configurable to achieve the perfect balance of redundancy and performance to meet any storage goal.
 A properly configured TrueNAS system can tolerate multiple storage device failures and recreate its boot media with a copy of the [configuration file]({{< ref "ManageSysConfig" >}}).
 
@@ -151,7 +151,7 @@ Hybrid setups use high-capacity spinning disks to store data, while DRAM and fla
 The technologies work together with a flash-based separate write log (SLOG). Think of it as a write cache keeping the ZFS-intent log (ZIL) that speeds up writes.
 On the read side, flash is a level two adaptive replacement (read) cache (L2ARC) to keep the hottest data sets on the faster flash media.
 Workloads with synchronous writes, such as NFS and databases, benefit from SLOG devices, while workloads with frequently-accessed data might benefit from an L2ARC device.
-An L2ARC device is not always the best choice because the level one ARC in RAM [always provides a faster cache](https://www.ixsystems.com/blog/visualizing-zfs-performance/), and the L2ARC table uses some RAM.
+An L2ARC device is not always the best choice because the level one ARC in RAM [always provides a faster cache](https://www.truenas.com/blog/visualizing-zfs-performance/), and the L2ARC table uses some RAM.
 
 SLOG devices do not need a large capacity since they only need to service five seconds of data writes delivered by the network or a local application.
 A high-endurance, low-latency device between 8 GB and 32 GB is adequate for most modern networks, and you can stripe or mirror several devices for either performance or redundancy.
@@ -440,7 +440,7 @@ Direct attached copper (DAC) cables can create interoperability issues between t
 Finally, a key TrueNAS hardware question is whether to use actual hardware or choose a virtualization solution.
 At the heart of the TrueNAS design is OpenZFS. OpenZFS works best with physical storage devices. It is aware of their strengths and compensates for their weaknesses.
 
-TrueNAS developers [virtualize TrueNAS every day](https://www.ixsystems.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and it is intended only for use as a development environment.
+TrueNAS developers [virtualize TrueNAS every day](https://www.truenas.com/blog/yes-you-can-virtualize-freenas/) as part of their work, and it is intended only for use as a development environment.
 {{< hint type=important >}}
 While you can deploy TrueNAS in a virtual environment, it is not safe for regular deployment of TrueNAS when storing production or critical data.
 Virtualizing TrueNAS and using virtual disks for your pool is fine for ad hoc proof-of-concept, but it is not a supported configuration and might result in data corruption.
