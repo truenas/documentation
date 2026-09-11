@@ -57,6 +57,7 @@ See [Using Administrator Logins]({{< ref "adminroles" >}}) for more information.
 
 To disable a password, select the user, click **Edit**, and then select **Disable Password**.
 Note that **Disable Password** is not available when **SMB Access** is enabled.
+
 Setting **Disable Password** hides the **Password** widget, and TrueNAS removes any existing password from the account.
 TrueNAS restricts the account from password-based logins for services like SMB shares and SSH sessions.
 
