@@ -41,31 +41,27 @@ To configure TrueNAS to use an LDAP directory server:
 
    * (Optional) Enter the Kerberos realm in **Kerberos Realm**. This is usually the uppercase version of the domain name, for example, *EXAMPLE.COM*.
 
-4. Enter the **Credential Configuration** settings:
+4. Enter the **Credential Configuration** settings. Select the credential type from the **Credential Type** dropdown list. Options are:
 
-   * Select the credential type from the **Credential Type** dropdown list. Options are **LDAP Anonymous**, **LDAP Plain**, **LDAP MTLS**, **Kerberos Principal**, or **Kerberos User**. Required.
-
-   * If you selected **Kerberos User**, enter the LDAP administrative account username and password in the respective **Username** and **Password** fields. Required.
-
-   * If you selected **LDAP Plain**, enter the applicable credentials in the **Bind DN** and **Bind Password** fields. Required.
-
-   * If you selected **LDAP MTLS**, select the desired **Client Certificate** from the dropdown menu. Required.
-
-   * If you selected **Kerberos Principal**, select the desired **Kerberos Principal** from the dropdown menu. Required.
+   * **LDAP Anonymous** - No additional settings shown.
+   * **LDAP Plain** - Requires entering the applicable credentials in the **Bind DN** and **Bind Password** fields.
+   * **LDAP MTLS** - Requires entering or selecting the desired **Client Certificate** from the dropdown menu.
+   * **Kerberos Principal** - Requires entering or selecting the desired **Kerberos Principal** from the dropdown menu.
+   * **Kerberos User** - Requires entering the LDAP administrative account username and password in the respective **Username** and **Password** fields.
 
 5. Enter the **LDAP Configuration** settings:
 
    {{< trueimage src="/images/SCALE/Credentials/LDAPBasicOptionsSettings.png" alt="LDAP Configuration" id="LDAP Configuration" >}}
 
-   * Enter the LDAP server URLs in **Server URLs**. Required. Separate multiple entries by pressing <kbd>Enter</kbd>. If using a cloud service LDAP server, do not include the full URL.
+   * Enter the required LDAP server URLs in **Server URLs**. Press <kbd>Enter</kbd> to separate multiple entries. If using a cloud service LDAP server, do not include the full URL.
 
-   * Enter the LDAP server base DN in **Base DN**. Required. This is the top level of the LDAP directory tree to use when searching for resources. For example, *dc=example,dc=org*.
+   * Enter the required LDAP server base DN in **Base DN**. This is the top level of the LDAP directory tree to use when searching for resources. For example, *dc=example,dc=org*.
 
    * (Optional) Select the **Start TLS** checkbox if needed for your environment.
 
    * (Optional) Select the **Validate Certificates** checkbox to verify certificate authenticity when connecting to the LDAP server.
 
-   * Select the LDAP NSS schema from the **Schema** dropdown list. Required. Options are **RFC2307** or **RFC2307BIS**.
+   * Select the required LDAP NSS schema from the **Schema** dropdown list. Options are **RFC2307** or **RFC2307BIS**.
 
 6. (Optional) Configure auxiliary parameters:
 
@@ -79,11 +75,9 @@ To configure TrueNAS to use an LDAP directory server:
 
    To customize search bases, clear **Use Standard Search Bases** to reveal additional configuration options: **User Base DN**, **Group Base DN**, and **Netgroup Base DN**.
 
-8. (Optional) Configure attribute maps:
+8. (Optional) Configure attribute maps. Select **Use Standard Attribute Maps** to use default attribute mappings. Selected by default.
 
-   Select **Use Standard Attribute Maps** to use default attribute mappings. Selected by default.
-
-   To customize attribute maps, clear **Use Standard Attribute Maps** to reveal four subsections for customization:
+   To customize attribute maps, clear **Use Standard Attribute Maps** to show four subsections for customization:
 
    * **LDAP Password Attributes** - Enter custom password attribute mappings.
 
