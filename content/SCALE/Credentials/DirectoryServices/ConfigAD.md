@@ -15,7 +15,6 @@ doctype: tutorial
 ---
 
 
-
 {{< include file="/static/includes/DirectoryServiceAccessAdmonition.md" >}}
 
 {{< include file="/static/includes/DirectoryServiceConflictAdmonition.md" >}}
@@ -219,11 +218,7 @@ Select **Enable Service** again, and click **Save** to reactivate your connectio
 ## Leaving Active Directory
 
 Users must cleanly leave an Active Directory for TrueNAS to delete the configuration.
-To cleanly leave AD, click **Leave Domain** on the **Active Directory** settings screen to remove the AD object.
+To cleanly leave AD, click on the triple-dot icon on the **Active Directory** card shown on the main **Directory Services** screen, then click **Leave** to remove the AD object.
 Remove the computer account and associated DNS records from the Active Directory.
 
-If the AD server moves or shuts down without you using **Leave Domain**, TrueNAS does not remove the AD object, and you have to clean up the Active Directory.
-
-### Rolling Back to Earlier Boot Environments with AD Joined
-
-{{< include file="/static/includes/ADandBERollBacks.md" >}}
+If the AD server moves or shuts down without you using **Leave**, TrueNAS does not remove the AD object, and you have to clean up the Active Directory.
