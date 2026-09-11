@@ -28,8 +28,19 @@ pipeline {
       steps {
         git branch: 'master', url: "${REPO}", credentialsId: "${CRED}"
         sh 'pip3 install --break-system-packages -r requirements.txt'
-        sh 'python3 scripts/update-software-status.py'
         script {
+          // Non-zero here means the script itself flagged a real problem (an
+          // unresolved profile, e.g. an upstream CDN returning bad data — see
+          // its module docstring for the full exit-code contract). Don't let
+          // that abort the build: Duty 2 (Reconcile/Purge) below is the more
+          // important safety net and must still run. Mark the build UNSTABLE
+          // instead so it's visible without blocking anything downstream.
+          def scriptStatus = sh(script: 'python3 scripts/update-software-status.py', returnStatus: true)
+          if (scriptStatus != 0) {
+            currentBuild.result = 'UNSTABLE'
+            echo "update-software-status.py reported a problem (exit ${scriptStatus}) — see console output above and scripts/software-status-error.log. Continuing to Reconcile."
+          }
+
           def changed = sh(
             script: 'git diff --exit-code data/software_status_config.yaml',
             returnStatus: true
@@ -93,10 +104,13 @@ pipeline {
   }
 
   // Alerting deferred (see Jenkinsfile) — Mailer 'mail' step throws NoSuchMethodError against
-  // the installed plugin; rely on the RED build until IT updates it.
+  // the installed plugin; rely on the RED/YELLOW build until IT updates it.
   post {
     failure {
       echo 'Nightly Maintenance FAILED — see console output. Automated alerting pending an IT Mailer plugin fix.'
+    }
+    unstable {
+      echo 'Nightly Maintenance UNSTABLE — software status update reported a problem (see the Software status auto-PR stage and scripts/software-status-error.log). Automated alerting pending an IT Mailer plugin fix.'
     }
   }
 }
