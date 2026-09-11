@@ -42,7 +42,7 @@ To configure TrueNAS to use an LDAP directory server:
    * (Optional) Enter the Kerberos realm in **Kerberos Realm**. This is usually the uppercase version of the domain name, for example, *EXAMPLE.COM*.
 
 4. Enter the **Credential Configuration** settings. Select the credential type from the **Credential Type** dropdown list. Options are:
-   
+
    * **LDAP Anonymous** - No additional settings shown.
    * **LDAP Plain** - Requires entering the applicable credentials in the **Bind DN** and **Bind Password** fields.
    * **LDAP MTLS** - Requires entering or selecting the desired **Client Certificate** from the dropdown menu.
