@@ -1,5 +1,5 @@
 ---
-title: "Audit Logs"
+title: "Using Audit Logs"
 description: "Provides information on the System and SMB Share auditing screens and function in TrueNAS."
 weight: 90
 tags:
@@ -90,19 +90,13 @@ Does not log internally-initiated create operations.
 Each SMB tree connection can have multiple open files.
 {{< /expand >}}
 {{< expand "Read or Write Events" "v" >}}
-Generated at configurable intervals as an SMB client reads from or writes to a file.
-Specifies the minimum time to wait before generating another read or write event for a given file type.
-
-For example, when set to 5 and an SMB client does constant writes to a file, only 12 events are generated per minute.
-The default value is **60**, or one event per type per minute.
+Generated as an SMB client reads from or writes to a file.
+TrueNAS waits at least 60 seconds after a read or write event before generating another one for the same file type, so constant reads or writes to a file produce one event per type per minute.
 File-based counters are printed within close messages, and connection-based counters are included in disconnect messages.
 {{< /expand >}}
 {{< expand "Read or Write Offload Events" "v" >}}
-Generated at configurable intervals as an SMB client performs offloads of reads from or writes to a file.
-Specifies the minimum time to wait before generating another offload read or write event for a given file type.
-
-For example, when set to 5 and an SMB client does constant writes to a file, only 12 events are generated per minute.
-The default value is **60**, or one event per type per minute.
+Generated as an SMB client performs offloads of reads from or writes to a file.
+TrueNAS waits at least 60 seconds after an offload read or write event before generating another one for the same file type, so constant offload reads or writes to a file produce one event per type per minute.
 File-based counters are printed within close messages, and connection-based counters are included in disconnect messages.
 {{< /expand >}}
 {{< expand "Open or Close Events" "v" >}}

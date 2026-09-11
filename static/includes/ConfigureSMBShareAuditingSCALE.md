@@ -16,7 +16,7 @@ At least one of **Watch List** or **Ignore List** must contain entries when enab
 
 Auditing all SMB operations without restrictions creates large audit databases that grow rapidly and consume significant disk space. High-volume SMB environments can generate hundreds of thousands of audit entries per day, leading to increased disk I/O that affects overall system performance and database query delays when reviewing audit logs.
 
-Configure filtering to audit only necessary operations.
+Use **Watch List** or **Ignore List** to limit auditing to specific groups and reduce audit volume.
 {{< /hint >}}
 
 {{< hint type=note >}}
