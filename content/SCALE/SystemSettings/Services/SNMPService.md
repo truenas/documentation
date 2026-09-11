@@ -41,3 +41,7 @@ truenas_admin@mytruenas.example.com's password:
 TRUENAS-MIB.txt                                                 100%   11KB 112.0KB/s   00:00
 PS C:\Users\tnuser>
 ```
+
+## SNMP v3 Service Migration
+
+{{< include file="/static/includes/SNMPv3ServiceMigrationInstructions.md" >}}
