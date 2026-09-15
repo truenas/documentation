@@ -68,7 +68,7 @@ For stability and performance, we recommend using SSD/NVMe storage for the conta
 You can change the preferred pool at any time by opening **Configuration** > **Settings** and selecting a different pool from the **Preferred Pool** dropdown.
 
 TrueNAS stores container data in a hidden <file>.truenas_containers</file> dataset on the selected pool.
-See [Container Storage Location]({{< relref "/SCALE/Containers/ContainersScreens.md#container-storage-location" >}}) in Containers Screens for details.
+See [Container Storage Location]({{< relref "/Containers/ContainersScreens.md#container-storage-location" >}}) in Containers Screens for details.
 
 #### Configuring the Default Network
 
