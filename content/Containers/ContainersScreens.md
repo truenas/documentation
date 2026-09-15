@@ -34,6 +34,13 @@ The **Settings** screen displays global options that apply to all containers, in
 **Preferred Pool** specifies an optional default storage pool for container data.
 When no preferred pool is configured, TrueNAS prompts for pool selection at container creation.
 
+### Container Storage Location
+
+TrueNAS (25.10 and later) stores containers in a hidden <file>.truenas_containers</file> dataset on the selected pool.
+Each container has its own dataset within <file>.truenas_containers</file>, named after the container: <file>*pool*/.truenas_containers/containers/*container_name*</file>.
+The <file>.truenas_containers</file> dataset is mounted separately from the pool file system, at <file>/mnt/.truenas_containers/*pool*</file>, to prevent accidental inclusion in SMB or NFS shares.
+TrueNAS manages the <file>.truenas_containers</file> dataset internally. Modifying it directly can cause container instability or data loss.
+
 #### Default Network Settings
 
 **Default Network** settings configure global networking defaults for the containers service.
