@@ -61,7 +61,7 @@ Browsers show a warning for self-signed certificates because no external authori
 This warning becomes an error after the certificate expires.
 
 {{< hint type=tip >}}
-Check the **Until** and **Lifetime** fields on the **Edit Certificate** screen for the current GUI certificate before it expires. See [Certificates Screens]({{< ref "CertificatesScreens" >}}) for details.
+Check the **Until** and **Lifetime** fields on the **Edit Certificate** screen for the current GUI certificate before it expires. See [Certificates Screens]({{< ref "CertificatesScreensSCALE" >}}) for details.
 TrueNAS automatically renews an unmodified default certificate shortly before it expires.
 An expired **truenas_default** certificate usually means the system was offline through the renewal window, or the certificate subject, such as the **Common Name** or **SAN**, was changed from its default values.
 Renaming the certificate or adding it to the trusted store does not affect automatic renewal.
@@ -78,7 +78,7 @@ Public CAs validate domain ownership and require a domain name reachable from th
 Internal CAs don't have that requirement, but need to already exist in your environment.
 Import the signed result back into TrueNAS as a certificate.
 
-See [Managing Certificate Signing Requests]({{< ref "AddCSRs" >}}) to create the CSR, and [Adding Certificates](#adding-certificates) to import the signed certificate.
+See [Managing Certificate Signing Requests]({{< ref "AddCSRsSCALE" >}}) to create the CSR, and [Adding Certificates](#adding-certificates) to import the signed certificate.
 
 For a domain-validated certificate through Let's Encrypt, TrueNAS can complete the CSR, signing, and renewal steps automatically using ACME.
 This requires a public domain name pointed at your TrueNAS system.
