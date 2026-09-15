@@ -63,7 +63,8 @@ For stability and performance, we recommend using SSD/NVMe storage for the conta
 
 Select additional pools to allow containers to access shared resources.
 
-<!-- Placeholder: Further description of the containers storage implementation here (once implementation is nailed down and experimental status removed) -->
+TrueNAS stores container data in a hidden <file>.truenas_containers</file> dataset on the selected pool.
+See [Container Storage Location]({{< relref "/SCALEUIReference/ContainersScreens.md#container-storage-location" >}}) in Containers Screens for details.
 
 To select a different pool for containers to use, use the **Pool** dropdown to select a different pool.
 
