@@ -47,7 +47,11 @@ pipeline {
           ) != 0
           if (changed) {
             echo 'Software status changed — creating/updating PR.'
-            sh 'bash scripts/create-software-status-pr.sh || true'
+            def prStatus = sh(script: 'bash scripts/create-software-status-pr.sh', returnStatus: true)
+            if (prStatus != 0) {
+              currentBuild.result = 'UNSTABLE'
+              echo "create-software-status-pr.sh failed (exit ${prStatus}) — see console output above. Continuing to Reconcile."
+            }
           } else {
             echo 'Software status up to date.'
           }
@@ -63,7 +67,10 @@ pipeline {
           steps {
             script {
               // make sure we can see every remote branch's docs-build.env
-              sh 'git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"'
+              // retry(3): this fetch has no relation to Duty 1 above — don't let a
+              // transient network blip there (or here) take down the Reconcile/Purge
+              // safety net, which must still run.
+              retry(3) { sh 'git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"' }
               // same version-branch filter as the Multibranch job
               def raw = sh(returnStdout: true, script:
                 "git for-each-ref --format='%(refname:short)' refs/remotes/origin " +
