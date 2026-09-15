@@ -59,6 +59,48 @@ Select **Add To Trusted Store** to add the certificate to the TrueNAS trusted st
 
 Click **Save**.
 
+## My TrueNAS SSL Certificate Has Expired
+
+TrueNAS uses a self-signed default certificate (**truenas_default**) to encrypt access to the web interface.
+Browsers show a warning for self-signed certificates because no external authority verifies them.
+This warning becomes an error after the certificate expires.
+
+{{< hint type=tip >}}
+Check the **Until** and **Lifetime** fields on the **Edit Certificate** screen for the current GUI certificate before it expires. See [Certificates Screens]({{< ref "CertificatesScreens" >}}) for details.
+TrueNAS automatically renews an unmodified default certificate shortly before it expires.
+An expired **truenas_default** certificate usually means the system was offline through the renewal window, or the certificate subject, such as the **Common Name** or **SAN**, was changed from its default values.
+Renaming the certificate or adding it to the trusted store does not affect automatic renewal.
+{{< /hint >}}
+
+TrueNAS 25.10 removed the internal certificate authority (CA) functionality that could sign a new certificate for you.
+Replace an expired certificate using one of the following two options, then set the new certificate as the GUI certificate.
+
+### Get a certificate signed by an external CA
+
+Create a CSR in TrueNAS, then have it signed by a trusted CA.
+Options include free public CAs like Let's Encrypt and ZeroSSL, paid commercial CAs like DigiCert and Sectigo, and internal CAs like Active Directory Certificate Services or step-ca.
+Public CAs validate domain ownership and require a domain name reachable from the internet.
+Internal CAs don't have that requirement, but need to already exist in your environment.
+Import the signed result back into TrueNAS as a certificate.
+
+See [Managing Certificate Signing Requests]({{< ref "AddCSRs" >}}) to create the CSR, and [Adding Certificates](#adding-certificates) to import the signed certificate.
+
+For a domain-validated certificate through Let's Encrypt, TrueNAS can complete the CSR, signing, and renewal steps automatically using ACME.
+This requires a public domain name pointed at your TrueNAS system.
+See [Creating ACME Certificates]({{< ref "SettingUpLetsEncryptCertificates" >}}) for the full procedure.
+
+### Import an existing certificate
+
+If a valid certificate and private key are already available from an external CA, for example one issued by an enterprise CA, import them directly.
+See [Adding Certificates](#adding-certificates) for the procedure.
+
+### Then, set the new certificate as the GUI certificate
+
+After you import or create a new certificate, TrueNAS does not switch to it automatically.
+Go to **System > General Settings** and click **Settings** in the GUI widget.
+Select the new certificate from the **GUI SSL Certificate** dropdown, then click **Save**.
+Select the **Confirm** checkbox, then click **Continue** to restart TrueNAS and apply the new certificate.
+
 ## Downloading the Certificate or Public Key
 
 Click on the <span class="material-icons">more_vert</span> icon, then select **Edit** or **Download** on the dropdown list.
