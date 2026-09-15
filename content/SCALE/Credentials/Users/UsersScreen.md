@@ -86,11 +86,11 @@ The card shows the password age, which is how long that password has been in use
 
 {{< trueimage src="/images/SCALE/Credentials/UsersScreenPasswordWidget.png" alt="User Password Card" id="User Password Card" >}}
 
-The **Password** card for the **truenas_admin** and admin users not currently logged in shows the **Generate One-Time Password** button. To see this button, the selected user must not be the user currently logged into TrueNAS, must not be a built-in user, and the user has **TrueNAS Acccess** selected and a role assigned that has account write permisions (e.g., the Full Admin role).
+The **Password** card for the **truenas_admin** and admin users not currently logged in shows the **Generate One-Time Password** button. To see this button, the selected user must not be the user currently logged into TrueNAS, must not be a built-in user, and must have **TrueNAS Access** selected and a role assigned with account write permissions (e.g., the Full Admin role).
 
 {{< trueimage src="/images/SCALE/Credentials/UsersScreenPasswordCardWithOneTimePassword.png" alt="Password Card With Generatee One-Time Password" id="Password Card With Generate One-Time Password" >}}
 
-**Generate One-Time Password** opens the **One-Time Password** dialog showing a system-generated password for single (one time) use.
+**Generate One-Time Password** opens the **One-Time Password** dialog showing a system-generated password for single (one-time) use.
 
 {{< trueimage src="/images/SCALE/Credentials/OneTimePasswordWindow.png" alt="One-time password generation window" id="One Time Password Window" >}}
 
@@ -116,17 +116,17 @@ Information details on the **Access** card:
 
 - **See Logs** link opens the [**Audit** screen]({{< ref "AuditScreen" >}}) for the selected user.
 
-- **Password Login** status is Enabled or Disabled. A key icon when the user has a password or an inactive key icon when the user does not have a password. Users with passwords show the **Password** card.
+- **Password Login** status is Enabled or Disabled. A key icon when the user has a password, or an inactive key icon when the user does not have a password. Users with passwords show the **Password** card.
 
 - Service access, such as **SMB Access** or **WebShare Accesss** indicates the user has that access granted.
 
 - **TrueNAS Access** and the role assigned to the user, such as **Full Admin**, **Share Admin**, **Read Only Admin**.
 
 - API keys assigned or not. When a key exists, the icon changes and shows a number with the key, for example, *1 key*.
-  - **Add API Keys** link shows when a does not key exist and it opens the [**Add API Key** screen]({{< ref "APIKeysScreen" >}}).
+  - **Add API Keys** link shows when no key exists, and it opens the [**Add API Key** screen]({{< ref "APIKeysScreen" >}}).
   - **View API Keys** link shows when a key exists and opens the [**User API Key** screen]({{< ref "APIKeysScreen" >}}).
   
-- **SSH Acces**s is active or inactive if not granted.
+- **SSH Access** is active or inactive if not granted.
   
 - **Shell Access** path.
 
@@ -194,7 +194,7 @@ Each access option changes the settings shown in other sections of the **Add Use
 
 | Setting | Description |
 |---------|-------------|
-| **Username** | Specifies the required name for the user. A user name consists of up to 32 characters. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Names should not begin with a hyphen (-), include a space, tab, or these special characters: comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parenthesis ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater or less than symbols (<)(>), or equal (=). |
+| **Username** | Specifies the required name for the user. A user name consists of up to 32 characters. When using NIS or other legacy software with limited user name lengths, keep names to eight characters or less for compatibility. Names should not begin with a hyphen (-), include a space, tab, or these special characters: comma (,), plus (+), ampersand (&), percent (%), carat (^), open or close parentheses ( ), exclamation mark (!), at symbol (@), tilde (~), question mark (?), greater-than or less-than symbols (<)(>), or equal (=). |
 | **Allow Access** | Specifies the access granted to the user account. Each option shows different settings. Access options are: <ul><li>**SMB Access** - The default option is pre-selected.</li><li>**WebShare Access** - Adds WebShare access for the user.</li><li>**TrueNAS Access** - Shows the **Select Role** dropdown and the **custom roles** link that opens the TrueNAS documentation article on pre-defined administrator roles.</li><li>**Shell Access** - Adds the **Shell** and **Sudo Commands** options to the [**Additional Details**](#additional-details) section.</li><li>**SSH Access** - Deactivates the **Shell Access** option, but shows the **Shell** and **Sudo Commands** options found with **Shell Access**. Shows the **Allow SSH Login with Password (not recommended)** option, and the **Public SSH Key** field.</li></ul> |
 | **Select Role** | Sets the privilege level for the user to one of the predefined user roles (**Full Admin**, **Sharing Admin**, or **Readonly Admin**). Shows after selecting **TrueNAS Access**. Each role adds the appropriate group to the **Groups** option under [**Additional Details**](#additional-details). |
 {{< /truetable >}}
@@ -215,7 +215,7 @@ Authentication settings show after selecting **Shell Access** or **SSH Access** 
 
 ### Additional Details Settings
 
-The <span class="material-icons">edit</span> edit icon or on the field shows a text entry, dropdown list, or other setting fields.
+The <span class="material-icons">edit</span> edit icon or the field shows a text entry, dropdown list, or other setting fields.
 Some settings show additional settings, for example, the **Group**, **Home Directory**, and **Sudo Commands**.
 
 {{< trueimage src="/images/SCALE/Credentials/AddUserAdditionallDetailsSettings.png" alt="Additional Details Settings" id="Additional Details Settings" >}}
