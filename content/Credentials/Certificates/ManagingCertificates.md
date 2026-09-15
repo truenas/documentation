@@ -90,7 +90,7 @@ See [Creating ACME Certificates]({{< ref "SettingUpLetsEncryptCertificates" >}})
 
 ### Import an existing certificate
 
-If you already have a valid certificate and private key from an external CA, for example one issued by your organization's enterprise CA, import it directly.
+If a valid certificate and private key are already available from an external CA, for example one issued by an enterprise CA, import them directly.
 See [Adding Certificates](#adding-certificates) for the procedure.
 
 ### Then, set the new certificate as the GUI certificate
