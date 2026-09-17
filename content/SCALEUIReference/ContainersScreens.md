@@ -52,6 +52,13 @@ The **Pools** dropdown list shows a list of available pools on the system for co
 
 The screen header displays a <i class="fa fa-cog" aria-hidden="true"></i> **Pool is not selected** status before a pool for containers is selected.
 
+#### Container Storage Location
+
+TrueNAS (25.10 and later) stores containers in a hidden <file>.truenas_containers</file> dataset on the selected pool.
+Each container has its own dataset within <file>.truenas_containers</file>, named after the container: <file>*pool*/.truenas_containers/containers/*container_name*</file>.
+The <file>.truenas_containers</file> dataset is mounted separately from the pool file system, at <file>/mnt/.truenas_containers/*pool*</file>, to prevent accidental inclusion in SMB or NFS shares.
+TrueNAS manages the <file>.truenas_containers</file> dataset internally. Modifying it directly can cause container instability or data loss.
+
 #### Default Network Settings
 
 **Default Network** settings configure global networking defaults for the containers service.
