@@ -257,7 +257,7 @@ POSIX ACLs open the **Unix Permissions Editor** screen.
 
 **Add Dataset** and **Edit Dataset** screens include the **Basic Options** and **Advanced Options**.
 The**Basic Options** and **Advanced Options** screens shows the [**Name and Options**](#name-and-options-section) section.
-Dataset quota settings only show on the **Add Dataset Advanced Options** screen. To edit quota settings use the [Capacity Settings]({{< ref "CapacitySettings.md" >}}).
+Dataset quota settings only show on the **Add Dataset Advanced Options** screen. To edit quota settings use the [**Capacity Settings**]({{< ref "CapacitySettings.md" >}}).
 
 ### Basic Options
 
