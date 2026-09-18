@@ -101,6 +101,8 @@ See [Wiping Disks]({{< ref "WipingDisks" >}}) for more information.
 
 {{< trueimage src="/images/SCALE/Storage/DiskSEDUnlockDialog.png" alt="SED Unlock Dialog" id="SED Unlock Dialog" >}}
 
+For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALE/Storage/Disks/SED.md" >}}), the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
+
 #### SED Reset Window
 
 The **SED Reset** button opens the **SED Reset - Secure Erase** window.

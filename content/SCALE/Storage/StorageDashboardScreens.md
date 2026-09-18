@@ -45,34 +45,36 @@ The buttons at the top right of the **Storage Dashboard** screen provide access 
 
 {{< trueimage src="/images/SCALE/Storage/ImportPoolScreen.png" alt="Import Pool Screen" id="Import Pool Screen" >}}
 
-Select a pool from the **Pool** dropdown list.
-These are ZFS storage pools previously created and stored on disks connected to the TrueNAS system.
+**Pool** specifies the name of the pool to import. It shows a dropdown list of ZFS storage pools previously created and stored on disks connected to the TrueNAS system.
 TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 
-**Import** starts connecting to the pool and bringing it into TrueNAS.
+**Import** starts connecting to the specified pool and bringing it into TrueNAS.
+When the pool has SED disks, it shows a warning about the locked disks.
 
-If the pool has SED disks, it shows a warning about the locked disks.
+{{< include file="/static/includes/SEDEnterpriseAdmonition.md" >}}
 
 {{< trueimage src="/images/SCALE/Storage/ImportPoolwithSEDDisks.png" alt="Import Pool with SED Disks" id="Import Pool with SED Disks" >}}
 
-**Unlock** the **Import Pool** screen initiates the unlock process for the SED disks to make the data on them accessible after import, and it shows the **Global SED Password** and **Individual Disk Passwords (Optional)** fields, and the **Add Disk Exceptions** option.
+**Unlock** initiates the unlock process for the SED disks to make the data on them accessible after import, and it shows the **Global SED Password** and **Individual Disk Passwords (Optional)** fields, the **Add Disk Exceptions** option, and shows the **Unlock Disks** button at the bottom of the screen.
 
-**Skip** on the **Import Pool** screen allows you to bypass unlocking SED disks and proceed with importing the pool.
+**Skip** on the **Import Pool** screen to the left of **Unlock** allows you to bypass unlocking SED disks and proceed with importing the pool.
 
 {{< trueimage src="/images/SCALE/Storage/UnlockDiskOnImportPoolScreen.png" alt="Unlocking SED Disks" id="Unlocking SED Disks" >}}
 
-**Skip** on the I**mport Pool** screen where you enter the individual disk SED passwords allows you to exit out of the unlock SED process and proceed with the pool import.
+**Skip** to the left of **Unlock Disks** allows you to exit out of the unlocking SEDs and proceed with the pool import.
 
-**Unlock Disks** allows you to proceed with unlocking the disks.
+**Unlock Disks** proceeds with unlocking the SED disks associated with the pool being imported.
 
 {{< trueimage src="/images/SCALE/Storage/ImportPoolScreenAddDiskExceptions.png" alt="Add Disk Excemptions" id="Add Disk Exceptions" >}}
 
-**Add Disk Exception** expands to show the **Disk Name** and **Password** fields that, when entered, overrides the global SED password for the added disk(s).
-The **x**  icon is the **Remove disk exception** function. Use it to remove the disk exception fields and activate the **Unlock Disks** button.
+**Add Disk Exception** overrides the global SED password for the added disk(s). Clicking this button expands to show the **Disk Name** and **Password** fields.
+The **x**  icon for an added exception is the **Remove disk exception** function.It removes the disk exception fields and activates the **Unlock Disks** button.
 
 **Unlock Disks** unlocks the disks with the password entered in **Global SED Password**.
 
-**Update global settings (applies to all disks/pools)** indicates the password is saved to the system configuration for future use with these disks. This option is selected by default. 
+**Update global settings (applies to all disks/pools)** indicates the password is saved to the system configuration for future use with these disks. This option is selected by default.
+
+For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALE/Storage/Disks/SED.md" >}}), the **Unlock SED Dialog** content in the [Disks Screen]({{< ref "DisksScreen.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
 {{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.
