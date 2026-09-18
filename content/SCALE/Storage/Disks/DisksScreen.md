@@ -71,7 +71,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
-### Wipe Disk Dialogs <!-- tag for ui ref automation {id="disk_wipe"} -->
+### Wipe Disk Dialogs
 
 The option to wipe a disk only displays when a disk is not assigned to a pool and is not in use.
 **Wipe** opens three dialogs: one to select the method, a confirmation dialog, and a progress dialog that includes the option to abort the process.
@@ -95,13 +95,13 @@ See [Wiping Disks]({{< ref "WipingDisks" >}}) for more information.
 **Abort** stops the disk wipe process. At the end of the disk wipe process, a success dialog displays.
 **Close** closes the dialog and returns you to the **Disks** screen.
 
-### SED Unlock Dialog <!-- tag for ui ref automation {id="disk_sed-unlock"} -->
+### SED Unlock Dialog
 
-The **Unlock** button opens the **Unlock SED for *diskname*** dialog with the **Password** field where you enter the SED password to unlock the disk with the global SED password or the individual disk SED password if one is assigned to the disk.
+**Unlock** opens the **Unlock SED for *diskname*** dialog with the **Password** field where you enter the SED password to unlock the disk with the global SED password or the individual disk SED password if one is assigned to the disk.
 
 {{< trueimage src="/images/SCALE/Storage/DiskSEDUnlockDialog.png" alt="SED Unlock Dialog" id="SED Unlock Dialog" >}}
 
-#### SED Reset Window <!-- tag for ui ref automation {id="disk_sed-reset"} -->
+#### SED Reset Window
 
 The **SED Reset** button opens the **SED Reset - Secure Erase** window.
 This window shows a critical warning stating the operation is irreversible and permanently destroys all data on the disk.
@@ -130,20 +130,20 @@ The **Edit Disk** screen allows users to configure and manage general disk, powe
 
 Click **Edit Disk** on the **[Devices]({{< ref "VDEVScreens" >}})** screen to open the the **Edit Disk** screen.
 
-### General Settings <!-- tag for ui ref automation {id="disk_edit-general"} -->
+### General Settings
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Shows the current name of the disk. To change, enter a Linux disk device name. |
+| **Name** | Specifies the current name of the disk as a Linux disk device name. |
 | **Serial** | Shows the serial number for the selected disk. To change, enter the disk serial number. |
-| **Description** | Text-entry field for typed notes about this disk. |
+| **Description** | Specifies optional information or notes about this disk. |
 {{< /truetable >}}
 
-### Power Management Settings <!-- tag for ui ref automation {id="disk_edit-pwr-manage"} -->
+### Power Management Settings
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **HDD Standby** | Shows a list of options or leave set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
+| **HDD Standby** | Specifies the minutes of inactivity before the drive enters standby mode. Shows a list of options or leave set to the default **Always On**. This For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
 | **Advanced Power Management (APM)** | Sets the Advanced Power Management (APM) level, a feature of the ATA storage standard that balances how much power the drive uses while idle against how quickly it responds. Select a level from the dropdown list. See the table below for a description of each level. |
 {{< /truetable >}}
 
@@ -164,7 +164,7 @@ The following table describes each level:
 | **Level 254 - Maximum performance, maximum power usage** | Delivers the most responsiveness, with the highest draw. The drive stays ready. |
 {{< /truetable >}}
 
-### SED Password <!-- tag for ui ref automation {id="disk_edit-sed"} -->
+### SED Password
 
 Shows only for SED disks in an SED-licensed Enterprise system.
 
