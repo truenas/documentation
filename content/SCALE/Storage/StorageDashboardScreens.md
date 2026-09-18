@@ -1,6 +1,6 @@
 ---
 title: "Storage Dashboard Screens"
-description: "Provides information on the Storage Dashboard widgets and options for pools, devices, and disks listed on this screen."
+description: "Provides information on the Storage Dashboard cards and options for pools, devices, and disks listed on this screen."
 weight: 50 
 aliases:
  - /scale/scaleuireference/storage/pools/
@@ -21,7 +21,7 @@ doctype: reference
 
 
 The **Storage Dashboard** screen allows users to configure and manage storage resources such as pools (VDEVs) and disks.
-The dashboard widgets organize functions related to storage resources.
+The dashboard cards organize functions related to storage resources.
 
 ## No Pools Screen
 
@@ -33,7 +33,7 @@ The **Create Pool** button in the center of the screen opens the **[Pool Creatio
 
 ## Storage Dashboard
 
-After adding pools, the dashboard shows the [pool widgets](#pool-widgets), the **Upgrade** and **Disconnect** buttons, and a <span class="material-icons">more_vert</span> dropdown menu with more options: **Expand Pool** and **AutoTrim**.
+After adding pools, the dashboard shows the [pool cards](#pool-cards), the **Upgrade** and **Disconnect** buttons, and a <span class="material-icons">more_vert</span> dropdown menu with more options: **Expand Pool** and **AutoTrim**.
 
 {{< trueimage src="/images/SCALE/Storage/StorageDashboardWithPool.png" alt="Storage Dashboard with Pools" id="Storage Dashboard with Pools" >}}
 
@@ -45,12 +45,37 @@ The buttons at the top right of the **Storage Dashboard** screen provide access 
 
 {{< trueimage src="/images/SCALE/Storage/ImportPoolScreen.png" alt="Import Pool Screen" id="Import Pool Screen" >}}
 
-Select a pool from the **Pool** dropdown list.
-These are ZFS storage pools previously created and stored on disks connected to the TrueNAS system.
+**Pool** specifies the name of the pool to import. It shows a dropdown list of ZFS storage pools previously created and stored on disks connected to the TrueNAS system.
 TrueNAS detects these as present on the system but not yet connected in TrueNAS.
 
-**Import** starts connecting to the pool and bringing it into TrueNAS.
- {{< /expand >}}
+**Import** starts connecting to the specified pool and bringing it into TrueNAS.
+When the pool has SED disks, it shows a warning about the locked disks.
+
+{{< include file="/static/includes/SEDEnterpriseAdmonition.md" >}}
+
+{{< trueimage src="/images/SCALE/Storage/ImportPoolwithSEDDisks.png" alt="Import Pool with SED Disks" id="Import Pool with SED Disks" >}}
+
+**Unlock** initiates the unlock process for the SED disks to make the data on them accessible after import, and it shows the **Global SED Password** and **Individual Disk Passwords (Optional)** fields, the **Add Disk Exceptions** option, and shows the **Unlock Disks** button at the bottom of the screen.
+
+**Skip** on the **Import Pool** screen to the left of **Unlock** allows you to bypass unlocking SED disks and proceed with importing the pool.
+
+{{< trueimage src="/images/SCALE/Storage/UnlockDiskOnImportPoolScreen.png" alt="Unlocking SED Disks" id="Unlocking SED Disks" >}}
+
+**Skip** to the left of **Unlock Disks** allows you to exit out of the unlocking SEDs and proceed with the pool import.
+
+**Unlock Disks** proceeds with unlocking the SED disks associated with the pool being imported.
+
+{{< trueimage src="/images/SCALE/Storage/ImportPoolScreenAddDiskExceptions.png" alt="Add Disk Excemptions" id="Add Disk Exceptions" >}}
+
+**Add Disk Exception** overrides the global SED password for the added disk(s). Clicking this button expands to show the **Disk Name** and **Password** fields.
+The **x**  icon for an added exception is the **Remove disk exception** function.It removes the disk exception fields and activates the **Unlock Disks** button.
+
+**Unlock Disks** unlocks the disks with the password entered in **Global SED Password**.
+
+**Update global settings (applies to all disks/pools)** indicates the password is saved to the system configuration for future use with these disks. This option is selected by default.
+
+For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALE/Storage/Disks/SED.md" >}}), the **Unlock SED Dialog** content in the [Disks Screen]({{< ref "DisksScreen.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
+{{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.
 
@@ -133,7 +158,7 @@ Users with pools using virtual disks use this option to resize these virtual dis
 * {{< expand "AutoTrim" "v" >}}
 
 The **Auto TRIM** option on the <span class="material-icons">more_vert</span> dropdown menu opens the **AutoTRIM** dialog.
-The **ZFS Health** widget shows whether this function is set to on.
+The **ZFS Health** card shows whether this function is set to on.
 
 {{< trueimage src="/images/SCALE/Storage/PoolOptionsAutoTRIM.png" alt="Pool Option AutoTRIM" id="Pool Option AutoTRIM" >}}
 
@@ -160,18 +185,18 @@ The upgrade process suspends I/O for a short period but is nearly instantaneous 
 It is not necessary to stop any sharing services to upgrade the pool.
 {{< /expand >}}
 
-## Storage Dashboard Widgets
+## Storage Dashboard Cards
 
-After adding a pool, the screen displays storage and pool widgets.
+After adding a pool, the screen displays storage and pool cards.
 
-The set of four pool widgets and the **Export/Disconnect** and **Expand** buttons show for each pool created on the system.
+The set of four pool cards and the **Export/Disconnect** and **Expand** buttons show for each pool created on the system.
 
-Each set of pool widgets provides access to screens for disks, datasets, VDEVs, snapshots, quotas, and pool ZFS functions for the pool.
-For example, **Manage Devices** on the **Topology** widget opens the **Devices** screen with the VDEVs configured for only that pool.
+Each set of pool cards provides access to screens for disks, datasets, VDEVs, snapshots, quotas, and pool ZFS functions for the pool.
+For example, **Manage Devices** on the **Topology** card opens the **Devices** screen with the VDEVs configured for only that pool.
 
-### Unassigned Disks and Disks with exported pools Widgets
+### Unassigned Disks and Disks with exported pools Cards
 
-The **Unassigned Disks** widget at the top of the **Storage Dashboard** shows when disks are available to add to a new or existing pool.
+The **Unassigned Disks** card at the top of the **Storage Dashboard** shows when disks are available to add to a new or existing pool.
 If the system has disks available and that are associated with exported pools, the **Disks with exported pools** shows instead.
 The number of available disks shows, and the **Add to Pool** button.
 The pool with the system dataset, and the state of the pool, shows in the dialog.
@@ -187,12 +212,12 @@ The **Storage** link in the breadcrumb at the top of the screen returns you to t
 
 If you attempt to use a disk assigned in an exported pool, a warning message prompts you to select a different disk.
 
-To see information on each disk on the system, click **View Disks** on the **[Disk health](#disk-health-widget)** widget
+To see information on each disk on the system, click **View Disks** on the **[Disk health](#disk-health-card)** card
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardUnassignedDisksWidget.png" alt="Unassigned Disks Widget" id="Unassigned Disks Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardUnassignedDisksWidget.png" alt="Unassigned Disks Card" id="Unassigned Disks Card" >}}
 
 * {{< expand "Add To Pool Window" "v" >}}
-**Add to Pool** on the **Unassigned Disks** widget opens the **Add to Pool** window.
+**Add to Pool** on the **Unassigned Disks** card opens the **Add to Pool** window.
 It displays the number of unassigned disks and provides the option to assign these disks to a new or existing pool.
 
 {{< trueimage src="/images/SCALE/Storage/AddToPoolWindow.png" alt="Add To Pool" id="Add To Pool New Pool" >}}
@@ -211,37 +236,37 @@ The **Add To Pool** window has three radio buttons:
 If you select **New Pool**, **Add Disks** opens the **Pool Creation Wizard** screen.
  {{< /expand >}}
 
-### VDEVs Widget
+### VDEVs Card
 
-The **VDEVs** widget shows information on the VDEVs configured on the system and the status of the pool.
+The **VDEVs** card shows information on the VDEVs configured on the system and the status of the pool.
 
-The widget lists each VDEV type (data, metadata, log, cache, spare, and dedup) associated with the pool.
+The card lists each VDEV type (data, metadata, log, cache, spare, and dedup) associated with the pool.
 A **Data VDEV** includes the data type (stripe, mirror, RAID, or mixed configuration), the number of disks (**wide**), and the storage capacity of that VDEV.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardVDEVWidget.png" alt="VDEVs Widget" id="VDEVs Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardVDEVWidget.png" alt="VDEVs Card" id="VDEVs Card" >}}
 
 **View VDEVs** opens the **[VDEVs]({{< ref "VDEVScreens" >}})** screen where you can add or manage existing VDEVs.
 
 #### Status Indicators
 
-Each pool widget includes a color-coded icon just to the right of the header, near the VDEV lists to indicate the state of the pool VDEV, or near disks in the VDEV. Possible states are:
+Each pool card includes a color-coded icon just to the right of the header, near the VDEV lists to indicate the state of the pool VDEV, or near disks in the VDEV. Possible states are:
 * Green circle with checkmark for a **Healthy**
 * Orange circle with an exclamation mark for **No Redundancy** or **Pool is Unhealthy**
 * Red circle with an x for **Pool is not Healthy**
 
-This same information displays on the main **Dashboard** on the **Storage** widget and a pool widget.
+This same information displays on the main **Dashboard** on the **Storage** card and a pool card.
 
-### Usage Widget
+### Usage Card
 
-The **Usage** widget shows information on the pool space datasets consumed and the status of pool usage.
+The **Usage** card shows information on the pool space datasets consumed and the status of pool usage.
 
-The widget includes a color-coded donut chart that illustrates the percentage of space the pool uses.
+The card includes a color-coded donut chart that illustrates the percentage of space the pool uses.
 Blue indicates space usage in the 0-80% range, and red indicates anything above 80%.
 A warning message displays below the donut graph when usage exceeds 80%.
 
 **Usable Capacity** details pool space statistics by **Used** and **Available**.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardUsageWidget.png" alt="Usage Widget" id="Usage Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardUsageWidget.png" alt="Usage Card" id="Usage Card" >}}
 
 **View Disk Reports** opens the pool usage reports for the selected pool.
 
@@ -253,11 +278,11 @@ For example, a system with 18,446,744,073,709,551,615 bytes reports the number a
 
 **View Datasets** opens the **[Datasets]({{< ref "/SCALE/Datasets" >}})** screen.
 
-### Storage Health Widget
+### Storage Health Card
 
-The **Storage Health** widget shows health-of-the-pool information.
+The **Storage Health** card shows health-of-the-pool information.
 
-Possible widget details include:
+Possible card details include:
 * Pool status shows the pool status as** Online, no errors** or **Offline**, **Degraded no errors**.
 * **Scheduled Scrub** shows the time based on a 24-hour clock and frequency of a scheduled scrub (the day the task runs).
 * **Auto TRIM** shows when the auto trim feature is on or off.
@@ -266,7 +291,7 @@ Possible widget details include:
 * **Last Scan Duration** shows the time, in minutes and seconds, that the last scrub ran.
 * **Deduplication Table** only shows if a dedup VDEV is added to the pool. Shows the size of the deduplication table.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Storage Health Widget" id="Storage Health Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthCard.png" alt="Storage Health Card" id="Storage Health Card" >}}
 
 **Scrub Now** opens the **Scrub Pool** dialog. **Start Scrub** in the **Scrub Pool** dialog runs a check on the data integrity of the pool.
 Scrubs identify data integrity problems, detect silent data corruptions caused by transient hardware issues, and provide early disk failure alerts.
@@ -304,10 +329,10 @@ For example, scheduling a scrub to run daily and setting threshold days to *7* m
 When the scrub is successful, it continues to check daily but does not run again until *seven* days have elapsed.
 Using a multiple of *seven* ensures the scrub always occurs on the same weekday.
 
-**Save** sets the schedule and adds the time and frequency to the **Storage Health** widget.
+**Save** sets the schedule and adds the time and frequency to the **Storage Health** card.
 
 {{< hint type=note >}}
-Starting in TrueNAS 25.10, resilver priority settings are now located in **System Settings > Advanced Settings** on the **Storage** widget.
+Starting in TrueNAS 25.10, resilver priority settings are now located in **System Settings > Advanced Settings** on the **Storage** card.
 {{< /hint >}}
 
 #### Prune Deduplication Table Dialog
@@ -339,11 +364,11 @@ This property works for both legacy and fast dedup tables.
 
 **None** disables the quota.
 
-### Disk Health Widget
+### Disk Health Card
 
-The **Disk Health** widget shows information on the health of the disks in a pool.
+The **Disk Health** card shows information on the health of the disks in a pool.
 
-{{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Widget" id="Disk Health Widget" >}}
+{{< trueimage src="/images/SCALE/Storage/StorageDashboardDiskHealthWidget.png" alt="Disk Health Card" id="Disk Health Card" >}}
 
 The disk health details include:
 * Disk temperature-related alerts

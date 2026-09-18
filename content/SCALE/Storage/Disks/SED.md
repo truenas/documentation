@@ -50,10 +50,6 @@ A password-protected SED protects the data stored on the device when the device 
 This allows secure disposal of the device without having to first wipe the contents.
 Repurposing a SED on another system requires the SED password or a full cryptographic erase with [PSID revert](https://github.com/truenas/sedutil/blob/22ecc4f56e84239f780856b56185267e4b225d43/docs/sedutil-cli.8#L68).
 
-{{< enterprise >}}
-{{< include file="/static/includes/SEDEnterprise.md" >}}
-{{< /enterprise >}}
-
 ## Deploying SEDs
 
 TrueNAS supports setting a global password for all detected SEDs or setting individual passwords for each SED.
@@ -67,6 +63,18 @@ For a full list of what a configuration backup includes, see [Configuration Back
 ### Configuring Global SED Settings
 
 {{< include file="/static/includes/SEDGlobalPW.md" >}}
+
+### Configuring SED Encryption From the Pool Creation Wizard
+
+If your system is equipped with and licensed for SEDs, the Pool Creation Wizard show SED encryption settings.
+Selecting the **Self Encryption Drives (SED)** radio button, sets up SED global encryption for SED disks in the pool and shows the **Global SED Password** and **Confirm SED Password** fields.
+
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfoSED.png" alt="Pool Creation Wizard General Info - SED" id="Pool Creation Wizard General Info - SED" >}}
+
+The **Global SED Password** is a system-wide setting.
+A message shows above this field indicating if a password is already configured, and that entering a new password updates it for all pools using SED encryption.
+
+If the global SED password is already configured, you do not have to enter and confirm a new password on this screen. Entering and confirming a global SED password here resets the global SED password applied to all SED disks in all pools in the TrueNAS system.
 
 ### Configuring Individual SED Passwords
 
@@ -97,3 +105,5 @@ TrueNAS Enterprise customers should contact TrueNAS Enterprise Support for assis
 {{< include file="/static/includes/iXsystemsSupportContact.md" >}}
 {{< /expand >}}
 {{< /enterprise >}}
+
+{{< include file="/static/includes/SEDPoolImportUnlockSEDs.md" >}}
