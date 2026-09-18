@@ -175,7 +175,7 @@ The card shows the owner and type of access control list (ACL) and ACL Entries (
 **Owner** shows both the onwer user and group on one line, formatted as *owner:group*. For example, **Owner: *root:root***.
 
 The permission screen and card options vary based on the ACL type.
-Root datasets and those created with the generic or apps dataset preset type have POSIX permissions. Thes entries are not editable on the **Permissions** card. 
+Root datasets and those created with the generic or apps dataset preset type have POSIX permissions. These entries are not editable on the **Permissions** card. 
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetPermissionsWidgetRoot.png" alt="Permissions Card for Root Dataset" id="Permissions Card for Root Dataset" >}}
 
