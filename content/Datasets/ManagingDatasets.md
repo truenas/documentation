@@ -42,7 +42,9 @@ We recommend choosing a compression algorithm that balances disk performance wit
 {{< include file="/static/includes/StorageCompressionLevelsScale.md" >}}
 
 ### Setting Dataset Quotas
+
 You can set dataset quotas while adding datasets using the quota management options in the **Add Dataset** screen under **Advanced Options**.
+
 You can also add or edit quotas for an existing dataset, by clicking **Edit** on the **Dataset Space Management** widget to open the **[Capacity Settings]({{< ref "CapacitySettings" >}})** screen.
 
 {{< trueimage src="/images/SCALE/Datasets/AddDatasetQuotasManagement.png" alt="Add Dataset Advanced Quota Options" id="Add Dataset Advanced Quota Options" >}}
@@ -70,6 +72,7 @@ Enter **0** for unlimited.
 For more information on quotas, see [Managing User or Group Quotas]({{< ref "ManageQuotas" >}}).
 
 ### Changing Dataset Inherited Values
+
 By default, many dataset options inherit their values from the parent dataset.
 When settings on the **Advanced Options** screen are set to**Inherit** the dataset uses the setting from the parent dataset.
 For example, the [Encryption]({{< ref "/Datasets/Encryption" >}}) or **ACL Type** settings.
@@ -77,9 +80,11 @@ For example, the [Encryption]({{< ref "/Datasets/Encryption" >}}) or **ACL Type*
 To change any setting that datasets inherit from the parent, select an available option other than **Inherit**.
 
 ### Setting Datasets Access Controls
+
 For information on ACL settings see [Setting Up Permissions]({{< ref "/Datasets/Permissions" >}}).
 
 ### Adding Deduplication
+
 Deduplication is found on the **Add Datasets Advanced Settings** screen.
 
 {{< hint type=info >}}
@@ -107,6 +112,7 @@ Change **Checksum** to **SHA512**.
 Complete any other setting changes you want to make, then click **Save**.
 
 ## Creating a Dataset for a Fusion Pool
+
 First, add the [pool with a Metadata VDEV]({{< ref "CreatingFusionPools" >}}).
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Step" id="Pool Creation Wizard Metadata Step" >}}
@@ -121,14 +127,17 @@ The **Threshold** field appears. Enter a maximum block size (1 byte to 16 MiB) f
 The default threshold is 16 MiB. Blocks smaller than or equal to the threshold are assigned to the special allocation class; larger blocks are assigned to the regular class.
 
 ## Managing Datasets
+
 After creating a dataset, users can manage additional options from the **Datasets** screen.
 Select the dataset, then click **Edit** on the dataset widget for the function you want to manage.
 The [Datasets Screen]({{< ref "/Datasets" >}}) article describes each option in detail.
 
 ### Editing a Dataset
+
 Select the dataset on the tree table, then click **Edit** on the **Dataset Details** widget to open the **Edit Dataset** screen and change the dataset configuration settings. You can change all settings except **Name**, **Case Sensitivity**, or **Device Preset**.
 
 ### Editing Dataset Permissions
+
 To edit the dataset ACL permissions, click **Edit** on the **Permissions** widget.
 If the ACL type is NFSv4, the **Permissions** widget shows ACE entries for the dataset.
 Each entry opens a checklist of flag options you can select or clear without opening the **Edit ACL** screen.
@@ -140,6 +149,7 @@ To access the **Edit ACL** screen for POSIX ACLs, select **Create a custom ACL**
 For more information, see the [Setting Up Permissions]({{< ref "/Datasets/Permissions" >}}) article.
 
 ### Deleting a Dataset
+
 Select the dataset on the tree table, then click **Delete** on the **Dataset Details** widget.
 This opens a delete window where you enter the dataset path (root/parent/child) and select **Confirm** to delete the dataset, all stored data, and any snapshots from TrueNAS.
 
