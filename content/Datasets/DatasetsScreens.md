@@ -113,7 +113,7 @@ When managing your TrueNAS system, it is generally best practice to create dedic
 
 **[Delete](#delete-dataset)** shows on the **Details** card for non-root datasets.
 
-Use **Disconnect/Export** on the **[Storage Dashboard]({{< ref "/SCALE/Storage" >}})** screen to delete a root dataset.
+Use **Disconnect/Export** on the **[Storage Dashboard]({{< ref "StorageDashboardScreens.md" >}})** screen to delete a root dataset.
 
 **Delete** opens a [**Delete dataset**](#delete-window) window with information about other options or services using the dataset, for example, a parent to other datasets, the services child datasets of a parent dataset uses, shares like SMB and/or NFS, or a multiprotocol share, and the path to the datasets the shares use.
 
