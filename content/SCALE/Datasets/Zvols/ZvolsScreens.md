@@ -98,27 +98,7 @@ The **Add Zvol** and **Edit Zvol** screens allow admin users with the right perm
 Both screens include the same settings, but you cannot change the zvol name, **Block Size**, or select the **Sparse** option after you click **Save** on the **Add Zvol** screen.
 After adding a zvol, click **Edit** on the **Zvol Details** widget to open the **Edit Zvol** screen.
 
-When the zvol is encrypted, **Edit** on the **Encryption** widget opens a configuration screen where you can change the passphrase for a zvol encrypted with the passphrase type, but you cannot change to a key encryption type. If the zvol is not encrypted, you do not see encryption options on the **Edit Zvol** screen.
-
-{{< trueimage src="/images/SCALE/Datasets/AddZvolScreen.png" alt="Add Zvol Screen" id="Add Zvol Screen" >}}
-
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Zvol name** | (Required setting) Enter a short name for the zvol longer than 63 characters to prevent potential problems accessing zvols as devices. For example, you cannot use a zvol with a 70-character file name or path as an iSCSI extent. |
-| **Comments** | Enter any notes about the zvol. Descriptions show on the iSCSI screens when the zvol is used in a block share. |
-| **Size for this zvol** | Specify numeric size and value. You can include units like **t** as in TiB, and **G**. You can increase the size of the zvol later, but you cannot reduce the size. If the size is greater than 80% of the available capacity, the creation fails with an out-of-space error unless you select **Force size**. |
-| **Force size** | Enables the system to create a zvol where the size is over 80% capacity. By default, the system does not create a zvol of this size. While not recommended, enabling this option forces the creation of the zvol. |
-| **Sparse** | Enables using [thin provisioning]({{< ref "thinprovisioning" >}}) where disk space for this volume is allocated on-demand as new writes are received. Use caution when enabling, as writes can fail when the pool is low on space. |
-| **Sync** | Select a data write synchronization option from the dropdown list. Options: <ul><li>**Inherit** gets the sync settings from the parent dataset. <br><li>**Standard** uses the sync settings requested by the client software. <br><li>**Always** waits for data writes to complete. <br><li>**Disabled** never waits for writes to complete.</li></ul> |
-| **Compression level** | Select the option from the dropdown list for the type of data compression to use for encoding information in less space than the original data occupies. Select the algorithm that balances disk performance with the amount of space saved. See [below](#data-compression-algorithms) for the options. |
-| **ZFS Deduplication** | Do not change this setting unless instructed to by your TrueNAS support engineer. Transparently reuses a single copy of duplicated data to save space. Deduplication can improve storage capacity, but it is RAM-intensive. Compressing data is generally recommended before using deduplication. Deduplicating data is a one-way process. Deduplicated data cannot be undeduplicated!. |
-| **Read-only** | Select the option to prevent modifying the zvol. Options are **Inherit (off)**, **On** or **Off**. |
-| **Block size** | Select the size option from the dropdown list. The default is **16KiBt**, other options are **4KiB**, **8KiB**, **16KiB**, **32KiB**, **64KiB**, **128KiB**. The zvol default block size is automatically chosen based on the number of disks in the pool for a general use case. |
-| **Snapdev** | Select the option that controls whether the volume snapshot devices under /dev/zvol/*poolname* are hidden or visible from the dropdown list. Options are **Inherit (hidden)**, **Visible** and **Hidden** (default value). |
-| **Use Metadata (Special) VDEVs** | Enables storing data blocks in a [special allocation class (fusion pool)]({{< ref "CreatingFusionPools" >}}) metadata VDEV. Options: <ul><li>**Inherit** - Uses the parent dataset setting. Displays the inherited value in human-readable form, for example, **Inherit (128 KiB)** or **Inherit (off)**.<br><li>**On** - Enables the special allocation class for this zvol. Shows the **Threshold** field where you enter the maximum block size to store in the special class. Valid values are 1 byte to 16 MiB. The default threshold is 16 MiB. Blocks smaller than or equal to the threshold are assigned to the special allocation class; larger blocks are assigned to the regular class.<br><li>**Off** - Disables storing blocks in the special allocation class.<br></li></ul> Before enabling this setting, you must add a [metadata special class VDEV]({{< ref "CreatingFusionPools" >}}) to the pool. |
-| **Inherit (non-encrypted/encrypted)** | Encryption settings are inherited from the parent dataset. When the parent is encrypted, this option defaults to **Inherit (encrypted)**; otherwise, it shows **(non-encrypted)**. Clearing the checkmark shows the **Encryption** options. If the parent is encrypted with the passphrase type, the zvol can only use passphrase encryption. When the parent is encrypted with a key, the zvol can use either key or passphrase encryption. Refer to the [Encryption Settings]({{< relref "EncryptionScreen" >}}) article for more details. |
-{{< /truetable >}}
+{{< include file="/static/includes/AddZvolSettings.md" >}}
 
 {{< expand "Block Size Table" "v" >}}
 TrueNAS recommends a space-efficient block size for new zvols.
