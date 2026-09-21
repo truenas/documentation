@@ -64,12 +64,14 @@ The plugin is installed on each Proxmox VE node, not on TrueNAS.
 ### Option 1: APT Repository (Recommended)
 
 The APT repository method provides automatic version detection and updates.
-Run the following command on each Proxmox node. The installer automatically detects your Proxmox VE version and selects the correct APT suite:
+Run the following command on each Proxmox node. The installer automatically detects your Proxmox VE version and selects the correct APT suite.
 
-<!-- CONFIRM WITH PLUGIN TEAM: as of 2026-09-21, the plugin's own wiki and root README point this one-liner at the "alpha" branch rather than "main". Verify which branch is correct for a published TrueNAS doc before changing this from main. -->
+{{< hint type=note >}}
+This command installs from the `alpha` branch. The plugin team currently publishes its latest fixes there ahead of `main`.
+{{< /hint >}}
 
 ```bash
-bash <(curl -sSL https://raw.githubusercontent.com/truenas/truenas-proxmox-plugin/main/install.sh) --non-interactive --apt-install
+bash <(curl -sSL https://raw.githubusercontent.com/truenas/truenas-proxmox-plugin/alpha/install.sh) --non-interactive --apt-install
 ```
 
 {{< truetable >}}
@@ -116,10 +118,10 @@ apt-get -f install -y
 
 The interactive installer provides a menu-driven setup with a configuration wizard, health checks, and built-in validation.
 It supports both iSCSI and NVMe/TCP.
-Run the following command and follow the prompts (see the branch note under Option 1):
+Run the following command and follow the prompts:
 
 ```bash
-bash <(curl -sSL https://raw.githubusercontent.com/truenas/truenas-proxmox-plugin/main/install.sh)
+bash <(curl -sSL https://raw.githubusercontent.com/truenas/truenas-proxmox-plugin/alpha/install.sh)
 ```
 
 The interactive installer configures <file>/etc/pve/storage.cfg</file> automatically and supports cluster-wide installation across all nodes simultaneously.
