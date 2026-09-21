@@ -81,7 +81,7 @@ To change any setting that datasets inherit from the parent, select an available
 
 ### Setting Datasets Access Controls
 
-For information on ACL settings see [Setting Up Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}).
+For information on ACL settings see [Setting Up Permissions]({{< ref "/Datasets/Permissions" >}}).
 
 ### Adding Deduplication
 
