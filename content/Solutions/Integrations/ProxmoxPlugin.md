@@ -39,7 +39,7 @@ NVMe/TCP mode requires Proxmox VE 9.x or later.
 
 Proxmox nodes must be able to reach TrueNAS on port 3260 (iSCSI) and port 443 (WebSocket API).
 For NVMe/TCP mode, install `nvme-cli` on each Proxmox node.
-You must also have a TrueNAS API key with enough privileges to create and manage datasets and iSCSI or NVMe/TCP resources.
+You must also have a TrueNAS API key with sufficient privileges to create and manage datasets and iSCSI or NVMe/TCP resources.
 
 ## Before You Begin
 
@@ -50,10 +50,10 @@ Before installing the plugin, complete these steps on TrueNAS:
 3. Create an iSCSI portal in **Shares > Block Shares (iSCSI) > Portals**. Set the IP address to your TrueNAS IP and the port to *3260*.
 4. Create an iSCSI initiator group in **Shares > Block Shares (iSCSI) > Initiators**. Leave the defaults to allow all initiators.
 5. Create an iSCSI target in **Shares > Block Shares (iSCSI) > Targets**. After saving, edit the target and add a group. Set the **Portal Group ID** to the portal you created in step 3. Set the **Initiator Group ID** to the initiator you created in step 4.
-6. Generate a TrueNAS API key in **Credentials > Users**. Select your user, then click the **View API Keys** link on the **Access** widget, and click **Add API Key**. Enter a name for the key and click **Save**. Save the key securely. TrueNAS does not show the key again after you close the dialog.
-7. For NVMe/TCP mode, enable the **NVMe-oF Target** service in **System > Services**.
+6. Generate a TrueNAS API key in **Credentials > Users**. Select your user, then click **Add API Key** on the **Access** widget to open the **Add API Key** screen. For a user that already has a key, click **View API Keys** on the **Access** widget instead, then click **Add** on the **User API Keys** screen. Enter a name for the key and click **Save**. Save the key securely. TrueNAS does not show the key again after you close the screen.
+7. For NVMe/TCP mode, enable the **NVMe-oF** service in **System > Services**.
 
-Granting the built-in `SHARING_ADMIN` role to the API key's user account covers the steps above. For a narrower, least-privilege role set instead, see [Minimum API Permissions](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/API-Permissions.md) in Additional Resources.
+Granting the built-in `SHARING_ADMIN` role to the user account for the API key covers the steps above. For a narrower, least-privilege role set instead, see [Minimum API Permissions](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/API-Permissions.md) in Additional Resources.
 
 See the [Installation Guide](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/Installation.md) for detailed TrueNAS setup steps.
 
@@ -184,7 +184,7 @@ The plugin team maintains an extensive wiki covering setup, configuration, and o
 - [Installation Guide](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/Installation.md): Full installation walkthrough, including cluster-wide deployment and update procedures.
 - [Configuration Reference](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/Configuration.md): Every `storage.cfg` parameter, with example configurations for single-node, cluster, HA, and IPv6 deployments.
 - [NVMe/TCP Setup Guide](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/NVMe-Setup.md): Detailed NVMe/TCP setup, including DH-CHAP authentication and multipath configuration.
-- [Minimum API Permissions](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/API-Permissions.md): A least-privilege role set for the plugin's API user, as an alternative to a broad admin role.
+- [Minimum API Permissions](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/API-Permissions.md): A least-privilege role set for the plugin API user, as an alternative to a broad admin role.
 
 ### Operations
 
@@ -196,9 +196,9 @@ The plugin team maintains an extensive wiki covering setup, configuration, and o
 
 - [Advanced Features](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/Advanced-Features.md): Performance tuning, cluster and HA configuration, and security hardening.
 - [Multi-Tenancy](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/Multi-Tenancy.md): Guidance for safely sharing one TrueNAS system across multiple Proxmox clusters.
-- [API Reference](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/API-Reference.md): Technical detail on the plugin's TrueNAS API integration, intended for integrators and contributors.
+- [API Reference](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/API-Reference.md): Technical detail on the TrueNAS API integration used by the plugin, intended for integrators and contributors.
 
 ### Testing and Diagnostics
 
-- [Testing Guide](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/Testing.md): Covers the plugin's development test suite. The built-in installer already covers day-to-day health checks; this suite is for plugin development and debugging, not production systems.
-- [Tools and Utilities](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/Tools.md): Reference for the installer's diagnostics menu and other included tooling.
+- [Testing Guide](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/Testing.md): Covers the plugin development test suite. The built-in installer already covers day-to-day health checks. This suite is for plugin development and debugging, not production systems.
+- [Tools and Utilities](https://github.com/truenas/truenas-proxmox-plugin/blob/main/wiki/Tools.md): Reference for the installer diagnostics menu and other included tooling.
