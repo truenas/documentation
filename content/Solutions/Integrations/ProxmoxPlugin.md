@@ -47,9 +47,9 @@ Before installing the plugin, complete these steps on TrueNAS:
 
 1. Create a ZFS dataset to use for Proxmox storage (for example, *tank/proxmox*). Set **Dataset Preset** to **Generic**.
 2. Enable the **iSCSI** service in **System > Services** and set it to start automatically.
-3. Create an iSCSI portal in **Shares > Block Shares (iSCSI) > Portals**. Set the IP address to your TrueNAS IP and the port to *3260*.
-4. Create an iSCSI initiator group in **Shares > Block Shares (iSCSI) > Initiators**. Leave the defaults to allow all initiators.
-5. Create an iSCSI target in **Shares > Block Shares (iSCSI) > Targets**. After saving, edit the target and add a group. Set the **Portal Group ID** to the portal you created in step 3. Set the **Initiator Group ID** to the initiator you created in step 4.
+3. Create an iSCSI portal in **Shares > iSCSI > Portals**. Set the IP address to your TrueNAS IP and the port to *3260*.
+4. Create an iSCSI initiator group in **Shares > iSCSI > Initiators**. Leave the defaults to allow all initiators.
+5. Create an iSCSI target in **Shares > iSCSI > Targets**. After saving, edit the target and add a group. Set the **Portal Group ID** to the portal you created in step 3. Set the **Initiator Group ID** to the initiator you created in step 4.
 6. Generate a TrueNAS API key in **Credentials > Users**. Select your user, then click **Add API Key** on the **Access** widget to open the **Add API Key** screen. For a user that already has a key, click **View API Keys** on the **Access** widget instead, then click **Add** on the **User API Keys** screen. Enter a name for the key and click **Save**. Save the key securely. TrueNAS does not show the key again after you close the screen.
 7. For NVMe/TCP mode, enable the **NVMe-oF** service in **System > Services**.
 
