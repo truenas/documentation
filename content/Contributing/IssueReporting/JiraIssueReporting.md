@@ -15,7 +15,7 @@ TrueNAS uses [Jira](https://www.atlassian.com/software/jira) to track bugs and d
 You can view public issues without logging in, but you must create an Atlassian account and join the TrueNAS Jira instance to report bugs.
 See [Joining the TrueNAS Jira Instance](#joining-the-truenas-jira-instance).
 
-![TrueNAS Jira Project](/images/Contribute/Jira.png "TrueNAS Jira Project")
+{{< trueimage src="/images/Contribute/Jira.png" alt="TrueNAS Jira Project" id="TrueNAS Jira Project" >}}
 
 ### Joining the TrueNAS Jira Instance
 
@@ -38,7 +38,7 @@ To join the instance:
 2. Click your profile icon in the upper-right corner of the page and select **Log in**.
    The **Verify your email before joining a site** screen displays.
 
-   ![JiraVerificationDialog](/images/Contribute/JiraVerificationDialog.png "Verify Your Email Before Joining a Site")
+   {{< trueimage src="/images/Contribute/JiraVerificationDialog.png" alt="JiraVerificationDialog" id="Verify Your Email Before Joining a Site" >}}
 
 3. Click **Re-verify your account**.
    Jira sends a verification email to the address on your Atlassian account.
@@ -79,14 +79,14 @@ To submit a bug report:
 1. Go to the [TrueNAS project on Jira](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/issues) and click **Create** in the top bar.
    The **Create** window opens.
 
-   ![Create Ticket](/images/Contribute/JiraCreate.png "Create Ticket")
+   {{< trueimage src="/images/Contribute/JiraCreate.png" alt="Create Ticket" id="Create Ticket" >}}
 
 2. Select **Bug** from the work type dropdown list.
    The form reloads and displays the full set of bug report fields.
 
    If a field does not display, click <i class="fa fa-ellipsis-h" aria-hidden="true" title="More Actions"></i> (More actions) **> Show fields** and select **All fields**.
 
-   ![JiraCreateBug](/images/Contribute/JiraCreateBug.png "Bug Report Form")
+   {{< trueimage src="/images/Contribute/JiraCreateBug.png" alt="JiraCreateBug" id="Bug Report Form" >}}
 
 3. Enter a short, descriptive title in the **Summary** field.
    A good title helps developers find the issue and understand the topic.
@@ -108,7 +108,7 @@ To submit a bug report:
 
 7. Click **Create**.
 
-   ![Submit Ticket](/images/Contribute/JiraCreateBottom.png "Submit Ticket")
+   {{< trueimage src="/images/Contribute/JiraCreateBottom.png" alt="Submit Ticket" id="Submit Ticket" >}}
 
 Developers review the ticket and update it when they need additional information.
 The Jira account receives emails about the ticket status.
