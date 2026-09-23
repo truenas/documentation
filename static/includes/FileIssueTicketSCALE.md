@@ -1,7 +1,9 @@
 &NewLine;
 
 We encourage TrueNAS users to report bugs and to vote for or suggest new TrueNAS features in the project Jira instance.
-You must have [a Jira account](https://id.atlassian.com/signup?continue=https%3A%2F%2Fid.atlassian.com%2Fjoin%2Fuser-access%3Fresource%3Dari%253Acloud%253Ajira%253A%253Asite%252F94e022be-3595-4f54-979f-780bfeff904d%26continue%3Dhttps%253A%252F%252Fixsystems.atlassian.net%252Fplugins%252Fservlet%252Foauth%252Fauthorize%253Foauth_token%253Dz4KC1gtOt92BMtgTSMeJVf4Ku3sgNIls&application=jira) to create a bug ticket.
+You must have an Atlassian account and join the TrueNAS Jira instance to create a bug ticket.
+Signing in to your Atlassian account does not give you access to the TrueNAS instance.
+For the steps to join the instance, see [Joining the TrueNAS Jira Instance](https://www.truenas.com/docs/contributing/issuereporting/jiraissuereporting/#joining-the-truenas-jira-instance).
 
 If you encounter a bug or other issue while using TrueNAS, you can report issues in one of two ways:
 
