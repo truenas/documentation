@@ -544,10 +544,10 @@ No migration tool, wizard, or notification exists for these VMs.
 TrueNAS does not preserve the VM configuration, UEFI variables, or Trusted Platform Module (TPM) state.
 The VM disk remains on the pool.
 
-Before upgrading, record each VM configuration and back up its disk while still running TrueNAS 25.10.
+Before upgrading, record each VM configuration and back up the VM disk while still running TrueNAS 25.10.
 See [Preparing to Upgrade to TrueNAS 26](https://www.truenas.com/docs/scale/25.10/scaletutorials/virtualmachines/#preparing-to-upgrade-to-truenas-26) in the TrueNAS 25.10 documentation.
 
-After upgrading, see [Migrating Instance VMs to Virtual Machines]({{< ref "/VirtualMachines/ManagingVMs.md#migrating-instance-vms-to-virtual-machines" >}}) to re-create the VM and reattach its disk.
+After upgrading, see [Migrating Legacy VMs to Virtual Machines]({{< ref "/VirtualMachines/ManagingVMs.md#migrating-legacy-vms-to-virtual-machines" >}}) to re-create the VM and reattach the VM disk.
 
   </div>
 
