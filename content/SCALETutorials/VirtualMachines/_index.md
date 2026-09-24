@@ -442,7 +442,7 @@ The process involves:
 
 Before beginning the process:
 
-1. Identify the zvol names associated with the Legacy (Container) VM.
+1. Identify the zvol names associated with the Legacy VM.
 2. Take a recursive snapshot or back up the pool configured for Legacy VMs.
    Using ZFS commands to rename and move an existing zvol can damage data stored in the volume.
    Having a backup is a critical step to restoring data if something goes wrong in the process.
@@ -456,7 +456,7 @@ If not, go to **Credentials > Users**, edit the user to allow `sudo` commands, o
 
 ### Migrating a Zvol for a Legacy VM
 
-This procedure applies to the zvol for a Legacy or Container VM that has data you want to preserve and access from a new VM using the **Virtual Machines** screens in later releases.
+This procedure applies to the zvol for a Legacy VM that has data you want to preserve and access from a new VM using the **Virtual Machines** screens in later releases.
 
 1. Go to **Instances** (or **Containers**), click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
    The **Volumes** window lists all Legacy VMs and associated storage volumes (zvols).
