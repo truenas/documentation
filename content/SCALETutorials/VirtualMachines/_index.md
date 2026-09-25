@@ -278,7 +278,7 @@ Modify settings as needed to suit your use case.
    {{< /expand >}}
 </div>
 
-<p style="margin-left: 33px">After creating the VM, start it. Expand the VM entry and click **Start**.</p>
+<p style="margin-left: 33px">After creating the VM, start it. Click on the VM to expand it, then use the **Running** toggle to start it.</p>
 
 2. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
 
@@ -427,12 +427,12 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 
 <div class="noprint">
 
-## Migrating Containers VMs
+## Migrating Legacy VMs to Virtual Machines
 
 The storage volumes (zvols) for virtual machines created using the **Instances** screen in TrueNAS 25.04.0 or 25.04.1 (renamed the **Containers** screen in 25.04.2 and later) can migrate to new VMs created using the **Virtual Machines** screen in 25.04.2 and later.
 The process involves:
 
-- Identifying the hidden storage volumes (zvols) associated with the Instance VMs.
+- Identifying the hidden storage volumes (zvols) associated with the Legacy VMs.
 - Determining which zvol contains the actual VM data by checking the volume size.
 - Renaming (and moving) the zvols to a new dataset where they can be seen and used by a new VM.
 - (Highly Recommended) Configuring zvol properties to match those of natively-created VM zvols.
@@ -442,8 +442,8 @@ The process involves:
 
 Before beginning the process:
 
-1. Identify the zvol names associated with the Instance (Container) VM.
-2. Take a recursive snapshot or back up the pool configured for Instance VMs.
+1. Identify the zvol names associated with the Legacy VM.
+2. Take a recursive snapshot or back up the pool configured for Legacy VMs.
    Using ZFS commands to rename and move an existing zvol can damage data stored in the volume.
    Having a backup is a critical step to restoring data if something goes wrong in the process.
 3. Verify the VM is operational and the network is functioning as expected. One way to do this is to verify it has Internet access.
@@ -454,12 +454,12 @@ Before beginning the process:
 You do not need to log in as the root user if the logged-in admin user has permission to use `sudo` commands.
 If not, go to **Credentials > Users**, edit the user to allow `sudo` commands, or verify the root user has an active password to switch to this user when entering commands in the **Shell** screen.
 
-### Migrating a Zvol for an Instance VM
+### Migrating a Zvol for a Legacy VM
 
-This procedure applies to the zvol for an Instance or Container VM that has data you want to preserve and access from a new VM using the **Virtual Machines** screens in later releases.
+This procedure applies to the zvol for a Legacy VM that has data you want to preserve and access from a new VM using the **Virtual Machines** screens in later releases.
 
 1. Go to **Instances** (or **Containers**), click on **Configuration**, and then **Manage Volumes** to open the **Volumes** window.
-   The **Volumes** window lists all Instances VMs and associated storage volumes (zvols).
+   The **Volumes** window lists all Legacy VMs and associated storage volumes (zvols).
 
    Record the volume name or take a screenshot of the information to refer to later when entering commands in the **Shell** screen. Zvol names are similar to the VM name but not identical.
    Optionally, you can highlight all the listed information and copy/paste it into a text file, but this is not necessary.
@@ -468,7 +468,7 @@ This procedure applies to the zvol for an Instance or Container VM that has data
    One way to verify external network access is to check Internet access. Stop the VM before upgrading.
    Repeat for each zvol that you plan to migrate into a new VM in later releases.
 
-3. Go to **Datasets**, locate the pool associated with Instances (Containers), and take a recursive snapshot to back up all Instances VM zvols.
+3. Go to **Datasets**, locate the pool associated with Instances (Containers), and take a recursive snapshot to back up all Legacy VM zvols.
    These zvols are in the hidden **.ix-virt** directory created in the pool Instances uses, selected when you configure the feature.
    To verify the pool, you can go to **Containers > Configure > Global Settings** and look at the **Pool** setting.
 
@@ -499,16 +499,16 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    - Small `.block` files (56K) are stubs and should not be migrated
    {{< /hint >}}
 
-   a. Locate the hidden zvols for the Instance VMs, by entering:
+   a. Locate the hidden zvols for the Legacy VMs, by entering:
 
    <code>sudo zfs list -t volume -r -d 10 <i>poolname</i></code>
 
    Where:
    - `-d 10` shows datasets up to 10 levels deep
-   - *poolname* is the name of the pool associated with the Instance VMs.
-     If you have multiple pools associated with the Instance VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
+   - *poolname* is the name of the pool associated with the Legacy VMs.
+     If you have multiple pools associated with the Legacy VMs, repeat this command with the name of that pool to show hidden zvols in that pool.
 
-   The **.ix-virt** directory contains the zvols used in Instance VMs. Check the **USED** or **REFER** columns to identify the actual VM storage:
+   The **.ix-virt** directory contains the zvols used in Legacy VMs. Check the **USED** or **REFER** columns to identify the actual VM storage:
    - **For migrated VMs**: Use the `custom/default_*` zvol (typically several GB or more)
    - **For VMs created in 25.04.0 or 25.04.1**: Use the `.block` zvol that shows significant storage usage (not 56K stubs)
    - **Ignore**: Stub `.block` files showing only 56K, and zvols not in the `.ix-virt` directory
@@ -595,11 +595,11 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    Go to **Virtual Machines**, click on **Add** to open the **Create Virtual Machine** wizard.
    For more information or details on using the Create Virtual Machine wizard, see [Creating a Virtual Machine](#creating-a-virtual-machine).
 
-   a. Complete the first screen by entering a name for the new VM, select the operating system used by the Instances VM, enter a brief description, and then if using the **Bind** setting, enter a password. Click **Next**.
+   a. Complete the first screen by entering a name for the new VM, select the operating system used by the Legacy VM, enter a brief description, and then if using the **Bind** setting, enter a password. Click **Next**.
 
    b. Configure the CPU and Memory settings, and then click **Next**.
 
-   c. On the **Disks** wizard screen, select **Use existing disk image**, click in **Select Existing Zvol** and select the volume moved from the Instances VM.
+   c. On the **Disks** wizard screen, select **Use existing disk image**, click in **Select Existing Zvol** and select the volume moved from the Legacy VM.
    If you move multiple zvols, refer to the screenshot or text file with the VM/zvol list to select the correct zvol for this new VM.
 
    d. Click **Next** until you get to the confirmation screen, then click **Create** to add the VM.
@@ -610,7 +610,45 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
    Setting the disk to first in boot order over a CD-ROM device with an OS on it, if added when creating the VM, prevents the volume from being overwritten by booting from that CD-ROM device.
    Click **Save**.
 
-8. Return to the **Virtual Machines** screen, expand the VM, then click **Start** to verify it opens as expected and has network access.
+8. Return to the **Virtual Machines** screen, click on the VM to expand it, then use the **Running** toggle to start it and verify it opens as expected and has network access.
+
+### Preparing to Upgrade to TrueNAS 26
+
+Legacy virtual machines created using the **Instances** screen in 25.04.0 and 25.04.1 are still shown on the **Containers** screen in 25.10.
+TrueNAS 26 removes them from the **Containers** screen entirely.
+No migration tool, wizard, or notification exists to move them automatically.
+Complete the following steps while still running TrueNAS 25.10.
+None of these steps are available after upgrading to TrueNAS 26.
+
+{{< hint type=important >}}
+TrueNAS does not delete a Legacy VM disk during the upgrade to 26.
+The disk remains on the pool, but TrueNAS does not preserve the VM configuration, UEFI variables, or Trusted Platform Module (TPM) state.
+{{< /hint >}}
+
+1. Go to **Containers**, and identify which instances are VMs.
+   Only VMs require this procedure. Containers migrate automatically during the upgrade to TrueNAS 26.
+
+2. Open each VM and record the CPU count, memory, disk size, network interface, MAC address, guest operating system, and secure boot setting.
+   A screenshot of the VM configuration is sufficient. You need these values to re-create the VM after upgrading.
+
+3. Go to **System > Shell** and record the zvol names and sizes.
+
+   <code>sudo zfs list -t volume -r -o name,volsize,used <i>poolname</i>/.ix-virt</code>
+
+   Where *poolname* is the name of the pool used by the Legacy VM.
+
+   Each VM root disk is *poolname*<file>/.ix-virt/virtual-machines/</file>*VMNAME*<file>.block</file>, where *VMNAME* is the name of the VM, unless that entry shows a **USED** value of about 56K.
+   A 56K **USED** value means the entry is an empty placeholder for a VM whose disk was imported from an existing image file. For this VM, record the *default_*-prefixed entry under *poolname*<file>/.ix-virt/custom/</file> instead.
+
+4. Start each VM, confirm it operates and has network access, then stop it.
+
+5. Go to **Datasets**, select the pool used by Instances, and take a recursive snapshot.
+
+   The snapshot preserves a copy of the data. Recovering from the snapshot requires renaming datasets back by hand. There is no single rollback that undoes the procedure in [Migrating a Legacy VM Disk](https://www.truenas.com/docs/scale/26/virtualmachines/managingvms/#migrating-a-legacy-vm-disk) in the TrueNAS 26 documentation.
+
+6. Upgrade to TrueNAS 26.
+
+   After the upgrade, complete [Migrating a Legacy VM Disk](https://www.truenas.com/docs/scale/26/virtualmachines/managingvms/#migrating-a-legacy-vm-disk) in the TrueNAS 26 documentation to re-create the VM and attach the disk.
 
 ## Virtual Machines Contents
 
