@@ -12,7 +12,7 @@ doctype: reference
 The **Credentials > S3 Access Keys** screen shows the access keys S3 clients use to connect to S3 buckets on the TrueNAS system.
 
 An *S3 access key* is a credential pair made up of an access key ID and a secret access key.
-S3 clients use the pair to sign each request.
+S3 clients use the pair to sign each request with AWS Signature Version 4 (SigV4), the standard authentication method for the S3 API.
 Each access key belongs to a TrueNAS user account, and the S3 service runs requests signed with that key as that user.
 An S3 access key cannot sign in to the TrueNAS web UI or API.
 
@@ -42,7 +42,7 @@ After you add an access key, the **S3 Access Keys** table lists the access keys 
 | **Status** | Shows the state of the access key. Only an access key with the **Enabled** status can sign requests. Statuses are:<ul><li>**Enabled** - The access key is active.</li><li>**Disabled** - An administrator cleared **Enabled** for the access key.</li><li>**Expired** - The access key passed its expiration date.</li><li>**User Missing** - The directory services account the access key belongs to no longer resolves.</li><li>**Secret Lost** - The secret access key was lost after restoring a system configuration file that did not include the secret seed. Rotate the secret to create a new one.</li></ul> |
 | **Expires On** | Shows when the access key expires, or **Never** for an access key that does not expire. |
 | **Last Used** | Shows when the S3 service last accepted a request signed with the access key, or **Never**. The S3 service updates this value at intervals, so a recent request might not show immediately. |
-| **Manage Buckets** | Shows **Yes** if the access key can create and delete buckets through the S3 protocol, or **No**. |
+| **Manage Buckets** | Shows **Yes** if the access key can create and delete buckets through the S3 protocol, or **No**. When a client creates a bucket, TrueNAS creates a new dataset for the bucket under the **Managed Root Dataset** set on the [**S3** service configuration screen]({{< ref "S3ServiceScreen" >}}). |
 | **Created** | Shows when the access key was created. Hidden by default. |
 {{< /truetable >}}
 
@@ -76,7 +76,7 @@ TrueNAS generates the access key ID and secret access key when you save a new ac
 | **Name** | (Required) Enter a unique name for the access key. |
 | **User** | (Required) Select the user account the access key belongs to. The S3 service runs requests signed with this key as that account, so select an account that has access only to the buckets the client needs. The root account cannot own an access key. The list shows non-built-in user accounts. **Add New** opens the **Add User** screen with **SMB Access** cleared and **Disable Password** selected, because an account created for S3 access does not need to sign in. |
 | **Enabled** | Selected by default. Select to allow clients to use the access key. Clear to disable the access key without deleting it. |
-| **Manage Buckets** | Select to allow clients that sign requests with this key to create and delete buckets through the S3 protocol. The user account must have a privilege that includes the **SHARING_S3_WRITE** role. Creating buckets also requires a **Managed Root Dataset** on the S3 service configuration screen. This setting does not affect other access keys that belong to the same account. |
+| **Manage Buckets** | Select to allow clients that sign requests with this key to create and delete buckets through the S3 protocol. The user account must have a privilege that includes the **SHARING_S3_WRITE** role. Members of the built-in *truenas_sharing_administrators* group have this role through the **Sharing Administrator** privilege, which also grants access to every other share type. Creating buckets also requires a **Managed Root Dataset** on the S3 service configuration screen. This setting does not affect other access keys that belong to the same account. |
 | **Non-expiring** | Select to create an access key that does not expire. Leave cleared to set an expiration date in **Expires On**. |
 | **Expires On** | (Required) Shows when **Non-expiring** is cleared. Click the calendar icon to select the date the access key expires. The S3 service refuses requests signed with an expired key. |
 {{< /truetable >}}

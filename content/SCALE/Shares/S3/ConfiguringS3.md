@@ -184,7 +184,8 @@ To allow a client to create and delete buckets, configure three settings:
 
    d. Select **Sharing S3 Write** in **Roles**, and then click **Save**.
 
-   The predefined **Sharing Administrator** privilege also includes this role, but it grants access to every share type.
+   The predefined **Sharing Administrator** privilege also includes this role, so members of the built-in *truenas_sharing_administrators* group already have it.
+   That privilege grants access to every share type.
    Create a privilege with only the **Sharing S3 Write** role to limit the account to S3.
 
 4. Go to **Credentials > S3 Access Keys**, click <span class="material-icons">more_vert</span> on the access key row, and then select **Edit**.

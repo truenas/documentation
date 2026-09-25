@@ -50,6 +50,11 @@ Basic S3 buckets are available on all TrueNAS systems.
 Bucket versioning, object lock, and S3 auditing are premium features.
 The UI shows a **Premium** tag on these settings when the system license does not include them.
 
+Basic buckets can still serve previous versions of objects from ZFS snapshots of the bucket dataset, without a license.
+Clients list and read these snapshot versions through the standard S3 versioning requests, the same way they read versions from a bucket with versioning suspended.
+The licensed versioning feature is S3 protocol versioning, where the S3 service creates a new version of an object each time a client uploads or deletes it and keeps the previous versions.
+See [ZFS Snapshots Settings]({{< ref "S3BucketsScreens#zfs-snapshots-settings" >}}) to select the snapshots a bucket serves as versions.
+
 Premium features are available with TrueNAS Connect memberships, or on TrueNAS Enterprise appliances with a license that includes the S3 features.
 
 {{< enterprise >}}
