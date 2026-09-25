@@ -290,7 +290,7 @@ Modify settings as needed to suit your use case.
    {{< /expand >}}
 </div>
 
-<p style="margin-left: 33px">After creating the VM, start it. Expand the VM entry and click **Start**.</p>
+<p style="margin-left: 33px">After creating the VM, start it. Click on the VM to expand it, then use the **Running** toggle to start it.</p>
 
 2. Click **Display** to open a SPICE interface and see the Debian Graphical Installation screens.
 
@@ -437,10 +437,114 @@ If your system has only one physical interface, create a bridge interface for th
 Stop all existing apps, VMs, and services using the current interface, edit the interface and VMs, create the bridge, and add the bridge to the VM device.
 See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more information.
 
-<div class="noprint">
+## Migrating Legacy VMs to Virtual Machines
 
-## Virtual Machines Contents
+Legacy VMs created using the **Instances** screen in 25.04.0 and 25.04.1 remained on the **Containers** screen through 25.10.
+TrueNAS 26 removes them from the **Containers** screen entirely.
+No migration tool, wizard, or notification exists for them.
+Containers migrate automatically during the upgrade. These legacy VMs do not.
 
-{{< children depth="2" description="true" >}}
+{{< hint type=important >}}
+TrueNAS does not delete a Legacy VM disk during the upgrade.
+The disk remains on the pool, but TrueNAS does not preserve the VM configuration, UEFI variables, or Trusted Platform Module (TPM) state.
+You re-create the VM configuration by hand and reattach the disk to it.
+A guest operating system whose disk is unlocked by a TPM-bound key does not start after migration, because the original TPM state does not carry over.
+{{< /hint >}}
 
-</div>
+{{< hint type=note >}}
+Complete the preparation steps before you upgrade, while the system still runs TrueNAS 25.10.
+None of the preparation steps are available after upgrading to TrueNAS 26.
+See [Preparing to Upgrade to TrueNAS 26](https://www.truenas.com/docs/scale/25.10/scaletutorials/virtualmachines/#preparing-to-upgrade-to-truenas-26) in the TrueNAS 25.10 documentation.
+{{< /hint >}}
+
+### Migrating a Legacy VM Disk
+
+Complete this procedure after upgrading to TrueNAS 26, using the VM settings and zvol information you recorded while running TrueNAS 25.10.
+
+1. Go to **Datasets** and create or identify a standard dataset to hold the migrated disk, for example *tank/vms*.
+
+   The rename in step 3 fails if the destination dataset does not exist.
+
+2. Go to **System > Shell** and list the volumes on the pool.
+
+   <code>sudo zfs list -t volume -r -o name,volsize,used,origin <i>poolname</i></code>
+
+   Where *poolname* is the name of the pool that contains the Legacy VM disks.
+
+   An entry under *poolname*<file>/.ix-virt/virtual-machines/</file> with a <file>.block</file> extension and a **USED** value close to its **VOLSIZE** is a VM root disk.
+   These zvols are sparse, so **USED** reflects only what the guest operating system wrote to the disk.
+   Use **VOLSIZE** to match a disk against the sizes you recorded while running TrueNAS 25.10.
+
+   A <file>.block</file> entry with a **USED** value of about 56K is an empty placeholder, not the VM disk.
+   This happens for a VM whose disk was imported from an existing image file rather than created blank.
+   For this VM, the actual disk is a *default_*-prefixed entry under *poolname*<file>/.ix-virt/custom/</file> with a **USED** value close to its **VOLSIZE**.
+   A custom volume can also belong to a container rather than a VM.
+   Confirm which instance a volume came from before you move it.
+
+   {{< expand "Example Command Output" "v" >}}
+   ```
+   NAME                                            VOLSIZE  USED   ORIGIN
+   tank/.ix-virt/virtual-machines/TrueNAS.block    20G      6.98G  tank/.ix-virt/images/9f2c...@readonly
+   tank/.ix-virt/virtual-machines/debian.block     10G      56K    tank/.ix-virt/images/4b81...@readonly
+   tank/.ix-virt/custom/default_debian-8cppg       10G      9.8G   -
+   ```
+
+   In this example, *TrueNAS.block* is a VM root disk.
+   *debian.block* is an empty placeholder for a VM created from an imported disk image. Its actual disk is *default_debian-8cppg* under <file>custom/</file>.
+   {{< /expand >}}
+
+3. Move each VM disk into the dataset from step 1.
+
+   <code>sudo zfs rename <i>tank</i>/.ix-virt/virtual-machines/<i>TrueNAS.block</i> <i>tank/vms/TrueNAS</i></code>
+
+   Where *tank* is the pool name, *TrueNAS.block* is the name of the VM disk from step 2, and *tank/vms/TrueNAS* is the destination path in the dataset from step 1.
+
+   Then promote the disk if the **ORIGIN** column showed a snapshot in step 2.
+
+   <code>sudo zfs promote <i>tank/vms/TrueNAS</i></code>
+
+   Where *tank/vms/TrueNAS* is the disk you just renamed.
+
+   A renamed disk with an **ORIGIN** value is still a clone of an image snapshot inside <file>.ix-virt</file> until you promote it.
+   Promoting the disk removes that dependency.
+
+   {{< hint type=warning >}}
+   Do not rename a disk after you attach it to a VM in step 6.
+   The VM stores the full zvol path, and renaming the zvol leaves the VM pointing at a path that no longer exists.
+   {{< /hint >}}
+
+4. Give the disk a device node.
+
+   <code>sudo zfs set volmode=default <i>tank/vms/TrueNAS</i></code>
+
+   Where *tank/vms/TrueNAS* is the disk you moved in step 3.
+
+   Legacy VM disks are created with `volmode=none`, which hides them from the rest of the system.
+   Without this step, the disk does not appear in step 6 and the VM cannot start.
+
+5. (Recommended) Set the disk cache properties to match a natively-created VM zvol.
+
+   <code>sudo zfs set primarycache=all secondarycache=all <i>tank/vms/TrueNAS</i></code>
+
+   Where *tank/vms/TrueNAS* is the disk you moved in step 3.
+
+   Legacy VM disks carry `primarycache=metadata` and `secondarycache=metadata`.
+   These settings do not prevent the VM from working, but setting them to `all` matches the zvol settings TrueNAS uses when you create a VM disk directly.
+
+6. Go to **Virtual Machines**, click **Add**, and enter the CPU, memory, and guest operating system settings you recorded while running TrueNAS 25.10.
+
+   If you did not record these values, select settings that match the original VM as closely as possible.
+   Set **Boot Method** to **UEFI**. Legacy VMs always used UEFI, and the migrated disk does not start under **Legacy BIOS**.
+
+   On the **Disks** screen, select **Use existing disk image**, then select the disk you moved in step 3 from **Select Existing Zvol**.
+
+   Complete the wizard.
+
+7. If you attached installation media to the new VM, click on the VM to expand it, click **Devices**, edit the disk device, and set the **Device Order** of the disk device to a value below the **Device Order** of the CD-ROM device.
+
+   This makes the VM start from the migrated disk instead of the CD-ROM device.
+
+8. Click on the VM to expand it, then use the **Running** toggle to start it.
+
+   Confirm the VM starts and has network access.
+   TrueNAS does not carry over the original UEFI variables, so a VM that stops at the UEFI shell needs the boot entry selected from the firmware boot menu once.

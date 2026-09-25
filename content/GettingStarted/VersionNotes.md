@@ -525,7 +525,8 @@ To restore 2FA for an affected account after upgrading:
 #### Containers
 
 LXC containers, introduced as an experimental feature in earlier TrueNAS releases, are fully supported in TrueNAS 26.
-No configuration migration is required for containers created in prior releases.
+Containers running in TrueNAS 25.10 migrate automatically to TrueNAS 26, except on TrueNAS Enterprise High Availability (HA) systems and Enterprise systems without the Apps license feature enabled.
+Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on one of these systems.
 
 TrueNAS 26 adds the following container improvements:
 
@@ -535,6 +536,18 @@ TrueNAS 26 adds the following container improvements:
 - **USB and PCIe passthrough fixes** — A regression that prevented USB and PCIe device passthrough to containers and VMs is resolved in BETA.1 ([NAS-139045](https://ixsystems.atlassian.net/browse/NAS-139045), [NAS-139356](https://ixsystems.atlassian.net/browse/NAS-139356)).
 
 See [Containers]({{< ref "/Containers/ManagingContainers.md" >}}) for configuration details.
+
+#### Virtual Machines
+
+Legacy virtual machines from the **Instances** screen, still shown on the **Containers** screen in TrueNAS 25.10, are not automatically migrated to TrueNAS 26.
+No migration tool, wizard, or notification exists for these VMs.
+TrueNAS does not preserve the VM configuration, UEFI variables, or Trusted Platform Module (TPM) state.
+The VM disk remains on the pool.
+
+Before upgrading, record each VM configuration and back up the VM disk while still running TrueNAS 25.10.
+See [Preparing to Upgrade to TrueNAS 26](https://www.truenas.com/docs/scale/25.10/scaletutorials/virtualmachines/#preparing-to-upgrade-to-truenas-26) in the TrueNAS 25.10 documentation.
+
+After upgrading, see [Migrating Legacy VMs to Virtual Machines]({{< ref "/VirtualMachines/ManagingVMs.md#migrating-legacy-vms-to-virtual-machines" >}}) to re-create the VM and reattach the VM disk.
 
   </div>
 
