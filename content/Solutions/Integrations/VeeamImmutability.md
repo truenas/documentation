@@ -1,15 +1,15 @@
 ---
 title: "Veeam Immutability"
-description: "Guide for deploying Veeam immutability in a TrueNAS system using MinIO as S3 object storage."
+description: "Guide for configuring TrueNAS S3 object storage as an immutable backup repository for Veeam Backup & Replication."
 weight: 45
 aliases:
 tags:
  - s3 object storage
  - backup and recovery
- - backup solution 
+ - backup solution
 ---
 
-TrueNAS Enterprise systems can act as S3-compatible object storage for Veeam Backup & Replication Immutability.
+TrueNAS can act as S3-compatible object storage for immutable backups in Veeam Backup & Replication.
 
 Immutability is a feature of Veeam Backup & Replication. When configured with storage solutions such as TrueNAS, it prevents modifying or deleting data for a specified period of time.
 Set the immutability period based on your needs. After this period expires, backed up data can be modified or deleted again.
@@ -22,60 +22,126 @@ Veeam protects a backup chain and all the restore points of this chain for the s
 The immutability period is the number of days you have to respond to malicious actions.
 During this period you can roll back to the earlier state of your backup chain. Rolling back requires running Veeam PowerShell. See [Rolling Back Immutable Data](https://helpcenter.veeam.com/docs/backup/vsphere/hiw_immutability_os.html?ver=120#rollback) for more information.
 
+With S3 object storage, Veeam uses the S3 object lock feature to make backups immutable.
+Veeam sets a compliance mode retention period on each object it writes.
+No S3 client can delete or modify an object in compliance mode before its retention period ends, including a client that uses Veeam administrator credentials.
+
+{{< hint type=warning >}}
+Choose the immutability period carefully.
+You cannot shorten the retention period or delete immutable backups before the period ends, even if you need to free storage space or must delete specific data.
+{{< /hint >}}
+
+Because Veeam protects the whole backup chain, it extends the immutability of earlier restore points as it adds new ones.
+Immutable backups often use more storage than the number of immutable days suggests.
+Plan storage capacity with this in mind.
+
 For more detailed information on Veeam Immutability, see [How Immutability Works](https://helpcenter.veeam.com/docs/backup/vsphere/hiw_immutability_os.html).
 
 ## What is Required to Configure Veeam Immutability?
 
-* Obtain and apply the TrueNAS Enterprise license for VMs and Applications to your TrueNAS Enterprise system.
-* Deploy the **MinIO™** Enterprise app.
-  You can deploy the MinIO Enterprise app as S3 object storage or configure a cluster to use for S3 object storage.
-  To deploy a cluster follow the instructions in the [MinIO MNMD tutorial](https://apps.truenas.com/resources/minio-enterprise-mnmd/).
-  A cluster consists of four systems (nodes), each with four datasets (representing drives in the cluster configuration).
-* Verify the MinIO service shows your MinIO app deployment as a single or clustered configuration.
-  The correct number of nodes and drives for a cluster configuration is four nodes and 12 drives.
-* Set up and configure Veeam Immutability.
-  Configure a new bucket and the immutability settings to use the MinIO app in TrueNAS as the S3-compatible object storage.
+* A TrueNAS system license that includes S3 versioning.
+  Object lock requires versioning, which is a licensed feature.
+  See [Licensed S3 Features]({{< ref "/SCALE/Shares/S3/_index.md#licensed-s3-features" >}}).
+* A dataset on TrueNAS to hold the bucket dataset, for example *tank/s3*.
+* Veeam Backup & Replication installed on a Windows server.
+  The Veeam Software Appliance does not support the object storage repository type.
+  See [Veeam Software Appliance]({{< ref "Veeam-Software-Appliance" >}}) for more information.
 
-## Configuring TrueNAS and the MinIO Enterprise App
-This guide describes the process of configuring a Veeam Immutability solution.
+## Configuring TrueNAS S3 Object Storage for Veeam
 
-Before you begin, acquire and install/apply the Enterprise VM & Apps License for a single system or if a cluster, for four TrueNAS systems in the Multi-Node Multi Disk (MNMD) cluster configuration. You can apply the same license to each of the cluster systems.
+Configure the S3 service, create an access key for Veeam, and add an object-locked bucket for the backup repository.
+See [Configuring S3 Object Storage]({{< ref "ConfiguringS3" >}}) for detailed instructions on each task.
 
-Follow the instructions in the [MinIO Enterprise tutorial](https://apps.truenas.com/resources/deploy-minio-enterprise/) for a single system deployment, or [MinIO Enterprise MNMD tutorial](https://apps.truenas.com/resources/minio-enterprise-mnmd/) to install and deploy the MinIO enterprise train app in a MNMD configuration. TrueNAS and MinIO provide the S3 compatible object storage for Veeam.
+1. Configure the S3 service.
+   Go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** widget, and then select **Config Service**.
+
+   a. (Optional) Add a listen address with **TLS** selected to encrypt backup traffic between Veeam and TrueNAS.
+
+   b. Select the **Certificate** for the TLS listen address, or keep **Use UI certificate**.
+
+   c. Click **Save**.
+
+2. Create an access key for Veeam.
+   Go to **Credentials > S3 Access Keys**, and then click **Add**.
+
+   a. Enter a **Name**, and then select or create the user account for Veeam in **User**.
+
+   b. Select **Non-expiring**.
+      An expired access key stops Veeam from writing backups.
+
+   c. Click **Save**, and then copy the **Access Key ID** and **Secret Access Key** from the **S3 Access Key** dialog.
+      The web UI does not show the secret access key again.
+
+3. Add the bucket for the backup repository.
+   Go to **Shares**, and then click **Add** on the **Object Storage (S3) Buckets** widget.
+
+   a. Enter a **Name**, select the **Parent Dataset**, and select the Veeam user account as the **Owner**.
+
+   b. Select **Enable Object Lock**.
+      **Versioning** changes to **Enabled** and **Default Retention Mode** shows.
+
+   c. Select **No default rule** in **Default Retention Mode**.
+      Selecting **Enable Object Lock** changes **Default Retention Mode** to **Compliance**.
+      Veeam requires a bucket without a default retention rule because it sets the retention for each object.
+
+   d. Click **Save**.
+      If the **Start S3 Service** dialog opens, select **Enable this service to start automatically**, and then click **Start**.
+
+{{< hint type=warning >}}
+Object lock is permanent.
+After you save the bucket, you cannot disable object lock or versioning on the bucket.
+Do not change the bucket settings after you add the bucket to Veeam.
+{{< /hint >}}
+
+TrueNAS reports a recommended storage block size to Veeam based on the record size of the bucket dataset.
+The default 128 KiB record size reports no recommendation.
 
 ## Configuring Veeam for Immutability
-Open Veeam Backup & Replication Console, go to **Backup Infrastructure** and click on **Backup Repositories**.
+Add the TrueNAS bucket to Veeam as an S3-compatible object storage repository.
 See [Adding S3 Compatible Object Storage](https://helpcenter.veeam.com/docs/backup/vsphere/adding_s3c_object_storage.html) for detailed instructions.
 
-Create a new bucket for the S3-compatible object storage repository.
-Enable object locking on this bucket when you create it.
-See [Creating a Bucket](https://helpcenter.veeam.com/docs/backup/vsphere/restore_entire_bucket_new_bucket.html) for more information.
+1. Open the Veeam Backup & Replication Console, go to **Backup Infrastructure**, and click **Backup Repositories**.
 
-To create multiple child buckets automatically while creating the S3 object storage, click **Automatic bucket creation disabled** on the **New Object Storage Repository > Bucket** screen to show the **Create new buckets automatically** option. Select to have Veeam automatically create child buckets.
+2. Click **Object Storage**, and choose **S3 Compatible**. The **New Object Storage Repository** wizard opens.
 
-Click on **Object Storage**, and choose S3 Compatible. The **New Object Storage Repository** wizard opens.
+3. Configure the **Account** screen.
 
-On the **Account** screen, select or enter the IP address and port number for the TrueNAS server in **Service Point**. Enter as IP address:port number.
-Select the region where the TrueNAS server is located in **Region**.
-Browse to select the certificate used for MinIO in the TrueNAS server cluster.
+   a. Enter the TrueNAS IP address and S3 listen port in **Service Point**, as *IP address:port number*, for example *192.168.1.10:9000*.
 
-Select the connection type in **Connection Mode**.
-Select **Direct** to instantly move data of processed VMs to object storage repositories. This requires specifying access permissions.
-Select **Through gateway server** to have Veeam Backup & Replication use a gateway server to transfer data from processed VMs or file share to object storage repositories (default setting).
+   b. Enter a **Region**.
+      If the **Region** setting on the TrueNAS S3 service is empty, TrueNAS accepts any region, such as *us-east-1*.
 
-**Credentials** should show the certificate for the TrueNAS system. If TrueNAS uses a self-signed certificate, a certificate security alert dialog opens. Click **Continue** to close the dialog. Click**Next**.
+   c. Add the TrueNAS S3 access key in **Credentials**, using the **Access Key ID** and **Secret Access Key**.
 
-Select the bucket created for this repository where you want to store backup data. Add a new folder to the bucket. You must add at least one folder.
-Optionally, select **Limit object storage consumption to *x* TB** and/or **Make recent backups immutable for *x* days** to enable them and set the measurement for each option.
-Click **Next**.
+   d. Select the connection type in **Connection Mode**.
+      Select **Direct** to move data of processed VMs directly to object storage repositories. This requires specifying access permissions.
+      Select **Through gateway server** to have Veeam Backup & Replication use a gateway server to transfer data from processed VMs or file shares to object storage repositories. This is the default setting.
 
-If not already shown, specify the server you want to use as the mount server. Veeam uses this during restore operations to mount VM disks directly from objects located in the object storage repositories.
-If not listed, click **Add New**. See [Adding Windows Servers](https://helpcenter.veeam.com/docs/backup/vsphere/add_windows_server.html) for instructions.
-Select the folder to keep the cache created during mount operations from the **Instant recovery write cache folder** dropdown list.
-Enter the NFS service settings if desired and enter the ports Veeam should suer for the NFS service. See [Specifying Mount Server Settings](https://helpcenter.veeam.com/docs/backup/vsphere/compatible_mount_server.html?ver=120#specifying-mount-server-settings) for more information.
+   e. Click **Next**.
+      If TrueNAS uses a self-signed certificate, a certificate security alert dialog opens. Click **Continue** to close the dialog.
 
-Veeam automatically installs additional components if needed. Click **Next**, review the configuration, and then click **Finish**.
+4. Configure the **Bucket** screen.
+
+   a. Select the TrueNAS bucket for the repository.
+
+   b. Add a folder to the bucket. You must add at least one folder.
+
+   c. Select **Make recent backups immutable for *x* days**, and enter the number of days.
+
+   d. (Optional) Select **Limit object storage consumption to *x* TB**, and enter the limit.
+
+   e. Click **Next**.
+
+5. Configure the mount server.
+   Veeam uses the mount server during restore operations to mount VM disks directly from objects in the object storage repository.
+
+   a. Select the mount server. If not listed, click **Add New**. See [Adding Windows Servers](https://helpcenter.veeam.com/docs/backup/vsphere/add_windows_server.html) for instructions.
+
+   b. Select the folder for the cache created during mount operations from the **Instant recovery write cache folder** dropdown list.
+
+   c. (Optional) Enter the NFS service settings and the ports Veeam uses for the NFS service. See [Specifying Mount Server Settings](https://helpcenter.veeam.com/docs/backup/vsphere/compatible_mount_server.html?ver=120#specifying-mount-server-settings) for more information.
+
+6. Click **Next**, review the configuration, and then click **Finish**.
+   Veeam automatically installs additional components if needed.
 
 Create a new backup job in Veeam if desired. See [Creating Immutable Configuration Backups](https://helpcenter.veeam.com/docs/backup/vsphere/config_backup_immutable.html) for more information.
-
-{{< trademark-notice minio="true" >}}
