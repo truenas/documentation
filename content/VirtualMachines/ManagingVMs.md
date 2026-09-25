@@ -471,12 +471,14 @@ Complete this procedure after upgrading to TrueNAS 26, using the VM settings and
 
    Where *poolname* is the name of the pool that contains the Legacy VM disks.
 
-   Every entry under *poolname*<file>/.ix-virt/virtual-machines/</file> with a <file>.block</file> extension is a VM root disk, regardless of the **USED** value.
+   An entry under *poolname*<file>/.ix-virt/virtual-machines/</file> with a <file>.block</file> extension and a **USED** value close to its **VOLSIZE** is a VM root disk.
    These zvols are sparse, so **USED** reflects only what the guest operating system wrote to the disk.
    Use **VOLSIZE** to match a disk against the sizes you recorded while running TrueNAS 25.10.
 
-   Entries under *poolname*<file>/.ix-virt/custom/</file> are volumes that were attached to an instance.
-   A custom volume can belong to a container as well as to a VM.
+   A <file>.block</file> entry with a **USED** value of about 56K is an empty placeholder, not the VM disk.
+   This happens for a VM whose disk was imported from an existing image file rather than created blank.
+   For this VM, the actual disk is a *default_*-prefixed entry under *poolname*<file>/.ix-virt/custom/</file> with a **USED** value close to its **VOLSIZE**.
+   A custom volume can also belong to a container rather than a VM.
    Confirm which instance a volume came from before you move it.
 
    {{< expand "Example Command Output" "v" >}}
@@ -484,8 +486,11 @@ Complete this procedure after upgrading to TrueNAS 26, using the VM settings and
    NAME                                            VOLSIZE  USED   ORIGIN
    tank/.ix-virt/virtual-machines/TrueNAS.block    20G      6.98G  tank/.ix-virt/images/9f2c...@readonly
    tank/.ix-virt/virtual-machines/debian.block     10G      56K    tank/.ix-virt/images/4b81...@readonly
-   tank/.ix-virt/custom/default_vm2410linux-8cppg  40G      40.6G  -
+   tank/.ix-virt/custom/default_debian-8cppg       10G      9.8G   -
    ```
+
+   In this example, *TrueNAS.block* is a VM root disk.
+   *debian.block* is an empty placeholder for a VM created from an imported disk image. Its actual disk is *default_debian-8cppg* under <file>custom/</file>.
    {{< /expand >}}
 
 3. Move each VM disk into the dataset from step 1.
