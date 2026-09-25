@@ -637,7 +637,8 @@ The disk remains on the pool, but TrueNAS does not preserve the VM configuration
 
    Where *poolname* is the name of the pool used by the Legacy VM.
 
-   Each VM root disk is *poolname*<file>/.ix-virt/virtual-machines/</file>*VMNAME*<file>.block</file>, where *VMNAME* is the name of the VM.
+   Each VM root disk is *poolname*<file>/.ix-virt/virtual-machines/</file>*VMNAME*<file>.block</file>, where *VMNAME* is the name of the VM, unless that entry shows a **USED** value of about 56K.
+   A 56K **USED** value means the entry is an empty placeholder for a VM whose disk was imported from an existing image file. For this VM, record the *default_*-prefixed entry under *poolname*<file>/.ix-virt/custom/</file> instead.
 
 4. Start each VM, confirm it operates and has network access, then stop it.
 
