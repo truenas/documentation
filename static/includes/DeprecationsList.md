@@ -20,11 +20,11 @@ Containers migrate automatically during the upgrade. These legacy VMs do not.
 
 Migration Path:
 
-1. While still running TrueNAS 25.10, record the configuration of each Legacy VM and the location of the disk on the pool.
+1. While still running TrueNAS 25.10, record the configuration of each legacy VM and the location of the disk on the pool.
 2. Upgrade to TrueNAS 26.
 3. Re-create the VM and reattach the disk using the migration procedure.
 
-Impact: A Legacy VM does not appear anywhere in TrueNAS 26 after the upgrade. The VM disk remains on the pool, but you must re-create the VM configuration by hand and reattach the disk to it.
+Impact: A legacy VM does not appear anywhere in TrueNAS 26 after the upgrade. The VM disk remains on the pool, but you must re-create the VM configuration by hand and reattach the disk to it.
 
 See Also:
 
