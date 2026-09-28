@@ -24,8 +24,9 @@ To use a bucket as an immutable backup target, see [Adding an Object-Locked Buck
 
 Before you configure S3 object storage:
 
-* Create or select a dataset to hold the bucket datasets, for example *tank/s3*.
-  TrueNAS creates a new child dataset under it for each bucket.
+* Create or select a parent dataset for each bucket, for example *tank/s3*.
+  TrueNAS creates a new child dataset under it for the bucket.
+  Each bucket can use a different parent dataset in any pool.
 * Decide which user account owns each bucket and which account each client uses.
   You can create a dedicated account while you add the access key or bucket.
   The root account cannot own a bucket or an access key.
@@ -141,6 +142,7 @@ TrueNAS creates a new dataset for the bucket under the parent dataset you select
 
 The bucket owner has full access to the bucket.
 To give other accounts access, add grants to the bucket.
+Grants apply to the whole bucket and only control access through the S3 protocol.
 
 1. Click <span class="material-icons">more_vert</span> on the bucket row, and then select **Edit**.
 
@@ -197,6 +199,7 @@ When the client creates a bucket, TrueNAS creates a dataset for it under the man
 If a dataset with that name already exists, TrueNAS adds a number to the dataset name, for example *tank/s3/backups_1*.
 The new bucket shows on the **Object Storage (S3) Buckets** widget.
 When the client deletes a bucket, TrueNAS keeps the bucket dataset and its objects.
+To remove the data, delete the bucket dataset on the **Datasets** screen.
 
 **Manage Buckets** only applies to the access key you select.
 Other access keys that belong to the same account cannot create or delete buckets unless you also select **Manage Buckets** for them.
@@ -273,6 +276,7 @@ Versioning and object lock only change in one direction:
 
 You can create an SMB or NFS share that gives read-only access to bucket objects.
 Set the bucket **Permissions Model** to **Multiprotocol** so the S3 service enforces the filesystem ACL.
+**Multiprotocol** can make permissions management more complex and can reduce S3 performance.
 
 When you add the share:
 

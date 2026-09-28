@@ -17,11 +17,13 @@ TrueNAS provides S3-compatible object storage on the local system and does not u
 
 Clients such as backup applications, media tools, and other applications that use the S3 API store and retrieve data in S3 buckets hosted on the TrueNAS system.
 
-*Object storage* keeps data as whole objects in a flat container called a *bucket*, rather than as files in a folder hierarchy.
+*Object storage* keeps objects as files in a folder hierarchy.
 Clients upload and download complete objects over HTTP or HTTPS and sign each request with an access key.
 
 TrueNAS creates a dedicated dataset for each S3 bucket.
 Objects are stored in the <file>s3data</file> directory of the bucket dataset, so ZFS features such as snapshots, replication, quotas, and encryption apply to the bucket.
+
+S3 access does not descend into child datasets. Any datasets created as a child dataset will not appear in any way inside of the bucket.
 
 {{< hint type=note >}}
 The S3 feature displays an **Experimental** label in the TrueNAS UI.
