@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "26.0.0-beta.3"
+    anchor: "26.0.0-rc.1"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -37,7 +37,28 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="26.0.0-beta.3" data-tab-label="26-BETA.3 Notable Changes">
+  <div data-tab-id="26.0.0-rc.1" data-tab-label="26-RC.1 Notable Changes">
+
+{{< hint type=warning title="Early Release Software" >}}
+Early releases are intended for testing and feedback purposes.
+Do not use early-release software for critical tasks.
+{{< /hint >}}
+
+October 6, 2026
+
+The TrueNAS team is pleased to release TrueNAS 26-RC.1!
+
+**Notable changes:**
+
+<!-- Notable changes placeholder -->
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14697" target="_blank">TrueNAS 26-RC.1 Changelog</a> in Jira.
+
+  </div>
+
+  <div data-tab-id="26-beta" data-tab-label="26-BETA Notable Changes">
+
+{{< expand "26-BETA.3 Notable Changes" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -144,9 +165,9 @@ It also fixes upgrade issues that affected Active Directory and Enterprise updat
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14654" target="_blank">TrueNAS 26-BETA.3 Changelog</a> in Jira.
 
-  </div>
+{{< /expand >}}
 
-  <div data-tab-id="26.0.0-beta.2" data-tab-label="26-BETA.2 Notable Changes">
+{{< expand "26-BETA.2 Notable Changes" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -269,9 +290,9 @@ The TrueNAS team is pleased to release TrueNAS 26-BETA.2!
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14541" target="_blank">TrueNAS 26-BETA.2 Changelog</a> in Jira.
 
-  </div>
+{{< /expand >}}
 
-  <div data-tab-id="26.0.0-beta.1" data-tab-label="26-BETA.1 Notable Changes">
+{{< expand "26-BETA.1 Notable Changes" "v" >}}
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
@@ -392,6 +413,8 @@ Incompatible with SMB1 support and Multi-Protocol or Legacy share purposes.
 See [Enabling SMB Stateful Failover]({{< ref "AddManageSMBShares#enabling-smb-stateful-failover" >}}) for details.
 -->
 
+{{< /expand >}}
+
   </div>
 
   <div data-tab-id="known-issues" data-tab-label="Known Issues">
@@ -408,7 +431,7 @@ These are ongoing issues that can affect multiple versions in the 26 series.
   Other task types, such as Replication and Cloud Sync, appear on the card as expected.
 * Upgrading to TrueNAS 26 can disrupt two-factor authentication (2FA) for any account with a stored token interval other than 30 or 60 seconds. TrueNAS 26 supports only these two intervals and clears the stored 2FA secret for any affected account during the upgrade. A non-standard interval can come from the API, or from the global 2FA interval setting in TrueNAS releases before 24.04, which applied a single interval to every 2FA account on the system and persists across upgrades. The current web interface always uses a 30-second interval. See [Two-Factor Authentication](#two-factor-authentication) for who is affected and how to restore access.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=14655" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=14698" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
@@ -441,7 +464,7 @@ For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" 
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.0.0-beta.3');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '26.0.0-rc.1');
 });
 </script>
 
