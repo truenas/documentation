@@ -445,7 +445,7 @@ No migration tool, wizard, or notification exists for them.
 Containers migrate automatically during the upgrade. These legacy VMs do not.
 
 {{< hint type=important >}}
-TrueNAS does not delete a Legacy VM disk during the upgrade.
+TrueNAS does not delete a legacy VM disk during the upgrade.
 The disk remains on the pool, but TrueNAS does not preserve the VM configuration, UEFI variables, or Trusted Platform Module (TPM) state.
 You re-create the VM configuration by hand and reattach the disk to it.
 A guest operating system whose disk is unlocked by a TPM-bound key does not start after migration, because the original TPM state does not carry over.
@@ -469,7 +469,7 @@ Complete this procedure after upgrading to TrueNAS 26, using the VM settings and
 
    <code>sudo zfs list -t volume -r -o name,volsize,used,origin <i>poolname</i></code>
 
-   Where *poolname* is the name of the pool that contains the Legacy VM disks.
+   Where *poolname* is the name of the pool that contains the legacy VM disks.
 
    An entry under *poolname*<file>/.ix-virt/virtual-machines/</file> with a <file>.block</file> extension and a **USED** value close to its **VOLSIZE** is a VM root disk.
    These zvols are sparse, so **USED** reflects only what the guest operating system wrote to the disk.
