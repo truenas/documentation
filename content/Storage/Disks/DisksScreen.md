@@ -95,7 +95,7 @@ See [Wiping Disks]({{< ref "WipingDisks" >}}) for more information.
 
 {{< trueimage src="/images/SCALE/Storage/DiskSEDUnlockDialog.png" alt="SED Unlock Dialog" id="SED Unlock Dialog" >}}
 
-For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALE/Storage/Disks/SED.md" >}}), the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
+For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "SED.md" >}}), the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
 
 #### SED Reset Window
 
@@ -119,7 +119,7 @@ Resetting the SED is a destructive process and should only be used as a last res
 
 **Perform SED Reset** activates after entering the required information and selecting the **I understand...** option. **Cancel** closes the window without performing the reset.
 
-## Edit Disk Screen 
+## Edit Disk Screen
 The **Edit Disk** screen allows users to configure and manage general disk, power management, and SED settings for system disks not assigned to a pool.
 
 {{< trueimage src="/images/SCALE/Storage/EditDiskScreenWithSED.png" alt="Edit Disk Screen" id="Edit Disk Screen" >}}
