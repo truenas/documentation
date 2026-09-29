@@ -256,7 +256,7 @@ The **Add Tunable** configuration screen allows setting up tunables to configure
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddTunableScreen.png" alt="Add Tunable Screen" id="Add Tunable Screen" >}}
 
-{{< expand "Tunable Settings" "v" >}} <!-- most of these settings are in in the settings ssot yaml file, noted in the project-memory.md file -->
+{{< expand "Tunable Settings" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -407,7 +407,7 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Config Screen" id="Self-Encrypting Drive Config Screen" >}}
 
-{{< expand "Self-Encrypting Drive Settings" "v" >}} <!-- tag for ui ref setting automation {id="system_advanced_sed-config"} -->
+{{< expand "Self-Encrypting Drive Settings" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -415,6 +415,8 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 | **Confirm SED Password** | Confirms the global password that must exactly match the SED password. |
 {{< /truetable >}}
 {{< /expand >}}
+
+For more information on SEDs, see [Managing Self-Encrypting Drives (SED)]({{< ref "/Storage/Disks/SED" >}}), [Importing Pools]({{< ref "ImportPool.md" >}}), and the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}) articles.
 
 ## Isolated GPU Device(s) Card
 

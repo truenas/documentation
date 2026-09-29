@@ -29,7 +29,7 @@ The checkbox at the top of the table selects all disks in the system. Select aga
 
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
 The expanded view of a disk includes details for the disk, options to edit disk properties, and, in some instances, the ability to wipe the disk.
-An expanded disk on an Enterprise systems licensed for SED drives shows SED options.
+An expanded disk on an Enterprise system licensed for SED drives shows SED options.
 
 {{< trueimage src="/images/SCALE/Storage/DiskScreenExpandedDiskWithWipeOption.png" alt="Disk Details" id="Disk Details" >}}
 
@@ -65,7 +65,7 @@ The screen lists the device names for each selected disk in the **Disks to be ed
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
 
-### Wipe Disk Dialogs <!-- tag for ui ref automation {id="disk_wipe"} -->
+### Wipe Disk Dialogs
 
 The option to wipe a disk only displays when a disk is not assigned to a pool and is not in use.
 **Wipe** opens three dialogs: one to select the method, a confirmation dialog, and a progress dialog that includes the option to abort the process.
@@ -89,18 +89,20 @@ See [Wiping Disks]({{< ref "WipingDisks" >}}) for more information.
 **Abort** stops the disk wipe process. At the end of the disk wipe process, a success dialog displays.
 **Close** closes the dialog and returns you to the **Disks** screen.
 
-### SED Unlock Dialog <!-- tag for ui ref automation {id="disk_sed-unlock"} -->
+### SED Unlock Dialog
 
-The **Unlock** button opens the **Unlock SED for *diskname*** dialog with the **Password** field where you enter the SED password to unlock the disk with the global SED password or the individual disk SED password if one is assigned to the disk.
+**Unlock** opens the **Unlock SED for *diskname*** dialog with the **Password** field where you enter the SED password to unlock the disk with the global SED password or the individual disk SED password if one is assigned to the disk.
 
 {{< trueimage src="/images/SCALE/Storage/DiskSEDUnlockDialog.png" alt="SED Unlock Dialog" id="SED Unlock Dialog" >}}
 
-#### SED Reset Window <!-- tag for ui ref automation {id="disk_sed-reset"} -->
+For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "SED.md" >}}), the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
+
+#### SED Reset Window
 
 The **SED Reset** button opens the **SED Reset - Secure Erase** window.
 This window shows a critical warning stating the operation is irreversible and permanently destroys all data on the disk.
 {{< hint type=warning title="Destructive Process!" >}}
-Reseting the SED is a destructive process and should only be used as a last resort after all data on the disk and in the pool is backup to a secure location.
+Resetting the SED is a destructive process and should only be used as a last resort after all data on the disk and in the pool is backed up to a secure location.
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/Storage/DiskResetSEDWindowTop.png" alt="Reset SED Window Top" id="Reset SED Window Top" >}}
@@ -109,7 +111,7 @@ Reseting the SED is a destructive process and should only be used as a last reso
 
 **Physical Security ID (PSID)** requires entering the  PSID from the label on the drive.
 
-**I understand this will permanently destroy all data on this disk** is required and confirms you understand this is a destructive process before you can proceed.
+**I understand this will permanently destroy all data on this disk** is required and confirms that you understand this is a destructive process before you can proceed.
 
 **Where to find the PSID** provides information on the physical label on a disk.
 
@@ -117,27 +119,27 @@ Reseting the SED is a destructive process and should only be used as a last reso
 
 **Perform SED Reset** activates after entering the required information and selecting the **I understand...** option. **Cancel** closes the window without performing the reset.
 
-## Edit Disk Screen 
+## Edit Disk Screen
 The **Edit Disk** screen allows users to configure and manage general disk, power management, and SED settings for system disks not assigned to a pool.
 
 {{< trueimage src="/images/SCALE/Storage/EditDiskScreenWithSED.png" alt="Edit Disk Screen" id="Edit Disk Screen" >}}
 
 Click **Edit Disk** on the **[Devices]({{< ref "VDEVScreens" >}})** screen to open the the **Edit Disk** screen.
 
-### General Settings <!-- tag for ui ref automation {id="disk_edit-general"} -->
+### General Settings
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Shows the current name of the disk. To change, enter a Linux disk device name. |
-| **Serial** | Shows the serial number for the selected disk. To change, enter the disk serial number. |
-| **Description** | Text-entry field for typed notes about this disk. |
+| **Name** | Specifies the current name of the disk as a Linux disk device name. |
+| **Serial** | Shows the serial number for the selected disk. To change it, enter the disk serial number. |
+| **Description** | Specifies optional information or notes about this disk. |
 {{< /truetable >}}
 
-### Power Management Settings <!-- tag for ui ref automation {id="disk_edit-pwr-manage"} -->
+### Power Management Settings
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **HDD Standby** | Shows a list of options or leave set to the default **Always On**. This specifies the minutes of inactivity before the drive enters standby mode. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
+| **HDD Standby** | Specifies the minutes of inactivity before the drive enters standby mode. Shows a list of options or leave set to the default **Always On**. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
 | **Advanced Power Management (APM)** | Sets the Advanced Power Management (APM) level, a feature of the ATA storage standard that balances how much power the drive uses while idle against how quickly it responds. Select a level from the dropdown list. See the table below for a description of each level. |
 {{< /truetable >}}
 
@@ -158,7 +160,7 @@ The following table describes each level:
 | **Level 254 - Maximum performance, maximum power usage** | Delivers the most responsiveness, with the highest draw. The drive stays ready. |
 {{< /truetable >}}
 
-### SED Password <!-- tag for ui ref automation {id="disk_edit-sed"} -->
+### SED Password
 
 Shows only for SED disks in an SED-licensed Enterprise system.
 
