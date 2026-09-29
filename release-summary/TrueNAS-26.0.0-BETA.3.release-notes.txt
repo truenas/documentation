@@ -15,4 +15,4 @@ This includes OS component updates, new ZFS spare capabilities, and fixes for up
 
 **Pre-Update Actions (updating from 26.0.0-BETA.1 or BETA.2):** None required.
 
-**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.3)** | **[Known Issues](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26-beta)** | **[Known Issues](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
