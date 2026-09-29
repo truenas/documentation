@@ -68,23 +68,14 @@ The TrueNAS team is pleased to release TrueNAS 26-RC.1!
 * Fixes VRRP not delivering IPv6 advertisements between HA controllers, which could let both controllers claim to be MASTER ([NAS-142303](https://ixsystems.atlassian.net/browse/NAS-142303)).
   Without a configured unicast source address, VRRP sent IPv6 traffic from the interface's link-local address, so the peer's advertisements never reached the address the other controller expected. Both controllers could then become MASTER for the same IPv6 virtual IP. VRRP instances now set the correct unicast source IP so IPv6 advertisements are received.
 
-* Fixes a potential crash when removing a LUN from an iSCSI or Fibre Channel target ([NAS-142264](https://ixsystems.atlassian.net/browse/NAS-142264)).
-  The SCST target driver walked a device's LUN list while deleting entries from it, but the delete operation temporarily released the lock protecting that list. Another teardown could run during that window and invalidate the walk, corrupting the list. The driver no longer holds the list cursor across the lock release.
-
-* Fixes iSCSI and Fibre Channel target sessions that could receive a task management command with no valid access control group ([NAS-142258](https://ixsystems.atlassian.net/browse/NAS-142258)).
-  During session reassignment, the SCST target driver cleared the session's access control group (ACG) for the entire time it rebuilt the session's device list, leaving the session visible to its initiator with no ACG assigned. The driver now keeps the previous ACG installed until reassignment completes.
+* Fixes several iSCSI, Fibre Channel, and iSER target driver crashes ([NAS-142264](https://ixsystems.atlassian.net/browse/NAS-142264), [NAS-142258](https://ixsystems.atlassian.net/browse/NAS-142258), [NAS-142126](https://ixsystems.atlassian.net/browse/NAS-142126), [NAS-142161](https://ixsystems.atlassian.net/browse/NAS-142161)).
+  The SCST target driver had several race conditions that could crash the target or corrupt memory: removing a LUN while another teardown ran, losing a session's access control group during reassignment, unregistering a target while queued work still referenced it, and rapid connect/disconnect cycles over iSCSI over InfiniBand (iSER). The driver now handles all of these cases correctly.
 
 * Fixes intermittent "permission denied" errors on NFS shares for Active Directory and LDAP users ([NAS-142228](https://ixsystems.atlassian.net/browse/NAS-142228)).
   When `rpc.mountd` used `--manage-gids` and a brief winbind or SSSD outage occurred, the group lookup could return zero groups, and the kernel cached that empty result as valid. The affected user lost all supplementary group access on every export until the cache expired. Empty group replies are now treated as failures instead of being cached as valid, so the lookup is retried.
 
-* Fixes a crash in the iSCSI over InfiniBand (iSER) target driver caused by rapid connect and disconnect cycles ([NAS-142161](https://ixsystems.atlassian.net/browse/NAS-142161)).
-  A misbehaving initiator that connected and disconnected quickly could trigger a use of a command reference after it was already released, crashing the target. The driver now tracks this state correctly so the reference is not released twice.
-
 * Improves High Availability (HA) resilience to brief interconnect interruptions ([NAS-142152](https://ixsystems.atlassian.net/browse/NAS-142152)).
   A short interruption on the inter-controller NTB link could trigger an unnecessary peer reset or start kernel-level lock recovery. HA now waits longer for the link to recover before treating a brief interruption as a real peer failure.
-
-* Fixes a race condition that could corrupt memory when an iSCSI or Fibre Channel target is removed ([NAS-142126](https://ixsystems.atlassian.net/browse/NAS-142126)).
-  Writing a target's enabled state queued a background work item that could still be pending after the target was unregistered, and that pending work kept a reference to memory that had already been freed. Target unregistration now waits for queued work to finish first.
 
 * Allows toggling ALUA on an iSCSI target when the standby HA controller is unreachable ([NAS-142057](https://ixsystems.atlassian.net/browse/NAS-142057)).
   Administrators could not change the Asymmetric Logical Unit Access (ALUA) setting if the standby controller was offline. ALUA can now be toggled regardless of standby controller reachability.
@@ -98,8 +89,8 @@ The TrueNAS team is pleased to release TrueNAS 26-RC.1!
 * Improves TrueSearch performance on shares with about 1 million files ([NAS-143855](https://ixsystems.atlassian.net/browse/NAS-143855)).
   Searches on very large shares could take 7 to 8 seconds and time out in the client (for example, Finder), even after moving the search index to faster storage. TrueSearch performance is improved for these large-scale shares.
 
-* Fixes disk images exported from zvols on TrueNAS 25.10 failing to import on TrueNAS 26 ([NAS-143736](https://ixsystems.atlassian.net/browse/NAS-143736)).
-  A disk image exported from a zvol on 25.10 could not be imported after being moved to a 26-BETA.3 system. Disk images exported from 25.10 now import correctly on TrueNAS 26.
+* Fixes disk image import failures and incorrect size reporting ([NAS-143736](https://ixsystems.atlassian.net/browse/NAS-143736), [NAS-143839](https://ixsystems.atlassian.net/browse/NAS-143839)).
+  A disk image exported from a zvol on 25.10 could not be imported after being moved to a 26-BETA.3 system, and importing a 50 GiB disk image showed a **Size** requirement of 50 GiB when the import actually needed 51 GiB. Disk images exported from 25.10 now import correctly on TrueNAS 26, and import now reports the size the target zvol actually needs.
 
 * Fixes Webshare not offering a way to continue when passkey registration fails ([NAS-140894](https://ixsystems.atlassian.net/browse/NAS-140894)).
   If a user aborted or failed passkey registration, Webshare said they could still use Webshare without a passkey but showed no button to proceed, only the **Create Passkey** button. Webshare now offers a way to continue past a failed or abandoned passkey registration.
@@ -146,29 +137,14 @@ The TrueNAS team is pleased to release TrueNAS 26-RC.1!
 * Fixes invalid rclone configuration files caused by unescaped special characters ([NAS-142234](https://ixsystems.atlassian.net/browse/NAS-142234)).
   Generating rclone configuration files by hand could produce an invalid INI file when a setting contained special characters. Configuration files are now generated with `configparser`, which escapes special characters correctly.
 
-* Fixes repeated `ix-vendor` service restarts triggered by routine IPv6 address lifetime refreshes ([NAS-142227](https://ixsystems.atlassian.net/browse/NAS-142227)).
-  The kernel re-announces an address every time a router advertisement refreshes its lifetime, and each announcement was treated as a new address change that restarted `ix-vendor.service`, sometimes every few seconds on networks with aggressive router advertisement timers. Routine lifetime refreshes are now distinguished from real address changes and no longer trigger a restart.
-
-* Fixes disk image import understating the required target size ([NAS-143839](https://ixsystems.atlassian.net/browse/NAS-143839)).
-  Importing a 50 GiB disk image showed a **Size** requirement of 50 GiB, but the import failed until the target zvol size was increased to 51 GiB. Disk image import now reports the size the target zvol actually needs.
-
-* Fixes the update popup not showing the correct version ([NAS-143821](https://ixsystems.atlassian.net/browse/NAS-143821)).
-  The popup shown when hovering over the update icon could display an incorrect version number. The popup now shows the correct available version.
-
 * Fixes the dashboard network throughput graph showing data from only one interface in a bond ([NAS-142731](https://ixsystems.atlassian.net/browse/NAS-142731)).
   The network throughput graph on the dashboard displayed traffic for only one member of a bonded interface instead of the combined total, so it never showed the bond's actual maximum speed. The graph now reflects throughput for all interfaces in the bond.
-
-* Fixes the snapshot lifetime field accepting the invalid value `-1` ([NAS-142610](https://ixsystems.atlassian.net/browse/NAS-142610)).
-  The snapshot lifetime setting accepted `-1`, which is not a valid lifetime and caused problems later. The field no longer accepts this value.
 
 * Fixes an app keeping an invalid NVIDIA GPU UUID after the GPU is replaced ([NAS-142006](https://ixsystems.atlassian.net/browse/NAS-142006)).
   After replacing a system's NVIDIA GPU, an existing app could keep referencing the old GPU's UUID instead of the new one, even though the system correctly reported the new GPU. Apps now pick up the replacement GPU's UUID correctly.
 
 * Fixes a scrub-paused alert that fires too early and shows the literal text `'pool'` instead of the pool name ([NAS-142198](https://ixsystems.atlassian.net/browse/NAS-142198)).
   Pausing a scrub for only a few minutes could trigger the alert meant for a scrub paused more than 8 hours, and the alert text showed the placeholder `'pool'` rather than the actual pool name. The alert now fires only after 8 hours and shows the correct pool name.
-
-* Changes the dataset ACL traverse check from a blocking error to a warning ([NAS-141831](https://ixsystems.atlassian.net/browse/NAS-141831)).
-  The traverse permission check for dataset ACLs rejected some valid configurations outright. The check now warns instead of blocking the change.
 
 * Fixes the **Apps** dataset preset overwriting a user's **Case Insensitive** and **Atime** choices ([NAS-141792](https://ixsystems.atlassian.net/browse/NAS-141792)).
   Selecting **Case Insensitive** and leaving **Atime** enabled in Advanced Settings while using the **Apps** dataset preset saved the dataset as case-sensitive with **Atime** disabled instead. The preset now keeps these user-configured settings.
@@ -179,23 +155,11 @@ The TrueNAS team is pleased to release TrueNAS 26-RC.1!
 * Fixes Webshare failing to generate share links for files with Chinese file names or paths ([NAS-142148](https://ixsystems.atlassian.net/browse/NAS-142148)).
   Webshare could not create a share link when the file name or path contained Chinese characters. Share links now work correctly for these file names and paths.
 
-* Fixes the UPS load plugin mislabeling its Netdata chart as **Percentage** instead of **Watts** ([NAS-141692](https://ixsystems.atlassian.net/browse/NAS-141692)).
-  A regression from renaming the `nut_ups.load` metric to `load_usage` caused the UPS input load chart to show the wrong unit label for UPS devices that report load and nominal power but not a direct wattage reading. The chart now correctly labels these values as **Watts**.
-
 * Fixes high CPU usage caused by console CLI redraw when a key input gets stuck ([NAS-141550](https://ixsystems.atlassian.net/browse/NAS-141550)).
   A stuck physical key, or a stuck virtual key sent over IPMI or another out-of-band method, could lock the console CLI's menu process to 100% of a CPU thread. The CLI now handles stuck key input without pegging the CPU.
 
-* Improves SMB audit log event type labeling in the UI ([NAS-141703](https://ixsystems.atlassian.net/browse/NAS-141703)).
-  Event type labels in the SMB audit log did not clearly match what users should look for in remote logging, which end users found confusing. Event type labels are now clearer and more consistent with remote logging.
-
-* Fixes the **Containers** screen losing its default sort order after updating to 26-BETA.2 ([NAS-141609](https://ixsystems.atlassian.net/browse/NAS-141609)).
-  The **Containers** screen was always sorted by name by default, but this update left it unsorted. The screen now sorts by name by default again.
-
 * Identifies USB passthrough devices by their physical port in the VM and Container UI ([NAS-142433](https://ixsystems.atlassian.net/browse/NAS-142433)).
   USB passthrough devices were identified only by vendor and product ID, which cannot tell two identical devices apart and can change after a replug. The device picker now identifies devices by their physical port, which survives replugs and reboots and distinguishes identical devices.
-
-* Improves visibility of long licensed feature lists on the **General** page ([NAS-143125](https://ixsystems.atlassian.net/browse/NAS-143125)).
-  A long list of licensed features was truncated to a single line with no tooltip, making it hard to see every entry. The list is now easier to view in full.
 
 * Improves consistency of the pool usage indicator between the **Dashboard** and **Storage Dashboard** ([NAS-142168](https://ixsystems.atlassian.net/browse/NAS-142168)).
   The same vdev usage percentage could show as a normal green indicator on the **Dashboard** while showing as an orange warning with a red gauge on the **Storage Dashboard**, using different thresholds in each place. The two dashboards now use consistent usage thresholds.
