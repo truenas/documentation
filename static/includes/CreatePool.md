@@ -16,7 +16,7 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
    Select the encryption option for the pool. Select **None** to create an unencrypted pool. We recommend not encrypting the pool root dataset or the system dataset.
    If creating a second pool on your system and you want to encrypt this pool, select **Software Encryption (ZFS)**. All datasets created with this option selected are also encrypted by default.
    {{< enterprise >}}
-   If your Enterprise system is licensed for and has SED drives, you can select **Self-Encrypting Drives (SED)** to create a pool with SED drives and encryption. You may only select SEDs when using **Self-Encrypting Drives (SED)** encryption.
+   If your Enterprise system is licensed for and has SED drives, you can select **Self-Encrypting Drives (SED)** to create a pool with SED drives and encryption. You can only select SEDs when using **Self-Encrypting Drives (SED)** encryption.
 
    {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfoSED.png" alt="Pool Creation Wizard General Info - SED" id="Pool Creation Wizard General Info - SED" >}}
 
