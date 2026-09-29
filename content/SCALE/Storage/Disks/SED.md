@@ -1,6 +1,6 @@
 ---
 title: "Managing Self-Encrypting Drives (SED)"
-description: "Covers self-encrypting drives including supported specifications, implementing and managing SEDs in TrueNAS, and managing SED passwords and data."
+description: "Covers self-encrypting drives, including supported specifications, implementing and managing SEDs in TrueNAS, and managing SED passwords and data."
 weight: 40
 aliases:
  - /scale/scaletutorials/storage/disks/sedscale/
@@ -66,8 +66,8 @@ For a full list of what a configuration backup includes, see [Configuration Back
 
 ### Configuring SED Encryption From the Pool Creation Wizard
 
-If your system is equipped with and licensed for SEDs, the Pool Creation Wizard show SED encryption settings.
-Selecting the **Self Encryption Drives (SED)** radio button, sets up SED global encryption for SED disks in the pool and shows the **Global SED Password** and **Confirm SED Password** fields.
+If your system is equipped with and licensed for SEDs, the Pool Creation Wizard shows SED encryption settings.
+Selecting the **Self Encryption Drives (SED)** radio button sets up SED global encryption for SED disks in the pool and shows the **Global SED Password** and **Confirm SED Password** fields.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfoSED.png" alt="Pool Creation Wizard General Info - SED" id="Pool Creation Wizard General Info - SED" >}}
 
