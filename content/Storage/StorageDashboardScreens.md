@@ -74,7 +74,7 @@ The **x**  icon for an added exception is the **Remove disk exception** function
 
 **Update global settings (applies to all disks/pools)** indicates the password is saved to the system configuration for future use with these disks. This option is selected by default.
 
-For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "SED.md" >}}), the **Unlock SED Dialog** content in the [Disks Screen]({{< ref "DisksScreen.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
+For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "/Storage/Disks/SED" >}}), the **Unlock SED Dialog** content in the [Disks Screen]({{< ref "DisksScreen.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
 {{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.
