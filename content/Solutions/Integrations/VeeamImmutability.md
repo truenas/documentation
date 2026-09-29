@@ -9,7 +9,7 @@ tags:
  - backup solution
 ---
 
-TrueNAS can act as S3-compatible object storage for immutable backups in Veeam Backup & Replication.
+TrueNAS can act as Amazon S3-compatible object storage for immutable backups in Veeam Backup & Replication.
 
 Immutability is a feature of Veeam Backup & Replication. When configured with storage solutions such as TrueNAS, it prevents modifying or deleting data for a specified period of time.
 Set the immutability period based on your needs. After this period expires, backed up data can be modified or deleted again.
@@ -141,7 +141,9 @@ See [Adding S3 Compatible Object Storage](https://helpcenter.veeam.com/docs/back
 
    c. (Optional) Enter the NFS service settings and the ports Veeam uses for the NFS service. See [Specifying Mount Server Settings](https://helpcenter.veeam.com/docs/backup/vsphere/compatible_mount_server.html?ver=120#specifying-mount-server-settings) for more information.
 
-6. Click **Next**, review the configuration, and then click **Finish**.
+{{< trademark-notice s3="true" >}}
+
+7. Click **Next**, review the configuration, and then click **Finish**.
    Veeam automatically installs additional components if needed.
 
 Create a new backup job in Veeam if desired. See [Creating Immutable Configuration Backups](https://helpcenter.veeam.com/docs/backup/vsphere/config_backup_immutable.html) for more information.
