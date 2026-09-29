@@ -9,7 +9,7 @@ tags:
 doctype: tutorial
 ---
 
-S3 object storage lets S3 clients, such as backup applications, store and retrieve data in buckets on the TrueNAS system.
+Amazon S3 object storage lets S3 clients, such as backup applications, store and retrieve data in buckets on the TrueNAS system.
 Setting up S3 object storage involves these tasks:
 
 1. [Configure the S3 service](#configuring-the-s3-service).
@@ -293,6 +293,8 @@ TrueNAS also refuses other features that write to a bucket dataset, such as clou
 
 Click <span class="material-icons">more_vert</span> on the bucket row, and then select **Delete**.
 Click **Delete** in the confirmation dialog.
+
+{{< trademark-notice s3="true" >}}
 
 Deleting a bucket stops the S3 service from serving it, but does not delete the bucket dataset or its objects.
 To remove the data, delete the bucket dataset on the **Datasets** screen.
