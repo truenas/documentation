@@ -20,4 +20,4 @@ TrueNAS 26-BETA.2 builds on BETA.1 with new API authentication capabilities, add
 
 **Pre-Update Actions:** This is an early release intended for testing and feedback. Do not use for critical tasks or in production environments. Migrate any REST API integrations to the [WebSocket API](https://api.truenas.com/) before upgrading.
 
-**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.2)** | **[Known Issues](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26-beta)** | **[Known Issues](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
