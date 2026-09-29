@@ -38,19 +38,26 @@ Click **Manual Disk Selection** to open the **[Manual Selection](#manual-selecti
 **Save And Go To Review** saves the current selections and goes directly to the **Review** wizard screen.
 
 ### General Info
-<!-- comment out tag for setting automation {id="pool_create_general-info"} -->
 
 The **General Info** shows the **Name** and **Encryption** options: **None** or **Software Encryption ZFS**, and shows available disks listed under **Select disks you want to use**.
-When available disks are exported from a pool, a message alerting you to this shows above the disk options.
+When available disks are exported from a pool, a message alerting you to this appears above the disk options.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfo.png" alt="Pool Creation Wizard General Info" id="Pool Creation Wizard General Info" >}}
 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Sets the pool name, which can have up to 50 characters and must follow [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). Names can have upper or lowercase alphanumeric characters, but use lower-case alpha characters to avoid potential problems with sharing protocols. Names can have special characters such as underscore (_), hyphen (-), colon (:), or a period (.), but do not begin a pool name with a special character. |
-| **Encryption** | Shows two options: **None** and **Software Encryption (ZFS)**. <br>**None** does not apply encryption to the pool.<br>**Software Encryption (ZFS)** applies [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for the pool and all datasets (or zvols) within the pool created using the TrueNAS UI. Do not encrypt the root pool or the system dataset pool! All child datasets in an encrypted pool are encrypted and cannot be unencrypted. Best practice to allow the option for encrypted or unencrypted datasets in the pool is to create a new child dataset with encryption and leave the root dataset for the pool unencrypted. |
-| **Select disks you want to use** | Shows disk options to select disk from, and if the options are disks from exported pools, a warning message shows just above the options. If system disks have non-unique serial numbers, a warning displays with additional fields. **Allow non-unique serialed disks** has two options, **Allow** and **Don't Allow**. **Allow** permits using disks with non-unique serial numbers, such as those that can occur on virtual disks. The **Data** wizard screen shows the disks as available. **Don't Allow** does not permit using disks with non-unique serial numbers. |
+| **Name** | Sets the pool name, which can have up to 50 characters and must follow [ZFS naming conventions](https://docs.oracle.com/cd/E23824_01/html/821-1448/gbcpt.html). Names can have uppercase or lowercase alphanumeric characters, but use lowercase alpha characters to avoid potential problems with sharing protocols. Names can have special characters such as underscore (_), hyphen (-), colon (:), or a period (.), but do not begin a pool name with a special character. |
+| **Encryption** | Applies the encryption option selected from the options shown. Options: **None** and **Software Encryption (ZFS)**, and **Self Encryption Drives (SED)**. |
+| **None** | Does not apply encryption to the pool. |
+| **Software Encryption (ZFS)** | Applies [ZFS encryption](https://zfsonlinux.org/manpages/0.8.3/man8/zfs.8.html) for the pool and all datasets (or zvols) within the pool created using the TrueNAS UI. Do not encrypt the root pool or the system dataset pool! All child datasets in an encrypted pool are encrypted and cannot be unencrypted. Best practice to allow the option for encrypted or unencrypted datasets in the pool is to create a new child dataset with encryption and leave the root dataset for the pool unencrypted. |
+| **Self Encryption Drives (SED)** | Applies SED encryption. Shown only if the system has SED drives and has the SED license applied. Shows the **Global SED Password** and **Confirm SED Password** fields. |
+| **Global SED Password** | Applies the global SED password, which is a system-wide password. If already configured through the **System > Advanced Settings > Global SED Password** configuration screen, entering a new password in this field updates it for all pools using SED encryption. |
+| **Confirm SED Password** | Confirms the password entered in **Global SED Password**. |
+| **Select disks you want to use** | Specifies disks using the disk options shown. If the options are disks from exported pools, a warning message shows just above the options. If system disks have non-unique serial numbers, a warning displays with additional fields and shows the **Allow non-unique serialed disks** option. |
+| **Allow non-unique serialed disks** | Sets whether to allow using disks with non-unique serial numbers. Shows two options: **Allow** and **Don't Allow**. |
+| **Allow** | Permits using disks with non-unique serial numbers, such as those that can occur on virtual disks. The **Data** wizard screen shows the disks as available.  |
+| **Don't Allow** | Does not permit using disks with non-unique serial numbers, allowing only disks with unique serial numbers to show as available for use in the pool. |
 {{< /truetable >}}
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
@@ -66,14 +73,12 @@ Losing the encryption key file results in lost data you cannot recover.
 {{< /hint >}}
 
 {{< enterprise >}}
-### General Info with SED Encryption 
-<!-- comment out tag for setting automation {id="pool_create_general-info-sed"} -->
 
-Enterprise systems licensed for and containing SED encryption can use the Self Encryption Drives (SED) encryption type. 
+### General Info with SED Encryption
+
+Enterprise systems licensed for and containing SED encryption can use the Self-Encrypting Drives (SED) encryption type on the **Pool Creation Wizard> General Info** screen. 
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardGeneralInfoSED.png" alt="Pool Creation Wizard General Info - SED" id="Pool Creation Wizard General Info - SED" >}}
-
-The **General Info** wizard screen shows the **Self Encryption Drives (SED)** radio button and options in addition to other **General Info** setting for non SED-licensed systems.
 
 After selecting the **Self Encryption Drives (SED)** radio button, the **Global SED Password** and **Confirm SED Password** fields show.
 
@@ -81,7 +86,6 @@ The **Global SED Password** is a system-wide setting.
 A message shows above this field indicating if a password is already configured, and that entering a new password updates it for all pools using SED encryption.
 
 ### Enclosure Options
-<!-- comment out tag for setting automation {id="pool_create_enclosure"} -->
 
 The **Enclosure Options** wizard screen shows if the Enterprise system has one or more expansion shelves.
 
@@ -104,7 +108,6 @@ The three radio button options apply a dispersal strategy that sets the pool sto
 {{< /enterprise >}}
 
 ### Data Screen
-<!-- comment out tag for setting automation {id="pool_create_data"} -->
 
 The **Data** wizard screen shows options to automatically or manually add disks to a data VDEV.
 A pool must have a data VDEV before you can add other types of VDEVs to the pool.
@@ -118,7 +121,6 @@ The **Layout** dropdown list shows the **Stripe**, **Mirror**, **RAIDZ1**, **RAI
 {{< /expand >}}
 
 ### Log (Optional)
-<!-- comment out tag for setting automation {id="pool_create_log"} -->
 
 The **Log** wizard screen settings configure a log VDEV. ZFS log devices can improve synchronous write speeds.
 
@@ -131,7 +133,6 @@ The **Layout** dropdown list includes the **Stripe** or **Mirror** types.
 {{< /expand >}}
 
 ### Spare (Optional)
-<!-- comment out tag for setting automation {id="pool_create_spare"} -->
 
 The **Spare** wizard screen settings configure a hot spare for a drive in a data VDEV.
 
@@ -144,7 +145,6 @@ The **Spare** wizard screen settings configure a hot spare for a drive in a data
 {{< /expand >}}
 
 ### Cache (Optional)
-<!-- comment out tag for setting automation {id="pool_create_cache"} -->
 
 The **Cache** wizard screen settings configure a ZFS L2ARC read-cache VDEV.
 
@@ -158,7 +158,7 @@ The **Cache** wizard screen settings configure a ZFS L2ARC read-cache VDEV.
 
 ### Metadata (Optional)
 
-The **Metadata** wizard screen settings configure a special allocation class VDEV. Metadata VDEVs are used to speed up metadata and blocks below configured size. Use when creating a fusion pool.
+The **Metadata** wizard screen settings configure a special allocation class VDEV. Metadata VDEVs are used to speed up metadata and blocks below the configured size. Use when creating a fusion pool.
 
 {{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
 
@@ -214,8 +214,7 @@ Drag disks to the VDEV to add them.
 | TrueNAS System | Click to expand and show the list of available disks in the system. Filter options change the disks displayed on this list. |
 {{< /truetable >}}
 
-### Review 
-<!-- comment out tag for setting automation {id="pool_create_review"} -->
+### Review
 
 The **Review** wizard screen shows a summary of VDEVs in the pool configuration.
 
