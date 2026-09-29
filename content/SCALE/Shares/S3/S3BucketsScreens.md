@@ -9,7 +9,7 @@ tags:
 doctype: reference
 ---
 
-The S3 bucket screens and the **Object Storage (S3) Buckets** widget on the **Shares** screen show the S3 buckets on the system and the options to add, edit, and delete buckets.
+The S3 bucket screens and the **Object Storage (S3) Buckets** widget on the **Shares** screen show the Amazon S3 buckets on the system and the options to add, edit, and delete buckets.
 
 ## Object Storage (S3) Buckets Widget
 
@@ -251,3 +251,5 @@ The section shows a **Premium** tag when the system license does not include it.
 | **Audit Overflow** | Select what happens to an audited request when the audit log cannot accept another record. Options are:<ul><li>**Use service default** - Applies the **Default Audit Overflow** setting from the **S3** service configuration screen.</li><li>**Drop the record** - Completes the request and does not record it.</li><li>**Answer the client with a retryable 503** - Refuses the request with a temporary error so the client tries again.</li></ul> |
 {{< /truetable >}}
 {{< /expand >}}
+
+{{< trademark-notice s3="true" >}}
