@@ -1,0 +1,7 @@
+{{ $s3 := (eq (.Get "s3") "true") }}
+{{ $simple storage service := (eq (.Get "simple storage service") "true") }}
+{{ if or $s3 $simple storage service }}
+{{ partial "s3-trademark-notice.html" (dict "s3" $s3 "simple storage service" $simple storage service) }}
+{{ else }}
+{{- errorf "trademark-notice requires s3=\"true\" and/or simple storage service=\"true\": %s" .Position }}
+{{ end }}
