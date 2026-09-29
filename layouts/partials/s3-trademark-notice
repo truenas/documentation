@@ -1,9 +1,4 @@
 {{ $s3 := .s3 | default false }}
-{{ $simple storage service := .simple storage service | default false }}
-{{ if and $s3 $simple storage service }}
-<p class="trademark-notice"><small><em>Amazon S3 is a trademark of Amazon.com, Inc. or its affiliates.</em></small></p>
-{{ else if $s3 }}
-<p class="trademark-notice"><small><em>Amazon S3 is a trademark of Amazon.com, Inc. or its affiliates.</em></small></p>
-{{ else if $simple storage service }}
+{{ if $s3 }}
 <p class="trademark-notice"><small><em>Amazon S3 is a trademark of Amazon.com, Inc. or its affiliates.</em></small></p>
 {{ end }}
