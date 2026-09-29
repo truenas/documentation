@@ -463,6 +463,8 @@ Complete this procedure after upgrading to TrueNAS 26, using the VM settings and
 
 1. Go to **Datasets** and create or identify a standard dataset to hold the migrated disk, for example *tank/vms*.
 
+   {{< trueimage src="/images/SCALE/Datasets/DatasetsScreen.png" alt="Datasets Screen" id="Datasets Screen" >}}
+
    The rename in step 3 fails if the destination dataset does not exist.
 
 2. Go to **System > Shell** and list the volumes on the pool.
@@ -509,7 +511,7 @@ Complete this procedure after upgrading to TrueNAS 26, using the VM settings and
    Promoting the disk removes that dependency.
 
    {{< hint type=warning >}}
-   Do not rename a disk after you attach it to a VM in step 6.
+   Do not rename a disk after you attach it to a VM in step six.
    The VM stores the full zvol path, and renaming the zvol leaves the VM pointing at a path that no longer exists.
    {{< /hint >}}
 
@@ -538,13 +540,19 @@ Complete this procedure after upgrading to TrueNAS 26, using the VM settings and
 
    On the **Disks** screen, select **Use existing disk image**, then select the disk you moved in step 3 from **Select Existing Zvol**.
 
+   {{< trueimage src="/images/SCALE/Virtualization/CreateVirtualMachinesDisksSettings.png" alt="Disks Settings" id="Disks Settings" >}}
+
    Complete the wizard.
 
 7. If you attached installation media to the new VM, click on the VM to expand it, click **Devices**, edit the disk device, and set the **Device Order** of the disk device to a value below the **Device Order** of the CD-ROM device.
 
+   {{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="VM Devices Screen" id="VM Devices Screen" >}}
+
    This makes the VM start from the migrated disk instead of the CD-ROM device.
 
 8. Click on the VM to expand it, then use the **Running** toggle to start it.
+
+   {{< trueimage src="/images/SCALE/Virtualization/VirtualMachinesScreenwithVM.png" alt="Virtual Machine Screen" id="Virtual Machine Screen" >}}
 
    Confirm the VM starts and has network access.
    TrueNAS does not carry over the original UEFI variables, so a VM that stops at the UEFI shell needs the boot entry selected from the firmware boot menu once.
