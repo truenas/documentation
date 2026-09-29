@@ -19,4 +19,4 @@ TrueNAS 26 introduces an annual release cadence with simplified version numberin
 
 **Pre-Update Actions:** This is an early release intended for testing and feedback. Do not use for critical tasks or in production environments. Migrate any REST API integrations to the [WebSocket API](https://api.truenas.com/) before upgrading.
 
-**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.1)** | **[Known Issues](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
+**[Version Recommendations](https://www.truenas.com/software-status/)** | **[Full Release Notes](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26-beta)** | **[Known Issues](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#known-issues)** | **[Enterprise Support](https://support.truenas.com/)** | **[Forums](https://forums.truenas.com/)**
