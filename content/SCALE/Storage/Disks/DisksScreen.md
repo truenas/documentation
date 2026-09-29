@@ -35,7 +35,7 @@ The checkbox at the top of the table selects all disks in the system. Select aga
 
 Click anywhere on a disk row to expand it and show the traits specific to that disk and available options.
 The expanded view of a disk includes details for the disk, options to edit disk properties, and, in some instances, the ability to wipe the disk.
-An expanded disk on an Enterprise systems licensed for SED drives shows SED options.
+An expanded disk on an Enterprise system licensed for SED drives shows SED options.
 
 {{< trueimage src="/images/SCALE/Storage/DiskScreenExpandedDiskWithWipeOption.png" alt="Disk Details" id="Disk Details" >}}
 
@@ -108,7 +108,7 @@ For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({
 The **SED Reset** button opens the **SED Reset - Secure Erase** window.
 This window shows a critical warning stating the operation is irreversible and permanently destroys all data on the disk.
 {{< hint type=warning title="Destructive Process!" >}}
-Reseting the SED is a destructive process and should only be used as a last resort after all data on the disk and in the pool is backup to a secure location.
+Resetting the SED is a destructive process and should only be used as a last resort after all data on the disk and in the pool is backed up to a secure location.
 {{< /hint >}}
 
 {{< trueimage src="/images/SCALE/Storage/DiskResetSEDWindowTop.png" alt="Reset SED Window Top" id="Reset SED Window Top" >}}
@@ -117,7 +117,7 @@ Reseting the SED is a destructive process and should only be used as a last reso
 
 **Physical Security ID (PSID)** requires entering the  PSID from the label on the drive.
 
-**I understand this will permanently destroy all data on this disk** is required and confirms you understand this is a destructive process before you can proceed.
+**I understand this will permanently destroy all data on this disk** is required and confirms that you understand this is a destructive process before you can proceed.
 
 **Where to find the PSID** provides information on the physical label on a disk.
 
@@ -137,7 +137,7 @@ Click **Edit Disk** on the **[Devices]({{< ref "VDEVScreens" >}})** screen to op
 | Setting | Description |
 |---------|-------------|
 | **Name** | Specifies the current name of the disk as a Linux disk device name. |
-| **Serial** | Shows the serial number for the selected disk. To change, enter the disk serial number. |
+| **Serial** | Shows the serial number for the selected disk. To change it, enter the disk serial number. |
 | **Description** | Specifies optional information or notes about this disk. |
 {{< /truetable >}}
 
@@ -145,7 +145,7 @@ Click **Edit Disk** on the **[Devices]({{< ref "VDEVScreens" >}})** screen to op
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **HDD Standby** | Specifies the minutes of inactivity before the drive enters standby mode. Shows a list of options or leave set to the default **Always On**. This For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
+| **HDD Standby** | Specifies the minutes of inactivity before the drive enters standby mode. Shows a list of options or leave set to the default **Always On**. For information on identifying spun-down drives, see this [forum post](https://www.truenas.com/community/threads/how-to-find-out-if-a-drive-is-spinning-down-properly.2068/). Temperature monitoring is disabled for standby disks. |
 | **Advanced Power Management (APM)** | Sets the Advanced Power Management (APM) level, a feature of the ATA storage standard that balances how much power the drive uses while idle against how quickly it responds. Select a level from the dropdown list. See the table below for a description of each level. |
 {{< /truetable >}}
 
