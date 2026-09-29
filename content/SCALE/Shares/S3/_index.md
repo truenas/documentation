@@ -10,7 +10,7 @@ tags:
 related: false
 ---
 
-TrueNAS can serve object storage over the Simple Storage Service (S3) protocol.
+TrueNAS can serve object storage over the Amazon Simple Storage Service (S3) protocol.
 *S3* is the application programming interface (API) that Amazon Web Services created for its object storage service.
 Many storage products and applications now use the S3 API as a standard way to store and retrieve data, and products that support it are often called S3-compatible.
 TrueNAS provides S3-compatible object storage on the local system and does not use Amazon services.
@@ -71,6 +71,8 @@ Contact TrueNAS Enterprise Support to update the system license.
 {{< /enterprise >}}
 
 <div class="noprint">
+
+{{< trademark-notice s3="true" >}}
 
 ## Contents
 
