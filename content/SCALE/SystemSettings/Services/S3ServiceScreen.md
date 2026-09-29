@@ -9,7 +9,7 @@ tags:
 doctype: reference
 ---
 
-The **S3** service screen shows settings to configure where the S3 service listens for client requests, the certificate for encrypted connections, and service-wide options that apply to every bucket.
+The **S3** service screen shows settings to configure where the Amazon S3 service listens for client requests, the certificate for encrypted connections, and service-wide options that apply to every bucket.
 
 To open the screen, go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** widget, and then select **Config Service**.
 
@@ -96,3 +96,5 @@ The section shows a **Premium** tag when the system license does not include it.
 | **Default Audit Overflow** | (Required) Select what happens to an audited request when the audit log cannot accept another record. Options are **Drop the record** and **Answer the client with a retryable 503**. The default is **Drop the record**. |
 {{< /truetable >}}
 {{< /expand >}}
+
+{{< trademark-notice s3="true" >}}
