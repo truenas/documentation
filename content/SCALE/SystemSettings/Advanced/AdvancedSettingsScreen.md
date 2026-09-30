@@ -269,7 +269,7 @@ The **Add Tunable** configuration screen allows setting up tunables to configure
 
 {{< trueimage src="/images/SCALE/SystemSettings/AddTunableScreen.png" alt="Add Tunable Screen" id="Add Tunable Screen" >}}
 
-{{< expand "Tunable Settings" "v" >}} <!-- most of these settings are in in the settings ssot yaml file, noted in the project-memory.md file -->
+{{< expand "Tunable Settings" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -420,7 +420,7 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 
 {{< trueimage src="/images/SCALE/SystemSettings/AdvancedSystemSelfEncryptingDriveConfigScreen.png" alt="Self-Encrypting Drive Config Screen" id="Self-Encrypting Drive Config Screen" >}}
 
-{{< expand "Self-Encrypting Drive Settings" "v" >}} <!-- tag for ui ref setting automation {id="system_advanced_sed-config"} -->
+{{< expand "Self-Encrypting Drive Settings" "v" >}}
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
@@ -428,6 +428,8 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 | **Confirm SED Password** | Confirms the global password that must exactly match the SED password. |
 {{< /truetable >}}
 {{< /expand >}}
+
+For more information on SEDs, see [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALE/Storage/Disks/SED" >}}), [Importing Pools]({{< ref "ImportPool.md" >}}), and the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}) articles.
 
 ## Isolated GPU Device(s) Card
 
@@ -503,7 +505,7 @@ The card displays the following read-only setting information:
 ## System Security Card
 
 {{< enterprise >}}
-The **System Security** card allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, general-purpose OS STIG compliance, and other administrator account rules.
+The **System Security** card allows administrators of Enterprise-licensed systems to enable or disable FIPS 140-2 compliant algorithms, STIG compliance, and other administrator account rules.
 
 Administrators considering enabling STIG and FIPS security settings should contact TrueNAS Support before making any changes!
 
@@ -522,7 +524,7 @@ High Availability (HA) systems restart the standby controller and then show a pr
 
 **Enable FIPS** enables or disables FIPS enforcement in TrueNAS.
 
-**Enable General Purpose OS STIG compatibility mode** enables or disables the STIG compliance implementation in TrueNAS.
+**Enable TrueNAS STIG compatibility mode** enables or disables the STIG compliance implementation in TrueNAS.
 This function requires two-factor authentication and configuring a one-time password for a full-permissions admin user before enabling STIG compatibility.
 The one-time password option is found on the **Credentials > Users** screen. After selecting the user, **Generate One-Time Password** shows on the **Password** card. 
 
