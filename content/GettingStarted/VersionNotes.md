@@ -1,9 +1,10 @@
 ---
-title: "TrueNAS 26 Version Notes"
-description: "Highlights, change log, and known issues for TrueNAS 26 releases."
+title: "TrueNAS 27 Version Notes"
+description: "Highlights, change log, and known issues for TrueNAS 27 releases."
 weight: 10
 aliases:
  - /releasenotes/
+ - /gettingstarted/scalereleasenotes/
 related: false
 use_jump_to_buttons: true
 jump_to_buttons:
@@ -13,7 +14,7 @@ jump_to_buttons:
   - text: "Known Issues"
     anchor: "known-issues"
     icon: "warning"
-  - text: "26 Major Features"
+  - text: "27 Major Features"
     anchor: "major-features"
     icon: "new-releases"
   - text: "Deprecations"
@@ -386,7 +387,7 @@ Visit [our guide](https://www.truenas.com/docs/contributing/) for information on
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 26 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14298" target="_blank">TrueNAS 26-BETA.1 Changelog</a> in Jira.
 
 <!-- NIGHTLY CONTENT - preserved for reference, remove when no longer needed
-**SMB Stateful Failover** (Enterprise, HA) — TrueNAS 26 introduces stateful SMB HA failover.
+**SMB Stateful Failover** (Enterprise, HA) — TrueNAS 27 introduces stateful SMB HA failover.
 When enabled in the SMB service configuration, TrueNAS maintains SMB session state across controller failover events, allowing clients to reconnect without re-authentication.
 Incompatible with SMB1 support and Multi-Protocol or Legacy share purposes.
 See [Enabling SMB Stateful Failover]({{< ref "AddManageSMBShares#enabling-smb-stateful-failover" >}}) for details.
@@ -396,8 +397,8 @@ See [Enabling SMB Stateful Failover]({{< ref "AddManageSMBShares#enabling-smb-st
 
   <div data-tab-id="known-issues" data-tab-label="Known Issues">
 
-{{< hint type="important" title="Known Issues in 26" >}}
-These are ongoing issues that can affect multiple versions in the 26 series.
+{{< hint type="important" title="Known Issues in 27" >}}
+These are ongoing issues that can affect multiple versions in the 27 series.
 <br> When resolved, issues move to **Notable Changes** for the appropriate release.
 {{< /hint >}}
 
@@ -406,17 +407,17 @@ These are ongoing issues that can affect multiple versions in the 26 series.
 * The **Backup Tasks** dashboard card does not display **TrueCloud Backup** or **Periodic Snapshot** tasks, even when those tasks are configured and have completed successfully.
   The tasks run normally and appear as expected on the **Data Protection** screen; only the dashboard card omits them.
   Other task types, such as Replication and Cloud Sync, appear on the card as expected.
-* Upgrading to TrueNAS 26 can disrupt two-factor authentication (2FA) for any account with a stored token interval other than 30 or 60 seconds. TrueNAS 26 supports only these two intervals and clears the stored 2FA secret for any affected account during the upgrade. A non-standard interval can come from the API, or from the global 2FA interval setting in TrueNAS releases before 24.04, which applied a single interval to every 2FA account on the system and persists across upgrades. The current web interface always uses a 30-second interval. See [Two-Factor Authentication](#two-factor-authentication) for who is affected and how to restore access.
+* Upgrading to TrueNAS 27 can disrupt two-factor authentication (2FA) for any account with a stored token interval other than 30 or 60 seconds. TrueNAS 27 supports only these two intervals and clears the stored 2FA secret for any affected account during the upgrade. A non-standard interval can come from the API, or from the global 2FA interval setting in TrueNAS releases before 24.04, which applied a single interval to every 2FA account on the system and persists across upgrades. The current web interface always uses a 30-second interval. See [Two-Factor Authentication](#two-factor-authentication) for who is affected and how to restore access.
 
-<a href="https://ixsystems.atlassian.net/issues/?filter=14655" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 26 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues/?filter=14655" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 27 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 
   </div>
 
-  <div data-tab-id="major-features" data-tab-label="26 Major Features">
+  <div data-tab-id="major-features" data-tab-label="27 Major Features">
 
-{{< include file="/static/includes/26FeatureList.md" >}}
+{{< include file="/static/includes/27FeatureList.md" >}}
 
   </div>
   <div data-tab-id="full-changelog" data-tab-label="Full 26 Changelog">
@@ -462,7 +463,7 @@ initializeChangelogTableForTabs('26');
 
 {{< include file="/static/includes/UpgradeNotesBoilerplate.md" >}}
 
-* The TrueNAS REST API is removed in TrueNAS 26. Systems still using the REST API must migrate to the JSON-RPC 2.0 WebSocket API before upgrading. See [API Changes](#api-changes) for migration guidance and details about API authentication improvements in TrueNAS 26.
+* The TrueNAS REST API is removed in TrueNAS 27. Systems still using the REST API must migrate to the JSON-RPC 2.0 WebSocket API before upgrading. See [API Changes](#api-changes) for migration guidance and details about API authentication improvements in TrueNAS 27.
 
 {{< include file="/static/includes/AppsUnversionedAdmonition.md" >}}
 
@@ -470,7 +471,7 @@ initializeChangelogTableForTabs('26');
 
   <div data-tab-id="api-changes" data-tab-label="API Changes">
 
-### API Improvements in TrueNAS 26
+### API Improvements in TrueNAS 27
 
 #### REST API Removal
 
@@ -483,7 +484,7 @@ Click **API Docs** to view API documentation.
 
 #### Improved API Authentication
 
-TrueNAS 26 introduces `auth.login_ex` as a unified WebSocket API authentication method that supports password (`PASSWORD_PLAIN`), API key (`API_KEY_PLAIN`), OTP token (`OTP_TOKEN`), and the new SCRAM-SHA-512 (`SCRAM`) mechanism. SCRAM provides mutual authentication between client and server without transmitting raw key material.
+TrueNAS 27 introduces `auth.login_ex` as a unified WebSocket API authentication method that supports password (`PASSWORD_PLAIN`), API key (`API_KEY_PLAIN`), OTP token (`OTP_TOKEN`), and the new SCRAM-SHA-512 (`SCRAM`) mechanism. SCRAM provides mutual authentication between client and server without transmitting raw key material.
 
 The legacy `auth.login` and `auth.login_with_api_key` methods are deprecated and scheduled for removal in TrueNAS 27. Their functionality is fully replaced by `auth.login_ex`, which continues to support `API_KEY_PLAIN` and the other non-SCRAM mechanisms beyond TrueNAS 27. SCRAM is the recommended choice for new clients that can adopt it.
 
@@ -497,9 +498,9 @@ For the full list of deprecated and removed API methods, see [Feature Deprecatio
 
 ### Two-Factor Authentication Interval Change
 
-TrueNAS 26 restricts the two-factor authentication (2FA) token interval to 30 or 60 seconds. TrueNAS 26 validates Time-based One-Time Password (TOTP) login codes and accepts only these two intervals.
+TrueNAS 27 restricts the two-factor authentication (2FA) token interval to 30 or 60 seconds. TrueNAS 27 validates Time-based One-Time Password (TOTP) login codes and accepts only these two intervals.
 
-A non-standard interval could have been set through the API, or through the global 2FA setting in TrueNAS releases before 24.04, where the web interface exposed an editable interval field that applied a single value to every 2FA account on the system. That value persists across upgrades. The current web interface always sets a 30-second interval and no longer exposes this field, so 2FA configured through the UI on TrueNAS 24.04 or later uses the supported 30-second interval. A non-standard interval worked for web interface logins in earlier releases but stops working after upgrading to TrueNAS 26. Both local accounts and directory services (Active Directory or LDAP) accounts are in scope.
+A non-standard interval could have been set through the API, or through the global 2FA setting in TrueNAS releases before 24.04, where the web interface exposed an editable interval field that applied a single value to every 2FA account on the system. That value persists across upgrades. The current web interface always sets a 30-second interval and no longer exposes this field, so 2FA configured through the UI on TrueNAS 24.04 or later uses the supported 30-second interval. A non-standard interval worked for web interface logins in earlier releases but stops working after upgrading to TrueNAS 27. Both local accounts and directory services (Active Directory or LDAP) accounts are in scope.
 
 During the upgrade, TrueNAS clears the stored 2FA secret and resets the interval to 30 for any affected account. That account has no working 2FA until the user sets up 2FA again.
 
@@ -524,10 +525,10 @@ To restore 2FA for an affected account after upgrading:
 
 #### Containers
 
-LXC containers, introduced as an experimental feature in earlier TrueNAS releases, are fully supported in TrueNAS 26.
+LXC containers, introduced as an experimental feature in earlier TrueNAS releases, are fully supported in TrueNAS 27.
 No configuration migration is required for containers created in prior releases.
 
-TrueNAS 26 adds the following container improvements:
+TrueNAS 27 adds the following container improvements:
 
 - **Enterprise HA support** — Containers can now fail over between HA controllers ([NAS-138309](https://ixsystems.atlassian.net/browse/NAS-138309)).
   HA container failover requires a **static IP configuration**. Containers using DHCP do not fail over.
@@ -562,7 +563,7 @@ See [Drive Health Management]({{< ref "/Storage/Disks/DriveHealthManagement.md" 
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
-{{< include file="/static/includes/26UpgradeMethods.md" >}}
+{{< include file="/static/includes/27UpgradeMethods.md" >}}
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
   </div>  
