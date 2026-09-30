@@ -16,7 +16,7 @@ Storage Tiering is only available on TrueNAS Enterprise systems.
 
 ## Overview
 
-This tutorial covers how to use the ZFS storage tiering feature introduced in TrueNAS 26 to migrate a TrueNAS Enterprise storage appliance from a two-pool configuration (for example, an HDD pool with a mirrored special vdev and a separate SSD pool) to a single tiered pool.
+This tutorial covers how to use the ZFS storage tiering feature introduced in TrueNAS 27 to migrate a TrueNAS Enterprise storage appliance from a two-pool configuration (for example, an HDD pool with a mirrored special vdev and a separate SSD pool) to a single tiered pool.
 
 {{< hint type=note title="Local Pool Migration" >}}
 If your goal is to migrate data between two local pools without enabling storage tiering, follow the [Local Pool Migration Guide]({{< ref "/Storage/Pools/LocalPoolMigration.md" >}}) instead.
@@ -28,7 +28,7 @@ This procedure addresses requirements for starting and configuring the target:
    - Pool A: HDD pool with a mirrored special vdev
    - Pool B: SSD pool for fast storage
 
-- **Target configuration (TrueNAS 26 or later)**
+- **Target configuration (TrueNAS 27 or later)**
    - Pool A: tiered pool that absorbs the SSDs from the former Pool B into the Pool A special vdev to provide **Performance Tier** capacity
 
 {{< hint type=important title="Zvol Support" >}}
@@ -63,9 +63,9 @@ Preparation occurs in two stages, one approximately one week before the planned 
 
 Complete these tasks approximately one week before the scheduled maintenance window. Use this time to identify issues and reduce risks during the maintenance window.
 
-- Upgrade the system (or both controllers on HA systems) to TrueNAS 26.
+- Upgrade the system (or both controllers on HA systems) to TrueNAS 27.
 - Confirm that Pool A has sufficient space to hold the data from Pool B.
-- [Contact support](https://www.truenas.com/support/) to acquire a new TrueNAS 26 license that includes the ZFS Storage Tiering feature.
+- [Contact support](https://www.truenas.com/support/) to acquire a new TrueNAS 27 license that includes the ZFS Storage Tiering feature.
 - [Move the system dataset]({{< ref "/SystemSettings/Advanced/AdvancedSettings.md#managing-the-system-dataset" >}}) to Pool A if it is not located there already.
 - [Configure local replication tasks]({{< ref "/DataProtection/Replication/LocalReplication" >}}) for data from Pool B to Pool A. Arrange your Pool B dataset hierarchy to avoid name collisions with existing datasets in Pool A.
 - Be prepared to reconfigure local storage paths after they change pools.
@@ -80,7 +80,7 @@ If you use multi-layered ZFS encryption, [contact support](https://www.truenas.c
 {{< hint type=important title="Support Verification" >}}
 [Contact support](https://www.truenas.com/support/) and verify the new configuration before continuing.
 Note that all data formerly on the SSD pool initially has lower performance after pool migration until you migrate it from the regular tier to the performance tier.
-TrueNAS queues tier migrations by dataset, so it is important that you maintain your priority order list of which datasets you need to migrate to the performance tier after the move. You cannot pre-stage them because the required pool topology does not exist until TrueNAS 26.
+TrueNAS queues tier migrations by dataset, so it is important that you maintain your priority order list of which datasets you need to migrate to the performance tier after the move. You cannot pre-stage them because the required pool topology does not exist until TrueNAS 27.
 {{< /hint >}}
 
 #### Datasets with a Custom Special Small Blocks Threshold
