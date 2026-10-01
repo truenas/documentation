@@ -8,8 +8,6 @@ aliases:
  - /scale/scalereleasenotes/
  - /scalenext-releasenotes/
  - /scale/scalenextversion/
- - /scale/27/gettingstarted/scalereleasenotes/
- - /scale/27/gettingstarted/versionnotes/
  - /scale/gettingstarted/scalereleasenotes/ 
  - /releasenotes/
 jump_to_buttons:
