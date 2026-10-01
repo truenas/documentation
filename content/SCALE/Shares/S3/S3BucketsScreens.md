@@ -9,7 +9,7 @@ tags:
 doctype: reference
 ---
 
-The S3 bucket screens and the **Object Storage (S3) Buckets** widget on the **Shares** screen show the Amazon S3 buckets on the system and the options to add, edit, and delete buckets.
+The S3 bucket screens and the **Object Storage (S3) Buckets** widget on the **Shares** screen show the S3 buckets on the system and the options to add, edit, and delete buckets.
 
 ## Object Storage (S3) Buckets Widget
 
