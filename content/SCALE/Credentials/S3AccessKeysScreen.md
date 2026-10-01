@@ -9,7 +9,7 @@ tags:
 doctype: reference
 ---
 
-The **Credentials > S3 Access Keys** screen shows the access keys Amazon S3 clients use to connect to S3 buckets on the TrueNAS system.
+The **Credentials > S3 Access Keys** screen shows the access keys S3 clients use to connect to S3 buckets on the TrueNAS system.
 
 An *S3 access key* is a credential pair made up of an access key ID and a secret access key.
 S3 clients use the pair to sign each request with AWS Signature Version 4 (SigV4), the standard authentication method for the S3 API.
