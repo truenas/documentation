@@ -9,7 +9,7 @@ tags:
 doctype: tutorial
 ---
 
-Amazon S3 object storage lets S3 clients, such as backup applications, store and retrieve data in buckets on the TrueNAS system.
+S3 object storage lets S3 clients, such as backup applications, store and retrieve data in buckets on the TrueNAS system.
 Setting up S3 object storage involves these tasks:
 
 1. [Configure the S3 service](#configuring-the-s3-service).
