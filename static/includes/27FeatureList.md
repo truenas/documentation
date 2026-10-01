@@ -18,6 +18,11 @@ When TrueSearch is enabled in the WebShare service configuration, all active sha
 Encrypted datasets are excluded from indexing.
 Passkey authentication options provide flexible access control for WebShare users.
 
+### S3 Gateway (Early Access)
+
+S3 Gateway is available in TrueNAS 27 as an Early Access feature.
+<!-- TODO: add a description of S3 Gateway and a link to its documentation -->
+
 ### Containers
 
 [**Containers**]({{< relref "/Containers/ManagingContainers.md" >}}), introduced as an experimental feature in TrueNAS 25.04, are fully supported in TrueNAS 27.
