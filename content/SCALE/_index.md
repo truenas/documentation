@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS 27 (Early)"
+title: "TrueNAS 28 (Early)"
 geekdocCollapseSection: true
 weight: 20
 aliases:
@@ -26,15 +26,15 @@ div.docs-read_mod {display: none;}
 h1 {display:none;}
 </style>
 
-{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - TrueNAS 27" icon="" icon_alt="" >}}
+{{< header logo="/images/tn-openstorage-logo.png" logo_alt="TrueNAS Logo" version="Nightly Development - TrueNAS 28" icon="" icon_alt="" >}}
 
-{{< include file="/static/includes/27FeatureList.md" >}}
+{{< include file="/static/includes/28FeatureList.md" >}}
 
 <div class="noprint">
 
 ---
 
-## 26 Featured Content
+## 28 Featured Content
 
   <div class="docs-sections">
     <p>
