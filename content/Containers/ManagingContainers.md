@@ -107,7 +107,7 @@ Adjust these settings as needed to match your network environment and ensure pro
 High Availability (HA) functionality is available in [TrueNAS Enterprise](https://www.truenas.com/truenas-enterprise/) systems.
 {{< /enterprise >}}
 
-TrueNAS 26 adds support for containers in High Availability (HA) configurations.
+TrueNAS 27 adds support for containers in High Availability (HA) configurations.
 Containers can run on HA systems and automatically restart after a controller failover.
 However, HA environments require specific network configuration to ensure containers remain accessible after failover events.
 
