@@ -16,27 +16,17 @@ doctype: reference
 ---
 
 
-Datasets, root, non-root parent, and child, or zvols with encryption include the **[Encryption]({{< ref "/SCALE/Datasets" >}})** widget in the set of dataset widgets shown on the **Datasets** screen.
+The **Datasets** screen shows the **Encryption** card after selecting a datasets, root, non-root parent, and child, or zvols with encryption. 
 
 {{< trueimage src="/images/SCALE/Datasets/DatasetTreeWithLockIcons.png" alt="Dataset Tree Table Encryption Icons" id="Dataset Tree Table Encryption Icons" >}}
 
 {{< include file="/static/includes/EncryptionIconsSCALE.md" >}}
 
-## Pool Encryption Screens
+**Edit** on the **Encryption** card opens the **Edit Encryption Options for *dataset namne*** window.
 
-The **Encryption** options on the **[Pool Creation Wizard]({{< ref "PoolCreationWizardScreen" >}}) > General** screen set encryption for the entire pool, and when equipped with SEDs, can set the global SED encryption password.
+**[Lock](#lock-dataset-dialog)** or **[Unlck](#unlock-datasets-screen)** conditionally show on the **Encryption** card. Key-encrypted datasets or zvols cannot be locked or unlocked.
 
-{{< include file="/static/includes/EncryptionRootLevel.md" >}}
-
-The **Download Encryption Key** warning window opens when you create the pool.
-It downloads a JSON file to the downloads folder on your system.
-
-{{< trueimage src="/images/SCALE/Storage/DownloadPoolEncryptionKey.png" alt="Download Pool Encryption Key" id="Download Pool Encryption Key" >}}
-
-The following screens and dialogs are accessed from the **Datasets** screen. 
-The **Encryption** card on the **Datasets** screen shows after selecting an encrypted dataset.
-
-**Edit** on the **Encryption** card opens the **[Edit Encryption Options for *dataset namne*](#edit-encryption-options-window)** window.
+**[Export Key](#export-key-options)** options shows on the **Encryption** card. when the selected dataset is key-encypted.
 
 ## Edit Encryption Options Window
 
@@ -44,27 +34,35 @@ The **Edit Encryption Options for *dataset name*** window shows the same encrypt
 It allows changing the type of encryption applied to the dataset, changing the encryption key or passphrase.
 The type of encryption and the options are set for a dataset when it is created or are inherited from the root dataset.
 
-{{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsKeyTypeWindow.png" alt="Encryption Options Key Type Window" id="Encryption Options Key Type Window" >}}
-
-**Generate Key** changes the window by removing the **Key** field.
-
-{{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsGenerateKey.png" alt="Encryption Options Generate Key" id="Encryption Options Generate Key" >}}
-
-Setting **Encryption Type** to **Passphrase** shows editable settings for passphrase encryption.
-
 {{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsPassphraseTypeWindow.png" alt="Encryption Options Passphrase Type Window" id="Encryption Options Passphrase Type Window" >}}
+
+{{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsKeyTypeWindow.png" alt="Encryption Options Key Type Window" id="Encryption Options Key Type Window" >}}
 
 {{< expand "Encryption Settings" "v" >}}
 {{< include file="/static/includes/EncryptionSettings.md" >}}
 {{< /expand >}}
 
-For more information on dataset encryption, see the [**Encryption Options** settings]({{< ref "/SCALE/Datasets/ManagingDatasets#encryption-options-section" >}}) under **Advanced Options** on the **Add Dataset** screen.
+The **Edit Encryption Options for *dataset name*** window for encrypted child datasts or zvols shows only the **Inherit encryption properties from the parent** and **Confirm** options.
+
+{{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsWindow.png" alt="Edit Encryption Options - Encrypted Child Datasets" id="Edit Encryption Options - Encrypted Child Datasets" >}}
+
+**Inherit encryption properties from parent** shows on the **Edit Encryption Options for *dataset name*** window when the dataset or zvol is a child of an encrypted parent dataset. It allows changing the encryption authentication key or passphrase for the child datasets or zvol, but you cannot change the type of encryption applied. Disabling it shows the current encryption type and settings for the parent dataset. Leaving it enabled retains the encrytpion settings of the parent.
+
+{{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsChildKeyType.png" alt="Encryption Options Generate Key" id="Encryption Options Generate Key" >}}
+
+{{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsChildPassphraseType.png" alt="Encryption Options Passphrase Type Window" id="Encryption Options Passphrase Type Window" >}}
+
+**Confirm** is required and activates the **Save** button.
+
+For more information on dataset encryption, see the [**Encrypting Datasets**]({{< ref "EncryptingDatasets" >}}).
 
 ## Export Key Options
 
 The **Encryption** card for root datasets (pools) with encryption includes the **Export All Keys** and **Export Key** options, but it does not include the **Lock** option.
 
 If a dataset is encrypted using a key, the **Encryption** card for that dataset includes the **Export Key** option.
+
+All child datasets or zvols inherit the encryption of the parent dataset.
 
 ### Export All Keys Dialog
 
@@ -124,3 +122,13 @@ When the locked dataset has child datasets, both are unlocked at the same time a
 
 The **Unlocked Datasets** dialog opens after clicking **Continue** on the **Unlock Datasets** dialog and shows the status of unlocked datasets and the mount path to the datasets.
 
+## Pool Encryption Screens
+
+The **Encryption** options on the **[Pool Creation Wizard]({{< ref "PoolCreationWizardScreen" >}}) > General** screen set encryption for the entire pool, and when equipped with SEDs, can set the global SED encryption password.
+
+{{< include file="/static/includes/EncryptionRootLevel.md" >}}
+
+The **Download Encryption Key** warning window opens after saving a new pool as part of the pool creatiing process.
+It downloads a JSON file to your system.
+
+{{< trueimage src="/images/SCALE/Storage/DownloadPoolEncryptionKey.png" alt="Download Pool Encryption Key" id="Download Pool Encryption Key" >}}
