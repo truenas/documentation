@@ -48,8 +48,6 @@ The **Edit Encryption Options for *dataset name*** window for encrypted child da
 
 **Inherit encryption properties from parent** shows on the **Edit Encryption Options for *dataset name*** window when the dataset or zvol is a child of an encrypted parent dataset. It allows changing the encryption authentication key or passphrase for the child datasets or zvol, but you cannot change the type of encryption applied. Disabling it shows the current encryption type and settings for the parent dataset. Leaving it enabled retains the encrytpion settings of the parent.
 
-{{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsChildKeyType.png" alt="Encryption Options Generate Key" id="Encryption Options Generate Key" >}}
-
 {{< trueimage src="/images/SCALE/Datasets/EditEncryptionOptionsChildPassphraseType.png" alt="Encryption Options Passphrase Type Window" id="Encryption Options Passphrase Type Window" >}}
 
 **Confirm** is required and activates the **Save** button.
