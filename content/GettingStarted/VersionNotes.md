@@ -184,6 +184,8 @@ The TrueNAS team is pleased to release TrueNAS 27-RC.1!
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 27 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14697" target="_blank">TrueNAS 27-RC.1 Changelog</a> in Jira.
 
+{{< trademark-notice s3="true" >}}
+
   </div>
 
   <div data-tab-id="known-issues" data-tab-label="Known Issues">

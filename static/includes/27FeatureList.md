@@ -23,6 +23,8 @@ Passkey authentication options provide flexible access control for WebShare user
 S3 Gateway is available in TrueNAS 27 as an Early Access feature.
 <!-- TODO: add a description of S3 Gateway and a link to its documentation -->
 
+{{< trademark-notice s3="true" >}}
+
 ### Containers
 
 [**Containers**]({{< relref "/Containers/ManagingContainers.md" >}}), introduced as an experimental feature in TrueNAS 25.04, are fully supported in TrueNAS 27.
