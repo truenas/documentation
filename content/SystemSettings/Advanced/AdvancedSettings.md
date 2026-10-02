@@ -236,8 +236,6 @@ When STIG (and FIPS) are enabled, auditing includes these events:
 * Security object modifications and attempts to modify security objects
 {{< /expand >}}
 
-<!-- commenting out configuring STIG and FIPS due to an issue experienced by Enterprise customer that is under current investigation 
-
 ### Configuring STIG and FIPS
 
 To set up FIPS or STIG compliance on a TrueNAS server, you must first configure a one-time password for the admin user with full permissions, and then enable two-factor authentication for that admin user.
@@ -264,7 +262,7 @@ The system prompts you to restart.
 ![SecurityFIPSSTIGRestartDialog](/images/SCALE/SystemSettings/SecurityFIPSSTIGRestartDialog.png "Restart Require Dialog")
 
 The system restart takes several minutes to complete before showing the login screen.
-Highly Available (HA) systems must restart each storage controller before STIG mode is fully enabled. -->
+Highly Available (HA) systems must restart each storage controller before STIG mode is fully enabled.
 
 ### TrueNAS Administrator Password Rules
 
