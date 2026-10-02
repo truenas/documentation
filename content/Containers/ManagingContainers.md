@@ -24,6 +24,19 @@ Containers start quickly, use fewer system resources than [virtual machines (VMs
 {{< include file="/static/includes/ContainerRequirements.md" >}}
 {{< /expand >}}
 
+{{< hint type=note >}}
+Containers running in TrueNAS 25.10 migrate automatically during the upgrade to TrueNAS 26.
+
+Containers do not migrate automatically on TrueNAS Enterprise High Availability (HA) systems, or on Enterprise systems without the Apps license feature enabled.
+Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on one of these systems.
+
+A container also does not migrate if a container with the same name already exists in the new format, for example after a previous incomplete migration attempt, or if TrueNAS cannot resolve the source image of the container.
+Check the system log if a container does not appear after an upgrade.
+
+Legacy virtual machines displayed on the **Containers** screen in 25.10 are not migrated automatically.
+See [Migrating Legacy VMs to Virtual Machines]({{< ref "/VirtualMachines/ManagingVMs.md#migrating-legacy-vms-to-virtual-machines" >}}) for the manual procedure.
+{{< /hint >}}
+
 ## Setting Up the Containers Service
 
 When you first access the **Containers** screen, it displays a message indicating no containers are configured.
