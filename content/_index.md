@@ -25,7 +25,7 @@ aside.sidebar-right {display: none;}
 {{< header logo="/images/truenas26logono_background.png" logo_alt="TrueNAS 26 Logo" version="TrueNAS 26 BETA Documentation" icon="" icon_alt="" >}}
 
 {{< hint type="important" title="TrueNAS 26 is now TrueNAS 27" >}}
-TrueNAS 26 was renamed TrueNAS 27 starting with the next release, TrueNAS 27-RC.1.
+TrueNAS 26 is renamed TrueNAS 27 starting with the next release, TrueNAS 27-RC.1.
 This documentation covers the TrueNAS 26 BETA releases.
 See the [TrueNAS 27 documentation](https://www.truenas.com/docs/scale/27/) for TrueNAS 27-RC.1 and later.
 {{< /hint >}}
