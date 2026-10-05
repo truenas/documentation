@@ -4,8 +4,8 @@ table_data:
       version: Not Available
       link: null
     community:
-      version: 26 Nightly
-      link: https://iso.sys.truenas.net/TrueNAS-26-Nightlies/
+      version: 28 Nightly
+      link: https://iso.sys.truenas.net/TrueNAS-28-Nightlies/
   early_adopter:
     enterprise:
       version: Not Available
