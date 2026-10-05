@@ -250,7 +250,8 @@ After the administrator sets up 2FA they are assigned a 2FA authentication.
 Also configure any additional current admin users for 2FA before configuring STIG.
 
 The administrator with 2FA must generate a one-time password (OTP) for any other new or existing admin user that is not yet configured with 2FA and send them the password.
-They have 24 hours to login, using the OTP, and then TrueNaS configures two-factor authentication (2FA) for them at login.
+They have 24 hours to log in, using the OTP, and then TrueNAS configures two-factor authentication (2FA) for them at login.
+
 These users are prompted to configure two-factor authentication the first time they log in after having the one-time password configured.
 
 After configuring two-factor authentication, go to **System > Advanced Settings** and locate the **Security** card.
