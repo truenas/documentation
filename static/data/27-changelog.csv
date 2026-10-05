@@ -180,7 +180,7 @@ Bug,NAS-140810,157259,"The ""Japan"" time zone is not working.",26.0.0-BETA.3,27
 Improvement,NAS-140839,157301,Editable - edit icon is not consistent,26.0.0-BETA.3,27.0.0-BETA.1,,,Done,29/Apr/26 9:26 AM,05/May/26 11:11 AM,Undefined,Complete,,,,IX_EMPLOYEE,triage_skipped,
 Bug,NAS-140840,157302,Failed Rsync task alert remains after task has been removed,26.0.0-BETA.3,27.0.0-BETA.1,,,Done,29/Apr/26 9:41 AM,01/May/26 4:45 PM,Low,Complete,26.0.0-BETA.1,,,COMMUNITY_USER,,
 Bug,NAS-140878,157360,Upgraded to v26 and full replication failed to BOTH my backup sites,26.0.0-BETA.3,27.0.0-BETA.1,,,Done,01/May/26 1:57 PM,06/Jul/26 8:08 AM,Low,Complete,26.0.0-BETA.1,,,COMMUNITY_USER,ready_for_assignment,
-Bug,NAS-140894,157422,webshare doesn't allow option to continue if passkey reg fails,login to webshare with password. try to create passkey and abort out of it so it fails. You'll get a message you can still use webshare but there is NO BUTTON to allow you to continue. You are stuck. There is only the create passkey button.,26.0.0-RC.1,27.0.0-BETA.1,,,Done,03/May/26 3:05 AM,15/Sep/26 3:52 PM,Medium,Complete,26.0.0-BETA.1,,,,COMMUNITY_USER,,,
+Bug,NAS-140894,157422,webshare doesn't allow option to continue if passkey reg fails,login to webshare with password. try to create passkey and abort out of it so it fails. You'll get a message you can still use webshare but there is NO BUTTON to allow you to continue. You are stuck. There is only the create passkey button.,27.0.0-RC.1,28.0.0-BETA.1,,,Done,03/May/26 3:05 AM,15/Sep/26 3:52 PM,Medium,Complete,26.0.0-BETA.1,,,,COMMUNITY_USER,,,
 Bug,NAS-140905,157458,Warning Currently running system version profile does not match selected update profile,26.0.0-BETA.3,27.0.0-BETA.1,N/A,,Done,04/May/26 3:05 PM,12/May/26 10:50 AM,Medium,Complete,SCALE-25.10.2 (Goldeye),,,IX_EMPLOYEE,ready_for_assignment,triage_skipped
 Bug,NAS-140907,157463,"After a corruption on one of my pools (not boot pool), Alerts for corrupted audit db is being raised.",26.0.0-BETA.3,27.0.0-BETA.1,,,Done,05/May/26 7:01 AM,26/Jun/26 9:22 AM,Low,Complete,SCALE-25.10.3 (Goldeye),,,IX_EMPLOYEE,triage_skipped,
 Bug,NAS-140932,157500,WebShare doesn't enable/disable truesearch support on SIGHUP,26.0.0-BETA.2,26.0.0-RC.1,27.0.0-BETA.1,,Done,07/May/26 10:18 AM,07/May/26 10:40 AM,Low,Complete,26.0.0-BETA.1,,IX_EMPLOYEE,triage_skipped,,
@@ -220,7 +220,7 @@ Bug,NAS-141446,158482,Failed to configure docker for Applications 26.0.0-Beta.1 
 
 This issue still remains with 26.0.0-Beta.2.
 
-If I unset the pool and set it again everything works fine until the next reboot or power on.",26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,17/Jun/26 5:23 PM,20/Jul/26 5:12 AM,Medium,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
+If I unset the pool and set it again everything works fine until the next reboot or power on.",27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,17/Jun/26 5:23 PM,20/Jul/26 5:12 AM,Medium,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
 Bug,NAS-141461,158532,SMB share is unavailable because it uses a locked dataset.,26.0.0-BETA.3,27.0.0-BETA.1,,,Done,18/Jun/26 3:29 PM,18/Jul/26 8:10 AM,Low,Complete,26.0.0-BETA.2,,,COMMUNITY_USER,,
 Bug,NAS-141468,158542,No IPv6 connectivity in LXC after clean install of 26.0.0-BETA.2 (IPv6 forwarding disabled on host),26.0.0-BETA.3,27.0.0-BETA.1,,,Done,18/Jun/26 8:30 PM,06/Jul/26 11:33 AM,Low,Complete,26.0.0-BETA.2,,,COMMUNITY_USER,,
 Bug,NAS-141469,158544,"v26 beta upgrade does not preserve working Active Directory member state, requiring a manual rejoin",26.0.0-BETA.3,27.0.0-BETA.1,Backlog,,Done,18/Jun/26 9:00 PM,30/Jun/26 3:53 PM,Low,Complete,26.0.0-BETA.2,,,COMMUNITY_USER,,
@@ -244,7 +244,7 @@ TrueNAS UI won’t let you do that, but if you {{virsh edit}} it in manually, Do
 
 I guess Docker _needs_ a nested {{userns}} for some reason. I have no idea why, nor why this doesn’t seem to be a problem for the other (more common?) LXC impls that other OSes use.
 
-I am a little hesitant to suggest that TrueNAS’s “privileged containers” should always add such an {{idmap}}, as I don’t understand _why_ it works, but if there are no side effects, it might be a reasonable workaround. (And I suspect running Docker in LXCs is a pretty common use case, as it enables full control over networking, etc. while still allowing Docker containers to share TrueNAS filesystem mounts.)",26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,19/Jun/26 1:41 AM,27/Jul/26 11:03 AM,Medium,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
+I am a little hesitant to suggest that TrueNAS’s “privileged containers” should always add such an {{idmap}}, as I don’t understand _why_ it works, but if there are no side effects, it might be a reasonable workaround. (And I suspect running Docker in LXCs is a pretty common use case, as it enables full control over networking, etc. while still allowing Docker containers to share TrueNAS filesystem mounts.)",27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,19/Jun/26 1:41 AM,27/Jul/26 11:03 AM,Medium,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
 Bug,NAS-141491,158570,VDEV description cosmetic bug,26.0.0-BETA.3,27.0.0-BETA.1,,,Done,19/Jun/26 6:26 AM,02/Jul/26 3:40 AM,Low,Complete,26.0.0-BETA.2,,,COMMUNITY_USER,,
 Bug,NAS-141550,158674,High CPU usage due to CLI redraw if a key input is stuck,"Community Reported, original URL and text body below.
 
@@ -284,7 +284,7 @@ No obvious kernel errors or hardware faults, process _looked_ like a daemon issu
 
 Seems like we need to throttle this UI loop?
 
-Whats even stranger to me, when I turned the monitor on to look, the repeat rate wasn't actually very high maybe 5 a second - Perhaps this was throttled by the fact the thread was pegged at 100%, but it shouldn't be that heavy of a task.{quote}",26.0.0-RC.1,27.0.0-BETA.1,,,Done,24/Jun/26 4:04 PM,10/Jul/26 11:49 AM,Low,Complete,SCALE-25.10.4 (Goldeye),,,,IX_EMPLOYEE,,,
+Whats even stranger to me, when I turned the monitor on to look, the repeat rate wasn't actually very high maybe 5 a second - Perhaps this was throttled by the fact the thread was pegged at 100%, but it shouldn't be that heavy of a task.{quote}",27.0.0-RC.1,28.0.0-BETA.1,,,Done,24/Jun/26 4:04 PM,10/Jul/26 11:49 AM,Low,Complete,SCALE-25.10.4 (Goldeye),,,,IX_EMPLOYEE,,,
 Bug,NAS-141553,158677,App Docker Registries does not support private Docker registries with htpasswd auth method,26.0.0-BETA.3,27.0.0-BETA.1,,,Done,25/Jun/26 9:34 AM,01/Jul/26 11:54 AM,Medium,Complete,SCALE-25.10.4 (Goldeye),,,COMMUNITY_USER,,
 Bug,NAS-141578,158726,"CPU Temp widget reads systematically high vs coretemp; error scales with load (per-core bars correct, only aggregate wrong) — i5-12400",26.0.0-BETA.3,N/A,,,Done,28/Jun/26 9:02 PM,06/Jul/26 11:33 AM,Low,Complete,SCALE-25.10.4 (Goldeye),,,COMMUNITY_USER,,
 Defect,NAS-141592,158759,Convert audit parser script to use upstream library,26.0.0-BETA.3,27.0.0-BETA.1,,,Done,29/Jun/26 2:42 PM,06/Jul/26 8:41 AM,Medium,Complete,27.0.0-BETA.1,,,IX_EMPLOYEE,triage_skipped,
@@ -293,12 +293,12 @@ Defect,NAS-141608,158798, samba: advertise only the WRITE_ACL/WRITE_OWNER that F
 Bug,NAS-141609,158800,In Containers screen sort order is corrupted after update to Beta2,"In Containers screen sort order is corrupted after update to Beta2.
 It was alweays automatically sorted on Name, now it is not anymore.
 Additional remark: 
-Sort order cannot be selected, like in Apps list. That would be even better.",26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,30/Jun/26 1:19 PM,09/Jul/26 9:51 AM,Low,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
+Sort order cannot be selected, like in Apps list. That would be even better.",27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,30/Jun/26 1:19 PM,09/Jul/26 9:51 AM,Low,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
 Bug,NAS-141666,158929,"Truenas 26 Beta2: after migration of LXC's and deleting .ix-virt dataset, migrated LXC's do not work anymore","Truenas 26 Beta2: after migration of LXC's (from Incas) and deleting .ix-virt dataset, migrated LXC's do not work anymore.
 New LXC containers are working
 Migrated LXC's are NOT in /mnt/.truenas_containers
 New LXC's ARE in /mnt/.truenas_containers
-You cannot delete migrated containers (after deleting .ix-virt), error message is htat they do not exist in /mnt/.truenas_containers",26.0.0-RC.1,27.0.0-BETA.1,,,Done,04/Jul/26 4:32 AM,10/Aug/26 10:54 AM,Medium,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
+You cannot delete migrated containers (after deleting .ix-virt), error message is htat they do not exist in /mnt/.truenas_containers",27.0.0-RC.1,28.0.0-BETA.1,,,Done,04/Jul/26 4:32 AM,10/Aug/26 10:54 AM,Medium,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
 Bug,NAS-141677,158947,Replication fixes,26.0.0-BETA.3,SCALE-25.10.5 (Goldeye),,,Done,06/Jul/26 8:54 AM,10/Jul/26 4:23 AM,High,Complete,,,,IX_EMPLOYEE,triage_skipped,
 Bug,NAS-141692,158971,UPSLoadPlugin mislabels Netdata Watts chart as Percentage (regression from nut_ups.load → load_usage),"1. Steps to reproduce:
 - Configure NUT (local or remote/slave mode) with a UPS exposing ups.load and ups.realpower.nominal but no direct ups.power/ups.realpower reading (e.g. CyberPower BR650ELCD via usbhid-ups).
@@ -324,14 +324,14 @@ to:
     return f'upsd_{self.UPS_IDENTIFIER}.load_percentage'
 Restarting middlewared after this change produces correct output (confirmed matching upsc: Max 30, Mean 29.1, Min 28).
 
-Enhancement suggestion: since Netdata exposes both load_percentage and load_usage as separate charts for the same UPS, consider adding both as separate reports (e.g. ""UPS Input Load %"" and ""UPS Input Power (Watts)"") rather than only fixing the mislabeling, since absolute Watts draw is useful for capacity planning alongside relative %.",26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,07/Jul/26 7:08 AM,19/Jul/26 6:45 PM,Low,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
-Bug,NAS-141699,158985,Alert Emails Not RFC 5322 Compliant (gmail bounce),,26.0.0-RC.1,27.0.0-BETA.1,N/A,SCALE-25.10.5 (Goldeye),Done,07/Jul/26 6:28 PM,10/Jul/26 7:06 AM,Medium,Complete,,,,,COMMUNITY_USER,,,
+Enhancement suggestion: since Netdata exposes both load_percentage and load_usage as separate charts for the same UPS, consider adding both as separate reports (e.g. ""UPS Input Load %"" and ""UPS Input Power (Watts)"") rather than only fixing the mislabeling, since absolute Watts draw is useful for capacity planning alongside relative %.",27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,07/Jul/26 7:08 AM,19/Jul/26 6:45 PM,Low,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
+Bug,NAS-141699,158985,Alert Emails Not RFC 5322 Compliant (gmail bounce),,27.0.0-RC.1,28.0.0-BETA.1,N/A,SCALE-25.10.5 (Goldeye),Done,07/Jul/26 6:28 PM,10/Jul/26 7:06 AM,Medium,Complete,,,,,COMMUNITY_USER,,,
 Bug,NAS-141703,158991,Review and update SMB audit log event type labeling in UI,"End-users are finding the current labeling of event types in the SMB audit log confusing. The UI labels do not accurately reflect what users should look for on the remote side. Re-evaluate and improve the labeling to ensure clarity and consistency with remote logging expectations.
 
-_Issue created in Slack from a_ [_message_|https://ixsystemsinc.slack.com/archives/C010V9TP9A5/p1783510857934049]_._",26.0.0-RC.1,27.0.0-BETA.1,,,Done,08/Jul/26 8:14 AM,10/Jul/26 7:24 AM,Low,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
-Bug,NAS-141712,159008,Webshare session disconnect not allowing re-login until after long timeout or restart. ,"Current Webshare on Free tier of TNC allows only a single session. On tab close or network disconnect, if the user attempts to immediately login, it doesn’t allow them due to the session limits. ",26.0.0-RC.1,27.0.0-BETA.1,,,Done,08/Jul/26 5:32 PM,08/Jul/26 10:39 PM,Medium,Complete,26.0.0-BETA.2,,,,IX_EMPLOYEE,triage_skipped,,
-Bug,NAS-141713,159009,Update to latest Golang for TrueSearch,Newer Golang packages dropped with some important security fixes. Update to 1.25.12 or later. ,26.0.0-RC.1,27.0.0-BETA.1,,,Done,08/Jul/26 5:45 PM,08/Jul/26 6:24 PM,Undefined,Complete,26.0.0-BETA.2,,,,IX_EMPLOYEE,triage_skipped,,
-Bug,NAS-141753,159054,storage dashboard disk health panel becomes corrupted if not all devices in the pool have SMART values,,26.0.0-RC.1,27.0.0-BETA.1,,,Done,10/Jul/26 9:44 AM,16/Aug/26 3:20 PM,Low,Complete,SCALE-25.10.4 (Goldeye),,,,COMMUNITY_USER,,,
+_Issue created in Slack from a_ [_message_|https://ixsystemsinc.slack.com/archives/C010V9TP9A5/p1783510857934049]_._",27.0.0-RC.1,28.0.0-BETA.1,,,Done,08/Jul/26 8:14 AM,10/Jul/26 7:24 AM,Low,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
+Bug,NAS-141712,159008,Webshare session disconnect not allowing re-login until after long timeout or restart. ,"Current Webshare on Free tier of TNC allows only a single session. On tab close or network disconnect, if the user attempts to immediately login, it doesn’t allow them due to the session limits. ",27.0.0-RC.1,28.0.0-BETA.1,,,Done,08/Jul/26 5:32 PM,08/Jul/26 10:39 PM,Medium,Complete,26.0.0-BETA.2,,,,IX_EMPLOYEE,triage_skipped,,
+Bug,NAS-141713,159009,Update to latest Golang for TrueSearch,Newer Golang packages dropped with some important security fixes. Update to 1.25.12 or later. ,27.0.0-RC.1,28.0.0-BETA.1,,,Done,08/Jul/26 5:45 PM,08/Jul/26 6:24 PM,Undefined,Complete,26.0.0-BETA.2,,,,IX_EMPLOYEE,triage_skipped,,
+Bug,NAS-141753,159054,storage dashboard disk health panel becomes corrupted if not all devices in the pool have SMART values,,27.0.0-RC.1,28.0.0-BETA.1,,,Done,10/Jul/26 9:44 AM,16/Aug/26 3:20 PM,Low,Complete,SCALE-25.10.4 (Goldeye),,,,COMMUNITY_USER,,,
 Bug,NAS-141762,159071,NVMe-TCP service creates wrong config when using associated hosts,"I discovered this while using the Proxmox plugin. My TrueNAS NVMe-TCP subsystem is configured with associated hosts so only my servers can access it. Seemingly whenever TrueNAS adds a new namespace to the subsystem (and in some interval, at least daily it seems) TrueNAS will reinitialize the nvme kernel system.
 
 This won’t work with a dmesg output similar to this:
@@ -345,7 +345,7 @@ The service can be made to work again by a) allowing all hosts always or b) remo
 
 The TrueNAS WebUI also _seems_ to catch this error since the “Allow all hosts” button is missing whenever it occurs despite hosts still being listed. I need to manually remove all hosts. When readding them the button appears again as normal.
 
-When restarting TrueNAS this also prohibits the NVMe target from starting entirely yet the WebUI will display no errors, it is only discoverable through dmesg.",26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,11/Jul/26 10:13 AM,20/Aug/26 9:55 AM,Medium,Complete,26.0.0-BETA.2,,,,bug,COMMUNITY_USER,scale,
+When restarting TrueNAS this also prohibits the NVMe target from starting entirely yet the WebUI will display no errors, it is only discoverable through dmesg.",27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,11/Jul/26 10:13 AM,20/Aug/26 9:55 AM,Medium,Complete,26.0.0-BETA.2,,,,bug,COMMUNITY_USER,scale,
 Bug,NAS-141792,159108,Dataset profile Apps overwrites user settings of Case Insensitive and Atime,"I create a new subdataset, under an existing dataset, and select profile ‘Apps’ and then go to Advanced settings.
 I then set encryption to Passphrase and select Case Insensitive, leave the rest default (Atime is ON/enabled by default).
 After clicking Save, I noticed that my dataset is Case Sensitive (thus it ignored by setting) and Atime is OFF.
@@ -358,9 +358,9 @@ Expect either to overwrite the profile defaults or get a warning/preventing from
 See also:
 https://forums.truenas.com/t/enable-atime-turned-off-when-i-select-case-insensitive-with-new-dataset/66946
 
-Session ID: e420b478-9696-4e18-9c30-1ab2cf299107",26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,15/Jul/26 3:20 PM,16/Aug/26 3:20 PM,Low,Complete,SCALE-25.10.4 (Goldeye),,,,COMMUNITY_USER,,,
+Session ID: e420b478-9696-4e18-9c30-1ab2cf299107",27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,15/Jul/26 3:20 PM,16/Aug/26 3:20 PM,Low,Complete,SCALE-25.10.4 (Goldeye),,,,COMMUNITY_USER,,,
 Bug,NAS-141804,159124,'NoneType' object has no attribute 'replace' when trying to replace an unavailable disk,"Trying to replace a disk that is unavailable. But instead I'm met with 'NoneType' object has no attribute 'replace'
-",26.0.0-RC.1,27.0.0-BETA.1,,,Done,16/Jul/26 6:18 AM,04/Aug/26 4:55 PM,High,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
+",27.0.0-RC.1,28.0.0-BETA.1,,,Done,16/Jul/26 6:18 AM,04/Aug/26 4:55 PM,High,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
 Bug,NAS-141825,159154,VM ISO on TN 26 Beta 2 ends up 0 size,"Create a new VM, Linux, in TrueNAS 26 Beta.2
 
 Choose to upload new installation media and choose Debian ISO
@@ -369,8 +369,8 @@ Watch upload go through its paces, close out dialog
 
 Verify file size on shell: It's 0 bytes
 
-The same thing with an Ubuntu ISO worked as far as I can tell.",26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,18/Jul/26 1:53 AM,28/Jul/26 7:45 AM,Medium,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
-Bug,NAS-141831,159170,Dataset ACL traverse check is too strict,Change ACL traverse check from an error to a warning,26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,18/Jul/26 6:39 PM,16/Aug/26 3:21 PM,Low,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
+The same thing with an Ubuntu ISO worked as far as I can tell.",27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,18/Jul/26 1:53 AM,28/Jul/26 7:45 AM,Medium,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
+Bug,NAS-141831,159170,Dataset ACL traverse check is too strict,Change ACL traverse check from an error to a warning,27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,18/Jul/26 6:39 PM,16/Aug/26 3:21 PM,Low,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
 Bug,NAS-141845,159187,"mail.send omits Cc recipients from the SMTP envelope, so Cc addresses never receive the email","{{mail.send}} adds Cc addresses only as a {{Cc:}} header, but the SMTP envelope ({{RCPT TO}}) is built from the To recipients alone. SMTP delivery is driven by the envelope, not the headers, so Cc recipients never receive the message when sending through an SMTP server.
 
 On master ({{src/middlewared/middlewared/plugins/mail/send.py}}):
@@ -394,7 +394,7 @@ Scope:
 
 Fix: include the Cc addresses in the recipient list passed to {{server.sendmail}} (and mirror the fix in the stable/26 code path).
 
-Found while reviewing [#19345|https://github.com/truenas/middleware/pull/19345].",26.0.0-RC.1,,,,Done,20/Jul/26 11:22 AM,22/Jul/26 10:06 AM,Medium,Complete,26.0.0-BETA.3,,,,IX_EMPLOYEE,triage_skipped,,
+Found while reviewing [#19345|https://github.com/truenas/middleware/pull/19345].",27.0.0-RC.1,,,,Done,20/Jul/26 11:22 AM,22/Jul/26 10:06 AM,Medium,Complete,26.0.0-BETA.3,,,,IX_EMPLOYEE,triage_skipped,,
 Bug,NAS-141948,159378,Cloud backup killing middlewared event loop,26.0.0-BETA.3,26.0.0-RC.1,27.0.0-BETA.1,,Done,25/Jul/26 8:21 AM,02/Aug/26 5:44 AM,High,Complete,26.0.0-BETA.1,,,COMMUNITY_USER,,
 Bug,NAS-141949,159380,"Audit log ""time"" field for svc=SYSTEM events is wrong (ignores system timezone, fixed ~7h offset)",26.0.0-BETA.3,26.0.0-RC.1,27.0.0-BETA.1,,Done,25/Jul/26 11:54 AM,29/Jul/26 2:47 PM,Medium,Complete,SCALE-25.10.4 (Goldeye),,,COMMUNITY_USER,,
 Bug,NAS-141951,159384,"After updating to version 25.10.5, I see these errors in /var/log/middlewared.log",26.0.0-BETA.3,26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.6 (Goldeye),Done,25/Jul/26 8:59 PM,28/Jul/26 2:31 PM,High,Complete,SCALE-25.10.5 (Goldeye),,,COMMUNITY_USER,hf_want,
@@ -462,12 +462,12 @@ I hope this information helps identify the issue.
 
 Thank you.
 
-Session ID: 5851e5db-6fce-49fa-b07e-8f880bc055dd",26.0.0-RC.1,27.0.0-BETA.1,,,Done,29/Jul/26 5:22 PM,22/Aug/26 5:43 PM,Low,Complete,SCALE-25.10.4 (Goldeye),,,,COMMUNITY_USER,hf_want,ready_for_assignment,
+Session ID: 5851e5db-6fce-49fa-b07e-8f880bc055dd",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.8 (Goldeye),,Done,29/Jul/26 5:22 PM,02/Oct/26 11:39 AM,Low,Complete,SCALE-25.10.4 (Goldeye),,,,COMMUNITY_USER,hf_want,ready_for_assignment,
 Defect,NAS-142014,159502,qla2x00t-32gbit: NULL-check ha->tgt.tgt_ops in IRQ-reachable paths,26.0.0-BETA.3,26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.6 (Goldeye),Done,30/Jul/26 12:16 PM,11/Aug/26 2:26 PM,Blocker,Complete,Master - TrueNAS SCALE,,,IX_EMPLOYEE,triage_skipped,
 Defect,NAS-142018,159506,qla2x00t-32gbit: Fail target enable if qlt_lport_register() fails,26.0.0-BETA.3,26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.6 (Goldeye),Done,30/Jul/26 3:02 PM,11/Aug/26 2:26 PM,Blocker,Complete,SCALE-25.10.5 (Goldeye),,,IX_EMPLOYEE,triage_skipped,
 Defect,NAS-142057,159556,Allow ALUA toggle when standby is unreachable,"27.0.0-BETA.1 PR: https://github.com/truenas/middleware/pull/19478
 
-CI shows no regressions: [here|http://jenkins-eng-ci.cmb1.ixsystems.net:8080/job/master/job/sharing_protocols_tests/68/].",26.0.0-RC.1,27.0.0-BETA.1,27.0.0-RC.1,SCALE-25.10.6 (Goldeye),Done,04/Aug/26 9:06 AM,11/Aug/26 2:27 PM,High,Complete,27.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
+CI shows no regressions: [here|http://jenkins-eng-ci.cmb1.ixsystems.net:8080/job/master/job/sharing_protocols_tests/68/].",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.6 (Goldeye),,Done,04/Aug/26 9:06 AM,29/Sep/26 4:32 PM,High,Complete,28.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
 Improvement,NAS-142088,159593,Update Containers UI for middleware container.* API changes (container.delete is now a job with force/recursive options),"h2. Background
 
 The middleware {{container.*}} API has moved on since the WebUI last synced against it (early May 2026). Below are the behavioural changes we made on the middleware side that the UI needs to adapt to. How the UI adapts — where a progress dialog goes, where an extra checkbox lives — is entirely up to the WebUI team.
@@ -511,13 +511,13 @@ Custom MACs on NIC devices are now validated as colon-separated only. Dash-separ
 
 This applies to *both container and VM NIC devices*, so the VM device form needs the same treatment.
 
-{quote}*stable/26:* applies there too.{quote}",26.0.0-RC.1,27.0.0-BETA.1,,,Done,06/Aug/26 6:06 AM,03/Sep/26 2:23 PM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
+{quote}*stable/26:* applies there too.{quote}",27.0.0-RC.1,28.0.0-BETA.1,,,Done,06/Aug/26 6:06 AM,03/Sep/26 2:23 PM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
 Bug,NAS-142117,159632,[EFAULT] Failed to apply ACLs to the following paths: 1) /mnt/.ix-apps/app_mounts//state: [EPERM] /mnt/.ix-apps/app_mounts//state:,"[EFAULT] Failed to apply ACLs to the following paths: 1) /mnt/.ix-apps/app_mounts//state: [EPERM] /mnt/.ix-apps/app_mounts//state: path contains existing data and force was not specified
 
 The force option is not available to select.
 This app is already running, This is during edit, when trying to add acl after its created, Seems like all the apps have this issue after they are set up If you didn’t add acl, the force is missing and you get this error, without being able to save the adjusted settings.
 
-Dev version 26.0.0-MASTER+20260807-020148",26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,07/Aug/26 8:44 PM,01/Sep/26 7:14 AM,Medium,Complete,Master - TrueNAS Nightlies,,,,COMMUNITY_USER,,,
+Dev version 26.0.0-MASTER+20260807-020148",27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,07/Aug/26 8:44 PM,01/Sep/26 7:14 AM,Medium,Complete,Master - TrueNAS Nightlies,,,,COMMUNITY_USER,,,
 Defect,NAS-142126,159664,Make target unregistration safe against queued sysfs works,"None PR: https://github.com/truenas/scst/pull/116
 
 Writing a target's ""enabled"" sysfs attribute queues a work item and waits for it at most 15 seconds. On timeout the write returns -EAGAIN but the work stays queued and executes whenever a sysfs thread gets to it, potentially long after scst_unregister_target() has started for that target. Removing the sysfs attributes there only stops new writes, not already queued works. The work's kobject reference keeps the scst_tgt memory alive while the driver side is torn down underneath it, and the target leaves its template's tgt_list only after release() returns, so a queued work had nothing to check either.
@@ -536,13 +536,13 @@ scst_unregister_target_template()
 * A legitimate disable racing unregistration now returns success instead of -ENOENT, since teardown disables the target anyway. A stale enable is still refused.
 * The old qla2x00t driver called scst_unregister_target() with tgt_host_action_mutex held, while its enable_target() callback takes the same mutex, which the new drain would turn into an ABBA deadlock. REMOVE_TARGET now drops the mutex across the unregistration and q2t_target_release() acquires it itself for the teardown. The sBUG_ON in q2t_add_target() becomes a graceful -EEXIST, since a racing add can now legitimately see the old target still present.
 
-The drain waits only for works already executing a driver callback. Still queued works keep the count at zero and become no-ops when they run, so a caller executing on a sysfs work thread (a del_target management work for example) cannot deadlock against a queued enable work. No scst_unregister_target() caller holds scst_mutex.",26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,10/Aug/26 9:43 AM,31/Aug/26 3:28 PM,High,Complete,Master - TrueNAS SCALE,,,,IX_EMPLOYEE,triage_skipped,,
-Bug,NAS-142148,159713,Webshare can't share link with Chinese file name and Chinese file path,Webshare can't generate share link with Chinese file name and Chinese file path. ,26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,12/Aug/26 4:10 AM,12/Aug/26 2:39 PM,Undefined,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
+The drain waits only for works already executing a driver callback. Still queued works keep the count at zero and become no-ops when they run, so a caller executing on a sysfs work thread (a del_target management work for example) cannot deadlock against a queued enable work. No scst_unregister_target() caller holds scst_mutex.",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,10/Aug/26 9:43 AM,31/Aug/26 3:28 PM,High,Complete,Master - TrueNAS SCALE,,,,IX_EMPLOYEE,triage_skipped,,
+Bug,NAS-142148,159713,Webshare can't share link with Chinese file name and Chinese file path,Webshare can't generate share link with Chinese file name and Chinese file path. ,27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,12/Aug/26 4:10 AM,12/Aug/26 2:39 PM,Undefined,Complete,26.0.0-BETA.2,,,,COMMUNITY_USER,,,
 Defect,NAS-142152,159723,Tolerate transient NTB blips before calling dlm.reset_active,"27.0.0-BETA.1 PR: https://github.com/truenas/middleware/pull/19495
 
 remote_down now polls the DLM port for up to 60 seconds before ejecting the peer, so short NTB packet loss events don't trigger a spurious reset_active
 
-Also raise scan_secs from the default 5 to 30 so the kernel DLM itself doesn't start FORCEUNLOCK recovery during ~20s NTB blips.",26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,12/Aug/26 2:28 PM,31/Aug/26 3:29 PM,High,Complete,27.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
+Also raise scan_secs from the default 5 to 30 so the kernel DLM itself doesn't start FORCEUNLOCK recovery during ~20s NTB blips.",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,12/Aug/26 2:28 PM,31/Aug/26 3:29 PM,High,Complete,28.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
 Defect,NAS-142161,159741,isert-scst fix NULL deref in isert_pdu_err on connection teardown,"None PR: https://github.com/truenas/scst/pull/120
 
 A buggy initiator rapidly connecting and disconnecting over iSER can panic the target. isert_send_data_rsp posts SCSI data and status responses directly, bypassing iscsi_get_send_cmnd, so a posted response never gets write_processing_started set. When the connection is torn down mid I/O, req_cmnd_release_force therefore treats the posted response as never sent and drops its only reference, the same reference the send completion handler drops again once the flushed WR error CQE is reaped. The first put recycles the PDU back into the tx pool, which memsets the embedded iscsi_cmnd, and the stale completion then dereferences the zeroed conn pointer in isert_pdu_err.
@@ -560,14 +560,14 @@ Call Trace
  ret_from_fork_asm+0x1a/0x30
 {code}
 
-Fix the ownership at the root. Mark responses posted by isert_send_data_rsp with write_processing_started under write_list_lock so teardown leaves wire owned responses to their completion handler, and release the wire references at the failure site when posting fails since no completion will ever arrive. Add the same failure handling to isert_process_all_writes. As defense in depth, keep recycled tx pool PDUs pointing at their connection, matching the rx recycle path, and bail out of isert_pdu_err when conn is NULL.",26.0.0-RC.1,SCALE-25.10.7 (Goldeye),,,Done,13/Aug/26 9:49 AM,31/Aug/26 3:32 PM,High,Complete,26.0.0-BETA.3,Master - TrueNAS SCALE,,,IX_EMPLOYEE,triage_skipped,,
+Fix the ownership at the root. Mark responses posted by isert_send_data_rsp with write_processing_started under write_list_lock so teardown leaves wire owned responses to their completion handler, and release the wire references at the failure site when posting fails since no completion will ever arrive. Add the same failure handling to isert_process_all_writes. As defense in depth, keep recycled tx pool PDUs pointing at their connection, matching the rx recycle path, and bail out of isert_pdu_err when conn is NULL.",27.0.0-RC.1,SCALE-25.10.7 (Goldeye),,,Done,13/Aug/26 9:49 AM,31/Aug/26 3:32 PM,High,Complete,26.0.0-BETA.3,Master - TrueNAS SCALE,,,IX_EMPLOYEE,triage_skipped,,
 Bug,NAS-142168,159752,Usage space indicator,"With a usage of 83.9% in a vdev, the indicator is:
  'ok' in green in the ""dashboard"" tab
  '!' in orange in the ""Storage dashboard"" tab with a red circular  gauge
 
 So for the same usage of 83.9% you have normal and warning and critical depending on where you read the information, that's a bit confusing.
 
-Session ID: 69e2b655-1d4e-4393-a413-975750d0bfbe",26.0.0-RC.1,27.0.0-BETA.1,,,Done,14/Aug/26 5:54 AM,03/Sep/26 2:19 PM,Low,Complete,SCALE-25.10.6 (Goldeye),,,,COMMUNITY_USER,doc_resolved,release_notes_mention,tests_impact
+Session ID: 69e2b655-1d4e-4393-a413-975750d0bfbe",27.0.0-RC.1,28.0.0-BETA.1,,,Done,14/Aug/26 5:54 AM,03/Sep/26 2:19 PM,Low,Complete,SCALE-25.10.6 (Goldeye),,,,COMMUNITY_USER,doc_resolved,release_notes_mention,tests_impact
 Bug,NAS-142191,159797,App upgrade job reports SUCCESS when the image pull fails (custom apps),"Clicking Update on a custom app whose ""docker compose pull"" fails produces a job
 that finishes in about a second with state SUCCESS and progress ""App successfully
 upgraded and redeployed"". Nothing was pulled and nothing was redeployed. The only
@@ -655,11 +655,11 @@ FIX
 
 PR against master: https://github.com/truenas/middleware/pull/19506
 
-Session ID: 3889aff3-25c1-4b33-88ed-b71b1f6fc1e4",26.0.0-RC.1,27.0.0-BETA.1,,,Done,16/Aug/26 3:04 AM,22/Aug/26 5:37 PM,Medium,Complete,SCALE-25.10.6 (Goldeye),,,,COMMUNITY_USER,,,
-Bug,NAS-142198,159806,Alert bug: Scrub for pool 'pool' is paused for more than 8 hours,"Pause scrubbing for few minutes, then the alerts tells me the scrub task is paused for more then 8 hours.",26.0.0-RC.1,27.0.0-BETA.1,,,Done,16/Aug/26 9:40 AM,18/Aug/26 3:09 PM,Low,Complete,SCALE-25.10.6 (Goldeye),,,,COMMUNITY_USER,,,
+Session ID: 3889aff3-25c1-4b33-88ed-b71b1f6fc1e4",27.0.0-RC.1,28.0.0-BETA.1,,,Done,16/Aug/26 3:04 AM,22/Aug/26 5:37 PM,Medium,Complete,SCALE-25.10.6 (Goldeye),,,,COMMUNITY_USER,,,
+Bug,NAS-142198,159806,Alert bug: Scrub for pool 'pool' is paused for more than 8 hours,"Pause scrubbing for few minutes, then the alerts tells me the scrub task is paused for more then 8 hours.",27.0.0-RC.1,28.0.0-BETA.1,,,Done,16/Aug/26 9:40 AM,18/Aug/26 3:09 PM,Low,Complete,SCALE-25.10.6 (Goldeye),,,,COMMUNITY_USER,,,
 Bug,NAS-142222,159841,Complex audit log search terms are not stacking correctly,"Searching SMB ausit logs for `""Event != ""Authentication"" AND Event != ""Close""` and Authentication events are still showing in the list. See screenshop.
 
-Session ID: 3df1a023-0d9c-4705-a8eb-f083993ec11a",26.0.0-RC.1,27.0.0-BETA.1,N/A,,Done,17/Aug/26 10:17 AM,03/Sep/26 2:22 PM,Medium,Complete,SCALE-25.10.6 (Goldeye),,,,IX_EMPLOYEE,,,
+Session ID: 3df1a023-0d9c-4705-a8eb-f083993ec11a",27.0.0-RC.1,28.0.0-BETA.1,N/A,,Done,17/Aug/26 10:17 AM,03/Sep/26 2:22 PM,Medium,Complete,SCALE-25.10.6 (Goldeye),,,,IX_EMPLOYEE,,,
 Defect,NAS-142227,159852,Drop kernel address refresh re-announcements in netlink monitor,"27.0.0-BETA.1 PR: https://github.com/truenas/middleware/pull/19510
 
 The kernel re-emits RTM_NEWADDR every time a router advertisement refreshes an address lifetime. Each refresh became an ipaddress.change event that restarted ix-vendor.service, every few seconds behind routers with aggressive RA timers.
@@ -668,7 +668,7 @@ IFA_CACHEINFO carries creation and update timestamps that are equal only for a b
 
 Restarts now allow a single waiter on the lock instead of silently skipping, so the latest address state is always applied without piling up. Verified against a live kernel on real hardware.
 
-This was pointed out in https://ixsystems.atlassian.net/browse/NAS-141358 and a fix was proposed in https://github.com/truenas/middleware/pull/19401. This fix supersedes that one.",26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,17/Aug/26 12:25 PM,31/Aug/26 3:33 PM,Medium,Complete,27.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
+This was pointed out in https://ixsystems.atlassian.net/browse/NAS-141358 and a fix was proposed in https://github.com/truenas/middleware/pull/19401. This fix supersedes that one.",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,17/Aug/26 12:25 PM,31/Aug/26 3:33 PM,Medium,Complete,28.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
 Defect,NAS-142228,159853,sunrpc: treat empty auth.unix.gid replies as negative entries,"27.0.0-BETA.1 PR: https://github.com/truenas/linux/pull/337
 
 An *AD*/*winbind* customer reported intermittent per-user ""*permission denied*"" on NFS shares ([SEE-597|https://ixsystemsinc.atlassian.net/browse/SEE-597]). On a server running {{rpc.mountd --manage-gids}}, standard for AD and LDAP environments, a brief winbind or sssd outage makes mountd answer the group lookup with zero groups, and the kernel caches that as a valid answer: the uid loses all supplementary groups on every export for up to mountd's TTL (30 minutes by default), long after the directory service recovers. Only supplementary-group access breaks, so it presents as a random denial that fixes itself. The bug is 19 years old, present since the {{auth.unix.gid}} cache was added in v2.6.21 (2007) and triggerable since mountd started sending zero-group failure replies in 2008, so every kernel we ship is affected.
@@ -706,10 +706,10 @@ Assisted-by: Claude:claude-fable-5
 Signed-off-by: Ameer Hamza <ameer.hamza@truenas.com>
 Link: https://patch.msgid.link/20260814221953.108837-2-ameer.hamza@truenas.com
 Signed-off-by: Chuck Lever <cel@kernel.org>
-{code}",26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,17/Aug/26 12:43 PM,31/Aug/26 3:33 PM,High,Complete,27.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
+{code}",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,17/Aug/26 12:43 PM,31/Aug/26 3:33 PM,High,Complete,28.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
 Defect,NAS-142234,159859,Use `configparser` to generate rclone configs,"27.0.0-BETA.1 PR: https://github.com/truenas/middleware/pull/19514
 
-This prevents us from generating invalid ini files by escaping invalid characters.",26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,17/Aug/26 2:34 PM,31/Aug/26 3:33 PM,Medium,Complete,27.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
+This prevents us from generating invalid ini files by escaping invalid characters.",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,17/Aug/26 2:34 PM,31/Aug/26 3:33 PM,Medium,Complete,28.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
 Defect,NAS-142258,159898,scst keep the old acg installed during session reassignment,"None PR: https://github.com/truenas/scst/pull/123
 
 scst_check_reassign_sess() cleared sess->acg for the whole time it rebuilt the session's tgt_dev list. That window includes one synchronize_rcu() call per replaced or deleted LUN and the session stays fully visible to its initiator throughout. Activity suspension does not close the window. scst_post_rx_mgmt_cmd() queues a newly received task management command to the active list unconditionally, the TM thread picks it up immediately, and the first statement of scst_mgmt_cmd_init() dereferences mcmd->sess->acg before the scst_get_mcmd() suspension check runs. An ABORT_TASK arriving while its own session was mid reassignment therefore crashed the TM thread with a NULL pointer dereference at offset 0x464, which is acg_black_hole_type. Every task management function is affected because the dereference precedes the switch on the function code.
@@ -792,7 +792,7 @@ Aug 10 20:27:38 truenas kernel: [11170]: scst: sess 00000000b50bcca3 (initiator 
 Aug 10 20:27:38 truenas kernel: [11170]: scst: sess 0000000043bdef49 (initiator iqn.1998-01.com.vmware:esx2:1461901680:64#192.168.190.211) will be reassigned from acg iqn.2005-12.org.freenas.ctl:truenas:target1 to acg security_group
 Aug 10 20:27:38 truenas kernel: [11170]: scst: sess 000000001d8fac5a (initiator iqn.1998-01.com.vmware:esx1:648341046:64#192.168.190.211) will be reassigned from acg iqn.2005-12.org.freenas.ctl:truenas:target1 to acg security_group
 Aug 10 20:27:38 truenas kernel: [11305]: iscsi-scst: iSCSI TM fn 1
-Aug 10 20:27:38 truenas kernel: [11305]: scst: TM fn ABORT_TASK/0 (mcmd 00000000998fe93d, initiator iqn.1998-01.com.vmware:esx1:648341046:64#192.168.190.211, target iqn.2005-12.org.freenas.ctl:truenas:target1)",26.0.0-RC.1,SCALE-25.10.7 (Goldeye),,,Done,19/Aug/26 7:23 AM,31/Aug/26 3:34 PM,High,Complete,Master - TrueNAS SCALE,,,,IX_EMPLOYEE,triage_skipped,,
+Aug 10 20:27:38 truenas kernel: [11305]: scst: TM fn ABORT_TASK/0 (mcmd 00000000998fe93d, initiator iqn.1998-01.com.vmware:esx1:648341046:64#192.168.190.211, target iqn.2005-12.org.freenas.ctl:truenas:target1)",27.0.0-RC.1,SCALE-25.10.7 (Goldeye),,,Done,19/Aug/26 7:23 AM,31/Aug/26 3:34 PM,High,Complete,Master - TrueNAS SCALE,,,,IX_EMPLOYEE,triage_skipped,,
 Defect,NAS-142264,159908,scst do not hold a list cursor across the scst_acg_del_lun mutex drop,"None PR: https://github.com/truenas/scst/pull/126
 
 scst_unregister_device() and scst_unregister_virtual_device() walked dev->dev_acg_dev_list with list_for_each_entry_safe() while calling scst_acg_del_lun() on each entry. That function is not atomic under scst_mutex. After unlinking the acg_dev it drops the mutex to wait for outstanding commands and for an RCU grace period, then relocks and frees. Any acg_dev teardown that wins the mutex during that window invalidates the walker's saved next pointer. Target unregistration is such a teardown. scst_del_acg() unlinks each acg_dev from the device side only, leaving it on acg->acg_dev_list with its device side list entry poisoned, and defers the free to the acg release work. When the device walker resumed on that stale cursor it looked the entry up again by LUN, found the half deleted node, and performed a second list_del() on the poisoned entry. With list hardening that is a general protection fault on LIST_POISON2. Without it the same race can write through reused slab memory, free the acg_dev twice, and underflow the device refcount.
@@ -843,10 +843,10 @@ This was hit in production on an HA system during failover. The scst service res
 <4>[  207.638393]  do_syscall_64+0x87/0x1a0
 <4>[  207.642790]  entry_SYSCALL_64_after_hwframe+0x76/0x7e
 <4>[  207.647918]  </TASK>
-<0>[  207.713820] Kernel panic - not syncing: Fatal exception",26.0.0-RC.1,SCALE-25.10.7 (Goldeye),,,Done,19/Aug/26 12:40 PM,31/Aug/26 3:34 PM,High,Complete,Master - TrueNAS SCALE,,,,IX_EMPLOYEE,triage_skipped,,
+<0>[  207.713820] Kernel panic - not syncing: Fatal exception",27.0.0-RC.1,SCALE-25.10.7 (Goldeye),,,Done,19/Aug/26 12:40 PM,31/Aug/26 3:34 PM,High,Complete,Master - TrueNAS SCALE,,,,IX_EMPLOYEE,triage_skipped,,
 Defect,NAS-142303,159959,Set unicast_src_ip for VRRP instances so IPv6 adverts are received,"27.0.0-BETA.1 PR: https://github.com/truenas/middleware/pull/19527
 
-keepalived binds the unicast receive socket to the advert source address. Without unicast_src_ip it uses the first address it learns on the interface, which for IPv6 is the link-local address. The peer sends adverts to our configured address, so they are never delivered and both controllers become MASTER for every IPv6 VIP. IPv4 only worked because the first learned address is normally the configured one. Set unicast_src_ip to the address the peer is configured to send to for every instance.",26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,20/Aug/26 2:34 PM,31/Aug/26 3:34 PM,High,Complete,27.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
+keepalived binds the unicast receive socket to the advert source address. Without unicast_src_ip it uses the first address it learns on the interface, which for IPv6 is the link-local address. The peer sends adverts to our configured address, so they are never delivered and both controllers become MASTER for every IPv6 VIP. IPv4 only worked because the first learned address is normally the configured one. Set unicast_src_ip to the address the peer is configured to send to for every instance.",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,20/Aug/26 2:34 PM,31/Aug/26 3:34 PM,High,Complete,28.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
 Improvement,NAS-142433,160203,Identify USB passthrough devices by their physical port in the VM and Container UI,"h2. Background
 
 A USB passthrough device can be identified either by the physical port it is plugged into or by its vendor and product ID. Both are supported and neither is going away. The port is the better default: it survives replugs and reboots, and it can tell two identical devices apart, which vendor/product cannot.
@@ -866,12 +866,12 @@ Both the VM and container UIs should allow a device to be selected by port or by
 
 h2. Scope
 
-Needed on both {{master}} and {{stable/26}}.",26.0.0-RC.1,27.0.0-BETA.1,,,Done,22/Aug/26 6:23 PM,15/Sep/26 3:52 PM,Low,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
+Needed on both {{master}} and {{stable/26}}.",27.0.0-RC.1,28.0.0-BETA.1,,,Done,22/Aug/26 6:23 PM,15/Sep/26 3:52 PM,Low,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
 Bug,NAS-142517,160288,"Storage Dashboard throws error, shows no pools","Upgraded from 25.10.4 to 26.0.0-BETA.3.
 
 The Storage Dashboard throws the error ""can't access property ""class_special_usable"", T.properties is null"" and shows no pools. The top-level Dashboard is fine.
 
-Gemini thinks this is because I have pools that don't have Special VDEVs, or perhaps that I have one that does but others that don't.",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,,Done,24/Aug/26 9:07 AM,11/Sep/26 10:35 AM,Medium,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,doc_resolved,tests_impact,
+Gemini thinks this is because I have pools that don't have Special VDEVs, or perhaps that I have one that does but others that don't.",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,,Done,24/Aug/26 9:07 AM,11/Sep/26 10:35 AM,Medium,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,doc_resolved,tests_impact,
 Defect,NAS-142560,160349,nfsd: don't modify a session slot when replaying its cached reply,"27.0.0-BETA.1 PR: https://github.com/truenas/linux/pull/344
 
 An NFS customer hit repeated kernel panics on their file servers ([SEE-604|https://ixsystemsinc.atlassian.net/browse/SEE-604]), three faults across two 6.12.91 appliances. An NFSv4.1 client that loses its connection retransmits, and if the connection drops again before the reply arrives, two copies of the same request reach the server at once. Both are answered from the session reply cache, which should be read-only, but since v5.10 a cached reply also rewrites the slot it just read from with no lock held. One thread frees and rebuilds the cached credential while another compares against it, and nfsd takes a NULL dereference and panics. Only a connection dropping twice is needed. The bug has been there since [cc028a10a48c|https://git.kernel.org/pub/scm/linux/kernel/git/cel/linux.git/commit/?id=cc028a10a48c] in v5.10-rc1 (2020), so both truenas/linux-6.12 and truenas/linux-6.18 are affected.
@@ -937,12 +937,12 @@ Assisted-by: Claude:claude-opus-5
 Signed-off-by: Ameer Hamza <ameer.hamza@truenas.com>
 Link: https://patch.msgid.link/20260824173641.3274260-1-ameer.hamza@truenas.com
 Signed-off-by: Chuck Lever <cel@kernel.org>
-{code}",26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,25/Aug/26 11:14 AM,31/Aug/26 3:35 PM,High,Complete,27.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
+{code}",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,25/Aug/26 11:14 AM,31/Aug/26 3:35 PM,High,Complete,28.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
 Bug,NAS-142603,160403,Drop the TLS client authentication EKU from TNC and default CSRs,"Middleware requests both server and client authentication extended key usages in the certificate signing requests it generates, both for the TNC wildcard certificate and in the default HTTPS RSA and ECC certificate profiles, following what was then universal CA practice and a Let's Encrypt community recommendation still cited in the code. The Chrome Root Program reversed that consensus with its Moving Forward, Together initiative starting in 2022: public CAs must issue from hierarchies dedicated to server authentication, and certificates issued on or after March 15, 2027 may assert only the server authentication purpose. Every public CA has followed. ZeroSSL stopped including the client authentication EKU in October 2025, Let's Encrypt ends support in July 2026, and Google Trust Services now rejects any CSR that includes it.
 
 TrueNAS Connect does not use mutual TLS anywhere, so nothing depends on the EKU. Remove client authentication from the TNC CSR and from the default HTTPS certificate profiles, while keeping it selectable for user generated CSRs aimed at private CAs.
 
-The primary movtivation is to be able to use Google CA internally to get around ZeroSSL rate limits that have lead to many inconsistent test failures on internal nightlies. Let’s Encrypt’s limits are too small for more than one nightly run a week, and are shared with the domain so would affect its current role as a temporary prod fallback. Right now orders for certs against Google CA fail due to CLIENT_AUTH inclusion. ",26.0.0-RC.1,27.0.0-BETA.1,,,Done,26/Aug/26 12:22 PM,14/Sep/26 11:41 AM,High,Complete,Master - TrueNAS Nightlies,,,,IX_EMPLOYEE,triage_skipped,,
+The primary movtivation is to be able to use Google CA internally to get around ZeroSSL rate limits that have lead to many inconsistent test failures on internal nightlies. Let’s Encrypt’s limits are too small for more than one nightly run a week, and are shared with the domain so would affect its current role as a temporary prod fallback. Right now orders for certs against Google CA fail due to CLIENT_AUTH inclusion. ",27.0.0-RC.1,28.0.0-BETA.1,,,Done,26/Aug/26 12:22 PM,14/Sep/26 11:41 AM,High,Complete,Master - TrueNAS Nightlies,,,,IX_EMPLOYEE,triage_skipped,,
 Bug,NAS-142604,160404,Update outdated contact details in the TNC CSR subject,"Currently outdated values:
 
 State: TN
@@ -951,7 +951,7 @@ City: Maryville
 
 Organization: iX
 
-Email: cert-bot@ixsystems.com",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,,Done,26/Aug/26 12:24 PM,22/Sep/26 7:23 AM,Low,Complete,Master - TrueNAS Nightlies,,,,IX_EMPLOYEE,,,
+Email: cert-bot@ixsystems.com",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,,Done,26/Aug/26 12:24 PM,22/Sep/26 7:23 AM,Low,Complete,Master - TrueNAS Nightlies,,,,IX_EMPLOYEE,,,
 Bug,NAS-142610,160410,Snapshot lifetime UI accepts -1 and 0,"UI accepts a value of -1 which subsequently creates issues.
 
 If middleware is using a snapshot lifetime of 0 to represent a snapshot that should not be deleted that should be communicated in the UI. 
@@ -962,11 +962,11 @@ Versions tested:
 
 26 nightly
 
-27 nightly",26.0.0-RC.1,27.0.0-BETA.1,N/A,SCALE-25.10.7 (Goldeye),Done,26/Aug/26 1:19 PM,31/Aug/26 3:36 PM,Low,Complete,26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.6 (Goldeye),,IX_EMPLOYEE,triage_skipped,,
-Bug,NAS-142731,160561,Dashboard nic  throughput graph only shows data from one nic in the bond,"add the bond, show graph for throughput, the graph dont show max speed, check via htop ntop etc.",26.0.0-RC.1,27.0.0-BETA.1,,,Done,28/Aug/26 5:47 AM,13/Sep/26 9:45 AM,Low,Complete,Master - TrueNAS Nightlies,,,,COMMUNITY_USER,,,
-Improvement,NAS-142916,160810,Fix broken CI,We have broken CI because of the distributed deps (some unpinned) which needs to be fixed,26.0.0-RC.1,27.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,31/Aug/26 6:35 AM,06/Sep/26 1:56 PM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
-Bug,NAS-142970,160878,automated scheduled replication task bug,"hi, i'm trying to use a second pc as backup for the main truenas server. this time i have tried replication tasks. they works manually but not automatically. i have tried to set one to be executed automatically. it didn't worked. so i looked into the cron section of the automatic scheduling and found out that it wont show tasks for current month, only for the next one. i have tried hourly, daily, weekly and it completely ignores the current month",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,,Done,01/Sep/26 2:01 AM,15/Sep/26 8:20 AM,Medium,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,doc_impact,tests_impact,
-New Feature,NAS-143004,160919,ER-11 in debug info,We need to add a license plugin for ixdiagnose,26.0.0-RC.1,27.0.0-BETA.1,,,Done,01/Sep/26 5:44 PM,28/Sep/26 11:01 AM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
+27 nightly",27.0.0-RC.1,28.0.0-BETA.1,N/A,SCALE-25.10.7 (Goldeye),Done,26/Aug/26 1:19 PM,31/Aug/26 3:36 PM,Low,Complete,27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.6 (Goldeye),,IX_EMPLOYEE,triage_skipped,,
+Bug,NAS-142731,160561,Dashboard nic  throughput graph only shows data from one nic in the bond,"add the bond, show graph for throughput, the graph dont show max speed, check via htop ntop etc.",27.0.0-RC.1,28.0.0-BETA.1,,,Done,28/Aug/26 5:47 AM,13/Sep/26 9:45 AM,Low,Complete,Master - TrueNAS Nightlies,,,,COMMUNITY_USER,,,
+Improvement,NAS-142916,160810,Fix broken CI,We have broken CI because of the distributed deps (some unpinned) which needs to be fixed,27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,31/Aug/26 6:35 AM,06/Sep/26 1:56 PM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
+Bug,NAS-142970,160878,automated scheduled replication task bug,"hi, i'm trying to use a second pc as backup for the main truenas server. this time i have tried replication tasks. they works manually but not automatically. i have tried to set one to be executed automatically. it didn't worked. so i looked into the cron section of the automatic scheduling and found out that it wont show tasks for current month, only for the next one. i have tried hourly, daily, weekly and it completely ignores the current month",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,,Done,01/Sep/26 2:01 AM,15/Sep/26 8:20 AM,Medium,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,doc_impact,tests_impact,
+New Feature,NAS-143004,160919,ER-11 in debug info,We need to add a license plugin for ixdiagnose,27.0.0-RC.1,28.0.0-BETA.1,,,Done,01/Sep/26 5:44 PM,28/Sep/26 11:01 AM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
 New Feature,NAS-143012,160927,Adapt UI to the middleware entitlement engine,"Middleware has replaced all ad-hoc ""is this Enterprise / is this licensed"" checks with a single entitlement engine. {{system.product_type}} now describes hardware only, and a new endpoint reports, per feature, whether the system is entitled to it and why not. The UI should move all feature gating onto that endpoint and use product type for branding alone.
 
 h2. Three independent signals
@@ -1058,7 +1058,7 @@ h2. References (middleware {{stable/26}})
 * {{api/v26_0_0/truenas.py}} — {{EntitlementsInfo}}, {{EntitlementEntry}}, {{LicenseInfoEntry}}, {{LicenseFeatureEntry}}
 * {{utils/entitlements/engine.py}} — {{Reason}}
 * {{utils/entitlements/policy.py}} — {{POLICY}}, the authoritative key list
-* {{plugins/system/product.py}} — {{product_type}}, {{feature_enabled}}, {{license}}",26.0.0-RC.1,27.0.0-BETA.1,,,Done,01/Sep/26 9:21 PM,14/Sep/26 12:09 AM,Blocker,Complete,,,,,doc_impact,IX_EMPLOYEE,tests_impact,triage_skipped
+* {{plugins/system/product.py}} — {{product_type}}, {{feature_enabled}}, {{license}}",27.0.0-RC.1,28.0.0-BETA.1,,,Done,01/Sep/26 9:21 PM,14/Sep/26 12:09 AM,Blocker,Complete,,,,,doc_impact,IX_EMPLOYEE,tests_impact,triage_skipped
 Improvement,NAS-143125,161069,License features are truncated on General Page,"With a longer list of possible licensed features, the listed items become truncated as they are restricted to a single line.  Also, if user hovers mouse over the text field, there is no tool tip making it difficult to see all items in the list.
 
 
@@ -1068,13 +1068,13 @@ Request is for:
 # Configuring a tool tip that allows the full list to be seen or configure a second dialog that shows the extensive list
 # Implement a method that allows the list of features to be easily visible (e.g. wrapped text, or columns, etc)
 # !image-20260904-132748.png|width=688,alt=""image-20260904-132748.png""!
-# Test Environment: f60-146 with 26.0.0-RC.1 internal.1",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,N/A,Done,04/Sep/26 9:29 AM,15/Sep/26 8:18 AM,Low,Complete,26.0.0-RC.1,,,,IX_EMPLOYEE,,,
-Improvement,NAS-143189,161133,Debug should capture license features being used,We need to add changes so debug is capturing license features are being used at the time a debug is taken of the system,26.0.0-RC.1,27.0.0-BETA.1,,,Done,04/Sep/26 7:33 PM,28/Sep/26 11:00 AM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
+# Test Environment: f60-146 with 26.0.0-RC.1 internal.1",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,N/A,Done,04/Sep/26 9:29 AM,15/Sep/26 8:18 AM,Low,Complete,27.0.0-RC.1,,,,IX_EMPLOYEE,,,
+Improvement,NAS-143189,161133,Debug should capture license features being used,We need to add changes so debug is capturing license features are being used at the time a debug is taken of the system,27.0.0-RC.1,28.0.0-BETA.1,,,Done,04/Sep/26 7:33 PM,28/Sep/26 11:00 AM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
 Bug,NAS-143219,161164,`Save And Go To Review` button is badly named,"the button is incorrectly named, it does not save anything, nor should imply it.
 
 Rename the button to something like `Go to Review`
 
-Also don't capitalise every word.",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,N/A,Done,05/Sep/26 11:17 AM,15/Sep/26 8:19 AM,Low,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,,,
+Also don't capitalise every word.",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,N/A,Done,05/Sep/26 11:17 AM,15/Sep/26 8:19 AM,Low,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,,,
 Defect,NAS-143578,161586,"test(api): pin the secure rename shape, and who may see which complaint","27.0.0-BETA.1 PR: https://github.com/iXsystems/truenas-file-manager/pull/1660
 
 Part of #336, acceptance 2 and 3. {{normalizeRenameShape}} goes *72.2% → 100%* and {{paramShapeError.Error()}} *0% → 100%*. Pure function, no fixtures, so these run in CI rather than skipping.
@@ -1127,7 +1127,7 @@ h2. Verification
 * 15 cases counted rather than assumed — 8 top-level, 7 subtests
 * Composes onto master
 
-Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>",26.0.0-RC.1,27.0.0-BETA.1,,,Done,10/Sep/26 10:54 PM,15/Sep/26 7:54 AM,Low,Complete,27.0.0-BETA.1,,,,IX_AGENT,,,
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>",27.0.0-RC.1,28.0.0-BETA.1,,,Done,10/Sep/26 10:54 PM,15/Sep/26 7:54 AM,Low,Complete,28.0.0-BETA.1,,,,IX_AGENT,,,
 Bug,NAS-143641,161664,Web UI unavailable after OS upgrade on systems with many RSA-4096 certificates,"Product / version
 
 TrueNAS SCALE 26.0.0-BETA.3
@@ -1548,10 +1548,10 @@ systemctl restart nginx{noformat}
 
 This restores the normal configured HTTPS Web UI and survives subsequent ordinary reboots.
 
-The workaround currently has to be repeated after a new OS upgrade/boot environment.",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,,Done,12/Sep/26 1:45 AM,16/Sep/26 3:11 PM,High,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,,,
+The workaround currently has to be repeated after a new OS upgrade/boot environment.",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,,Done,12/Sep/26 1:45 AM,16/Sep/26 3:11 PM,High,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,,,
 Bug,NAS-143736,161800,Disk images exported from zvols cannot be moved from v25.10 to a v26-Beta-3,"I will add more info in JIRA
 
-Session ID: db8ef8b3-9546-4492-9031-6aa0de937ad6",26.0.0-RC.1,27.0.0-BETA.1,,,Done,14/Sep/26 8:51 AM,16/Sep/26 6:55 AM,Medium,Complete,26.0.0-BETA.3,SCALE-25.10.7 (Goldeye),,,COMMUNITY_USER,,,
+Session ID: db8ef8b3-9546-4492-9031-6aa0de937ad6",27.0.0-RC.1,28.0.0-BETA.1,,,Done,14/Sep/26 8:51 AM,16/Sep/26 6:55 AM,Medium,Complete,26.0.0-BETA.3,SCALE-25.10.7 (Goldeye),,,COMMUNITY_USER,,,
 Bug,NAS-143753,161823,Editing a user changes the user's home directory to the parent,"Edit User form submits the parent of the home directory path, so saving an unrelated change relocates the user's home and re-permissions the parent directory
 
 
@@ -1602,15 +1602,15 @@ h2. Impact
 
 Any save on any user relocates that user's home to the parent directory. {{user.update}} then calls {{user.do_home_copy}}, which runs {{copytree}} from the old home to the new one, so the user's entire home directory is copied into a location shared with every other user. {{setup_homedir}} also calls {{filesystem.setperm}} with {{stripacl: True}} against the new path, which on a shared parent locks every other user out of their own home.
 
-This is a test account, but I just had to clean up from this happening on a real user account when I changed the account to “Full Admin”. It moved the user’s home directory to /mnt/tank/home and copied the contents and changed permissions on the home directory itself.",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,N/A,Done,14/Sep/26 1:44 PM,16/Sep/26 11:14 AM,High,Complete,SCALE-25.10.7 (Goldeye),,,,COMMUNITY_USER,,,
+This is a test account, but I just had to clean up from this happening on a real user account when I changed the account to “Full Admin”. It moved the user’s home directory to /mnt/tank/home and copied the contents and changed permissions on the home directory itself.",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,N/A,Done,14/Sep/26 1:44 PM,16/Sep/26 11:14 AM,High,Complete,SCALE-25.10.7 (Goldeye),,,,COMMUNITY_USER,,,
 Bug,NAS-143821,161906,Update popup not showing the correct version,"The popup that is shown when you hover over the icon is showing the wrong version
 
-Session ID: 47648f2b-19ac-4b5f-9fa5-b312fa44edbd",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,N/A,Done,16/Sep/26 1:13 AM,17/Sep/26 10:49 AM,Low,Complete,SCALE-25.10.7 (Goldeye),,,,COMMUNITY_USER,,,
+Session ID: 47648f2b-19ac-4b5f-9fa5-b312fa44edbd",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,N/A,Done,16/Sep/26 1:13 AM,17/Sep/26 10:49 AM,Low,Complete,SCALE-25.10.7 (Goldeye),,,,COMMUNITY_USER,,,
 Bug,NAS-143839,161934,Disk Image import - Not correctly handling source image size,"I try to import a disk image and the notice says the target Zvol must be 50GiB, so you set the `Size` to 50 GiB but this is not large enought.
 
 Tp be clear, the image being imported is 50GiB and I have tried this with the same exported disk as a VDI and a QCOW2 whcih both have this issue.
 
-If you then set the `Size` to 51GiB you can click next.",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,N/A,Done,16/Sep/26 5:40 AM,23/Sep/26 11:57 AM,Low,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,doc_impact,tests_impact,
+If you then set the `Size` to 51GiB you can click next.",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,N/A,Done,16/Sep/26 5:40 AM,23/Sep/26 11:57 AM,Low,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,doc_impact,tests_impact,
 Bug,NAS-143855,161956,Truesearch slowness for 1M files,"I have a few shares, overall they hold nearly 1M files.
 
 We're testing out the latest beta for the truesearch functionality.
@@ -1636,8 +1636,8 @@ Sep 16 09:42:15 Mandioca truesearch[92819]: time=""2026-09-16 09:42:15"" level=i
 Sep 16 09:42:24 Mandioca truesearch[92819]: time=""2026-09-16 09:42:24"" level=info msg=""SearchWithQuery complete: 1 total results in 17.238s (memory: 0, disk: 16 shards)"" component=memory-first-search
 ```
 
-The system has 32GB ram total, and a lot of it is sitting unused, even after loading the ~4GB index to a ram-backed tmpfs.",26.0.0-RC.1,27.0.0-BETA.1,,,Done,16/Sep/26 10:08 AM,16/Sep/26 1:54 PM,Medium,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,,,
-Bug,NAS-143878,161981,Edit SNMP Trap Alert Service form error,"Default TrueNAS installation, try to edit default SNMP Trap alert service. The form is valid, I check and uncheck “SNMPv3 Security Model”, and form stops being valid. ",26.0.0-RC.1,27.0.0-BETA.1,,,Done,16/Sep/26 3:04 PM,17/Sep/26 10:29 AM,Undefined,Complete,26.0.0-RC.1,,,,doc_impact,IX_EMPLOYEE,tests_impact,triage_skipped
+The system has 32GB ram total, and a lot of it is sitting unused, even after loading the ~4GB index to a ram-backed tmpfs.",27.0.0-RC.1,28.0.0-BETA.1,,,Done,16/Sep/26 10:08 AM,16/Sep/26 1:54 PM,Medium,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,,,
+Bug,NAS-143878,161981,Edit SNMP Trap Alert Service form error,"Default TrueNAS installation, try to edit default SNMP Trap alert service. The form is valid, I check and uncheck “SNMPv3 Security Model”, and form stops being valid. ",27.0.0-RC.1,28.0.0-BETA.1,,,Done,16/Sep/26 3:04 PM,17/Sep/26 10:29 AM,Undefined,Complete,27.0.0-RC.1,,,,doc_impact,IX_EMPLOYEE,tests_impact,triage_skipped
 Bug,NAS-143940,162047,Access Settings Session Timeout doesn't work,"I have set the timeout to 14400 sec with a banner message.
 
 I expected the UI to be available for 4 hours.
@@ -1647,4 +1647,4 @@ The UI times out after a few minutes if I move to another tab. I thought it migh
 25.10.7
 Edge browser
 
-Session ID: d761a6b0-9e73-46df-9db9-b3b86c776175",26.0.0,26.0.0-RC.1,27.0.0-BETA.1,N/A,Done,18/Sep/26 10:55 AM,22/Sep/26 1:08 PM,Medium,Complete,SCALE-25.10.7 (Goldeye),,,,COMMUNITY_USER,doc_impact,tests_impact,
+Session ID: d761a6b0-9e73-46df-9db9-b3b86c776175",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,N/A,Done,18/Sep/26 10:55 AM,22/Sep/26 1:08 PM,Medium,Complete,SCALE-25.10.7 (Goldeye),,,,COMMUNITY_USER,doc_impact,tests_impact,
