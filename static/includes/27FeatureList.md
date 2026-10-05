@@ -18,10 +18,19 @@ When TrueSearch is enabled in the WebShare service configuration, all active sha
 Encrypted datasets are excluded from indexing.
 Passkey authentication options provide flexible access control for WebShare users.
 
-### S3 Gateway (Early Access)
+### TrueNAS Object Interface (Early Access)
 
-S3 Gateway is available in TrueNAS 27 as an Early Access feature.
-<!-- TODO: add a description of S3 Gateway and a link to its documentation -->
+Object storage (S3 API) is available in TrueNAS 27 as a native TrueNAS service, in addition to the containerized third-party app.
+The TrueNAS Object Interface gives concurrent access to the same data over SMB, NFS, WebShare, and the S3 protocol.
+Each object storage bucket is a ZFS dataset, so object data gets the same snapshots, quotas, replication, and data integrity as other data, and is managed from the same web interface.
+
+27-RC.1 covers the core S3 API that applications depend on, including multipart uploads, object tagging, bucket and object ACLs, versioning, and immutability.
+The TrueNAS Object Interface runs on every TrueNAS edition with no capacity limits, including in offline mode for air-gapped environments.
+Versioning and Object Lock require a TrueNAS Connect Plus license or a TrueNAS Enterprise system.
+
+The TrueNAS Object Interface is an Early Access feature.
+Try it with your applications and share what works and what doesn't on the [forums](https://forums.truenas.com/).
+See [Configuring S3 Object Storage](https://www.truenas.com/docs/scale/27/shares/s3/configurings3) and the [27-RC.1 feature set blog post](https://www.truenas.com/blog/truenas-27-rc1-feature-set).
 
 {{< trademark-notice s3="true" >}}
 

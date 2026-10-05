@@ -60,10 +60,16 @@ The TrueNAS team is pleased to release TrueNAS 27-RC.1!
 **Notable changes:**
 
 * Renames TrueNAS 26 to TrueNAS 27.
-  TrueNAS 26 is renamed TrueNAS 27 ahead of general availability. This release is the first to ship under the new version number, TrueNAS 27-RC.1. Earlier 26-BETA.1, 26-BETA.2, and 26-BETA.3 releases keep their original names as historical record.
+  TrueNAS 26 is now TrueNAS 27, and TrueNAS 27-RC.1 is the first release under the new name.
+  The earlier 26-BETA.1, 26-BETA.2, and 26-BETA.3 releases keep their original names, and their documentation remains available in the [26 documentation](https://www.truenas.com/docs/scale/26/).
 
-* Adds S3 Gateway (Early Access).
-  <!-- TODO: add a public summary and ticket link for S3 Gateway -->
+* Adds the TrueNAS Object Interface (Early Access).
+  Object storage (S3 API) is now available as a native TrueNAS service, in addition to the containerized third-party app.
+  Each bucket is a ZFS dataset, so object data gets the same snapshots, quotas, replication, and data integrity as other data, and is managed from the same web interface.
+  27-RC.1 covers the core S3 API, including multipart uploads, object tagging, bucket and object ACLs, versioning, and immutability.
+  Versioning and Object Lock require a TrueNAS Connect Plus license or a TrueNAS Enterprise system.
+  Early Access means TrueNAS wants your feedback: try it with your applications and report what works and what doesn't on the [forums](https://forums.truenas.com/).
+  See [Configuring S3 Object Storage](https://www.truenas.com/docs/scale/27/shares/s3/configurings3) and the [27-RC.1 feature set blog post](https://www.truenas.com/blog/truenas-27-rc1-feature-set) for more information.
 
 * Fixes the web interface staying unavailable after an upgrade on systems with many RSA-4096 certificates ([NAS-143641](https://ixsystems.atlassian.net/browse/NAS-143641)).
   On systems with many RSA-4096 certificates, middleware could take about a minute to regenerate `/etc/nginx/nginx.conf` after an upgrade, and nginx failed to start because the file did not exist yet. The web interface now stays available while the configuration regenerates.

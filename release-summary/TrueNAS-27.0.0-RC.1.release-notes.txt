@@ -1,11 +1,12 @@
 ## TrueNAS 27.0.0-RC.1
 ===This is a RC release of software available to early adopters who wish to evaluate new features===
 
-TrueNAS 26 was renamed TrueNAS 27, and this is the first release under the new name. TrueNAS 27-RC.1 hardens iSCSI, Fibre Channel, and NFS target reliability, fixes an HA split-brain risk, resolves an upgrade regression that could leave the web UI unavailable, and includes a broad set of WebUI and Apps bug fixes.
+TrueNAS 26 was renamed TrueNAS 27, and this is the first release under the new name. TrueNAS 27-RC.1 adds the TrueNAS Object Interface (Early Access), hardens iSCSI, Fibre Channel, and NFS target reliability, fixes an HA split-brain risk, resolves an upgrade regression that could leave the web UI unavailable, and includes a broad set of WebUI and Apps bug fixes.
 
 ==**Breaking Changes (updating from 25.10.X):** The REST API is removed in TrueNAS 27. Migrate integrations to the WebSocket API before upgrading.==
 
 - **New Features:**
+  - Adds the TrueNAS Object Interface (Early Access): native S3-API object storage where each bucket is a ZFS dataset, managed from the WebUI. Versioning and Object Lock require a TrueNAS Connect Plus license or TrueNAS Enterprise.
   - Container delete now runs as a background job with **Force** and **Recursive** options.
   - USB passthrough devices in the VM and Container UI are now identified by physical port instead of vendor/product ID, so replugs and reboots no longer change device identity.
 - **Improvements:** Linux kernel 6.18.52, OpenZFS 2.4.4, TrueSearch performance on shares with about 1 million files, TrueSearch built with Go 1.25.12 for upstream security fixes, consistent pool usage indicator thresholds between the Dashboard and Storage Dashboard, clearer SMB audit log event labeling, updated default certificate signing requests for HTTPS and TrueNAS Connect.
