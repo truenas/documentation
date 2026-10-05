@@ -135,7 +135,7 @@ majorVersions:
       - name: "27-RC.1"
         type: "Early Release"
         link: "https://www.truenas.com/docs/scale/27/gettingstarted/versionnotes/#27.0.0-rc.1"
-        releaseDate: "TBD"
+        releaseDate: "2026-10-06"
       - name: "26-BETA.3"
         type: "Early Release"
         link: "https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/#26.0.0-beta.3"
