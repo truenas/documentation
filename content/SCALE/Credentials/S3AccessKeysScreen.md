@@ -17,7 +17,7 @@ Each access key belongs to a TrueNAS user account, and the S3 service runs reque
 An S3 access key cannot sign in to the TrueNAS web UI or API.
 
 To open the screen, go to **Credentials > S3 Access Keys**.
-You can also select **Access Keys** from the <span class="material-icons">more_vert</span> dropdown list on the **Object Storage (S3) Buckets** widget, or click **Access Keys** on the **S3 Buckets** screen.
+You can also select **Access Keys** from the <span class="material-icons">more_vert</span> dropdown list on the **Object Storage (S3) Buckets** card, or click **Access Keys** on the **S3 Buckets** screen.
 
 {{< trueimage src="/images/SCALE/Credentials/S3AccessKeysScreenEmpty.png" alt="S3 Access Keys Screen without Access Keys" id="S3 Access Keys Screen without Access Keys" >}}
 

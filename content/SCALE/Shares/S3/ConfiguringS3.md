@@ -30,10 +30,10 @@ Before you configure S3 object storage:
 * Decide which user account owns each bucket and which account each client uses.
   You can create a dedicated account while you add the access key or bucket.
   The root account cannot own a bucket or an access key.
-* To use versioning or object lock, confirm the system license includes these features.
+* Use versioning or object lock to confirm the system license includes these features.
   The **Add S3 Bucket** screen shows a **Premium** tag on settings the license does not include.
   See [Licensed S3 Features]({{< ref "/SCALE/Shares/S3/_index.md#licensed-s3-features" >}}).
-* To encrypt client connections, import or create a certificate on the **Credentials > Certificates** screen, or plan to use the TrueNAS web UI certificate.
+* Encrypt client connections by importing or creating a certificate on the **Credentials > Certificates** screen, or plan to use the TrueNAS web UI certificate.
 
 ## Configuring the S3 Service
 
@@ -42,7 +42,7 @@ Review the settings before you add buckets, and change them if clients must conn
 
 {{< trueimage src="/images/SCALE/SystemSettings/S3ConfigServiceWizardPart1.png" alt="S3 Service Screen" id="S3 Service Screen" >}}
 
-1. Go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** widget, and then select **Config Service**.
+1. Go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** card, and then select **Config Service**.
    The **S3** service configuration screen opens.
 
 2. (Optional) Add listen addresses to limit where the S3 service accepts connections.
@@ -111,7 +111,7 @@ TrueNAS creates a new dataset for the bucket under the parent dataset you select
 
 {{< trueimage src="/images/SCALE/Shares/AddS3BucketBasicOptions.png" alt="Add S3 Bucket Screen" id="Add S3 Bucket Screen" >}}
 
-1. Go to **Shares**, and then click **Add** on the **Object Storage (S3) Buckets** widget.
+1. Go to **Shares**, and then click **Add** on the **Object Storage (S3) Buckets** card.
    The **Add S3 Bucket** screen opens.
 
 2. Enter a **Name** for the bucket.
@@ -134,9 +134,9 @@ TrueNAS creates a new dataset for the bucket under the parent dataset you select
    {{< trueimage src="/images/SCALE/Shares/S3StartServiceDialog.png" alt="Start S3 Service Dialog" id="Start S3 Service Dialog" >}}
 
 7. Select **Enable this service to start automatically**, and then click **Start**.
-   The **Object Storage (S3) Buckets** widget shows the S3 service as **Running** and lists the new bucket.
+   The **Object Storage (S3) Buckets** card shows the S3 service as **Running** and lists the new bucket.
 
-{{< trueimage src="/images/SCALE/Shares/S3ServiceRunningwithMenu.png" alt="Object Storage (S3) Buckets Widget with Bucket" id="Object Storage (S3) Buckets Widget with Bucket" >}}
+{{< trueimage src="/images/SCALE/Shares/S3ServiceRunningwithMenu.png" alt="Object Storage (S3) Buckets card with Bucket" id="Object Storage (S3) Buckets card with Bucket" >}}
 
 ### Giving Other Users Access to a Bucket
 
@@ -169,7 +169,7 @@ To allow a client to create and delete buckets, configure three settings:
 * A privilege with the **Sharing S3 Write** role for the account that owns the access key
 * **Manage Buckets** on the access key the client uses
 
-1. Go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** widget, and then select **Config Service**.
+1. Go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** card, and then select **Config Service**.
 
 2. Browse to and select the dataset for client-created buckets in **Managed Root Dataset**, for example *tank/s3*, and then click **Save**.
    The dataset must already exist.
@@ -197,7 +197,7 @@ To allow a client to create and delete buckets, configure three settings:
 
 When the client creates a bucket, TrueNAS creates a dataset for it under the managed root dataset, named after the bucket.
 If a dataset with that name already exists, TrueNAS adds a number to the dataset name, for example *tank/s3/backups_1*.
-The new bucket shows on the **Object Storage (S3) Buckets** widget.
+The new bucket shows on the **Object Storage (S3) Buckets** card.
 When the client deletes a bucket, TrueNAS keeps the bucket dataset and its objects.
 To remove the data, delete the bucket dataset on the **Datasets** screen.
 
@@ -219,7 +219,7 @@ Objects locked in compliance mode cannot be deleted by anyone, including adminis
 
 {{< trueimage src="/images/SCALE/Shares/S3ObjectLockOptions.png" alt="Object Lock Settings" id="Object Lock Settings" >}}
 
-1. Go to **Shares**, and then click **Add** on the **Object Storage (S3) Buckets** widget.
+1. Go to **Shares**, and then click **Add** on the **Object Storage (S3) Buckets** card.
 
 2. Enter the **Name**, select the **Parent Dataset**, and select the **Owner**.
 
@@ -246,7 +246,7 @@ Client applications use different names for these settings.
 {{< truetable >}}
 | Client Setting | Value |
 |----------------|-------|
-| Endpoint or service point | The TrueNAS IP address or host name and the listen port, for example *http://192.168.1.10:9000*. Use *https://* for a listen address with **TLS** selected. |
+| Endpoint or service point | The TrueNAS IP address or hostname and the listen port, for example *http://192.168.1.10:9000*. Use *https://* for a listen address with **TLS** selected. |
 | Access key ID | The **Access Key ID** from the S3 access key. |
 | Secret access key | The **Secret Access Key** from the S3 access key. |
 | Region | The **Region** from the S3 service configuration. If the region is empty, enter any region the client accepts, such as *us-east-1*. |
@@ -258,7 +258,7 @@ If the listen address uses a self-signed certificate, the client might show a ce
 
 ## Managing S3 Buckets
 
-Manage buckets from the **Object Storage (S3) Buckets** widget on the **Shares** screen, or from the **S3 Buckets** screen.
+Manage buckets from the **Object Storage (S3) Buckets** card on the **Shares** screen, or from the **S3 Buckets** screen.
 
 ### Editing a Bucket
 
