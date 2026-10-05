@@ -34,7 +34,7 @@ The S3 feature displays an **Experimental** label in the TrueNAS UI.
 S3 object storage in TrueNAS has three parts:
 
 * The **S3** service, which listens for client requests.
-  Configure it from the **Object Storage (S3) Buckets** widget on the **Shares** screen.
+  Configure it from the **Object Storage (S3) Buckets** card on the **Shares** screen.
 * S3 access keys, which clients use to sign requests.
   Each access key belongs to a TrueNAS user account.
   Manage access keys on the **Credentials > S3 Access Keys** screen.

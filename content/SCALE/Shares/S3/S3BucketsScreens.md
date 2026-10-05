@@ -1,6 +1,6 @@
 ---
 title: "S3 Buckets Screens"
-description: "Provides information on the S3 bucket screens, widget, and settings in TrueNAS."
+description: "Provides information on the S3 bucket screens, card, and settings in TrueNAS."
 weight: 20
 tags:
 - s3
@@ -9,13 +9,13 @@ tags:
 doctype: reference
 ---
 
-The S3 bucket screens and the **Object Storage (S3) Buckets** widget on the **Shares** screen show the S3 buckets on the system and the options to add, edit, and delete buckets.
+The S3 bucket screens and the **Object Storage (S3) Buckets** card on the **Shares** screen show the S3 buckets on the system and the options to add, edit, and delete buckets.
 
-## Object Storage (S3) Buckets Widget
+## Object Storage (S3) Buckets card
 
-The **Object Storage (S3) Buckets** widget on the **Shares** screen shows general information about S3 object storage until you add a bucket.
+The **Object Storage (S3) Buckets** card on the **Shares** screen shows general information about S3 object storage until you add a bucket.
 
-{{< trueimage src="/images/SCALE/Shares/S3CardUnconfigured.png" alt="Object Storage (S3) Buckets Widget without Buckets" id="Object Storage (S3) Buckets Widget without Buckets" >}}
+{{< trueimage src="/images/SCALE/Shares/S3CardUnconfigured.png" alt="Object Storage (S3) Buckets card without Buckets" id="Object Storage (S3) Buckets card without Buckets" >}}
 
 The **Object Storage (S3) Buckets <span class="material-icons">launch</span>** header is a link that opens the [**S3 Buckets** screen](#s3-buckets-screen).
 The **Experimental** label shows next to the header.
@@ -30,11 +30,11 @@ The <span class="material-icons">more_vert</span> dropdown list shows options fo
 * **Config Service** opens the [**S3** service configuration screen]({{< ref "S3ServiceScreen" >}}).
 * **Access Keys** opens the [**S3 Access Keys** screen]({{< ref "S3AccessKeysScreen" >}}).
 
-After you add a bucket, the widget lists buckets in a table.
+After you add a bucket, the card lists buckets in a table.
 
-{{< trueimage src="/images/SCALE/Shares/S3ServiceRunningwithMenu.png" alt="Object Storage (S3) Buckets Widget with Bucket" id="Object Storage (S3) Buckets Widget with Bucket" >}}
+{{< trueimage src="/images/SCALE/Shares/S3ServiceRunningwithMenu.png" alt="Object Storage (S3) Buckets card with Bucket" id="Object Storage (S3) Buckets card with Bucket" >}}
 
-The widget table shows the bucket **Name**, the bucket **Dataset**, the bucket **Owner**, and an **Enabled** toggle.
+The card table shows the bucket **Name**, the bucket **Dataset**, the bucket **Owner**, and an **Enabled** toggle.
 The **Enabled** toggle starts or stops serving the bucket to S3 clients.
 
 The <span class="material-icons">more_vert</span> icon on a bucket row shows these options:
@@ -56,8 +56,8 @@ The **Start S3 Service** dialog opens after you save a bucket while the S3 servi
 ## S3 Buckets Screen
 
 The **Shares > S3** screen shows the **S3 Buckets** table.
-The table lists all S3 buckets on the system with more detail than the widget.
-Click the **Object Storage (S3) Buckets <span class="material-icons">launch</span>** widget header to open the screen.
+The table lists all S3 buckets on the system with more detail than the card.
+Click the **Object Storage (S3) Buckets <span class="material-icons">launch</span>** card header to open the screen.
 
 {{< trueimage src="/images/SCALE/Shares/S3BucketsScreen.png" alt="S3 Buckets Screen" id="S3 Buckets Screen" >}}
 
@@ -71,7 +71,7 @@ The table shows the **Name**, **Dataset**, **Owner**, **Permissions Model**, **V
 
 **Add** opens the [**Add S3 Bucket**](#add-and-edit-s3-bucket-screens) screen.
 
-The <span class="material-icons">more_vert</span> icon on a bucket row shows the same **Edit**, **Edit Filesystem ACL**, and **Delete** options as the widget.
+The <span class="material-icons">more_vert</span> icon on a bucket row shows the same **Edit**, **Edit Filesystem ACL**, and **Delete** options as the card.
 When storage tiering is available for the bucket dataset, the list also shows **Change Storage Tier**.
 
 {{< include file="/static/includes/addcolumnorganizer.md" >}}
