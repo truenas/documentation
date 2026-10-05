@@ -245,8 +245,8 @@ To set up FIPS or STIG compliance on a TrueNAS server, you must first configure 
 When that user logs into TrueNAS the first time with the OTP, TrueNAS prompts that user to set up two-factor authentication.
 This is time sensitive and must occur with in 24 hours after saving the one-time password.
 
-After administrator sets up 2FA they are assigned a 2FA authentication.
-Also configure any additional current admin users for 2FA before configuring STIG
+After the administrator sets up 2FA they are assigned a 2FA authentication.
+Also configure any additional current admin users for 2FA before configuring STIG.
 
 The administrator with 2FA must generate a one-time password (OTP) for any other new or existing admin user that is not yet configured with 2FA and send them the password.
 They have 24 hours to login, using the OTP, and then TrueNaS configures two-factor authentication (2FA) for them at login.
