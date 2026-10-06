@@ -544,7 +544,7 @@ Complete this procedure after upgrading to TrueNAS 26, using the VM settings and
 
    Complete the wizard.
 
-7. If you attached installation media to the new VM, click on the VM to expand it, click **Devices**, edit the disk device, and set the **Device Order** of the disk device to a value below the **Device Order** of the CD-ROM device.
+7.  Set the device order for the CD-ROM device, if you attached installation media to the new VM. Click on the VM to expand it, click **Devices**, edit the disk device, and set the **Device Order** of the disk device to a value below the **Device Order** of the CD-ROM device.
 
    {{< trueimage src="/images/SCALE/Virtualization/VMDevicesListed.png" alt="VM Devices Screen" id="VM Devices Screen" >}}
 
