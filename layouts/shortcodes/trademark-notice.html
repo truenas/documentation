@@ -1,13 +1,8 @@
 {{ $minio := (eq (.Get "minio") "true") }}
 {{ $aistor := (eq (.Get "aistor") "true") }}
-{{ if or $minio $aistor }}
-{{ if and $minio $aistor }}
-<p class="trademark-notice"><small><em>MinIO and AIStor are trademarks of the MinIO Corporation.</em></small></p>
-{{ else if $minio }}
-<p class="trademark-notice"><small><em>MinIO is a trademark of the MinIO Corporation.</em></small></p>
-{{ else if $aistor }}
-<p class="trademark-notice"><small><em>AIStor is a trademark of the MinIO Corporation.</em></small></p>
-{{ end }}
+{{ $s3 := (eq (.Get "s3") "true") }}
+{{ if or $minio $aistor $s3 }}
+{{ partial "trademark-notice.html" (dict "minio" $minio "aistor" $aistor "s3" $s3) }}
 {{ else }}
-{{- errorf "trademark-notice requires minio=\"true\" and/or aistor=\"true\": %s" .Position }}
+{{- errorf "trademark-notice requires minio=\"true\", aistor=\"true\", and/or s3=\"true\": %s" .Position }}
 {{ end }}
