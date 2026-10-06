@@ -155,10 +155,10 @@ You add an app card to the **Dashboard** for each app you want to monitor.
 {{< trueimage src="/images/SCALE/Dashboard/DashboardAppCard.png" alt="App Card" id="App Card" >}}
 
 The full-size **Application** card shows:
-* The app logo. The TrueNAS logo shows if the app does not have a logo image.
-* The app name and version.
-* The app state, such as **Running**, **Deploying**, **Stopping**, **Stopped**, or **Crashed**.
-* Whether the app is **Up to date** or has an **Update available**.
+* TrueNAS app logo shows if the app does not have a logo image.
+* App name and version.
+* App state, such as **Running**, **Deploying**, **Stopping**, **Stopped**, or **Crashed**.
+* App is **Up to date** or has an **Update available**.
 * CPU usage as a percentage and memory usage.
 * **Network I/O** incoming and outgoing traffic rates with a graph of the 1-minute average.
 * **Block I/O** disk read and write totals with a graph of the 1-minute average.
@@ -170,7 +170,7 @@ Hover over a button to show its tooltip.
 | Button | Description |
 |--------|-------------|
 | <span class="iconify" data-icon="mdi:web"></span> **Web UI** | Opens the main web portal for the app in a new browser tab. The tooltip shows the name of the portal. The card uses the portal with **Web UI** in its name as the main portal. If the app has no portal with that name, the card uses the first portal listed for the app. If the app does not have a web portal, this button does not show. TrueNAS replaces an address of *0.0.0.0* in the portal URL with the host name or IP address you use to access the TrueNAS web interface. |
-| <span class="iconify" data-icon="mdi:menu-down"></span> **Other Portals** | Shows only for apps with more than one web portal. Opens a list of the other portals for the app. Select a portal name to open that portal in a new browser tab. |
+| <span class="iconify" data-icon="mdi:menu-down"></span> **Other Portals** | Opens a list of the other portals for the app. Selecting a portal name opens that portal in a new browser tab. Shows only for apps with more than one web portal.  |
 | <span class="iconify" data-icon="mdi:restart"></span> **Restart App** | Restarts the app and shows the **Restarting App** progress dialog. The button is not available while the app state is **Deploying**. |
 | <span class="iconify" data-icon="mdi:cog"></span> **Check App Details** | Opens the **Installed** apps screen with the details for the app. |
 {{< /truetable >}}
@@ -235,9 +235,9 @@ The editor shows a preview of the layout and a settings section for the selected
 {{< truetable>}}
 | Setting | Description |
 |---------|-------------|
-| **Layouts** | Click on the layout image to add one to four cards in the group. Not all card categories support all layouts. |
-| **Card Category** | Select the information category from the dropdown list of options. Each option shows the number of card types it includes, for example, **Apps (5 cards)**:<ul><li>**Empty** - Default selection for a new card. Use to fill a grouping of multiple cards where only two are defined and the others are not.</li><li>**Apps** - Use to set up a card that shows the status and resource usage of an installed app.</li><li>**Storage** - Use to set up a storage or single pool card.</li><li>**Network** - Use to set up a network card.</li><li>**Help** - Use to include the card with links to TrueNAS resources.</li><li>**Memory** - Use to set up a memory-usage card.</li><li>**Backup Tasks** - Use to set up a card showing either configured data protection tasks or links to locations to configure tasks.</li><li>**CPU** - Use to set up a CPU usage card.</li><li>**System Information** - Use to add one of four system information card types.</li><li>**Custom** - Use to set up a text-only card with whatever text-based information you want to include on the **Dashboard**.<br></li></ul> The **Card Type** field shows after selecting the category. |
-| **Card Type** | Select the type of information to show in the selected card. Options change based on the selected **Card Category**. See [Card Type Options by Category](#card-type-options-by-category) for information on the options by the category and type selected. |
+| **Layouts** | Sets the layout of the cards in the group. Clicking on a layout image add one to four cards in the group. Not all card categories support all layouts. |
+| **Card Category** | Sets the information category to the dropdown list option selected. Each option shows the number of card types it includes, for example, **Apps (5 cards)**:<ul><li>**Empty** - Default selection for a new card. Use to fill a grouping of multiple cards where only two are defined and the others are not.</li><li>**Apps** - Use to set up a card that shows the status and resource usage of an installed app.</li><li>**Storage** - Use to set up a storage or single pool card.</li><li>**Network** - Use to set up a network card.</li><li>**Help** - Use to include the card with links to TrueNAS resources.</li><li>**Memory** - Use to set up a memory-usage card.</li><li>**Backup Tasks** - Use to set up a card showing either configured data protection tasks or links to locations to configure tasks.</li><li>**CPU** - Use to set up a CPU usage card.</li><li>**System Information** - Use to add one of four system information card types.</li><li>**Custom** - Use to set up a text-only card with whatever text-based information you want to include on the **Dashboard**.<br></li></ul> The **Card Type** field shows after selecting the category. |
+| **Card Type** | Sets the type of information shown in the selected card. Options change based on the selected **Card Category**. See [Card Type Options by Category](#card-type-options-by-category) for information on the options by the category and type selected. |
 {{< /truetable >}}
 
 ### Card Type Options by Category
