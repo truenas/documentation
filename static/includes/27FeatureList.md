@@ -54,11 +54,20 @@ See [Enabling SMB Stateful Failover]({{< relref "/Shares/SMB/AddManageSMBShares/
 ### SMB Spotlight Search
 
 TrueNAS 27 adds Spotlight search support for SMB shares, allowing macOS clients to use Spotlight to search file contents directly on TrueNAS SMB shares.
-Spotlight search is enabled per share in the SMB service configuration.
+Spotlight search requires a TrueNAS Enterprise or TrueNAS Connect Plus license.
+Spotlight search is enabled in the SMB service configuration.
+TrueSearch indexes all active SMB shares and does not index encrypted datasets.
+See [Enabling Spotlight Search]({{< relref "/Shares/SMB/AddManageSMBShares/#enabling-spotlight-search-for-macos" >}}) for configuration details.
+
+### Fusion Pools and Storage Tiering
+
+[**Storage Tiering**]({{< relref "/Storage/StorageTiering.md" >}}) is a TrueNAS Enterprise feature that lets administrators move data between the performance (flash) and capacity (HDD) tiers of a [fusion pool]({{< relref "/Storage/Pools/CreatingFusionPools.md" >}}) without disrupting clients.
+Datasets migrate transparently between tiers, and share access paths stay the same.
 
 ### OpenZFS 2.4
 
 TrueNAS 27 integrates OpenZFS 2.4, which introduces new capabilities including hybrid pool support for combining flash and HDD storage, physical block rewriting, and dynamic gang header improvements.
+It also adds default user, group, and project quotas, and the ability to limit scrubs to a set time window.
 See [OpenZFS Feature Flags]({{< relref "/gettingstarted/versionnotes/#zfs-feature-flags" >}}) for details on newly added feature flags.
 
 ### Linux Kernel 6.18
