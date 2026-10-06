@@ -7,13 +7,22 @@ const searchConfig = {
   indexes: {
     // TrueNAS Documentation versions
     // NOTE: Default version is determined dynamically from URL or scale-releases.yaml
-    'docs-27': {
+    'docs-28': {
       url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/pagefind/',
       name: 'TrueNAS Documentation',
-      displayName: 'TrueNAS 27 Nightly',
-      version: '27 Nightly',
+      displayName: 'TrueNAS 28 Nightly',
+      version: '28 Nightly',
       icon: LOCAL_TESTING ? '/favicon/TN-favicon-32x32.png' : 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 1,
+      group: 'docs'
+    },
+    'docs-27': {
+      url: 'https://www.truenas.com/docs/scale/27/pagefind/',
+      name: 'TrueNAS Documentation',
+      displayName: 'TrueNAS 27',
+      version: '27',
+      icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
+      priority: 2,
       group: 'docs'
     },
     'docs-26': {
@@ -22,7 +31,7 @@ const searchConfig = {
       displayName: 'TrueNAS 26',
       version: '26',
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
-      priority: 2,
+      priority: 3,
       group: 'docs'
     },
     'docs-25.10': {
@@ -31,7 +40,7 @@ const searchConfig = {
       displayName: 'TrueNAS 25.10',
       version: '25.10',
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
-      priority: 3,
+      priority: 4,
       group: 'docs'
     },
     'docs-25.04': {
@@ -40,7 +49,7 @@ const searchConfig = {
       displayName: 'TrueNAS 25.04',
       version: '25.04',
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
-      priority: 4,
+      priority: 5,
       group: 'docs'
     },
     'docs-24.10': {
@@ -49,7 +58,7 @@ const searchConfig = {
       displayName: 'TrueNAS 24.10',
       version: '24.10',
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
-      priority: 5,
+      priority: 6,
       group: 'docs'
     },
     // Other sites (non-expandable)
@@ -120,7 +129,7 @@ class MultiSiteSearch {
 
   detectCurrentDocsVersionFromUrl() {
     // Try to detect version from URL. Accepts both decimal (25.04, 25.10)
-    // and integer (26, 27) base version names.
+    // and integer (26, 27, 28) base version names.
     const urlMatch = window.location.pathname.match(/\/(?:docs\/)?(?:scale\/)?(\d+(?:\.\d+)?)/);
     if (urlMatch) {
       const version = urlMatch[1]; // e.g., "25.04" or "26"

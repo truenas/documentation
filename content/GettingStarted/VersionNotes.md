@@ -33,6 +33,12 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
+{{< hint type="important" title="TrueNAS 26 is now TrueNAS 27" >}}
+TrueNAS 26 is renamed to TrueNAS 27 starting with the next release, TrueNAS 27-RC.1.
+These release notes cover the TrueNAS 26 BETA releases.
+See the [TrueNAS 27 Version Notes](https://www.truenas.com/docs/scale/27/gettingstarted/versionnotes/) for TrueNAS 27-RC.1 and later.
+{{< /hint >}}
+
 ## Notable Changes and Known Issues
 
 <!-- Hugo-processed content for release notes tab box -->
