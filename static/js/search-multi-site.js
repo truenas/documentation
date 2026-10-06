@@ -7,20 +7,20 @@ const searchConfig = {
   indexes: {
     // TrueNAS Documentation versions
     // NOTE: Default version is determined dynamically from URL or scale-releases.yaml
-    'docs-27': {
+    'docs-28': {
       url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/pagefind/',
       name: 'TrueNAS Documentation',
-      displayName: 'TrueNAS 27 Nightly',
-      version: '27 Nightly',
+      displayName: 'TrueNAS 28 Nightly',
+      version: '28 Nightly',
       icon: LOCAL_TESTING ? '/favicon/TN-favicon-32x32.png' : 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 1,
       group: 'docs'
     },
-    'docs-26': {
-      url: 'https://www.truenas.com/docs/scale/26/pagefind/',
+    'docs-27': {
+      url: 'https://www.truenas.com/docs/scale/27/pagefind/',
       name: 'TrueNAS Documentation',
-      displayName: 'TrueNAS 26',
-      version: '26',
+      displayName: 'TrueNAS 27',
+      version: '27',
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 2,
       group: 'docs'
@@ -120,10 +120,10 @@ class MultiSiteSearch {
 
   detectCurrentDocsVersionFromUrl() {
     // Try to detect version from URL. Accepts both decimal (25.04, 25.10)
-    // and integer (26, 27) base version names.
+    // and integer (27, 28) base version names.
     const urlMatch = window.location.pathname.match(/\/(?:docs\/)?(?:scale\/)?(\d+(?:\.\d+)?)/);
     if (urlMatch) {
-      const version = urlMatch[1]; // e.g., "25.04" or "26"
+      const version = urlMatch[1]; // e.g., "25.04" or "27"
       return version;
     }
 
@@ -148,7 +148,7 @@ class MultiSiteSearch {
       const lines = yamlText.split('\n');
 
       // Preferred schema: every lifecycle has a `state:` field. Collect the lifecycle keys
-      // marked `state: "ga"` (e.g., "25.10", "26") and return the highest by version order.
+      // marked `state: "ga"` (e.g., "25.10", "27") and return the highest by version order.
       const gaVersions = [];
       let pendingLifecycle = null;
       for (const line of lines) {
@@ -448,7 +448,7 @@ class MultiSiteSearch {
           .filter(cb => cb.checked)
           .map(cb => cb.dataset.site.replace('docs-', ''))
           .sort((a, b) => {
-            // Sort versions descending (26, 25.10, 25.04, 24.10)
+            // Sort versions descending (27, 25.10, 25.04, 24.10)
             const [aMajor, aMinor] = a.split('.').map(Number);
             const [bMajor, bMinor] = b.split('.').map(Number);
             if (aMajor !== bMajor) return bMajor - aMajor;
@@ -608,7 +608,7 @@ class MultiSiteSearch {
       if (this.activeSites.includes('api')) {
         // Extract versions from docs version dropdown (regardless of main docs toggle state)
         const checkedDocsVersions = Array.from(document.querySelectorAll('.docs-version-option input[type="checkbox"]:checked'))
-          .map(cb => cb.dataset.site.replace('docs-', '')); // ["25.04", "26", etc.]
+          .map(cb => cb.dataset.site.replace('docs-', '')); // ["25.04", "27", etc.]
 
         if (checkedDocsVersions.length > 0) {
 
