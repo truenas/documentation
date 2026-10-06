@@ -11,7 +11,7 @@ doctype: reference
 
 The **S3** service screen shows settings to configure where the S3 service listens for client requests, the certificate for encrypted connections, and service-wide options that apply to every bucket.
 
-To open the screen, go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** widget, and then select **Config Service**.
+To open the screen, go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** card, and then select **Config Service**.
 
 {{< trueimage src="/images/SCALE/SystemSettings/S3ConfigServiceWizardPart1.png" alt="S3 Service Screen" id="S3 Service Screen" >}}
 

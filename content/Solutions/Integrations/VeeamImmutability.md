@@ -53,7 +53,7 @@ Configure the S3 service, create an access key for Veeam, and add an object-lock
 See [Configuring S3 Object Storage]({{< ref "ConfiguringS3" >}}) for detailed instructions on each task.
 
 1. Configure the S3 service.
-   Go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** widget, and then select **Config Service**.
+   Go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** card, and then select **Config Service**.
 
    a. (Optional) Add a listen address with **TLS** selected to encrypt backup traffic between Veeam and TrueNAS.
 
@@ -73,7 +73,7 @@ See [Configuring S3 Object Storage]({{< ref "ConfiguringS3" >}}) for detailed in
       The web UI does not show the secret access key again.
 
 3. Add the bucket for the backup repository.
-   Go to **Shares**, and then click **Add** on the **Object Storage (S3) Buckets** widget.
+   Go to **Shares**, and then click **Add** on the **Object Storage (S3) Buckets** card.
 
    a. Enter a **Name**, select the **Parent Dataset**, and select the Veeam user account as the **Owner**.
 
@@ -141,9 +141,9 @@ See [Adding S3 Compatible Object Storage](https://helpcenter.veeam.com/docs/back
 
    c. (Optional) Enter the NFS service settings and the ports Veeam uses for the NFS service. See [Specifying Mount Server Settings](https://helpcenter.veeam.com/docs/backup/vsphere/compatible_mount_server.html?ver=120#specifying-mount-server-settings) for more information.
 
-{{< trademark-notice s3="true" >}}
-
-7. Click **Next**, review the configuration, and then click **Finish**.
+6. Click **Next**, review the configuration, and then click **Finish**.
    Veeam automatically installs additional components if needed.
 
 Create a new backup job in Veeam if desired. See [Creating Immutable Configuration Backups](https://helpcenter.veeam.com/docs/backup/vsphere/config_backup_immutable.html) for more information.
+
+{{< trademark-notice s3="true" >}}
