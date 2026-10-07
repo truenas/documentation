@@ -210,9 +210,9 @@ These are ongoing issues that can affect multiple versions in the 27 series.
 
 * TrueSearch indexing runs as a background task with no progress indicator ([NAS-144243](https://ixsystems.atlassian.net/browse/NAS-144243)).
   After you enable TrueSearch for WebShare or **Enable Search (Spotlight)** for SMB, TrueNAS indexes the shares in the background without showing a job or progress.
-  Indexing can use significant CPU and disk I/O while it runs, and searches can return no results until indexing finishes.
-  Search results return normally after indexing completes, and the time it takes depends on the number of files.
-  For best performance, keep the TrueSearch index on SSD storage.
+  Indexing can use significant CPU and disk I/O while it runs, and searches can be very slow or time out until indexing finishes.
+  Searches return results during indexing, and performance returns to normal after indexing completes. The time this takes depends on the number of files.
+  For best performance, always keep the TrueSearch index on SSD-backed storage.
 * TrueNAS 27-RC.1 can show critical license alerts on systems with a TrueNAS Connect license ([NAS-144046](https://ixsystems.atlassian.net/browse/NAS-144046)).
   Systems that use a license from TrueNAS Connect can show two critical alerts: `System serial does not match license.` and `TrueNAS is running on unsupported hardware.`
   The license is valid and these alerts are expected, so you can ignore them.
