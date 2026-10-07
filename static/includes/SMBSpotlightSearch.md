@@ -4,8 +4,8 @@ TrueNAS supports macOS Spotlight search on SMB shares through the TrueSearch ind
 After enabling Spotlight on the SMB service, macOS users can use native Finder search to quickly locate files on mounted SMB shares.
 
 {{< hint type=note >}}
-Spotlight search requires a TrueNAS Enterprise license or a configured TrueNAS Connect integration.
-If neither is configured, the **Enable Search (Spotlight)** setting is disabled and a notice displays with a link to configure TrueNAS Connect.
+Spotlight search requires a TrueNAS Enterprise license or a TrueNAS Connect Plus license.
+If neither license is in place, the **Enable Search (Spotlight)** setting is disabled and a notice displays with a link to configure TrueNAS Connect.
 {{< /hint >}}
 
 ### Enabling Spotlight Search
