@@ -421,7 +421,7 @@ When enabled, this setting is incompatible with:
 - Any auxiliary SMB parameters
 {{< /enterprise >}}
 
-TrueNAS 26 and later supports stateful SMB HA failover for Enterprise systems.
+TrueNAS 27 and later supports stateful SMB HA failover for Enterprise systems.
 When enabled, TrueNAS maintains SMB session state across controller failover events, so SMB clients can recover existing connections without re-authentication.
 
 {{< hint type=important title="Disable Stateful Failover before upgrading" >}}

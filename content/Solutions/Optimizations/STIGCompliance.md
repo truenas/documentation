@@ -216,7 +216,7 @@ Consider setting the following alerts for STIG compliance:
 | **System** | <ul><li>**Admin User is Overriden**</li><li>**Administrator account activity**</li><li>**SSH Login Failures**</li></ul> | Set alert preferences to notify you when TrueNAS detects administrator activity in web UI and SSH sessions. These alerts help you identify potential unauthorized access to TrueNAS features, functions, system configuration, and data storage. |
 |  | **The Web Interface Could Not Bind to Configured Address** | Set the alert level preference to send notifications when TrueNAS detects problems binding to any network address. Address incorrectly configured network addresses promptly to maintain secure communication between TrueNAS and other remote servers. |
 {{< /truetable >}}
-<!-- DOCS-2693 KMIP returned to draft for TrueNAS 26; reintroduce in TrueNAS 27
+<!-- DOCS-2693 KMIP returned to draft for TrueNAS 27; reintroduce in TrueNAS 28
 | **Key Management Interoperability Protocol (KMIP)** | **Failed to Communicate with KMIP Server** | Set alert level preference to send notifications when a communication failure with the KMIP server occurs to promptly diagnose and correct issues. |
 |  | <ul><li>**Failed to Sync SED Global Password with KMIP Server**</li><li>**Failed to sync SED Keys with KMIP Server**</li><li>**Failed to Sync ZFS Keys with KMIP Server**</li></ul> | Set the alert level preference to send notifications when the SED global password fails to sync with the KMIP server to promptly diagnose and correct password and/or sync issues.|
 -->

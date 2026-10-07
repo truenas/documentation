@@ -77,7 +77,7 @@ TrueNAS stores login passwords and API keys as one-way hashes rather than encryp
 Only you know ZFS passphrases, and TrueNAS never writes them to the configuration file.
 The BMC hardware stores the IPMI/BMC password, not TrueNAS.
 
-<!-- DOCS-2693 KMIP returned to draft for TrueNAS 26; reintroduce in TrueNAS 27 and restore the ConfiguringKMIP.md relref
+<!-- DOCS-2693 KMIP returned to draft for TrueNAS 27; reintroduce in TrueNAS 28 and restore the ConfiguringKMIP.md relref
 When you configure KMIP, the KMIP server holds SED keys and ZFS key-type encryption keys, and the configuration file does not contain them.
 -->
 
