@@ -22,7 +22,7 @@ doctype: tutorial
 A TrueNAS *dataset* is a file system within a data storage pool.
 Datasets can contain files, directories, and child datasets, and have individual permissions or flags.
 
-Datasets can also be [encrypted]({{< ref "/Datasets/Encryption" >}}).
+Datasets can also be encrypted.
 In TrueNAS 22.12.3 or later, the TrueNAS UI requires encryption for child datasets created in encrypted parent datasets, but you can change the encryption type from key to passphrase.
 You can create an encrypted dataset if the parent is not encrypted and set the type as either key or passphrase.
 

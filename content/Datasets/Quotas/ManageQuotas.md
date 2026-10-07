@@ -22,7 +22,7 @@ Use the quota settings on the **Add Dataset > Advanced Options** screen to set u
 After setting up dataset quotas, use the **Edit** option on the **Datasets > Space Management** card to open the **[Capacity Settings]({{< ref "CapacitySettings.md" >}})** screen.
 You can use this screen to add new and edit existing dataset quotas.
 
-See [Adding and Managing Datasets]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) for more information.
+See [Adding and Managing Datasets]({{< ref "/Datasets/ManagingDatasets" >}}) for more information.
 
 ## Configuring User Quotas
 

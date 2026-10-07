@@ -144,8 +144,8 @@ The card shows if an encrypted dataset is unlocked. After locking the dataset, t
 The donut graph on the card provides at-a-glance information and numeric values for the space allocated and used in the selected dataset.
 This includes data written and space allocated to child datasets of this dataset. It shows the available space in the dataset.
 
-**Manage User Quota** opens the [**User Quotas**]({{< relref "QuotaScreens.md" >}}) screen.
-**Manage Group Quotas** opens the [**Group Quotas**]({{< relref "QuotaScreens.md" >}}) screen.
+**Manage User Quota** opens the [**User Quotas**]({{< ref "/Datasets/Quotas/QuotaScreens" >}}) screen.
+**Manage Group Quotas** opens the [**Group Quotas**]({{< ref "/Datasets/Quotas/QuotaScreens" >}}) screen.
 
 **Edit** opens the **[Capacity Settings]({{< ref "CapacitySettings" >}})** screen where you can set quotas for the dataset.
 
