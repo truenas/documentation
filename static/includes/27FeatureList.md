@@ -14,6 +14,7 @@ TrueNAS 27 receives feature packs, security updates, and hotfixes throughout the
 Users can browse, upload, download, and manage files directly from a web browser, with support for folder creation, filtering, snapshot timeline viewing, shareable links, and hidden file toggling.
 WebShare is configured through [TrueNAS Connect](https://connect.truenas.com/) and requires a dataset and at least one local user account with WebShare access enabled.
 
+TrueSearch is the TrueNAS file indexing service, and it also powers Spotlight search on SMB shares.
 When TrueSearch is enabled in the WebShare service configuration, all active shares are indexed for fast file searching by filename, content, or file type.
 Encrypted datasets are excluded from indexing.
 Passkey authentication options provide flexible access control for WebShare users.
@@ -54,7 +55,7 @@ See [Enabling SMB Stateful Failover]({{< relref "/Shares/SMB/AddManageSMBShares/
 ### SMB Spotlight Search
 
 TrueNAS 27 adds Spotlight search support for SMB shares, allowing macOS clients to use Spotlight to search file contents directly on TrueNAS SMB shares.
-Spotlight search requires a TrueNAS Enterprise or TrueNAS Connect Plus license.
+Spotlight search uses TrueSearch and has the same requirements: a system connected to TrueNAS Connect or a TrueNAS Enterprise license that includes TrueSearch.
 Spotlight search is enabled in the SMB service configuration.
 TrueSearch indexes all active SMB shares and does not index encrypted datasets.
 See [Enabling Spotlight Search]({{< relref "/Shares/SMB/AddManageSMBShares/#enabling-spotlight-search-for-macos" >}}) for configuration details.
