@@ -208,6 +208,16 @@ These are ongoing issues that can affect multiple versions in the 27 series.
   Other task types, such as Replication and Cloud Sync, appear on the card as expected.
 * Upgrading to TrueNAS 27 can disrupt two-factor authentication (2FA) for any account with a stored token interval other than 30 or 60 seconds. TrueNAS 27 supports only these two intervals and clears the stored 2FA secret for any affected account during the upgrade. A non-standard interval can come from the API, or from the global 2FA interval setting in TrueNAS releases before 24.04, which applied a single interval to every 2FA account on the system and persists across upgrades. The current web interface always uses a 30-second interval. See [Two-Factor Authentication](#two-factor-authentication) for who is affected and how to restore access.
 
+* TrueSearch indexing runs as a background task with no progress indicator ([NAS-144243](https://ixsystems.atlassian.net/browse/NAS-144243)).
+  After you enable TrueSearch for WebShare or **Enable Search (Spotlight)** for SMB, TrueNAS indexes the shares in the background without showing a job or progress.
+  Indexing can use significant CPU while it runs, and searches can return no results until indexing finishes.
+  Search results return normally after indexing completes, and the time it takes depends on the number of files.
+  For best performance, keep the TrueSearch index on SSD storage.
+* TrueNAS 27-RC.1 can show critical license alerts on systems with a TrueNAS Connect license ([NAS-144046](https://ixsystems.atlassian.net/browse/NAS-144046)).
+  Systems that use a license from TrueNAS Connect can show two critical alerts: `System serial does not match license.` and `TrueNAS is running on unsupported hardware.`
+  The license is valid and these alerts are expected, so you can ignore them.
+  The following TrueNAS release removes the alerts.
+
 <a href="https://ixsystems.atlassian.net/issues/?filter=14698" target="_blank">See the latest status on Jira</a> for public issues discovered in TrueNAS 27 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
