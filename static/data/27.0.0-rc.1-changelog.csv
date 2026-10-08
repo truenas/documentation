@@ -1,4 +1,8 @@
 Issue Type,Issue key,Issue id,Summary,Description,Fix versions,Fix versions,Fix versions,Fix versions,Status,Created,Updated,Priority,Resolution,Affects versions,Affects versions,Affects versions,Security Level,Labels,Labels,Labels,Labels
+Bug,NAS-133671,115527,Limits on block cloning per transaction group,"I suspect the TXG pressure ZFS puts on a block cloning operations might be insufficient, resulting in transaction group, taking too much time to commit, or then even more time to replay it from ZIL in case of system crash, since BRT is not in ARC.
+
+While there, should think more about BRT/ZAP prefetch operations, that requires synchronous ZAP hash table read before it can issue asynchronous ZAP LEAF read, significantly serializing the operations if the hash table is not in ARC.",26.0.0-RC.1,,,,Done,20/Jan/25 2:49 PM,06/Oct/26 2:46 PM,Low,Complete,SCALE-24.10.1 (ElectricEel),,,,2604alpha2beta,IX_EMPLOYEE,,
+Improvement,NAS-142916,160810,Fix broken CI,We have broken CI because of the distributed deps (some unpinned) which needs to be fixed,27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,31/Aug/26 6:35 AM,05/Oct/26 11:01 AM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
 Bug,NAS-142006,159490,Existing App keeps invalid NVIDIA GPU UUID after GPU replacement (TrueNAS SCALE 25.10.4),"Hello,
 
 I believe I found a bug related to NVIDIA GPU assignment in TrueNAS SCALE 25.10.4.
@@ -790,7 +794,6 @@ Bug,NAS-142517,160288,"Storage Dashboard throws error, shows no pools","Upgraded
 The Storage Dashboard throws the error ""can't access property ""class_special_usable"", T.properties is null"" and shows no pools. The top-level Dashboard is fine.
 
 Gemini thinks this is because I have pools that don't have Special VDEVs, or perhaps that I have one that does but others that don't.",27.0.0,27.0.0-RC.1,28.0.0-BETA.1,,Done,24/Aug/26 9:07 AM,11/Sep/26 10:35 AM,Medium,Complete,26.0.0-BETA.3,,,,COMMUNITY_USER,doc_resolved,tests_impact,
-Improvement,NAS-142916,160810,Fix broken CI,We have broken CI because of the distributed deps (some unpinned) which needs to be fixed,27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.7 (Goldeye),,Done,31/Aug/26 6:35 AM,06/Sep/26 1:56 PM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
 Improvement,NAS-142088,159593,Update Containers UI for middleware container.* API changes (container.delete is now a job with force/recursive options),"h2. Background
 
 The middleware {{container.*}} API has moved on since the WebUI last synced against it (early May 2026). Below are the behavioural changes we made on the middleware side that the UI needs to adapt to. How the UI adapts — where a progress dialog goes, where an extra checkbox lives — is entirely up to the WebUI team.
