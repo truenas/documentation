@@ -28,13 +28,13 @@ The **Installed** applications screen header shows an <i class="fa fa-cog" aria-
 
 {{< trueimage src="/images/SCALE/Apps/AppsServiceNotConfigured.png" alt="Apps Service Not Configured" id="Apps Service Not Configured" >}}
 
-**Apps Service Running** shows on the screen header after [choosing the apps pool](#choose-a-pool-for-apps).
+**Apps Service Running** shows in the screen header after [choosing the app pool](#choose-a-pool-for-apps).
 
 The **Installed** applications screen shows **Check Available Apps** before you install the first application.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstalledAppsScreenNoApps.png" alt="Installed Applications Screen No Apps" id="Installed Applications Screen No Apps" >}}
 
-**Check Available Apps** and **Discover Apps** opens the **[Discover](#using-the-discover-applications-screen)** screen.
+**Check Available Apps** and **Discover Apps** open the **[Discover](#using-the-discover-applications-screen)** screen.
 
 **Discover Apps** opens the **[Discover](#discover-screen)** screen with search filters and cards for each app in the trains selected on the **Configuration > Settings** screen.
 
@@ -60,13 +60,13 @@ The **Installed** applications screen shows **Check Available Apps** before you 
 
 The first time you open the **Installed** applications screen you might see a dialog that prompts you to choose the pool for apps to use for storage.
 Selecting the pool from the dropdown list, then clicking **Save** starts the applications service.
-If you exit out of this dialog, to set the pool, clicking [**Configureation > Choose Pool**](#choose-a-pool-for-apps-dialog) opens the **Choose a pool for apps** dialog.
+After closing this dialog, clicking [**Configureation > Choose Pool**](#choose-a-pool-for-apps-dialog) opens the **Choose a pool for apps** dialog.
 
 You must choose a pooo for apps before you can install an app.
 
 #### Migrate Existing Applications
 
-**Migrate existing applications** migrates all installed applications to a new applications pool. It shows on the **Choose a pool for apps** dialog when you choose a new pool while you have apps installed.
+**Migrate existing applications** migrates all installed applications to the new pool. Migrates only data in the apps dataset, not host paths. Only shows on the **Choose a pool for apps** dialog after initial configuration and when you choose a new pool while you have apps installed.
 
 {{< trueimage src="/images/SCALE/Apps/ChoosePoolMigrate.png" alt="Migrate Existing Applications" id="Migrate Existing Applications" >}}
 
@@ -122,14 +122,14 @@ These settings are optional for most images but required for private images.
 
 There are two versions of the **Delete** image dialog: batch operation and individual image.
 
-**<span class="iconify" data-icon="mdi:garbage">Delete</span> Delete** for each image row opens the individual image [**Delete**](#delete-image) dialog showing selected image.
+**<span class="iconify" data-icon="mdi:garbage">Delete</span> Delete** for each image row opens the individual image [**Delete**](#delete-image) dialog showing the selected image.
 
 {{< trueimage src="/images/SCALE/Apps/DeleteImage.png" alt="Delete Image" id="Delete Image" >}}
 
 The checkboxs to the left of **Image ID** or any image row shows the **Batch Operations** and **Delete** button.
 **Delete** for the **Batch Operations** opens the **Delete** dialog listing all selected images.
 
-{{< trueimage src="/images/SCALE/Apps/DDeleteImageBatchOperation.png" alt="Delete Image Batch Operation" id="Delete Image Batch Operation" >}}
+{{< trueimage src="/images/SCALE/Apps/DeleteImageBatchOperation.png" alt="Delete Image Batch Operation" id="Delete Image Batch Operation" >}}
 
 **Confirm** activates the **Delete** button.
 
@@ -164,16 +164,16 @@ The **Create Docker Registry** screen settings specify the URI, username and pas
 
 ### Settings
 
-The **Settings** screen shows the application train options, the option to add IP addresses and subnets for the application to use, specfies whether to check for Docker image updates, and if the system is equipped with a GPU, enables TrueNAS to update drivers for that GPU.
+The **Settings** screen shows the application train options, the option to add IP addresses and subnets for the application to use, specfies whether to check for Docker image updates, and, if the system is equipped with a GPU, enables TrueNAS to update drivers for that GPU.
 
 {{< trueimage src="/images/SCALE/Apps/AppsSettingScreen.png" alt="Apps Settings Screen" id="Apps Settings Screen" >}}
 
 The checkbox to the left of the train name adds that train to the applications catalog.
 Train options:
-* **stable** the default train for official apps
-* **enterprise** for apps verified and simplified for Enterprise users, default for enterprise-licensed systems.
-* **community** for community proposed and maintained apps
-* **test** for application in development but not yet released in one of the other three trains.
+* **stable** is the default train for official apps
+* **enterprise** is for apps verified and simplified for Enterprise users, default for enterprise-licensed systems.
+* **community** fis or community proposed and maintained apps
+* **test** is for application in development but not yet released in one of the other three trains.
 * **dev** is for application currently in development.
 
 You must specify at least one train.
@@ -188,7 +188,7 @@ Use to resolve issues where apps experience issues where the TrueNAS device is n
 Select the network option, or add additional options to resolve the network connection issues.
 {{< /hint >}}
 
-**Add** to the right of **Registry Mirors** shows the settings for a registry mirror URL and specifies whether it is **Insecure**.
+**Add** to the right of **Registry Mirrors** shows the settings for a registry mirror URL and specifies whether it is **Insecure**.
 
 **Mirror URL** specifies the URL of the registry mirror to use when pulling container images. Must be a valid URL (for example, *https://mirror.example.com*). Useful for air-gapped environments, corporate proxies, or to avoid Docker Hub rate limits.
 
@@ -200,10 +200,10 @@ Select the network option, or add additional options to resolve the network conn
 
 ## Applications Table
 
-The **Applications** table on the **Installed** screen shows a row for each installed app. It shows the current state of the app, and the option to stop the app.
+The **Applications** table on the **Installed** screen shows a row for each installed app. It shows the current state of the app and the option to stop the app.
 Stopped apps show the option to start the app.
 
-When returning to the **Installed** screen, the first row in the **Application** tabie is selected by default and shows the cards for that app.
+The **Application** tabie shows with the first row selected by default, and showing the cards for that app.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsScreenWithApps.png" alt="Installed Applications Status" id="Installed Applications Status" >}}
 
@@ -225,7 +225,7 @@ Selecting the checkbox to the left of **Applications** shows the **Bulk Actions*
 * ***Start All Selected** - Disabled while the selected apps are running.
 * **Stop All Selected** - Stops the selected apps, then activates the **Start All Selected** option.
 * **Update All Selected** - Starts the updates process for the selected apps with pending updates.
-* **Delete All Selected** - Opens the [**Delete Applications**](#delete-app) sdialog listing the selected app.
+* **Delete All Selected** - Opens the [**Delete Applications**](#delete-app) dialog listing the selected app.
 
 Performing a bulk action update opens a dialog listing the apps with available updates.
 
@@ -290,7 +290,7 @@ Click **Delete** to remove the application.
 
 {{< trueimage src="/images/SCALE/Apps/RollBackDialog.png" alt="Roll Back Dialog" id="Roll Back Dialog" >}}
 
-**Version** shows the available app versions for roll back.
+**Version** sets the version of the app to roll back to from the available app versions.
 The version numbers are the **Revision** of the app in the TrueNAS catalog, equivalent to the **Revision** shwwn on the **Application Info** card.
 This is the catalog revision, not the upstream **Version**.
 See [Understanding Versions](https://apps.truenas.com/managing-apps/discovering-apps/#understanding-versions) on the TrueNAS Apps Market for more information.
@@ -299,11 +299,11 @@ See [Understanding Versions](https://apps.truenas.com/managing-apps/discovering-
 This reverts both the application and app data stored in the apps pool to the exact state from when the snapshot was created.
 
 {{< hint type=note >}}
-**Roll back snapshots** only affects data saved in the apps dataset, such as iXvolume storage.
+**Roll back snapshots** only affect data saved in the apps dataset, such as iXvolume storage.
 Data in mounted host paths is not rolled back.
 {{< /hint >}}
 
-**Cancel** closes the dialog without completing the roll back.
+**Cancel** closes the dialog without completing the rollback.
 
 **Roll Back** begins the operation.
 
@@ -333,7 +333,7 @@ Converting to a custom app allows direct editing of the YAML configuration file 
 {{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppDialog.png" alt="Convert to Custom App Dialog" id="Convert to Custom App Dialog" >}}
 
 {{< hint type=warning title="Permanent Action" >}}
-Converting to custom app is a one-time, permanent operation.
+Converting to custom app is a one-time and permanent operation.
 When converted, a custom application cannot be converted back to a catalog version.
 {{< /hint >}}
 
@@ -347,8 +347,8 @@ When converted, a custom application cannot be converted back to a catalog versi
 
 The **Workloads** card shows the container information for the selected application.
 Information includes the number of pods, used ports, number of deployments, stateful sets, and container information.
-It also shows icons for a **Shell**, **Volume Mounts** and **View Log** that open the container pod shell or log screens, and a mount point dialog.
-The option to access the log and the shell remain available for stopped applications with fully deployed application containers, and for applications in the crashed state.
+It also shows icons for a **Shell**, **Volume Mounts**, and **View Log** that open the container pod shell or log screens, and a mount point dialog.
+The option to access the log and the shell remains available for stopped applications with fully deployed application containers, and for applications in the crashed state.
 
 {{< trueimage src="/images/SCALE/Apps/InstalledAppsWorkloadsWidget.png" alt="Installed Apps Containers Card" id="Installed Apps Containers Card" >}}
 
@@ -388,7 +388,7 @@ The **Notes** card shows information about the apps, the TrueNAS Documentation H
 
 ### Application Metadata Card
 
-The **Application Metadata** card shows application capabilities unique to the application, and **Run As Content** showing the user and group IDs, the default user and group name, and brief description for the application.
+The **Application Metadata** card shows application capabilities unique to the application, and **Run As Content** shows the user and group IDs, the default user and group name, and a brief description for the application.
 
 {{< trueimage src="/images/SCALE/Apps/ApplicationMetadataWidget.png" alt="Application Metadata Card" id="Application Metadata Card" >}}
 
@@ -447,25 +447,232 @@ Information on the application cards vary by application but each app includes t
 * **Runs as Content** - Shows user and group ID, and descriptions for each container the app deploys.
 * **Capabililties** - Shows capabilities of the app when this information is available.
 
-The screen includes small screenshots of the application website that, when clicked, opens larger versions of the image.
+The screen includes small screenshots of the application website that, when clicked, open larger versions of the image.
 
-**Install** opens the installation wizard for the application.
+**Install** on the details screen for each app opens the install wizard for the app.
 
 The bottom of the screen includes app cards for similar applications found in the catalog.
 
 ### Application Install or Edit App Wizards
 
-The application **Install *Application*** wizard and **Edit *Application*** screens show the same settings, but un-editable settings are either not shown or are inactive to prevent edit attempts.
-The **Edit *Application*** screen opens populated with the current settings for the application.
+The application **Install *Application*** wizard and **Edit *Application*** screens show the same settings, but un-editable settings are either not shown or are inactive to prevent edit attempts. The installation wizard configuration sections vary by application, with some including more configuration areas than others.
 
-The install and edit wizard screens include a navigation panel on the right of the screen that lists and links to the setting sections.
+Settings in the app installation wizard are grouped into sections. Not all sections are required to deploy every app, so some might not be included in the install-app wizard.
+Settings in each section can differ by app based on what that app requires to fully deploy.
+The sections and settings below are common to apps in the Stable and Enterprise trains, but it is not an exhaustive list of app settings.
+Apps in Community trains might also include these sections and these settings.
+
+The install and edit wizard screens include a Table of Contents navigation panel on the right of the screen that lists and links to the setting sections.
 A red triangle with an exclamation point marks the sections with the required settings.
 An asterisk marks the required fields in a section.
 You can enter a new setting in fields that include a preprogrammed default.
 
 {{< trueimage src="/images/SCALE/Apps/AppsInstallWizardSectionTOC.png" alt="App Installation Wizard ToC" id="App Installation Wizard ToC" >}}
 
-{{< include file="/static/includes/apps/AppsInstallWizardSettings.md" >}}
+The app name in the breadcrumb at the top of the app install wizard returns to the details screen for the app, closing the app installation wizard without saving changes made.
+
+**Discover** in the breadcrumb at the top of the app install wizard returns to the **Discover** screen, closing the app installation wizard without saving any changes made. 
+
+After installing an app, **Edit** on the **Application Info** card for that app opens the **Installed** applications screen where you can the modify most settings.
+The **Edit *Application*** screen opens populated with the current settings for the application.
+
+For more detailed information on application install wizard settings, see individual app resources in the [Catalog](/catalog).
+
+#### Application Name Settings
+
+**Application Name** shows the default name for the application. If deploying more than one instance of the application, you must change the default name.
+
+**Version** shows the current version of the app. Do not change the version number for official apps or those included in a TrueNAS catalog.
+When a new version becomes available, the **Installed** application screen shows an update alert, and the **Application Info** card shows an **Update** button.
+Updating the app changes the version to the currently available release.
+
+#### *Application* Configuration settings
+
+Settings in the application configuration section change based on what the app requires to deploy. It shows required and optional settings for the app.
+Typical settings include user credentials, environment variables, additional argument settings, the name of the node, or even sizing parameters.
+
+#### User and Group Configuration Settings
+
+Settings shows the user and group ID for the default user assigned to the app.
+If not using a default user and group provided, add a new user to manage the application before using the installation wizard, then enter the UID in both the user and group fields.
+This section is not always included in app installation wizards.
+
+{{< expand "User and Group Configuration Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **User ID** | Specifies the numeric user ID (UID) of the user that runs the container. Default is 568 (apps). |
+| **Group ID** | Specifies the numeric group ID (GID) of the group that runs the container. Default 568 (apps). |
+{{< /truetable >}}
+{{< /expand >}}
+
+#### Network Configuration Settings
+
+Settings cover network settings the app needs to communicate with TrueNAS and the Internet. They include the default port assignment, hostname, IP addresses, and other network settings.
+
+If changing the port number to something other than the default setting, refer to [Default Ports](https://www.truenas.com/docs/solutions/optimizations/security/#truenas-default-ports) for a list of used and available port numbers.
+
+Some network configuration settings include the option to add a certificate. Create the certificate authority and certificate before using the installation wizard if using a certificate is required for the application.
+
+{{< expand "Network Configuration Settings" "v" >}}
+Network configuration settings vary to suit the requirements of the selected application. Not all possible network configuration settings are listed in this section.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Port Bind Mode** | Sets how the port is exposed. **Publish** makes the port available on the host for external access. **Expose** makes the port available for inter-container communication only. |
+| **Port Number** | Sets the port number for the application. Accept the default port unless some other specific port number is required. Before changing the port number refer to TrueNAS documentation on default port numbers. |
+| **Host IPs** | Sets the host IP address to the option selected on the dropdown list. Can specifies one or more IP addresses on the host to bind the port to when **Port Bind Mode** is set to **Publish**. Only shows when **Port Bind Mode** is set to **Publish**. **Add** shows the **Host IP** field. |
+| **Host Network** | Bypasses port mapping, granting the container direct access network interfaces on the host. This can improve performance, especially in deployments with many users, and simplify network configuration, but compromises isolation and introduces the risk of port conflicts, limiting the ability to run multiple instances of the same app. For most deployments, default port mapping is more secure and versatile. We do not recommend enabling **Host Network** unless required for the specific application or workload. When disabled, the other networks settings show to allow for customization. |
+| **Certificate** | Sets the optional certificate for the application to use to the one selected from the list of available certificates in the TrueNAS system. See [Managing Certificates]({{< ref "ManagingCertificates" >}}) for information on importing a certificate or the application. |
+| **DNS Options** | Specifies optional DNS options if required for your use case. Clicking **Add** shows the **Options** field. |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "Networks Settings" "v" >}}
+
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppNetworkConfigNetworksSettings.png" alt="Network Configuration - Networks Settings" id="Network Configuration - Networks Settings" >}}
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Name** | Specifies the name of an existing Docker network for the container to join. The network must already exist. |
+| **Containers** | Specifies the settings for the container assoicated with the selected app. **Add** shows the container settings. |
+| **Container Name** | Sets the container to configure. Shows a list of containers assoicated with the selected app.  |
+| **Aliases (Optional)** | Specifies one or more optional network aliases for the container on this network. Clicking **Add** shows the **Alias** field. |
+| **Alias** | Specified the optional network alias to add. for the container. Must be on the same network. |
+| **Interface Name (Optional**) | Specifies the optional network interface name to use for this network. |
+| **MAC Address (Otional)** | Specifies the otpional MAC address for the network interface. |
+| **IPv4 Address (Optional)** | Specifies the optional IPv4 address for the network interface. |
+| **IPv6 Address (Optional)** | Specifies the optional IPv6 address for the network interface. |
+| **Gateway Priority (Optional)** | Sets the optional priority of the gateway for this network interface. |
+| **Prioirty (Optional)** | Specifies the order which Compose connects the container services to its networks. |
+{{< /truetable >}}
+{{< /expand >}}
+
+#### Storage Configuration Settings
+
+Setting options configure storage volumes (datasets, ix-application volumes, shares, temporary options) for the application.
+Storage configuration can include the primary data mount volume, a configuration volume, postgres volumes, and an option to add additional storage volumes.
+
+If the application requires host path storage volumes for particular storage, the app installation wizard shows a storage configuration section nameed for that storage requirement.
+Refer to tutorials for specifics.
+
+Storage options can include:
+
+* **ixVolume** - Creates a storage volume inside the hidden **ix-apps** dataset by default unless a different mount path is specified. It shows as the default storage type. Used to rapidly deploy the app for testing purposes, but is not intended as storage for a full app deployment. ixVolumes are not recommended for permanent storage volumes. We recommend adding datasets and configuring the container storage volumes with the host path option.
+
+* **Host path** - Sets a specific dataset created for the app for use as the required storage. Shows additional settings related to the storage volume such as ACL permissions. Host paths add existing dataset(s) as the storage volumes. You can configure the datasets before beginning the app installation using the wizard or click **Create Dataset** in the app install wizard.
+
+* **SMB share** - Sets up an SMB share as a Docker volume for the application to use.
+
+* **NFS share** - Sets up an NFS share as a Docker volume for the application to use.
+
+* **Tmpfs (Temporary directory created on the RAM)** - Creates temporary storage in RAM that does not persist. Suitable for logs.
+
+If the application requires specific datasets or you want to allow SMB or NFS share access, configure the dataset(s) and share before using the installation wizard.
+
+See [Understanding App Storage Volumes](/getting-started/app-storage) for more information.
+
+**Add** shows additonal storage options to create additional storage volumes after configuring required storage volumes.
+
+{{< expand "Common Storage Configuration Settings" "v" >}}
+The following are common storage configuration settings that show for ixVolumes and host paths. Apps that require datasets for specific storage can show as storage configuration setting blocks.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Type**  | Sets the storage option used in the container and the settings shown by that type. Options: **ixVolume (dataset created automatically by the system)**, **Host Path (Path that already exists on the system)**, **SMB/CIFS Share (Mounts a vlume to a SMB Share)**, **NFS Share (Mounts a volum eto a NFS share)**, or **Tmpfs (Temporary Directory created on the RAM)**. |
+| **Read Only** | Makes the mount path inside the container read-only and prevent the app from using the path to store data. |
+| **Mount Path** | Sets the <file>**path/to/directory**</file> where the host path mounts inside the container, but is not required or shown for all apps. Using the file browser to select the **Host Path** can populate the **Mount Path**. |
+| **Enable ACL** | Sets up custom Access Control List (ACL) entries for the container mount. It shows the **ACL Configuration** settings fields. |
+| **Host Path** | Sets the path to the existing dataset, or click <span class="material-icons">arrow_right</span> to the left of <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21L3 9h18l-2 12zm5-6h4q.425 0 .713-.288T15 14t-.288-.712T14 13h-4q-.425 0-.712.288T9 14t.288.713T10 15M6 8q-.425 0-.712-.288T5 7t.288-.712T6 6h12q.425 0 .713.288T19 7t-.288.713T18 8zm2-3q-.425 0-.712-.288T7 4t.288-.712T8 3h8q.425 0 .713.288T17 4t-.288.713T16 5z"/></svg> **/mnt** to browse to the location of the dataset to populate the **Host Path**. Click on the dataset to select and display it in the **Host Path** field.  After selecting a dataset in the file browser the **Create Dataset** option becomes available and allows adding a new dataset under the selected dataset. |
+| **Create Dataset** | Opens a dialog that allows you to add a new dataset under the dataseet selected in the apps storage file browser. Activates after selecting a dataset in the file browser. |
+| **ACL Entries** | Shows the ACL settings to create a custom ACL for the storage volume. Shows the **ACL Entries** option and **Add** button. Clicking **Add** shows the **ID Type**, **ID** and **Access** fields that define the ACL entry. |
+| **ID Type** | Sets the type of entry defined. Options are **Entry is for a USER** or **Entry is for a GROUP**. Shows after enabling **Enable ACL** and clicking **Add**. |
+| **ID** | Specifies the numeric UID or GID, matching the selected **ID Type**. Shows after enabling **Enable ACL** and clicking **Add**. |
+| **Access** | Sets the level of access privileges to assign to the user or group matching the **ID**. Options are **Read Access**, **Modify Access**, or **FULL_CONTROL Access**. Shows after enabling **Enable ACL** and clicking **Add**. |
+| **Force Flag** | Applies the configured ACL settings to a directory containing existing data. Shows after enabling **Enable ACL** and clicking **Add**. |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "SMB/CIFS Share (Mounts a volume to a SMB share)" "v" >}}
+Use to mount an SMB share with a Docker [volume](https://docs.docker.com/engine/storage/#volumes).
+
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **Read Only** | Makes the mount path inside the container read-only and prevent the app from using the path to store data. |
+| **Mount Path** | Specifies the required <file>**path/to/directory**</file> where the share volume mounts inside the container. |
+| **Server** | Specifies the required IP address for the SMB server, for example *192.168.1.100*. This can be the TrueNAS host. |
+| **Path** | Specifies the required name of the SMB share, for example *my-share*. |
+| **Username** | Specifies the required username of an account with permission to access the SMB share. |
+| **Password** | Specifies the required the password for the account in **Username**. |
+| **Domain** | Specifies the directory services domain. Only required if the domain is something other than the TrueNAS default `WORKGROUP`, for example on systems with Active Directory configured.  |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "NFS Share (Mounts a volume to a NFS share)" "v" >}}
+Use to mount an NFS share with a Docker [volume](https://docs.docker.com/engine/storage/#volumes).
+
+{{< truetable >}}
+| Setting | Description |
+|-----------|-------------|
+| **Read Only** | Makes the mount path inside the container read-only and prevent the app from using the path to store data. |
+| **Mount Path** | Specifies the required <file>**path/to/directory**</file> where the share volume mounts inside the container. |
+| **Server** | Specifies the required IP address for the NFS server, for example *192.168.1.100*. This can be the TrueNAS host. |
+| **Path** | Specifies the required name of the NFS share, for example *my-share*. |
+{{< /truetable >}}
+{{< /expand >}}
+
+{{< expand "Tmpfs (Temporary directory created on the RAM)" "v" >}}
+Use to configure a memory-backed temporary directory.
+See the Docker [tmpfs](https://docs.docker.com/engine/storage/#tmpfs) documentation for more information.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Read Only** | Makes the mount path inside the container read-only and prevent the app from using the path to store data. Not recommended for memory-backed storage. |
+| **Mount Path** | Specifies the required path where the memory-backed directory mounts inside the container. |
+| **Tmpfs Size Limit (in Mi)** | Sets the required maximum size of the temporary directory in mebibytes. Defaults to *500*. |
+{{< /truetable >}}
+{{< /expand >}}
+
+
+#### Label Configuration Settings
+
+**Label Configuration** settings allow creating custom key-falue pairs attached to a container as metadata.
+These are informational tags used to organize, identify, and filter containers. Common uses include marking which app or environment a container belongs to, noting a version or owner, or letting external tools (monitoring, orchestration, backup scripts) select the containers by label instead of by name or ID.
+
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppLabelConfig.png" alt="Label Configuration Settings" id="Label Configuration Settings" >}}
+
+**Add** shows the label settings.
+
+**Key** sets the label key for the container.
+
+**Value** sets the label value paired with the label key.
+
+#### Resources Configuration Settings
+
+Setting options configure how much CPU and memory is allocated for the container pod.
+In most cases, you can accept the default settings or you can change these settings to limit the system resources available to the application.
+
+Some apps include GPU settings if the app allows or requires GPU passthrough.
+
+{{< trueimage src="/images/SCALE/Apps/InstallCustomAppAddResourceLimits.png" alt="Resources Configuration Settings" id="Resources Configuration Settings" >}}
+
+{{< expand "Network Configuration Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Enable Resource Limits** | Select to enable resource limits and display the **CPUs** and **Memory (in MB)** settings. |
+| **CPUs** | Enter the maximum number of CPU cores the container can access. For example, *2*. |
+| **Memory (in MB)** | Specifies the number of megabytes in the memory limit applied to the container. For example, *4096*. Only shows after selecdting **Enable Resource Limits**. |
+| **Passthrough available (non-NVIDIA) GPUs** | Select to allow the passthrough of non-NVIDIA GPU devices to the container. |
+| **Select NVIDIA GPU(s)** | Displays if compatible NVIDIA GPU device(s) are installed and detected. |
+| **Use this GPU** | Select to allow passthrough of the specified NVIDIA device to the container. |
+{{< /truetable >}}
+{{< /expand >}}
 
 <div class="noprint">
 
