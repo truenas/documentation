@@ -32,6 +32,7 @@ Configure the WebShare service before creating shares.
 2. Click the <span class="material-icons">more_vert</span> icon and select **Config Service**.
 
 3. (Optional) Select **Enable TrueSearch** to enable file indexing and search functionality.
+   TrueSearch is the TrueNAS file indexing service, and it also powers Spotlight search on SMB shares.
    When enabled, TrueSearch indexes all active WebShares for fast file searching.
 
 4. Configure the **Passkey** setting based on your security requirements:
@@ -144,10 +145,12 @@ Click the <span class="material-icons">more_vert</span> icon on a file row to ac
 
 ## Using TrueSearch
 
+TrueSearch is the TrueNAS file indexing service, and it also powers Spotlight search on SMB shares.
 When TrueSearch is enabled in the WebShare service configuration, users can search for files within WebShare.
 
+{{< include file="/static/includes/TrueSearchRequirements.md" >}}
+
 {{< hint type=note >}}
-TrueSearch requires an Enterprise license or TrueNAS Connect configuration.
 Encrypted datasets are excluded from indexing.
 {{< /hint >}}
 

@@ -1,5 +1,5 @@
 ---
-title: "TrueNAS 27 Development Notes"
+title: "TrueNAS 28 Development Notes"
 description: "Highlights, change log, and known issues for the latest TrueNAS nightly development version."
 weight: 10
 related: false
@@ -8,22 +8,24 @@ aliases:
  - /scale/scalereleasenotes/
  - /scalenext-releasenotes/
  - /scale/scalenextversion/
+ - /scale/28/gettingstarted/scalereleasenotes/
+ - /scale/28/gettingstarted/versionnotes/
  - /scale/gettingstarted/scalereleasenotes/ 
  - /releasenotes/
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "27-nightly-changes"
+    anchor: "28-nightly-changes"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
     icon: "warning"
-  - text: "27 Major Features"
+  - text: "28 Major Features"
     anchor: "major-features"
     icon: "new-releases"
   - text: "Deprecations"
     anchor: "deprecations"
     icon: "timeline"
-  - text: "Full 27 Changelog"
+  - text: "Full 28 Changelog"
     anchor: "full-changelog"
     icon: "history"
   - text: "Preparing to Upgrade"
@@ -37,26 +39,26 @@ jump_to_buttons:
     icon: "component-versions"
 ---
 
-{{< hint type="important" title="TrueNAS 27 Nightly Development Documentation" >}}
-This page tracks the latest development roadmap and notes for TrueNAS 27, the next major version of TrueNAS.
+{{< hint type="important" title="TrueNAS 28 Nightly Development Documentation" >}}
+This page tracks the latest development roadmap and notes for TrueNAS 28, the next major version of TrueNAS.
 Nightly builds are early-stage development software intended for testing and feedback — not production use.
 See the [Software Development Life Cycle]({{< ref "SoftwareDevelopmentLifeCycle" >}}) for an overview of TrueNAS release stages and versioning.
 
-See the stable [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) or pre-release [TrueNAS 26](https://www.truenas.com/docs/scale/26/gettingstarted/versionnotes/) release notes for information relating to those versions.
+See the stable [25.10 (Goldeye)](https://www.truenas.com/docs/scale/25.10/gettingstarted/versionnotes/) or pre-release [TrueNAS 27](https://www.truenas.com/docs/scale/27/gettingstarted/versionnotes/) release notes for information relating to those versions.
 {{< /hint >}}
 
 ## Notable Changes and Known Issues
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="27-nightly-changes" data-tab-label="27 Nightly Changes">
+  <div data-tab-id="28-nightly-changes" data-tab-label="28 Nightly Changes">
 
 {{< hint type=warning title="Early Release Software" >}}
 Early releases are intended for testing and feedback purposes.
 Do not use early-release software for critical tasks.
 {{< /hint >}}
 
-TrueNAS 27 is currently in active development.
+TrueNAS 28 is currently in active development.
 
 Check back for more information.
 
@@ -64,14 +66,14 @@ Check back for more information.
 
   <div data-tab-id="known-issues" data-tab-label="Known Issues">
 
-{{< hint type="important" title="Known Issues in 27" >}}
-These are ongoing issues that can affect multiple versions in the 27 series.
+{{< hint type="important" title="Known Issues in 28" >}}
+These are ongoing issues that can affect multiple versions in the 28 series.
 <br> When resolved, issues move to **Notable Changes** for the appropriate release.
 {{< /hint >}}
 
 ### Current Known Issues
 
-No known issues currently reported for 27 development builds.
+No known issues currently reported for 28 development builds.
 
 Check back for more information.
 
@@ -79,12 +81,12 @@ See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section o
 
   </div>
 
-  <div data-tab-id="major-features" data-tab-label="27 Major Features">
+  <div data-tab-id="major-features" data-tab-label="28 Major Features">
 
-{{< include file="/static/includes/27FeatureList.md" >}}
+{{< include file="/static/includes/28FeatureList.md" >}}
 
   </div>
-  <div data-tab-id="full-changelog" data-tab-label="Full 27 Changelog">
+  <div data-tab-id="full-changelog" data-tab-label="Full 28 Changelog">
 <!-- CSV Changelog Table with Version Support -->
 <div id="csv-changelog-container"></div>
   </div>
@@ -106,7 +108,7 @@ For additional resources, see the [Feature Deprecations]({{< ref "Deprecations" 
 <script src="/js/linkable-tabs-init.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '27-nightly-changes');
+    initializeHugoTabs('release-tab-content-source', 'release-tabs-container', '28-nightly-changes');
 });
 </script>
 
@@ -114,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
 {{< changelog-scripts >}}
 <script>
 // Initialize changelog table for version
-initializeChangelogTableForTabs('27');
+initializeChangelogTableForTabs('28');
 </script>
 
 ## Upgrading TrueNAS {#upgrading}
@@ -142,10 +144,10 @@ initializeChangelogTableForTabs('27');
 
 #### Containers
 
-LXC containers, introduced as an experimental feature in earlier TrueNAS releases, are fully supported in TrueNAS 26.
+LXC containers, introduced as an experimental feature in earlier TrueNAS releases, are fully supported in TrueNAS 27.
 No configuration migration is required for containers created in prior releases.
 
-TrueNAS 26 adds the following container improvements:
+TrueNAS 27 adds the following container improvements:
 
 - **Enterprise HA support** — Containers can now fail over between HA controllers ([NAS-138309](https://ixsystems.atlassian.net/browse/NAS-138309)).
   HA container failover requires a **static IP configuration**. Containers using DHCP do not fail over.
@@ -190,7 +192,7 @@ See [Drive Health Management]({{< ref "/SCALE/Storage/Disks/DriveHealthManagemen
 
 {{< include file="/static/includes/EarlyReleaseWarning.md" >}}
 
-{{< include file="/static/includes/27UpgradeMethods.md" >}}
+{{< include file="/static/includes/28UpgradeMethods.md" >}}
 
 {{< include file="/static/includes/SCALEUpgradePaths.md" >}}
   </div>  
@@ -232,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 Click the component version number to see release notes for that component.
 
-{{< component-versions "27" >}}
+{{< component-versions "28" >}}
 
 \*TrueNAS (25.10 and later) includes the [NVIDIA open GPU kernel module drivers](https://github.com/NVIDIA/open-gpu-kernel-modules).
   These drivers work with Turing and later GPUs.

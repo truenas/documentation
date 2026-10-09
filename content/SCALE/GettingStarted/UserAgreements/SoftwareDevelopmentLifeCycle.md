@@ -43,25 +43,25 @@ Maintenance releases are published as issues are resolved, with user feedback co
 
 ## Release Versioning
 
-Starting with TrueNAS 26, TrueNAS follows an annual release cadence with one major version per year.
-The major version number reflects the release year: TrueNAS 26 in 2026, TrueNAS 27 in 2027, and so on.
+Starting with TrueNAS 27, TrueNAS follows an annual release cadence with one major version per year.
+The major version number is intended to reflect the year in which that version is the stable release: TrueNAS 27 for 2027, TrueNAS 28 for 2028, and so on.
 
 Version numbers follow a `YY.MINOR.PATCH` format:
 
-- **YY** — the release year (26, 27, etc.)
-- **MINOR** — increments for significant updates within a release year (e.g., `26.1.0`)
-- **PATCH** — increments for minor point releases and bug fixes (e.g., `26.0.1`)
+- **YY** — the major version number (27, 28, etc.)
+- **MINOR** — increments for significant updates within a major version (e.g., `27.1.0`)
+- **PATCH** — increments for minor point releases and bug fixes (e.g., `27.0.1`)
 
 Each major release progresses through the following stages before and after general availability:
 
 {{< truetable >}}
 | Stage | Version Format | Description |
 |-------|----------------|-------------|
-| Nightly | `26.0.0-MASTER+YYYYMMDD-HHMMSS` | Automated daily builds from active development, available for early testing and feedback |
-| BETA | `26.0.0-BETA.#` | Feature-complete builds for broader Community testing |
-| RC | `26.0.0-RC.#` | Release candidates with final stabilization fixes |
-| Release | `26.0.0` | General availability |
-| Maintenance | `26.0.#` / `26.#.0` | Point releases for bug fixes and larger mid-year updates |
+| Nightly | `27.0.0-MASTER+YYYYMMDD-HHMMSS` | Automated daily builds from active development, available for early testing and feedback |
+| BETA | `27.0.0-BETA.#` | Feature-complete builds for broader Community testing |
+| RC | `27.0.0-RC.#` | Release candidates with final stabilization fixes |
+| Release | `27.0.0` | General availability |
+| Maintenance | `27.0.#` / `27.#.0` | Point releases for bug fixes and larger mid-year updates |
 {{< /truetable >}}
 
 ## End of Life

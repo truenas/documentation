@@ -1,11 +1,11 @@
 &NewLine;
 
 {{< hint type="important" title="Deprecation Notice" >}}
-This section tracks features removed in 27 and features deprecated in 27 for future removal.
+This section tracks features removed in 28 and features deprecated in 28 for future removal.
 Plan migrations immediately to avoid disruptions during upgrades.
 {{< /hint >}}
 
-## Features Removed in 27
+## Features Removed in 28
 
 <!-- Uncomment this line when there are no features removed in this version -->
 *No features are currently removed in this version.*
