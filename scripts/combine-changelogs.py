@@ -2,6 +2,11 @@
 """
 Combine multiple changelog CSV files into a single "All" file based on changelog-versions.json.
 Usage: python scripts/combine-changelogs.py 25.10
+
+Jira exports add one column per value for multi-value fields (Fix versions, Affects versions, Labels),
+so each file can have a different number of columns.
+Rows are therefore merged by column name, not by position,
+and the combined file uses one header that is wide enough for every source file.
 """
 
 import sys
@@ -10,14 +15,63 @@ import json
 import csv
 from pathlib import Path
 
+
+def build_header(file_headers):
+    """Merge per-file headers into one header.
+
+    Repeated column names (e.g. Fix versions) are kept as many times as the widest file needs.
+    Column names that only some files have (e.g. Description) are inserted after their predecessor.
+    """
+    merged = []  # list of [name, count]
+    for headers in file_headers:
+        counts = {}
+        for name in headers:
+            counts[name] = counts.get(name, 0) + 1
+
+        previous = None
+        for name in dict.fromkeys(headers):
+            existing = next((entry for entry in merged if entry[0] == name), None)
+            if existing:
+                existing[1] = max(existing[1], counts[name])
+            else:
+                position = 0
+                if previous is not None:
+                    position = next(i for i, entry in enumerate(merged) if entry[0] == previous) + 1
+                merged.insert(position, [name, counts[name]])
+            previous = name
+
+    return [name for name, count in merged for _ in range(count)]
+
+
+def read_rows(csv_file):
+    """Read a CSV into (header, rows), where each row maps column name -> list of values."""
+    with open(csv_file, 'r', newline='', encoding='utf-8-sig') as f:
+        records = list(csv.reader(f))
+
+    if not records:
+        return None, []
+
+    header = records[0]
+    rows = []
+    for record in records[1:]:
+        if not any(cell.strip() for cell in record):
+            continue
+        row = {}
+        for name, value in zip(header, record):
+            row.setdefault(name, []).append(value)
+        rows.append(row)
+
+    return header, rows
+
+
 def combine_changelogs(version):
     """Combine all CSV files for a given version into an 'All' file."""
-    
+
     # Find the data directory - look in current working directory first
     current_dir = Path.cwd()
     data_dir = current_dir / "static" / "data"
     versions_file = data_dir / "changelog-versions.json"
-    
+
     # If not found in current dir, try parent directories
     if not versions_file.exists():
         for parent in current_dir.parents:
@@ -27,7 +81,7 @@ def combine_changelogs(version):
                 data_dir = potential_data_dir
                 versions_file = potential_versions_file
                 break
-    
+
     # Load version configuration
     try:
         with open(versions_file, 'r', encoding='utf-8') as f:
@@ -38,20 +92,20 @@ def combine_changelogs(version):
     except json.JSONDecodeError as e:
         print(f"Error: Invalid JSON in {versions_file}: {e}")
         return
-    
+
     # Get configuration for this version
     if version not in versions_config:
         print(f"Version '{version}' not found in changelog-versions.json")
         print(f"Available versions: {', '.join(versions_config.keys())}")
         return
-    
+
     version_config = versions_config[version]
     version_list = version_config.get("versions", [])
-    
+
     # Filter out "All" files - only process individual releases
     csv_files = []
     all_filename = None
-    
+
     for v in version_list:
         filename = v.get("filename", "")
         if v.get("value") == "all" or "all" in v.get("label", "").lower():
@@ -64,73 +118,80 @@ def combine_changelogs(version):
                 print(f"Found individual file: {filename}")
             else:
                 print(f"Warning: File not found: {filename}")
-    
+
     if not csv_files:
         print(f"No individual CSV files found for version {version}")
         return
-    
+
     if not all_filename:
         print(f"No 'All' file configured for version {version}")
         return
-    
+
     # Output file
     output_file = data_dir / all_filename
-    
+
     print(f"\nProcessing {len(csv_files)} individual files:")
-    
+
+    file_headers = []
     all_rows = []
-    header = None
-    
+
     # Process each CSV file
     for csv_file in sorted(csv_files):
         print(f"  - {os.path.basename(csv_file)}")
-        
-        with open(csv_file, 'r', newline='', encoding='utf-8') as f:
-            reader = csv.reader(f)
-            rows = list(reader)
-            
-            if not rows:
-                continue
-                
-            # Use header from first file
-            if header is None:
-                header = rows[0]
-            
-            # Add data rows (skip header)
-            all_rows.extend(rows[1:])
-    
-    # Remove duplicates based on Issue key (second column)
+
+        header, rows = read_rows(csv_file)
+        if header is None:
+            continue
+
+        file_headers.append(header)
+        all_rows.extend(rows)
+
+    if not file_headers:
+        print(f"No data rows found across all CSV files for version {version}")
+        return
+
+    header = build_header(file_headers)
+
+    # Remove duplicates based on Issue key
     seen_keys = set()
     unique_rows = []
 
     for row in all_rows:
-        if row and len(row) > 1:
-            issue_key = row[1]  # Issue key is second column (index 1)
-            if issue_key not in seen_keys:
-                seen_keys.add(issue_key)
-                unique_rows.append(row)
-    
+        issue_key = row.get("Issue key", [""])[0]
+        if issue_key and issue_key not in seen_keys:
+            seen_keys.add(issue_key)
+            unique_rows.append(row)
+
     # Sort by Issue key for consistent output
-    unique_rows.sort(key=lambda x: x[1] if len(x) > 1 else '')
-    
-    if header is None:
-        print(f"No data rows found across all CSV files for version {version}")
-        return
+    unique_rows.sort(key=lambda row: row["Issue key"][0])
+
+    # Lay each row out under the combined header, padding columns the source file didn't have
+    output_rows = []
+    for row in unique_rows:
+        used = {}
+        output = []
+        for name in header:
+            index = used.get(name, 0)
+            used[name] = index + 1
+            values = row.get(name, [])
+            output.append(values[index] if index < len(values) else "")
+        output_rows.append(output)
 
     # Write combined file
     with open(output_file, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator='\n')
         writer.writerow(header)
-        writer.writerows(unique_rows)
-    
-    print(f"\nCombined {len(unique_rows)} unique issues into: {all_filename}")
-    print(f"Removed {len(all_rows) - len(unique_rows)} duplicates")
+        writer.writerows(output_rows)
+
+    print(f"\nCombined {len(output_rows)} unique issues into: {all_filename}")
+    print(f"Removed {len(all_rows) - len(output_rows)} duplicates")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python scripts/combine-changelogs.py <version>")
         print("Example: python scripts/combine-changelogs.py 25.10")
         sys.exit(1)
-    
+
     version = sys.argv[1]
     combine_changelogs(version)
