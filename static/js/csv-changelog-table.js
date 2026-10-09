@@ -621,16 +621,18 @@ function fetchCSVData(csvUrl, delimiter, columnMapping) {
  * Parses CSV text into our standard format
  */
 function parseCSV(csvText, delimiter, columnMapping) {
-    const records = parseCSVRecords(csvText, delimiter);
-    if (records.length < 2) return [];
+    const lines = csvText.split('\n');
+    if (lines.length < 2) return [];
     
-    const headers = records[0].map(h => h.trim().replace(/"/g, ''));
+    const headers = lines[0].split(delimiter).map(h => h.trim().replace(/"/g, ''));
     const data = [];
     
-    for (let i = 1; i < records.length; i++) {
-        const values = records[i];
-        // Skip blank records, but keep short ones: exports can have fewer columns than the header
-        if (values.every(v => !v.trim())) continue;
+    for (let i = 1; i < lines.length; i++) {
+        const line = lines[i].trim();
+        if (!line) continue;
+        
+        const values = parseCSVLine(line, delimiter);
+        if (values.length < headers.length) continue;
         
         const row = {};
         const fixVersions = [];
@@ -675,19 +677,19 @@ function parseCSV(csvText, delimiter, columnMapping) {
 }
 
 /**
- * Splits CSV text into records, handling quoted values that contain delimiters or line breaks
+ * Parses a single CSV line handling quoted values
  */
-function parseCSVRecords(csvText, delimiter) {
-    const records = [];
-    let values = [];
+function parseCSVLine(line, delimiter) {
+    const values = [];
     let current = '';
     let inQuotes = false;
     
-    for (let i = 0; i < csvText.length; i++) {
-        const char = csvText[i];
+    for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        const nextChar = line[i + 1];
         
         if (char === '"') {
-            if (inQuotes && csvText[i + 1] === '"') {
+            if (inQuotes && nextChar === '"') {
                 current += '"';
                 i++; // Skip next quote
             } else {
@@ -696,23 +698,13 @@ function parseCSVRecords(csvText, delimiter) {
         } else if (char === delimiter && !inQuotes) {
             values.push(current.trim());
             current = '';
-        } else if ((char === '\n' || char === '\r') && !inQuotes) {
-            if (char === '\r' && csvText[i + 1] === '\n') i++; // Treat CRLF as one line break
-            values.push(current.trim());
-            records.push(values);
-            values = [];
-            current = '';
         } else {
             current += char;
         }
     }
     
-    if (current || values.length > 0) {
-        values.push(current.trim());
-        records.push(values);
-    }
-    
-    return records;
+    values.push(current.trim());
+    return values;
 }
 
 /**
