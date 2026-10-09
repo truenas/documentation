@@ -3,18 +3,15 @@
 
 The {{< themed-icon src="/images/SCALE/Dashboard/FeedbackIcon.svg" alt="Feedback Icon" title="Feedback Icon" >}} icon on the toolbar at the top of all UI screens, and the **File Ticket** button on the **System > General Settings > Support** card open the **Send Feedback** window. 
 
-The **Send Feedback** window shows two tabs: **Rate this page** and **Report a Bug**, which is the default selection after clicking **File Ticket**.
-The **Rate this page** is the default selection after clicking the option dubmit feedback or rate a new screen, which shows on the top tool bar of a new screen in an early release with new functional or redesigned screens.
+There are two version of the **Send Feedback** window: community and Enterprise.
 
-There are two version of the **Send Feedback > Report a bug** window: community and Enterprise.
+#### Send Feedback (Community Version)
 
-#### Report a Bug (Community Version)
+The **Send Feedback** window community version allows non-Enterprise users to submit bug reports and open Jira tickets if they have a Jira account.
 
-The **Report a Bug** tab on the **Send Feedback** window community version allows non-Enterprise users to submit bug reports and open Jira tickets if they have a Jira account.
+{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackWindowCommunity.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
 
-{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
-
-**Submit** sends the bug report to TrueNAS.
+**Login To Jira To Submit** opens a Jira login screen where you enter your Jira credentials so TrueNAS can create the ticket using your credentials. 
 
 {{< expand "Community Report a bug Settings" "v" >}}
 {{< truetable >}}
@@ -25,16 +22,15 @@ The **Report a Bug** tab on the **Send Feedback** window community version allow
 | **Attach debug** | Downloads a system debug and attaches it to a Jira ticket in the **Private Attachement Area** for TrueNAS, which provides a secure way for users to submit confidential but required data included in the debug file. |
 | **Take screenshot of the current page** | Takes a screenshot of the currently active TrueNAS screen and attaches it to the ticket created. |
 | **Attach additional images** | Opens a file browser to select additional files or screenshots to attach to the ticket. Allowed files are screenshots, video files, or other files (logs, etc) to further clarify the issue reported. |
-| **Login To Jira To Submit** | Opens a Jira login screen where you enter your Jira credentials so TrueNAS can create the ticket using your credentials. |
 {{< /truetable >}}
 {{< /expand >}}
 
 {{< enterprise >}}
-#### Report a Bug (Enterprise Version)
+#### Send Feedback (Enterprise Version)
 
-The Enterprise version of the **Report a Bug** window includes contact, system, and other details required to support Enterprise customer reports. If the system is down or impacting a prodcution system please contact TrueNAS support directly.
+The Enterprise version of the **Send Feedback** window includes contact, system, and other details required to support Enterprise customer reports. If the system is down or impacting a prodcution system please contact TrueNAS support directly.
 
-{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="Enterprise Send Feedback Window" id="Enterprise Send Feedback Window" >}}
+{{< trueimage src="/images/SCALE/Dashboard/SendFeedbackEnterprise.png" alt="Enterprise Send Feedback Window" id="Enterprise Send Feedback Window" >}}
 
 **User Guide** opens the Documentation hub.
 
@@ -61,26 +57,3 @@ The Enterprise version of the **Report a Bug** window includes contact, system, 
 {{< /truetable >}}
 {{< /expand >}}
 {{< /enterprise >}}
-
-#### Rate this page
-
-The **Rate this page** shows options that provide review feedback on a UI screen.
-
-{{< trueimage src="/images/SCALE/SystemSettings/FeedbackWindow.png" alt="Rate this page Window" id="Rate this page Window" >}}
-
-Stars set a rating using one (lowest) to five (best) stars.
-
-The **on our forum** link opens the [TrueNAS Community forum](https://forums.truenas.com/feature-requests).
-
-**Submit** sends the report to TrueNAS.
-
-{{< expand "Community Rate this page Settings" "v" >}}
-{{< truetable >}}
-| Setting | Description |
-|---------|-------------|
-| **Subject** | Brief statement or description of the issue being reported. This becomes the title for the Jira ticket. For example, *Traceback received when pressing Save*. |
-| **Message** | Specifies a full description of the nature of the issue encountered, steps taken before the issue occured, and the result or steps taken. Provides examples of what to enter. Populates the Jira ticket description field after clicking **Login to Jira to Submit**. |
-| **Take screenshot of the current page** | Takes a screenshot of the currently active TrueNAS screen and attaches it to the ticket created. |
-| **Attach additional images** | Opens a file browser to select additional files or screenshots to attach to the ticket. Allowed files are screenshots, video files, or other files (logs, etc) to further clarify the issue reported. |
-{{< /truetable >}}
-{{< /expand >}}
