@@ -81,42 +81,7 @@ The **Update Production Status** dialog can set a TrueNAS Enterprise system to p
 
 ### Send Feedback Window
 
-The **Send Feedback** window shows two options: **Rate this page** and **Report a Bug**, which is the default selection after clicking **File Ticket**.
-The **Rate this page** is the default selection after clicking the option to rate a new screen shown in early release with new functional screens or redesigned screens.
-
-#### Report a Bug
-
-{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
-
-**Subject** is a text entry field for a brief description of an issue experienced. For example, *Traceback received when pressing Save*.
-
-**Message** is a text entry field for a longer description of what steps were taken and the result. The field provides examples of what to enter. This content populates the Jira ticket description field after clicking **Login To Jira To Submit**.
-
-**Attach debug**, which is selected by default, downloads and attaches a system debug to the Private Attachment Area TrueNAS provides to secure user confidential data that is part of the debug file.
-
-**Take screenshot of the current page**, selected by default, takes a screenshot of the current screen.
-
-**Attach additional images** opens a file browser where you can locate and attach saved logs, screenshots, or video files that help explain the issue reported in the ticket.
-
-**Login To Jira To Submit** opens a Jira login screen where you enter your Jira credentials so TrueNAS can create the ticket for you using your credentials.
-
-#### Rate this page
-
-Select the **Rate this page** to show options to submit review feedback on a UI screen.
-
-{{< trueimage src="/images/SCALE/SystemSettings/FeedbackWindow.png" alt="Rate this page Window" id="Rate this page Window" >}}
-
-Stars set a rating using one (lowest) to five (best) stars.
-
-**Message** is a text entry field for comments about the screen you are rating. Include what you like, don't like, works well, or does not work well, and your experience with the screen.
-
-**Take screenshot of the current page**, selected by default, takes a screenshot of the current screen.
-
-**Attach additional images** opens a file browser where you can locate and attach saved screenshots or video files that help explain what you report in the ticket.
-
-The **on our forum** link opens the [TrueNAS Community forum](https://forums.truenas.com/feature-requests).
-
-**Submit** sends the report to TrueNAS.
+{{< include file="/static/includes/FeedbackWindowSettings.md" >}}
 
 ### License Screen
 

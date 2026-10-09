@@ -49,7 +49,7 @@ The **Search UI** global search bar allows users to search for screens and eleme
 
 ### Send Feedback
 
-{{< include file="/static/includes/FeedbackWindow.md" >}}
+{{< include file="/static/includes/FeedbackWindowSettings.md" >}}
 
 ### Status of TrueCommand
 
