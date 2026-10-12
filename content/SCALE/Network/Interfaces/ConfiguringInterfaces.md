@@ -64,11 +64,11 @@ The name assigned to the primary physical network interface on your system is ba
 For example, *eno1* for onboard NICs, *ens3* for PCIe slot NICs, and you might see *eno1np0*, which is an onboard NIC with more than one port on the NIC.
 
 When selecting a virtual interface type, enter a name based on the type.
-For example, **bond*X***, **vlan*X***, or **br*X*** and where *X* is a number.
+For example, **bond*X***, **vlan*X***, or **br*X***, and where *X* is a number.
 
 To allow DHCP to assign the interface IP address, select **Get IP address Automatically from DHCP**.
 
-To use a fixed (static) IP address, select the **Define Static IP Addresses**, and then click **Add** to the right of **Static IP Addresses** to show the IP address and netmask (CIDR) fields. Enter the assigned IP address and select the netmask from the dropdown list.
+To use a fixed (static) IP address, select **Define Static IP Addresses**, and then click **Add** to the right of **Static IP Addresses** to show the IP address and netmask (CIDR) fields. Enter the assigned IP address and select the netmask from the dropdown list.
 
 Click **Add** for each IP address you want to associate with the interface.
 
@@ -91,17 +91,19 @@ If you need to change these settings, do this before you change the interface so
 
 Click **Save** after making all changes.
 
-Test the change as described  above in **Testing Network Interface Changes**.
+If the interface holds the default route, and the changes cause the default gateway to be removed, the **Set Gateway and DNS** dialog automtically opens, prompting you to enter the new default gateway and DNS nameerver addresses for the new route for the interface.
+
+Test the change as described above in **Testing Network Interface Changes**.
 
 ### Resetting an Interface Configuration
 
 {{< hint type=warning >}}
 Resetting the configuration for a network interface can result in lost access to the TrueNAS UI and losing the connection to TrueNAS!
 
-Clicking **Reset Configuration** resets the domain name back to the default value, and changes the static IP address to DHCP-assigned.
+Clicking **Reset Configuration** resets the domain name back to the default value and changes the static IP address to DHCP-assigned.
 
-When saved, changes cause lost access to the UI. You might need command line knowledge, and either IPMI or physical access to the TrueNAS system to fix misconfigured network settings.
-If using IPMI or a physical connect to the system, you can change network and interface settings through the Console Setup menu.
+When saved, changes cause lost access to the UI. You might need command line knowledge and either IPMI or physical access to the TrueNAS system to fix misconfigured network settings.
+If using IPMI or a physical connection to the system, you can change network and interface settings through the Console Setup menu.
 
 The TrueNAS UI does not offer a way to delete the interface. Do not delete the primary network interface in the CLI!
 {{< /hint >}}
@@ -115,7 +117,7 @@ The current IP address resets to a DHCP-assigned IP address and the domain name 
 
 **Reset** clears the configuration for that interface.
 After making the changes and clicking **Save**, the [test change](#testing-network-interface-changes) options show on the **Network** screen. 
-Follow the procedure above to test your changes and validate you still have access to the UI and the TrueNAS system.
+Follow the procedure above to test your changes and validate that you still have access to the UI and the TrueNAS system.
 
 ### Changing from DHCP to a Static IP Address
 
@@ -123,7 +125,7 @@ TrueNAS allows assigning static IP addresses to an interface when not using a DH
 Static IP addresses set a fixed address for an interface that external devices or websites need to access or remember, such as for VPN access.
 You can add an additional IP address for a network interface configured with another primary IP address.
 
-Verify the default gateway and nameservers for the DHCP-assigned address and new static IP address are the same before making a change.
+Verify the default gateway and nameservers for the DHCP-assigned address, and new static IP address are the same before making a change.
 If not the same, edit the global network settings before changing the interface so you can properly test the change.
 
 {{< expand "Changing the Global Network Settings" "v" >}}
@@ -140,7 +142,7 @@ Go to **System > Network**:
    For home users, enter **8.8.8.8** for a DNS name server address so you can communicate with external networks.
 
 3. Enter the IP address for the default gateway in the appropriate field.
-   If the static network is IPv4 enter the gateway in **IPv4 Default Gateway**, if the static network is IPv6 use **IPv6 Default Gateway**.
+   If the static network is IPv4, enter the gateway in **IPv4 Default Gateway**; if the static network is IPv6, use **IPv6 Default Gateway**.
 
 4. Click **Save**.
 {{< /expand >}}
@@ -177,8 +179,8 @@ To use the UI to change an interface from DHCP to a static IP address, go to **S
 
 ### Returning to a DHCP-Assigned IP Address
 
-Only one interface can use DHCP to assign the IP address and that is likely the primary network interface.
-If you do not have an existing network interface set to use DHCP you can convert an interface from static IP to DHCP.
+Only one interface can use DHCP to assign the IP address, and that is likely the primary network interface.
+If you do not have an existing network interface set to use DHCP, you can convert an interface from static IP to DHCP.
 
 To switch back to using DHCP:
 
@@ -235,6 +237,6 @@ To change the FEC mode for an interface:
 2. Select the FEC mode from the **FEC Mode** dropdown.
    The dropdown lists only the modes the NIC supports. See [Network Interface Screens]({{< ref "NetworkInterfaceScreens.md" >}}) for descriptions of each mode.
 
-3. Click **Apply**. The test changes options show on the **Network** screen.
+3. Click **Apply**. The test changes options shown on the **Network** screen.
 
 4. Test the change as described in [Testing Network Interface Changes](#testing-network-interface-changes). Verify the system is reachable on the network.

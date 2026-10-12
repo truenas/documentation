@@ -133,3 +133,16 @@ These options show above the **Interfaces** widget after applying changes to a n
 **Revert Changes** discards changes made within the 60-second period.
 
 **Save Changes** shows after logging into the UI in a new browser window. Makes network changes permanent. Shows as the final part of the [testing network interface changes]({{< ref "/SCALE/Network/Interfaces#testing-network-interface-changes" >}}) process.
+
+## Set Gateway and DNS Dialog
+
+The **Set Gateway and DNS** dialog show when editing a network interface removes the default gateway settings, which is not a usual event. This opens automatically to allow setting a new gateway and DNS before changes apply.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **New IPv4 Default Gateway** | Specifies the new IP address for the default IPv4 gateway. |
+| **Primary DNS Server** | Specifies a new primary DNS nameserver for the new default gateway. |
+| **Secondary DNS Server** | Speciries a new secondary DNS nameserver for the new default gateway. |
+| **Tertiary DNS Server** | Specifies a new tertiary DNS namesever for the new default gateway. |
+{{< /truetable >}}
