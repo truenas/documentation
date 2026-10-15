@@ -15,32 +15,32 @@ doctype: reference
 ---
 
 
-The **Cloud Sync Tasks** widget on the **Data Protection** screen shows configured cloud sync tasks, and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS and a cloud storage provider.
-Cloud sync tasks are an effective data backup method that sends data to a remote location, or when performing cloud-storage-migration through a provider.
+The **Cloud Sync Tasks** card on the **Data Protection** screen shows configured cloud sync tasks and provides access to configuration screens to add single-time or scheduled recurring transfers between TrueNAS and a cloud storage provider.
+Cloud sync tasks are an effective data backup method that sends data to a remote location or when performing cloud storage migration through a provider.
 
 {{< include file="/static/includes/CloudServiceProvidersSCALE.md" >}}
 
-## Cloud Sync Task Widget
+## Cloud Sync Task Card
 
-The **Cloud Sync Task** widget lists tasks configured on the system.
-The widget shows a description of cloud sync tasks before adding a task.
+The **Cloud Sync Task** card lists tasks configured on the system.
+The card shows a description of cloud sync tasks before adding a task.
 
 <div style="display: flex; gap: 20px; align-items: flex-start;">
     <div style="flex: 1;">
       <img src="/images/SCALE/DataProtection/CloudSyncTaskWidgetNoTasks.png" alt="No Cloud Sync Tasks" style="width: 100%; max-width: 400px; height: auto;">
     </div>
     <div style="flex: 1;">
-      <img src="/images/SCALE/DataProtection/CloudSyncTaskWidget.png" alt="Cloud Sync Task Widget" style="width: 100%; max-width: 400px; height: auto;">
+      <img src="/images/SCALE/DataProtection/CloudSyncTaskWidget.png" alt="Cloud Sync Task Card" style="width: 100%; max-width: 400px; height: auto;">
     </div>
   </div>
 
-The widget header opens the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
+The card header opens the [**Cloud Sync Task**](#cloud-sync-task-screen) screen that lists all tasks configured on the system.
 
-**Add** on the widget and the **Cloud Sync Task** screen opens the **[Cloudsync Task Wizard](#cloudync-task-wizard)**.
+**Add** on the card and the **Cloud Sync Task** screen opens the **[Cloudsync Task Wizard](#cloudync-task-wizard)**.
 
 The vertical ellipses <span class="material-icons">more_vert</span> opens a dropdown menu with five options for various functions for each task:
 
-* **<span class="material-icons">edit</span> Edit** opens the **[Edit Cloud Sync Task](#advanced-options-and-edit-cloud-sync-task-screens)** screen populated with with the settings for that task.
+* **<span class="material-icons">edit</span> Edit** opens the **[Edit Cloud Sync Task](#advanced-options-and-edit-cloud-sync-task-screens)** screen populated with the settings for that task.
 
 * **<span class="material-icons">play_circle_filled</span> Run Now** starts the cloud sync, running it outside of the scheduled time. 
 
@@ -71,14 +71,14 @@ Expand any task to see details on the configured task, such as the cloud sync pr
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTasksScreenTaskDetails.png" alt="Cloud Sync Task Details" id="Cloud Sync Task Details" >}}
 
-Buttons for these task options perform the same functions as the icons on the widget:
+Buttons for these task options perform the same functions as the icons on the card:
 
 * **Run Now** starts the task outside of the scheduled period.
 
 * **Dry Run** performs a test of the configuration. 
   This is the same function as the **Dry Run** button on the **Edit Cloud Sync Task** screen and the **Advanced Options** for the **Cloudsync Task Wizard**. 
 
-* **Restore** opens the **Restore Cloud Sync Task** window, where you can create a new cloud sync task from an existing task with the same options, but the new task reverses the transfer from PUSH to PULL and vice-versa.
+* **Restore** opens the **Restore Cloud Sync Task** window, where you can create a new cloud sync task from an existing task with the same options, but the new task reverses the transfer from PUSH to PULL and vice versa.
 
 {{<include file="/static/includes/addcolumnorganizer.md">}}
   
@@ -91,7 +91,7 @@ Buttons for these task options perform the same functions as the icons on the wi
 ## Cloudsync Task Wizard
 
 The **Cloud Sync Task** wizard screens simplify the task creation process.
-The wizard has two screens, **Provider** and **What and When**.
+The wizard has two screens: **Provider** and **What and When**.
 
 ### Provider Wizard Screen
 
@@ -109,7 +109,7 @@ Selecting a provider from the dropdown list shows the additional credential sett
 ### What and When Wizard Screen
 
 The **What and When** screen sets the direction (push or pull), transfer mode (move, copy, or sync), sets the datasets or directories source and destination, and the schedule for the transfer.
-**Bucket** shows for providers that use buckets to hold transferred files, folders, etc.
+**Bucket** shows when providers use buckets to hold transferred files, folders, etc.
 
 {{< trueimage src="/images/SCALE/DataProtection/CloudSyncTaskWizardWhatandWhenScreen.png" alt="Cloudsync Task Wizard Provider Screen" id="Cloudsync Task Wizard Provider Screen" >}}
 
@@ -132,10 +132,10 @@ The **What and When** screen sets the direction (push or pull), transfer mode (m
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Description** | A human-readable summary about the task. This is for administrator reference only. |
+| **Description** | Specifies a human-readable summary about the task. This is for administrator reference only. |
 | **Direction** | Defines whether TrueNAS sends or receives data. **PUSH** sends data to cloud storage. **PULL** receives data from cloud storage and is the default setting. |
 | **Transfer Mode** | Defines how files are handled during the task. There are three options:<ul><li>**COPY** - Select to copy files from the source to the destination. Files that are identical on source and destination (same size and modification time) are skipped. If files differ, the destination version is overwritten.</li><li>**MOVE** - Select to transfer files from the source to the destination and delete source files. Copies files from the source to the destination and then deletes them from the source. Files with the same names on the destination are overwritten.</li><li>**SYNC** - Select to change files on the destination to match those on the source. If a file does not exist on the source, it is also deleted from the destination.</li></ul> |
-| **Directory/Files** | Enter or browse to select the source or receiving dataset or folder. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder to expand and show datasets and directories within that folder. After selecting the dataset or directory location (source) to send to the cloud for push syncs, or as the destination to write to for pull syncs. Be cautious with pull destinations to avoid overwriting existing files. Click the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again to collapse the directory tree. Note: Clear the checkmark to the left of **/mnt**. Not clearing this checkmark can result in an **All selected directories must be at the same level** error message. |
+| **Directory/Files** | Sets the source or receiving dataset or folder. Clicking the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder expands and shows datasets and directories within that folder. After selecting the dataset or directory location (source) to send to the cloud for push syncs, or as the destination to write to for pull syncs. Be cautious with pull destinations to avoid overwriting existing files. Clicking the <span class="material-icons">arrow_right</span> arrow to the left of **/mnt** folder again collapses the directory tree. Note: Clear the checkmark to the left of **/mnt**. Not clearing this checkmark can result in an **All selected directories must be at the same level** error message. |
 {{< /truetable >}}
 
 ### Remote Settings
@@ -148,7 +148,7 @@ The **Manage Credentials** link opens the **Backup Credentials** screen, where y
 |----------|-------------|
 | **Credential** | Defines which preconfigured cloud storage account participates in this task. A **Bucket** setting displays after selecting a credential that uses S3, like **Amazon S3**. TrueNAS automatically validates the selected credential. |
 | **Bucket** | Sets the pre-defined bucket to use. For Storj-iX credentials, select **Add New** to open the **Add Bucket** screen and create a new bucket on your Storj account from the TrueNAS UI. |
-| **Folder** | Enter or browse to select the dataset. Click the <span class="material-icons">arrow_right</span> arrow to the left of the folder icon and at each dataset or directory to reach the storage location to use for this task. |
+| **Folder** | Sets the cloud storage folder location to use for this task. |
 {{< /truetable >}}
 
 #### Add Bucket Screen
@@ -161,19 +161,20 @@ It is only available for Storj-iX provider credentials.
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Bucket Name** | Enter a name for the new bucket |
+| **Bucket Name** | Specifies a name for the new bucket, or choose from an existing bucket on the list. |
 {{< /truetable >}}
 
-Click **Save** on the **Add bucket** screen to create the remote bucket on Storj and then return to the **Cloud Sync Task Wizard**.
+**Save** on the **Add Bucket** screen creates the remote bucket on Storj and then returns to the **Cloud Sync Task Wizard**.
 
 ### Control Settings
+
 **Control** settings establish a schedule for when the cloud sync task occurs.
 
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
 | **Schedule** | Shows a list of schedule preset options. See **Schedule Presets** below for more info. |
-| **Enabled** | Enables this cloud sync task. Leave clear to disable the task without deleting it, and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **Cloud Sync Tasks** widget to enable or disable the task. |
+| **Enabled** | Enables this cloud sync task. Leave clear to disable the task without deleting it, and keep the configuration available without allowing the specified schedule to run the task. You can use the toggle in the **Enable** column on the **Cloud Sync Tasks** card to enable or disable the task. |
 {{< /truetable >}}
 
 {{< include file="/static/includes/SchedulePresetOptions.md" >}}
@@ -194,9 +195,9 @@ Selecting **Push** in **Direction** adds the **Use Snapshot** option.
 |----------|-------------|
 | **Create empty source dirs on destination after sync** | Creates an empty source directory in the cloud-storage provider folder when pushing data to the cloud provider location, or in TrueNAS if pulling data from the cloud storage provider. |
 | **Follow Symlinks** | Sets symbolic links (symlinks) to follow when enabled and copies the items to which they link. |
-| **Pre-Script** | For advanced users. Sets a script to execute before running sync to what is entered. See the [Cloud Sync tutorial]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}}) for more information. |
-| **Post-Script** | For advanced user. Sets a script to execute after running sync to what is entered. See the [Cloud Sync tutorial]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}}) for more information. |
-| **Exclude** | Sets up a list of files and directories to exclude from sync. Enter one or separate additional entries by pressing <kbd>Enter</kbd>.<br> Examples of proper syntax to exclude files/directories are:<ul><li> `photos</code>` excludes a file named *photos*</li><li> `/photos`> excludes a file named *photos* from root directory (but not subdirectories)</li><li>`photos/` excludes a directory named *photos</li><li>`/photos/` excludes a directory named *photos* from root directory (but not subdirectories).</li></ul> See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option. |
+| **Pre-Script** | Sets a script to execute before running sync to what is entered. This setting is for advanced users. See the [Cloud Sync tutorial]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}}) for more information. |
+| **Post-Script** | Sets a script to execute after running sync to what is entered. This setting is for advanced users. See the [Cloud Sync tutorial]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}}) for more information. |
+| **Exclude** | Sets up a list of files and directories to exclude from sync. Pressing <kbd>Enter</kbd> separates additional entries.<br> Examples of proper syntax to exclude files/directories are:<ul><li> `photos</code>` excludes a file named *photos*</li><li> `/photos`> excludes a file named *photos* from root directory (but not subdirectories)</li><li>`photos/` excludes a directory named *photos</li><li>`/photos/` excludes a directory named *photos* from root directory (but not subdirectories).</li></ul> See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option. |
 {{< /truetable >}}
 
 ### Advanced Remote Options
@@ -216,10 +217,10 @@ The **Edit Cloud Sync Task** screen **Advanced Remote Options** screen has an ad
 {{< truetable >}}
 | Settings | Description |
 |----------|-------------|
-| **Remote Encryption** | Select to use [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers. Selecting **PUSH** in **Direction** encrypts files before transfer and stores the encrypted files on the remote system. Files are encrypted using the encryption password and encryption salt values. Selecting **PULL** decrypts files stored on the remote system before the transfer. Transferring the encrypted files requires entering the same encryption password and encryption salt used to encrypt the files. Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). Selecting **Remote Encryption** shows the **Filename Encryption**, **Encryption Password**, and **Encryption Salt** settings. |
-| **Filename Encryption** | **Not recommended** (see below). Shows after selecting **Remote Encryption**. When selected, transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. <br>When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single-copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, and you can use sub-paths, and copy single files. |
-| **Encryption Password** | Shows after selecting **Remote Encryption**. Enter the password to encrypt and decrypt remote data.<br>Warning: Always securely back up this password! Losing the encryption password results in data loss. |
-| **Encryption Salt** | Shows after selecting **Remote Encryption**. Enter a long string of random characters to use as salt for the encryption password.<br>Warning: Always securely back up the encryption salt value! Losing the salt value results in data loss. |
+| **Remote Encryption** | Uses [rclone crypt](https://rclone.org/crypt/) encryption during pull and push transfers. Selecting **PUSH** in **Direction** encrypts files before transfer and stores the encrypted files on the remote system. Files are encrypted using the encryption password and encryption salt values. Selecting **PULL** decrypts files stored on the remote system before the transfer. Transferring the encrypted files requires entering the same encryption password and encryption salt used to encrypt the files. Additional details about the encryption algorithm and key derivation are available in the [rclone crypt File formats documentation](https://rclone.org/crypt/#file-formats). Selecting **Remote Encryption** shows the **Filename Encryption**, **Encryption Password**, and **Encryption Salt** settings. |
+| **Filename Encryption** | Transfers encrypt and decrypt file names with the rclone [Standard file name encryption mode](https://rclone.org/crypt//#file-name-encryption-modes). The original directory structure of the files is preserved. **Not recommended** (see below). Shows after selecting **Remote Encryption**. When enabled, file names are encrypted, file names are limited to 143 characters, directory structure is visible, and files with identical names have identical uploaded names. File names can use sub-paths, single-copy files, and shortcuts to shorten the directory recursion. <br>When disabled, encryption does not hide file names or directory structure, file names can be 246 characters long, and you can use sub-paths, and copy single files. |
+| **Encryption Password** | Specifies the password to encrypt and decrypt remote data.<br>Warning: Always securely back up this password! Shows after selecting **Remote Encryption**. Losing the encryption password results in data loss. |
+| **Encryption Salt** | Specifies a long string of random characters to use as salt for the encryption password. Shows after selecting **Remote Encryption**. <br>Warning! Always securely back up the encryption salt value! Losing the salt value results in data loss. |
 | **Transfers** | Sets the option for the number of simultaneous file transfers based on the available bandwidth and destination system performance to the option selected on the dropdown list. Options: **Low Bandwidth(4)**, **Medium Bandwidth (8)**, **High Bandwidth(16)**, and **Custom**. See [rclone --transfers](https://rclone.org/docs/#transfers-n). |
 | **Bandwidth limit** | Sets the bandwidth limit. Enter a single bandwidth limit or bandwidth limit schedule in rclone format. For example: *08:00,512 12:00,10MB 13:00,512 18:00,30MB 23:00,off*. Separate entries by pressing <kbd>Enter</kbd>. You can specify units with the beginning letter **b**, **k** (default), **M**, or **G**. See [rclone --bwlimit](https://rclone.org/docs/#bwlimit-bandwidth-spec). |
 {{< /truetable >}}
