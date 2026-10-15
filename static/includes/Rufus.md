@@ -1,38 +1,25 @@
 &NewLine;
 
 {{< expand "Using Rufus" "v" >}}
-Rufus is a Windows program that allows you to create a bootable USB drive from an ISO file. 
+[Rufus](https://rufus.ie/) is a free Windows program that creates a bootable USB drive from an <file>iso</file> file.
+Rufus formats and erases all data on the USB drive. Move any files you want to keep off the drive first.
 
-Rufus supports most Linux and Windows operating systems, including TrueNAS. For a list of supported ISO, see the [Rufus non-exhaustive list](https://rufus.ie/en/).
+To create a bootable USB drive with Rufus:
 
-{{< expand "How does Rufus work?" "v" >}}
-Rufus formats and erases all data from the USB drive.
-Transfer any files you want to keep off the drive before using Rufus.
+1. Download Rufus from the [Rufus website](https://rufus.ie/) and run it.
 
-Rufus usually auto-detects the USB drive, but you can manually select the drive in the **Devices** field of the Rufus UI.
-In most cases, the USB drive shows as **No_Label**.
+2. Insert a USB drive in a free USB port. Rufus normally detects the drive and shows it in **Device**.
+   If more than one drive shows, check that you select the correct one.
 
-Rufus allows selecting the <file>iso</file> file from a file browser.
+3. Click **SELECT** and choose the TrueNAS <file>iso</file> file to populate the **Boot selection** field.
 
-To use Rufus on a Mac, create a Windows VM on your Mac, then create the bootable USB drive with Rufus.
-{{< /expand >}}
+4. Set **Partition scheme** to **GPT** for systems that boot in UEFI mode, or **MBR** for systems that boot in legacy BIOS mode.
+   Check the system firmware (BIOS/UEFI) settings for the boot mode.
 
-To create a bootable USB with Rufus:
+5. Click **START**.
+   If Rufus asks whether to write in **ISO Image mode** or **DD Image mode**, select **DD Image mode**, which copies the image to the drive as it is, like the `dd` command.
 
-1. Download the package from the [Rufus downloads page](https://rufus.ie/en/).
+6. Wait for Rufus to finish, then close it and remove the drive.
 
-2. Open Rufus by double-clicking on Rufus. Downloaded files are in your **Downloads** folder.
-
-3. Insert a USB drive in any free USB port on the system.
-
-4. Locate and select the <file>iso</file> file to populate the **Boot Selection** field.
-   Click **SELECT** and select the ISO file.
-
-5. Check the settings and adjust any to suit your use case.
-
-6. Enter a name for the volume Rufus creates in **Volume Label**.
-
-7. Click **START**.
-
-For more information on this tool, refer to [Rufus documentation](https://rufus.ie/en/) or the [user guide](https://www.wikihow.com/Use-Rufus).
-{{< /expand >}}
+For more information on this tool, refer to the [Rufus documentation](https://github.com/pbatard/rufus/wiki/FAQ).
+{{< /expand >}}&NewLine;
