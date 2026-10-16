@@ -42,7 +42,7 @@ Select **On** to enable storing data blocks in the special allocation class.
 The **Threshold** field appears. Enter a maximum block size (1 byte to 16 MiB) for blocks to store in the special class.
 The default threshold is 16 MiB. Blocks smaller than or equal to the threshold are assigned to the special allocation class; larger blocks are assigned to the regular class.
 
-{{< hint type=warning title="Zvol Inherits a Parent's Threshold" >}}
+{{< hint type=warning title="Zvol Inherits Parent Threshold" >}}
 If the parent dataset already has **Use Metadata (Special) VDEVs** enabled with its own threshold value, a new zvol can inherit that value.
 If the inherited threshold is larger than the zvol volume block size, all I/O to the zvol unintentionally routes to the special allocation class.
 After creating the zvol, check its threshold setting on the **Edit Zvol** screen and adjust it if needed to avoid this behavior.
