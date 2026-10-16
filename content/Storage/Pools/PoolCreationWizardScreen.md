@@ -156,11 +156,11 @@ The **Cache** wizard screen settings configure a ZFS L2ARC read-cache VDEV.
 
 {{< /expand >}}
 
-### Metadata (Optional)
+### Special (Optional)
 
-The **Metadata** wizard screen settings configure a special allocation class VDEV. Metadata VDEVs are used to speed up metadata and blocks below the configured size. Use when creating a fusion pool.
+The **Special** wizard screen settings configure a special allocation class VDEV. Special VDEVs are used to speed up metadata and blocks below the configured size. Use when creating a fusion pool.
 
-{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardMetadataScreen.png" alt="Pool Creation Wizard Metadata Screen" id="Pool Creation Wizard Metadata Screen" >}}
+{{< trueimage src="/images/SCALE/Storage/PoolCreationWizardSpecialScreen.png" alt="Pool Creation Wizard Special Screen" id="Pool Creation Wizard Special Screen" >}}
 
 {{< expand "Common Pool Creation Wizard Settings" "v" >}}
 The **Layout** dropdown list includes the **Mirror**, **RAIDZ1**, **RAIDZ2**, and **RAIDZ3** types.
