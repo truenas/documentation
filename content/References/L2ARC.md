@@ -30,6 +30,8 @@ You cannot share dedicated L2ARC devices between ZFS pools.
 
 A cache device failure does not affect the integrity of the pool, but it might impact read performance depending on the workload and the dataset size to cache size ratio.
 
+See [Creating Pools]({{< ref "CreatingPools" >}}) for more infomation on adding a cache VDEV.
+
 ### Persistent L2ARC in TrueNAS
 
 By default, the L2ARC cache empties when the system restarts.
