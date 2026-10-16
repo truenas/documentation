@@ -55,6 +55,8 @@ This is intended to produce stable, predictable write rates and reduce unnecessa
 * The rate limiting applies only after the cache device's initial fill, once total L2ARC usage reaches half of arc_c_max. First-pass fill writes are unrestricted.
 * The l2arc_write_boost and l2arc_write_interval tunables are removed and no longer apply.
 
+See [Creating Pools]({{< ref "CreatingPools" >}}) for more infomation on adding a cache VDEV.
+
 ### Persistent L2ARC in TrueNAS
 
 By default, the L2ARC cache empties when the system restarts.
