@@ -19,7 +19,7 @@ pipeline {
 
   environment {
     REPO = 'https://github.com/truenas/documentation'
-    CRED = 'pcbsd-commit-bot-github'
+    CRED = 'DocsPipeLines'
   }
 
   stages {
