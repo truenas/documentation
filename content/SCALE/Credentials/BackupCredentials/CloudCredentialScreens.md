@@ -49,7 +49,7 @@ The selection in **Provider** changes the **Authentication** settings.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Provider** | Sets the required service provider. Default is set to **Storj**. Cloud storage providers options show on the dropdown list. |
+| **Provider** | Sets the required service provider. Default is set to **Storj**. Cloud storage provider options show in the dropdown list. |
 | **Name** | Specifies a name for this cloud credential. For example, *cloud1* or *amazon1*. |
 {{< /truetable >}}
 
@@ -96,12 +96,12 @@ This section provides information on Amazon S3 advanced authentication settings 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Maximum Upload Ports** | Specfies a value that defines the maximum number of chunks for a multipart upload. Setting a maximum is necessary if a service does not support the 10,000 chunk AWS S3 specification. |
+| **Maximum Upload Ports** | Specifies a value that defines the maximum number of chunks for a multipart upload. Setting a maximum is necessary if a service does not support the 10,000-chunk AWS S3 specification. |
 | **Endpoint URL** | Specifies an optional [S3 API endpoint URL](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html). When using AWS, you can leave the endpoint field empty to use the default endpoint for the region and automatically fetch available buckets, or enter a new endpoint. Refer to the AWS Documentation for a list of [Simple Storage Service Website Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_website_region_endpoints%20%20target=). |
-| **Region** | Specifies an optional [AWS resources in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html). When left empty it detects the correct public region for the bucket. Entering a private region name allows interacting with Amazon buckets created in that region. For example, enter *us-gov-east-1* to discover buckets created in the eastern [AWS GovCloud](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/whatis.html) region. |
+| **Region** | Specifies an optional [AWS resources in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html). When left empty, it detects the correct public region for the bucket. Entering a private region name allows interacting with Amazon buckets created in that region. For example, enter *us-gov-east-1* to discover buckets created in the eastern [AWS GovCloud](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/whatis.html) region. |
 | **Disable Endpoint Region** | Prevents automatic detection of the bucket region. Only select if your AWS provider does not support regions. |
 | **Use Signature Version 2** | Forces using [Signature Version 2](https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html) to sign API requests. Only select if your AWS provider does not support default version 4 signatures. |
-| **Sign Accept-Encoding** | Includes Accept-Encloding header as part of the signature. Disable if your S3 server is behind a proxy that modifies HTTP headers and you are experiencing **Signature Does Not Match** errors. |
+| **Sign Accept-Encoding** | Includes the Accept-Encoding header as part of the signature. Disable if your S3 server is behind a proxy that modifies HTTP headers and you are experiencing **Signature Does Not Match** errors. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -137,7 +137,7 @@ Use **Login to Provider** to enter the account username and password.
 | **OAuth Client Secret** | Specifies the secret phrase known only to the cloud application and the authorization server. |
 | **Token** | Specifies a User Access Token for [Box](https://developer.box.com/). An [access token](https://developer.box.com/reference/) enables Box to verify a request belongs to an authorized session. Example token: *T9cE5asGnuyYCCqIZFoWjFHvNbvVqHjl*. |
 | **Access Token** | Specifies the access token for pCloud. This token can expire and require extension. |
-| **Hostname** | Specifies the hostname to connect to, for the pCloud provider. |
+| **Hostname** | Specifies the hostname to connect to for the pCloud provider. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -152,10 +152,10 @@ FTP and SFTP cloud storage providers use host name, port, and user credentials t
 | Setting | Description |
 |---------|-------------|
 | **Host** | Specifies the FTP hostname, or for SFTP, the SSH hostname to connect. For example, *ftp.example.com*. |
-| **Port** | Specifies the FTP or for SFTP, the SSH port number. Leave blank to use the default port **21** for FTP or **22** for SFTP. |
-| **Username** | Specifies a username on the FTP or for the SFTP host system, the SSJ username. This user must already exist on the host. |
+| **Port** | Specifies the FTP or, for SFTP, the SSH port number. Leave blank to use the default port **21** for FTP or **22** for SFTP. |
+| **Username** | Specifies a username on the FTP or SFTP host system, the SSJ username. This user must already exist on the host. |
 | **Password** | Specifies the password for the user account. |
-| **Private Key ID** | (SFTP only) Imports the private key from an existing SSH keypair. When keypairs do not exist on the system, add a new SSH keypairs. |
+| **Private Key ID** | (SFTP only) Imports the private key from an existing SSH key pair. When key pairs do not exist on the system, add a new SSH key pair. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -189,7 +189,7 @@ Use **Login to Provider** to enter the account username and password.
 | **OAuth Client ID** | Specifies the public identifier for the cloud application. |
 | **OAuth Client Secret** | Specifies the secret phrase known only to the cloud application and the authorization server. |
 | **Access Token** | Specifies the required token created with [Google Drive](https://developers.google.com/drive/api/v3/about-auth). Access Tokens expire periodically, so you must refresh them. |
-| **Team Drive ID** | Specifies the optional ID  of the top level folde rof the team drive in Google Drive. Only required when connecting to a team drive. |
+| **Team Drive ID** | Specifies the optional ID of the top-level folder of the team drives in Google Drive. Only required when connecting to a team drive. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -232,8 +232,8 @@ The **AuthVersion** setting selection changes the setting options displayed in *
 | Setting | Description |
 |---------|-------------|
 | **User Name** | Specifies the required OpenStack username (OS_USERNAME) from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
-| **API Key or Password** | Specifies the required Openstack API key or password. This is the OS_PASSWORD from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
-| **Authentication URL** | Specfies the required authentication URL for the server. This is the OS_AUTH_URL from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
+| **API Key or Password** | Specifies the required OpenStack API key or password. This is the OS_PASSWORD from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
+| **Authentication URL** | Specifies the required authentication URL for the server. This is the OS_AUTH_URL from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
 | **AuthVersion**|Sets the authentication version. Options are **Auto(vX)**, **v1**, **v2**, or **v3** to specify a different authentication version ([rclone documentation](https://rclone.org/swift/#standard-options)). |
 {{< /truetable >}}
 {{< /expand >}}
@@ -250,9 +250,9 @@ The **Authentication Advanced Options** screen shows different options based on 
 | Setting | Description |
 |---------|-------------|
 | **Tenant Name** | Specifies the OS_TENANT_NAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
-| **Tenant ID** | Specifies the tenant ID Enter the tenant ID (optional for v1 auth). For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Tenant ID** | Specifies the tenant ID. Enter the tenant ID (optional for v1 auth). For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Auth Token** | Specifies the optional auth token from alternate authentication. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Region Name** | Specfies the optional region name. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Region Name** | Specifies the optional region name. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Storage URL** | Specifies the optional storage URL. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Endpoint Type** | Sets the service catalog option. Options are **Public**, **Internal** and **Admin**. **Public** is recommended. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 {{< /truetable >}}
@@ -266,12 +266,12 @@ Setting **AuthVersion** to **v3** shows additional authentication settings.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **User ID** | (Optional) Enter the user ID to log in. To log into most swift systems, leave this blank. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **User Domain** | Specifies and optional user domain. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **User ID** | (Optional) Enter the user ID to log in. To log into most Swift systems, leave this blank. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **User Domain** | Specifies an optional user domain. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Tenant Name** | Specifies the require OS_TENANT_NAME from an [OpenStack credentials file](https://rclone.org/swift/#configuration-from-an-openstack-credentials-file). |
 | **Tenant ID** | Specifies the tenant ID. Required for **v2** and **v3**. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Tenant Domain** | Specifies the optional tenant domain. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
-| **Auth Token** | Specifies the otpional auth token from alternate authentication. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
+| **Auth Token** | Specifies the optional auth token from alternate authentication. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Region Name** | Specifies the optional region name. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Storage URL** | Specifies the optional storage URL. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
 | **Endpoint Type** | Specifies an endpoint from the service catalog. For more information, see [rclone documentation](https://rclone.org/swift/#standard-options). |
@@ -280,7 +280,7 @@ Setting **AuthVersion** to **v3** shows additional authentication settings.
 
 ### WebDAV Credential
 
-WebDAV uses a URL, service type, and user credentials to authenticate the cloud account credentials.
+WebDAV uses a URL, service type, and user credentials to authenticate the cloud account.
 
 {{< trueimage src="/images/SCALE/Credentials/CloudCredentialWebDAVAuthentication.png" alt="WebDAV Authentication Settings" id="WebDAV Authentication Settings" >}}
 
@@ -289,7 +289,7 @@ WebDAV uses a URL, service type, and user credentials to authenticate the cloud 
 | Setting | Description |
 |---------|-------------|
 | **URL** | Specifies the required URL of the HTTP host to connect to. |
-| **WebDAV Service** | Sets therequired name of the WebDAV site, service, or software used from the dropdown list. Options are **NEXTCLOUD**, **OWNCLOUD**, **SHAREPOINT**, or **OTHER**. |
+| **WebDAV Service** | Sets the required name of the WebDAV site, service, or software used from the dropdown list. Options are **NEXTCLOUD**, **OWNCLOUD**, **SHAREPOINT**, or **OTHER**. |
 | **Username** | Specifies the required WebDAV account username. |
 | **Password** | Specifies the required WebDAV account password. |
 {{< /truetable >}}
@@ -308,9 +308,9 @@ Microsoft OneDrive uses several required settings to authenticate credential acc
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Access Token** | Specifies the rquired OneDrive access token found in your Microsoft account. |
+| **Access Token** | Specifies the required OneDrive access token found in your Microsoft account. |
 | **Drives List** | Specifies the drives and IDs registered to your Microsoft account. Entering a value in this field also fills out the **Drive ID** field. |
 | **Drive Account Type** | Sets the required type of OneDrive account you are authorizing. This is automatically selected when you log in to your Microsoft account. |
-| **Drive ID**| Specfies a unique drive identifier or keeps the auto-filled entry that shows when after filling out the **Drives List** field. |
+| **Drive ID ** | Specifies a unique drive identifier or keeps the auto-filled entry that shows after filling out the **Drives List** field. |
 {{< /truetable >}}
 {{< /expand >}}
