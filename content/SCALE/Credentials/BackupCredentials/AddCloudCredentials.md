@@ -35,21 +35,21 @@ This article provides instructions for the more involved providers.
 
 We recommend opening another browser tab and logging in to the cloud storage provider account you intend to link with TrueNAS.
 
-Some TrueNAS providers credentials require entering additional information generated while creating the provider account.
-For example, the Storj iX account produces an access and secret key you must enter in the **Cloud Credential** screen to create the credential.
+Some TrueNAS provider credentials require entering additional information generated while creating the provider account.
+For example, the Storj iX account generates an access and secret key that you must enter on the **Cloud Credential** screen to create the credential.
 
 Have the authentication information required by your cloud storage provider on hand to make the process easier.
 Authentication information can include but is not limited to user credentials, access tokens, and access and security keys.
 
 To add a cloud credential:
 
-1. Select the cloud service from the **Provider** dropdown list. The provider required authentication option settings display.
+1. Select the cloud service from the **Provider** dropdown list. The provider-required authentication option settings display.
 
    For details on authentication settings for each provider, see [Cloud Credentials Screens]({{< ref "/SCALE/Credentials/BackupCredentials/CloudCredentialScreens" >}}).
 
 2. Enter a name for the credential.
 
-3. Enter the required authentication credentials, such as access token, access key and/or secret keys, and user credentials for the account into the appropriate fields.
+3. Enter the required authentication credentials, such as access token, access key, and/or secret keys, and user credentials for the account into the appropriate fields.
 
 4. Click **Verify Credentials** to verify the entered credentials work.
 
@@ -102,9 +102,9 @@ To add a cloud credential for Amazon S3, select **Amazon S3** in **Provider**, e
    a. Enter the [S3 API endpoint URL](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteEndpoints.html) in **Endpoint URL**.
 
       To use the default endpoint for the region and automatically fetch available buckets, leave this field blank.
-      For more information refer to the AWS Documentation for a list of [Simple Storage Service Website Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_website_region_endpoints%20%20target=).
+      For more information, refer to the AWS Documentation for a list of [Simple Storage Service Website Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_website_region_endpoints%20%20target=).
 
-   b. Enter an [AWS resources in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in **Region**.
+   b. Enter an [AWS resource in a geographic area](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in **Region**.
 
       To detect the correct public region for the selected bucket, leave the field blank.
       Entering a private region name allows interaction with Amazon buckets created in that region.
@@ -157,7 +157,7 @@ Open the **Cloud Credentials** screen, select **Google Cloud Storage** in **Prov
    The [Google Cloud Platform Console](https://console.cloud.google.com/apis/credentials) creates the file.
 
 2. Click **Choose File** to browse the server to locate the downloaded JSON file and upload it. The file populates **Preview JSON Service Account Key** 
-   For help uploading a Google Service Account credential file [click here](https://rclone.org/googlecloudstorage/#service-account-support).
+   For help uploading a Google Service Account credential file, [click here](https://rclone.org/googlecloudstorage/#service-account-support).
 
 3. Click **Verify Credentials**.
 
