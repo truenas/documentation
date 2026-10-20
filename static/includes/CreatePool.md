@@ -67,4 +67,6 @@ Click **Create Pool** to open the **Pool Creation Wizard**.
 
 4. Add optional VDEVs to suit your storage redundancy and performance requirements.
 
+   {{< include file="/static/includes/AddOtherVDEVs.md" >}}
+
 5. Click **Create Pool** on the **Review** wizard screen to add the pool.

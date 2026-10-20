@@ -37,7 +37,14 @@ dRAID pool layouts are useful in specific situations where large disk count (>10
 
 TrueNAS recommends defaulting to a RAIDz layout generally and whenever a dRAID vdev would have fewer than 10 data storage devices.
 
+Beyond the data VDEV layout, consider whether your workload benefits from optional VDEV types such as cache, log, and special VDEVS.
+* Cache VDEVs extend read cache (L2ARC) using SSD, which can be a more cost-effective way to improve random-read performance for large working datasets than adding system RAM, especially given the current cost of memory. See [L2ARC](https://www.truenas.com/docs/references/l2arc/) for details on when L2ARC helps and how to size it.
+* Log VDEVs accelerate synchronous writes using a dedicated SLOG device, which is useful for workloads with heavy sync-write activity (databases, some VM/iSCSI use cases).
+* Special VDEVs store metadata, and optionally, small file data on faster storage, which improves overall pool responsiveness.
+
 Determining your specific storage requirements is a critical step before creating a pool.
+Include the alternative VDEV options in your data VDEV layout, since adding them after pool creation has more limitations than configuring them up front.
+
 The [ZFS](https://www.truenas.com/docs/references/zfsprimer/) and [dRAID](https://www.truenas.com/docs/references/draidprimer/) primers provide a starting point to learn about the strengths and costs of different storage pool layouts.
 You can also use the [ZFS Capacity Calculator](https://www.truenas.com/docs/references/zfscapacitycalculator/) and [ZFS Capacity Graph](https://www.truenas.com/docs/references/zfscapacitygraph/) to compare configuration options.
 
