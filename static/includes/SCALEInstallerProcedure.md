@@ -28,7 +28,7 @@
 
    {{< trueimage src="/images/SCALE/Install/SCALEInstallerConsoleSetupAdminPassword.png" alt="Admin Password Screen" id="Admin Password Screen" >}}
 
-4. If you booted the installer in legacy BIOS mode, a **Legacy Boot** prompt asks whether to allow EFI boot. Select **Yes** for systems with newer components such as NVMe devices, or select **No** if your system hardware requires the legacy BIOS boot workaround.
+4. Select the boot mode. If you booted the installer in legacy BIOS mode, a **Legacy Boot** prompt asks whether to allow EFI boot. Select **Yes** for systems with newer components such as NVMe devices, or select **No** if your system hardware requires the legacy BIOS boot workaround.
    This prompt does not show when you booted the installer in UEFI mode.
    Press <kbd>Enter</kbd> to begin the installation.
 
