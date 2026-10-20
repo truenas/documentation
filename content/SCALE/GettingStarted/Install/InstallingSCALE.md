@@ -203,7 +203,7 @@ If the system does not boot into the TrueNAS installer or into TrueNAS after the
 * Check the boot menu for two entries for the same USB drive, one for UEFI and one for legacy BIOS. Try the other entry.
 * Make sure the firmware boots in the same mode (UEFI or legacy BIOS) for the installer and for the installed system. If the system installed in legacy BIOS mode fails to boot on later restarts, check the boot mode and the **Legacy Boot** answer you gave during installation.
 * Verify the <kbd>.iso</kbd> file using the [ISO verification](#iso-verification) methods and write the media again if the checksum does not match.
-* After installation, remove the install media so the system boots from the TrueNAS boot device.
+* Remove the install media after installation so the system boots from the TrueNAS boot device.
 
 If a USB drive that previously held another image fails to boot after writing the installer, clean the drive before writing it again.
 In Windows, open a command prompt as an administrator, run `diskpart`, then enter `list disk`, `select disk <number>`, and `clean`.
