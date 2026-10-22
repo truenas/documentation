@@ -219,7 +219,7 @@ Regardless of the virtualization application, use these minimum settings:
 * RAM: at least 8192 MB (8 GB).
 * DISKS: two virtual disks, one of at least 20 GB for the operating system and boot environments, and at least one additional virtual disk for data storage.
   Add more data disks to create the storage pool layout you want to use.
-  See [Pool Creation]({{< ref "CreatingPools" >}}) for descriptions of the various pool ("vdev") types and layouts.
+  See [Pool Creation]({{< ref "CreatePoolWizard" >}}) for descriptions of the various pool ("vdev") types and layouts.
 * NETWORK: Use bridged networking so the VM is reachable from your network. Other modes, such as NAT or host-only, limit access to the VM from your network.
 
 #### Networking Checks for VMware
