@@ -10,8 +10,13 @@ Exit codes: 0 = ran cleanly (whether or not anything changed). 1 = at least one
 version failed; the CSVs for versions that failed are left untouched.
 """
 
+import argparse
 import csv
+import importlib.util
+import json
+import os
 import requests
+import sys
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -222,3 +227,122 @@ def merge(header, rows, issues):
             new_rows.append(row)
     new_rows.extend(_layout(new_header, fresh[key]) for key in delta.added)
     return new_header, new_rows, delta
+
+
+def load_sources(repo):
+    """Read static/data/changelog-sources.json; a branch without one has nothing to refresh."""
+    path = Path(repo) / "static" / "data" / "changelog-sources.json"
+    if not path.exists():
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def render_summary(results):
+    """Markdown for the PR body. results maps CSV filename -> Delta."""
+    lines = []
+    for filename, delta in results.items():
+        if delta.empty:
+            continue
+        lines.append(f"### {filename}")
+        for title, keys, note in (
+            ("Added", delta.added, None),
+            ("Removed", delta.removed,
+             "No longer returned by the Jira filter (retagged or made private)."),
+            ("Changed", delta.changed, None),
+        ):
+            if not keys:
+                continue
+            lines.append(f"**{title}** ({len(keys)})" + (f" - {note}" if note else ""))
+            lines.extend(f"- [{key}]({JIRA_BASE}/browse/{key})" for key in keys)
+        lines.append("")
+    return "\n".join(lines)
+
+
+def _combine(repo, version):
+    """Rebuild the "All" file with combine-changelogs.py (it works from the current directory)."""
+    path = Path(__file__).resolve().parent / "combine-changelogs.py"
+    spec = importlib.util.spec_from_file_location("combine_changelogs", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    previous = os.getcwd()
+    os.chdir(repo)
+    try:
+        module.combine_changelogs(version)
+    finally:
+        os.chdir(previous)
+
+
+def _refresh_version(data_dir, filename, filter_id, dry_run):
+    """Fetch one filter and merge it into its CSV. Returns the Delta; raises JiraError or ValueError."""
+    path = data_dir / filename
+    if not path.exists():
+        raise ValueError(f"{filename} does not exist")
+    header, rows = read_csv(path)
+    if "Issue key" not in header:
+        raise ValueError(f"{filename} has no Issue key column")
+    issues = fetch_filter(filter_id)
+    if not issues and rows:
+        raise JiraError(f"filter {filter_id} returned no issues but {filename} has {len(rows)}; "
+                        "refusing to empty it")
+    new_header, new_rows, delta = merge(header, rows, issues)
+    if not delta.empty and not dry_run:
+        write_csv(path, new_header, new_rows)
+    return delta
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description="Refresh changelog CSVs from public Jira filters.")
+    parser.add_argument("--repo", default=".", help="checkout of the version branch to refresh")
+    parser.add_argument("--dry-run", action="store_true", help="report changes without writing")
+    parser.add_argument("--summary", help="where to write the PR summary "
+                                          "(default: <repo>/changelog-update-summary.md)")
+    args = parser.parse_args(argv)
+
+    repo = Path(args.repo).resolve()
+    data_dir = repo / "static" / "data"
+    summary_path = Path(args.summary) if args.summary else repo / "changelog-update-summary.md"
+
+    sources = load_sources(repo)
+    if not sources:
+        print("No changelog-sources.json (or it is empty) - nothing to do.")
+        return 0
+    with open(data_dir / "changelog-versions.json", "r", encoding="utf-8") as f:
+        versions_config = json.load(f)
+
+    failed = False
+    results = {}
+    changed_groups = []
+    for group, versions in sources.items():
+        filenames = {v["value"]: v["filename"]
+                     for v in versions_config.get(group, {}).get("versions", [])}
+        group_changed = False
+        for value, filter_id in versions.items():
+            filename = filenames.get(value)
+            try:
+                if not filename:
+                    raise ValueError(f"{value} is not listed under {group} in changelog-versions.json")
+                delta = _refresh_version(data_dir, filename, filter_id, args.dry_run)
+            except (JiraError, requests.RequestException, OSError, ValueError) as exc:
+                print(f"ERROR {group}/{value}: {exc}", file=sys.stderr)
+                failed = True
+                continue
+            results[filename] = delta
+            print(f"{filename}: {len(delta.added)} added, {len(delta.removed)} removed, "
+                  f"{len(delta.changed)} changed")
+            group_changed = group_changed or not delta.empty
+        if group_changed:
+            changed_groups.append(group)
+
+    summary = render_summary(results)
+    if summary and args.dry_run:
+        print("\n" + summary)
+    elif summary:
+        summary_path.write_text(summary, encoding="utf-8")
+        for group in changed_groups:
+            _combine(repo, group)
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

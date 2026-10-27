@@ -1,5 +1,6 @@
 # scripts/tests/test_update_changelogs.py
 import importlib.util
+import json
 import os
 from unittest.mock import MagicMock
 
@@ -20,6 +21,10 @@ write_csv = _mod.write_csv
 row_to_columns = _mod.row_to_columns
 significant = _mod.significant
 merge = _mod.merge
+main = _mod.main
+Delta = _mod.Delta
+render_summary = _mod.render_summary
+load_sources = _mod.load_sources
 
 
 # --- format_jira_date ---
@@ -220,3 +225,99 @@ def test_csv_roundtrip_special_characters(tmp_path):
     got_header, got_rows = read_csv(path)
     assert got_header == header
     assert got_rows == [["NAS-1", text]]
+
+
+# --- main ---
+
+def _make_repo(tmp_path, versions):
+    """versions: {value: (filter_id, [rows])}. Builds a branch checkout under tmp_path."""
+    data = tmp_path / "static" / "data"
+    data.mkdir(parents=True)
+    entries = [{"value": "all", "label": "T (All)", "filename": "T-changelog.csv"}]
+    sources = {}
+    for value, (filter_id, rows) in versions.items():
+        filename = f"{value}-changelog.csv"
+        entries.append({"value": value, "label": value, "filename": filename})
+        write_csv(data / filename, HEADER, rows)
+        sources[value] = filter_id
+    (data / "changelog-versions.json").write_text(json.dumps({"T": {"label": "T", "versions": entries}}))
+    (data / "changelog-sources.json").write_text(json.dumps({"T": sources}))
+    return tmp_path
+
+
+def _fake_fetch(monkeypatch, by_filter):
+    def fake(filter_id, session=None):
+        result = by_filter[filter_id]
+        if isinstance(result, Exception):
+            raise result
+        return result
+    monkeypatch.setattr(_mod, "fetch_filter", fake)
+
+
+def test_main_missing_sources_file_is_noop(tmp_path):
+    assert main(["--repo", str(tmp_path)]) == 0
+
+
+def test_load_sources_missing_file_returns_empty(tmp_path):
+    assert load_sources(tmp_path) == {}
+
+
+def test_main_dry_run_writes_nothing(tmp_path, monkeypatch, capsys):
+    repo = _make_repo(tmp_path, {"1.0": (1, [_row("NAS-1")])})
+    before = (repo / "static/data/1.0-changelog.csv").read_bytes()
+    _fake_fetch(monkeypatch, {1: [_api("NAS-1", summary="changed"), _api("NAS-2")]})
+    assert main(["--repo", str(repo), "--dry-run"]) == 0
+    assert (repo / "static/data/1.0-changelog.csv").read_bytes() == before
+    assert not (repo / "changelog-update-summary.md").exists()
+    assert not (repo / "static/data/T-changelog.csv").exists()
+    assert "NAS-2" in capsys.readouterr().out
+
+
+def test_main_writes_and_summarises_changes(tmp_path, monkeypatch):
+    repo = _make_repo(tmp_path, {"1.0": (1, [_row("NAS-1"), _row("NAS-9")])})
+    _fake_fetch(monkeypatch, {1: [_api("NAS-1"), _api("NAS-2")]})
+    assert main(["--repo", str(repo)]) == 0
+    _, rows = read_csv(repo / "static/data/1.0-changelog.csv")
+    assert [r[1] for r in rows] == ["NAS-1", "NAS-2"]
+    summary = (repo / "changelog-update-summary.md").read_text()
+    assert "NAS-2" in summary and "NAS-9" in summary
+    assert "retagged or made private" in summary
+    _, all_rows = read_csv(repo / "static/data/T-changelog.csv")
+    assert [r[1] for r in all_rows] == ["NAS-1", "NAS-2"]
+
+
+def test_main_no_change_writes_no_summary_and_no_files(tmp_path, monkeypatch):
+    repo = _make_repo(tmp_path, {"1.0": (1, [_row("NAS-1")])})
+    path = repo / "static/data/1.0-changelog.csv"
+    before = (path.read_bytes(), path.stat().st_mtime_ns)
+    _fake_fetch(monkeypatch, {1: [_api("NAS-1", updated="2027-01-01T00:00:00.000-0400")]})
+    assert main(["--repo", str(repo)]) == 0
+    assert (path.read_bytes(), path.stat().st_mtime_ns) == before
+    assert not (repo / "changelog-update-summary.md").exists()
+    assert not (repo / "static/data/T-changelog.csv").exists()
+
+
+def test_main_empty_filter_with_existing_rows_aborts(tmp_path, monkeypatch):
+    repo = _make_repo(tmp_path, {"1.0": (1, [_row("NAS-1")])})
+    path = repo / "static/data/1.0-changelog.csv"
+    before = path.read_bytes()
+    _fake_fetch(monkeypatch, {1: []})
+    assert main(["--repo", str(repo)]) == 1
+    assert path.read_bytes() == before
+
+
+def test_main_jira_error_returns_1_and_continues(tmp_path, monkeypatch):
+    repo = _make_repo(tmp_path, {"1.0": (1, [_row("NAS-1")]), "2.0": (2, [_row("NAS-5")])})
+    _fake_fetch(monkeypatch, {1: JiraError("boom"), 2: [_api("NAS-5", summary="changed")]})
+    assert main(["--repo", str(repo)]) == 1
+    _, rows = read_csv(repo / "static/data/2.0-changelog.csv")
+    assert rows[0][3] == "changed"
+    _, rows = read_csv(repo / "static/data/1.0-changelog.csv")
+    assert rows[0][3] == "A summary"
+
+
+def test_render_summary_lists_each_group():
+    text = render_summary({"1.0-changelog.csv": Delta(added=["NAS-2"], removed=["NAS-9"], changed=["NAS-1"])})
+    assert "1.0-changelog.csv" in text
+    assert "https://ixsystems.atlassian.net/browse/NAS-2" in text
+    assert "Added" in text and "Removed" in text and "Changed" in text
