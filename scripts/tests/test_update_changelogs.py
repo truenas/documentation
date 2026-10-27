@@ -15,6 +15,11 @@ JiraError = _mod.JiraError
 fetch_filter = _mod.fetch_filter
 issue_to_columns = _mod.issue_to_columns
 format_jira_date = _mod.format_jira_date
+read_csv = _mod.read_csv
+write_csv = _mod.write_csv
+row_to_columns = _mod.row_to_columns
+significant = _mod.significant
+merge = _mod.merge
 
 
 # --- format_jira_date ---
@@ -98,3 +103,120 @@ def test_fetch_filter_raises_on_malformed_json():
     session.get.return_value = resp
     with pytest.raises(JiraError):
         fetch_filter(14697, session=session)
+
+
+# --- read / diff / merge ---
+
+HEADER = ["Issue Type", "Issue key", "Issue id", "Summary", "Fix versions", "Fix versions",
+          "Status", "Created", "Updated", "Priority", "Resolution", "Affects versions",
+          "Security Level", "Labels", "Labels"]
+
+
+def _row(key="NAS-1", summary="A summary", fix=("26.0.0-BETA.3",), status="Done",
+         updated="08/Oct/26 5:57 AM", labels=("a",)):
+    fix = list(fix) + [""] * (2 - len(fix))
+    labels = list(labels) + [""] * (2 - len(labels))
+    return ["Defect", key, "10", summary, fix[0], fix[1], status, "21/Jul/26 3:44 PM", updated,
+            "Medium", "Complete", "", "", labels[0], labels[1]]
+
+
+def _api(key="NAS-1", summary="A summary", fix=("26.0.0-BETA.3",), status="Done",
+         updated="2026-10-09T05:57:00.000-0400", labels=("a",), description=None):
+    return _issue_for(key, summary, fix, status, updated, labels, description)
+
+
+def _issue_for(key, summary, fix, status, updated, labels, description):
+    issue = _issue(summary=summary, fixVersions=[{"name": v} for v in fix],
+                   status={"name": status}, updated=updated, labels=list(labels),
+                   resolution={"name": "Complete"}, description=description)
+    issue["key"] = key
+    return issue
+
+
+def test_merge_no_change_when_only_updated_differs():
+    header, rows, delta = merge(HEADER, [_row()], [_api()])
+    assert delta.empty
+    assert rows == [_row()]
+
+
+def test_merge_ignores_fix_version_order():
+    row = _row(fix=("A", "B"))
+    _, _, delta = merge(HEADER, [row], [_api(fix=("B", "A"))])
+    assert delta.empty
+
+
+def test_merge_added_changed_removed():
+    rows = [_row("NAS-1"), _row("NAS-2")]
+    issues = [_api("NAS-2", summary="New summary"), _api("NAS-3")]
+    header, new_rows, delta = merge(HEADER, rows, issues)
+    assert delta.added == ["NAS-3"]
+    assert delta.changed == ["NAS-2"]
+    assert delta.removed == ["NAS-1"]
+    assert [r[1] for r in new_rows] == ["NAS-2", "NAS-3"]
+    assert new_rows[0][3] == "New summary"
+
+
+def test_merge_keeps_untouched_rows_verbatim():
+    odd = _row("NAS-1", updated="weird updated string")
+    rows = [odd, _row("NAS-2")]
+    issues = [_api("NAS-1"), _api("NAS-2", summary="changed")]
+    _, new_rows, delta = merge(HEADER, rows, issues)
+    assert delta.changed == ["NAS-2"]
+    assert new_rows[0] == odd
+
+
+def test_merge_widens_repeated_columns():
+    rows = [_row("NAS-1")]
+    issues = [_api("NAS-1"), _api("NAS-2", labels=("a", "b", "c"))]
+    header, new_rows, delta = merge(HEADER, rows, issues)
+    assert header.count("Labels") == 3
+    assert len(set(len(r) for r in new_rows)) == 1
+    assert len(new_rows[0]) == len(header)
+    by_key = {r[1]: r for r in new_rows}
+    first_label = header.index("Labels")
+    assert by_key["NAS-1"][first_label:first_label + 3] == ["a", "", ""]
+    assert by_key["NAS-2"][first_label:first_label + 3] == ["a", "b", "c"]
+
+
+def test_merge_does_not_add_description_column():
+    issues = [_api("NAS-1"), _api("NAS-2", description="Some text")]
+    header, new_rows, delta = merge(HEADER, [_row("NAS-1")], issues)
+    assert "Description" not in header
+    assert delta.added == ["NAS-2"]
+    assert len(new_rows[1]) == len(header)
+
+
+def test_description_compared_only_when_column_present():
+    header = HEADER[:4] + ["Description"] + HEADER[4:]
+    row = _row()
+    row.insert(4, "line one\r\nline two")
+    _, _, delta = merge(header, [row], [_api(description="line one\nline two")])
+    assert delta.empty
+    _, _, delta = merge(header, [row], [_api(description="different text")])
+    assert delta.changed == ["NAS-1"]
+    # the same description change is invisible when the file has no Description column
+    _, _, delta = merge(HEADER, [_row()], [_api(description="different text")])
+    assert delta.empty
+
+
+def test_row_to_columns_drops_empty_repeated_values():
+    cols = row_to_columns(HEADER, _row(fix=("A",), labels=("x",)))
+    assert cols["Fix versions"] == ["A"]
+    assert cols["Labels"] == ["x"]
+    assert cols["Summary"] == ["A summary"]
+
+
+def test_significant_ignores_updated_and_created():
+    a = row_to_columns(HEADER, _row(updated="01/Jan/26 1:00 AM"))
+    b = row_to_columns(HEADER, _row(updated="02/Feb/26 2:00 PM"))
+    assert significant(a, False) == significant(b, False)
+
+
+def test_csv_roundtrip_special_characters(tmp_path):
+    header = ["Issue key", "Description"]
+    text = 'has, commas "and quotes"\nnewline\r\ncrlf \u2019smart\u2019 caf\u00e9'
+    path = tmp_path / "x.csv"
+    write_csv(path, header, [["NAS-1", text]])
+    got_header, got_rows = read_csv(path)
+    assert got_header == header
+    assert got_rows == [["NAS-1", text]]
