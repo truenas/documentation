@@ -1,6 +1,6 @@
 ---
 title: "Creating and Managing Containers"
-description: "Tutorials for configuring the TrueNAS Containers feature, creating, and managing containers."
+description: "Tutorials for configuring the TrueNAS containers feature, creating, and managing containers."
 geekdocCollapseSection: true
 weight: 20
 related: false
@@ -81,7 +81,7 @@ To configure default network settings:
 1. Click **Configuration** on the **Containers** screen header and select **Settings**.
 
 2. Select a bridge from the **Bridge** dropdown list:
-   - **Automatic** to allow TrueNAS to create and manage a dedicated virtual bridge (`truenasbr0`) on the TrueNAS host using DHCP and routes their outbound traffic through the host via NAT. Change the defaults using the **IPv4 Network** and **IPv6 Network** fields if they conflict with your network.
+   - **Automatic** to allow TrueNAS to create and manage a dedicated virtual bridge (`truenasbr0`) on the TrueNAS host using DHCP, and to route outbound traffic through the host via NAT. Change the defaults using the **IPv4 Network** and **IPv6 Network** fields if they conflict with your network. The default ranges are 172.200.0.0/24 and fd42:4c58:43ae::/64.
    - Select an existing bridge interface to use that bridge for container networking.
 
    See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/Network/ContainerNASBridge.md" >}}) for information on creating bridge interfaces.
@@ -112,12 +112,13 @@ TrueNAS 27 adds support for containers in High Availability (HA) configurations.
 Containers can run on HA systems and automatically restart after a controller failover.
 However, HA environments require specific network configuration to ensure containers remain accessible after failover events.
 
+USB and GPU devices are not supported in HA systems, and custom bridges are not available.
+
 {{< hint type=warning title="Static IP Configuration Required" >}}
-Containers in HA environments must have a static IP address configured in the container operating system.
+Configure a static IP address in the container operating system.
+The address must be within the container network (the **IPv4 Network** or **IPv6 Network** on the **Settings** screen).
+Without a static IP, the container might receive a different address after a controller failover.
 
-Without a static IP, the container loses network connectivity after a controller failover and becomes inaccessible.
-
-Configure the static IP inside the container OS, not in TrueNAS network settings.
 Refer to your container operating system documentation for instructions on setting a static IP address.
 {{< /hint >}}
 
@@ -126,41 +127,40 @@ Refer to your container operating system documentation for instructions on setti
 When you configure containers for HA environments:
 
 - Configure a static IP address inside each container OS before deploying containers in an HA system.
-   This ensures the container retains its IP address across reboots and failover events.
-   Maintain records of static IP addresses assigned to each container for troubleshooting and network planning.
-- Mount container data to  datasets that persist across failovers.
-   This ensures container data remains available after a controller switchover.
+  This ensures the container retains its IP address across reboots and failover events.
+- Mount container data to datasets that persist across failovers.
+  This ensures container data remains available after a controller switchover.
 - Select the **Autostart** option in container configuration to automatically start containers after a failover.
-   See [Editing Container Configuration Settings](#editing-container-configuration-settings) for details.
+  See [Editing Containers](#editing-containers) for details.
 - Perform test failovers to verify containers restart properly and remain accessible with their static IP addresses.
 
 #### Understanding Container Failover Behavior
 
 When a controller failover occurs in an HA system:
 
-- Containers on the active controller experience a hard shutdown without a graceful stop sequence.
+- Containers on the previously active controller are stopped during failover. If a stop takes too long, or there is a controller failure, containers can end abruptly.
 - After failover completes, containers configured with **Autostart** automatically start on the new active controller.
-- Containers with static IP addresses restore network connectivity and become accessible again.
+- Containers with static IP addresses keep the assigned IP address.
 - Container data persists if stored on datasets that remain available after failover.
 
 {{< hint type=important title="Data Persistence During Failover" >}}
-A hard shutdown during failover can result in data loss for applications that do not handle abrupt stops gracefully.
+An abrupt stop during failover can result in data loss for applications that do not handle it gracefully.
 
 For production containers in HA environments:
 
-- Use applications designed to handle unexpected shutdowns
-- Configure regular backups or snapshots
-- Store critical data on persistent datasets
-- Test your containers' behavior during simulated failovers
+- Use applications designed to handle unexpected shutdowns.
+- Configure regular backups or snapshots.
+- Store critical data on persistent datasets.
+- Test your containers' behavior during simulated failovers.
 {{< /hint >}}
 
 ### Managing Container Permissions
 
-When a container reads or writes to a host dataset mounted via a [file system device](#configuring-filesystem-devices), TrueNAS checks whether the user identity inside the container has permission to access that path on the host.
+When a container reads or writes to a host dataset mounted via a [file system device](#configuring-file-system-devices), TrueNAS checks whether the user identity inside the container has permission to access that path on the host.
 User accounts inside containers are independent from host user accounts, so a user named *appuser* with UID *1000* inside a container is not the same identity as UID *1000* on the TrueNAS host, even though they share the same number.
 
 To bridge this gap, TrueNAS uses **UID/GID mapping**: a translation layer that tells the host which host user corresponds to each container user.
-For most containers you do not need to configure this manually — the default behavior set by the **ID Map Type** for the container at creation time handles it automatically.
+For most containers, you do not need to configure this manually — the default behavior set by the **ID Map Type** for the container at creation time handles it automatically.
 The **Map User/Group IDs** screen is for cases where you need finer control, such as granting a specific host user access to data a container reads or writes.
 
 #### Understanding Default Mapping
@@ -190,7 +190,7 @@ Click **Configuration** on the **Containers** screen header and select **Map Use
 
 {{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
 
-Select the **Users** or **Groups** tab to view and manage mappings for user or group accounts respectively.
+Select the **Users** or **Groups** tab to view and manage mappings for user or group accounts, respectively.
 
 Existing mappings appear in a table listing the user or group name, host ID, and container ID.
 Click **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row to remove a mapping.
@@ -213,7 +213,7 @@ Only local TrueNAS users and groups are supported. Active Directory and other di
 
 For example, if your container runs a service as UID *1000* and you want it to read and write to a TrueNAS dataset owned by the local user *mediauser* (host UID *3000*):
 
-1. Create a mapping for the host user *mediauser* to the  container UID *1000*.
+1. Create a mapping for the host user *mediauser* to the container UID *1000*.
 2. Assign the dataset permissions to *mediauser* on the host.
 3. The container service running as UID *1000* can now access that dataset.
 
@@ -231,29 +231,32 @@ The **Add Container** screen displays basic configuration fields and an **Advanc
 
 {{< trueimage src="/images/SCALE/Virtualization/AddContainerBasic.png" alt="Add Container Basic Settings" id="Add Container Basic Settings" >}}
 
+{{< include file="/static/includes/ContainerStorage.md" >}}
+
 To create a new container:
 
 1. Enter a **Name** for the container.
    {{< include file="/static/includes/InstanceNameRequirements.md" >}}
 
-2. (Optional) Enter a **Description** for the container.
+2. Enter an optional description for the container in **Description**.
 
-3. (Optional) Select **Autostart** to automatically start the container when the system boots.
+3. Select **Autostart** to automatically start the container when the system boots.
+   This is not required but is recommended if the container needs to start automatically, like for HA systems.
 
    When you enable autostart, TrueNAS automatically starts the container during system boot after the containers service initializes, ensuring services are available immediately after system startup.
    During system shutdown, TrueNAS sends a graceful shutdown signal to the container, allowing applications to close properly and save data.
 
-4. Click **Browse Catalog** to open the **Select Image** screen.
+4. Select the image the container uses. Click **Browse Catalog** to open the **Select Image** screen.
 
    {{< trueimage src="/images/SCALE/Virtualization/SelectImage.png" alt="Select Image Screen" id="Select Image Screen" >}}
 
    Search or browse to choose a Linux image.
    Click **Select** in the row for your desired image.
 
-5. (Conditional) Select a **Pool** for the container.
+5. Select a **Pool** for the container if the preferred pool is not already set.
    This field appears when no preferred pool is configured in global container settings.
 
-6. (Optional) Click **Advanced Options** to configure additional settings:
+6. Click **Advanced Options** to configure optional additional settings:
 
    - Use **CPU Configuration** to bind the container to specific CPU cores (useful for performance-sensitive workloads or isolating container resources).
 
@@ -261,6 +264,10 @@ To create a new container:
 
    - Use **Init Process** to configure the init command, working directory, and user/group for the PID 1 process for the container. The default init command is `/sbin/init`.
       Note: The init command cannot be changed after creation, but working directory, user, and group remain editable.
+
+   - Use **USB Devices** to attach the device shown to the container. TrueNAS attaches the USB based on port number and not by the device name.
+     Note: TrueNAS detects USB devices that provide the required information and are not USB hubs, and provide the required information (device number, vendor ID, and product ID).
+     This section does not show if there are no USB devices detected by TrueNAS.
 
    - Use **ID Mapping** to control how container UIDs and GIDs map to host UIDs and GIDs. This setting cannot be changed after the container is created. Options include:
      - **Default** (recommended): Container root maps to the unprivileged host user **truenas_container_unpriv_root**. Provides security isolation for most workloads.
@@ -274,19 +281,21 @@ To create a new container:
 7. Click **Create** to deploy the container.
 
 {{< hint type=note title="Configuring Devices After Creation" >}}
-Device configuration (network interfaces, USB devices, GPU devices, and file system mounts) is performed after container creation using the detail cards on the **Containers** screen.
+Configuring network interfaces, adding USB devices or GPU devices, and file system mounts is performed after creating the container using the detail cards on the **Containers** screen.
+
+Initial USB configuration occurs on the **Add Container** advanced settings screen if TrueNAS detects USB devices, but you can also add a device after adding the container using the **Add** button on the **USB Devices** card. The USB devices must show the required information before TrueNAS shows them as USB options you can add to the container.
 
 See the following sections for device configuration procedures:
 
 - [Managing NICs](#managing-nics) for network interface configuration
 - [Managing USB Devices](#managing-usb-devices) for USB device passthrough
 - [Managing GPU Devices](#managing-gpu-devices) for GPU hardware acceleration
-- [Configuring File system Devices](#configuring-filesystem-devices) for additional file system mounts
+- [Configuring File System Devices](#configuring-file-system-devices) for additional file system mounts
 {{< /hint >}}
 
 ### Running Nested Containers
 
-A nested container is a container that runs its own container runtime — for example, a TrueNAS container with Docker installed and running inside it.
+A *nested container* is a container that runs its own container runtime — for example, a TrueNAS container with Docker installed and running inside it.
 Nested container runtimes require direct UID mapping and full Linux capabilities, which means the container must be configured as privileged.
 
 {{< hint type=warning title="Privileged Containers Reduce Security Isolation" >}}
@@ -346,15 +355,14 @@ After selecting the container row in the table to populate the **Details for *Co
 
 Click **Edit** to open the **Edit Container: *Container*** screen.
 
-The edit screen allows you to modify container settings after creation. You can change **Name**, **Description**, **Autostart**, and all **Advanced Options** settings.
+The edit screen allows you to modify container settings after creation. You can change **Name**, **Description**, **Autostart**, and some of the **Advanced Options** settings.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditContainerBasic.png" alt="Edit Container Screen" id="Edit Container Screen" >}}
 
 **Settings you cannot change after creation:**
-The edit screen allows you to modify container settings after creation. You can change **Name**, **Description**, **Autostart**, and all **Advanced Options** settings.
-- **Pool**: The storage pool cannot be changed after deployment
-- **ID Map Type**: The UID/GID mapping mode is fixed at creation
-- **Init Process** command: The init command is fixed, but **Init Working Directory**, **Init User**, and **Init Group** remain editable
+- **Pool** - The storage pool cannot be changed after deployment.
+- **ID Map Type** - The UID/GID mapping mode is fixed at creation.
+- **Init Process** command - The init command is fixed, but **Init Working Directory**, **Init User**, and **Init Group** remain editable.
 
 For detailed information about each setting, see the [Add Container Screen]({{< relref "/SCALE/Containers/ContainersScreens.md#add-container-screen" >}}) section in the UI Reference.
 
@@ -364,24 +372,29 @@ After selecting the container row in the table to populate the **Details for *Co
 
 {{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Card" id="General Info Card" >}}
 
-Click **Delete** to open the **Delete** dialog.
+Click **Delete** to open the **Delete Container** dialog.
 
-{{< trueimage src="/images/SCALE/Virtualization/DeleteInstance.png" alt="Delete Container Dialog" id="Delete Container Dialog" >}}
+{{< trueimage src="/images/SCALE/Virtualization/DeleteContainerDialog.png" alt="Delete Container Dialog" id="Delete Container Dialog" >}}
 
-Select **Confirm** to activate the **Continue** button.
-Click **Continue** to delete the container.
+Select the options you want to enable.
+**Stop container before deleting** stops the container before it is deleted.
+**Delete child datasets, snapshots and clones** deletes any child datasets, snapshots, and clones associated with the container.
+
+Select **Confirm** to activate the **Delete** button.
+Click **Delete** to delete the container.
 
 ### Managing USB Devices
 
 Use the **USB Devices** card to view and manage USB devices attached to the container.
+The container must be stopped before the **Add** button activates.
+
 USB device passthrough allows containers to access USB peripherals as if they are physically connected.
 
 {{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="USB Devices Card" id="USB Devices Card" >}}
 
-Click **Add** to open a list of available USB devices.
-USB device passthrough allows containers to access USB peripherals as if they are physically connected.
+Click **Add** to see a list of available USB devices. TrueNAS can attach a device by port or by ID. Attaching by port stays tied to the physical port. Attaching by ID matches the device on any port.
 
-USB devices appear in the list only if they are physically connected to the TrueNAS system and not currently allocated to another container or VM.
+USB devices appear in the list only if they are physically connected to the TrueNAS system, are not USB hubs, and provide the required information to TrueNAS (bus, device number, vendor ID, and product ID).
 
 ### Managing GPU Devices
 
@@ -406,21 +419,28 @@ GPU devices appear in the list only if:
 
 - The physical GPU hardware is installed and detected by TrueNAS.
 - The NVIDIA GPU drivers are installed via **System > Advanced Settings**.
-- The GPU device is not currently allocated to another container or VM.
 
-### Configuring Filesystem Devices
+TrueNAS does not allow using the same GPU device for a VM and a container, but if the TrueNAS system has multiple GPU devices, one can be allocated to a VM and the other(s) to containers.
+
+### Configuring File System Devices
 
 Use the **Filesystem Devices** card to mount additional host directories or datasets into the container.
 File system devices provide containers with access to TrueNAS storage for reading and writing data.
 
+Use cases for file system devices:
+
+- Mounting TrueNAS datasets for persistent container data storage
+- Providing containers with access to shared media libraries
+- Mounting configuration directories from the host
+
 {{< trueimage src="/images/SCALE/Virtualization/FilesystemDevicesWidget.png" alt="Filesystem Devices Card" id="Filesystem Devices Card" >}}
 
 To add a file system device:
-File system devices provide containers with access to TrueNAS storage for reading and writing data.
+
 1. Click **Add** in the **Filesystem Devices** card.
 
    {{< trueimage src="/images/SCALE/Virtualization/AddFilesystemDevice.png" alt="Add Filesystem Device" id="Add Filesystem Device" >}}
-To add a file system device:
+
 2. Enter or browse to select the **Host Directory Source**.
    This is the directory or dataset path on the TrueNAS host that you want to mount into the container.
 
@@ -431,20 +451,13 @@ To add a file system device:
 
 To edit or delete an existing file system device, click the <span class="material-icons">more_vert</span> icon and select **Edit** or **Delete**.
 
-Use cases for file system devices:
-
-- Mounting TrueNAS datasets for persistent container data storage
-- Providing containers with access to shared media libraries
-- Mounting configuration directories from the host
-Use cases for file system devices:
-
 ### Managing NICs
 
 Use the **NIC Devices** card to view and manage network interfaces (NICs) attached to the container.
 
 {{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Devices Card" id="NIC Devices Card" >}}
 
-Each NIC displays the network interface name and MAC address (for example, **br0 (aa:bb:cc:dd:ee:ff)** or **br0 (Default Mac Address)**).
+Each NIC displays the network interface name and MAC address (for example, **br0 (aa:bb:cc:dd:ee:ff)** or **br0 (Default MAC Address)**).
 
 {{< hint type=important >}}
 NIC modifications are restricted when there are pending network interface changes on the TrueNAS system.
@@ -459,10 +472,10 @@ To add a NIC:
    {{< trueimage src="/images/SCALE/Virtualization/AddContainerNICDevice.png" alt="Add NIC Device" id="Add NIC Device" >}}
 
 3. Configure the NIC settings:
-   - Use **NIC Type** to select the network interface type (virtio, macvlan, ipvlan, etc.).
-   - (Create only) Select **Use Default Mac Address** to automatically assign a MAC address.
-   - Use **Mac Address** to enter a custom MAC address, or leave empty to use the default.
-   - (virtio only) Select **Trust Guest RX Filters** to trust guest OS receive filter settings for better performance.
+   - Set **NIC Type** to the network interface type (virtio, macvlan, ipvlan, etc.).
+   - (Create only) Select **Use Default MAC Address** to automatically assign a MAC address.
+   - Enter a custom MAC address in **MAC Address**, or leave empty to use the default.
+   - (virtio only) Select **Trust Guest RX Filters** to trustthe guest OS receive filter settings for better performance.
 4. Click **Add** to attach the NIC to the container.
 
 To edit or delete an existing NIC:
@@ -487,3 +500,35 @@ You can open a shell session directly from this card.
 {{< trueimage src="/images/SCALE/Virtualization/ContainersToolsWidget.png" alt="Tools Card" id="Tools Card" >}}
 
 Click **Shell** <span class="iconify" data-icon="mdi:console-line"></span> to open a **Container Shell** session for command-line interaction with the container.
+
+## Migrating Containers from TrueNAS 25.10
+
+When you upgrade a system that used the 25.10 virtualization feature to TrueNAS 27, TrueNAS migrates the containers to the new containers feature automatically at startup.
+
+The migration moves each container from <file>*pool*/.ix-virt/containers/*container_name*</file> to <file>*pool*/.truenas_containers/containers/*container_name*</file>, and moves the image each container uses to <file>*pool*/.truenas_containers/images</file>.
+TrueNAS does not delete anything. Data that is not migrated stays in <file>.ix-virt</file>.
+
+{{< hint type=important title="Migrate VM Disks Before Upgrading" >}}
+Migrate the disks of any VMs created on the legacy **Containers** screen before you upgrade, because TrueNAS does not migrate them. See [Migrating Legacy VMs to Virtual Machines](https://www.truenas.com/docs/scale/25.10/scaletutorials/virtualmachines/#migrating-legacy-vms-to-virtual-machines) for more information.
+After the upgrade, an alert lists the VMs that were not migrated.
+{{< /hint >}}
+
+The following sections list what TrueNAS does and does not migrate.
+
+{{< expand "What TrueNAS Migrates" "v" >}}
+- Autostart and CPU binding settings.
+- The bridge and the default network settings.
+- File system devices. A 25.10 disk device becomes a file system device when its source is under <file>/mnt</file>.
+- NICs, which become VIRTIO NICs.
+- USB devices, matched by vendor and product ID.
+- GPUs, when the PCI address is still a valid GPU on the system.
+{{< /expand >}}
+
+{{< expand "What TrueNAS Does Not Migrate" "v" >}}
+- Virtual machines. See the information above about migrating VM disks.
+- Proxy devices and other device types the containers feature does not support.
+- Containers cloned from another container.
+- Containers with a name that matches an existing container, or that have an unreadable configuration.
+{{< /expand >}}
+
+After the upgrade, review the **Containers** screen and the alerts to confirm each container migrated, and review the devices for each migrated container.
