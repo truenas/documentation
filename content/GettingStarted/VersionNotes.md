@@ -374,7 +374,7 @@ The TrueNAS team is pleased to release TrueNAS 25.10.1!
 * Adds automatic validation for SMB share audit logging configurations.
   TrueNAS 25.10.1 automatically disables SMB shares when auditing is enabled and watch or ignore lists contain invalid groups (deleted/renamed groups or groups that are no longer SMB-type). This protective measure prevents auditing misconfigurations that could cause security or compliance issues. The system generates alerts identifying affected shares and problematic groups. See [Configuring SMB Auditing](ManageSMBShares#configuring-smb-auditing) for configuration details and troubleshooting steps.
 * Adds REST API usage monitoring alert.
-  TrueNAS now displays a daily alert when deprecated REST API endpoints are accessed, helping identify integrations that need migration. TrueNAS deprecated the REST API in version 25.04. Full removal is planned for TrueNAS 26. For more information about the JSON-RPC 2.0 over WebSocket API, see the [API documentation](https://api.truenas.com/v25.10/jsonrpc.html).
+  TrueNAS now displays a daily alert when deprecated REST API endpoints are accessed, helping identify integrations that need migration. TrueNAS deprecated the REST API in version 25.04. Full removal is planned for TrueNAS 27. For more information about the JSON-RPC 2.0 over WebSocket API, see the [API documentation](https://api.truenas.com/v25.10/jsonrpc.html).
 * Adds **Clear Config** button to the directory services configuration form.
   This button allows users to easily remove existing directory service configurations. This is useful for troubleshooting, reconfiguration, or switching between directory service types.
 * Updates Samba from 4.22.5 to 4.22.6 ([NAS-138644](https://ixsystems.atlassian.net/browse/NAS-138644)).
@@ -636,7 +636,7 @@ Failover moves to the **Advanced Settings** screen ([NAS-135469](https://ixsyste
   Existing configurations using **AUTORID** are automatically migrated to **RID** during upgrade.
   Users should review their ACLs and permissions after upgrade and might need to reconfigure them in some edge cases.
 * Completes the transition to the versioned JSON-RPC 2.0 over WebSocket API by migrating all remaining jobs and events from the deprecated REST API ([NAS-133984](https://ixsystems.atlassian.net/browse/NAS-133984)).
-  Full removal of the REST API is planned for the TrueNAS 26 release.
+  Full removal of the REST API is planned for the TrueNAS 27 release.
 * Removes the SMART UI ([NAS-134927](https://ixsystems.atlassian.net/browse/NAS-134927)).
   * Removes the built-in SMART test scheduling and monitoring interface to improve user flexibility while maintaining smartmontools binaries for continued third-party script compatibility ([NAS-135020](https://ixsystems.atlassian.net/browse/NAS-135020)).
     Existing scheduled SMART tests are automatically migrated to cron tasks during upgrade, and users can install the Scrutiny app for advanced SMART monitoring.
@@ -673,7 +673,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: After saving STIG settings, wait until the standby controller is fully online before rebooting the active controller. Rebooting the active controller while the standby is still booting can cause disrupt production.
 
-  This issue is resolved in TrueNAS 26.
+  This issue is resolved in TrueNAS 27.
 {{< /enterprise >}}
 
 * Apps using SMB/NFS storage can experience race condition during boot.
@@ -710,7 +710,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: Restart the SMB service in **System > Services**, or disconnect and reconnect the SMB client (unmount and remount the server).
 
-  This issue is resolved in TrueNAS 26.
+  This issue is resolved in TrueNAS 27.
 
 * Fibre Channel iSCSI initiator changes do not apply to the running configuration until the iSCSI service is restarted.
   When updating a Fibre Channel initiator on an iSCSI share, SCST updates with the change but the running configuration file does not reflect the update until the iSCSI service is stopped and started.
@@ -727,7 +727,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: Reboot the system after changing the update profile to clear the error message.
 
-  This issue is resolved in TrueNAS 26.
+  This issue is resolved in TrueNAS 27.
 
 * The **Reload** button in the new license confirmation dialog does not reload the web interface ([NAS-140931](https://ixsystems.atlassian.net/browse/NAS-140931)).
   After applying a new license, the confirmation dialog appears with a **Reload** button. Clicking **Reload** does not trigger a page reload; the license is applied correctly but the web interface continues to display the pre-license state until the page is manually refreshed.
