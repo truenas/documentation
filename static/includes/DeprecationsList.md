@@ -12,19 +12,19 @@ Plan migrations immediately to avoid disruptions during upgrades.
 
 ### Legacy VMs
 
-{{< deprecation-status deprecated="25.04.2" removed="26" >}}
+{{< deprecation-status deprecated="25.04.2" removed="27" >}}
 
-Legacy virtual machines created using the **Instances** screen in 25.04.0 and 25.04.1, and still shown on the **Containers** screen through 25.10, are removed in TrueNAS 26.
+Legacy virtual machines created using the **Instances** screen in 25.04.0 and 25.04.1, and still shown on the **Containers** screen through 25.10, are removed in TrueNAS 27.
 No migration tool, wizard, or notification exists to move them automatically.
 Containers migrate automatically during the upgrade. These legacy VMs do not.
 
 Migration Path:
 
 1. While still running TrueNAS 25.10, record the configuration of each legacy VM and the location of the disk on the pool.
-2. Upgrade to TrueNAS 26.
+2. Upgrade to TrueNAS 27.
 3. Re-create the VM and reattach the disk using the migration procedure.
 
-Impact: A legacy VM does not appear anywhere in TrueNAS 26 after the upgrade. The VM disk remains on the pool, but you must re-create the VM configuration by hand and reattach the disk to it.
+Impact: A legacy VM does not appear anywhere in TrueNAS 27 after the upgrade. The VM disk remains on the pool, but you must re-create the VM configuration by hand and reattach the disk to it.
 
 See Also:
 

@@ -335,8 +335,8 @@ To restore 2FA for an affected account after upgrading:
 #### Containers
 
 LXC containers, introduced as an experimental feature in earlier TrueNAS releases, are fully supported in TrueNAS 27.
-Due to backend technology changes in TrueNAS 26, containers on the **Containers** screen require migration.
-Containers running in TrueNAS 25.10 migrate automatically to TrueNAS 26.
+Due to backend technology changes in TrueNAS 27, containers on the **Containers** screen require migration.
+Containers running in TrueNAS 25.10 migrate automatically to TrueNAS 27.
 On TrueNAS Enterprise High Availability (HA) systems, containers do not migrate automatically.
 On non-HA TrueNAS Enterprise systems, containers migrate automatically when the Apps license feature is enabled, and do not when it is not enabled.
 Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on a TrueNAS Enterprise system that does not migrate them.
@@ -353,13 +353,13 @@ See [Containers]({{< ref "/Containers/ManagingContainers.md" >}}) for configurat
 
 #### Virtual Machines
 
-Legacy virtual machines from the **Instances** screen, still shown on the **Containers** screen in TrueNAS 25.10, are not automatically migrated to TrueNAS 26.
+Legacy virtual machines from the **Instances** screen, still shown on the **Containers** screen in TrueNAS 25.10, are not automatically migrated to TrueNAS 27.
 No migration tool, wizard, or notification exists for these VMs.
 TrueNAS does not preserve the VM configuration, UEFI variables, or Trusted Platform Module (TPM) state.
 The VM disk remains on the pool.
 
-Before upgrading, record each VM configuration and back up the VM disk while still running TrueNAS 25.10.
-See [Preparing to Upgrade to TrueNAS 26](https://www.truenas.com/docs/scale/25.10/scaletutorials/virtualmachines/#preparing-to-upgrade-to-truenas-26) in the TrueNAS 25.10 documentation.
+Before upgrading, while still running TrueNAS 25.10, record each VM configuration and zvol name, and take a recursive snapshot of the pool the instances use.
+See [Preparing to Upgrade to TrueNAS 27](https://www.truenas.com/docs/scale/25.10/scaletutorials/virtualmachines/#preparing-to-upgrade-to-truenas-27) in the TrueNAS 25.10 documentation.
 
 After upgrading, see [Migrating Legacy VMs to Virtual Machines]({{< ref "/VirtualMachines/ManagingVMs.md#migrating-legacy-vms-to-virtual-machines" >}}) to re-create the VM and reattach the VM disk.
 

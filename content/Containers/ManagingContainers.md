@@ -25,8 +25,8 @@ Containers start quickly, use fewer system resources than [virtual machines (VMs
 {{< /expand >}}
 
 {{< hint type=note >}}
-Due to backend technology changes in TrueNAS 26, containers on the **Containers** screen require migration.
-Containers created in TrueNAS 25.04 or 25.10, whether using the **Instances** screen (25.04.0 and 25.04.1) or the **Containers** screen (25.04.2 and later), migrate automatically during the upgrade to TrueNAS 26.
+Due to backend technology changes in TrueNAS 27, containers on the **Containers** screen require migration.
+Containers created in TrueNAS 25.04 or 25.10, whether using the **Instances** screen (25.04.0 and 25.04.1) or the **Containers** screen (25.04.2 and later), migrate automatically during the upgrade to TrueNAS 27.
 On TrueNAS Enterprise High Availability (HA) systems, containers do not migrate automatically.
 On non-HA TrueNAS Enterprise systems, containers migrate automatically when the Apps license feature is enabled, and do not when it is not enabled.
 Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on a TrueNAS Enterprise system that does not migrate them.
@@ -502,7 +502,7 @@ Click **Shell** <span class="iconify" data-icon="mdi:console-line"></span> to op
 
 ## Migrating Containers from TrueNAS 25.10
 
-During the upgrade to TrueNAS 26, TrueNAS automatically migrates the containers that were running in TrueNAS 25.10.
+During the upgrade to TrueNAS 27, TrueNAS automatically migrates the containers that were running in TrueNAS 25.10.
 See the note at the top of this article for the systems that do not migrate automatically.
 
 The migration moves each container from <file>*pool*/.ix-virt/containers/*container_name*</file> to <file>*pool*/.truenas_containers/containers/*container_name*</file>, and moves the image each container uses to <file>*pool*/.truenas_containers/images</file>.
