@@ -335,8 +335,12 @@ To restore 2FA for an affected account after upgrading:
 #### Containers
 
 LXC containers, introduced as an experimental feature in earlier TrueNAS releases, are fully supported in TrueNAS 27.
-Containers running in TrueNAS 25.10 migrate automatically to TrueNAS 26, except on TrueNAS Enterprise High Availability (HA) systems and Enterprise systems without the Apps license feature enabled.
-Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on one of these systems.
+Due to backend technology changes in TrueNAS 26, containers on the **Containers** screen require migration.
+Containers running in TrueNAS 25.10 migrate automatically to TrueNAS 26.
+On TrueNAS Enterprise High Availability (HA) systems, containers do not migrate automatically.
+On non-HA TrueNAS Enterprise systems, containers migrate automatically when the Apps license feature is enabled, and do not when it is not enabled.
+Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on a TrueNAS Enterprise system that does not migrate them.
+See [Migrating Containers from TrueNAS 25.10]({{< ref "/Containers/ManagingContainers.md#migrating-containers-from-truenas-2510" >}}) for what TrueNAS migrates.
 
 TrueNAS 27 adds the following container improvements:
 
