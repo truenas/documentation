@@ -31,7 +31,7 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
               H["24.10.2.4 (Electric Eel)"] -->|update| I
               I["25.04.2.6 (Fangtooth)"] -->|update| J
               J["25.10.7 (Goldeye)"] -->|"anticipated"| K
-              K["TrueNAS 26.0"]
+              K["TrueNAS 27.0"]
             {{< /mermaid >}}
           </div>
         </div>
@@ -61,7 +61,7 @@ See the <a href="https://www.truenas.com/docs/softwarestatus/#which-truenas-vers
               F["24.10.2.4 (Electric Eel)"] -->|update| G
               G["25.04.2.6 (Fangtooth)"] -->|update| H
               H["25.10.7 (Goldeye)"] -->|"anticipated"| I
-              I["TrueNAS 26.0"]
+              I["TrueNAS 27.0"]
             {{< /mermaid >}}
           </div>
         </div>
