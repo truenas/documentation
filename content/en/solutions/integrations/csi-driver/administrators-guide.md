@@ -3,6 +3,7 @@ title: "CSI Driver Administrators Guide"
 description: "Provides Kubernetes cluster administrators with the information needed to deploy the TrueNAS CSI Driver integration with Kubernetes, including information on setting up StorageClasses."
 weight: 20
 aliases:
+ - /solutions/integrations/openshift/openshiftoperator/
 tags:
 - CSI driver
 - Kubernetes

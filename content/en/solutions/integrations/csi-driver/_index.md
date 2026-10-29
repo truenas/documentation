@@ -3,6 +3,7 @@ title: "CSI Driver"
 description: "Provides overview information on the TrueNAS CSI driver integration with Kubernetes."
 weight: 25
 aliases:
+ - /solutions/integrations/openshift/
 tags:
 - CSI driver
 - Kubernetes

@@ -5,6 +5,8 @@ weight: 27
 aliases:
   - /core/solutions/
   - /SolutionsPrint/
+  - /solutions/solutionsprint/
+  - /solutions/coresolutionsprint/
 cascade:
 - _target:
     path: "/**"

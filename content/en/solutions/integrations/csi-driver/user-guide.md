@@ -3,6 +3,7 @@ title: "CSI Driver User Guide"
 description: "Provides information for Kubernetes developer/users of the TrueNAS CSI Driver."
 weight: 25
 aliases:
+ - /solutions/integrations/openshift/openshiftoperatoruserguide/
 tags:
 - CSI driver
 - Kubernetes

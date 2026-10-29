@@ -3,6 +3,7 @@ title: "CSI Driver Reference"
 description: "Provides information on best practices, example StorageClasses, glossary of terms, troubleshooting and diagnostic commands, and API commands related to the TrueNAS CSI Driver integration with Kubernetes."
 weight: 40
 aliases:
+ - /solutions/integrations/openshift/openshiftreference/
 tags:
 - CSI driver
 - Kubernetes
