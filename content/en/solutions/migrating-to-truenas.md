@@ -5,6 +5,8 @@ weight: 5
 tags:
 - gettingstarted
 - migrate
+aliases:
+  - /solutions/migratingtotruenas/
 ---
 
 Every NAS user has a unique storage setup and requirements. The following are general recommendations and options for migrating data into TrueNAS from third party storage solutions.

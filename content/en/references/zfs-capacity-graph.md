@@ -5,6 +5,8 @@ weight: 100
 tags:
 - zfs
 - storage
+aliases:
+  - /references/zfscapacitygraph/
 ---
 
 Visualize and compare different RAID layouts and settings including stripe, mirror, RAIDZ1, RAIDZ2, RAIDZ3, and dRAID.

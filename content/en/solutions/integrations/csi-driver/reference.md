@@ -4,6 +4,7 @@ description: "Provides information on best practices, example StorageClasses, gl
 weight: 40
 aliases:
  - /solutions/integrations/openshift/openshiftreference/
+ - /solutions/integrations/csidriver/csidriverreference/
 tags:
 - CSI driver
 - Kubernetes

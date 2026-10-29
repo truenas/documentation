@@ -4,6 +4,7 @@ description: "Provides information for Kubernetes developer/users of the TrueNAS
 weight: 25
 aliases:
  - /solutions/integrations/openshift/openshiftoperatoruserguide/
+ - /solutions/integrations/csidriver/csidriveruserguide/
 tags:
 - CSI driver
 - Kubernetes

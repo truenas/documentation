@@ -3,6 +3,7 @@ title: "STIG Compliance"
 description: "Response to General Operating System STIG SRG for the TrueNAS appliance."
 weight: 35
 aliases:
+  - /solutions/optimizations/stigcompliance/
 tags:
  - ssh
  - 2fa

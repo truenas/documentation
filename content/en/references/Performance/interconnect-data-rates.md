@@ -4,6 +4,8 @@ description: "Tables of maximum effective data rates, in a single data flow dire
 weight: 10
 tags:
  - network
+aliases:
+  - /references/performance/interconnectdatarates/
 ---
 
 These tables list the maximum effective data rates, in a single data flow direction, for various data interconnect protocols.

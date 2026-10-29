@@ -10,6 +10,7 @@ aliases:
  - /truenasupgrades/
  - /softwarereleases/
  - /releasenotes/releaseschedule/
+ - /scale/gettingstarted/upgrades/
 jump_to_buttons:
   - text: "Recommendations"
     anchor: "which-truenas-version-is-recommended"

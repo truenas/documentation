@@ -4,6 +4,7 @@ description: "Provides TrueNAS connecting modes for remote management (IPMI) fea
 weight: 25
 aliases:
   - /hardware/notices/faqs/ipmi-faq/
+  - /references/ipmifaq/
 ---
 
 **How do I connect to Remote Management?**

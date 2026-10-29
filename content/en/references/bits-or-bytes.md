@@ -3,6 +3,7 @@ title: "Bits or Bytes?"
 description: "Provides information on the computerized storage measurements, bits and bytes, and how these apply in TrueNAS products."
 weight: 11
 aliases:
+  - /references/bitsorbytes/
 tags:
 - storage
 ---

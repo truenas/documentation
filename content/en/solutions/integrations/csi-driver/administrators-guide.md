@@ -4,6 +4,7 @@ description: "Provides Kubernetes cluster administrators with the information ne
 weight: 20
 aliases:
  - /solutions/integrations/openshift/openshiftoperator/
+ - /solutions/integrations/csidriver/csidriver/
 tags:
 - CSI driver
 - Kubernetes

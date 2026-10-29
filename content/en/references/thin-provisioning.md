@@ -6,6 +6,8 @@ tags:
  - sparse
  - zvols
  - thin provisioning
+aliases:
+  - /references/thinprovisioning/
 ---
 
 

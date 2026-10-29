@@ -7,6 +7,7 @@ aliases:
   - /SolutionsPrint/
   - /solutions/solutionsprint/
   - /solutions/coresolutionsprint/
+  - /solutions/printview
 cascade:
 - _target:
     path: "/**"

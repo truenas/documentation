@@ -5,6 +5,8 @@ weight: 60
 tags:
 - zfs
 - storage
+aliases:
+  - /references/zfsdeduplication/
 ---
 
 ZFS supports deduplication as a feature. Deduplication means that identical data is only stored once, which can significantly reduce storage size.

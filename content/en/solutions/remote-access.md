@@ -7,6 +7,8 @@ tags:
 - vpn
 - remote
 - apps
+aliases:
+  - /solutions/remoteaccess/
 ---
 
 ## Overview

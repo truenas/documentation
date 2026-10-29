@@ -7,6 +7,8 @@ tags:
 - migrate
 - s3
 - apps
+aliases:
+  - /solutions/miniocoretoscale/
 ---
 
 {{< hint type="warning" title="Minio Plugin End of Life" >}}

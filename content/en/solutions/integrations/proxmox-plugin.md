@@ -7,6 +7,8 @@ tags:
  - vm
  - iscsi
  - nvme
+aliases:
+  - /solutions/integrations/proxmoxplugin/
 ---
 
 The [TrueNAS Proxmox VE Storage Plugin](https://github.com/truenas/truenas-proxmox-plugin) lets you use TrueNAS as high-performance block storage for Proxmox VE clusters, accessible via iSCSI or NVMe/TCP.

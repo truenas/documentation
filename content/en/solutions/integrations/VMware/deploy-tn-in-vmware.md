@@ -5,6 +5,8 @@ weight: 3
 tags:
 - vmware
 - console
+aliases:
+  - /solutions/integrations/vmware/deploytninvmware/
 ---
 
 This article describes deploying a TrueNAS virtual machine (VM) in a VMWare ESXi environment.

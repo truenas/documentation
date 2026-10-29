@@ -3,6 +3,7 @@ title: "ZFS Primer"
 description: "Background information about the Zettabyte File System (ZFS)."
 weight: 70
 aliases:
+  - /references/zfsprimer/
 tags:
 - zfs
 - storage

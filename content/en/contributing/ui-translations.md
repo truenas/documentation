@@ -4,6 +4,8 @@ description: "How to contribute TrueNAS interface text string translations."
 weight: 5
 tags:
 - contributing
+aliases:
+  - /contributing/uitranslations/
 ---
 
 ## How to Contribute TrueNAS Text String Translations

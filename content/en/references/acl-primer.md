@@ -4,6 +4,8 @@ description: "Provides general information on POSIX and NFSv4 access control lis
 weight: 9
 tags:
  - permissions
+aliases:
+  - /references/aclprimer/
 ---
 
 An Access Control List (ACL) is a set of rules that controls which users or processes can access a resource and what operations they can perform on it.

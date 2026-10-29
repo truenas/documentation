@@ -4,6 +4,7 @@ description: "Best practices when using TrueNAS for Media and Entertainment work
 weight: 20
 aliases:
   - /core/solutions/optimizations/mediaentertainment/
+  - /solutions/optimizations/mediaentertainment/
 ---
 
 Developing and delivering media content that reaches audiences whenever and wherever they are has increased in importance and complexity.

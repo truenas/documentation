@@ -2,6 +2,8 @@
 title: "Concepts and Terminology"
 description: "Provides a glossary of terms and definitions used in TrueNAS and general network attached storage (NAS) software."
 weight: 10
+aliases:
+  - /references/conceptsandterms/
 ---
 
 TrueNAS is very complicated software that combines many different open-source solutions into one cohesive software package.

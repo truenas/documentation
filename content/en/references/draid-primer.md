@@ -5,6 +5,8 @@ weight: 72
 tags:
 - zfs
 - storage
+aliases:
+  - /references/draidprimer/
 ---
 
 Introduced in OpenZFS version 2.1.0 and initially supported in TrueNAS 23.10 (Cobia), declustered RAID (dRAID) is an alternate method for creating OpenZFS data virtual devices (vdevs).

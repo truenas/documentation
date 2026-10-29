@@ -5,6 +5,8 @@ weight: 20
 tags:
  - smb
 draft: false
+aliases:
+  - /references/performance/smbfiletimes/
 ---
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}

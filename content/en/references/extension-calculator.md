@@ -6,6 +6,8 @@ tags:
 - zfs
 - storage
 - raidz
+aliases:
+  - /references/extensioncalculator/
 ---
 
 RAIDZ extension allows TrueNAS users to add disks one at a time to an existing RAIDZ VDEV, incrementally expanding capacity.

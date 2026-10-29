@@ -5,6 +5,8 @@ weight: 20
 tags:
 - contributing
 - issues
+aliases:
+  - /contributing/issuereporting/featurerequests/
 ---
 
 

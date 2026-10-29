@@ -4,6 +4,8 @@ description: "How to contribute changes to the TrueNAS documentation."
 weight: 10
 tags:
 - contributing
+aliases:
+  - /contributing/documentation/contentupdate/
 ---
 
 

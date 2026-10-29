@@ -4,6 +4,8 @@ description: "How to contribute code updates to the TrueNAS web interface."
 weight: 7
 tags:
 - contributing
+aliases:
+  - /contributing/webuicode/
 ---
 
 TrueNAS is an open-source project, and we welcome contributions from the community.

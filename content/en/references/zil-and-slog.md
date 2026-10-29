@@ -5,6 +5,8 @@ weight: 80
 tags:
 - zfs
 - storage
+aliases:
+  - /references/zilandslog/
 ---
 
 The ZIL and SLOG are two frequently misunderstood concepts in ZFS.

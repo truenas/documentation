@@ -3,6 +3,7 @@ title: "Controller or Node?"
 description: "Defines nodes and controllers, and explains how these apply to TrueNAS storage arrays and clusters."
 weight: 12
 aliases:
+  - /references/controllerornode/
 tags:
 - clustering
 ---

@@ -2,6 +2,8 @@
 title: "Drive Troubleshooting Flowchart"
 description: "Provides detailed assistance to troubleshoot and diagnose a drive problem, or possible ZFS problem."
 weight: 80
+aliases:
+  - /references/drive_troubleshooting_flowchart/
 ---
 
 ## Before You Begin

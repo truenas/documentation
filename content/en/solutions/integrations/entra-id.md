@@ -5,6 +5,8 @@ weight: 55
 tags:
  - cloud
  - directoryservices
+aliases:
+  - /solutions/integrations/entraid/
 ---
 
  Organizations can use [Microsoft Entra Domain Services](https://learn.microsoft.com/en-us/entra/identity/domain-services/overview) (formerly Azure Active Directory Domain Services) to manage users and groups by connecting TrueNAS to an Azure domain and joining the managed directory.
