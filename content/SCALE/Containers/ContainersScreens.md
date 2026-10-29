@@ -66,11 +66,11 @@ When a preferred pool is not configured, TrueNAS prompts for pool selection at c
 ## Map User and Group IDs Screen
 
 The **Map User and Group IDs** screen allows manually configuring UID and GID mappings between the TrueNAS host and containers.
-**Map User/Group IDs** on the **Configuration** on the **Containers** screen header opens the **Map User and Group IDs** window.
+**Map User/Group IDs** in the **Configuration** dropdown on the **Containers** screen header opens the **Map User and Group IDs** window.
 
 {{< trueimage src="/images/SCALE/Virtualization/MapUserGroupIDs.png" alt="Map User and Group IDs Screen" id="Map User and Group IDs Screen" >}}
 
-The window opens with the **Users** tab selected by default. The **Group** tab switches to group configuration settings.
+The window opens with the **Users** tab selected by default. The **Groups** tab switches to group configuration settings.
 
 Existing mappings appear in a table listing the user or group name, host ID, and container ID.
 **<i class="material-icons" aria-hidden="true" title="Delete">delete</i> Delete** on a row removes that mapping.
@@ -130,7 +130,7 @@ The **Init Working Directory**, **Init User**, and **Init Group** also show when
 
 {{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Card" id="General Info Card" >}}
 
-**[Delete](#delete-containers)** opens the **Delete Container** dialog.
+**[Delete](#delete-container-dialog)** opens the **Delete Container** dialog.
 
 **[Edit](#edit-container-screen)** opens an **Edit Container: *Container*** configuration screen populated with editable settings also found on the install wizard screen for the container.
 
@@ -138,7 +138,7 @@ The **Init Working Directory**, **Init User**, and **Init Group** also show when
 
 The **Delete Container** dialog asks for confirmation to delete the selected container and shows three options:
 * **Stop container before deleting** stops the container before it is deleted.
-* **Delete child datasets, snapshots and clones** deletes any child datasets, snapshots, and clones assoicated with the container.
+* **Delete child datasets, snapshots and clones** deletes any child datasets, snapshots, and clones associated with the container.
 * **Confirm** activates the **Delete** button.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteContainerDialog.png" alt="Delete Container Dialog" id="Delete Container Dialog" >}}
@@ -151,7 +151,7 @@ The **USB Devices** card shows USB devices attached to the container, allowing h
 
 {{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="USB Devices Card" id="USB Devices Card" >}}
 
-**Add** shows a list of available USB devices that can be to attached to the container.
+**Add** shows a list of available USB devices that can be attached to the container.
 
 ### GPU Devices Card
 
@@ -205,7 +205,7 @@ File system devices allow containers to read and write data to TrueNAS datasets 
 
 For existing filesystem devices, the <span class="material-icons">more_vert</span> actions menu includes options to **Edit** or **Delete** the filesystem device. **Edit** opens the **Edit Filesystem Device** screen. **Delete** opens the **Delete Item** dialog.
 
-See [Configuring Filesystem Devices]({{< relref "/SCALE/Containers/ManagingContainers.md#configuring-filesystem-devices" >}}) in the Containers tutorial for configuration procedures.
+See [Configuring Filesystem Devices]({{< relref "/SCALE/Containers/ManagingContainers.md#configuring-file-system-devices" >}}) in the Containers tutorial for configuration procedures.
 
 #### Delete Item Dialog
 
@@ -240,10 +240,10 @@ The **Add NIC Device** and **Edit NIC Device** dialogs configure network interfa
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **NIC Type** | Sets the NIC type. Options are *virtio*, *macvlan*, *ipvlan*, or shows a model number for a device. |
+| **NIC Type** | Sets the NIC type. Options are *virtio*, *macvlan*, *ipvlan*, or a model number for a device. |
 | **Use Default Mac Address** | Sets TrueNAS to automatically assign a MAC address. Only available when adding a new NIC. |
 | **Mac Address** | Specifies a custom MAC address. Only shows while adding and when **Use Default Mac Address** is not selected. If editing a NIC, leave empty to use the default MAC address. |
-| **Trust Guest RX Filters** | Sets whether to trust guest OS receive filter settings for better performance. Shows when **Nic Type** is set to **virtio**. |
+| **Trust Guest RX Filters** | Sets whether to trust guest OS receive filter settings for better performance. Shows when **NIC Type** is set to **virtio**. |
 {{< /truetable >}}
 
 **Add** or **Update** applies the NIC configuration.
@@ -357,14 +357,14 @@ The **Environment Variables** settings configure optional environment variables 
 #### USB Devices
 
 The **USB Devices** settings configure USB devices for the container.
-Only show when creating a container, and only if the system reports an eligible device. Hubs and devices missing identification are left out.
+USB device settings only show when creating a container, and only if the system reports an eligible device. Hubs and devices missing identification are left out.
 At least one USB device must be detectable, or the **USB Devices** settings do not show in the advanced settings.
 
 USB devices found show as a selectable checkbox option. For example, **Virtual Keyboard and Mouse by American Megatrends, Inc**.
 
-USB devices pass through to the container. Devices are identified ty the physical port they are plugged into.
+USB devices pass through to the container. Devices are identified by the physical port they are plugged into.
 
-USB Devices are attached by physical port. They cannot be added from the **Edit Container** screen.
+USB Devices are attached by physical port. 
 
 HA-capable systems cannot use USB passthrough.
 
@@ -395,7 +395,7 @@ Allows containers to perform specific privileged operations without granting ful
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Capabilities Policy** | Sets the default policy for container capabilities:<ul><li>**DEFAULT** (Recommended - Keeps most capabilities but drops dangerous ones (sys_module, sys_time, mknod, audit_control, mac_admin). Provides security while allowing normal container operations.</li><li>**ALLOW** - Grants all capabilities. Use when containers need broad system access, but reduces security isolation.</li></ul> |
+| **Capabilities Policy** | Sets the default policy for container capabilities:<ul><li>**DEFAULT** (Recommended) - Keeps most capabilities but drops dangerous ones (sys_module, sys_time, mknod, audit_control, mac_admin). Provides security while allowing normal container operations.</li><li>**ALLOW** - Grants all capabilities. Use when containers need broad system access, but reduces security isolation.</li></ul> |
 {{< /truetable >}}
 
 {{< hint type=note >}}

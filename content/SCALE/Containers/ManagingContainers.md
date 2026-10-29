@@ -266,7 +266,7 @@ To create a new container:
       Note: The init command cannot be changed after creation, but working directory, user, and group remain editable.
 
    - Use **USB Devices** to attach the device shown to the container. TrueNAS attaches the USB based on port number and not by the device name.
-     Note: TrueNAS detects USB devices that provide the required information and are not USB hubs, and provide the required information (device number, vendor ID, and product ID).
+     Note: TrueNAS detects USB devices that are not USB hubs and provide the required information (device number, vendor ID, and product ID).
      This section does not show if there are no USB devices detected by TrueNAS.
 
    - Use **ID Mapping** to control how container UIDs and GIDs map to host UIDs and GIDs. This setting cannot be changed after the container is created. Options include:
