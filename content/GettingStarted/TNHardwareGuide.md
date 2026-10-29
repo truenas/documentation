@@ -2,9 +2,6 @@
 title: "TrueNAS Hardware Guide"
 description: "Provides information on system hardware and minimum requirements (CPU, memory, etc.). Covers storage considerations, media, controllers, device sizing and cooling, SAS expanders." 
 weight: 20
-aliases:
- - /scale/introduction/scalehardwareguide/
- - /scale/gettingstarted/scalehardwareguide/
 tags:
 - storage
 - network
@@ -183,7 +180,7 @@ For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of met
 
   <div data-tab-id="self-encrypting-drives" data-tab-label="Self Encrypting Drives">
 
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [native ZFS encryption]({{< ref "/SCALE/Datasets/Encryption" >}}) and [self-encrypting drives (SEDs)]({{< ref "/SCALE/Storage/Disks/SED" >}}).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [native ZFS encryption]({{< ref "/Datasets/Encryption" >}}) and [self-encrypting drives (SEDs)]({{< ref "/Storage/Disks/SED" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but are not as readily available as non-SED drives (and thus can cost a little more).
 
   </div>

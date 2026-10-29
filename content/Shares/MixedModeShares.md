@@ -7,9 +7,6 @@ tags:
 - smb
 - nfs
 doctype: tutorial
-aliases:
- - /scale/shares/mixedmodeshares/
- - /scale/scaletutorials/shares/mixedmodeshares/
 ---
 
 ## About Multiprotocol Shares
@@ -109,7 +106,7 @@ This is the recommended method when creating a multiprotocol share for the first
    {{< trueimage src="/images/SCALE/Datasets/AddMultimodeDataset.png" alt="Adding a Multi-Mode Dataset and Share" id="Adding a Multi-Mode Dataset and Share" >}}
 
 4. (Optional) Click **Advanced Options** to customize other dataset settings such as quotas, compression level, encryption, and case sensitivity.
-   See [Creating Datasets]({{< ref "/SCALE/Datasets/ManagingDatasets#creating-a-dataset" >}}) for more information on adding and customizing datasets.
+   See [Creating Datasets]({{< ref "/Datasets/ManagingDatasets#creating-a-dataset" >}}) for more information on adding and customizing datasets.
 
 5. Click **Save**.
    TrueNAS creates the dataset and the SMB and NFS shares.
@@ -209,7 +206,7 @@ If not, add an Access Control Entry (ACE).
 
 4. Click **Save Access Control List** to apply the changes.
 
-See [Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}) for more information on editing dataset permissions.
+See [Permissions]({{< ref "/Datasets/Permissions" >}}) for more information on editing dataset permissions.
 
 After setting the dataset permission, connect to the share.
 
@@ -220,4 +217,4 @@ After setting the dataset permission, connect to the share.
 After creating and configuring the shares, connect to the multiprotocol share using either SMB or NFS.
 Supported clients include Windows, Apple, FreeBSD, and Linux/Unix systems.
 
-For more information on accessing shares, see [Mounting the SMB Share]({{< ref "/SCALE/Shares/SMB#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< ref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).
+For more information on accessing shares, see [Mounting the SMB Share]({{< ref "/Shares/SMB#mounting-the-smb-share" >}}) and [Connecting to the NFS Share]({{< ref "AddingNFSShares.md#connecting-to-the-nfs-share" >}}).

@@ -3,9 +3,6 @@ title: "Configuring Advanced Settings"
 description: "Tutorials for configuring advanced system settings in TrueNAS."
 geekdocCollapseSection: true
 weight: 10
-aliases:
- - /scale/scaletutorials/systemsettings/advanced/advancedsettings/
- - /_includes/createdebugcore/
 tags:
  - settings
  - replication
@@ -46,13 +43,13 @@ Enterprise-licensed systems include configuration options for STIG and FIPS secu
 ## Configuring System Auditing
 
 The **Audit** card displays the current audit storage and retention policy settings.
-The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The public-facing [TrueNAS API]({{< ref "/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Card" id="Advanced System Setting Audit Card" >}}
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [to manage storage and retention policies for audit logs]({{< ref "/SCALE/SystemSettings/Audit/Auditing#configuring-audit-storage-and-retention-policies" >}}).
+Click **Configure** to open the **Audit** configuration screen and [to manage storage and retention policies for audit logs]({{< ref "/SystemSettings/Audit/Auditing#configuring-audit-storage-and-retention-policies" >}}).
 
 ## Managing Tunable Variables
 
@@ -187,7 +184,7 @@ To uninstall the drivers:
 
 Containers using NVIDIA GPUs cannot start after driver removal.
 
-See [NVIDIA Drivers Card]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) in the UI Reference for detailed field descriptions.
+See [NVIDIA Drivers Card]({{< relref "/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) in the UI Reference for detailed field descriptions.
 
 ## Security Settings
 {{< enterprise >}}

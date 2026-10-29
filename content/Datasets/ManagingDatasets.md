@@ -2,13 +2,6 @@
 title: "Adding and Managing Datasets"
 description: "Provides instructions on creating and managing datasets."
 weight: 10
-aliases:
- - /scale/datasets/datasets/
- - /scale/storage/storagedashboardscreens/pools/datasetsscale/
- - /scale/storage/storageoverview/pools/datasetsscale/
- - /scale/storage/storageoverview/datasets/datasetsscale/
- - /_includes/storagecompressionlevelsscale/
- - /scale/scaletutorials/datasets/datasetsscale/
 tags:
  - datasets
  - storage
@@ -26,11 +19,11 @@ doctype: tutorial
 A TrueNAS *dataset* is a file system within a data storage pool.
 Datasets can contain files, directories, and child datasets, and have individual permissions or flags.
 
-Datasets can also be [encrypted]({{< ref "/SCALE/Datasets/Encryption" >}}).
+Datasets can also be [encrypted]({{< ref "/Datasets/Encryption" >}}).
 In TrueNAS 22.12.3 or later, the TrueNAS UI requires encryption for child datasets created in encrypted parent datasets, but you can change the encryption type from key to passphrase.
 You can create an encrypted dataset if the parent is not encrypted and set the type as either key or passphrase.
 
-We recommend organizing your pool with datasets before configuring [data sharing]({{< ref "/SCALE/Shares/iSCSI" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
+We recommend organizing your pool with datasets before configuring [data sharing]({{< ref "/Shares/iSCSI" >}}), as this allows for more fine-tuning of access permissions and using different sharing protocols.
 
 ## Creating a Dataset
 
@@ -60,7 +53,7 @@ You can configure quotas for only the new dataset or both the new dataset and an
 Define the maximum allowed space for the dataset in either the **Quota for this dataset** or **Quota for this dataset and all children** field.
 Enter **0** to disable quotas.
 
-Dataset quota [alerts]({{< ref "/SCALE/TopToolbar/Alerts" >}}) are based on the percentage of storage used.
+Dataset quota [alerts]({{< ref "/TopToolbar/Alerts" >}}) are based on the percentage of storage used.
 To set up a quota warning alert, enter a percentage value in **Quota warning alert at, %**.
 When consumed space reaches the defined percentage it sends the alert.
 To change the setting from the parent dataset warning level, clear the **Inherit** checkbox and then change the value.
@@ -79,13 +72,13 @@ For more information on quotas, see [Managing User or Group Quotas]({{< ref "Man
 
 By default, many dataset options inherit their values from the parent dataset.
 When settings on the **Advanced Options** screen are set to**Inherit** the dataset uses the setting from the parent dataset.
-For example, the [Encryption]({{< ref "/SCALE/Datasets/Encryption" >}}) or **ACL Type** settings.
+For example, the [Encryption]({{< ref "/Datasets/Encryption" >}}) or **ACL Type** settings.
 
 To change any setting that datasets inherit from the parent, select an available option other than **Inherit**.
 
 ### Setting Datasets Access Controls
 
-For information on ACL settings see [Setting Up Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}).
+For information on ACL settings see [Setting Up Permissions]({{< ref "/Datasets/Permissions" >}}).
 
 ### Adding Deduplication
 
@@ -134,7 +127,7 @@ The default threshold is 16 MiB. Blocks smaller than or equal to the threshold a
 
 After creating a dataset, users can manage additional options from the **Datasets** screen.
 Select the dataset, then click **Edit** on the dataset widget for the function you want to manage.
-The [Datasets Screen]({{< ref "/SCALE/Datasets" >}}) article describes each option in detail.
+The [Datasets Screen]({{< ref "/Datasets" >}}) article describes each option in detail.
 
 ### Editing a Dataset
 
@@ -150,7 +143,7 @@ To modify ownership, configure new or change existing ACL entries, click **Edit*
 To edit a POSIX ACL type, click **Edit** on the **Permissions** widget to open the **Unix Permissions Editor** screen.
 To access the **Edit ACL** screen for POSIX ACLs, select **Create a custom ACL** on the **Select a preset ACL** window.
 
-For more information, see the [Setting Up Permissions]({{< ref "/SCALE/Datasets/Permissions" >}}) article.
+For more information, see the [Setting Up Permissions]({{< ref "/Datasets/Permissions" >}}) article.
 
 ### Deleting a Dataset
 

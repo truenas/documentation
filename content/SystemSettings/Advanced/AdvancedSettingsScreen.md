@@ -2,19 +2,6 @@
 title: "Advanced Settings Screen"
 description: "Provides information on the System Settings > Advanced screen, cards, and configuration screen settings."
 weight: 110
-aliases:
- - /scale/scaleuireference/systemsettings/advancedsettingsscreen/
- - /scale/scaleuireference/systemsettings/advancedsettings/
- - /scale/scaleclireference/auth
- - /scale/scaleclireference/system/cliadvanced/
- - /scale/scaleclireference/system/clicore/
- - /scale/scaleclireference/system/clidevice/
- - /scale/scaleclireference/system/cliinitshutdownscript/
- - /scale/scaleclireference/system/clintpserver/
- - /scale/scaleclireference/system/clisystemdataset/
- - /scale/scaleclireference/system/clitunable/
- - /scale/scaleclireference/task/clicronjob/
- - /scale/scaleuireference/systemsettings/services/smartservicesscreen/
 tags:
  - settings
  - pools
@@ -162,7 +149,7 @@ There is also an option to configure a remote syslog server for recording system
 
 ## Audit Card
 
-The **Audit** card displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< ref "/SCALE/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
+The **Audit** card displays the current audit storage and retention policy settings. The public-facing [TrueNAS API]({{< ref "/API" >}}) allows querying audit records, exporting audit reports, and configuring audit dataset settings and retention periods.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SystemAdvancedAuditWidget.png" alt="Advanced System Setting Audit Card" id="Advanced System Setting Audit Card" >}}
 
@@ -170,7 +157,7 @@ The **Audit** card displays the current audit storage and retention policy setti
 
 {{< include file="/static/includes/ConfigureSystemAuditSCALE.md" >}}
 
-Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "/SCALE/SystemSettings/Audit/Auditing#configuring-audit-storage-and-retention-policies" >}})
+Click **Configure** to open the **Audit** configuration screen and [manage storage and retention policies]({{< ref "/SystemSettings/Audit/Auditing#configuring-audit-storage-and-retention-policies" >}})
 
 ## Kernel Card
 
@@ -429,7 +416,7 @@ The **Self-Encrypting Drive** configuration screen allows users to set the ATA s
 {{< /truetable >}}
 {{< /expand >}}
 
-For more information on SEDs, see [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALE/Storage/Disks/SED" >}}), [Importing Pools]({{< ref "ImportPool.md" >}}), and the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}) articles.
+For more information on SEDs, see [Managing Self-Encrypting Drives (SED)]({{< ref "/Storage/Disks/SED" >}}), [Importing Pools]({{< ref "ImportPool.md" >}}), and the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}) articles.
 
 ## Isolated GPU Device(s) Card
 

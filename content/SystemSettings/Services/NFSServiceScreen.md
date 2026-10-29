@@ -2,11 +2,6 @@
 title: "NFS Services Screen"
 description: "Provides information on NFS service screen and settings."
 weight: 100
-aliases:
- - /scale/systemsettings/services/nfsservicescreen/
- - /scale/shares/iscsi/nfs/nfsservicescreen/
- - /scale/scaleclireference/service/clinfs/
- - /scale/scaleuireference/systemsettings/services/nfsservicescreen/
 tags:
  - nfs
  - services
@@ -91,4 +86,4 @@ After saving settings and reopening the **NFS** service screen, the **Add SPN** 
 {{< include file="/static/includes/NFSUpdateTime.md" >}}
 
 We recommend using the default NFS settings unless you require specific settings.
-When TrueNAS is already connected to [Active Directory]({{< ref "/SCALE/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/SCALE/Credentials/DirectoryServices" >}}).
+When TrueNAS is already connected to [Active Directory]({{< ref "/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/Credentials/DirectoryServices" >}}).

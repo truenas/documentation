@@ -3,12 +3,6 @@ title: "Disks Screen"
 description: "Describes UI screens and dialogs related to disk operations."
 geekdocCollapseSection: true
 weight: 50
-aliases:
- - /scale/scaleuireference/storage/disksscreen/
- - /scaleuireference/storage/pools/disks/disksscreensscale/
- - /scale/scaleuireference/storage/pools/disksscreen/
- - /scale/scaleclireference/storage/clidisk/
- - /scale/storage/disksscreen/
 tags:
  - disks
  - pools
@@ -29,7 +23,7 @@ Each option displays the information you enter in the **Edit Disk** screen or wh
 Select the checkbox to the left of a disk to display the **[Batch Operations](#batch-operations)** options.
 The checkbox at the top of the table selects all disks in the system. Select again to clear the checkboxes.
 
-**Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< ref "/SCALE/Storage" >}})**.
+**Storage** in the breadcrumb at the top of the screen returns to the **[Storage Dashboard]({{< ref "/Storage" >}})**.
 
 ## Disks Screen - Expanded Disk
 
@@ -101,7 +95,7 @@ See [Wiping Disks]({{< ref "WipingDisks" >}}) for more information.
 
 {{< trueimage src="/images/SCALE/Storage/DiskSEDUnlockDialog.png" alt="SED Unlock Dialog" id="SED Unlock Dialog" >}}
 
-For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALE/Storage/Disks/SED.md" >}}), the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
+For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "/Storage/Disks/SED.md" >}}), the **Import Pool** content in the [Storage Dashboard Screens]({{< ref "StorageDashboardScreens.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
 
 #### SED Reset Window
 

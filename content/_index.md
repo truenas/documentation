@@ -2,12 +2,6 @@
 title: "TrueNAS 28 (Early)"
 geekdocCollapseSection: true
 weight: 20
-aliases:
- - /scale/devnotes/
- - /scale/introduction/
- - /scale/scaletutorials/
- - /scale/scaleuireference/
- - /scale/scaleclireference/
 cascade:
   - _target:
     volume: "SCALE"

@@ -7,8 +7,6 @@ tags:
 - webShare
 - shares
 doctype: reference
-aliases:
- - /scale/scaleuireference/systemsettings/services/webshareservicescreen/
 ---
 
 

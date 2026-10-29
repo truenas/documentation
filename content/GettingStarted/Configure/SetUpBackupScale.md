@@ -2,8 +2,6 @@
 title: "Backing Up TrueNAS"
 description: "Provides general information and instructions on setting up data storage backups, saving the system configuration and initial system debug files, and creating a boot environment."
 weight: 60
-aliases:
- - /scale/gettingstarted/install/setupbackupscale/
 tags:
 - backup
 keywords:
@@ -48,7 +46,7 @@ You can clone the boot environment listed after the **initial-install** environm
 TrueNAS has several options that allow you to back up data:
 
 * [TrueCloud backup tasks](#using-truecloud-backup-or-cloud-sync)
-* [Cloud sync tasks]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}})
+* [Cloud sync tasks]({{< ref "/DataProtection/CloudSyncTasks" >}})
 * [Replication tasks](#using-replication)
 * [Rsync tasks]({{< ref "RsyncTasks" >}})
 
@@ -69,7 +67,7 @@ Cloud sync and TrueCloud backup tasks can be configured to send, receive, or syn
 The simplest way to set up a TrueCloud backup task is using a Storj iX account.
 See [Managing TrueCloud Backup Tasks]({{< ref "TrueCloudTasks" >}}) for a full tutorial.
 
-See [Adding Cloud Credentials]({{< ref "/SCALE/Credentials/BackupCredentials/AddCloudCredentials" >}}) for information on connecting TrueNAS to other cloud storage providers.
+See [Adding Cloud Credentials]({{< ref "/Credentials/BackupCredentials/AddCloudCredentials" >}}) for information on connecting TrueNAS to other cloud storage providers.
 
 ### Using Replication
 Replication takes a moment-in-time snapshot of data and then copies that snapshot to another location.

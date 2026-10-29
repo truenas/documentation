@@ -2,13 +2,6 @@
 title: "Datasets Screens"
 description: "Provides information on the Datasets screens and settings."
 weight: 70
-aliases:
- - /scale/storage/storagedashboardscreens/datasets/importdatascreenscale/
- - /scale/storage/storagedashboardscreens/datasets/
- - /scale/storage/storagedashboardscreens/datasets/datasetsscreensscale/
- - /scale/scaleclireference/storage/clidataset/
- - /scale/scaleuireference/storage/datasets/datasetsscreensscale/
- - /scale/scaleuireference/storage/datasets/importdatascreenscale/
 tags: 
 - datasets
 - storage
@@ -117,7 +110,7 @@ When managing your TrueNAS system, it is generally best practice to create dedic
 
 **[Delete](#delete-dataset)** shows on the **Details** card for non-root datasets.
 
-Use **Disconnect/Export** on the **[Storage Dashboard]({{< ref "/SCALE/Storage" >}})** screen to delete a root dataset.
+Use **Disconnect/Export** on the **[Storage Dashboard]({{< ref "/Storage" >}})** screen to delete a root dataset.
 
 **Delete** opens a [**Delete dataset**](#delete-window) window with information about other options or services using the dataset, for example, a parent to other datasets, the services child datasets of a parent dataset uses, shares like SMB and/or NFS, or a multiprotocol share, and the path to the datasets the shares use.
 
@@ -164,7 +157,7 @@ The **Data Protection** card shows snapshot and backup task information for the 
 **View Snapshot Tasks** opens the **[Data Protection]({{< ref "PeriodicSnapshotTasksScreens" >}})** screen where you can add or manage scheduled periodic snapshot tasks.
 
 **No Backup Tasks** shows when no data protection backup tasks are created. 
-**Go to Backups** opens the **[Data Protection]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}})** screen, where you can manage scheduled replication, rsync, and other data protection tasks.
+**Go to Backups** opens the **[Data Protection]({{< ref "/DataProtection/CloudSyncTasks" >}})** screen, where you can manage scheduled replication, rsync, and other data protection tasks.
 
 ### Permissions Card
 
@@ -213,7 +206,7 @@ The **Usage** card for a parent dataset with child datasets with shares shows th
 | Usage | Link Included | Description |
 |------|---------------|-------------|
 | System dataset | [Manage Advanced Settings]({{< ref "AdvancedSettingsScreen" >}}) | Select the option to configure the **System Dataset** |
-| Apps | [Manage Apps Settings]({{< ref "/SCALE/Apps" >}}) | Shows the app using the dataset. |
+| Apps | [Manage Apps Settings]({{< ref "/Apps" >}}) | Shows the app using the dataset. |
 | Dataset with no share | [Create SMB Share]({{< ref "SMBSharesScreens" >}})<br>[Create NFS Share]({{< ref "NFSSharesScreens" >}}) | Opens either the **Add SMB** or **Add NFS** share screen to configure the share. |
 | SMB share | [Manage SMB Shares]({{< ref "SMBSharesScreens" >}}) | Shows the name of the SMB share using the dataset. Select the snare on the **Sharing SMB** screen to edit it. |
 | Other share | Link to the share type screen | Shows the name of the share using the dataset. Select the option on the share screen (NFS or iSCSI) to edit it. |

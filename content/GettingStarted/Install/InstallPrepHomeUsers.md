@@ -2,7 +2,6 @@
 title: "Preparing for TrueNAS UI Configuration (Home Users)"
 description: "Provides information on what home users need to complete the TrueNAS configuration using the TrueNAS UI."
 weight: 7
-aliases:
 tags:
 - install
 - migrate

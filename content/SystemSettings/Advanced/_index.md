@@ -4,9 +4,6 @@ description: "Tutorials and UI reference for TrueNAS Advanced System Settings in
 geekdocCollapseSection: true
 weight: 30
 related: false
-aliases:
- - /scale/scaletutorials/systemsettings/advanced/
- - /scale/scaleuireference/systemsettings/advanced/
 ---
 
 TrueNAS Advanced Settings provide configuration options for console, scheduled tasks, hardware resources, security, and system logging.

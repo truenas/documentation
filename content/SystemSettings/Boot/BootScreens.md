@@ -2,10 +2,6 @@
 title: "Boot Screens"
 description: "Provides reference descriptions of the boot environment screens and settings."
 weight: 50
-aliases:
- - /scale/scaleuireference/systemsettings/systembootscreensscale/
- - /scale/scaleclireference/system/cliboot/
- - /scale/scaleclireference/system/clibootenv/
 tags:
 - boot
 doctype: reference

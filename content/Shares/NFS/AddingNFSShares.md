@@ -2,12 +2,6 @@
 title: "Adding NFS Shares"
 description: "Provides instructions on adding NFS shares, starting NFS service, and accessing the share."
 weight: 20
-aliases:
- - /scale/shares/nfs/addingnfsshares/
- - /scale/shares/nfs/addingnfsshares/
- - /scale/shares/nfs/
- - /scale/scaletutorials/shares/addingnfsshares/
- - /scale/scaletutorials/shares/nfs/addingnfsshares/
 tags:
 - nfs
 - shares
@@ -158,7 +152,7 @@ To configure NFS service settings from the **Shares > Unix (NFS) Shares** widget
 
 Unless you need specific settings, we recommend using the default NFS settings.
 
-When TrueNAS is already connected to [Active Directory]({{< ref "/SCALE/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/SCALE/Credentials/DirectoryServices" >}}).
+When TrueNAS is already connected to [Active Directory]({{< ref "/Credentials/DirectoryServices" >}}), setting **NFSv4** and **Require Kerberos for NFSv4** also requires a [Kerberos Keytab]({{< ref "/Credentials/DirectoryServices" >}}).
 
 {{< enterprise >}}
 <b>NFS over RDMA</b>

@@ -2,9 +2,6 @@
 title: "Community Migrations"
 description: "Provides instructions for TrueNAS community users to migrate from FreeBSD- to Linux-based TrueNAS versions. Migration methods include using an ISO or manual update file."
 weight: 15
-aliases:
- - /scale/gettingstarted/migratingfromcore/
- - /gettingstarted/migrate/migratingfromcore/
 tags:
 - migrate
 - install
@@ -73,7 +70,7 @@ To migrate to TrueNAS 24.04 using the UI **Update** screen and **Train** selecto
 
 3. Review the TrueNAS migrations warning and verify the system is ready to migrate before confirming and continuing.
 
-4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating TrueNAS]({{< ref "/SCALE/SystemSettings/Update#performing-an-automatic-update" >}}).
+4. When the latest update for that chosen TrueNAS release is loaded, click **Apply Pending Update** or **Download Updates** to begin the update process documented in [Updating TrueNAS]({{< ref "/SystemSettings/Update#performing-an-automatic-update" >}}).
    It is strongly recommended to download the system configuration backup prior to starting the update.
 
 5. After the system installs the update and restarts, log in and review the system configuration to ensure the migration was successful.
@@ -116,7 +113,7 @@ After TrueNAS reboots, you might need to [use the Console Setup menu to configur
 
 After gaining access to the UI, sign in with the admin user credentials created during installation.
 
-Go to **System > Advanced Settings** and [upload the system config file]({{< relref "/SCALE/SystemSettings/Advanced/ManageSysConfig.md#uploading-the-file" >}}).
+Go to **System > Advanced Settings** and [upload the system config file]({{< relref "/SystemSettings/Advanced/ManageSysConfig.md#uploading-the-file" >}}).
 Uploading a previously-saved system config file migrates your settings, including accounts, directory services, networking, services, shares, storage configuration, system setting, data protection tasks, and more.
 The system restarts to apply the uploaded configuration.
 

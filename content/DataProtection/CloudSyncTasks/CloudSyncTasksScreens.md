@@ -2,11 +2,6 @@
 title: "Cloud Sync Tasks Screens"
 description: "Provides information on the Cloud Sync task screens and settings."
 weight: 50
-aliases:
- - /scale/dataprotection/cloudsynctasks/cloudsynctasksscreens/
- - /scale/dataprotection/cloudsynctasks/cloud-sync-tasks/
- - /scale/scaleclireference/task/cloudsync/
- - /scale/scaleuireference/dataprotection/cloudsynctasksscreensscale/
 tags:
 - cloud
 - backup
@@ -119,7 +114,7 @@ The **What and When** screen sets the direction (push or pull), transfer mode (m
 
 **Advanced Options** accessed from the **Cloudsync Task Wizard** and **Edit Cloud Sync Task** show the same settings, and settings are grouped into **Transfer**, **Remote**, **Control**, and **Advanced Options**.
 
-**Manage Credentials** opens the [Backup Credentials]({{< ref "/SCALE/Credentials/BackupCredentials" >}}) screen.
+**Manage Credentials** opens the [Backup Credentials]({{< ref "/Credentials/BackupCredentials" >}}) screen.
 
 ### Transfer Settings
 
@@ -195,8 +190,8 @@ Selecting **Push** in **Direction** adds the **Use Snapshot** option.
 |----------|-------------|
 | **Create empty source dirs on destination after sync** | Creates an empty source directory in the cloud-storage provider folder when pushing data to the cloud provider location, or in TrueNAS if pulling data from the cloud storage provider. |
 | **Follow Symlinks** | Sets symbolic links (symlinks) to follow when enabled and copies the items to which they link. |
-| **Pre-Script** | Sets a script to execute before running sync to what is entered. This setting is for advanced users. See the [Cloud Sync tutorial]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}}) for more information. |
-| **Post-Script** | Sets a script to execute after running sync to what is entered. This setting is for advanced users. See the [Cloud Sync tutorial]({{< ref "/SCALE/DataProtection/CloudSyncTasks" >}}) for more information. |
+| **Pre-Script** | Sets a script to execute before running sync to what is entered. This setting is for advanced users. See the [Cloud Sync tutorial]({{< ref "/DataProtection/CloudSyncTasks" >}}) for more information. |
+| **Post-Script** | Sets a script to execute after running sync to what is entered. This setting is for advanced users. See the [Cloud Sync tutorial]({{< ref "/DataProtection/CloudSyncTasks" >}}) for more information. |
 | **Exclude** | Sets up a list of files and directories to exclude from sync. Pressing <kbd>Enter</kbd> separates additional entries.<br> Examples of proper syntax to exclude files/directories are:<ul><li> `photos</code>` excludes a file named *photos*</li><li> `/photos`> excludes a file named *photos* from root directory (but not subdirectories)</li><li>`photos/` excludes a directory named *photos</li><li>`/photos/` excludes a directory named *photos* from root directory (but not subdirectories).</li></ul> See [rclone filtering](https://rclone.org/filtering/) for more details about the `--exclude` option. |
 {{< /truetable >}}
 

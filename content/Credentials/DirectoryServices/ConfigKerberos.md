@@ -2,9 +2,6 @@
 title: "Configuring Kerberos"
 description: "Provides instructions on configuring and managing Kerberos realms and keytabs in TrueNAS."
 weight: 40
-aliases:
- - /scale/scaletutorials/credentials/directoryservices/configkerberosmscale/
- - /scale/scaletutorials/credentials/directoryservices/configkerberosscale/
 tags:
 - kerberos
 keywords:

@@ -2,9 +2,6 @@
 title: "Configuring Advanced Replication"
 description: "Provides instructions for configuring advanced ZFS snapshot replication tasks in TrueNAS."
 weight: 10
-aliases:
- - /scale/dataprotection/replication/useadvancedreplicationscale/
- - /scale/dataprotection/replication/advancedreplication/useadvancedreplicationscale/
 tags:
  - replication
  - backup
@@ -53,7 +50,7 @@ The **Add Replication Task** configuration screen opens.
    Pulling snapshots from a remote source requires a valid **SSH Connection** before the file browser can show any directories.
 
    A remote destination requires you to specify an SSH connection before you can enter or select the path.
-   If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and [configure it to allow SSH connections]({{< ref "/SCALE/Credentials/BackupCredentials" >}}).
+   If the file browser shows a connection error after selecting the correct **SSH Connection**, you might need to log in to the remote system and [configure it to allow SSH connections]({{< ref "/Credentials/BackupCredentials" >}}).
    Define how long to keep snapshots in the destination.
 
    Remote sources require defining a snapshot naming schema to identify the snapshots to replicate.

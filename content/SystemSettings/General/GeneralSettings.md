@@ -3,8 +3,6 @@ title: "Configuring General Settings"
 description: "Tutorials for configuring many general TrueNAS settings."
 geekdocCollapseSection: true
 weight: 10
-aliases:
- - /scale/scaletutorials/systemsettings/general/generalsettings/
 related: false
 tags:
 - settings
@@ -59,7 +57,7 @@ The **GUI** card allows users to configure the TrueNAS web interface address. Cl
 ### Changing the GUI SSL Certificate
 
 The system uses a self-signed certificate to enable encrypted web interface connections.
-To change the default certificate, create or import a certificate as described in [Managing Certificates]({{< ref "/SCALE/Credentials/Certificates/ManagingCertificates" >}}) to add it to the dropdown list of certificates available on the system. Select the certificate from the **GUI SSL Certificate** dropdown list.
+To change the default certificate, create or import a certificate as described in [Managing Certificates]({{< ref "/Credentials/Certificates/ManagingCertificates" >}}) to add it to the dropdown list of certificates available on the system. Select the certificate from the **GUI SSL Certificate** dropdown list.
 
 ### Setting the Web Interface IP Address
 
@@ -90,7 +88,7 @@ No personally identifiable information is collected.
 
 When disabled, anonymous usage statistics consisting only of the software version and total system capacity (e.g., TrueNAS 24.04.0, 55 TB) are collected.
 
-For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< ref "/SCALE/GettingStarted/UserAgreements/DataCollectionStatement" >}}).
+For more information about what usage data is collected, see the [TrueNAS Data Collection Statement]({{< ref "/GettingStarted/UserAgreements/DataCollectionStatement" >}}).
 
 ### Showing Console Messages
 

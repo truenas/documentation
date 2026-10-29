@@ -3,17 +3,6 @@ title: "Apps Screens"
 description: "Articles describing the TrueNAS Apps screens and fields."
 geekdocCollapseSection: true
 weight: 20
-aliases:
- - /scale/apps/apps/
- - /scale/scaleuireference/apps/
- - /scale/scaleuireference/apps/appsscreensscale/
- - /scale/scaleclireference/app/
- - /scale/scaleclireference/app/clicatalog/
- - /scale/scaleclireference/app/clichartrelease/
- - /scale/scaleclireference/app/clicontainer/
- - /scale/scaleclireference/app/clidocker/
- - /scale/scaleclireference/app/clikubernetes/
- - /scale/scaleuireference/apps/usingapps/
 tags:
 - apps
 related: false
@@ -337,7 +326,7 @@ The **Update** state on the application row on the **Installed** screen changes 
 #### Convert to Custom App
 
 **Convert to custom app** on the <i class="material-icons" aria-hidden="true" title="more_vert">more_vert</i> dropdown opens a dialog to convert an installed catalog application to a custom YAML application.
-Converting to a custom app allows direct editing of the YAML configuration file for the app using the [Custom App Screens]({{< relref "/SCALE/Apps/InstallCustomAppScreens.md" >}}).
+Converting to a custom app allows direct editing of the YAML configuration file for the app using the [Custom App Screens]({{< relref "/Apps/InstallCustomAppScreens.md" >}}).
 
 {{< trueimage src="/images/SCALE/Apps/ConvertToCustomAppDialog.png" alt="Convert to Custom App Dialog" id="Convert to Custom App Dialog" >}}
 

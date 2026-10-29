@@ -11,9 +11,6 @@ keywords:
 - data protection
 - data backup and recovery
 doctype: reference
-aliases:
- - /scale/scaleuireference/dataprotection/truecloudbackuptasksscreen/
- - /scale/dataprotection/truecloudbackuptasksscreen/
 ---
 
 

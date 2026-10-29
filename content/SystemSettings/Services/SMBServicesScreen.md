@@ -2,10 +2,6 @@
 title: "SMB Service Screen"
 description: "Provides information in the SMB service screen and settings."
 weight: 110
-aliases:
- - /scale/scaleuireference/systemsettings/services/smbservicesscreen/
- - /scale/scaleuireference/shares/smb/smbservicesscreen/
- - /scale/scaleclireference/service/clismb/
 tags:
  - smb
  - services
@@ -14,7 +10,7 @@ doctype: reference
 
 
 The **System > Services** screen includes three options on the **SMB** service row:
-* **View Logs** opens the [**Audit** screen]({{< ref "/SCALE/SystemSettings/Audit/Auditing#accessing-auditing-screens" >}}).
+* **View Logs** opens the [**Audit** screen]({{< ref "/SystemSettings/Audit/Auditing#accessing-auditing-screens" >}}).
 * **View Sessions** opens the [**SMB Status** screen]({{< ref "SMBSharesScreens" >}}).
 * <span class="material-icons">edit</span> **Configure** icon opens the **SMB Service** screen showing the **Basic Settings** by default.
 

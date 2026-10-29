@@ -2,10 +2,6 @@
 title: "Managing Cloud Sync Tasks"
 description: "Provides instructions on adding a cloud sync task, running an unscheduled sync, and creating a restored task in TrueNAS."
 weight: 10
-aliases:
- - /scale/dataprotection/cloudsynctasks/cloudsynctasks/
- - /scale/dataprotection/cloudsynctasks/addcloudsynctasks/
- - /scale/scaletutorials/dataprotection/cloudsynctasks/addcloudsynctasks/
 tags:
  - cloud
 doctype: tutorial

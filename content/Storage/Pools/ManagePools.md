@@ -2,9 +2,6 @@
 title: "Managing Pools"
 description: "Provides instructions on managing storage pools, VDEVs, and disks in TrueNAS."
 weight: 40
-aliases:
- - /scale/scaletutorials/storage/managepoolsscale/
- - /scale/scaletutorials/storage/pools/managepoolsscale/
 
  - /scale/scaletutorials/dataprotection/scrubtasksscale/
 tags: 
@@ -106,7 +103,7 @@ Use **Scrub Now** on the **Storage Health** pool card to start a pool data integ
 
 Click **Scrub Now** to open the **Scrub Pool** dialog, then click **Start Scrub** to begin the process.
 
-If TrueNAS detects problems during the scrub operation, it corrects them or generates an [alert]({{< ref "/SCALE/TopToolbar/Alerts" >}}) in the web interface.
+If TrueNAS detects problems during the scrub operation, it corrects them or generates an [alert]({{< ref "/TopToolbar/Alerts" >}}) in the web interface.
 
 ### Scheduling Scrub Tasks
 
@@ -139,7 +136,7 @@ Click on a disk to see the cards for that disk.
 You can take a disk offline, detach it, replace it, manage the SED encryption password, and perform other disk management tasks from this screen.
 
 To edit disk settings such as the description, power management, and SED options, click **Edit Disk** to open the **Edit Disk** screen.
-See [Edit Disk Screen]({{< ref "/SCALE/Storage/Disks/DisksScreen.md#edit-disk-screen" >}}) for details.
+See [Edit Disk Screen]({{< ref "/Storage/Disks/DisksScreen.md#edit-disk-screen" >}}) for details.
 
 See [Replacing Disks]({{< ref "ReplacingDisks" >}}) for more information on the **Offline**, **Replace** and **Online** options.
 
@@ -202,7 +199,7 @@ Extended VDEVs recover lost headroom because existing data is read and rewritten
 This can occur naturally over the lifetime of the pool as you modify or delete data.
 Replicate and rewrite the data to the extended pool to manually recover capacity.
 
-You can use the [RAIDZ Extension Calculator]({{< ref "/References/ExtensionCalculator" >}}) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
+You can use the [RAIDZ Extension Calculator](https://www.truenas.com/docs/references/extensioncalculator/) to visualize potential lost headroom and capacity available to recover by rewriting existing data.
 
 {{< include file="/static/includes/ExpandedVdevReporting.md" >}}
 

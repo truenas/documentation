@@ -2,10 +2,6 @@
 title: "Import Pool"
 description: "Provides information on ZFS importing for storage pools in TrueNAS. It also addresses GELI-encrypted pools."
 weight: 20
-aliases:
- - /scale/scaletutorials/storage/importpoolscale/
- - /scale/scaletutorials/storage/datasets/importpoolscale/
- - /scale/scaletutorials/storage/datasets/importingdata/
 
  - /scale/scaletutorials/storage/pools/importpoolscale/
 tags:

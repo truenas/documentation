@@ -2,11 +2,6 @@
 title: "Managing Users"
 description: "Provides instructions on adding and managing administrator and user accounts."
 weight: 20
-aliases:
- - /scale/credentials/manageusers/
- - /scale/credentials/credentialsoverview/managelocalusersscale/
- - /scale/scaletutorials/credentials/manageusers/
- - /scale/scaletutorials/credentials/managelocalusersscale/
 tags:
 - users
 - accounts
@@ -21,9 +16,9 @@ In TrueNAS, user accounts allow flexibility for accessing shared data.
 Typically, administrators create users and assign them to [groups]({{< ref "ManageLocalGroups" >}}).
 Doing so makes tuning permissions for large numbers of users more efficient.
 
-When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< ref "/SCALE/Credentials/DirectoryServices" >}}).
+When the network uses a directory service, import the existing account information using the instructions in [Directory Services]({{< ref "/Credentials/DirectoryServices" >}}).
 
-Using [Active Directory]({{< ref "/SCALE/Credentials/DirectoryServices" >}}) requires setting Windows user passwords in Windows.
+Using [Active Directory]({{< ref "/Credentials/DirectoryServices" >}}) requires setting Windows user passwords in Windows.
 
 To see user accounts, go to **Credentials > Users**.
 

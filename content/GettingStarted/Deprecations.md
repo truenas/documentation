@@ -2,9 +2,6 @@
 title: "Feature Deprecations"
 description: "Notes about TrueNAS features deprecated in the latest nightly releases."
 weight: 11
-aliases:
- - /scale/scaledeprecatedfeatures/
- - /scale/gettingstarted/scaledeprecations/
 ---
 
 As part of security hardening and improving feature maintainability, there are occasions when TrueNAS SCALE features must be deprecated and removed.

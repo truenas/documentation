@@ -2,8 +2,6 @@
 title: "Configuring FTP Service"
 description: "Provides instructions on configuring the FTP service including storage, user, and access permissions."
 weight: 10
-aliases: 
- - /scale/scaletutorials/systemsettings/services/ftpservicescale/
 tags:
  - services
  - ftp
@@ -29,7 +27,7 @@ Click the <i class="material-icons" aria-hidden="true" title="Configure">edit</i
 
 FTP requires a new dataset and a local user account.
 
-Go to **Storage** to add a new [dataset]({{< ref "/SCALE/Datasets/ManagingDatasets" >}}) to use as storage for files.
+Go to **Storage** to add a new [dataset]({{< ref "/Datasets/ManagingDatasets" >}}) to use as storage for files.
 
 Next, add a new user. Go to **Credentials > Users** and click **Add** to create a local user on the TrueNAS.
 

@@ -2,8 +2,6 @@
 title: "Configuring SMB Service"
 description: "Provides instructions on configuring the SMB service in TrueNAS."
 weight: 30
-aliases:
- - /scale/scaletutorials/systemsettings/services/smbservicescale/
 tags:
  - smb
  - services
@@ -73,10 +71,10 @@ For more information on Windows SMB-client side transport encryption, see [Windo
 
 ## Auditing SMB Events
 
-To monitor SMB service event logs, such as when a client attempts to authenticate to the share, use the TrueNAS [auditing screen]({{< ref "/SCALE/SystemSettings/Audit/Auditing" >}}).
+To monitor SMB service event logs, such as when a client attempts to authenticate to the share, use the TrueNAS [auditing screen]({{< ref "/SystemSettings/Audit/Auditing" >}}).
 Go to **System > Audit** to review event logs, including SMB connect, disconnect, create, read or write events, and others.
 
-Enter `SMB` in the [search bar]({{< ref "/SCALE/SystemSettings/Audit/Auditing#searching-audit-logs" >}}) to view only SMB service logs or use the advanced search to further limit results.
+Enter `SMB` in the [search bar]({{< ref "/SystemSettings/Audit/Auditing#searching-audit-logs" >}}) to view only SMB service logs or use the advanced search to further limit results.
 
 {{< expand "Configuring SMB Share Auditing" "v" >}}
 {{< include file="/static/includes/ConfigureSMBShareAuditingSCALE.md" >}}

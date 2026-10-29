@@ -2,8 +2,6 @@
 title: "API Reference"
 description: "Instructions to access built-in TrueNAS API documentation and the API Docs website."
 geekdocCollapseSection: true
-aliases:
- - /api/websocket.html
 weight: 50
 related: false
 ---
@@ -42,4 +40,4 @@ Use this as a reference for projects that require direct TrueNAS integration.
 
 {{< include file="/static/includes/APIKeyWarn.md" >}}
 
-See [Managing API Keys]({{< ref "/SCALE/TopToolbar/ManagingAPIKeys" >}}) for more information.
+See [Managing API Keys]({{< ref "/TopToolbar/ManagingAPIKeys" >}}) for more information.

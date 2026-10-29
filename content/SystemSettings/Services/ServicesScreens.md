@@ -3,11 +3,6 @@ title: "Services Screens"
 description: "Information on the Services screen and individual service articles in the Services area."
 geekdocCollapseSection: true
 weight: 70
-aliases: 
- - /scale/scaleuireference/systemsettings/servicesscale/
- - /scale/scaleuireference/systemsettings/services/lldpservicesscreenscale/
- - /scale/scaleclireference/service/
- - /scale/scaleclireference/service/clictdb/
 tags:
  - services
  - settings

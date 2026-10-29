@@ -2,15 +2,6 @@
 title: "Storage Dashboard Screens"
 description: "Provides information on the Storage Dashboard cards and options for pools, devices, and disks listed on this screen."
 weight: 50 
-aliases:
- - /scale/scaleuireference/storage/pools/
- - /scale/scaleclireference/storage/
- - /scale/scaleclireference/storage/clifilesystem-storage/
- - /scale/scaleuireference/storage/storagedashboardscreen/ 
- - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
- - /scale/scaleclireference/storage/cliresilver/
- - /scale/scaleclireference/storage/cliscrub/
- - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
 tags:
 - pools
 - storage
@@ -74,7 +65,7 @@ The **x**  icon for an added exception is the **Remove disk exception** function
 
 **Update global settings (applies to all disks/pools)** indicates the password is saved to the system configuration for future use with these disks. This option is selected by default.
 
-For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "/SCALE/Storage/Disks/SED.md" >}}), the **Unlock SED Dialog** content in the [Disks Screen]({{< ref "DisksScreen.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
+For more information on SED disks, see [Managing Self-Encrypting Drives (SED)]({{< ref "/Storage/Disks/SED.md" >}}), the **Unlock SED Dialog** content in the [Disks Screen]({{< ref "DisksScreen.md" >}}), and **Self-Encrypting Drive** in the [Advanced Settings Screen]({{< ref "AdvancedSettingsScreen.md" >}}) articles.
 {{< /expand >}}
 
 * **Disks** opens the **[Disks]({{< ref "DisksScreen" >}})** screen.
@@ -276,7 +267,7 @@ Storage configurations with more than 9,007,199,254,740,992 bytes round to the l
 For example, a system with 18,446,744,073,709,551,615 bytes reports the number as 18,446,744,073,709,552,000 bytes.
 {{< /hint >}}
 
-**View Datasets** opens the **[Datasets]({{< ref "/SCALE/Datasets" >}})** screen.
+**View Datasets** opens the **[Datasets]({{< ref "/Datasets" >}})** screen.
 
 ### Storage Health Card
 

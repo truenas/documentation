@@ -7,9 +7,6 @@ tags:
 - shares
 - iscsi
 doctype: tutorial
-aliases:
- - /scale/scaletutorials/shares/iscsi/increasescsistorage/
- - /scale/scaletutorials/shares/iscsi/increaseiscsistorage/
 ---
 
 
