@@ -71,7 +71,9 @@ timeout = "30s"
 
   [[module.imports]]
     path = "github.com/truenas/docs-shared"
-    version = "TrueShared2026"
+    # Pinned by commit (branch TrueShared2026): the Go module proxy caches a branch name and can serve a
+    # stale tip. Bump this to pick up docs-shared changes.
+    version = "6f68b0074da6"
 
   [[module.imports]]
     path = "github.com/google/docsy"

@@ -20,7 +20,7 @@ Open pull requests against the branch you are editing. `main` is the default bra
 ## What is here
 
 - `content/en/` has the hub sections: `contributing`, `hardware`, `references`, `solutions` and `software-status`. `_archive` holds the retired CORE and TrueCommand release notes; it is published but kept out of navigation and lists.
-- Search and shared page elements come from the [`docs-shared`](https://github.com/truenas/docs-shared) module (branch `TrueShared2026`), imported in `hugo.toml`. The search client registers the hub index and the version indexes in `static/js/search-multi-site.js` in that module.
+- Search and shared page elements come from the [`docs-shared`](https://github.com/truenas/docs-shared) module (branch `TrueShared2026`), imported in `hugo.toml` and pinned to a commit (bump the pin to pick up its changes). The search client registers the hub index and the version indexes in `static/js/search-multi-site.js` in that module.
 - `data/properties/software_status_config.yaml` feeds the Software Status page. The Nightly Maintenance Jenkins job updates it through `scripts/update-software-status.py` and opens a pull request. Do not edit it by hand.
 
 ## Build locally
