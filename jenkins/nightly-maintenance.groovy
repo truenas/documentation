@@ -29,7 +29,7 @@ pipeline {
 
     stage('Software status auto-PR') {          // Duty 1
       steps {
-        git branch: 'master', url: "${REPO}", credentialsId: "${CRED}"
+        git branch: 'main', url: "${REPO}", credentialsId: "${CRED}"
         sh 'pip3 install --break-system-packages -r requirements.txt'
         script {
           // Non-zero here means the script itself flagged a real problem (an
@@ -45,7 +45,7 @@ pipeline {
           }
 
           def changed = sh(
-            script: 'git diff --exit-code data/software_status_config.yaml',
+            script: 'git diff --exit-code data/properties/software_status_config.yaml',
             returnStatus: true
           ) != 0
           if (changed) {
