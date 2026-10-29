@@ -68,11 +68,13 @@ pipeline {
           // The scripts run from this master checkout; the data lives on each version branch,
           // so each branch is checked out as a throwaway worktree. Python deps were installed
           // by the stage above. Every failure here marks the build UNSTABLE and moves on:
-          // Reconcile/Purge below must still run.
+          // Reconcile/Purge below must still run. The network-bound commands run under the shell
+          // `timeout` (exit 124 reads as an ordinary failure) rather than the Jenkins timeout step,
+          // whose abort would be rethrown as an InterruptedException and fail the whole build.
           def worktreeRoot = "${env.WORKSPACE}/.changelog-worktrees"
           def branches = []
           try {
-            retry(3) { sh 'git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"' }
+            retry(3) { sh 'timeout --kill-after=30 300 git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"' }
             // same version-branch filter and live check as Reconcile below — keep them in step
             def raw = sh(returnStdout: true, script:
               "git for-each-ref --format='%(refname:short)' refs/remotes/origin " +
@@ -105,7 +107,7 @@ pipeline {
               def wt = "${worktreeRoot}/${b}"
               sh "git worktree add --force --detach '${wt}' origin/${b}"
               try {
-                def scriptStatus = sh(script: "python3 scripts/update-changelogs.py --repo '${wt}'", returnStatus: true)
+                def scriptStatus = sh(script: "timeout --kill-after=30 600 python3 scripts/update-changelogs.py --repo '${wt}'", returnStatus: true)
                 if (scriptStatus != 0) {
                   currentBuild.result = 'UNSTABLE'
                   echo "update-changelogs.py reported a problem for ${b} (exit ${scriptStatus}) — see console output above. Other branches and Reconcile continue."
@@ -118,7 +120,7 @@ pipeline {
                 if (changed) {
                   echo "Changelog CSVs changed on ${b} — creating/updating PR."
                   def prStatus = sh(
-                    script: "cd '${wt}' && BASE_BRANCH='${b}' bash '${env.WORKSPACE}/scripts/create-changelog-pr.sh'",
+                    script: "cd '${wt}' && BASE_BRANCH='${b}' timeout --kill-after=30 600 bash '${env.WORKSPACE}/scripts/create-changelog-pr.sh'",
                     returnStatus: true
                   )
                   if (prStatus != 0) {
