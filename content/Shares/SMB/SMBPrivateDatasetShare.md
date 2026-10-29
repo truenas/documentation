@@ -107,7 +107,7 @@ You can change the admin user who is creating the private dataset share dataset 
 
 Alternatively, leave the **Owner** and **Owner Group** set to the root user and add a new user entry for the admin user who creates the private dataset shares.
 Give that admin user full access permissions.
-For more information on changing permissions, see [Storage Permissions]({{< ref "scale/datasets/permissions/ConfiguringACLs.md" >}}).
+For more information on changing permissions, see [Storage Permissions]({{< ref "/datasets/permissions/ConfiguringACLs.md" >}}).
 
 #### Adding the Private Dataset Share and Dataset
 
