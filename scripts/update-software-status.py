@@ -297,7 +297,7 @@ def main():
         print("DRY-RUN MODE: Will not modify software_status_config.yaml")
         print("="*70 + "\n")
 
-    config_path = Path(__file__).parent.parent / 'data' / 'software_status_config.yaml'
+    config_path = Path(__file__).parent.parent / 'data' / 'properties' / 'software_status_config.yaml'
 
     # Load existing config
     with open(config_path, 'r') as f:

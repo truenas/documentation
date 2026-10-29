@@ -37,6 +37,9 @@ timeout = "30s"
   github_repo = "https://github.com/truenas/docs"
   github_branch = "main"
   github_subdir = "content/en"
+  # Search engines may index this build. The head hook adds noindex when this is false
+  # (set false on any build whose pages are also published under another URL).
+  docsIndexable = true
 
   [params.search]
     siteName = "TrueNAS Docs Hub"

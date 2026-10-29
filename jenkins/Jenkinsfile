@@ -51,6 +51,7 @@ pipeline {
           env.OUTPUT_DIR      = (cfg.OUTPUT_DIR ?: '').trim()
           env.DEPLOY_SCRIPT   = (cfg.DEPLOY_SCRIPT ?: '').trim()
           env.PAGEFIND_GLOB   = (cfg.PAGEFIND_GLOB ?: '').trim()
+          env.BASE_URL        = (cfg.BASE_URL ?: '').trim()      // optional; absolute site URL for canonicals and links
           env.ARCHIVED        = (cfg.ARCHIVED ?: 'false').trim()
           echo "branch=${env.BRANCH_NAME} publish=${env.PUBLISH_TO_PROD} archived=${env.ARCHIVED} out=${env.OUTPUT_DIR} deploy=${env.DEPLOY_SCRIPT}"
           if (env.ARCHIVED == 'true') {
@@ -73,8 +74,10 @@ pipeline {
       steps {
         sh 'npm install -D --save autoprefixer'
         sh 'npm install -D --save postcss-cli'
-        sh 'hugo -d public --gc --minify --cleanDestinationDir'
         script {
+          // Docsy builds need an absolute baseURL (canonical links); geekdoc builds use relative URLs and leave BASE_URL unset.
+          def baseUrlFlag = env.BASE_URL ? "--baseURL '${env.BASE_URL}'" : ''
+          sh "hugo -d public --gc --minify --cleanDestinationDir ${baseUrlFlag}"
           if (env.PAGEFIND_GLOB) {
             sh "npx pagefind --site \"public\" --glob \"{${env.PAGEFIND_GLOB}}/**/*.html\""
           }
@@ -101,10 +104,18 @@ pipeline {
             //   /scale|core|truecommand/[0-9]*  = existing product-prefixed versions (scale/26, core/13.3, truecommand/3.0)
             //   /[0-9]*                          = future bare top-level versions (docs/27, docs/28, ... — scale prefix retired)
             // No-op for version-branch publishes (their target dirs have no such subdirs).
-            sh """rsync -rvza -e 'ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' \
-              --delete --exclude='pdf/' --exclude='PRs/' --exclude='CNAME' --exclude='download/' \
-              --exclude='/scale/[0-9]*' --exclude='/core/[0-9]*' --exclude='/truecommand/[0-9]*' --exclude='/[0-9]*' \
-              public/ docs@10.242.64.28:/var/www/html/${env.OUTPUT_DIR}"""
+            // Only the branch that owns the shared root (OUTPUT_DIR=docs1) protects the pages and root assets
+            // that earlier publishes left in place. The list is rsync --exclude-from syntax, relative to the
+            // transfer root; version branches never use it, so their own content is never excluded.
+            script {
+              def frozenExcludes = (env.OUTPUT_DIR == 'docs1' && fileExists('jenkins/frozen-root-excludes.txt')) ?
+                  "--exclude-from='jenkins/frozen-root-excludes.txt'" : ''
+              sh """rsync -rvza -e 'ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' \
+                --delete --exclude='pdf/' --exclude='PRs/' --exclude='CNAME' --exclude='download/' \
+                --exclude='/scale/[0-9]*' --exclude='/core/[0-9]*' --exclude='/truecommand/[0-9]*' --exclude='/[0-9]*' \
+                ${frozenExcludes} \
+                public/ docs@10.242.64.28:/var/www/html/${env.OUTPUT_DIR}"""
+            }
           }
         }
 

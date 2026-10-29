@@ -1,0 +1,6 @@
+# rsync --exclude-from list, applied only when OUTPUT_DIR=docs1 (the branch that owns the shared root).
+# Purpose: until the /docs/scale/<section>/ strip rule ships (DOCS-2685 stage 1d), the pages the previous
+# root build published under /scale/ stay live and need their root-level CSS, JS, fonts and images.
+# Every entry must be a file or directory that this branch's own build does NOT emit, otherwise this
+# branch could never update it. Generated from the live /docs/scale/ pages minus this branch's output;
+# regenerate with the cutover runbook (DOCS-2735-cutover-runbook.md), do not edit by hand.

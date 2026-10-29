@@ -1,178 +1,54 @@
-# TrueNAS Documentation Hub
+# TrueNAS Documentation Hub (`main`)
 
-Central landing page for all TrueNAS documentation sites.
+This branch holds the documentation hub: the content that is not tied to one TrueNAS release. It is built with Hugo and the Docsy theme.
 
-## Overview
+## Branch name = published path
 
-This site provides a unified entry point for TrueNAS documentation, with a clean card-based interface linking to:
-- TrueNAS Community Edition & Enterprise documentation
-- TrueNAS Connect documentation
-- Hardware/Products documentation
-- API documentation
-- Apps Marketplace
-- Security reports
-- Software status, solutions, contributing guidelines, and references
+Each branch of this repository publishes to the URL that matches its name. To find where a change belongs, look at the URL of the page you are editing.
 
-## Technology Stack
+| Branch | Published at | Content |
+|---|---|---|
+| `main` | `truenas.com/docs/` (the root) | This hub |
+| `nightly` | `truenas.com/docs/nightly/` | The release in development |
+| `27` | `truenas.com/docs/scale/27/` | TrueNAS 27 |
+| `25.10`, `25.04`, ... | `truenas.com/docs/scale/<version>/` | Earlier TrueNAS releases |
+| `13.3`, `13.0` | `truenas.com/docs/core/<version>/` | TrueNAS CORE |
+| `3.0`, `2.3` | `truenas.com/docs/truecommand/<version>/` | TrueCommand |
 
-- **Hugo Extended** v0.157.0
-- **Docsy Theme** v0.13.0
-- **TrueNAS Docs-Shared Module** (TrueShared2026 branch)
-- **Bootstrap** v5.3.8
-- **Pagefind** for search indexing
+Open pull requests against the branch you are editing. `main` is the default branch.
 
-## Prerequisites
+## What is here
 
-- Hugo Extended v0.157.0 (see install instructions below)
-- Node.js v20.x or higher
-- npm or yarn
+- `content/en/` has the hub sections: `contributing`, `hardware`, `references`, `solutions` and `software-status`. `_archive` holds the retired CORE and TrueCommand release notes; it is published but kept out of navigation and lists.
+- Search and shared page elements come from the [`docs-shared`](https://github.com/truenas/docs-shared) module (branch `TrueShared2026`), imported in `hugo.toml`. The search client registers the hub index and the version indexes in `static/js/search-multi-site.js` in that module.
+- `data/properties/software_status_config.yaml` feeds the Software Status page. The Nightly Maintenance Jenkins job updates it through `scripts/update-software-status.py` and opens a pull request. Do not edit it by hand.
 
-## Install Hugo
+## Build locally
 
-**Windows (Chocolatey — recommended, run PowerShell as Administrator):**
-
-    choco install hugo-extended --version=0.157.0
-
-**Windows (winget):**
-
-    winget install Hugo.Hugo.Extended --version 0.157.0
-
-**WSL/Linux:** Download `hugo_extended_0.157.0_linux-amd64.tar.gz` from
-https://github.com/gohugoio/hugo/releases/tag/v0.157.0 and install to your PATH.
-
-> Hugo Extended (not standard Hugo) is required. This site has been tested against v0.157.0.
-> Later versions may work but have not been officially tested.
->
-> This site uses Hugo modules (Docsy theme). On WSL/Linux with a direct binary install,
-> Go must be available in your PATH for Hugo to resolve modules on first use.
-
-## Local Development
-
-### Initial Setup
+You need Hugo Extended (0.146.0 or later), Go (for Hugo modules) and Node.js.
 
 ```bash
-# Install Node.js dependencies
 npm install
-
-# Start development server (Hugo auto-fetches the go.mod-pinned modules).
-# Do NOT run `hugo mod get` / `hugo mod get -u` — both upgrade modules past the
-# go.mod pins and can pull a breaking upstream theme release (e.g. docsy v0.16.0).
-hugo serve
+hugo serve                       # development server
+hugo --gc --minify               # production build into public/
+npx pagefind --site public       # optional: build the search index
 ```
 
-The site will be available at `http://localhost:1313`
+## Build pipeline
 
-### Building for Production
+`jenkins/Jenkinsfile` builds every branch, and `jenkins/docs-build.env` sets how each branch builds:
 
-```bash
-# Build site
-npm run build
+| Key | Meaning |
+|---|---|
+| `PUBLISH_TO_PROD` | `true` publishes the build; anything else only builds it |
+| `OUTPUT_DIR` | target directory under `/var/www/html/` |
+| `DEPLOY_SCRIPT` | root-owned script that links the published directory into the site (empty for the root build) |
+| `PAGEFIND_GLOB` | comma-separated list of sections to index for search |
+| `BASE_URL` | absolute site URL passed to Hugo as `--baseURL`, used for canonical links |
+| `ARCHIVED` | `true` freezes a version: it is not rebuilt or republished |
 
-# Or manually:
-hugo --gc --minify --cleanDestinationDir
-
-# Generate search index
-npx pagefind --site public
-```
-
-## Required Assets
-
-### Card Background Images
-
-Add these images to `/static/images/`:
-
-- `card-community-edition.png` - TrueNAS Community Edition card background
-- `card-enterprise.png` - TrueNAS Enterprise card background
-- `card-connect.png` - TrueNAS Connect card background
-- `card-hardware.png` - Products/Hardware card background
-- `card-api.png` - API Documentation card background
-- `card-apps.png` - Apps Marketplace card background
-- `card-security.png` - Security Reports card background
-
-### Brand Assets
-
-- `tn-openstorage-logo.png` - Generic TrueNAS logo
-- `docs-hub-og-image.png` - Social sharing image (1200x630px recommended)
-
-### Favicons
-
-Add to `/static/favicons/`:
-- `favicon.svg`
-- `favicon.ico`
-- `favicon-96x96.png`
-- `apple-touch-icon.png`
-- `site.webmanifest`
-
-## Project Structure
-
-```
-docs/
-├── content/
-│   └── en/
-│       └── _index.md          # Homepage with card grid
-├── static/
-│   ├── images/                # Card backgrounds and logos
-│   └── favicons/              # Site icons
-├── layouts/                   # (Empty - all from modules)
-├── data/                      # Site data files
-├── hugo.toml                  # Hugo configuration
-├── go.mod                     # Module dependencies
-└── package.json               # Node.js dependencies
-```
-
-## Editing Content
-
-The main content is in `/content/en/_index.md`. To add/remove/edit cards:
-
-### Software & Products Cards (doc-card shortcode)
-
-```markdown
-{{< doc-card
-  link="https://example.com/"
-  title="Card Title"
-  image="/images/card-background.png"
-  descr="Card description"
->}}
-```
-
-### Documentation Resources Cards (blocks/feature shortcode)
-
-```markdown
-{{% blocks/feature icon="material:icon-name" title="Title" url="https://example.com/" %}}
-Description text here
-{{% /blocks/feature %}}
-```
-
-## Deployment
-
-This site is deployed via Jenkins pipeline to `https://docs.truenas.com/`
-
-Build steps:
-1. `npm install`
-2. `hugo --gc --minify --cleanDestinationDir`
-3. `npx pagefind --site public`
-4. Deploy `public/` directory to web server
-
-## Module Development
-
-This site uses the TrueShared2026 theme from the `docs-shared` repository.
-
-For local theme development:
-```bash
-# Ensure go.mod has local replace directive:
-replace github.com/truenas/docs-shared => ../docs-shared
-
-# Make changes in ../docs-shared
-# Test with: hugo serve
-```
+The branch that publishes to `docs1` owns the site root and deletes anything it does not build. `jenkins/frozen-root-excludes.txt` lists files and pages from earlier publishes that must survive that cleanup; regenerate it with the cutover runbook instead of editing it by hand.
 
 ## License
 
-GPL-3.0
-
-## Support
-
-For issues or questions:
-- Review the implementation plan
-- Check the docs-shared README
-- File issues in the truenas/docs repository
+See [LICENSE.md](LICENSE.md).
