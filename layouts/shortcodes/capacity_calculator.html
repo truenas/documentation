@@ -228,13 +228,13 @@
     
     <tr>
         <td colspan="4" style="padding: 10px;">
-            <div id="help-text-container" style="padding: 15px; background: rgba(0, 149, 213, 0.05); border-radius: 8px; border-left: 4px solid #0095d5; margin-bottom: 10px;">
-                <div id="help-text-content" style="color: var(--body-font-color); line-height: 1.4; font-size: 0.9em;">
+            <div id="help-text-container" style="padding: 15px; border-radius: 8px; border-left: 4px solid #0095d5; margin-bottom: 10px;">
+                <div id="help-text-content" style="line-height: 1.4; font-size: 0.9em;">
                     <strong>Configuration Help:</strong> Click the help icons (?) next to field labels above to see detailed explanations of each setting.
                 </div>
             </div>
-            <div id="shelf-count-widget" style="padding: 15px; background: rgba(0, 149, 213, 0.05); border-radius: 8px; border-left: 4px solid #0095d5;">
-                <div id="shelf-count-content" style="color: var(--body-font-color); line-height: 1.4;">
+            <div id="shelf-count-widget" style="padding: 15px; border-radius: 8px; border-left: 4px solid #0095d5;">
+                <div id="shelf-count-content" style="line-height: 1.4;">
                     <strong>Loading TrueNAS shelf calculations...</strong>
                 </div>
             </div>
@@ -258,21 +258,27 @@
         align-items: center;
     }
     
-    /* Add border radius to calculator input table to match tab buttons */
+    /* Add border radius to calculator input table */
     table.inputs {
         border-radius: 8px;
         overflow: hidden;
-        table-layout: fixed;
-        width: 100%;
-        padding: 0 15px; /* Simple inner padding */
-        box-sizing: border-box;
     }
-    
-    /* Constrain all input field widths to prevent overflow */
-    table.inputs input[type="text"] {
-        max-width: 100%;
-        width: 100%;
-        box-sizing: border-box;
+
+    /* Update / Reset buttons */
+    #action_buttons {
+        white-space: nowrap;
+    }
+
+    #calculate_button, #reset_button {
+        border-radius: 6px;
+        padding: 6px 16px;
+        display: inline-block;
+    }
+
+    /* Admonition boxes */
+    #help-text-container, #shelf-count-widget {
+        background-color: rgba(0, 149, 213, 0.12);
+        color: var(--bs-body-color);
     }
     
     /* Responsive design for narrow screens */
@@ -366,11 +372,6 @@
     
     #capacity-tabs-container .results-container:active {
         cursor: grabbing;
-    }
-    
-    #capacity-tabs-container .results-container:hover {
-        background: rgba(0, 149, 213, 0.02);
-        transition: background-color 0.2s ease;
     }
     
     /* Hide scrollbars completely for clean navigation */
@@ -480,7 +481,7 @@
         border-radius: 2px 2px 0 0;
         background-color: rgba(128, 128, 128, 0.1);
         border: none;
-        color: var(--body-font-color, #333);
+        color: inherit;
     }
     
     .rocker-button .half.down {
@@ -488,7 +489,7 @@
         border-radius: 0 0 2px 2px;
         background-color: rgba(128, 128, 128, 0.1);
         border: none;
-        color: var(--body-font-color, #333);
+        color: inherit;
     }
     
     .rocker-button .half:hover {
@@ -496,7 +497,7 @@
         color: white !important;
         border-color: #0095d5 !important;
     }
-    
+
     .rocker-button .half:active {
         background-color: #007bb5 !important;
         color: white !important;
@@ -510,7 +511,7 @@
         transform: translate(-50%, -50%);
         font-size: 10px;
         font-weight: bold;
-        color: var(--body-font-color, #666);
+        color: inherit;
         z-index: 1;
         pointer-events: none;
     }
@@ -598,8 +599,8 @@
     <div class="scroll-wrapper">
         <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
         <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="results-container scroll-container" id="common">
-            <table class="results" id="common">
+        <div class="results-container scroll-container">
+            <table class="results td-initial" id="common">
             </table>
         </div>
     </div>
@@ -609,8 +610,8 @@
     <div class="scroll-wrapper">
         <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
         <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="results-container scroll-container" id="stripes">
-            <table class="results" id="stripes">
+        <div class="results-container scroll-container">
+            <table class="results td-initial" id="stripes">
             </table>
         </div>
     </div>
@@ -620,8 +621,8 @@
     <div class="scroll-wrapper">
         <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
         <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="results-container scroll-container" id="raidz1">
-            <table class="results" id="raidz1">
+        <div class="results-container scroll-container">
+            <table class="results td-initial" id="raidz1">
             </table>
         </div>
     </div>
@@ -631,8 +632,8 @@
     <div class="scroll-wrapper">
         <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
         <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="results-container scroll-container" id="raidz2">
-            <table class="results" id="raidz2">
+        <div class="results-container scroll-container">
+            <table class="results td-initial" id="raidz2">
             </table>
         </div>
     </div>
@@ -642,8 +643,8 @@
     <div class="scroll-wrapper">
         <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll right">‹</button>
         <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="results-container scroll-container" id="raidz3">
-            <table class="results" id="raidz3">
+        <div class="results-container scroll-container">
+            <table class="results td-initial" id="raidz3">
             </table>
         </div>
     </div>
@@ -653,8 +654,8 @@
     <div class="scroll-wrapper">
         <button class="scroll-nav scroll-nav-left" aria-label="Scroll left" title="Scroll left">‹</button>
         <button class="scroll-nav scroll-nav-right" aria-label="Scroll right" title="Scroll right">›</button>
-        <div class="results-container scroll-container" id="draid">
-            <table class="results" id="draid">
+        <div class="results-container scroll-container">
+            <table class="results td-initial" id="draid">
             </table>
         </div>
     </div>
@@ -671,11 +672,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Wait for capacity calculator to initialize before setting up tabs
     setTimeout(function() {
         initializeHugoTabs('capacity-tab-content-source', 'capacity-tabs-container', 'common', true);
-        
+
         // Initialize scroll controls after tabs are created
         setTimeout(initializeCapacityScrollControls, 500);
+
+        // De-register the hidden source tables so jQuery selectors in draw_tables()
+        // target the visible copies in the tabs container, not these originals.
+        setTimeout(function() {
+            document.querySelectorAll('#capacity-tab-content-source table').forEach(function(t) {
+                t.classList.remove('results');
+                t.removeAttribute('id');
+            });
+        }, 200);
     }, 100);
-    
+
     // Initialize scroll controls for capacity calculator tables
     function initializeCapacityScrollControls() {
         const scrollWrappers = document.querySelectorAll('#capacity-tabs-container .scroll-wrapper');

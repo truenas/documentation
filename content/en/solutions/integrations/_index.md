@@ -1,0 +1,11 @@
+---
+title: "Integrations"
+description: "Articles about using TrueNAS with various 3rd party applications."
+weight: 20
+aliases:
+  - /core/solutions/integrations/
+  - /solutions/integrations/smbclustering/
+related: false
+---
+
+Integrations discusses how TrueNAS can work with different third-party applications to create unique or efficient storage management environments.

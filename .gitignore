@@ -1,21 +1,33 @@
-deploy.py
-jenkins/
+# Hugo build artifacts
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Node modules
+node_modules/
+# OS files
+.DS_Store
+Thumbs.db
+# IDE
+.vscode/
+.idea/
+# Temporary files
+*.log
+*.tmp
+*~
 public/
 resources/
-node_modules/
 tech-doc-hugo
 .vscode
 *.lock
-
 # Release notes automation
 scripts/release_notes/output/
 scripts/release_notes/config.yaml
 *.backup
-
 # Superpowers specs and plans
 docs/superpowers/
 .worktrees/
-
 # Python
 __pycache__/
 *.py[cod]

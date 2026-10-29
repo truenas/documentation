@@ -1,0 +1,9 @@
+{{- $size := default "regular" (.Get "size" | lower) -}}
+
+<div class="row g-3 mb-3">
+  {{- range split .Inner "<--->" }}
+    <div class="col-md">
+      {{ . | $.Page.RenderString -}}
+    </div>
+  {{- end }}
+</div>

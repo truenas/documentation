@@ -1,0 +1,95 @@
+baseURL = "https://docs.truenas.com/"
+title = "TrueNAS Documentation Hub"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+contentDir = "content/en"
+
+enableRobotsTXT = true
+enableGitInfo = true
+timeout = "30s"
+
+# Output formats
+[outputs]
+  section = ["HTML", "print", "RSS"]
+
+[outputFormats.print]
+  baseName = "index"
+  isHTML = true
+  mediaType = "text/html"
+  path = "printview"
+  permalinkable = false
+
+# Markup settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser.attribute]
+      block = true
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "tango"
+    noClasses = false
+
+# Site params
+[params]
+  version = "1.0.0"
+  featured_image = "/images/tn-openstorage-logo.png"
+  github_repo = "https://github.com/truenas/docs"
+  github_branch = "main"
+  github_subdir = "content/en"
+
+  [params.search]
+    siteName = "TrueNAS Docs Hub"
+    siteKey = "docs"
+    siteIcon = "/images/truenas-logo-mark.png"
+    sitePriority = 1
+    showVersionFilter = true
+    # defaultVersion is dynamically read from software_status_config.yaml in search-enhanced.html
+
+  [params.ui]
+    breadcrumb_disable = true
+    navbar_logo = true
+    navbar_logo_404 = "images/docs-hub-wordmark-color.svg"
+    sidebar_menu_compact = true
+    sidebar_search_disable = true
+    showLightDarkModeMenu = true
+    ul_show = 1
+
+    hub_sidebar_links = true
+
+    [params.ui.readingtime]
+      enable = true
+
+# Hugo modules
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.146.0"
+
+  [[module.imports]]
+    path = "github.com/truenas/docs-shared"
+    version = "TrueShared2026"
+
+  [[module.imports]]
+    path = "github.com/google/docsy"
+    disable = false
+
+  [[module.imports]]
+    path = "github.com/KKKZOZ/hugo-admonitions"
+    disable = false
+
+# Navbar menu
+[[menu.main]]
+  name = "Community Edition"
+  url = "https://www.truenas.com/docs/core/"
+  weight = 10
+
+[[menu.main]]
+  name = "Enterprise"
+  url = "https://www.truenas.com/docs/enterprise/"
+  weight = 20
+
+[[menu.main]]
+  name = "Connect"
+  url = "https://connect.truenas.com/"
+  weight = 30

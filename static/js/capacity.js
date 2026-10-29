@@ -1448,7 +1448,7 @@ $(document).ready(function() {
             // Reset styling for all cells, but preserve error styling by calling update() again
             $("td").css({
                 "background-color": "",
-                "color": "var(--body-font-color)",
+                "color": "",
                 "font-style": ""
             });
             // Re-run update to restore error styling

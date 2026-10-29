@@ -1,0 +1,112 @@
+{{ define "main" }}
+<style>
+  /* Force sidebar positioning - inline to override everything */
+  aside.sidebar-right {
+    position: fixed !important;
+    top: 100px !important;
+    right: 20px !important;
+    width: 16rem !important;
+    max-width: 16rem !important;
+    z-index: 100 !important;
+    bottom: auto !important;
+    left: auto !important;
+    flex: none !important;
+    display: block !important;
+  }
+
+  /* Content container with proper spacing */
+  .software-status-wrapper {
+    padding: 2rem 4rem !important;
+  }
+
+  .software-status-wrapper.has-sidebar {
+    padding-left: 4rem !important;
+    padding-right: 18rem !important;
+  }
+
+  /* Force Atlassian widget to not interfere with page background */
+  #atlwdg-container,
+  #atlwdg-container.atlwdg-popup {
+    background: none !important;
+    background-color: transparent !important;
+    display: none !important;
+  }
+
+  #atlwdg-container.atlwdg-hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  /* Force main content wrapper to respect color mode - scoped to this page only */
+  :root[color-mode=light] .software-status-wrapper {
+    background-color: #ffffff !important;
+  }
+
+  :root[color-mode=dark] .software-status-wrapper {
+    background-color: #202020 !important;
+  }
+
+  /* Align cover and section block padding */
+  .software-status-wrapper .td-cover-block__inner {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Match section content left margin to cover block Bootstrap column padding */
+  .software-status-wrapper > div:not(.td-cover-block) h2,
+  .software-status-wrapper > div:not(.td-cover-block) p,
+  .software-status-wrapper > div:not(.td-cover-block) > div {
+    padding-left: 2.5rem !important;
+  }
+
+  /* Don't double-indent table content */
+  .software-status-wrapper table {
+    margin-left: 0 !important;
+  }
+
+  @media (max-width: 992px) {
+    .software-status-wrapper > div:not(.td-cover-block) h2,
+    .software-status-wrapper > div:not(.td-cover-block) p,
+    .software-status-wrapper > div:not(.td-cover-block) > div {
+      padding-left: 1.5rem !important;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    aside.sidebar-right {
+      display: none !important;
+    }
+
+    .software-status-wrapper.has-sidebar {
+      padding-right: 4rem !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .software-status-wrapper {
+      padding: 2rem 1.5rem !important;
+    }
+  }
+</style>
+<div class="software-status-wrapper {{ if .Params.use_jump_to_buttons }}has-sidebar{{ end }}">
+  {{ .Content }}
+</div>
+
+{{ if .Params.use_jump_to_buttons }}
+<aside class="sidebar-right">
+  {{ partial "toc-panel" . }}
+</aside>
+{{ end }}
+
+<script>
+// Override the forced dark background for Software Status page
+document.addEventListener('DOMContentLoaded', function() {
+  // Remove forced inline styles
+  document.body.style.removeProperty('background-color');
+  document.body.style.removeProperty('color');
+  document.documentElement.style.removeProperty('--bs-body-bg');
+  document.documentElement.style.removeProperty('--bs-body-color');
+});
+</script>
+{{ end }}

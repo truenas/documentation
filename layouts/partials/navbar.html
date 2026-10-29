@@ -1,0 +1,139 @@
+{{/* Modified Docsy navbar template with custom docs hub dropdown */}}
+{{- $cover := and (.HasShortcode "blocks/cover") (not .Site.Params.ui.navbar_translucent_over_cover_disable) -}}
+<nav class="td-navbar js-navbar-scroll {{ if $cover }} td-navbar-cover {{ end }}" data-bs-theme="dark">
+<div class="container-fluid flex-column flex-md-row">
+  <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
+    <span class="navbar-brand__logo navbar-logo-container">
+        <span class="navbar-logo navbar-logo-color">
+            {{ $colorLogo := readFile "static/images/docs-hub-wordmark-color.svg" }}
+            {{ $colorLogo | safeHTML }}
+        </span>
+        <span class="navbar-logo navbar-logo-white">
+            {{ $whiteLogo := readFile "static/images/docs-hub-wordmark-white.svg" }}
+            {{ $whiteLogo | safeHTML }}
+        </span>
+        <span class="navbar-logo navbar-logo-black">
+            {{ $blackLogo := readFile "static/images/docs-hub-wordmark-black.svg" }}
+            {{ $blackLogo | safeHTML }}
+        </span>
+    </span>
+    <span class="navbar-brand__name">
+        {{- .Site.Title -}}
+    </span>
+  </a>
+
+
+  <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
+    <ul class="navbar-nav">
+      {{/* Docs hub dropdown with image */}}
+      <li class="nav-item dropdown navbar-docs-hub">
+        <a class="nav-link dropdown-toggle d-flex align-items-center"
+           href="#"
+           id="docs-hub-dropdown"
+           role="button"
+           data-bs-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false"
+           aria-label="TrueNAS Documentation Hub">
+          <span class="docs-hub-wordmark docs-hub-wordmark-color">
+              {{ $colorWordmark := readFile "static/images/hub-wordmark-color.svg" }}
+              {{ $colorWordmark | safeHTML }}
+          </span>
+          <span class="docs-hub-wordmark docs-hub-wordmark-white">
+              {{ $whiteWordmark := readFile "static/images/hub-wordmark-white.svg" }}
+              {{ $whiteWordmark | safeHTML }}
+          </span>
+          <span class="docs-hub-wordmark docs-hub-wordmark-black">
+              {{ $blackWordmark := readFile "static/images/hub-wordmark-black.svg" }}
+              {{ $blackWordmark | safeHTML }}
+          </span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="docs-hub-dropdown">
+          <a class="dropdown-item d-flex align-items-center" href="https://docs.truenas.com/">
+            {{ with resources.Get "images/hub-home-icon-black.svg" }}
+              <div class="me-2 dropdown-icon-themed d-flex align-items-center justify-content-center" style="width: 20px; height: 20px;">{{ ( . | minify).Content | safeHTML }}</div>
+            {{ end }}
+            Home
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://www.truenas.com/docs/" target="_blank" rel="noopener">
+            {{ with resources.Get "icons/tn-icon-black.png" }}
+              <img src="{{ .RelPermalink }}" alt="" class="me-2 dropdown-icon-themed" style="width: 20px; height: 20px;">
+            {{ end }}
+            TrueNAS
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://docs.truenas.com/software-status/" target="_blank" rel="noopener">
+            <svg class="me-2 dropdown-icon" style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24">
+              <path d="M19,3H5C3.9,3 3,3.9 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.9 20.1,3 19,3M9,17H7V10H9V17M13,17H11V7H13V17M17,17H15V13H17V17Z"/>
+            </svg>
+            Software Status
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://connect.truenas.com/" target="_blank" rel="noopener">
+            {{ with resources.Get "icons/tnc-icon-black.svg" }}
+              <div class="me-2 dropdown-icon-themed d-flex align-items-center justify-content-center" style="width: 20px; height: 20px;">{{ ( . | minify).Content | safeHTML }}</div>
+            {{ end }}
+            TrueNAS Connect
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://www.truenas.com/docs/hardware/" target="_blank" rel="noopener">
+            <svg class="me-2 dropdown-icon" style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24">
+              <path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/>
+            </svg>
+            Products
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://api.truenas.com/" target="_blank" rel="noopener">
+            <svg class="me-2 dropdown-icon" style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24">
+              <path d="M14,12L12,14L10,12L12,10L14,12M12,6L14.12,8.12L16.62,5.62L12,1L7.38,5.62L9.88,8.12L12,6M6,12L8.12,9.88L5.62,7.38L1,12L5.62,16.62L8.12,14.12L6,12M18,12L15.88,14.12L18.38,16.62L23,12L18.38,7.38L15.88,9.88L18,12M12,18L9.88,15.88L7.38,18.38L12,23L16.62,18.38L14.12,15.88L12,18Z"/>
+            </svg>
+            TrueNAS API
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://apps.truenas.com/" target="_blank" rel="noopener">
+            <svg class="me-2 dropdown-icon" style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24">
+              <path d="M16,20H20V16H16M16,14H20V10H16M10,8H14V4H10M16,8H20V4H16M10,14H14V10H10M4,14H8V10H4M4,20H8V16H4M10,20H14V16H10M4,8H8V4H4V8Z"/>
+            </svg>
+            TrueNAS Apps Market
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://security.truenas.com/" target="_blank" rel="noopener">
+            <svg class="me-2 dropdown-icon" style="width: 20px; height: 20px; fill: white;" viewBox="0 0 24 24">
+              <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"/>
+            </svg>
+            Security Reports
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="https://www.truenas.com/docs/truecommand/3.0/" target="_blank" rel="noopener">
+            {{ with resources.Get "icons/truecommand-icon-black.png" }}
+              <img src="{{ .RelPermalink }}" alt="" class="me-2 dropdown-icon-themed" style="width: 20px; height: 20px;">
+            {{ end }}
+            TrueCommand
+          </a>
+        </div>
+      </li>
+
+      {{ if hugo.IsMultilingual }}
+      <li class="nav-item dropdown td-language-select">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-language fa-fw"></i>
+          <span class="d-lg-none d-md-block">{{ i18n "select_language" }}</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {{ range .Site.Languages }}
+          <a class="dropdown-item" href="{{ .BaseURL }}">{{ .LanguageName }}</a>
+          {{ end }}
+        </div>
+      </li>
+      {{ end }}
+
+      {{ if (.Site.Params.ui.showLightDarkModeMenu | default false) }}
+      <li class="td-light-dark-menu nav-item dropdown">
+        {{ partial "navbar-theme-toggle" . }}
+      </li>
+      {{ end }}
+
+      {{ partial "search-enhanced-buttons" . }}
+      </ul>
+  </div>
+  {{/* Only show version selector if versions are configured */}}
+  {{ if .Site.Params.versions }}
+  <div class="d-none d-lg-block">
+    {{ partial "navbar-version-selector" . }}
+  </div>
+  {{ end }}
+</div>
+</nav>

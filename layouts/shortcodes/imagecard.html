@@ -1,15 +1,13 @@
-{{- $link := .Get "link" -}}
-{{- $isVisioStencil := or (strings.HasSuffix $link ".vssx") (strings.HasSuffix $link ".vsdx") -}}
-{{- $filename := "" -}}
-{{- if $isVisioStencil -}}
-  {{- $filename = path.Base $link -}}
-{{- end -}}
-<a class="section-box" href="{{ $link }}"{{ if $isVisioStencil }} download="{{ $filename }}"{{ end }}>
+<a class="section-box" href="{{ .Get "link" }}">
   <div class="box-image">
-      <img class="prod-card-img" src="{{ .Get "image" }}" aria-label="{{ .Get "title" }} Documentation Page">
+    {{ with .Get "icon" }}
+      <span class="material-icons prod-card-icon" aria-label="{{ $.Get "title" | plainify }} Documentation Page">{{ . }}</span>
+    {{ else }}
+      <img class="prod-card-img" src="{{ .Get "image" }}" aria-label="{{ .Get "title" | plainify }} Documentation Page">
+    {{ end }}
   </div>
   <div class="section-tab-content ixprods">
-    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ .Get "title" }}</b>
+    <b style="justify-content:center;font-size:1.5rem;font-weight:600;">{{ .Get "title" | safeHTML }}</b>
     <p>{{ .Get "descr" }}</p>
   </div>
 </a>

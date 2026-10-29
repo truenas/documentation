@@ -25,17 +25,32 @@ The higher your trust level, the more votes you can cast.
 The number of votes based on trust level is as follows:
 
 {{< truetable >}}
-| Trust Level | Votes |
-|-----------|-------------|
-| 0 | 2 |
-| 1 | 4 |
-| 2 | 6 |
-| 3 | 8 |
-| 4 | 10 |
+| Trust Level | Name | Votes |
+|-------------|------|-------|
+| 0 | New User | 2 |
+| 1 | Basic User | 4 |
+| 2 | Member | 6 |
+| 3 | Regular | 8 |
+| 4 | Leader | 10 |
 {{< /truetable >}}
 
 Votes on a topic are kept until either you remove the vote manually or the topic is closed.
 Topics are closed periodically after they are reviewed and either accepted or rejected based on their merit and feasibility.
+
+## Checking Your Remaining Votes
+
+There are a few ways to see how many votes you have left.
+
+- Go to [Feature Requests](https://forums.truenas.com/c/features/12) and click **My Votes** in the top navigation options.
+
+- Click **My posts** in the left-hand navigation menu, then select **Activity > Votes**.
+  This navigates to `https://forums.truenas.com/u/USERNAME/activity/votes`.
+
+Both of these paths show all requests you have voted for.
+Items marked with a lock icon are closed or accepted — those votes are freed and do not count against your total.
+Items without a lock icon represent your active votes.
+
+You can also check your remaining votes from any request you have already voted on: click the **Voted** button and a popup shows how many votes you have remaining, for example *"You have 5/6 votes left"*.
 
 ## What is a good feature request?
 

@@ -1,0 +1,37 @@
+{{- if .Inner }}{{ end -}}
+{{- $id := .Get 0 -}}
+{{- $group := printf "tabs-%s" $id -}}
+{{- $safeId := $group | urlize -}}
+
+<div class="truenas-tabs">
+  <ul class="nav nav-tabs mb-3" role="tablist">
+    {{- range $index, $tab := .Scratch.Get $group -}}
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link{{ if not $index }} active{{ end }}"
+        id="{{ printf "%s-%d-tab" $safeId $index }}"
+        data-bs-toggle="tab"
+        data-bs-target="#{{ printf "%s-%d" $safeId $index }}"
+        type="button"
+        role="tab"
+        aria-controls="{{ printf "%s-%d" $safeId $index }}"
+        aria-selected="{{ if not $index }}true{{ else }}false{{ end }}"
+      >{{ .Name }}</button>
+    </li>
+    {{- end }}
+  </ul>
+  <div class="tab-content">
+    {{- range $index, $tab := .Scratch.Get $group -}}
+    <div
+      class="tab-pane fade{{ if not $index }} show active{{ end }}" style="padding: 1rem 1.25rem;"
+      id="{{ printf "%s-%d" $safeId $index }}"
+      role="tabpanel"
+      aria-labelledby="{{ printf "%s-%d-tab" $safeId $index }}"
+    >
+      {{- $content := .Content | $.Page.RenderString -}}
+      {{- $content = $content | replaceRE `(<h[1-6]) id="[^"]*"` `$1` -}}
+      {{ $content | safeHTML }}
+    </div>
+    {{- end }}
+  </div>
+</div>

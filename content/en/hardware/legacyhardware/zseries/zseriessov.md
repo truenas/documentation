@@ -1,0 +1,10 @@
+---
+title: "Statement of Volatility"
+description: "Official Statement of Volatility for Z-Series systems."
+weight: 40
+related: false
+---
+
+<object data="https://truenas.com/docs/files/z-series-sov.pdf" type="application/pdf" width="95%" height="1000">
+  There was an error displaying this PDF, <a href="https://truenas.com/docs/files/z-series-sov.pdf">please click here to download the file.</a>
+</object>

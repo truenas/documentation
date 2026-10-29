@@ -9,14 +9,14 @@ The [TrueNAS Community forums](https://forums.truenas.com/) provides free suppor
   </tr>
   <tr>
     <td>Support Portal</td>
-    <td><a href="https://support.ixsystems.com" target="_blank">https://support.ixsystems.com</a></td>
+    <td><a href="https://support.truenas.com" target="_blank">https://support.truenas.com</a></td>
   </tr>
   <tr>
     <td>Email</td>
-    <td><a href="mailto:support@ixsystems.com">support@ixsystems.com</a></td>
+    <td><a href="mailto:support@truenas.com">support@truenas.com</a></td>
   </tr>
   <tr>
     <td>Telephone and Other Resources</td>
-    <td><a href="https://www.ixsystems.com/support/" target="_blank">https://www.ixsystems.com/support/</a></td>
+    <td><a href="https://www.truenas.com/support/" target="_blank">https://www.truenas.com/support/</a></td>
   </tr>
 </table>

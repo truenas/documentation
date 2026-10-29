@@ -1,47 +1,61 @@
 {{ $id := printf "cli-%x" (sha1 .Inner) }}
 <code class="cli-cmd" id="{{ $id }}">
-  {{ $content := .Inner | replaceRE "\\*\\*(.*?)\\*\\*" "<b>$1</b>" | replaceRE "\\*(.*?)\\*" "<i>$1</i>" }}
-  {{ $content | safeHTML }}
-  <button class="cli-cmd-copy" data-cmd="{{ .Inner }}" data-target="{{ $id }}">
+  <span class="cli-cmd-text">
+    {{ $content := .Inner | replaceRE "\\*\\*(.*?)\\*\\*" "<b>$1</b>" | replaceRE "\\*(.*?)\\*" "<i>$1</i>" }}
+    {{ $content | safeHTML }}
+  </span>
+  <button class="cli-cmd-copy" data-target="{{ $id }}" aria-label="Copy command">
     <span class="copy-icon"><span class="iconify" data-icon="mdi:content-copy"></span></span>
-    <span class="checkmark-icon" style="display: none;"><span class="iconify checkmark" data-icon="mdi:check"></span></span>
+    <span class="checkmark-icon" style="display:none;"><span class="iconify checkmark" data-icon="mdi:check"></span></span>
   </button>
 </code>
 
+<style>
+.cli-cmd {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.cli-cmd-copy {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  opacity: 0.35;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+.cli-cmd:hover .cli-cmd-copy {
+  opacity: 1;
+}
+.cli-cmd-copy:hover {
+  color: var(--bs-primary, #0d6efd);
+}
+.checkmark { color: #198754; }
+</style>
+
 <script>
-document.querySelectorAll(".cli-cmd").forEach(function (cliCmd) {
-  const copyButton = cliCmd.querySelector(".cli-cmd-copy");
-  const copyIcon = copyButton.querySelector(".copy-icon");
-  const checkmarkIcon = copyButton.querySelector(".checkmark-icon");
+(function() {
+  var cmd = document.getElementById("{{ $id }}");
+  if (!cmd) return;
+  var btn = cmd.querySelector(".cli-cmd-copy");
+  var copyIcon = btn.querySelector(".copy-icon");
+  var checkIcon = btn.querySelector(".checkmark-icon");
 
-  copyButton.addEventListener("click", function () {
-    const textToCopy = cliCmd.textContent.trim();
-
-    const textarea = document.createElement("textarea");
-    textarea.value = textToCopy;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-
-    // Hide the copy icon and show the green checkmark icon for 1 second
+  btn.addEventListener("click", function() {
+    var text = cmd.querySelector(".cli-cmd-text").textContent.trim();
+    navigator.clipboard ? navigator.clipboard.writeText(text) : (function(){
+      var ta = document.createElement("textarea");
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      document.execCommand("copy"); document.body.removeChild(ta);
+    })();
     copyIcon.style.display = "none";
-    checkmarkIcon.style.display = "inline";
-
-    setTimeout(function () {
-      checkmarkIcon.style.display = "none";
-      copyIcon.style.display = "inline";
+    checkIcon.style.display = "inline";
+    setTimeout(function() {
+      checkIcon.style.display = "none";
+      copyIcon.style.display = "";
     }, 1000);
   });
-
-  // Show the copy button on hover
-  cliCmd.addEventListener("mouseover", function () {
-    copyButton.style.display = "block";
-  });
-
-  // Hide the copy button when the mouse leaves
-  cliCmd.addEventListener("mouseout", function () {
-    copyButton.style.display = "none";
-  });
-});
+})();
 </script>

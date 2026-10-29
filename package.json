@@ -1,26 +1,30 @@
 {
-  "name": "tech-doc-hugo",
-  "version": "0.0.1",
-  "description": "Hugo theme for technical documentation.",
-  "main": "none.js",
+  "name": "truenas-docs-hub",
+  "version": "1.0.0",
+  "description": "TrueNAS Documentation Hub - Central landing page for all TrueNAS documentation",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "hugo --gc --minify --cleanDestinationDir",
+    "serve": "hugo serve",
+    "serve-with-search": "hugo && npx pagefind --site public && npx serve public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bep/tech-doc-hugo.git"
+    "url": "https://github.com/truenas/docs.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bep/tech-doc-hugo/issues"
-  },
-  "homepage": "https://github.com/bep/tech-doc-hugo#readme",
+  "keywords": [
+    "truenas",
+    "documentation",
+    "hugo",
+    "docsy"
+  ],
+  "author": "TrueNAS Documentation Team",
+  "license": "GPL-3.0",
   "dependencies": {
-    "material-design-icons": "^3.0.1"
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.5",
+    "postcss-cli": "^11.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "postcss-cli": "^7.1.2"
+    "pagefind": "^1.1.1"
   }
 }

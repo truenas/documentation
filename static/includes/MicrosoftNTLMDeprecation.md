@@ -1,6 +1,6 @@
 &NewLine;
 
-{{< hint type=info title="Microsoft NTLM Network Authentication Changes" >}}
+{{< hint type=important title="Microsoft NTLM Network Authentication Changes" >}}
 Microsoft is deprecating NTLM network authentication in a staged process.
 Windows 11 version 24H2, Windows Server 2025, and later versions have removed NTLMv1 network authentication.
 See [Upcoming changes to NTLMv1 in Windows 11 version 24H2 and Windows Server 2025](https://support.microsoft.com/en-us/topic/upcoming-changes-to-ntlmv1-in-windows-11-version-24h2-and-windows-server-2025-c0554217-cdbc-420f-b47c-e02b2db49b2e) for more information.

@@ -1,0 +1,12 @@
+{{- $file := .Get "file" -}}
+{{- $type := .Get "type" -}}
+{{- $language := .Get "language" -}}
+{{- $options := .Get "options" -}}
+
+{{- if $language -}}
+  {{- highlight ($file | readFile) $language (default "linenos=table" $options) -}}
+{{- else if eq $type "html" -}}
+  {{- $file | readFile | safeHTML -}}
+{{- else -}}
+  {{- $file | readFile | $.Page.RenderString -}}
+{{- end -}}

@@ -1,0 +1,4361 @@
+// Bootstrap options
+
+$enable-gradients: true !default;
+$enable-shadows: true !default;
+
+
+// Theme colors
+
+// TODO: consider moving all of these theme-color definitions into the User
+// Guide SCSS, or declare theme here, but namespaced:
+
+$primary: #0095d5;
+$secondary: #71BF44;
+$success: #31BEEC;
+$info: #AEADAE;
+$warning: #ed6a5a;
+$danger: #ed6a5a;
+$light: #282828; // TODO: consider using BS value
+$dark: #1E1E1E;  // TODO: consider using BS value
+
+$code-color: shade-color($secondary, 40%);
+
+:root,
+[data-bs-theme="light"] {
+  --td-pre-bg: var(--bs-tertiary-bg);
+  --bs-primary: #0095d5 !important;
+  --bs-primary-rgb: 0, 149, 213 !important;
+  --bs-link-color: #0095d5 !important;
+  --bs-link-color-rgb: 0, 149, 213 !important;
+  --bs-link-hover-color: #31BEEC !important;
+  --bs-link-hover-color-rgb: 49, 190, 236 !important;
+  --body-font-color: #212529;
+  --accent-color: rgb(233, 236, 239);
+  --card-background: rgb(248, 249, 250);
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #282828 !important;
+  --bs-body-bg-rgb: 40, 40, 40 !important;
+  --bs-primary: #0095d5 !important;
+  --bs-primary-rgb: 0, 149, 213 !important;
+  --bs-link-color: #0095d5 !important;
+  --bs-link-color-rgb: 0, 149, 213 !important;
+  --bs-link-hover-color: #31BEEC !important;
+  --bs-link-hover-color-rgb: 49, 190, 236 !important;
+  --body-font-color: #f0f3f5;
+  --accent-color: #212b32;
+  --card-background: #333333;
+}
+
+// UI element colors
+
+// Background colors for the sections on home page etc. It is a paint by number
+// system, starting at 0, where the number is taken from the shortcode's ordinal
+// if not provided by the user. These colors are all part of the theme palette,
+// but the mix is fairly random to create variation. This can be overridden by
+// the project if needed.
+$td-box-colors: $dark, $primary, $secondary, $info, $white, $gray-600, $success,
+  $warning, $dark, $danger, $primary, $secondary, $info !default;
+
+$link-color: $primary !default;
+$link-shade-percentage: 30% !default;
+
+// Fonts
+
+$td-enable-google-fonts: true !default;
+
+$google_font_name: "Open Sans" !default;
+$google_font_family: "Open+Sans:300,300i,400,400i,700,700i" !default;
+$web-font-path: "https://fonts.googleapis.com/css?family=#{$google_font_family}&display=swap";
+$font-awesome-font-name: "Font Awesome 6 Free" !default;
+
+$td-fonts-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+
+@if $td-enable-google-fonts {
+  $td-fonts-serif: join("#{$google_font_name}", $td-fonts-serif);
+}
+
+$font-family-sans-serif: $td-fonts-serif !default; // TODO: consider moving into UG SCSS or namespace the var (td-)
+
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace !default; // TODO: consider moving into UG SCSS or namespace the var (td-)
+$font-family-base: $font-family-sans-serif !default; // TODO: consider moving into UG SCSS or namespace the var (td-)
+
+// Font weights
+
+$font-weight-medium: 500 !default; // TODO: move into var forward file after upgrading BS to v5.3+
+
+$font-weight-body-text: $font-weight-normal !default;
+
+// Heading sizes
+
+$h3-font-size: $font-size-base * 1.5 !default;  // TODO: consider using BS default (* 1.75), or moving into UG SCSS
+$h4-font-size: $font-size-base * 1.35 !default; // TODO: consider using BS default (* 1.5), or moving into UG SCSS
+$h5-font-size: $font-size-base * 1.15 !default; // TODO: consider using BS default (* 1.25), or moving into UG SCSS
+
+// Space
+
+$td-block-space-top-base: 2.5 * $spacer !default;
+$td-block-space-bottom-base: 2.5 * $spacer !default;
+
+// Pagination
+
+$pagination-color: $gray-600 !default; // TODO: consider using BS default
+$pagination-disabled-color: $gray-300 !default; // TODO: consider using BS default
+
+// Footer
+
+$list-inline-padding: $spacer;
+
+// Navbar
+
+.td-navbar .navbar-brand__name {
+  display: none;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+// Logo container with stacked logos for wipe effect
+.navbar-logo-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  margin-bottom: 0;
+}
+
+// Fix alignment specifically for homepage navbar - pill mode only
+.td-home .td-navbar.navbar-scrolled .navbar-logo-container {
+  padding-bottom: 3px;
+}
+
+// Fix alignment for homepage navbar - full-width mode (non-scrolled)
+// Remove asymmetric padding - use flexbox alignment instead
+
+.navbar-logo {
+  display: block;
+  transition: clip-path 0.25s ease, opacity 0.3s ease;
+  line-height: 0;
+}
+
+.navbar-logo svg {
+  display: block;
+  vertical-align: middle;
+  height: auto;
+  width: auto;
+  max-height: 36px; /* Default desktop size */
+  margin-bottom: 0;
+}
+
+/* Responsive logo sizing */
+@media (max-width: 1024px) {
+  .navbar-logo svg {
+    max-height: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-logo svg {
+    max-height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo svg {
+    max-height: 24px;
+  }
+}
+
+.navbar-logo-color {
+  position: relative;
+  z-index: 1;
+}
+
+// Preserve original SVG colors in color logo - enforce the SVG's internal color classes
+.navbar-logo-color svg .cls-1 {
+  fill: #3cf !important; /* Cyan/light blue */
+}
+
+.navbar-logo-color svg .cls-2 {
+  fill: #adadad !important; /* Gray */
+}
+
+.navbar-logo-color svg .cls-3 {
+  fill: #0095d5 !important; /* TrueNAS primary blue */
+}
+
+.navbar-logo-white {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: clip-path 0.25s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.navbar-logo-white svg,
+.navbar-logo-white svg * {
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+.navbar-logo-white svg {
+  shape-rendering: geometricPrecision;
+}
+
+.navbar-logo-black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  display: none; /* hidden by default */
+  transition: clip-path 0.25s ease;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.navbar-logo-black svg,
+.navbar-logo-black svg * {
+  fill: #212529 !important;
+  stroke: #212529 !important;
+}
+
+.navbar-logo-black svg {
+  shape-rendering: geometricPrecision;
+}
+
+// Light mode: show black logo, hide white logo
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .navbar-logo-white,
+[data-bs-theme="light"] body.cover-page .navbar-logo-white {
+  display: none !important;
+}
+
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .navbar-logo-black,
+[data-bs-theme="light"] body.cover-page .navbar-logo-black {
+  display: block !important;
+}
+
+// Dark mode: show white logo, hide black logo
+[data-bs-theme="dark"] .navbar-logo-white,
+[data-bs-theme="dark"] body:not(.td-page):not(.td-section) .navbar-logo-white,
+[data-bs-theme="dark"] body.cover-page .navbar-logo-white {
+  display: block !important;
+}
+
+[data-bs-theme="dark"] .navbar-logo-black,
+[data-bs-theme="dark"] body:not(.td-page):not(.td-section) .navbar-logo-black,
+[data-bs-theme="dark"] body.cover-page .navbar-logo-black {
+  display: none !important;
+}
+
+// Default (dark navbar): color wipe effect
+.navbar-brand:hover .navbar-logo-white,
+.navbar-brand:focus .navbar-logo-white {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+// Light mode: color wipe effect for black logo
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .navbar-brand:hover .navbar-logo-black,
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .navbar-brand:focus .navbar-logo-black,
+[data-bs-theme="light"] body.cover-page .navbar-brand:hover .navbar-logo-black,
+[data-bs-theme="light"] body.cover-page .navbar-brand:focus .navbar-logo-black {
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+// Blue navbar (docs pages): white logo with opacity change only
+.td-page:not(.cover-page) .navbar-logo-color,
+.td-section:not(.cover-page) .navbar-logo-color {
+  display: none; /* Hide color logo on blue navbar */
+}
+
+.td-page:not(.cover-page) .navbar-logo-white,
+.td-section:not(.cover-page) .navbar-logo-white {
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Keep white logo visible */
+}
+
+.td-page:not(.cover-page) .navbar-brand:hover .navbar-logo-white,
+.td-page:not(.cover-page) .navbar-brand:focus .navbar-logo-white,
+.td-section:not(.cover-page) .navbar-brand:hover .navbar-logo-white,
+.td-section:not(.cover-page) .navbar-brand:focus .navbar-logo-white {
+  opacity: 0.75; /* Slightly dimmer on hover */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* No wipe on blue navbar */
+}
+
+// Dropdown icon rendering improvements
+.dropdown-icon {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  shape-rendering: geometricPrecision;
+}
+
+.td-navbar .navbar-nav .nav-link {
+  color: #fff !important;
+  text-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  line-height: normal !important;
+  height: 100%;
+}
+
+.td-navbar .navbar-nav .nav-link:hover,
+.td-navbar .navbar-nav .nav-link:focus {
+  color: #ddd !important; /* Optional: slightly dim on hover/focus */
+  transform: none !important; /* Remove any transform animations */
+  text-shadow: none !important; /* Remove any text shadow */
+}
+
+/* Dropdown item hover styles */
+.td-navbar .dropdown-menu .dropdown-item:hover,
+.td-navbar .dropdown-menu .dropdown-item:focus {
+  color: #ddd !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Make sure dropdown items have consistent text color */
+.td-navbar .dropdown-menu .dropdown-item {
+  color: #fff !important;
+}
+
+/* Docs hub wordmark styles */
+.navbar-docs-hub .nav-link {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.25rem;
+  line-height: 1 !important;
+}
+
+.docs-hub-wordmark {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  transform: translateZ(0) translateY(2px);
+  backface-visibility: hidden;
+}
+
+.docs-hub-wordmark svg {
+  display: block;
+  shape-rendering: geometricPrecision;
+  height: 16px;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* Responsive hub wordmark sizing */
+@media (max-width: 1024px) {
+  .docs-hub-wordmark svg {
+    height: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .docs-hub-wordmark svg {
+    height: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .docs-hub-wordmark svg {
+    height: 10px;
+  }
+}
+
+.docs-hub-wordmark-color {
+  position: relative;
+  z-index: 1;
+}
+
+// Enforce SVG colors for dropdown color wordmark
+.docs-hub-wordmark-color svg .cls-1 {
+  fill: #3cf !important; /* Cyan/light blue */
+}
+
+.docs-hub-wordmark-color svg .cls-2 {
+  fill: #adadad !important; /* Gray */
+}
+
+.docs-hub-wordmark-color svg .cls-3 {
+  fill: #0095d5 !important; /* TrueNAS primary blue */
+}
+
+.docs-hub-wordmark-white {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.docs-hub-wordmark-white svg,
+.docs-hub-wordmark-white svg * {
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+.docs-hub-wordmark-black {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.docs-hub-wordmark-black svg,
+.docs-hub-wordmark-black svg * {
+  fill: #212529 !important;
+  stroke: #212529 !important;
+}
+
+/* Docs hub wordmark hover effect - darken like other navbar items */
+.td-navbar .docs-hub-wordmark {
+  filter: brightness(1);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.td-navbar .navbar-docs-hub:hover .docs-hub-wordmark,
+.td-navbar .navbar-docs-hub .nav-link:hover .docs-hub-wordmark {
+  opacity: 0.75;
+}
+
+/* Mobile hamburger menu - ONLY at smallest breakpoint */
+.navbar-toggler {
+  display: none; /* Hidden by default */
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.navbar-toggler:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(0, 149, 213, 0.25);
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+/* ONLY apply hamburger menu at smallest mobile breakpoint */
+@media (max-width: 480px) {
+  /* Show hamburger button */
+  .navbar-toggler {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* Adjust container-fluid to use flexbox for logo + hamburger layout */
+  .td-navbar .container-fluid {
+    position: relative;
+    display: flex !important;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .td-navbar .navbar-brand {
+    flex: 0 0 auto;
+  }
+
+  /* Hide nav items by default, show when expanded */
+  .td-navbar .td-navbar-nav-scroll.collapse-mobile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bs-dark);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    flex-basis: 100%;
+  }
+
+  /* Show nav items when hamburger is clicked (toggle .show class via JS) */
+  .td-navbar .td-navbar-nav-scroll.collapse-mobile.show {
+    display: block !important;
+  }
+
+  /* Stack nav items vertically on small mobile */
+  .td-navbar .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .td-navbar .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .td-navbar .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+    width: 100%;
+  }
+
+  /* Make dropdown menus full width on small mobile */
+  .td-navbar .dropdown-menu {
+    position: static !important;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 0.5rem;
+  }
+
+  /* Reduce navbar padding on smallest mobile */
+  body:not(.td-home) .td-navbar {
+    padding: 0.6rem 1rem !important;
+  }
+
+  .td-home .td-navbar.navbar-scrolled {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+/* Above 480px: always show nav items, hide hamburger */
+@media (min-width: 481px) {
+  .td-navbar .td-navbar-nav-scroll.collapse-mobile {
+    display: flex !important;
+  }
+}
+
+/* Show/hide wordmark based on theme */
+/* Dark mode - show white wordmark, hide black and color */
+[data-bs-theme="dark"] .docs-hub-wordmark-white {
+  display: inline !important;
+  position: static !important;
+  transform: none !important;
+}
+
+[data-bs-theme="dark"] .docs-hub-wordmark-black {
+  display: none !important;
+}
+
+[data-bs-theme="dark"] .docs-hub-wordmark-color {
+  display: none !important;
+}
+
+/* Light mode - show black wordmark, hide white and color */
+[data-bs-theme="light"] .docs-hub-wordmark-white {
+  display: none !important;
+}
+
+[data-bs-theme="light"] .docs-hub-wordmark-black {
+  display: inline !important;
+  position: static !important;
+  transform: none !important;
+}
+
+[data-bs-theme="light"] .docs-hub-wordmark-color {
+  display: none !important;
+}
+
+/* Remove transform animations from navbar links only - exclude search */
+.td-navbar .navbar-nav .nav-link:not(.search-link),
+.td-navbar .navbar-nav .nav-item:not(.search-item) a {
+  transform: none !important;
+}
+
+.td-navbar .navbar-nav .nav-link:not(.search-link):hover,
+.td-navbar .navbar-nav .nav-item:not(.search-item) a:hover {
+  transform: none !important;
+}
+
+/* Prevent transitions and transforms on search elements */
+.td-navbar .navbar-nav .search-item,
+.td-navbar .navbar-nav .search-item *,
+.td-navbar .td-search,
+.td-navbar .td-search *,
+.td-navbar [class*="search"],
+.td-navbar [class*="search"] * {
+  transition: none !important;
+}
+
+.td-navbar .navbar-nav .search-item:hover,
+.td-navbar .navbar-nav .search-item:hover *,
+.td-navbar .td-search:hover,
+.td-navbar .td-search:hover *,
+.td-navbar [class*="search"]:hover,
+.td-navbar [class*="search"]:hover * {
+  transform: none !important;
+}
+
+// Navbar sticky pill transformation (non-homepage)
+body:not(.td-home) .td-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background: var(--bs-dark);
+  width: 100%;
+  margin: 0;
+  padding: 0.6rem 2.5rem;
+  box-shadow: 0 2px 8px rgba(0, 149, 213, 0.15) !important;
+}
+
+// Light mode navbar for non-docs pages (homepage, essentials, changes)
+// More specific selectors to override hardcoded dark values
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar,
+[data-bs-theme="light"] body:not(.td-page):not(.td-section).td-home .td-navbar.navbar-visible:not(.navbar-scrolled),
+[data-bs-theme="light"] body:not(.td-page):not(.td-section):not(.td-home) .td-navbar,
+[data-bs-theme="light"] body.cover-page .td-navbar {
+  background: #ffffff !important;
+  color: #212529 !important;
+}
+
+// Light mode pill navbar (when scrolled on non-homepage pages)
+[data-bs-theme="light"] body:not(.td-home):not(.td-page):not(.td-section) .td-navbar {
+  background: #ffffff !important;
+}
+
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .navbar-nav .nav-link,
+[data-bs-theme="light"] body.cover-page .td-navbar .navbar-nav .nav-link {
+  color: #212529 !important;
+  text-shadow: none !important;
+}
+
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .navbar-nav .nav-link:hover,
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .navbar-nav .nav-link:focus,
+[data-bs-theme="light"] body.cover-page .td-navbar .navbar-nav .nav-link:hover,
+[data-bs-theme="light"] body.cover-page .td-navbar .navbar-nav .nav-link:focus {
+  color: #666666 !important; /* Slightly darker, not blue */
+  text-shadow: none !important;
+}
+
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .dropdown-menu,
+[data-bs-theme="light"] body.cover-page .td-navbar .dropdown-menu {
+  background-color: #ffffff !important;
+  border-color: #dee2e6 !important;
+}
+
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .dropdown-menu .dropdown-item,
+[data-bs-theme="light"] body.cover-page .td-navbar .dropdown-menu .dropdown-item {
+  color: #212529 !important;
+}
+
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .dropdown-menu .dropdown-item:hover,
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .dropdown-menu .dropdown-item:focus,
+[data-bs-theme="light"] body.cover-page .td-navbar .dropdown-menu .dropdown-item:hover,
+[data-bs-theme="light"] body.cover-page .td-navbar .dropdown-menu .dropdown-item:focus {
+  color: #0095d5 !important;
+  background-color: rgba(0, 149, 213, 0.1) !important;
+}
+
+// Light mode dropdown divider - make visible
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .dropdown-divider,
+[data-bs-theme="light"] body.cover-page .td-navbar .dropdown-divider {
+  border-color: #dee2e6 !important;
+  opacity: 1 !important;
+}
+
+// Light mode dropdown icons - change from white to dark (exclude .bi icons - handled separately)
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .dropdown-menu svg:not(.bi),
+[data-bs-theme="light"] body.cover-page .td-navbar .dropdown-menu svg:not(.bi) {
+  fill: #212529 !important;
+  stroke: #212529 !important;
+}
+
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .dropdown-menu .dropdown-item:hover svg:not(.bi),
+[data-bs-theme="light"] body.cover-page .td-navbar .dropdown-menu .dropdown-item:hover svg:not(.bi) {
+  fill: #0095d5 !important;
+  stroke: #0095d5 !important;
+}
+
+// Light mode dropdown PNG icons (like TrueNAS Docs icon) - invert to dark
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .dropdown-menu img,
+[data-bs-theme="light"] body.cover-page .td-navbar .dropdown-menu img {
+  filter: invert(1) brightness(0.2) !important;
+}
+
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-navbar .dropdown-menu .dropdown-item:hover img,
+[data-bs-theme="light"] body.cover-page .td-navbar .dropdown-menu .dropdown-item:hover img {
+  filter: invert(0.4) sepia(1) saturate(10) hue-rotate(180deg) brightness(0.9) !important;
+}
+
+// Dropdown hub menu icon theming
+// Light mode - make themed icons/SVGs dark
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .navbar-docs-hub .dropdown-menu .dropdown-icon-themed,
+[data-bs-theme="light"] body.cover-page .navbar-docs-hub .dropdown-menu .dropdown-icon-themed {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(4%) saturate(0%) hue-rotate(222deg) brightness(95%) contrast(90%) !important;
+}
+
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .navbar-docs-hub .dropdown-menu .dropdown-icon-themed svg,
+[data-bs-theme="light"] body.cover-page .navbar-docs-hub .dropdown-menu .dropdown-icon-themed svg {
+  fill: #212529 !important;
+  stroke: #212529 !important;
+}
+
+// Dark mode - invert black icons to white
+[data-bs-theme="dark"] .navbar-docs-hub .dropdown-menu .dropdown-icon-themed,
+[data-bs-theme="dark"] .navbar-docs-hub .dropdown-menu .dropdown-icon-themed svg {
+  filter: brightness(0) invert(1) !important;
+}
+
+[data-bs-theme="dark"] .navbar-docs-hub .dropdown-menu .dropdown-icon-themed svg {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+// Base styling for theme toggle icons - remove opacity
+.td-light-dark-menu .dropdown-menu svg.bi {
+  opacity: 1 !important;
+}
+
+// Dark mode - make theme toggle icons white (default white fill)
+[data-bs-theme="dark"] body:not(.td-page):not(.td-section) .td-light-dark-menu .dropdown-menu svg.bi,
+[data-bs-theme="dark"] body.cover-page .td-light-dark-menu .dropdown-menu svg.bi,
+[data-bs-theme="dark"] .td-light-dark-menu .dropdown-menu svg.bi {
+  fill: #ffffff !important;
+  stroke: none !important;
+  filter: none !important;
+}
+
+// Light mode - make theme toggle icons dark using filter instead of fill
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-light-dark-menu .dropdown-menu svg.bi,
+[data-bs-theme="light"] body.cover-page .td-light-dark-menu .dropdown-menu svg.bi,
+[data-bs-theme="light"] .td-light-dark-menu .dropdown-menu svg.bi {
+  fill: #ffffff !important;
+  stroke: none !important;
+  filter: invert(1) brightness(0.2) !important;
+}
+
+// Hover state for theme toggle icons - turn blue in both modes
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) .td-light-dark-menu .dropdown-menu .dropdown-item:hover svg.bi,
+[data-bs-theme="light"] body.cover-page .td-light-dark-menu .dropdown-menu .dropdown-item:hover svg.bi,
+[data-bs-theme="dark"] body:not(.td-page):not(.td-section) .td-light-dark-menu .dropdown-menu .dropdown-item:hover svg.bi,
+[data-bs-theme="dark"] body.cover-page .td-light-dark-menu .dropdown-menu .dropdown-item:hover svg.bi,
+.td-light-dark-menu .dropdown-menu .dropdown-item:hover svg.bi {
+  fill: #ffffff !important;
+  stroke: none !important;
+  filter: invert(0.4) sepia(1) saturate(10) hue-rotate(180deg) brightness(0.9) !important;
+}
+
+// ============================================================================
+// Light mode dropdown styling for docs pages (blue navbar)
+// ============================================================================
+
+// Light mode dropdown background and borders for docs pages
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-navbar .dropdown-menu,
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-navbar .dropdown-menu {
+  background-color: #ffffff !important;
+  border-color: #dee2e6 !important;
+}
+
+// Light mode dropdown text color for docs pages
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item,
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item {
+  color: #212529 !important;
+}
+
+// Light mode dropdown hover states for docs pages
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item:hover,
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item:focus,
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item:hover,
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item:focus {
+  color: #0095d5 !important;
+  background-color: rgba(0, 149, 213, 0.1) !important;
+}
+
+// Light mode dropdown divider for docs pages
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-navbar .dropdown-divider,
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-navbar .dropdown-divider {
+  border-color: #dee2e6 !important;
+  opacity: 1 !important;
+}
+
+// Light mode dropdown SVG icons for docs pages (exclude .bi icons)
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-navbar .dropdown-menu svg:not(.bi),
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-navbar .dropdown-menu svg:not(.bi) {
+  fill: #212529 !important;
+  stroke: #212529 !important;
+}
+
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item:hover svg:not(.bi),
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item:hover svg:not(.bi) {
+  fill: #0095d5 !important;
+  stroke: #0095d5 !important;
+}
+
+// Light mode dropdown themed icons for docs pages (Home, TrueNAS Connect).
+// Without this, the unconditional dark-mode .dropdown-icon-themed filter
+// rule above still wins on docs pages (the <nav> always carries
+// data-bs-theme="dark" itself, which that rule matches regardless of the
+// site-wide light/dark toggle), leaving these icons white-on-white.
+[data-bs-theme="light"] .td-page:not(.cover-page) .navbar-docs-hub .dropdown-menu .dropdown-icon-themed,
+[data-bs-theme="light"] .td-section:not(.cover-page) .navbar-docs-hub .dropdown-menu .dropdown-icon-themed {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(4%) saturate(0%) hue-rotate(222deg) brightness(95%) contrast(90%) !important;
+}
+
+[data-bs-theme="light"] .td-page:not(.cover-page) .navbar-docs-hub .dropdown-menu .dropdown-icon-themed svg,
+[data-bs-theme="light"] .td-section:not(.cover-page) .navbar-docs-hub .dropdown-menu .dropdown-icon-themed svg {
+  fill: #212529 !important;
+  stroke: #212529 !important;
+}
+
+// Light mode dropdown PNG icons for docs pages
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-navbar .dropdown-menu img,
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-navbar .dropdown-menu img {
+  filter: invert(1) brightness(0.2) !important;
+}
+
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item:hover img,
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-navbar .dropdown-menu .dropdown-item:hover img {
+  filter: invert(0.4) sepia(1) saturate(10) hue-rotate(180deg) brightness(0.9) !important;
+}
+
+// Light mode theme toggle icons for docs pages
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-light-dark-menu .dropdown-menu svg.bi,
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-light-dark-menu .dropdown-menu svg.bi {
+  fill: #ffffff !important;
+  stroke: none !important;
+  filter: invert(1) brightness(0.2) !important;
+  opacity: 1 !important;
+}
+
+[data-bs-theme="light"] .td-page:not(.cover-page) .td-light-dark-menu .dropdown-menu .dropdown-item:hover svg.bi,
+[data-bs-theme="light"] .td-section:not(.cover-page) .td-light-dark-menu .dropdown-menu .dropdown-item:hover svg.bi {
+  fill: #ffffff !important;
+  stroke: none !important;
+  filter: invert(0.4) sepia(1) saturate(10) hue-rotate(180deg) brightness(0.9) !important;
+  opacity: 1 !important;
+}
+
+// Documentation Hub wordmark - always show white version on docs pages (blue navbar)
+.td-page:not(.cover-page) .docs-hub-wordmark-white,
+.td-section:not(.cover-page) .docs-hub-wordmark-white {
+  display: inline !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.td-page:not(.cover-page) .docs-hub-wordmark-black,
+.td-section:not(.cover-page) .docs-hub-wordmark-black {
+  display: none !important;
+}
+
+.td-page:not(.cover-page) .docs-hub-wordmark-color,
+.td-section:not(.cover-page) .docs-hub-wordmark-color {
+  display: none !important;
+}
+
+body:not(.td-home) .td-navbar .container-fluid {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+body:not(.td-home) .td-navbar .navbar-brand {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  align-self: center !important;
+}
+
+body:not(.td-home) .td-navbar .navbar-brand__logo {
+  display: flex !important;
+  align-items: center !important;
+}
+
+body:not(.td-home) .td-navbar .navbar-logo-container {
+  align-self: center !important;
+  margin-top: 0 !important;
+}
+
+// Fix logo alignment on docs pages - white/black logos shouldn't affect positioning
+// Only apply to pages with sidebar (regular docs pages), not landing pages with cover blocks
+body:has(.td-sidebar) .td-navbar .navbar-logo-white,
+body:has(.td-sidebar) .td-navbar .navbar-logo-black {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+body:has(.td-sidebar) .td-navbar .navbar-nav {
+  align-items: center !important;
+}
+
+body:not(.td-home) .td-navbar .nav-item:not(.d-lg-none):not(.d-none) {
+  display: flex !important;
+  align-items: center !important;
+}
+
+// Blue background for docs pages (excluding cover pages)
+// Must explicitly check for cover-page absence to prevent FOUC
+.td-page:not(.cover-page) .td-navbar,
+.td-section:not(.cover-page) .td-navbar {
+  background: $primary !important;
+}
+
+// Explicitly ensure cover pages don't get blue background
+body.cover-page .td-navbar,
+.cover-page .td-navbar {
+  background: var(--bs-dark) !important;
+}
+
+// Light mode cover pages get white background
+[data-bs-theme="light"] body.cover-page .td-navbar,
+[data-bs-theme="light"] .cover-page .td-navbar {
+  background: #ffffff !important;
+}
+
+// Docs pages: full-width sticky (no pill effect)
+.td-page:not(.cover-page) .td-navbar.navbar-scrolled,
+.td-section:not(.cover-page) .td-navbar.navbar-scrolled {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  background: $primary !important;
+  border-radius: 0 !important;
+  padding: 0.75rem 1rem !important;
+  margin: 0 !important;
+  z-index: 1500 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+
+.td-page:not(.cover-page) .td-navbar.navbar-scrolled .container-fluid,
+.td-section:not(.cover-page) .td-navbar.navbar-scrolled .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+}
+
+// Prevent stacking context from clipping dropdowns on docs pages
+.td-page:not(.cover-page) .td-navbar,
+.td-section:not(.cover-page) .td-navbar,
+body:not(.td-home) .td-navbar {
+  contain: none !important;
+  overflow: visible !important;
+}
+
+.td-page:not(.cover-page) .td-navbar-nav-scroll,
+.td-section:not(.cover-page) .td-navbar-nav-scroll,
+.td-page:not(.cover-page) #main_navbar,
+.td-section:not(.cover-page) #main_navbar,
+body:not(.td-home) .td-navbar-nav-scroll,
+body:not(.td-home) #main_navbar {
+  overflow: visible !important;
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+  max-height: none !important;
+  min-height: 0 !important;
+}
+
+.td-page:not(.cover-page) .navbar-collapse,
+.td-section:not(.cover-page) .navbar-collapse,
+body:not(.td-home) .navbar-collapse {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.td-page:not(.cover-page) .container-fluid,
+.td-section:not(.cover-page) .container-fluid,
+body:not(.td-home) .td-navbar .container-fluid {
+  overflow: visible !important;
+}
+
+// Ensure dropdown parent containers allow overflow
+.td-navbar .nav-item.dropdown,
+body:not(.td-home) .td-navbar .nav-item.dropdown {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+body:not(.td-home) .navbar-nav {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+// Navbar in collapsed/sticky mode with pill effect (non-homepage, non-docs pages - always visible when scrolled)
+body:not(.td-home):not(.td-page):not(.td-section) .td-navbar.navbar-scrolled,
+body.td-section.cover-page .td-navbar.navbar-scrolled,
+body.td-page.cover-page .td-navbar.navbar-scrolled {
+  position: fixed !important;
+  top: 1rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: calc(100% - 4rem) !important;
+  max-width: 1400px !important;
+  background: var(--bs-dark) !important;
+  border-radius: 50px !important;
+  padding: 0.75rem 2rem !important;
+  margin: 0 !important;
+  z-index: 1500 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+// Light mode pill navbar (scrolled state) - override dark navbar background
+[data-bs-theme="light"] body:not(.td-home):not(.td-page):not(.td-section) .td-navbar.navbar-scrolled,
+[data-bs-theme="light"] body.td-section.cover-page .td-navbar.navbar-scrolled,
+[data-bs-theme="light"] body.td-page.cover-page .td-navbar.navbar-scrolled,
+[data-bs-theme="light"] body:not(.td-home):not(.td-page):not(.td-section) .td-navbar[data-bs-theme="dark"].navbar-scrolled,
+[data-bs-theme="light"] body.td-section.cover-page .td-navbar[data-bs-theme="dark"].navbar-scrolled,
+[data-bs-theme="light"] body.td-page.cover-page .td-navbar[data-bs-theme="dark"].navbar-scrolled {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+
+body:not(.td-home):not(.td-page):not(.td-section) .td-navbar.navbar-scrolled .container-fluid,
+body.td-section.cover-page .td-navbar.navbar-scrolled .container-fluid,
+body.td-page.cover-page .td-navbar.navbar-scrolled .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+}
+
+// Adjust container inside pill
+.td-navbar.navbar-scrolled .container-fluid {
+  max-width: 100% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+// Responsive pill sizing for non-homepage, non-docs pages
+@media (max-width: 1200px) {
+  body:not(.td-home):not(.td-page):not(.td-section) .td-navbar.navbar-scrolled,
+  body.td-section.cover-page .td-navbar.navbar-scrolled,
+  body.td-page.cover-page .td-navbar.navbar-scrolled {
+    width: calc(100% - 3rem) !important;
+    padding: 0.5rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body:not(.td-home):not(.td-page):not(.td-section) .td-navbar.navbar-scrolled,
+  body.td-section.cover-page .td-navbar.navbar-scrolled,
+  body.td-page.cover-page .td-navbar.navbar-scrolled {
+    width: calc(100% - 2rem) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 40px !important;
+  }
+}
+
+// Pill styling when scrolled (but don't force visibility - that's controlled by navbar-visible)
+.td-home .td-navbar.navbar-scrolled {
+  position: fixed !important;
+  top: 1rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: calc(100% - 4rem) !important;
+  max-width: 1400px !important;
+  background: var(--bs-dark) !important;
+  border-radius: 50px !important;
+  padding: 0.6rem 2.5rem !important;
+  margin: 0 !important;
+  z-index: 1500 !important;
+  transition: none !important;
+}
+
+
+.td-home .td-navbar.navbar-scrolled .container-fluid {
+  align-items: center !important;
+}
+
+.td-home .td-navbar:not(.navbar-scrolled) .container-fluid {
+  // Padding applied to .td-navbar element instead
+}
+
+.td-home .td-navbar.navbar-scrolled .navbar-nav {
+  align-items: center !important;
+}
+
+.td-home .td-navbar.navbar-scrolled .nav-item:not(.d-lg-none):not(.d-none) {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.td-home .td-navbar:not(.navbar-scrolled) .navbar-nav {
+  align-items: center !important;
+}
+
+.td-home .td-navbar:not(.navbar-scrolled) .nav-item:not(.d-lg-none):not(.d-none) {
+  display: flex !important;
+  align-items: center !important;
+}
+
+@media (max-width: 1200px) {
+  .td-home .td-navbar.navbar-scrolled {
+    width: calc(100% - 3rem) !important;
+    padding: 0.5rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .td-home .td-navbar.navbar-scrolled {
+    width: calc(100% - 2rem) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 40px !important;
+  }
+}
+
+// Hide secondary navbar initially, but allow it to slide in
+.td-home .td-navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: translateY(-100%) !important;
+  transition: none !important;
+  z-index: 1500 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  visibility: hidden !important;
+  background: transparent !important;
+  opacity: 0 !important;
+  display: none !important;
+}
+
+// Show navbar when toggled (full-width at top)
+.td-home .td-navbar.navbar-visible:not(.navbar-scrolled) {
+  transform: translateY(0) !important;
+  visibility: visible !important;
+  background: var(--bs-dark) !important;
+  opacity: 1 !important;
+  display: block !important;
+  box-shadow: 0 2px 8px rgba(0, 149, 213, 0.15) !important;
+  padding: 0.6rem 2.5rem !important;
+}
+
+// When toggled AND scrolled, ensure pill centering and visibility
+.td-home .td-navbar.navbar-visible.navbar-scrolled {
+  transform: translateX(-50%) !important;
+  left: 50% !important;
+  top: 1rem !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  box-shadow: 0 2px 8px rgba(0, 149, 213, 0.15) !important;
+}
+
+// Add a toggle button with responsive positioning
+.td-home .navbar-toggle-btn {
+  position: fixed;
+  top: 130px; // Desktop: below full TrueNAS header
+  right: 20px;
+  color: white !important;
+  padding: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50% !important;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1600 !important;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Light mode - light gray background, no border
+[data-bs-theme="light"] .td-home .navbar-toggle-btn {
+  background: #E0E0E0 !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+[data-bs-theme="light"] .td-home .navbar-toggle-btn:hover {
+  background: #E0E0E0 !important;
+  transform: scale(1.05);
+}
+
+// Dark mode - same light gray background, no border
+[data-bs-theme="dark"] .td-home .navbar-toggle-btn {
+  background: #E0E0E0 !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+[data-bs-theme="dark"] .td-home .navbar-toggle-btn:hover {
+  background: #E0E0E0 !important;
+  transform: scale(1.05);
+}
+
+// Tablet responsive positioning
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+  .td-home .navbar-toggle-btn {
+    top: 210px; // TrueNAS header is 187px + some margin
+  }
+}
+
+// Mobile responsive positioning
+@media screen and (max-width: 768px) {
+  .td-home .navbar-toggle-btn {
+    top: 80px; // Mobile: TrueNAS header is more compact
+    right: 10px !important; // Closer to edge on mobile
+  }
+}
+
+// Custom ultra-minimal cover block height
+.td-cover-block--height-micro {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.td-cover-block--height-micro .td-overlay__inner {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  margin-top: 0 !important;
+}
+
+.td-cover-block--height-micro .container {
+  padding-top: 0.5rem !important;
+}
+
+// Adjust spacing in cover block content
+.td-home .td-cover-block .lead.mt-5 {
+  margin-top: 2rem !important; // Reduced from mt-5 (3rem) to 2rem
+  margin-bottom: 3rem !important; // Even more space after paragraph before buttons
+}
+
+// Reduce space between buttons and Essentials header
+.td-home .td-cover-block + section {
+  padding-top: 0 !important; // No extra space above section
+}
+
+// Override td-block-padding on sections after cover block (base styles)
+.td-home .td-cover-block + section.row,
+.td-home .td-cover-block + section.td-box,
+.td-home.td-default main section.row,
+.td-home.td-default main section.td-box {
+  padding-top: 0 !important;
+}
+
+// Override Bootstrap media query padding on home page sections after cover
+@media (min-width: 768px) {
+  .td-home .td-cover-block + section.row,
+  .td-home .td-cover-block + section.td-box,
+  .td-home.td-default main section.row,
+  .td-home.td-default main section.td-box {
+    padding-top: 0 !important;
+  }
+}
+
+// Extend cover background to cover Essentials section - responsive height
+.td-home .td-cover-block {
+  min-height: clamp(60vh, 70vh, 90vh) !important;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+}
+
+// Override for micro height - respect the height parameter even on home page
+.td-home .td-cover-block.td-cover-block--height-micro {
+  min-height: auto !important;
+}
+
+// Make homepage button text and icons white
+.td-home .btn {
+  color: white !important;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  i, .fa, .fas, .far {
+    color: white !important;
+  }
+}
+
+// Primary button wipe transition effect
+.td-home .btn-primary {
+  background: #0095d5;
+  border: 1px solid #0095d5;
+}
+
+.td-home .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 0;
+  height: 100%;
+  background: #71bf44;
+  transition: width 0.25s ease;
+  transform: skewX(-10deg);
+  z-index: -1;
+}
+
+.td-home .btn-primary:hover::before {
+  width: 120%;
+}
+
+.td-home .btn-primary:hover {
+  border-color: #71bf44 !important;
+  color: #fff !important;
+}
+
+// Secondary button styling - white background with blue border/text
+.td-home .btn-secondary {
+  background: #fff;
+  color: #0095d5 !important;
+  border: 1px solid #0095d5;
+}
+
+.td-home .btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 0;
+  height: 100%;
+  background: #71bf44;
+  transition: width 0.25s ease;
+  transform: skewX(-10deg);
+  z-index: -1;
+}
+
+.td-home .btn-secondary:hover::before {
+  width: 120%;
+}
+
+.td-home .btn-secondary:hover {
+  border-color: #71bf44 !important;
+  color: #fff !important;
+}
+
+// No shadows in light or dark mode
+.td-home .td-cover-block p {
+  text-shadow: none !important;
+}
+
+// Navbar Sign In button sizing (all navbars except homepage cover)
+.td-navbar .btn-secondary {
+  padding: 0.375rem 1rem !important;
+  line-height: 1.5;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+// Non-homepage pages: Apply secondary button wipe effect to Sign In button
+body:not(.td-home) .td-navbar .btn-secondary {
+  color: #0095d5 !important;
+  background: #fff;
+  border: 1px solid #0095d5;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+body:not(.td-home) .td-navbar .btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 0;
+  height: 100%;
+  background: #71bf44;
+  transition: width 0.25s ease;
+  transform: skewX(-10deg);
+  z-index: -1;
+}
+
+body:not(.td-home) .td-navbar .btn-secondary:hover::before {
+  width: 120%;
+}
+
+body:not(.td-home) .td-navbar .btn-secondary:hover {
+  border-color: #71bf44 !important;
+  color: #fff !important;
+}
+
+// Cover height adjustment
+@media screen and (min-height: 900px) {
+  .td-home .td-cover-block {
+    min-height: 20vh !important; // Shorter on tall screens
+  }
+}
+
+// Two-column cover block layout
+.td-cover-block .row {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.td-cover-block h1.cover-heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.td-cover-block .lead {
+  font-size: clamp(0.875rem, 1.25vw, 1rem);
+  color: #ffffff;
+  line-height: 1.5;
+  text-align: left;
+}
+
+// Dashboard image styling - no shadows
+.td-cover-block img.dashboard-hero-image {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  width: auto;
+  border-radius: 20px;
+  filter: none;
+  object-fit: contain;
+}
+
+// Mobile-specific adjustments where buttons stack vertically
+@media screen and (max-width: 768px) {
+  // Two-column cover block adjustments for mobile
+  .td-cover-block .row {
+    padding: 0 1rem;
+  }
+
+  .td-cover-block h1.cover-heading {
+    font-size: 2rem;
+    white-space: normal;
+  }
+
+  .td-cover-block .lead {
+    font-size: 0.875rem;
+  }
+
+  // Ensure full width on mobile and prevent ALL horizontal overflow
+  html, body {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+  }
+  
+  // Nuclear option - force viewport clipping and prevent any horizontal scroll
+  * {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+  
+  // Completely disable horizontal scrolling
+  body {
+    overflow-x: hidden !important;
+    position: relative !important;
+    width: 100vw !important;
+  }
+  
+  // Force any absolutely positioned elements to stay within bounds
+  *[style*="position: absolute"],
+  *[style*="position: fixed"] {
+    max-width: calc(100vw - 20px) !important;
+    right: 10px !important;
+  }
+  
+  .td-home .td-cover-block {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  
+  // Ensure containers don't exceed viewport
+  .container, .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  // Fix navbar width on mobile
+  .td-navbar,
+  .td-navbar .container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  
+  // Adjust navbar toggle button position on mobile
+  .td-home .navbar-toggle-btn {
+    right: 15px !important; // More padding from edge
+  }
+  
+  // Reduce spacing between search and sign in on mobile
+  .td-navbar .nav-item:last-child {
+    margin-left: 10px !important; // Less space between search and sign in
+  }
+  
+  // Make sign in button smaller on mobile
+  .td-navbar .btn {
+    padding: 0.25rem 0.5rem !important; // Smaller padding
+    font-size: 0.875rem !important; // Smaller text
+  }
+  
+  // Simple approach - just fix the dropdown z-index
+  .truenas-menudropdown {
+    z-index: 999999 !important;
+  }
+  
+  // Fix cover blocks and sections width
+  .td-cover-block,
+  .td-cover-block .container,
+  section.row,
+  section.row.td-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  // Remove padding from outer container to match header width
+  .td-outer {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  // Fix Jira feedback widget overflow on mobile - hide completely
+  #atlwdg-container {
+    display: none !important;
+  }
+  
+  // Also hide the feedback trigger on mobile
+  #atlwdg-trigger {
+    display: none !important;
+  }
+  
+  // Only apply fixes to homepage where the issue occurs
+  .td-home {
+    overflow-x: hidden !important;
+    
+    // Hide problematic widgets only on homepage
+    #docsbotai-root,
+    [id*="docsbotai"],
+    [class*="docsbotai"],
+    .docsbot-floating-button,
+    #docsbot-floating-button,
+    [id*="docsbot"],
+    [class*="docsbot"] {
+      display: none !important;
+    }
+    
+    #atlwdg-trigger,
+    [id*="atlwdg"] {
+      display: none !important;
+    }
+  }
+  
+  // Global overflow hiding just for homepage
+  body.td-home {
+    overflow-x: hidden !important;
+  }
+  
+  // Restore navbar toggle button with proper mobile positioning
+  .td-home .navbar-toggle-btn {
+    top: 120px;
+    right: 15px !important;
+    z-index: 1001 !important;
+    position: fixed !important;
+  }
+  
+  // Mobile adjustments for homepage
+  @media screen and (max-width: 768px) {
+    .td-home .navbar-toggle-btn {
+      position: fixed !important;
+      top: 120px;
+      right: 15px !important;
+      z-index: 1001 !important;
+    }
+    
+    // Increase cover block height on mobile to accommodate stacked buttons
+    .td-home .td-cover {
+      min-height: 70vh !important;
+      padding-bottom: 4rem !important;
+    }
+    
+    // Ensure essentials block doesn't get hidden behind cover
+    .td-home .essentials-overlay {
+      position: relative !important;
+      z-index: 10 !important;
+      margin-top: 2rem !important;
+    }
+    
+    // Add more spacing between cover content and essentials on mobile
+    .td-home .blocks-cover + .blocks-section {
+      margin-top: 3rem !important;
+    }
+    
+    // Disable the negative margin overlay effect on mobile
+    .td-home section.row.td-box.td-box--dark {
+      margin-top: 0 !important;
+    }
+  }
+  
+  // When navbar is visible, the JavaScript handles positioning
+  // This is just a fallback in case JS doesn't work
+  .td-navbar.navbar-visible ~ * .navbar-toggle-btn,
+  .navbar-visible .navbar-toggle-btn {
+    top: 400px !important;
+  }
+  
+  // Fix TrueNAS header width on mobile
+  .truenas-top-header,
+  .truenas-top-header .container {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
+
+// Mobile + short height combination
+@media screen and (max-width: 768px) and (max-height: 600px) {
+  .td-home .td-cover-block {
+    min-height: 95vh !important; // Near full height on short mobile
+  }
+  
+}
+
+// Ensure the text remains readable on the overlay
+.td-home section.td-box.td-box--dark *,
+.td-home #td-block-1 + section * {
+  position: relative;
+  z-index: 3;
+}
+
+// Cover page backgrounds - respect theme toggle
+[data-bs-theme="light"] body.cover-page {
+  --bs-body-bg: #ffffff !important;
+  --bs-body-color: #212529 !important;
+  background-color: #ffffff !important;
+  color: #212529 !important;
+}
+
+[data-bs-theme="dark"] body.cover-page {
+  --bs-body-bg: #282828 !important;
+  --bs-body-color: #ffffff !important;
+  background-color: #282828 !important;
+  color: #ffffff !important;
+}
+
+[data-bs-theme="light"] .cover-page {
+  --bs-body-bg: #ffffff !important;
+  --bs-body-color: #212529 !important;
+}
+
+[data-bs-theme="dark"] .cover-page {
+  --bs-body-bg: #282828 !important;
+  --bs-body-color: #ffffff !important;
+}
+
+// Fix "light" colored blocks to actually be light in light mode
+// The $light variable is set to #282828 (dark gray) which was fine for dark mode default
+// Now we need to override ALL sections/blocks to respect theme mode
+[data-bs-theme="light"] section.td-box,
+[data-bs-theme="light"] .td-box,
+[data-bs-theme="light"] section.row {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+}
+
+[data-bs-theme="light"] section.td-box *:not(.feature-card):not(.feature-card *):not(.software-status-table):not(.software-status-table *):not(.linkable-tab-button):not(.section-tab):not(.btn):not(.btn *):not(th):not(.section-box-header),
+[data-bs-theme="light"] .td-box *:not(.feature-card):not(.feature-card *):not(.software-status-table):not(.software-status-table *):not(.linkable-tab-button):not(.section-tab):not(.btn):not(.btn *):not(th):not(.section-box-header),
+[data-bs-theme="light"] section.row *:not(.feature-card):not(.feature-card *):not(.software-status-table):not(.software-status-table *):not(.linkable-tab-button):not(.section-tab):not(.btn):not(.btn *):not(th):not(.section-box-header) {
+  color: #212529 !important;
+}
+
+// Ensure dark mode keeps the dark backgrounds
+[data-bs-theme="dark"] section.td-box,
+[data-bs-theme="dark"] .td-box,
+[data-bs-theme="dark"] section.row {
+  background-color: #282828 !important;
+  color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] section.td-box *:not(.feature-card):not(.feature-card *):not(.software-status-table):not(.software-status-table *):not(.linkable-tab-button):not(.section-tab):not(.btn):not(.btn *):not(th):not(.section-box-header),
+[data-bs-theme="dark"] .td-box *:not(.feature-card):not(.feature-card *):not(.software-status-table):not(.software-status-table *):not(.linkable-tab-button):not(.section-tab):not(.btn):not(.btn *):not(th):not(.section-box-header),
+[data-bs-theme="dark"] section.row *:not(.feature-card):not(.feature-card *):not(.software-status-table):not(.software-status-table *):not(.linkable-tab-button):not(.section-tab):not(.btn):not(.btn *):not(th):not(.section-box-header) {
+  color: #ffffff !important;
+}
+
+// General cover block styling for light/dark modes
+// Target the section wrapper as well as the cover block itself
+
+// LIGHT MODE: Everything white
+[data-bs-theme="light"] html,
+[data-bs-theme="light"] body {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #212529 !important;
+}
+
+[data-bs-theme="light"] body.td-home,
+[data-bs-theme="light"] body.cover-page,
+[data-bs-theme="light"] body:not(.td-page):not(.td-section) {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+[data-bs-theme="light"] .td-home,
+[data-bs-theme="light"] section:has(.td-cover-block),
+[data-bs-theme="light"] .td-cover-block,
+[data-bs-theme="light"] .td-cover-block .td-overlay,
+[data-bs-theme="light"] .td-cover-block .td-overlay__inner,
+[data-bs-theme="light"] .td-cover-block .row,
+[data-bs-theme="light"] .td-cover-block .container {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
+
+[data-bs-theme="light"] .td-cover-block h1,
+[data-bs-theme="light"] .td-cover-block h2,
+[data-bs-theme="light"] .td-cover-block h3,
+[data-bs-theme="light"] .td-cover-block p,
+[data-bs-theme="light"] .td-cover-block .lead,
+[data-bs-theme="light"] .td-cover-block i:not(.btn i):not(.btn-primary i):not(.btn-secondary i) {
+  color: #212529 !important;
+}
+
+// DARK MODE: Everything dark gray
+[data-bs-theme="dark"] body {
+  background-color: #282828 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] body.td-home,
+[data-bs-theme="dark"] body.cover-page,
+[data-bs-theme="dark"] body:not(.td-page):not(.td-section) {
+  background-color: #282828 !important;
+  background-image: none !important;
+}
+
+[data-bs-theme="dark"] .td-home,
+[data-bs-theme="dark"] section:has(.td-cover-block),
+[data-bs-theme="dark"] .td-cover-block,
+[data-bs-theme="dark"] .td-cover-block .td-overlay,
+[data-bs-theme="dark"] .td-cover-block .td-overlay__inner,
+[data-bs-theme="dark"] .td-cover-block .row,
+[data-bs-theme="dark"] .td-cover-block .container {
+  background-color: #282828 !important;
+  background-image: none !important;
+}
+
+[data-bs-theme="dark"] .td-cover-block h1,
+[data-bs-theme="dark"] .td-cover-block h2,
+[data-bs-theme="dark"] .td-cover-block h3,
+[data-bs-theme="dark"] .td-cover-block p,
+[data-bs-theme="dark"] .td-cover-block .lead,
+[data-bs-theme="dark"] .td-cover-block i:not(.btn i):not(.btn-primary i):not(.btn-secondary i) {
+  color: #ffffff !important;
+}
+
+// Button colors - work in BOTH light and dark modes
+// Primary buttons (Sign Up, Download) - blue with white text → green with white text on hover
+
+// Universal button styles (apply regardless of theme detection)
+.td-home .td-cover-block .btn-primary,
+body.cover-page .td-cover-block .btn-primary,
+.td-cover-block .btn-primary {
+  color: #ffffff !important;
+  background: #0095d5 !important;
+}
+
+.td-home .td-cover-block .btn-secondary,
+body.cover-page .td-cover-block .btn-secondary,
+.td-cover-block .btn-secondary {
+  color: #0095d5 !important;
+  background: #ffffff !important;
+}
+
+// Light mode primary buttons
+[data-bs-theme="light"] .td-home .td-cover-block .btn-primary,
+[data-bs-theme="light"] body.cover-page .td-cover-block .btn-primary,
+[data-bs-theme="light"] .td-cover-block .btn-primary {
+  color: #ffffff !important;
+  background: #0095d5 !important;
+}
+
+[data-bs-theme="light"] .td-home .td-cover-block .btn-primary:hover,
+[data-bs-theme="light"] body.cover-page .td-cover-block .btn-primary:hover,
+[data-bs-theme="light"] .td-cover-block .btn-primary:hover {
+  color: #ffffff !important;
+  background: #71bf44 !important;
+}
+
+// Dark mode primary buttons
+[data-bs-theme="dark"] .td-home .td-cover-block .btn-primary,
+[data-bs-theme="dark"] body.cover-page .td-cover-block .btn-primary,
+[data-bs-theme="dark"] .td-cover-block .btn-primary {
+  color: #ffffff !important;
+  background: #0095d5 !important;
+}
+
+[data-bs-theme="dark"] .td-home .td-cover-block .btn-primary:hover,
+[data-bs-theme="dark"] body.cover-page .td-cover-block .btn-primary:hover,
+[data-bs-theme="dark"] .td-cover-block .btn-primary:hover {
+  color: #ffffff !important;
+  background: #71bf44 !important;
+}
+
+// Secondary buttons (Sign In) - white with blue text → green with white text on hover
+
+// Light mode secondary buttons
+[data-bs-theme="light"] .td-home .td-cover-block .btn-secondary,
+[data-bs-theme="light"] body.cover-page .td-cover-block .btn-secondary,
+[data-bs-theme="light"] .td-cover-block .btn-secondary {
+  color: #0095d5 !important;
+  background: #ffffff !important;
+}
+
+[data-bs-theme="light"] .td-home .td-cover-block .btn-secondary:hover,
+[data-bs-theme="light"] body.cover-page .td-cover-block .btn-secondary:hover,
+[data-bs-theme="light"] .td-cover-block .btn-secondary:hover {
+  color: #ffffff !important;
+  background: #71bf44 !important;
+}
+
+// Dark mode secondary buttons
+[data-bs-theme="dark"] .td-home .td-cover-block .btn-secondary,
+[data-bs-theme="dark"] body.cover-page .td-cover-block .btn-secondary,
+[data-bs-theme="dark"] .td-cover-block .btn-secondary {
+  color: #0095d5 !important;
+  background: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .td-home .td-cover-block .btn-secondary:hover,
+[data-bs-theme="dark"] body.cover-page .td-cover-block .btn-secondary:hover,
+[data-bs-theme="dark"] .td-cover-block .btn-secondary:hover {
+  color: #ffffff !important;
+  background: #71bf44 !important;
+}
+
+// Add @media prefers-color-scheme versions to ensure buttons work in dark mode
+@media screen and (prefers-color-scheme: dark) {
+  .td-home .td-cover-block .btn-primary,
+  body.cover-page .td-cover-block .btn-primary,
+  .td-cover-block .btn-primary {
+    color: #ffffff !important;
+    background: #0095d5 !important;
+  }
+
+  .td-home .td-cover-block .btn-primary:hover,
+  body.cover-page .td-cover-block .btn-primary:hover,
+  .td-cover-block .btn-primary:hover {
+    color: #ffffff !important;
+    background: #71bf44 !important;
+  }
+
+  .td-home .td-cover-block .btn-secondary,
+  body.cover-page .td-cover-block .btn-secondary,
+  .td-cover-block .btn-secondary {
+    color: #0095d5 !important;
+    background: #ffffff !important;
+  }
+
+  .td-home .td-cover-block .btn-secondary:hover,
+  body.cover-page .td-cover-block .btn-secondary:hover,
+  .td-cover-block .btn-secondary:hover {
+    color: #ffffff !important;
+    background: #71bf44 !important;
+  }
+}
+
+// Remove all drop shadows, box shadows, and text shadows in both light and dark modes
+.td-navbar,
+.td-navbar.navbar-scrolled,
+.navbar-toggle-btn,
+.td-cover-block,
+.td-cover-block *,
+.td-cover-block img,
+.td-cover-block .btn,
+.td-cover-block h1,
+.td-cover-block p,
+.td-cover-block .lead,
+.dashboard-hero-image,
+.feature-card,
+.doctype-label-tooltip,
+img,
+button,
+.btn,
+h1, h2, h3, h4, h5, h6,
+p,
+*[class*="shadow"] {
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+// Keep navbar scroll behavior intact - don't force navbar colors
+.td-navbar:not(.td-navbar-cover) {
+  // Allow normal scroll behavior on non-cover navbars
+}
+
+// TrueNAS Site Footer - Updated to match WordPress design
+.gdoc-footer {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-image: linear-gradient(90deg, #002637 0%, #000000 100%);
+  color: white;
+  margin-top: auto;
+  z-index: 2;
+  padding: 2rem 0;
+
+  // Override Bootstrap gutter padding to extend background full width
+  margin-left: calc(-1 * var(--bs-gutter-x, 1.5rem) * 0.5);
+  margin-right: calc(-1 * var(--bs-gutter-x, 1.5rem) * 0.5);
+  padding-left: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+  padding-right: calc(var(--bs-gutter-x, 1.5rem) * 0.5);
+
+  @media (min-width: 992px) {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer-row {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 2rem;
+  }
+}
+
+.gdoc-footer__link {
+  color: #31beec !important;
+  text-decoration: none;
+
+  &:visited {
+    color: #31beec !important;
+  }
+
+  &:hover {
+    color: #71bf44 !important;
+    text-decoration: none;
+  }
+}
+
+// Footer row with 4 columns
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+}
+
+.footer-column {
+  flex: 1;
+  max-width: 25%;
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    color: white;
+  }
+
+  a {
+    color: #31beec !important;
+    text-decoration: none;
+    &:hover {
+      color: #71bf44 !important;
+      text-decoration: none;
+    }
+  }
+}
+
+.footer-column-last {
+  border-right: none;
+}
+
+// Footer logo
+.footer-logo {
+  max-width: 100%;
+  width: 250px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+// Address styling
+.footer-address {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  color: white;
+}
+
+// Contact items with icons
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+
+  .footer-icon-wrapper {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+
+    i {
+      font-size: 1rem;
+      color: white;
+    }
+  }
+
+  a {
+    color: #31beec !important;
+    text-decoration: none;
+
+    &:hover {
+      color: #71bf44 !important;
+      text-decoration: none;
+    }
+  }
+}
+
+// Menu lists
+.footer-list {
+  list-style: none;
+  line-height: 2em;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #31beec !important;
+    text-decoration: none;
+
+    &:hover {
+      color: #71bf44 !important;
+      text-decoration: none;
+    }
+  }
+}
+
+// Newsletter button - Primary button with wipe animation
+.footer-button {
+  display: block;
+  background: transparent;
+  color: white !important;
+  padding: 10px 20px;
+  text-decoration: none !important;
+  border-radius: 50px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  z-index: 1;
+  width: fit-content;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0095d5;
+    z-index: -2;
+    border-radius: 50px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10%;
+    width: 0;
+    height: 100%;
+    background: #71bf44;
+    transition: width 0.25s ease;
+    transform: skewX(-10deg);
+    z-index: -1;
+    border-radius: 50px;
+  }
+
+  &:hover {
+    color: white !important;
+    text-decoration: none !important;
+  }
+
+  &:hover::before {
+    width: 120%;
+  }
+
+  &:visited {
+    color: white !important;
+  }
+}
+
+// Override footer-column link styles for buttons
+.footer-column .footer-button {
+  color: white !important;
+
+  &:hover {
+    color: white !important;
+  }
+
+  &:visited {
+    color: white !important;
+  }
+}
+
+// Social media icons row
+.social-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background: transparent;
+
+  &:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.15);
+  }
+
+  i {
+    font-size: 20px;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  &:hover i,
+  &:hover img {
+    filter: brightness(1.2);
+  }
+}
+
+// Footer bottom row
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 10%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom-left {
+  flex: 1;
+
+  span {
+    font-size: 14px;
+    color: white;
+  }
+}
+
+.footer-bottom-right {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+
+  a {
+    font-size: 14px;
+    color: #31beec !important;
+    text-decoration: none;
+
+    &:hover {
+      color: #71bf44 !important;
+      text-decoration: none;
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 1200px) {
+  .footer-row {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .footer-column {
+    padding: 0 1rem;
+  }
+
+  .footer-logo {
+    max-width: 100%;
+    width: 230px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .footer-logo {
+    max-width: 100%;
+    width: 200px;
+  }
+}
+
+@media (max-width: 980px) {
+  // Two column layout: columns 1 & 3 on left, columns 2 & 4 on right
+  .footer-row {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .footer-column {
+    flex: 0 0 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+    padding: 0 0.5rem 2rem 0.5rem;
+    margin: 0 0.5rem;
+
+    // Column 1: Logo/Contact - left column, first
+    &:nth-child(1) {
+      order: 1;
+    }
+
+    // Column 2: Support - right column, first
+    &:nth-child(2) {
+      order: 2;
+    }
+
+    // Column 3: Useful Links - left column, second (below column 1)
+    &:nth-child(3) {
+      order: 3;
+    }
+
+    // Column 4: Newsletter/Social - right column, second (below column 2)
+    &:nth-child(4) {
+      order: 4;
+    }
+  }
+
+  .social-row {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    padding: 1.5rem 5%;
+    gap: 1rem;
+  }
+
+  .footer-bottom-left {
+    text-align: center;
+  }
+
+  .footer-bottom-right {
+    justify-content: center;
+  }
+
+  .footer-logo {
+    max-width: 230px;
+  }
+}
+
+@media (max-width: 600px) {
+  .social-icon {
+    i {
+      font-size: 18px;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  // Single column layout
+  .footer-row {
+    flex-direction: column;
+  }
+
+  .footer-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      order: initial;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-bottom-left {
+    text-align: center;
+  }
+
+  .footer-bottom-right {
+    justify-content: center;
+  }
+
+  .footer-logo {
+    max-width: 200px;
+  }
+
+  .footer-address {
+    text-align: center;
+  }
+
+  .footer-contact-item {
+    justify-content: center;
+  }
+}
+
+// Feature block styling for clickable icons and titles
+.feature-clickable {
+  text-decoration: none !important;
+  cursor: pointer;
+
+  // Icon styling - default heading color, primary on hover
+  .h1 i {
+    color: var(--bs-primary) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+  }
+
+  &:hover .h1 i {
+    color: var(--bs-success) !important;
+  }
+
+  // Title styling - blue by default, green on hover
+  h4 {
+    color: var(--bs-primary) !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.25rem !important;
+  }
+
+  &:hover h4 {
+    color: var(--bs-success) !important;
+  }
+}
+
+// Hover effect on the whole feature card
+.feature-card {
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    transform: translateY(-4px);
+    z-index: 100;
+  }
+}
+
+// Override Bootstrap column width to account for card margins
+.col-lg-3.feature-card {
+  flex: 0 0 calc(25% - 1rem) !important;
+  max-width: calc(25% - 1rem) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.col-lg-4.feature-card {
+  flex: 0 0 calc(33.333% - 1rem) !important;
+  max-width: calc(33.333% - 1rem) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+// Responsive breakpoints for feature cards
+@media (max-width: 991px) {
+  .col-lg-3.feature-card,
+  .col-lg-4.feature-card {
+    flex: 0 0 calc(50% - 1rem) !important;
+    max-width: calc(50% - 1rem) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .col-lg-3.feature-card,
+  .col-lg-4.feature-card {
+    flex: 0 0 calc(100% - 1rem) !important;
+    max-width: calc(100% - 1rem) !important;
+  }
+}
+
+// Increase container width for card sections
+// Only apply to the inner container, not the section itself
+.td-home section.row .container,
+section.row:has(.feature-card) .container {
+  max-width: 1600px !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+// Feature card styling
+.feature-card {
+  border-radius: 20px;
+  margin: 0.5rem !important;
+  padding: 3px !important;
+  position: relative;
+  text-align: left !important;
+  background: linear-gradient(134.97deg, #0095D5 2.16%, transparent 58.06%);
+  box-shadow: 0px 3px 14.1px 0px #0000001A;
+  cursor: pointer;
+
+  // Override Bootstrap mb-4 class for icon spacing in all cards
+  .mb-4 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .h1.mb-4 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border-radius: 17px;
+    background: #ffffff;
+    z-index: 0;
+  }
+
+  // All content needs to be positioned above the background
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Make the title link cover the entire card with a pseudo-element
+  .feature-card-link {
+    text-decoration: none;
+    position: static;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    // Title text needs to be above the overlay
+    h4 {
+      position: relative;
+      z-index: 11;
+      pointer-events: none;
+    }
+  }
+
+  // Doctype label needs higher z-index to be clickable for tooltip
+  .doctype-label {
+    position: absolute;
+    z-index: 20 !important;
+    pointer-events: auto !important;
+  }
+
+  // Cards without labels get standard padding
+  &.no-label {
+    padding: 3px !important;
+
+    .h1 {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+      margin-top: 0.75rem !important;
+      margin-bottom: 0.25rem !important;
+      text-align: left !important;
+    }
+
+    h4 {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+      padding-top: 0.75rem !important;
+      margin-bottom: 0.25rem !important;
+      text-align: left !important;
+    }
+
+    // Override padding for h4 when there's an icon
+    .h1 + h4,
+    .h1 + a h4 {
+      padding-top: 0 !important;
+    }
+
+    .mb-0 {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+      margin-bottom: 0.75rem !important;
+      text-align: left !important;
+      font-size: 0.875rem !important;
+      color: #333333 !important;
+    }
+  }
+
+  // Cards with doctype labels need different spacing
+  &.has-label {
+    padding: 3px !important;
+    padding-top: 3px !important;
+
+    .doctype-label {
+      top: 0.5rem !important;
+      right: 0.5rem !important;
+      z-index: 2;
+    }
+
+    // If the card has an icon, add top margin to the icon
+    .h1 {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+      margin-top: 2.5rem !important;
+      margin-bottom: 0.25rem !important;
+      text-align: left !important;
+    }
+
+    // All h4 titles get padding-top (won't affect cards with icons since icon has the margin)
+    h4 {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+      padding-top: 2.5rem !important;
+      margin-bottom: 0.25rem !important;
+      text-align: left !important;
+    }
+
+    // Override padding for h4 when there's an icon (icon already has the top spacing)
+    .h1 + h4,
+    .h1 + a h4 {
+      padding-top: 0 !important;
+      margin-top: 0.25rem !important;
+    }
+
+    .mb-0 {
+      margin-left: 1rem !important;
+      margin-right: 1rem !important;
+      margin-bottom: 0.75rem !important;
+      text-align: left !important;
+      font-size: 0.875rem !important;
+      color: #333333 !important;
+    }
+  }
+
+  a {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Colored gradient borders for doc-type cards
+  &.has-label {
+    // Tutorial cards - green gradient border
+    &:has(.label-tutorial) {
+      background: linear-gradient(134.97deg, #71BF44 2.16%, transparent 58.06%);
+    }
+
+    // How-to cards - blue gradient border
+    &:has(.label-howto) {
+      background: linear-gradient(134.97deg, #31BEEC 2.16%, transparent 58.06%);
+    }
+
+    // Reference cards - purple gradient border
+    &:has(.label-reference) {
+      background: linear-gradient(134.97deg, #c006c7 2.16%, transparent 58.06%);
+    }
+  }
+
+  // Wireframe logo backgrounds for doc-type cards - using ::after for separate opacity control
+  &.has-label {
+    // Tutorial cards - green wireframe with reduced opacity
+    &:has(.label-tutorial)::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      bottom: 3px;
+      background-image: url('/images/TN_IconOutline_Green.png');
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 180px;
+      opacity: 0.4;
+      z-index: 0;
+      border-radius: 17px;
+      pointer-events: none;
+    }
+
+    // How-to cards - blue wireframe with reduced opacity
+    &:has(.label-howto)::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      bottom: 3px;
+      background-image: url('/images/TN_IconOutline_Blue.png');
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 180px;
+      opacity: 0.4;
+      z-index: 0;
+      border-radius: 17px;
+      pointer-events: none;
+    }
+
+    // Reference cards - purple wireframe with reduced opacity
+    &:has(.label-reference)::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      bottom: 3px;
+      background-image: url('/images/TN_IconOutline_Purple.png');
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 180px;
+      opacity: 0.4;
+      z-index: 0;
+      border-radius: 17px;
+      pointer-events: none;
+    }
+  }
+}
+
+// CARDS WITH LABELS - black background with white text in BOTH modes
+[data-bs-theme="light"] .feature-card.has-label::before,
+[data-bs-theme="dark"] .feature-card.has-label::before {
+  background: #000000 !important;
+}
+
+[data-bs-theme="light"] .feature-card.has-label h4,
+[data-bs-theme="dark"] .feature-card.has-label h4 {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.9) !important;
+  text-stroke: 1.5px rgba(0, 0, 0, 0.9) !important;
+  paint-order: stroke fill !important;
+}
+
+[data-bs-theme="light"] .feature-card.has-label .h1 i,
+[data-bs-theme="light"] .feature-card.has-label .h1 .material-icons-outlined,
+[data-bs-theme="dark"] .feature-card.has-label .h1 i,
+[data-bs-theme="dark"] .feature-card.has-label .h1 .material-icons-outlined {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+  text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+}
+
+[data-bs-theme="light"] .feature-card.has-label .mb-0,
+[data-bs-theme="dark"] .feature-card.has-label .mb-0 {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+  text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+  paint-order: stroke fill !important;
+}
+
+// CARDS WITHOUT LABELS - black text on light gray background (both modes)
+// Light gray background for both light and dark modes
+[data-bs-theme="light"] .feature-card.no-label::before,
+[data-bs-theme="dark"] .feature-card.no-label::before {
+  background: #E0E0E0 !important;
+}
+
+// Dark gray text, icons, and description in both modes (matches cover block titles)
+[data-bs-theme="light"] .feature-card.no-label h4,
+[data-bs-theme="dark"] .feature-card.no-label h4 {
+  color: #212529 !important;
+}
+
+[data-bs-theme="light"] .feature-card.no-label i,
+[data-bs-theme="light"] .feature-card.no-label .material-icons-outlined,
+[data-bs-theme="dark"] .feature-card.no-label i,
+[data-bs-theme="dark"] .feature-card.no-label .material-icons-outlined {
+  color: #212529 !important;
+}
+
+[data-bs-theme="light"] .feature-card.no-label .mb-0,
+[data-bs-theme="dark"] .feature-card.no-label .mb-0 {
+  color: #212529 !important;
+}
+
+// Wireframe opacity in light mode - adjust for black background
+[data-bs-theme="light"] .feature-card.has-label::after {
+  opacity: 0.4 !important;
+}
+
+
+// Responsive font-size for feature card titles - scales continuously with viewport
+// Desktop: scales from ~1.7rem at 1920px down to ~1.3rem at 992px
+@media (min-width: 992px) {
+  .feature-card h4 {
+    font-size: calc(0.9rem + 0.42vw) !important;
+  }
+}
+
+// Tablet: scales from ~1.5rem at 991px down to ~1.25rem at 768px
+@media (max-width: 991px) and (min-width: 768px) {
+  .feature-card h4 {
+    font-size: calc(0.85rem + 0.65vw) !important;
+  }
+}
+
+// Mobile: fixed size for single column
+@media (max-width: 767px) {
+  .feature-card h4 {
+    font-size: 1.35rem !important;
+  }
+}
+
+// Override Bootstrap margin classes for vertical spacing between rows
+.feature-card.mb-5,
+.feature-card.mb-lg-0 {
+  margin-bottom: 0.5rem !important;
+}
+
+// Docs pages: feature cards with simple left border
+.td-page:not(.cover-page) .feature-card,
+.td-section:not(.cover-page) .feature-card {
+  background: #ffffff !important;
+  border-left: 4px solid #0095D5;
+  padding: 0 !important;
+  box-shadow: 0px 3px 14.1px 0px #0000001A;
+
+  // Darker text for white background
+  h4 {
+    color: var(--bs-primary) !important;
+  }
+
+  .mb-0 {
+    color: #333333 !important;
+  }
+
+  .h1 i {
+    color: var(--bs-primary) !important;
+  }
+}
+
+// Color-coded left borders for doc-type cards on docs pages
+.td-page:not(.cover-page) .feature-card.has-label,
+.td-section:not(.cover-page) .feature-card.has-label {
+  // Tutorial cards - green left border
+  &:has(.label-tutorial) {
+    border-left-color: #71BF44;
+  }
+
+  // How-to cards - blue left border
+  &:has(.label-howto) {
+    border-left-color: #31BEEC;
+  }
+
+  // Reference cards - purple left border
+  &:has(.label-reference) {
+    border-left-color: #c006c7;
+  }
+}
+
+.td-page:not(.cover-page) .feature-card::before,
+.td-section:not(.cover-page) .feature-card::before {
+  display: none !important;
+}
+
+// Re-enable wireframe logos on docs pages for doc-type cards
+.td-page:not(.cover-page) .feature-card.has-label::after,
+.td-section:not(.cover-page) .feature-card.has-label::after {
+  display: block !important;
+}
+
+// Both light and dark mode for docs page cards - black background
+[data-bs-theme="light"] .td-page:not(.cover-page) .feature-card,
+[data-bs-theme="light"] .td-section:not(.cover-page) .feature-card,
+[data-bs-theme="dark"] .td-page:not(.cover-page) .feature-card,
+[data-bs-theme="dark"] .td-section:not(.cover-page) .feature-card {
+  background: #000000 !important;
+}
+
+// Light mode docs page cards - white text on black background
+[data-bs-theme="light"] .td-page:not(.cover-page) .feature-card h4,
+[data-bs-theme="light"] .td-section:not(.cover-page) .feature-card h4 {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.9) !important;
+  text-stroke: 1.5px rgba(0, 0, 0, 0.9) !important;
+  paint-order: stroke fill !important;
+}
+
+[data-bs-theme="light"] .td-page:not(.cover-page) .feature-card .mb-0,
+[data-bs-theme="light"] .td-section:not(.cover-page) .feature-card .mb-0 {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+  text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+  paint-order: stroke fill !important;
+}
+
+[data-bs-theme="light"] .td-page:not(.cover-page) .feature-card .h1 i,
+[data-bs-theme="light"] .td-page:not(.cover-page) .feature-card .h1 .material-icons-outlined,
+[data-bs-theme="light"] .td-section:not(.cover-page) .feature-card .h1 i,
+[data-bs-theme="light"] .td-section:not(.cover-page) .feature-card .h1 .material-icons-outlined {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+  text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+}
+
+// Dark mode docs page cards - white text to match other black cards
+[data-bs-theme="dark"] .td-page:not(.cover-page) .feature-card h4,
+[data-bs-theme="dark"] .td-section:not(.cover-page) .feature-card h4 {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.9) !important;
+  text-stroke: 1.5px rgba(0, 0, 0, 0.9) !important;
+  paint-order: stroke fill !important;
+}
+
+[data-bs-theme="dark"] .td-page:not(.cover-page) .feature-card .mb-0,
+[data-bs-theme="dark"] .td-section:not(.cover-page) .feature-card .mb-0 {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+  text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+  paint-order: stroke fill !important;
+}
+
+[data-bs-theme="dark"] .td-page:not(.cover-page) .feature-card .h1 i,
+[data-bs-theme="dark"] .td-page:not(.cover-page) .feature-card .h1 .material-icons-outlined,
+[data-bs-theme="dark"] .td-section:not(.cover-page) .feature-card .h1 i,
+[data-bs-theme="dark"] .td-section:not(.cover-page) .feature-card .h1 .material-icons-outlined {
+  color: #ffffff !important;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+  text-stroke: 1px rgba(0, 0, 0, 0.9) !important;
+}
+
+// Reduce spacing between icon and title on docs pages
+.td-page:not(.cover-page) .feature-card .h1,
+.td-section:not(.cover-page) .feature-card .h1 {
+  margin-bottom: 0.5rem !important;
+}
+
+// Doctype Labels and Tooltips (Diataxis System)
+.feature-card .doctype-label {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 20 !important;
+  pointer-events: auto !important;
+}
+
+.doctype-label {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: default;
+  background-color: transparent;
+  position: relative;
+  z-index: 20 !important;
+  pointer-events: auto !important;
+}
+
+.label-tutorial {
+  color: #71BF44;
+  border: 2px solid #71BF44;
+  background-color: transparent;
+}
+
+.label-howto {
+  color: #31BEEC;
+  border: 2px solid #31BEEC;
+  background-color: transparent;
+}
+
+.label-reference {
+  color: #c006c7;
+  border: 2px solid #c006c7;
+  background-color: transparent;
+}
+
+.label-foundations {
+  color: #FF9800;
+  border: 2px solid #FF9800;
+  background-color: transparent;
+}
+
+// Tooltip styling
+.custom-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+  z-index: 10000;
+  transition: opacity 0.3s, visibility 0.3s;
+  line-height: 1.4;
+  text-transform: initial;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+// Responsive width adjustments
+@media (max-width: 768px) {
+  .custom-tooltip {
+    width: 250px !important;
+    // Keep on screen - align to right edge of card with padding
+    position: absolute !important;
+    left: auto !important;
+    right: 0.5rem !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-tooltip {
+    width: 200px !important;
+  }
+}
+
+.doctype-label:hover .custom-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+// Optional tooltip positioning classes if needed
+.tooltip-left .custom-tooltip {
+  right: auto;
+  left: 0;
+  transform: none;
+}
+
+.tooltip-right .custom-tooltip {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+// Article page doctype label styling
+.article-header-row {
+  position: relative;
+  margin-bottom: 1rem;
+  min-height: 2rem; // Ensure space for label
+}
+
+.article-header-row h1 {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding-top: 2rem; // Space for label above
+  padding-right: 8rem; // Prevent very long titles from wrapping under label
+}
+
+.article-header-row .doctype-label.static-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  z-index: 10;
+  transform: translateZ(0); // Force GPU rendering for crisp text
+  -webkit-font-smoothing: antialiased; // Improve font rendering clarity
+  -moz-osx-font-smoothing: grayscale; // Improve font rendering on Firefox/Mac
+}
+
+// Responsive: reduce padding on mobile
+@media screen and (max-width: 768px) {
+  .article-header-row h1 {
+    padding-right: 6rem; // Less padding on smaller screens
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .article-header-row h1 {
+    padding-right: 0; // Full width on mobile
+    padding-top: 2.5rem; // More top space to clear label
+  }
+}
+
+// UI content structure spacing
+.ui-screen {
+  margin-bottom: 3rem; // Space between major screen sections
+}
+
+.ui-section {
+  margin-bottom: 1.5rem; // Space between sections within a screen
+}
+
+// Standardize image styling
+.trueimg {
+  justify-content: center;
+  margin-top: 2rem; // Add space before images
+  margin-bottom: 2rem; // Add space after images
+}
+
+.gdoc-markdown img {
+  max-width: 75%;
+  height: auto;
+  max-height: 800px;
+  align-items: center;
+}
+
+.trueimg figcaption {
+  text-align: center;
+}
+
+// TrueNAS Header Styles - Basic header structure only
+// (Detailed TrueNAS menu styles are now in head-end.html to match legacy exactly)
+.gdoc-brand__img {
+    max-width: 8em;
+    width: auto;
+    height: auto;
+}
+
+.gdoc-header {
+    background: #000000;
+    border-bottom-width: 0px;
+    padding: 0.5rem 1rem 0.5rem 1rem; /* Reduced vertical padding from 1rem to 0.5rem */
+
+    .icon {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+}
+
+.gdoc-header__link {
+    float: left;
+}
+
+.truenas-menubar {
+    float: right;
+    display: flex;
+    font-family: "din-2014";
+    font-size: 16px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+}
+
+// Connect Banner Styles
+.connect-banner {
+    display: block;
+    background-image: url('/images/banner.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    z-index: 5;
+    padding: 1rem 0;
+}
+
+.connect-banner-content-sizing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100rem;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 0 2rem;
+}
+
+.connect-banner-image {
+    flex: 0 1 40%;
+    max-width: 40%;
+    height: auto;
+    object-fit: contain;
+    padding-left: 1rem;
+}
+
+.connect-banner-content {
+    flex: 1;
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Inter iX', Helvetica, Arial, Lucida, sans-serif;
+    line-height: 1.2;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.connect-banner-head {
+    font-family: 'Inter iX', Helvetica, Arial, Lucida, sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: #ffffff;
+}
+
+.connect-banner-text {
+    margin-bottom: 1rem;
+    max-width: 80%;
+}
+
+.connect-banner-download {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 19px;
+    color: #ffffff;
+    background-color: #71bf44;
+    border: 1px solid #71bf44;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:visited {
+        color: #ffffff;
+    }
+    
+    &:hover {
+        color: #71bf44;
+        background-color: #ffffff;
+        border: 1px solid #71bf44;
+        transform: scale(1.05);
+        text-decoration: none;
+    }
+    
+    &:active {
+        background-color: #f0f0f0;
+        transform: scale(0.95);
+    }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+    .connect-banner-content-sizing {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .connect-banner-image {
+        max-width: 70%;
+        margin: 1rem auto;
+    }
+    
+    .connect-banner-content {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .connect-banner-head {
+        margin: 0 auto;
+    }
+    
+    .connect-banner-text {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .connect-banner-image {
+        max-width: 90%;
+    }
+    
+    .connect-banner-head {
+        font-size: 32px;
+    }
+    
+    .connect-banner-content {
+        font-size: 20px;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+// Gradient overlay for essentials pages cover blocks - try multiple selectors
+.td-cover-block {
+  position: relative;
+}
+
+// NO gradient overlays in any mode - removed per user request
+.td-cover-block::after {
+  display: none !important;
+  content: none !important;
+}
+
+// Ensure content appears above gradient overlay
+.td-cover-block .td-overlay__inner {
+  position: relative;
+  z-index: 2;
+}
+
+// Disable all GitHub repository links
+.td-page-meta__view,
+.td-page-meta__edit,
+.td-page-meta__child,
+.td-page-meta__issue,
+.td-page-meta__project-issue {
+  display: none;
+}
+
+// Hide taxonomy cloud/terms completely
+.taxonomy-terms-cloud,
+.taxonomy.taxonomy-terms-cloud,
+.taxo-tags,
+.taxo-categories {
+  display: none !important;
+}
+
+// Gradient text effect for emphasized headings
+.heading-gradient {
+  background: linear-gradient(94.09deg, #198AC8 7.37%, #71BF44 103.99%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block; // Ensure gradient works properly
+  font-weight: inherit; // Maintain parent font weight
+}
+
+// Grid layout for doc-card sections (used in landing pages)
+.docs-sections {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 2rem !important;
+  padding: 1rem !important;
+}
+
+@media screen and (max-width: 99rem) {
+  .docs-sections {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 83rem) {
+  .docs-sections {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media screen and (max-width: 50rem) {
+  .docs-sections {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.section-box {
+  position: relative;
+  padding: 3px;
+  border-radius: 20px;
+  background: linear-gradient(134.97deg, #0095D5 2.16%, transparent 58.06%);
+  box-shadow: 0px 3px 14.1px 0px #0000001A;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border-radius: 17px;
+    background: #E0E0E0;
+    z-index: 0;
+  }
+
+  // Content needs to be above the background
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    text-decoration: none;
+  }
+
+  b, p {
+    color: #212529;
+  }
+
+  p {
+    text-align: center !important;
+    line-height: 1rem !important;
+    margin: 0.5rem 0 0.5rem 0 !important;
+  }
+}
+
+// Release Schedule modifier - overrides gradient styling for simple blue header
+.section-box-schedule {
+  // Override gradient with solid background
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: 0.3s;
+  background-color: rgb(248, 249, 250) !important;
+  overflow: hidden;
+
+  // Remove the gradient pseudo-element
+  &::before {
+    display: none;
+  }
+
+  // No hover transform for schedule boxes
+  &:hover {
+    transform: none;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  // Content doesn't need z-index override
+  > * {
+    position: relative;
+    z-index: auto;
+  }
+
+  // Blue header styling
+  .section-box-header {
+    color: white;
+    background-color: #0095d5;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    border-radius: 15px 15px 0 0;
+  }
+
+  // Tab bar styling
+  .section-tabs {
+    display: flex;
+    justify-content: center;
+    background-color: var(--accent-color) !important;
+  }
+
+  // Individual tab styling
+  .section-tab {
+    padding: .5rem .5rem;
+    margin: 0 5px;
+    cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    font-weight: 600;
+    border: 2px solid transparent !important;
+    box-sizing: border-box;
+  }
+
+  .section-tab.active {
+    background-color: rgb(248, 249, 250) !important;
+    color: #212529 !important;
+    border-top: 2px solid var(--accent-color) !important;
+    border-left: 2px solid var(--accent-color) !important;
+    border-right: 2px solid var(--accent-color) !important;
+    border-bottom: 2px solid transparent !important;
+  }
+
+  // Ensure tab content is visible
+  .major-version-content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Dark mode overrides for section-box-schedule tabs
+@media screen and (prefers-color-scheme: dark) {
+  .section-box-schedule .section-tabs {
+    background-color: rgb(33, 37, 41) !important;
+  }
+
+  .section-box-schedule .section-tab {
+    background-color: rgb(33, 37, 41) !important;
+    color: white !important;
+  }
+
+  .section-box-schedule .section-tab.active {
+    background-color: #333333 !important;
+    color: white !important;
+    border-top: 2px solid rgb(33, 37, 41) !important;
+    border-left: 2px solid rgb(33, 37, 41) !important;
+    border-right: 2px solid rgb(33, 37, 41) !important;
+  }
+}
+
+:root[color-mode=dark] {
+  .section-box-schedule .section-tabs {
+    background-color: rgb(33, 37, 41) !important;
+  }
+
+  .section-box-schedule .section-tab {
+    background-color: rgb(33, 37, 41) !important;
+    color: white !important;
+  }
+
+  .section-box-schedule .section-tab.active {
+    background-color: #333333 !important;
+    color: white !important;
+    border-top: 2px solid rgb(33, 37, 41) !important;
+    border-left: 2px solid rgb(33, 37, 41) !important;
+    border-right: 2px solid rgb(33, 37, 41) !important;
+  }
+}
+
+[data-bs-theme="dark"] {
+  .section-box-schedule .section-tabs {
+    background-color: rgb(33, 37, 41) !important;
+  }
+
+  .section-box-schedule .section-tab {
+    background-color: rgb(33, 37, 41) !important;
+    color: white !important;
+  }
+
+  .section-box-schedule .section-tab.active {
+    background-color: #333333 !important;
+    color: white !important;
+    border-top: 2px solid rgb(33, 37, 41) !important;
+    border-left: 2px solid rgb(33, 37, 41) !important;
+    border-right: 2px solid rgb(33, 37, 41) !important;
+  }
+}
+
+// Dark mode for schedule boxes
+@media screen and (prefers-color-scheme: dark) {
+  .section-box-schedule {
+    background-color: #333333 !important;
+  }
+}
+
+// Light mode overrides for section-box-schedule tabs
+[data-bs-theme="light"],
+:root:not([data-bs-theme="dark"]) {
+  .section-box-schedule .section-tabs {
+    background-color: var(--accent-color) !important;
+  }
+
+  .section-box-schedule .section-tab {
+    background-color: var(--accent-color) !important;
+    color: var(--body-font-color) !important;
+  }
+
+  .section-box-schedule .section-tab.active {
+    background-color: rgb(248, 249, 250) !important;
+    color: var(--body-font-color) !important;
+    border-top: 2px solid var(--accent-color) !important;
+    border-left: 2px solid var(--accent-color) !important;
+    border-right: 2px solid var(--accent-color) !important;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .section-box-schedule .section-tabs {
+    background-color: var(--accent-color) !important;
+  }
+
+  .section-box-schedule .section-tab {
+    background-color: var(--accent-color) !important;
+  }
+
+  .section-box-schedule .section-tab.active {
+    border-top: 2px solid var(--accent-color) !important;
+    border-left: 2px solid var(--accent-color) !important;
+    border-right: 2px solid var(--accent-color) !important;
+  }
+}
+
+:root[color-mode=dark] {
+  .section-box-schedule {
+    background-color: #333333 !important;
+  }
+}
+
+[data-bs-theme="dark"] {
+  .section-box-schedule {
+    background-color: #333333 !important;
+  }
+}
+
+// Light mode for schedule boxes
+@media screen and (prefers-color-scheme: light) {
+  .section-box-schedule {
+    background-color: rgb(248, 249, 250) !important;
+  }
+}
+
+:root[color-mode=light] {
+  .section-box-schedule {
+    background-color: rgb(248, 249, 250) !important;
+  }
+}
+
+[data-bs-theme="light"] {
+  .section-box-schedule {
+    background-color: rgb(248, 249, 250) !important;
+  }
+}
+
+// Upgrade Paths modifier - clean styling for upgrade path diagrams
+.section-box-upgradepaths {
+  // Override gradient with solid background
+  background: none !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: 0.3s;
+  background-color: rgb(248, 249, 250) !important;
+  overflow: hidden;
+
+  // Remove the gradient pseudo-element
+  &::before {
+    display: none;
+  }
+
+  // No hover transform, just darken shadow like Release Schedule
+  &:hover {
+    transform: none;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  // Content doesn't need z-index override
+  > * {
+    position: relative;
+    z-index: auto;
+  }
+
+  .section-box-header {
+    color: white;
+    background-color: #0095d5;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    border-radius: 15px 15px 0 0;
+  }
+
+  // Ensure content text is readable
+  color: var(--body-font-color);
+}
+
+// Dark mode for upgrade paths
+[data-bs-theme="dark"] {
+  .section-box-upgradepaths {
+    background-color: #333333 !important;
+    color: #f0f3f5 !important;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .section-box-upgradepaths {
+    background-color: #333333 !important;
+    color: #f0f3f5 !important;
+  }
+}
+
+// Light mode for upgrade paths
+[data-bs-theme="light"],
+:root:not([data-bs-theme="dark"]) {
+  .section-box-upgradepaths {
+    background-color: rgb(248, 249, 250) !important;
+    color: var(--body-font-color) !important;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .section-box-upgradepaths {
+    background-color: rgb(248, 249, 250) !important;
+  }
+}
+
+// Downloads modifier - clean styling like Release Schedule
+.section-box-downloads {
+  // Override gradient with solid background
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: 0.3s;
+  background-color: rgb(248, 249, 250) !important;
+  overflow: hidden;
+
+  // Remove the gradient pseudo-element
+  &::before {
+    display: none;
+  }
+
+  // No hover transform, just darken shadow like Release Schedule
+  &:hover {
+    transform: none;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  // Content doesn't need z-index override
+  > * {
+    position: relative;
+    z-index: auto;
+  }
+
+  // Blue header styling - full width
+  .section-box-header {
+    color: white;
+    background-color: #0095d5;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    border-radius: 15px 15px 0 0;
+    width: 100%;
+  }
+
+  // Tab bar styling
+  .section-tabs {
+    display: flex;
+    justify-content: center;
+    background-color: var(--accent-color) !important;
+  }
+
+  // Individual tab styling
+  .section-tab {
+    padding: .5rem .5rem;
+    margin: 0 5px;
+    cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    z-index: 10;
+    background-color: var(--accent-color) !important;
+    color: white !important;
+    font-weight: 600;
+    border: 2px solid transparent !important;
+    box-sizing: border-box;
+  }
+
+  .section-tab.active {
+    background-color: rgb(248, 249, 250) !important;
+    color: #212529 !important;
+    border-top: 2px solid var(--accent-color) !important;
+    border-left: 2px solid var(--accent-color) !important;
+    border-right: 2px solid var(--accent-color) !important;
+    border-bottom: 2px solid transparent !important;
+  }
+
+  // Ensure tab content is visible
+  .major-version-content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// Dark mode overrides for section-box-downloads tabs
+@media screen and (prefers-color-scheme: dark) {
+  .section-box-downloads .section-tabs {
+    background-color: rgb(33, 37, 41) !important;
+  }
+
+  .section-box-downloads .section-tab {
+    background-color: rgb(33, 37, 41) !important;
+    color: white !important;
+  }
+
+  .section-box-downloads .section-tab.active {
+    background-color: #333333 !important;
+    color: white !important;
+    border-top: 2px solid rgb(33, 37, 41) !important;
+    border-left: 2px solid rgb(33, 37, 41) !important;
+    border-right: 2px solid rgb(33, 37, 41) !important;
+  }
+}
+
+:root[color-mode=dark] {
+  .section-box-downloads .section-tabs {
+    background-color: rgb(33, 37, 41) !important;
+  }
+
+  .section-box-downloads .section-tab {
+    background-color: rgb(33, 37, 41) !important;
+    color: white !important;
+  }
+
+  .section-box-downloads .section-tab.active {
+    background-color: #333333 !important;
+    color: white !important;
+    border-top: 2px solid rgb(33, 37, 41) !important;
+    border-left: 2px solid rgb(33, 37, 41) !important;
+    border-right: 2px solid rgb(33, 37, 41) !important;
+  }
+}
+
+[data-bs-theme="dark"] {
+  .section-box-downloads .section-tabs {
+    background-color: rgb(33, 37, 41) !important;
+  }
+
+  .section-box-downloads .section-tab {
+    background-color: rgb(33, 37, 41) !important;
+    color: white !important;
+  }
+
+  .section-box-downloads .section-tab.active {
+    background-color: #333333 !important;
+    color: white !important;
+    border-top: 2px solid rgb(33, 37, 41) !important;
+    border-left: 2px solid rgb(33, 37, 41) !important;
+    border-right: 2px solid rgb(33, 37, 41) !important;
+  }
+}
+
+// Dark mode for downloads boxes
+@media screen and (prefers-color-scheme: dark) {
+  .section-box-downloads {
+    background-color: #333333 !important;
+  }
+}
+
+// Light mode overrides for section-box-downloads tabs
+[data-bs-theme="light"],
+:root:not([data-bs-theme="dark"]) {
+  .section-box-downloads .section-tabs {
+    background-color: var(--accent-color) !important;
+  }
+
+  .section-box-downloads .section-tab {
+    background-color: var(--accent-color) !important;
+    color: var(--body-font-color) !important;
+  }
+
+  .section-box-downloads .section-tab.active {
+    background-color: rgb(248, 249, 250) !important;
+    color: var(--body-font-color) !important;
+    border-top: 2px solid var(--accent-color) !important;
+    border-left: 2px solid var(--accent-color) !important;
+    border-right: 2px solid var(--accent-color) !important;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .section-box-downloads .section-tabs {
+    background-color: var(--accent-color) !important;
+  }
+
+  .section-box-downloads .section-tab {
+    background-color: var(--accent-color) !important;
+  }
+
+  .section-box-downloads .section-tab.active {
+    border-top: 2px solid var(--accent-color) !important;
+    border-left: 2px solid var(--accent-color) !important;
+    border-right: 2px solid var(--accent-color) !important;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .section-box-downloads {
+    background-color: rgb(248, 249, 250) !important;
+  }
+}
+
+:root[color-mode=dark] {
+  .section-box-downloads {
+    background-color: #333333 !important;
+  }
+}
+
+[data-bs-theme="dark"] {
+  .section-box-downloads {
+    background-color: #333333 !important;
+  }
+}
+
+[data-bs-theme="light"] {
+  .section-box-downloads {
+    background-color: rgb(248, 249, 250) !important;
+  }
+}
+
+// Software status tables - direct table styling without section-box
+.software-status-table {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  margin: 0 !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 15px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+  table-layout: fixed !important;
+  display: table !important;
+  transition: 0.3s !important;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+
+  thead {
+    background-color: #0095d5 !important;
+    width: 100% !important;
+    display: table-header-group !important;
+
+    tr {
+      background-color: transparent !important;
+      width: 100% !important;
+      display: table-row !important;
+
+      &:hover {
+        background-color: transparent !important;
+      }
+    }
+
+    th {
+      color: white !important;
+      background-color: transparent !important;
+      border: none !important;
+      padding: 0.5rem !important;
+      display: table-cell !important;
+      text-align: center !important;
+      vertical-align: middle !important;
+
+      a {
+        color: white !important;
+        text-decoration: none !important;
+      }
+
+      &:first-child {
+        width: 18% !important;
+        border-top-left-radius: 15px !important;
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        width: 41% !important;
+      }
+
+      &:last-child {
+        border-top-right-radius: 15px !important;
+      }
+    }
+  }
+
+  tbody {
+    background-color: #ffffff;
+    color: #212529;
+    width: 100% !important;
+    display: table-row-group !important;
+
+    tr {
+      width: 100% !important;
+      display: table-row !important;
+    }
+
+    td {
+      border: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+      padding: 0.5rem !important;
+      display: table-cell !important;
+
+      &:first-child {
+        width: 18% !important;
+        text-align: left !important;
+        vertical-align: middle !important;
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        width: 41% !important;
+      }
+    }
+
+    tr:hover {
+      background-color: rgba(49, 190, 236, 0.1) !important;
+    }
+
+    tr:last-child {
+      td:first-child {
+        border-bottom-left-radius: 15px !important;
+      }
+
+      td:last-child {
+        border-bottom-right-radius: 15px !important;
+      }
+    }
+  }
+}
+
+// Dark mode
+[data-bs-theme="dark"] .software-status-table {
+  thead th {
+    color: white !important;
+  }
+
+  tbody {
+    background-color: #2a2a2a;
+    color: #f0f3f5;
+
+    td {
+      border: 0.5px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    tr:hover {
+      background-color: rgba(49, 190, 236, 0.15) !important;
+    }
+  }
+}
+
+:root[color-mode=dark] .software-status-table {
+  thead th {
+    color: white !important;
+  }
+
+  tbody {
+    background-color: #2a2a2a;
+    color: #f0f3f5;
+
+    td {
+      border: 0.5px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    tr:hover {
+      background-color: rgba(49, 190, 236, 0.15) !important;
+    }
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .software-status-table {
+    thead th {
+      color: white !important;
+    }
+
+    tbody {
+      background-color: #1E1E1E;
+      color: #f0f3f5;
+
+      td {
+        border: 0.5px solid rgba(255, 255, 255, 0.1) !important;
+      }
+
+      tr:hover {
+        background-color: rgba(49, 190, 236, 0.15) !important;
+      }
+    }
+  }
+}
+
+// Light mode - ensure header is always white with maximum specificity
+[data-bs-theme="light"] .software-status-table thead th,
+[data-bs-theme="light"] .gdoc-markdown--nested .software-status-table thead th,
+[data-bs-theme="light"] section .software-status-table thead th,
+[data-bs-theme="light"] .row .software-status-table thead th {
+  color: white !important;
+}
+
+:root[color-mode=light] .software-status-table thead th,
+:root[color-mode=light] .gdoc-markdown--nested .software-status-table thead th {
+  color: white !important;
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .software-status-table thead th,
+  .gdoc-markdown--nested .software-status-table thead th {
+    color: white !important;
+  }
+}
+
+// Linkable tabs - use theme background colors
+.linkable-tab-content {
+  background-color: var(--bs-body-bg, var(--body-background, white)) !important;
+  color: var(--bs-body-color, var(--body-font-color, #212529)) !important;
+}
+
+// Enterprise support notice - visible border in both modes
+[data-bs-theme="light"] .enterprise-support-notice {
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .enterprise-support-notice {
+    border-color: rgba(0, 0, 0, 0.2) !important;
+  }
+}
+
+[data-bs-theme="dark"] .enterprise-support-notice {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .enterprise-support-notice {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+  }
+}
+
+:root[color-mode=dark] .enterprise-support-notice {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+// Section tabs styling for release schedule
+.section-tabs {
+  display: flex;
+  justify-content: center;
+  background-color: var(--accent-color);
+}
+
+.section-tab {
+  padding: .5rem .5rem;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: var(--accent-color);
+  font-weight: 600;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+}
+
+.section-tab.active {
+  background-color: rgb(248, 249, 250);
+  border-top: 2px solid var(--accent-color);
+  border-left: 2px solid var(--accent-color);
+  border-right: 2px solid var(--accent-color);
+  border-bottom: 2px solid transparent;
+}
+
+// Dark mode support for section tabs
+@media screen and (prefers-color-scheme: dark) {
+  .section-box {
+    background-color: #475d6b;
+  }
+  .section-tab {
+    color: white;
+    background-color: var(--accent-color);
+  }
+  .section-tab.active {
+    background-color: #475d6b;
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid transparent;
+  }
+}
+
+:root[color-mode=dark] {
+  .section-box {
+    background-color: #475d6b;
+  }
+  .section-tab {
+    color: white;
+    background-color: var(--accent-color);
+  }
+  .section-tab.active {
+    background-color: #475d6b;
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid transparent;
+  }
+}
+
+[data-bs-theme="dark"] {
+  .section-box {
+    background-color: #475d6b;
+  }
+  .section-tab {
+    color: white;
+    background-color: var(--accent-color);
+  }
+  .section-tab.active {
+    background-color: #475d6b;
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid transparent;
+  }
+}
+
+// Light mode section tabs
+@media screen and (prefers-color-scheme: light) {
+  .section-tab {
+    color: var(--body-font-color);
+    background-color: var(--accent-color);
+  }
+  .section-tab.active {
+    background-color: rgb(248, 249, 250);
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid transparent;
+  }
+}
+
+:root[color-mode=light] {
+  .section-tab {
+    color: var(--body-font-color);
+    background-color: var(--accent-color);
+  }
+  .section-tab.active {
+    background-color: rgb(248, 249, 250);
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid transparent;
+  }
+}
+
+[data-bs-theme="light"] {
+  .section-tab {
+    color: var(--body-font-color);
+    background-color: var(--accent-color);
+  }
+  .section-tab.active {
+    background-color: rgb(248, 249, 250);
+    border-top: 2px solid var(--accent-color);
+    border-left: 2px solid var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    border-bottom: 2px solid transparent;
+  }
+}
+
+// Card image styling
+.box-image {
+  padding: 1.5rem 1.5rem 0.75rem 1.5rem;
+  text-align: center;
+}
+
+.prod-card-img {
+  width: 96px;
+  height: auto !important;
+  object-fit: contain;
+}
+
+// imagecard's optional icon= alternative to image= (Material Icons Outlined glyph)
+// !important is required here: Google's Material Icons webfont CSS
+// (fonts.googleapis.com/icon?family=Material+Icons) ships its own
+// .material-icons { font-size: 24px; display: inline-block; } and loads
+// AFTER main.min.css in the page head, so at equal specificity it silently
+// wins the cascade over any font-size/display set here without !important.
+.prod-card-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  font-size: 5rem !important;
+  line-height: 1 !important;
+  color: #0095d5;
+}
+
+// Card content styling
+.section-tab-content {
+  padding-top: 0.5rem;
+  text-align: center;
+
+  .doctype-label {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+.ixprods {
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+// prodintro shortcode: marketing-style hero banner for hardware product landing pages
+// NOTE: this lived in static/css/custom.css, which is only linked from the print-view
+// partial (layouts/partials/print/content.html) and is never loaded on a normal page.
+// Moved here so it actually applies. See static/css/custom.css for further detail.
+.prodintro-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(to right, #00141d, #005e86);
+  padding: 2rem 2.5rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  min-height: 220px;
+}
+.prodintro-banner__content {
+  flex: 1;
+}
+.prodintro-banner__content h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+.prodintro-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0.25rem 0 0 0;
+}
+.prodintro-tagline {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0.25rem 0 0 0;
+}
+.prodintro-banner__image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prodintro-banner__image img {
+  max-width: 100%;
+  max-height: 180px;
+  width: auto;
+  height: auto;
+}
+@media (max-width: 768px) {
+  .prodintro-banner {
+    flex-direction: column;
+  }
+}
+.prodintro-btn {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  background-color: #0095d5;
+  border: 1px solid #0095d5;
+  color: #ffffff !important;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  transition: border-color 0.25s ease;
+}
+.prodintro-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  width: 0;
+  height: 100%;
+  background: #71bf44;
+  transition: width 0.25s ease;
+  transform: skewX(-10deg);
+  z-index: -1;
+}
+.prodintro-btn:hover::before {
+  width: 120%;
+}
+.prodintro-btn:hover {
+  border-color: #71bf44;
+  color: #ffffff !important;
+}
+
+// imagecard-lang language dropdown: theme-blue highlight for the hovered/selected
+// option. Native <select> popups have inconsistent cross-browser support for
+// option-level hover styling (:checked is well-supported, :hover less so in some
+// engines) - this covers what's actually controllable via CSS.
+.language-dropdown {
+  accent-color: #0095d5;
+
+  option:checked,
+  option:hover,
+  option:focus {
+    background-color: #0095d5 !important;
+    color: #ffffff !important;
+  }
+}
+
+// TrueTable styling - use TrueNAS blue for borders
+.truetable table {
+  border-color: #0095d5 !important;
+
+  th, td {
+    border-color: #0095d5 !important;
+  }
+}
+
+// Dark mode
+[data-bs-theme="dark"] .truetable table {
+  border-color: #0095d5 !important;
+
+  th, td {
+    border-color: #0095d5 !important;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .truetable table {
+    border-color: #0095d5 !important;
+
+    th, td {
+      border-color: #0095d5 !important;
+    }
+  }
+}
+
+// Table of Contents active link styling
+// Use TrueNAS blue for active TOC links in both light and dark modes
+.td-toc #TableOfContents a.active {
+  color: #0095d5 !important;
+  border-left-color: #0095d5 !important;
+}
+
+// Ensure consistent styling across all theme modes
+[data-bs-theme="dark"] .td-toc #TableOfContents a.active {
+  color: #0095d5 !important;
+  border-left-color: #0095d5 !important;
+}
+
+[data-bs-theme="light"] .td-toc #TableOfContents a.active {
+  color: #0095d5 !important;
+  border-left-color: #0095d5 !important;
+}
+
+:root[color-mode=dark] .td-toc #TableOfContents a.active {
+  color: #0095d5 !important;
+  border-left-color: #0095d5 !important;
+}
+
+:root[color-mode=light] .td-toc #TableOfContents a.active {
+  color: #0095d5 !important;
+  border-left-color: #0095d5 !important;
+}
