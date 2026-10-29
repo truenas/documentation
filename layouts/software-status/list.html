@@ -90,7 +90,9 @@
   }
 </style>
 <div class="software-status-wrapper {{ if .Params.use_jump_to_buttons }}has-sidebar{{ end }}">
+  <div data-pagefind-body>
   {{ .Content }}
+  </div>
 </div>
 
 {{ if .Params.use_jump_to_buttons }}
