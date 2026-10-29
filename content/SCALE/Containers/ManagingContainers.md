@@ -281,7 +281,7 @@ To create a new container:
 7. Click **Create** to deploy the container.
 
 {{< hint type=note title="Configuring Devices After Creation" >}}
-Configuring network interfaces, adding USB devices or GPU devices, and file system mounts is performed after creating the container using the detail cards on the **Containers** screen.
+Configuring network interfaces, USB or GPU devices, and file system mounts is performed after creating the container using the detail cards on the **Containers** screen.
 
 Initial USB configuration occurs on the **Add Container** advanced settings screen if TrueNAS detects USB devices, but you can also add a device after adding the container using the **Add** button on the **USB Devices** card. The USB devices must show the required information before TrueNAS shows them as USB options you can add to the container.
 
