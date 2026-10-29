@@ -97,8 +97,10 @@ def issue_to_columns(issue):
 
 
 MULTI_COLUMNS = ("Fix versions", "Affects versions", "Labels")
-# Compared per issue. Issue key is the match key; Created and Updated are deliberately absent.
-SINGLE_SIGNIFICANT = ("Issue Type", "Summary", "Status", "Priority", "Resolution", "Security Level")
+# Compared per issue: the columns the site displays (Key, Summary, Priority, Status, Fix Versions).
+# Issue key is the match key. Everything else, Updated and Description included, is ignored so
+# that edits the published table never shows do not open a PR.
+SINGLE_SIGNIFICANT = ("Summary", "Priority", "Status")
 
 
 def read_csv(path):
@@ -137,12 +139,10 @@ def _first(columns, name):
     return values[0]
 
 
-def significant(columns, has_description):
+def significant(columns):
     """Comparable value for the fields whose change warrants a PR."""
     parts = [_first(columns, name) for name in SINGLE_SIGNIFICANT]
-    if has_description:
-        parts.append(_first(columns, "Description").replace("\r\n", "\n").strip())
-    parts.extend(tuple(sorted(columns.get(name, []))) for name in MULTI_COLUMNS)
+    parts.append(tuple(sorted(columns.get("Fix versions", []))))
     return tuple(parts)
 
 
@@ -189,7 +189,6 @@ def merge(header, rows, issues):
 
     Only added, removed and changed issues touch the file; every other row is kept as read.
     """
-    has_description = "Description" in header
     key_index = header.index("Issue key")
     existing = {r[key_index]: r for r in rows if len(r) > key_index and r[key_index]}
     delta = Delta()
@@ -200,8 +199,7 @@ def merge(header, rows, issues):
         if key not in existing:
             delta.added.append(key)
             fresh[key] = columns
-        elif significant(row_to_columns(header, existing[key]), has_description) != \
-                significant(columns, has_description):
+        elif significant(row_to_columns(header, existing[key])) != significant(columns):
             delta.changed.append(key)
             fresh[key] = columns
     api_keys = {issue["key"] for issue in issues}

@@ -191,17 +191,22 @@ def test_merge_does_not_add_description_column():
     assert len(new_rows[1]) == len(header)
 
 
-def test_description_compared_only_when_column_present():
+def test_merge_ignores_columns_the_site_does_not_show():
     header = HEADER[:4] + ["Description"] + HEADER[4:]
     row = _row()
-    row.insert(4, "line one\r\nline two")
-    _, _, delta = merge(header, [row], [_api(description="line one\nline two")])
+    row.insert(4, "old text")
+    api = _api(labels=("b",), description="different text")
+    api["fields"]["versions"] = [{"name": "SCALE-25.10.7"}]
+    api["fields"]["resolution"] = {"name": "Won't Do"}
+    _, _, delta = merge(header, [row], [api])
     assert delta.empty
-    _, _, delta = merge(header, [row], [_api(description="different text")])
+
+
+def test_merge_detects_priority_change():
+    api = _api()
+    api["fields"]["priority"] = {"name": "High"}
+    _, _, delta = merge(HEADER, [_row()], [api])
     assert delta.changed == ["NAS-1"]
-    # the same description change is invisible when the file has no Description column
-    _, _, delta = merge(HEADER, [_row()], [_api(description="different text")])
-    assert delta.empty
 
 
 def test_row_to_columns_drops_empty_repeated_values():
@@ -214,7 +219,7 @@ def test_row_to_columns_drops_empty_repeated_values():
 def test_significant_ignores_updated_and_created():
     a = row_to_columns(HEADER, _row(updated="01/Jan/26 1:00 AM"))
     b = row_to_columns(HEADER, _row(updated="02/Feb/26 2:00 PM"))
-    assert significant(a, False) == significant(b, False)
+    assert significant(a) == significant(b)
 
 
 def test_csv_roundtrip_special_characters(tmp_path):
