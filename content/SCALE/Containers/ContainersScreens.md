@@ -32,7 +32,7 @@ The screen header shows two options:
 
   * [**Settings**](#settings-screen) - Opens the container global settings screen to configure the preferred pool and default network.
 
-  * [**User/Group IDs**](#map-user-and-group-ids-screen) - Opens the [**Map User and Group IDs**](#map-user-and-group-ids-screen) screen to configure UID and GID mappings.
+  * [**Map User/Group IDs**](#map-user-and-group-ids-screen) - Opens the [**Map User and Group IDs**](#map-user-and-group-ids-screen) screen to configure UID and GID mappings.
 
 * **Create New Container** - Opens the [**Add Container**](#add-container-screen) screen.
 
