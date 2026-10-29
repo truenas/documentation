@@ -71,10 +71,10 @@ pipeline {
               // transient network blip there (or here) take down the Reconcile/Purge
               // safety net, which must still run.
               retry(3) { sh 'git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"' }
-              // same version-branch filter as the Multibranch job
+              // same version-branch filter as the Multibranch job (kept in sync by hand; DOCS-2735-branch-regex-test.sh checks both)
               def raw = sh(returnStdout: true, script:
                 "git for-each-ref --format='%(refname:short)' refs/remotes/origin " +
-                "| sed 's#^origin/##' | grep -E '^(master|[0-9]+([.][0-9]+)?)\$' || true"
+                "| sed 's#^origin/##' | grep -E '^(master|main|nightly|[0-9]+([.][0-9]+)?)\$' || true"
               ).trim()
               def branches = raw ? raw.split('\\n') : []
               def reconciled = []
