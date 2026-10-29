@@ -1,6 +1,14 @@
 ---
 title: TrueNAS Documentation Hub
 description: "Comprehensive documentation for TrueNAS Community Edition, TrueNAS Enterprise, TrueNAS Connect, and more."
+aliases:
+  - /core/system/support/
+  - /core/network/networksummary/
+  - /core/directoryservices/ldap/
+  - /core/13.3.0/
+  - /authors/
+  - /vale-test-file/
+  - /404error/
 ---
 
 {{< blocks/cover color="primary" height="micro" >}}
