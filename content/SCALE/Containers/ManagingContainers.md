@@ -241,7 +241,7 @@ To create a new container:
 2. Enter an optional description for the container in **Description**.
 
 3. Select **Autostart** to automatically start the container when the system boots.
-   This is not required but is recommended if the container needs to start automatically, like for HA systems.
+   This is not required but is recommended if the container needs to start automatically, like for HA systems or when deploying always-on apps.
 
    When you enable autostart, TrueNAS automatically starts the container during system boot after the containers service initializes, ensuring services are available immediately after system startup.
    During system shutdown, TrueNAS sends a graceful shutdown signal to the container, allowing applications to close properly and save data.
@@ -457,7 +457,7 @@ Use the **NIC Devices** card to view and manage network interfaces (NICs) attach
 
 {{< trueimage src="/images/SCALE/Virtualization/NICWidget.png" alt="NIC Devices Card" id="NIC Devices Card" >}}
 
-Each NIC displays the network interface name and MAC address (for example, **br0 (aa:bb:cc:dd:ee:ff)** or **br0 (Default MAC Address)**).
+Each NIC displays the network interface name and MAC address (for example, **br0 (aa:bb:cc:dd:ee:ff)** or **br0 (Default Mac Address)**).
 
 {{< hint type=important >}}
 NIC modifications are restricted when there are pending network interface changes on the TrueNAS system.
@@ -473,8 +473,8 @@ To add a NIC:
 
 3. Configure the NIC settings:
    - Set **NIC Type** to the network interface type (virtio, macvlan, ipvlan, etc.).
-   - (Create only) Select **Use Default MAC Address** to automatically assign a MAC address.
-   - Enter a custom MAC address in **MAC Address**, or leave empty to use the default.
+   - (Create only) Select **Use Default Mac Address** to automatically assign a MAC address.
+   - Enter a custom MAC address in **Mac Address**, or leave empty to use the default.
    - (virtio only) Select **Trust Guest RX Filters** to trust the guest OS receive filter settings for better performance.
 4. Click **Add** to attach the NIC to the container.
 
@@ -500,35 +500,3 @@ You can open a shell session directly from this card.
 {{< trueimage src="/images/SCALE/Virtualization/ContainersToolsWidget.png" alt="Tools Card" id="Tools Card" >}}
 
 Click **Shell** <span class="iconify" data-icon="mdi:console-line"></span> to open a **Container Shell** session for command-line interaction with the container.
-
-## Migrating Containers from TrueNAS 25.10
-
-When you upgrade a system that used the 25.10 virtualization feature to TrueNAS 27, TrueNAS migrates the containers to the new containers feature automatically at startup.
-
-The migration moves each container from <file>*pool*/.ix-virt/containers/*container_name*</file> to <file>*pool*/.truenas_containers/containers/*container_name*</file>, and moves the image each container uses to <file>*pool*/.truenas_containers/images</file>.
-TrueNAS does not delete anything. Data that is not migrated stays in <file>.ix-virt</file>.
-
-{{< hint type=important title="Migrate VM Disks Before Upgrading" >}}
-Migrate the disks of any VMs created on the legacy **Containers** screen before you upgrade, because TrueNAS does not migrate them. See [Migrating Legacy VMs to Virtual Machines](https://www.truenas.com/docs/scale/25.10/scaletutorials/virtualmachines/#migrating-legacy-vms-to-virtual-machines) for more information.
-After the upgrade, an alert lists the VMs that were not migrated.
-{{< /hint >}}
-
-The following sections list what TrueNAS does and does not migrate.
-
-{{< expand "What TrueNAS Migrates" "v" >}}
-- Autostart and CPU binding settings.
-- The bridge and the default network settings.
-- File system devices. A 25.10 disk device becomes a file system device when its source is under <file>/mnt</file>.
-- NICs, which become VIRTIO NICs.
-- USB devices, matched by vendor and product ID.
-- GPUs, when the PCI address is still a valid GPU on the system.
-{{< /expand >}}
-
-{{< expand "What TrueNAS Does Not Migrate" "v" >}}
-- Virtual machines. See the information above about migrating VM disks.
-- Proxy devices and other device types the containers feature does not support.
-- Containers cloned from another container.
-- Containers with a name that matches an existing container, or that have an unreadable configuration.
-{{< /expand >}}
-
-After the upgrade, review the **Containers** screen and the alerts to confirm each container migrated, and review the devices for each migrated container.
