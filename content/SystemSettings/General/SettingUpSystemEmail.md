@@ -9,12 +9,6 @@ keywords:
 - enterprise storage solutions
 - nas storage solutions
 - software storage solutions
-aliases:
- - /scale/systemsettings/general/settingupsystememail/
- - /scale/gettingstarted/scalesystememail/
- - /scale/toptoolbar/settingupsystememail/
- - /scale/scaletutorials/toptoolbar/settingupsystememail/
- - /scale/scaletutorials/systemsettings/general/settingupsystememail/
 doctype: tutorial
 ---
 
@@ -143,7 +137,7 @@ Click **Save**.
 
 After configuring the system email send method, configured recipients receive a system health email every night/morning.
 
-To add or configure the **Email Alert Service** to send timely warnings when a system alert hits the warning level specified in [**Alert Settings**]({{< ref "/SCALE/TopToolbar/Alerts/AlertSettingsScreen" >}}):
+To add or configure the **Email Alert Service** to send timely warnings when a system alert hits the warning level specified in [**Alert Settings**]({{< ref "/TopToolbar/Alerts/AlertSettingsScreen" >}}):
 
  Go to **System > Alert Settings** or from any screen, click on the **Alerts** <span class="material-icons">notifications</span> icon at the top right of the screen to open the **Alerts** panel.
 Click on the <span class="material-icons">settings</span> settings icon and then on **Alert Settings**.

@@ -2,9 +2,6 @@
 title: "Network Interface Screens"
 description: "Provides information on the Network screen Interfaces widget and configuration screens."
 weight: 40
-aliases:
- - /scale/scaleuireference/network/networkinterfacescreens/
- - /scale/network/networkinterfacescreens/
 tags:
  - network
  - interfaces
@@ -132,7 +129,7 @@ These options show above the **Interfaces** widget after applying changes to a n
 
 **Revert Changes** discards changes made within the 60-second period.
 
-**Save Changes** shows after logging into the UI in a new browser window. Makes network changes permanent. Shows as the final part of the [testing network interface changes]({{< ref "/SCALE/Network/Interfaces#testing-network-interface-changes" >}}) process.
+**Save Changes** shows after logging into the UI in a new browser window. Makes network changes permanent. Shows as the final part of the [testing network interface changes]({{< ref "/Network/Interfaces#testing-network-interface-changes" >}}) process.
 
 ## Set Gateway and DNS Dialog
 

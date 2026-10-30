@@ -2,9 +2,6 @@
 title: "Configuring Interfaces"
 description: "Provides instructions to add, edit, and manage network interfaces in TrueNAS."
 weight: 10
-aliases:
- - /scale/scaletutorials/network/interfaces/managinginterfaces/
- - /scale/scaletutorials/network/interfaces/settingupstaticips/
 tags:
  - network
  - interfaces

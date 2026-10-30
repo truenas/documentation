@@ -46,7 +46,7 @@ S3 object storage in TrueNAS has three parts:
 S3 object storage and cloud sync tasks both use the S3 protocol, but they move data in opposite directions.
 S3 object storage makes TrueNAS an S3 server that other systems send data to.
 A cloud sync task makes TrueNAS an S3 client that sends data to, or pulls data from, an external provider such as Amazon S3 or Storj.
-See [Cloud Sync Tasks]({{< ref "/SCALE/DataProtection/CloudSyncTasks/_index.md" >}}) to back up TrueNAS data to an external S3 provider.
+See [Cloud Sync Tasks]({{< ref "/DataProtection/CloudSyncTasks/_index.md" >}}) to back up TrueNAS data to an external S3 provider.
 
 ## Licensed S3 Features
 

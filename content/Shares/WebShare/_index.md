@@ -7,8 +7,6 @@ tags:
 - webshare
 - shares
 related: false
-aliases:
- - /scale/scaleuireference/shares/webshare/
 ---
 
 WebShare provides web-based file access to authorized users through a browser interface.

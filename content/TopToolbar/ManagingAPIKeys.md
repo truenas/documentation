@@ -2,9 +2,6 @@
 title: "Managing API Keys"
 description: "This tutorial shows how to add, create, or edit an API key in TrueNAS and access API Documentation."
 weight: 20
-aliases:
- - /scale/scaletutorials/toptoolbar/managingapikeys/
- - /scale/scaleclireference/auth/cliapikey/
 tags:
 - toolbar
 - apikeys
@@ -12,7 +9,7 @@ doctype: tutorial
 ---
 
 
-TrueNAS 25.04 and later uses a versioned [JSON-RPC 2.0 over WebSocket API](https://api.truenas.com) with support for user-linked API access keys ([API Reference]({{< ref "/scale/api" >}})).
+TrueNAS 25.04 and later uses a versioned [JSON-RPC 2.0 over WebSocket API](https://api.truenas.com) with support for user-linked API access keys ([API Reference]({{< ref "/api" >}})).
 
 User-linked API keys allow administrators to configure per-user access to the TrueNAS API.
 Keys are revocable. You can also configure them to expire on a preset date.
@@ -126,4 +123,4 @@ Click the link for the content you want to access:
 
 {{< include file="/static/includes/APIDocs.md" >}}
 
-For more information on the API documentation see [API Reference]({{< relref "/SCALE/API/" >}}).
+For more information on the API documentation see [API Reference]({{< relref "/API/" >}}).

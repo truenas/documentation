@@ -2,9 +2,6 @@
 title: "Managing Groups"
 description: "Provides instructions on adding and managing groups."
 weight: 20
-aliases:
- - /scale/credentials/localgroups/
- - /scale/scaletutorials/credentials/managelocalgroups/
 tags:
  - groups
 keywords:
@@ -17,7 +14,7 @@ doctype: tutorial
 TrueNAS offers groups as an efficient way to manage permissions for many similar user accounts.
 See [Users]({{< ref "ManageUsers" >}}) for managing users.
 The interface lets you manage UNIX-style groups.
-If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< ref "/SCALE/Credentials/DirectoryServices" >}}).
+If the network uses a directory service, import the existing account information using the instructions in [Active Directory]({{< ref "/Credentials/DirectoryServices" >}}).
 
 {{< include file="archive/24.04PrivilegesWIP.md" >}}
 

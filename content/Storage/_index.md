@@ -3,10 +3,6 @@ title: "Storage"
 description: "Tutorials and UI reference to configure TrueNAS storage, including pools, datasets, zvols, and disks."
 geekdocCollapseSection: true
 weight: 5
-aliases:
- - /scale/storage/
- - /scale/scaletutorials/storage/pools/
- - /scale/storage/pools/
 related: false
 keywords:
 - nas storage software

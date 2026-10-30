@@ -2,7 +2,6 @@
 title: "Storage Tiering Pool Migration"
 description: "Provides information on migrating data and configuration from one local pool to another on a TrueNAS storage appliance."
 weight: 60 
-aliases:
 tags:
 - pools
 - storage
@@ -19,7 +18,7 @@ Storage Tiering is only available on TrueNAS Enterprise systems.
 This tutorial covers how to use the ZFS storage tiering feature introduced in TrueNAS 27 to migrate a TrueNAS Enterprise storage appliance from a two-pool configuration (for example, an HDD pool with a mirrored special vdev and a separate SSD pool) to a single tiered pool.
 
 {{< hint type=note title="Local Pool Migration" >}}
-If your goal is to migrate data between two local pools without enabling storage tiering, follow the [Local Pool Migration Guide]({{< ref "/SCALE/Storage/Pools/LocalPoolMigration.md" >}}) instead.
+If your goal is to migrate data between two local pools without enabling storage tiering, follow the [Local Pool Migration Guide]({{< ref "/Storage/Pools/LocalPoolMigration.md" >}}) instead.
 {{< /hint >}}
 
 This procedure addresses requirements for starting and configuring the target:
@@ -66,10 +65,10 @@ Complete these tasks approximately one week before the scheduled maintenance win
 - Upgrade the system (or both controllers on HA systems) to TrueNAS 27.
 - Confirm that Pool A has sufficient space to hold the data from Pool B.
 - [Contact support](https://www.truenas.com/support/) to acquire a new TrueNAS 27 license that includes the ZFS Storage Tiering feature.
-- [Move the system dataset]({{< ref "/SCALE/SystemSettings/Advanced/AdvancedSettings.md#managing-the-system-dataset" >}}) to Pool A if it is not located there already.
-- [Configure local replication tasks]({{< ref "/SCALE/DataProtection/Replication/LocalReplication" >}}) for data from Pool B to Pool A. Arrange your Pool B dataset hierarchy to avoid name collisions with existing datasets in Pool A.
+- [Move the system dataset]({{< ref "/SystemSettings/Advanced/AdvancedSettings.md#managing-the-system-dataset" >}}) to Pool A if it is not located there already.
+- [Configure local replication tasks]({{< ref "/DataProtection/Replication/LocalReplication" >}}) for data from Pool B to Pool A. Arrange your Pool B dataset hierarchy to avoid name collisions with existing datasets in Pool A.
 - Be prepared to reconfigure local storage paths after they change pools.
-- [Reconfigure apps](https://apps.truenas.com/managing-apps/managing-installed-apps/#migrating-existing-applications), [containers]({{< ref "/SCALE/Containers/ManagingContainers" >}}), and [VMs]({{< ref "/SCALE/virtualmachines/addmanagevmdevices/" >}}) to use Pool A.
+- [Reconfigure apps](https://apps.truenas.com/managing-apps/managing-installed-apps/#migrating-existing-applications), [containers]({{< ref "/Containers/ManagingContainers" >}}), and [VMs]({{< ref "/virtualmachines/addmanagevmdevices/" >}}) to use Pool A.
 - Move local user account home directories from Pool B to Pool A.
 - Verify the **Storage > Tiering** form is available in the WebUI, and that the **Enable** checkbox is present and not selected.
 - [Check datasets for a custom special small blocks threshold](#datasets-with-a-custom-special-small-blocks-threshold) and determine with the customer which storage tier each of those datasets belongs in.
@@ -85,7 +84,7 @@ TrueNAS queues tier migrations by dataset, so it is important that you maintain 
 
 #### Datasets with a Custom Special Small Blocks Threshold
 
-Some datasets have the ZFS `special_small_blocks` property set to a non-zero value lower than the dataset record size. Before storage tiering existed, administrators used this setting to place small files on the special vdev and larger files on the HDD data vdevs. In the WebUI, these datasets show **On** for [**Use Metadata (Special) VDEVs**]({{< ref "/SCALE/Datasets/DatasetsScreens.md#other-options-section" >}}) with a **Threshold** value lower than the **Record Size** value.
+Some datasets have the ZFS `special_small_blocks` property set to a non-zero value lower than the dataset record size. Before storage tiering existed, administrators used this setting to place small files on the special vdev and larger files on the HDD data vdevs. In the WebUI, these datasets show **On** for [**Use Metadata (Special) VDEVs**]({{< ref "/Datasets/DatasetsScreens.md#other-options-section" >}}) with a **Threshold** value lower than the **Record Size** value.
 
 TrueNAS assigns a dataset to the performance tier only when the threshold is equal to or greater than the record size. After the upgrade, TrueNAS flags these hybrid datasets as **Regular** instead of **Performance**. TrueNAS does not infer the tier from a partial configuration, which gives you the opportunity to move the dataset to the performance tier deliberately.
 
@@ -104,12 +103,12 @@ Complete these checks immediately before you begin migration work.
 
 - Confirm that you have an uninterrupted 4-hour maintenance window and an escalation path to support for the migration.
 - Verify you have IPMI access to the system (or both controllers on HA systems) as well as SSH access.
-- Download a [system configuration backup]({{< ref "/SCALE/systemsettings/advanced/managesysconfig/#downloading-the-file" >}}), including the secret seed.
-- Download a [system debug]({{< ref "/SCALE/systemsettings/general/generalsettings/" >}}).
-- [Confirm that no client systems connect to services that share data from Pool B]({{< ref "/SCALE/datasets/datasetsscreens/#dataset-tree-table" >}}).
+- Download a [system configuration backup]({{< ref "/systemsettings/advanced/managesysconfig/#downloading-the-file" >}}), including the secret seed.
+- Download a [system debug]({{< ref "/systemsettings/general/generalsettings/" >}}).
+- [Confirm that no client systems connect to services that share data from Pool B]({{< ref "/datasets/datasetsscreens/#dataset-tree-table" >}}).
 - Stop all sharing services exporting data from Pool B. Do not delete the share configuration!
 - Stop all Pool B replication jobs that are not the local replication jobs you created for this migration. <br> Do not delete the job configuration!
-- [Issue a final snapshot]({{< ref "/SCALE/datasets/snapshots/creatingsnapshots/" >}}) and local replication so that Pool A holds all data from Pool B.
+- [Issue a final snapshot]({{< ref "/datasets/snapshots/creatingsnapshots/" >}}) and local replication so that Pool A holds all data from Pool B.
 - Confirm the system dataset is still assigned to Pool A.
 - Verify directory services are healthy (if applicable).
 - Confirm that your reconfiguration plan has not changed.
@@ -120,7 +119,7 @@ If you use multi-layered ZFS encryption, [contact support](https://www.truenas.c
 
 {{< include file="/static/includes/StorageTieringMigrationSequence.md" >}}
 
-7. Use the freed SSD drives to [extend the special class on Pool A]({{< ref "/SCALE/storage/pools/managepools/#expanding-a-pool" >}}) according to your reconfiguration plan by adding vdevs of the required type to the special class.
+7. Use the freed SSD drives to [extend the special class on Pool A]({{< ref "/storage/pools/managepools/#expanding-a-pool" >}}) according to your reconfiguration plan by adding vdevs of the required type to the special class.
 
 {{< hint type=caution title="Pool Topology" >}}
 Any topology changes you make to Pool A (such as adding vdevs) are permanent. Thoroughly review all new topology changes before you apply them.
@@ -136,7 +135,7 @@ Go to **Storage** and click **Tiering**.
 
 {{< trueimage src="/images/SCALE/Storage/TieringScreen.png" alt="Tiering Screen" id="Tiering Screen" >}}
 
-Enter your desired values for [**Max Concurrent Jobs** and **Max Used Percentage**]({{< ref "/SCALE/Storage/StorageDashboardScreens" >}}). Each dataset migration to the **Performance Tier** consumes one tier job. The default is two active dataset migrations at a time, with the remainder queued. Select **Enable** and click **Save**.
+Enter your desired values for [**Max Concurrent Jobs** and **Max Used Percentage**]({{< ref "/Storage/StorageDashboardScreens" >}}). Each dataset migration to the **Performance Tier** consumes one tier job. The default is two active dataset migrations at a time, with the remainder queued. Select **Enable** and click **Save**.
 
 {{< hint type=caution title="Shares are locked to a single dataset" >}}
 After tiering is on, SMB shares and WebShares stop following nested datasets. Each share exposes only its own dataset, and any child datasets under it are no longer visible to clients through that share. Create a separate share for each dataset you want to expose.

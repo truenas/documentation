@@ -2,10 +2,6 @@
 title: "Encryption Screen"
 description: "Provides information on the settings and functions found on the TrueNAS storage encryption screens."
 weight: 50
-aliases:
- - /scale/scaleuireference/datasets/encryptionuiscale/
- - /scale/scaleuireference/storage/datasets/encryptionuiscale/
- - /scale/datasets/encryptionui/
 tags:
 - encryption
 - datasets

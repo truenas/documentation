@@ -2,8 +2,6 @@
 title: "Configuring WebShare"
 description: "Provides instructions to configure the WebShare service and create WebShare shares in TrueNAS."
 weight: 10
-aliases:
- - /scale/scaletutorials/shares/webshare/
 tags:
 - webshare
 - shares

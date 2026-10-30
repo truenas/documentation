@@ -4,14 +4,6 @@ description: "Highlights, change log, and known issues for the latest TrueNAS ni
 weight: 10
 related: false
 use_jump_to_buttons: true
-aliases:
- - /scale/scalereleasenotes/
- - /scalenext-releasenotes/
- - /scale/scalenextversion/
- - /scale/28/gettingstarted/scalereleasenotes/
- - /scale/28/gettingstarted/versionnotes/
- - /scale/gettingstarted/scalereleasenotes/ 
- - /releasenotes/
 jump_to_buttons:
   - text: "Latest Changes"
     anchor: "28-nightly-changes"
@@ -154,7 +146,7 @@ TrueNAS 27 adds the following container improvements:
 - **GPU passthrough** — NVIDIA and other supported GPU devices can now be assigned to LXC containers from the container configuration screen ([NAS-138569](https://ixsystems.atlassian.net/browse/NAS-138569), [NAS-138570](https://ixsystems.atlassian.net/browse/NAS-138570), [NAS-138700](https://ixsystems.atlassian.net/browse/NAS-138700)).
 - **USB and PCIe passthrough fixes** — A regression that prevented USB and PCIe device passthrough to containers and VMs is resolved in BETA.1 ([NAS-139045](https://ixsystems.atlassian.net/browse/NAS-139045), [NAS-139356](https://ixsystems.atlassian.net/browse/NAS-139356)).
 
-See [Containers]({{< ref "/SCALE/Containers/ManagingContainers.md" >}}) for configuration details.
+See [Containers]({{< ref "/Containers/ManagingContainers.md" >}}) for configuration details.
 
   </div>
 
@@ -168,11 +160,11 @@ TrueNAS monitors the condition of installed HDD and SSD drives (SAS, SATA, and N
 - **TrueNAS Middleware** polls SMART data from every drive every 90 minutes. When a polled attribute crosses a failure threshold, TrueNAS generates an alert.
 - **Alert logic** filters incoming SMART and ZFS data to suppress known-benign attribute fluctuations, reducing false-positive alerts by approximately 50% compared to prior releases.
 
-Drive health status is visible on the [**Disk Health**]({{< ref "/SCALE/Storage/StorageDashboardScreens.md#disk-health-widget" >}}) card on the **Storage** dashboard. Active alerts appear in the **Alerts** panel with details on the affected disk and recommended next steps.
+Drive health status is visible on the [**Disk Health**]({{< ref "/Storage/StorageDashboardScreens.md#disk-health-widget" >}}) card on the **Storage** dashboard. Active alerts appear in the **Alerts** panel with details on the affected disk and recommended next steps.
 
 Community Edition users can supplement automated monitoring with manual SMART tests run via cron jobs or the `smartctl` command-line tool. Third-party tools such as [Scrutiny](https://apps.truenas.com/catalog/scrutiny_community/) are also available from the TrueNAS Apps catalog.
 
-See [Drive Health Management]({{< ref "/SCALE/Storage/Disks/DriveHealthManagement.md" >}}) for full details.
+See [Drive Health Management]({{< ref "/Storage/Disks/DriveHealthManagement.md" >}}) for full details.
 
   </div>
 
@@ -203,7 +195,7 @@ See [Drive Health Management]({{< ref "/SCALE/Storage/Disks/DriveHealthManagemen
 {{< include file="/static/includes/MigrateCOREtoSCALEWarning.md" >}}
 
 Depending on the specific system configuration, migrating from a FreeBSD-based TrueNAS version can be a straightforward or complicated process.
-See the [Migration articles]({{< ref "/SCALE/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
+See the [Migration articles]({{< ref "/GettingStarted/Migrate/" >}}) for cautions and notes about differences between each software and the migration process.
 
 {{< enterprise >}}
 {{< include file="/static/includes/EnterpriseMigrationSupport.md" >}}

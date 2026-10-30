@@ -4,9 +4,6 @@ description: "Tutorials for configuring the TrueNAS Containers feature, creating
 geekdocCollapseSection: true
 weight: 20
 related: false
-aliases:
- - /scale/containers/containers/
- - /scale/reporting/instances/
 tags:
  - vm
  - container
@@ -19,7 +16,7 @@ doctype: tutorial
 ---
 
 Linux containers, powered by LXC, offer a lightweight, isolated environment that shares the host system kernel while maintaining its own file system, processes, and network settings.
-Containers start quickly, use fewer system resources than [virtual machines (VMs)]({{< relref "/SCALE/VirtualMachines/ManagingVMs.md" >}}), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
+Containers start quickly, use fewer system resources than [virtual machines (VMs)]({{< relref "/VirtualMachines/ManagingVMs.md" >}}), and scale efficiently, making them ideal for deploying and managing scalable applications with minimal overhead.
 
 {{< expand "What system resources do containers require?" "v" >}}
 {{< include file="/static/includes/ContainerRequirements.md" >}}
@@ -33,7 +30,7 @@ When you first access the **Containers** screen, it displays a message indicatin
 
 You can create containers immediately using the **Create New Container** button, or configure global settings first using the **Configuration** menu.
 
-For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens]({{< relref "/SCALE/Containers/ContainersScreens.md" >}}).
+For more information on screens and screen functions, refer to the UI Reference article on [Containers Screens]({{< relref "/Containers/ContainersScreens.md" >}}).
 
 Use the **Configuration** menu to access [**Settings**](#configuring-settings) where you can configure an optional [preferred storage pool](#setting-a-preferred-pool) for containers and [default network settings](#configuring-the-default-network).
 The **Configuration** menu also provides access to [**Map User/Group IDs**](#managing-container-permissions) for configuring UID and GID mappings.
@@ -69,7 +66,7 @@ For stability and performance, we recommend using SSD/NVMe storage for the conta
 You can change the preferred pool at any time by opening **Configuration** > **Settings** and selecting a different pool from the **Preferred Pool** dropdown.
 
 TrueNAS stores container data in a hidden <file>.truenas_containers</file> dataset on the selected pool.
-See [Container Storage Location]({{< relref "/SCALE/Containers/ContainersScreens.md#container-storage-location" >}}) in Containers Screens for details.
+See [Container Storage Location]({{< relref "/Containers/ContainersScreens.md#container-storage-location" >}}) in Containers Screens for details.
 
 #### Configuring the Default Network
 
@@ -84,7 +81,7 @@ To configure default network settings:
    - **Automatic** to allow TrueNAS to create and manage a dedicated virtual bridge (`truenasbr0`) on the TrueNAS host using DHCP and routes their outbound traffic through the host via NAT. Change the defaults using the **IPv4 Network** and **IPv6 Network** fields if they conflict with your network.
    - Select an existing bridge interface to use that bridge for container networking.
 
-   See [Accessing NAS from VMs and Containers]({{< relref "/SCALE/Network/ContainerNASBridge.md" >}}) for information on creating bridge interfaces.
+   See [Accessing NAS from VMs and Containers]({{< relref "/Network/ContainerNASBridge.md" >}}) for information on creating bridge interfaces.
 
    {{< enterprise >}}
    Custom bridge selection is not available on High Availability systems. HA deployments always use **Automatic** to prevent issues that could interfere with controller failover.
@@ -356,7 +353,7 @@ The edit screen allows you to modify container settings after creation. You can 
 - **ID Map Type**: The UID/GID mapping mode is fixed at creation
 - **Init Process** command: The init command is fixed, but **Init Working Directory**, **Init User**, and **Init Group** remain editable
 
-For detailed information about each setting, see the [Add Container Screen]({{< relref "/SCALE/Containers/ContainersScreens.md#add-container-screen" >}}) section in the UI Reference.
+For detailed information about each setting, see the [Add Container Screen]({{< relref "/Containers/ContainersScreens.md#add-container-screen" >}}) section in the UI Reference.
 
 ### Deleting Containers
 
@@ -397,7 +394,7 @@ TrueNAS supports GPU passthrough for containers with the following GPU vendors:
 
 For NVIDIA GPUs, you must install drivers before attaching the GPU to a container.
 Go to **System > Advanced Settings** to install NVIDIA drivers.
-See [Advanced Settings Screen]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for detailed instructions.
+See [Advanced Settings Screen]({{< relref "/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for detailed instructions.
 
 Click **Add** to open a list of available GPU devices.
 Select a GPU from the list to attach it to the container.

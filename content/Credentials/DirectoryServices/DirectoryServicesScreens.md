@@ -3,14 +3,6 @@ title: "Directory Services Screens"
 description: "Describes the screens and fields in the TrueNAS Directory Services section."
 geekdocCollapseSection: true
 weight: 110
-aliases:
- - /scale/scaleuireference/credentials/directoryservices/
- - /scale/credentials/directoryservices/activedirectoryscale/
- - /scale/credentials/directoryservices/ldapscale/
- - /scale/credentials/directoryservices/idmapscale/
- - /scale/credentials/directoryservices/kerberosscale/
- - /scale/scaleclireference/directory-service/
- - /scale/scaleuireference/credentials/directoryservices/idmap/
 tags:
 - kerberos
 - activedirectory

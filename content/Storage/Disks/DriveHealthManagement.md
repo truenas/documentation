@@ -2,11 +2,6 @@
 title: "Drive Health Management"
 description: "Describes how TrueNAS monitors drive health using SMART polling and ZFS event detection, and explains alert types, manual testing options, and Enterprise considerations."
 weight: 60
-aliases:
- - /scale/scaletutorials/dataprotection/smarttestsscale/
- - /scale/dataprotection/smarttestsscale/
- - /scale/scaletutorials/systemsettings/services/smartscale/
- - /scale/scaletutorials/systemsettings/services/smartservicesscale/
 tags:
 - disks
 keywords:
@@ -61,16 +56,16 @@ TrueNAS evaluates incoming SMART data and ZFS events against alert rules before 
 This filtering suppresses known-benign attribute fluctuations and only notifies users about conditions that require attention, reducing false-positive alerts by approximately 50% compared to prior releases.
 
 **Alert Levels** can be adjusted to control notification severity.
-Higher-priority alerts appear in the **[Alerts]({{< ref "/SCALE/TopToolbar/Alerts/_index.md" >}})** panel and can trigger configured [alert services]({{< ref "/SCALE/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) (email, SNMP, etc.).
+Higher-priority alerts appear in the **[Alerts]({{< ref "/TopToolbar/Alerts/_index.md" >}})** panel and can trigger configured [alert services]({{< ref "/TopToolbar/Alerts/AlertSettingsScreen.md" >}}) (email, SNMP, etc.).
 
 TrueNAS configures automated temperature alerts based on the specified maximum operating temperature of each drive.
 If a drive reports a temperature that exceeds its rated maximum, TrueNAS generates an alert.
 
 ## Monitoring Drive Health
 
-To view drive health status, go to the **Storage** dashboard and view the [**Disk Health** card]({{< ref "/SCALE/Storage/StorageDashboardScreens.md#disk-health-widget" >}}).
+To view drive health status, go to the **Storage** dashboard and view the [**Disk Health** card]({{< ref "/Storage/StorageDashboardScreens.md#disk-health-widget" >}}).
 
-Active alerts appear in the **[Alerts]({{< ref "/SCALE/TopToolbar/Alerts/_index.md" >}})** panel at the top right of the UI.
+Active alerts appear in the **[Alerts]({{< ref "/TopToolbar/Alerts/_index.md" >}})** panel at the top right of the UI.
 Click an alert to expand it and view details, including the affected disk, the attribute or event that triggered the alert, and recommended next steps.
 
 ### Alert Types
@@ -93,7 +88,7 @@ The manual SMART test options described in this section are primarily intended f
 
 ### Cron Jobs
 
-You can schedule manual SMART tests using **[Cron Jobs]({{< ref "/SCALE/SystemSettings/Advanced/ManageCronJobs.md" >}})** in the TrueNAS UI.
+You can schedule manual SMART tests using **[Cron Jobs]({{< ref "/SystemSettings/Advanced/ManageCronJobs.md" >}})** in the TrueNAS UI.
 
 TrueNAS logs cron job output. Review the system log or configure the cron job to send output to a file for later review.
 
@@ -103,7 +98,7 @@ The manual SHORT test performs a quick, surface-level diagnostic check. It typic
 
 The manual LONG test performs a full drive surface scan for periodic, deep validation. It provides a thorough validation of the entire drive surface, but has a significant negative performance impact during the test. LONG tests can also produce false-positive failure results on healthy drives.
 
-We recommend scheduling SMART tests so that they do not overlap with other data protection tasks like [snapshot creation or removal]({{< ref "/SCALE/Datasets/Snapshots/_index.md" >}}), or [pool scrubs]({{< ref "/SCALE/Storage/Pools/ManagePools.md#running-a-pool-data-integrity-check-scrub" >}}).
+We recommend scheduling SMART tests so that they do not overlap with other data protection tasks like [snapshot creation or removal]({{< ref "/Datasets/Snapshots/_index.md" >}}), or [pool scrubs]({{< ref "/Storage/Pools/ManagePools.md#running-a-pool-data-integrity-check-scrub" >}}).
 
 To run a manual test, go to **System > Shell** and run:
 

@@ -2,10 +2,6 @@
 title: "Managing Network Configurations"
 description: "Provides instructions on configuring or managing global network configuration settings."
 weight: 10
-aliases:
- - /scale/scaletutorials/network/managingglobalconfig/
- - /scale/scaletutorials/network/addingglobalconf/
- - /scale/network/managingglobalconfig/
 tags:
 - network
 doctype: tutorial
@@ -25,7 +21,7 @@ Be sure to check both locations when troubleshooting network connectivity issues
 
 Use the **Network Configuration** widget to add general network settings like the default gateway and DNS name servers to allow external communication.
 
-To add new or change existing network interfaces, see [Interface Configurations]({{< ref "/SCALE/Network/Interfaces/" >}}).
+To add new or change existing network interfaces, see [Interface Configurations]({{< ref "/Network/Interfaces/" >}}).
 
 Go to **System > Network**, and click **Settings** on the **Network Configuration** widget to open the **Edit Global Configuration** screen.
 

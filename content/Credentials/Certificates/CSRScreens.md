@@ -2,8 +2,6 @@
 title: "Certificate Signing Requests Screens"
 description: "Provides information on the Certificates Signing Requests screens and settings."
 weight: 60
-aliases:
- - /scale/scaleuireference/credentials/certificates/csrscreensscale/
 tags:
  - csr
  - certificates

@@ -2,9 +2,6 @@
 title: "Configuring Active Directory"
 description: "Provides instructions on configuring Active Directory (AD) in TrueNAS."
 weight: 10
-aliases:
- - /scale/scaletutorials/credentials/directoryservices/configadscale/
- - /scale/scaletutorials/credentials/directoryservices/configidmapscale/
 tags:
 - activedirectory
 - directoryservices

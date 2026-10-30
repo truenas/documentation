@@ -2,10 +2,6 @@
 title: "Certificates"
 description: "Information about adding and managing certificates, CSRs, CAs, and ACME DNS-Authenticators in TrueNAS."
 geekdocCollapseSection: true
-aliases:
- - /scale/scaletutorials/credentials/certificates/
- - /scale/scaleclireference/system/clicertificate/
- - /scale/scaleuireference/credentials/certificates/
 weight: 80
 tags:
  - certificates

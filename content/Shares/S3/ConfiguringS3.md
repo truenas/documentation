@@ -32,7 +32,7 @@ Before you configure S3 object storage:
   The root account cannot own a bucket or an access key.
 * Use versioning or object lock to confirm the system license includes these features.
   The **Add S3 Bucket** screen shows a **Premium** tag on settings the license does not include.
-  See [Licensed S3 Features]({{< ref "/SCALE/Shares/S3/_index.md#licensed-s3-features" >}}).
+  See [Licensed S3 Features]({{< ref "/Shares/S3/_index.md#licensed-s3-features" >}}).
 * Encrypt client connections by importing or creating a certificate on the **Credentials > Certificates** screen, or plan to use the TrueNAS web UI certificate.
 
 ## Configuring the S3 Service

@@ -2,8 +2,6 @@
 title: "Data Protection Screens"
 description: "Describes the screens and options contained within the Data Protection section in TrueNAS."
 weight: 70
-aliases:
- - /scale/scaleuireference/dataprotection/scrubtasksscreensscale/
 tags:
 - dataprotection
 doctype: reference

@@ -2,8 +2,6 @@
 title: "Setting Up Data Sharing"
 description: "Provides general information on setting up basic data sharing on TrueNAS."
 weight: 50
-aliases:
- - /scale/gettingstarted/install/setupsharing/
 tags:
 - shares
 keywords:
@@ -27,7 +25,7 @@ TrueNAS provides three types of sharing methods:
 * NFS for Unix-like shares
 * ISCSi block shares
 
-For more information on TrueNAS shares, see the [Shares]({{< ref "/SCALE/Shares" >}}) tutorials.
+For more information on TrueNAS shares, see the [Shares]({{< ref "/Shares" >}}) tutorials.
 
 Regardless of what type of share you create, you need to create the user and dataset for the share.
 
@@ -62,7 +60,7 @@ This article provides instructions on creating the share and adding the dataset 
 
 ## Setting up SMB Shares for Windows
 
-For more detailed information on adding SMB shares, see [Adding SMB Shares]({{< ref "/SCALE/Shares" >}}).
+For more detailed information on adding SMB shares, see [Adding SMB Shares]({{< ref "/Shares" >}}).
 
 {{< include file="/static/includes/LocalSMBUser.md" >}}
 
@@ -195,6 +193,6 @@ To set up NFS sharing from the **Add NFS** screen:
 ## Setting up an iSCSI Block Share
 
 Setting up block sharing is a complicated scenario that requires detailed configuration steps and knowledge of your network environment.
-A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the Tutorials section]({{< ref "/SCALE/Shares/iSCSI" >}}).
+A simple configuration is beyond the scope of this getting started guide, but detailed articles are [available in the Tutorials section]({{< ref "/Shares/iSCSI" >}}).
 
 With simple sharing now set up, you can back up your configuration and set up data backup.

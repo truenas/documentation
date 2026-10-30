@@ -2,12 +2,6 @@
 title: "Pool Creation Wizard Screen"
 description: "Descriptions for settings and functions found in the Pool Creation Wizard."
 weight: 70
-aliases:
- - /scale/scaleuireference/storage/poolcreatewizardscreens/
- - /scale/scaleuireference/storage/pools/poolcreatewizardscreens/
- - /scale/scaleclireference/storage/clipool/
- - /scale/storage/poolcreatewizardscreens/
- - /scale/scaleuireference/storage/pools/fusionpoolsscale/
 tags: 
 - pools
 - storage
@@ -66,7 +60,7 @@ When available disks are exported from a pool, a message alerting you to this ap
 
 {{< include file="/static/includes/EncryptionRootLevel.md" >}}
 
-See [Storage Encryption]({{< ref "/SCALE/Datasets/Encryption" >}}) for more information on using TrueNAS storage encryption.
+See [Storage Encryption]({{< ref "/Datasets/Encryption" >}}) for more information on using TrueNAS storage encryption.
 
 An encryption warning dialog opens with a **Confirm** option.
 **Confirm** enables the **I Understand** button. **I Understand** continues with adding the pool with encryption applied.

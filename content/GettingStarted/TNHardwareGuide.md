@@ -2,9 +2,6 @@
 title: "TrueNAS Hardware Guide"
 description: "Provides information on system hardware and minimum requirements (CPU, memory, etc.). Covers storage considerations, media, controllers, device sizing and cooling, SAS expanders." 
 weight: 20
-aliases:
- - /scale/introduction/scalehardwareguide/
- - /scale/gettingstarted/scalehardwareguide/
 tags:
 - storage
 - network
@@ -67,7 +64,7 @@ Drive manufacturers produce SATA NAS disks that use either CMR or [Shingled Magn
 SMR drives offer greater storage density than their CMR equivalents, but slower write and overwrite performance and the potential for instability or data loss during resilver operations make them a poor fit for ZFS.
 
 SMR drives come in three variants, and TrueNAS handles each differently:
-* **Drive-Managed SMR (DM-SMR)** and **Host-Aware SMR (HA-SMR)** drives function poorly with TrueNAS, and the TrueNAS team [does not recommend]({{< ref "/hardware/notices/wdsmr" >}}) them. Expect degraded write performance and longer, less reliable resilver operations.
+* **Drive-Managed SMR (DM-SMR)** and **Host-Aware SMR (HA-SMR)** drives function poorly with TrueNAS, and the TrueNAS team [does not recommend](https://www.truenas.com/docs/hardware/notices/wdsmr/) them. Expect degraded write performance and longer, less reliable resilver operations.
 * **Host-Managed SMR (HM-SMR)** drives are not supported. ZFS cannot manage the zone semantics these drives require, so they do not work with TrueNAS.
 
 See also: [WD Red SMR vs CMR Tested: Avoid Red SMR](https://www.servethehome.com/wd-red-smr-vs-cmr-tested-avoid-red-smr/) and [We put Western Digital’s dreaded SMR Red drive to the test](https://arstechnica.com/gadgets/2020/06/western-digitals-smr-disks-arent-great-but-theyre-not-garbage/).
@@ -183,7 +180,7 @@ For example, a 480 GB L2ARC filled with 4KiB blocks needs more than 10GiB of met
 
   <div data-tab-id="self-encrypting-drives" data-tab-label="Self Encrypting Drives">
 
-TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [native ZFS encryption]({{< ref "/SCALE/Datasets/Encryption" >}}) and [self-encrypting drives (SEDs)]({{< ref "/SCALE/Storage/Disks/SED" >}}).
+TrueNAS supports two forms of data encryption at rest to achieve privacy and compliance objectives: [native ZFS encryption]({{< ref "/Datasets/Encryption" >}}) and [self-encrypting drives (SEDs)]({{< ref "/Storage/Disks/SED" >}}).
 SEDs do not experience the performance overhead introduced by software partition encryption but are not as readily available as non-SED drives (and thus can cost a little more).
 
   </div>

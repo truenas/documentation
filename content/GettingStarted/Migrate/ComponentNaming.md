@@ -2,8 +2,6 @@
 title: "Component Naming"
 description: "Provides information on disk and interface naming changes related to the change from FreeBSD to Linux-based storage and sharing in TrueNAS."
 weight: 35
-aliases:
- - /scale/gettingstarted/componentnaming/
 tags:
  - migrate
 ---

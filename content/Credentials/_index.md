@@ -4,9 +4,6 @@ description: "TrueNAS credential management tutorials and UI reference for users
 geekdocCollapseSection: true
 weight: 10
 related: false
-aliases:
- - /scale/scaleuireference/credentials/
- - /scale/scaletutorials/credentials/
 ---
 
 TrueNAS credential options are organized into screens to manage local users and groups, backup credentials (cloud and SSH), certificates, and directory services.

@@ -2,8 +2,6 @@
 title: "Logging In for the First Time"
 description: "Describes the web interface, logging in to the TrueNAS web interface for the first time, changing from root to the admin user, and navigating through the UI."
 weight: 20
-aliases: 
- - /scale/gettingstarted/firsttimelogin/
 tags:
 - dashboard
 keywords:
@@ -33,7 +31,7 @@ On networks that support Multicast Domain Name Services (mDNS), the system can u
 By default, TrueNAS uses the host name and domain **truenas.local**.
 To change the host name and domain in the web interface, go to **Network** and click **Settings** on the **Global Configuration** widget.
 
-To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing TrueNAS or use the static IP address you assigned using the [Console Setup menu]({{< ref "/SCALE/GettingStarted/install/ConsoleSetupMenuSCALE" >}}).
+To access the web interface using an IP address, either use the DHCP-assigned IP address displayed at the top of the Console Setup menu after installing TrueNAS or use the static IP address you assigned using the [Console Setup menu]({{< ref "/GettingStarted/install/ConsoleSetupMenuSCALE" >}}).
 
 {{< enterprise >}}
 TrueNAS Enterprise (HA) systems have specific network configuration requirements.
@@ -171,7 +169,7 @@ Click on the system image to open the **System > [View Enclosure]({{< ref "Enclo
 
 The **Dashboard** for non-Enterprise systems displays the TrueNAS logo on the **System Information** widget.
 
-To [customize the dashboard ]({{< ref "/SCALE/Dashboard" >}}), click **Configure** to put the **Dashboard** into configuration mode.
+To [customize the dashboard ]({{< ref "/Dashboard" >}}), click **Configure** to put the **Dashboard** into configuration mode.
 Use the drag bar to move widget groups to new positions on the screen.
 Click **Add** to create new widgets or the **Edit** option in the widget group to change the look or information included in a widget.
 

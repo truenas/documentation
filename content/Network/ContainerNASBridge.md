@@ -2,12 +2,6 @@
 title: "Accessing NAS from VMs and Containers"
 description: "Provides instructions on how to create a bridge interface for virtual machines and containers, and provides Linux and Windows examples."
 weight: 80
-aliases: 
- - /scale/network/containernasbridge/
- - /scale/containers/virtualization/accessingnasfromvm/
- - /scale/reporting/virtualization/accessingnasfromvm/
- - /scale/scaletutorials/virtualization/accessingnasfromvm/
- - /scale/scaletutorials/network/containernasbridge/
 tags:
  - vm
  - container
@@ -72,7 +66,7 @@ To attach a bridge or secondary NIC to one existing container:
 See [Managing NICs]({{< ref "ManagingContainers#managing-nics" >}}) for the full procedure, including MAC address options.
 
 You can now access your TrueNAS storage from the VM or container.
-You might have to set up [shares]({{< ref "/SCALE/Shares/iSCSI" >}}) or [users]({{< ref "ManageUsers" >}}) with home directories to access certain files.
+You might have to set up [shares]({{< ref "/Shares/iSCSI" >}}) or [users]({{< ref "ManageUsers" >}}) with home directories to access certain files.
 
 ## VM Access Examples
 
