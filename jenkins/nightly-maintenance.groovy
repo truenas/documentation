@@ -9,6 +9,23 @@
 //      the deliberate replacement for the old "TrueNAS Docs Update Master" fan-out safety net.
 // Content freshness does NOT depend on this job: each version's own pipeline builds → rsyncs →
 // symlinks → purges on every push. This is a nightly safety net, not the publish path.
+// retry() has no delay, so a short DNS/network blip used up every attempt within seconds
+// (build #14: three fetches in 4s). This sleeps between attempts: base, 2x base, 4x base...
+def retryBackoff(int attempts, int baseSeconds, Closure body) {
+  for (int attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      body()
+      return
+    } catch (e) {
+      if (e instanceof InterruptedException) { throw e }   // user abort must still abort
+      if (attempt == attempts) { throw e }
+      int wait = baseSeconds * (1 << (attempt - 1))
+      echo "Attempt ${attempt}/${attempts} failed (${e}); retrying in ${wait}s."
+      sleep time: wait, unit: 'SECONDS'
+    }
+  }
+}
+
 pipeline {
   agent { label 'hugo-pr' }
 
@@ -74,7 +91,7 @@ pipeline {
           def worktreeRoot = "${env.WORKSPACE}/.changelog-worktrees"
           def branches = []
           try {
-            retry(3) { sh 'timeout --kill-after=30 300 git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"' }
+            retryBackoff(3, 15) { sh 'timeout --kill-after=30 300 git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"' }
             // same version-branch filter and live check as Reconcile below — keep them in step
             def raw = sh(returnStdout: true, script:
               "git for-each-ref --format='%(refname:short)' refs/remotes/origin " +
@@ -155,16 +172,29 @@ pipeline {
           steps {
             script {
               // make sure we can see every remote branch's docs-build.env
-              // retry(3): this fetch has no relation to Duty 1 above — don't let a
+              // Best effort: this fetch has no relation to Duty 1 above, so don't let a
               // transient network blip there (or here) take down the Reconcile/Purge
-              // safety net, which must still run.
-              retry(3) { sh 'git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"' }
+              // safety net, which must still run. If it still fails after the backoff
+              // retries, carry on with the refs already on disk (the changelog stage above
+              // fetched them) and mark the build UNSTABLE.
+              def fetchFailed = false
+              try {
+                retryBackoff(3, 15) { sh 'git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"' }
+              } catch (e) {
+                if (e instanceof InterruptedException) { throw e }
+                fetchFailed = true
+                currentBuild.result = 'UNSTABLE'
+                echo "Could not refresh branches from origin (${e}); reconciling from the refs already on disk."
+              }
               // same version-branch filter as the Multibranch job
               def raw = sh(returnStdout: true, script:
                 "git for-each-ref --format='%(refname:short)' refs/remotes/origin " +
                 "| sed 's#^origin/##' | grep -E '^(master|[0-9]+([.][0-9]+)?)\$' || true"
               ).trim()
               def branches = raw ? raw.split('\\n') : []
+              if (fetchFailed && !branches) {
+                error 'Fetch failed and no version branches are on disk; nothing to reconcile from.'
+              }
               def reconciled = []
               for (b in branches) {
                 def envText = sh(returnStdout: true,
@@ -191,7 +221,7 @@ pipeline {
 
         stage('Purge') {                          // one whole-zone purge; kept unconditional
           steps {
-            retry(3) { build job: '/Documentation/PurgeCDNIfInValidState', wait: true }
+            retryBackoff(3, 15) { build job: '/Documentation/PurgeCDNIfInValidState', wait: true }
           }
         }
       }
