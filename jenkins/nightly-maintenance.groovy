@@ -1,8 +1,11 @@
 // DOCS-2686 — Nightly Maintenance for the Docs Versioned Sites setup.
-// Two scheduled duties that must NOT ride on pushes:
+// Three scheduled duties that must NOT ride on pushes:
 //   1. Software-status auto-PR (was inline in the old master build; missed during quiet
 //      periods with no master pushes).
-//   2. Prod reconcile: re-assert every LIVE version's symlink + one whole-zone CDN purge —
+//   2. Changelog CSV auto-PR (DOCS-2785): refresh each live version branch's published changelog
+//      CSVs from its public Jira filters (static/data/changelog-sources.json on that branch) and
+//      open one PR per branch that changed.
+//   3. Prod reconcile: re-assert every LIVE version's symlink + one whole-zone CDN purge —
 //      the deliberate replacement for the old "TrueNAS Docs Update Master" fan-out safety net.
 // Content freshness does NOT depend on this job: each version's own pipeline builds → rsyncs →
 // symlinks → purges on every push. This is a nightly safety net, not the publish path.
@@ -59,7 +62,92 @@ pipeline {
       }
     }
 
-    stage('Reconcile') {                         // Duty 2 — under the shared deploy mutex
+    stage('Changelog CSV auto-PR') {             // Duty 2
+      steps {
+        script {
+          // The scripts run from this master checkout; the data lives on each version branch,
+          // so each branch is checked out as a throwaway worktree. Python deps were installed
+          // by the stage above. Every failure here marks the build UNSTABLE and moves on:
+          // Reconcile/Purge below must still run. The network-bound commands run under the shell
+          // `timeout` (exit 124 reads as an ordinary failure) rather than the Jenkins timeout step,
+          // whose abort would be rethrown as an InterruptedException and fail the whole build.
+          def worktreeRoot = "${env.WORKSPACE}/.changelog-worktrees"
+          def branches = []
+          try {
+            retry(3) { sh 'timeout --kill-after=30 300 git fetch --no-tags --force origin "+refs/heads/*:refs/remotes/origin/*"' }
+            // same version-branch filter and live check as Reconcile below — keep them in step
+            def raw = sh(returnStdout: true, script:
+              "git for-each-ref --format='%(refname:short)' refs/remotes/origin " +
+              "| sed 's#^origin/##' | grep -E '^(master|[0-9]+([.][0-9]+)?)\$' || true"
+            ).trim()
+            branches = raw ? raw.split('\\n') : []
+          } catch (e) {
+            if (e instanceof InterruptedException) { throw e }   // user abort must still abort
+            currentBuild.result = 'UNSTABLE'
+            echo "Could not list version branches for the changelog refresh: ${e}. Continuing to Reconcile."
+          }
+
+          sh "git worktree prune; rm -rf '${worktreeRoot}'"
+          def refreshed = []
+          for (b in branches) {
+            try {
+              def envText = sh(returnStdout: true,
+                script: "git show origin/${b}:jenkins/docs-build.env 2>/dev/null || true").trim()
+              if (!envText) { continue }
+              def p = readProperties text: envText
+              def live = (p.PUBLISH_TO_PROD ?: 'false').trim() == 'true' || (p.ARCHIVED ?: 'false').trim() == 'true'
+              if (!live) { continue }
+              // a branch opts in by having a sources file; most branches don't
+              def hasSources = sh(
+                script: "git cat-file -e origin/${b}:static/data/changelog-sources.json 2>/dev/null",
+                returnStatus: true
+              ) == 0
+              if (!hasSources) { continue }
+
+              def wt = "${worktreeRoot}/${b}"
+              sh "git worktree add --force --detach '${wt}' origin/${b}"
+              try {
+                def scriptStatus = sh(script: "timeout --kill-after=30 600 python3 scripts/update-changelogs.py --repo '${wt}'", returnStatus: true)
+                if (scriptStatus != 0) {
+                  currentBuild.result = 'UNSTABLE'
+                  echo "update-changelogs.py reported a problem for ${b} (exit ${scriptStatus}) — see console output above. Other branches and Reconcile continue."
+                }
+                // the script only edits static/data/*-changelog.csv; its summary file sits in the repo root
+                def changed = sh(
+                  script: "git -C '${wt}' status --porcelain -- static/data | grep -q .",
+                  returnStatus: true
+                ) == 0
+                if (changed) {
+                  echo "Changelog CSVs changed on ${b} — creating/updating PR."
+                  def prStatus = sh(
+                    script: "cd '${wt}' && BASE_BRANCH='${b}' timeout --kill-after=30 600 bash '${env.WORKSPACE}/scripts/create-changelog-pr.sh'",
+                    returnStatus: true
+                  )
+                  if (prStatus != 0) {
+                    currentBuild.result = 'UNSTABLE'
+                    echo "create-changelog-pr.sh failed for ${b} (exit ${prStatus}) — see console output above. Continuing."
+                  } else {
+                    refreshed.add(b)
+                  }
+                } else {
+                  echo "Changelog CSVs up to date on ${b}."
+                }
+              } finally {
+                sh "git worktree remove --force '${wt}' || rm -rf '${wt}'"
+              }
+            } catch (e) {
+              if (e instanceof InterruptedException) { throw e }
+              currentBuild.result = 'UNSTABLE'
+              echo "Changelog refresh failed for ${b}: ${e}. Continuing."
+            }
+          }
+          sh "git worktree prune; rm -rf '${worktreeRoot}'"
+          echo "Changelog PRs opened/updated for: ${refreshed ? refreshed.join(', ') : '(none)'}"
+        }
+      }
+    }
+
+    stage('Reconcile') {                         // Duty 3 — under the shared deploy mutex
       options { lock('docs1-deploy') }
       stages {
 
@@ -117,7 +205,7 @@ pipeline {
       echo 'Nightly Maintenance FAILED — see console output. Automated alerting pending an IT Mailer plugin fix.'
     }
     unstable {
-      echo 'Nightly Maintenance UNSTABLE — software status update reported a problem (see the Software status auto-PR stage and scripts/software-status-error.log). Automated alerting pending an IT Mailer plugin fix.'
+      echo 'Nightly Maintenance UNSTABLE — the software status update or the changelog CSV refresh reported a problem (see the Software status auto-PR and Changelog CSV auto-PR stages, and scripts/software-status-error.log). Automated alerting pending an IT Mailer plugin fix.'
     }
   }
 }
