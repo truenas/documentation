@@ -440,7 +440,7 @@ See [Accessing NAS from VM]({{< ref "ContainerNASBridge" >}}) for more informati
 ## Migrating Legacy VMs to Virtual Machines
 
 Legacy VMs created using the **Instances** screen in 25.04.0 and 25.04.1 remained on the **Containers** screen through 25.10.
-TrueNAS 26 removes them from the **Containers** screen entirely.
+TrueNAS 27 removes them from the **Containers** screen entirely.
 No migration tool, wizard, or notification exists for them.
 Containers migrate automatically during the upgrade. These legacy VMs do not.
 
@@ -453,13 +453,13 @@ A guest operating system whose disk is unlocked by a TPM-bound key does not star
 
 {{< hint type=note >}}
 Complete the preparation steps before you upgrade, while the system still runs TrueNAS 25.10.
-None of the preparation steps are available after upgrading to TrueNAS 26.
-See [Preparing to Upgrade to TrueNAS 26](https://www.truenas.com/docs/scale/25.10/scaletutorials/virtualmachines/#preparing-to-upgrade-to-truenas-26) in the TrueNAS 25.10 documentation.
+None of the preparation steps are available after upgrading to TrueNAS 27.
+See [Preparing to Upgrade to TrueNAS 27](https://www.truenas.com/docs/scale/25.10/scaletutorials/virtualmachines/#preparing-to-upgrade-to-truenas-27) in the TrueNAS 25.10 documentation.
 {{< /hint >}}
 
 ### Migrating a Legacy VM Disk
 
-Complete this procedure after upgrading to TrueNAS 26, using the VM settings and zvol information you recorded while running TrueNAS 25.10.
+Complete this procedure after upgrading to TrueNAS 27, using the VM settings and zvol information you recorded while running TrueNAS 25.10.
 
 1. Go to **Datasets** and create or identify a standard dataset to hold the migrated disk, for example *tank/vms*.
 

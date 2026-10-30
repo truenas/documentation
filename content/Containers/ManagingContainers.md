@@ -25,29 +25,16 @@ Containers start quickly, use fewer system resources than [virtual machines (VMs
 {{< /expand >}}
 
 {{< hint type=note >}}
-Containers created in TrueNAS 25.04 or 25.10, whether using the **Instances** screen (25.04.0 and 25.04.1) or the **Containers** screen (25.04.2 and later), migrate automatically during the upgrade to TrueNAS 26.
-
-Containers do not migrate automatically on TrueNAS Enterprise High Availability (HA) systems, or on Enterprise systems without the Apps license feature enabled.
-Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on one of these systems.
-
-A container also does not migrate if a container with the same name already exists in the new format, for example after a previous incomplete migration attempt, or if TrueNAS cannot resolve the source image of the container.
-Check the system log if a container does not appear after an upgrade.
-
-Legacy virtual machines displayed on the **Containers** screen in 25.10 are not migrated automatically.
-See [Migrating Instance VMs to Virtual Machines]({{< ref "/VirtualMachines/ManagingVMs.md#migrating-instance-vms-to-virtual-machines" >}}) for the manual procedure.
-{{< /hint >}}
-
-{{< hint type=note >}}
-Containers running in TrueNAS 25.10 migrate automatically during the upgrade to TrueNAS 26.
-
-Containers do not migrate automatically on TrueNAS Enterprise High Availability (HA) systems, or on Enterprise systems without the Apps license feature enabled.
-Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on one of these systems.
-
-A container also does not migrate if a container with the same name already exists in the new format, for example after a previous incomplete migration attempt, or if TrueNAS cannot resolve the source image of the container.
-Check the system log if a container does not appear after an upgrade.
+Due to backend technology changes in TrueNAS 27, containers on the **Containers** screen require migration.
+Containers created in TrueNAS 25.04 or 25.10, whether using the **Instances** screen (25.04.0 and 25.04.1) or the **Containers** screen (25.04.2 and later), migrate automatically during the upgrade to TrueNAS 27.
+On TrueNAS Enterprise High Availability (HA) systems, containers do not migrate automatically.
+On non-HA TrueNAS Enterprise systems, containers migrate automatically when the Apps license feature is enabled, and do not when it is not enabled.
+Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on a TrueNAS Enterprise system that does not migrate them.
 
 Legacy virtual machines displayed on the **Containers** screen in 25.10 are not migrated automatically.
 See [Migrating Legacy VMs to Virtual Machines]({{< ref "/VirtualMachines/ManagingVMs.md#migrating-legacy-vms-to-virtual-machines" >}}) for the manual procedure.
+
+See [Migrating Containers from TrueNAS 25.10](#migrating-containers-from-truenas-2510) for what TrueNAS migrates.
 {{< /hint >}}
 
 ## Setting Up the Containers Service
@@ -512,3 +499,32 @@ You can open a shell session directly from this card.
 {{< trueimage src="/images/SCALE/Virtualization/ContainersToolsWidget.png" alt="Tools Card" id="Tools Card" >}}
 
 Click **Shell** <span class="iconify" data-icon="mdi:console-line"></span> to open a **Container Shell** session for command-line interaction with the container.
+
+## Migrating Containers from TrueNAS 25.10
+
+During the upgrade to TrueNAS 27, TrueNAS automatically migrates the containers that were running in TrueNAS 25.10.
+See the note at the top of this article for the systems that do not migrate automatically.
+
+The migration moves each container from <file>*pool*/.ix-virt/containers/*container_name*</file> to <file>*pool*/.truenas_containers/containers/*container_name*</file>, and moves the image each container uses to <file>*pool*/.truenas_containers/images</file>.
+TrueNAS does not delete anything. Data that is not migrated stays in <file>.ix-virt</file>.
+
+{{< expand "What TrueNAS Migrates" "v" >}}
+- Autostart and CPU binding settings.
+- The bridge and the default network settings.
+- File system devices. A 25.10 disk device becomes a file system device when its source is under <file>/mnt</file>.
+- NICs, which become VIRTIO NICs.
+- USB devices, matched by vendor and product ID.
+- GPUs, when the PCI address is still a valid GPU on the system.
+{{< /expand >}}
+
+{{< expand "What TrueNAS Does Not Migrate" "v" >}}
+- Legacy virtual machines. See [Migrating Legacy VMs to Virtual Machines]({{< ref "/VirtualMachines/ManagingVMs.md#migrating-legacy-vms-to-virtual-machines" >}}).
+- Proxy devices and other device types the containers feature does not support.
+- Containers cloned from another container.
+- Containers with an unreadable configuration.
+- Containers with a name that matches a container that already exists in the new format, for example after a previous incomplete migration attempt.
+- Containers when TrueNAS cannot resolve the source image.
+{{< /expand >}}
+
+After the upgrade, review the **Containers** screen and confirm each container migrated, and review the devices for each migrated container.
+Check the system log if a container does not appear.
