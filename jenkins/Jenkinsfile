@@ -109,12 +109,14 @@ pipeline {
             // transfer root; version branches never use it, so their own content is never excluded.
             script {
               // /nightly is the symlink docs-nightly-to-prod.sh keeps in docs1; it is not build output, so --delete would remove it.
+              // The '/[0-9]*' version exclude below also matches 404.html and 404error/; the root build must publish both.
+              def keep404 = (env.OUTPUT_DIR == 'docs1') ? "--include='/404.html' --include='/404error/***'" : ''
               def frozenExcludes = (env.OUTPUT_DIR == 'docs1') ? "--exclude='/nightly'" : ''
               if (env.OUTPUT_DIR == 'docs1' && fileExists('jenkins/frozen-root-excludes.txt')) {
                 frozenExcludes += " --exclude-from='jenkins/frozen-root-excludes.txt'"
               }
               sh """rsync -rvza -e 'ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no' \
-                --delete --exclude='pdf/' --exclude='PRs/' --exclude='CNAME' --exclude='download/' \
+                --delete ${keep404} --exclude='pdf/' --exclude='PRs/' --exclude='CNAME' --exclude='download/' \
                 --exclude='/scale/[0-9]*' --exclude='/core/[0-9]*' --exclude='/truecommand/[0-9]*' --exclude='/[0-9]*' \
                 ${frozenExcludes} \
                 public/ docs@10.242.64.28:/var/www/html/${env.OUTPUT_DIR}"""
