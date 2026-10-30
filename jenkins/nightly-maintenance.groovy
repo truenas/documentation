@@ -78,7 +78,7 @@ pipeline {
             // same version-branch filter and live check as Reconcile below — keep them in step
             def raw = sh(returnStdout: true, script:
               "git for-each-ref --format='%(refname:short)' refs/remotes/origin " +
-              "| sed 's#^origin/##' | grep -E '^(master|[0-9]+([.][0-9]+)?)\$' || true"
+              "| sed 's#^origin/##' | grep -E '^(master|main|nightly|[0-9]+([.][0-9]+)?)\$' || true"
             ).trim()
             branches = raw ? raw.split('\\n') : []
           } catch (e) {
@@ -162,7 +162,7 @@ pipeline {
               // same version-branch filter as the Multibranch job
               def raw = sh(returnStdout: true, script:
                 "git for-each-ref --format='%(refname:short)' refs/remotes/origin " +
-                "| sed 's#^origin/##' | grep -E '^(master|[0-9]+([.][0-9]+)?)\$' || true"
+                "| sed 's#^origin/##' | grep -E '^(master|main|nightly|[0-9]+([.][0-9]+)?)\$' || true"
               ).trim()
               def branches = raw ? raw.split('\\n') : []
               def reconciled = []
