@@ -70,7 +70,7 @@ Session ID: 5851e5db-6fce-49fa-b07e-8f880bc055dd",27.0.0-RC.1,28.0.0-BETA.1,SCAL
 Defect,NAS-142057,159556,Allow ALUA toggle when standby is unreachable,"27.0.0-BETA.1 PR: https://github.com/truenas/middleware/pull/19478
 
 CI shows no regressions: [here|http://jenkins-eng-ci.cmb1.ixsystems.net:8080/job/master/job/sharing_protocols_tests/68/].",27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.6 (Goldeye),,Done,04/Aug/26 9:06 AM,29/Sep/26 4:32 PM,High,Complete,28.0.0-BETA.1,,,,IX_EMPLOYEE,triage_skipped,,
-New Feature,NAS-143004,160919,ER-11 in debug info,We need to add a license plugin for ixdiagnose,27.0.0-RC.1,28.0.0-BETA.1,,,Done,01/Sep/26 5:44 PM,28/Sep/26 11:01 AM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
+New Feature,NAS-143004,160919,ER-11  in debug info,We need to add a license plugin for ixdiagnose,27.0.0-RC.1,28.0.0-BETA.1,,,Done,01/Sep/26 5:44 PM,28/Sep/26 11:01 AM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
 Improvement,NAS-143189,161133,Debug should capture license features being used,We need to add changes so debug is capturing license features are being used at the time a debug is taken of the system,27.0.0-RC.1,28.0.0-BETA.1,,,Done,04/Sep/26 7:33 PM,28/Sep/26 11:00 AM,High,Complete,,,,,IX_EMPLOYEE,triage_skipped,,
 Bug,NAS-143839,161934,Disk Image import - Not correctly handling source image size,"I try to import a disk image and the notice says the target Zvol must be 50GiB, so you set the `Size` to 50 GiB but this is not large enought.
 
