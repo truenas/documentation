@@ -59,6 +59,8 @@ enable = true
   siteVersion = "28"
 
 [params]
+  # false: this build's pages are also published under another URL, so the head adds noindex.
+  docsIndexable = false
 
   # (Optional, default 6) Set how many table of contents levels to be showed on page.
   # Use false to hide ToC, note that 0 will default to 6 (https://gohugo.io/functions/default/)

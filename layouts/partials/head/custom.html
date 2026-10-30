@@ -58,8 +58,10 @@ const token = await grecaptcha.enterprise.execute('6LeA_SkkAAAAADD6tuU8aNvNYRxCo
  {{ end }}
 <!-- Multi-site search styles -->
 <link rel="stylesheet" href="/css/search-enhanced.css" type="text/css" media="all" />
-<!-- De-index various sections that we use internally but don't need to be included in search results -->
-{{ if or (eq .Section "_includes") (eq .Section "tags") (eq .Section "book") (eq .Section "volume") .Params.noindex }}
+<!-- Self-referential canonical: always the HTML page for this build's baseURL -->
+{{ with .OutputFormats.Get "HTML" }}<link rel="canonical" href="{{ .Permalink }}">{{ end }}
+<!-- De-index various sections that we use internally but don't need to be included in search results, and any build with params.docsIndexable = false -->
+{{ if or (eq .Section "_includes") (eq .Section "tags") (eq .Section "book") (eq .Section "volume") .Params.noindex (eq site.Params.docsIndexable false) }}
     <meta name="robots" content="noindex">
 {{ end }}
 

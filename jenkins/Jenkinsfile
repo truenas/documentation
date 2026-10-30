@@ -51,6 +51,7 @@ pipeline {
           env.OUTPUT_DIR      = (cfg.OUTPUT_DIR ?: '').trim()
           env.DEPLOY_SCRIPT   = (cfg.DEPLOY_SCRIPT ?: '').trim()
           env.PAGEFIND_GLOB   = (cfg.PAGEFIND_GLOB ?: '').trim()
+          env.BASE_URL        = (cfg.BASE_URL ?: '').trim()      // optional; absolute site URL for canonicals and links
           env.ARCHIVED        = (cfg.ARCHIVED ?: 'false').trim()
           echo "branch=${env.BRANCH_NAME} publish=${env.PUBLISH_TO_PROD} archived=${env.ARCHIVED} out=${env.OUTPUT_DIR} deploy=${env.DEPLOY_SCRIPT}"
           if (env.ARCHIVED == 'true') {
@@ -73,8 +74,10 @@ pipeline {
       steps {
         sh 'npm install -D --save autoprefixer'
         sh 'npm install -D --save postcss-cli'
-        sh 'hugo -d public --gc --minify --cleanDestinationDir'
         script {
+          // Canonical links need an absolute baseURL; branches that leave BASE_URL unset build as before.
+          def baseUrlFlag = env.BASE_URL ? "--baseURL '${env.BASE_URL}'" : ''
+          sh "hugo -d public --gc --minify --cleanDestinationDir ${baseUrlFlag}"
           if (env.PAGEFIND_GLOB) {
             sh "npx pagefind --site \"public\" --glob \"{${env.PAGEFIND_GLOB}}/**/*.html\""
           }

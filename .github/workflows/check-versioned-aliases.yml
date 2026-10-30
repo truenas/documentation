@@ -3,7 +3,7 @@ name: Check for Versioned Aliases
 on:
   pull_request:
     branches:
-      - master
+      - nightly
 
 jobs:
   validate-aliases:

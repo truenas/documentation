@@ -8,7 +8,7 @@ const searchConfig = {
     // TrueNAS Documentation versions
     // NOTE: Default version is determined dynamically from URL or scale-releases.yaml
     'docs-28': {
-      url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/pagefind/',
+      url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/nightly/pagefind/',
       name: 'TrueNAS Documentation',
       displayName: 'TrueNAS 28 Nightly',
       version: '28 Nightly',
@@ -42,6 +42,16 @@ const searchConfig = {
       icon: 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
       priority: 4,
       group: 'docs'
+    },
+    // Documentation hub (non-versioned content: Contributing, References, Solutions,
+    // Hardware, Software Status, archive). Always searched when Docs is on; not a version.
+    'docs-hub': {
+      url: LOCAL_TESTING ? '/pagefind/' : 'https://www.truenas.com/docs/pagefind/',
+      name: 'TrueNAS Documentation',
+      displayName: 'Documentation Hub',
+      icon: LOCAL_TESTING ? '/favicon/TN-favicon-32x32.png' : 'https://www.truenas.com/docs/favicon/TN-favicon-32x32.png',
+      priority: 6,
+      group: 'hub'
     },
     'docs-24.10': {
       url: 'https://www.truenas.com/docs/scale/24.10/pagefind/',
@@ -474,6 +484,8 @@ class MultiSiteSearch {
       const docsVersionCheckboxes = document.querySelectorAll('.docs-version-option input[type="checkbox"]:checked');
       const docsSites = Array.from(docsVersionCheckboxes).map(cb => cb.dataset.site);
       this.activeSites.push(...docsSites);
+      // the hub is always searched with Docs; it is not a version choice
+      this.activeSites.push('docs-hub');
     }
   }
 
