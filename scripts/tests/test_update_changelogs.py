@@ -79,6 +79,13 @@ def _response(status_code, payload):
     return resp
 
 
+def test_issue_to_columns_sorts_fix_versions_ascending():
+    names = ["28.0.0-BETA.1", "27.0.0-RC.1", "26.0.0-BETA.3", "25.10.10", "25.10.3"]
+    cols = issue_to_columns(_issue(fixVersions=[{"name": n} for n in names]))
+    assert cols["Fix versions"] == ["25.10.3", "25.10.10", "26.0.0-BETA.3",
+                                    "27.0.0-RC.1", "28.0.0-BETA.1"]
+
+
 def test_fetch_filter_follows_pagination():
     session = MagicMock()
     session.get.side_effect = [

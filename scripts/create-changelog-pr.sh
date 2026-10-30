@@ -81,7 +81,7 @@ git fetch origin
 
 # Create or reset the PR branch to match the base branch (ensures no merge conflicts)
 echo "Creating/resetting branch: ${BRANCH_NAME} from origin/${BASE_BRANCH}..."
-git checkout -f -B "${BRANCH_NAME}" "origin/${BASE_BRANCH}"
+git checkout -f --no-track -B "${BRANCH_NAME}" "origin/${BASE_BRANCH}"
 
 # Put the refreshed files back on top of the fresh base
 for f in "${CSV_FILES[@]}"; do
