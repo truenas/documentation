@@ -108,7 +108,7 @@ The **Stop Options** dialog sets how the container stops.
 {{< trueimage src="/images/SCALE/Virtualization/InstanceStopOptions.png" alt="Container Stop Options" id="Container Stop Options" >}}
 
 The **Stop Method** dropdown shows three options:
-- **Wait for graceful stop** - Sends a shutdown signal and waits indefinitely for the container to stop gracefully. Does not force-kill the container.
+- **Wait for graceful stop** - Sends a shutdown signal and waits up to the shutdown timeout for the container to stop gracefully. Does not force-kill the container, so it keeps running if it has not stopped by then.
 - **Wait for graceful stop, then force** - Sends a shutdown signal and waits for the shutdown timeout (default 30 seconds) for the container. Force-kills the container if still running after the timeout expires.  
 - **Force stop immediately** - Immediately force-kills the container without attempting graceful shutdown.
 
@@ -137,7 +137,7 @@ The **Init Working Directory**, **Init User**, and **Init Group** also show when
 #### Delete Container Dialog
 
 The **Delete Container** dialog asks for confirmation to delete the selected container and shows three options:
-* **Stop container before deleting** stops the container before it is deleted.
+* **Stop container before deleting** force-stops the container (no graceful shutdown) before deleting it. Required, and selected automatically, when the container is running or suspended.
 * **Delete child datasets, snapshots and clones** deletes any child datasets, snapshots, and clones associated with the container.
 * **Confirm** activates the **Delete** button.
 
@@ -240,7 +240,7 @@ The **Add NIC Device** and **Edit NIC Device** dialogs configure network interfa
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **NIC Type** | Sets the NIC type. Options are *virtio*, *macvlan*, *ipvlan*, or a model number for a device. |
+| **NIC Type** | Sets the NIC type. Options are *VirtIO* or *Intel e82585 (e1000)*. |
 | **Use Default Mac Address** | Sets TrueNAS to automatically assign a MAC address. Only available when adding a new NIC. |
 | **Mac Address** | Specifies a custom MAC address. Only shows while adding and when **Use Default Mac Address** is not selected. If editing a NIC, leave empty to use the default MAC address. |
 | **Trust Guest RX Filters** | Sets whether to trust guest OS receive filter settings for better performance. Shows when **NIC Type** is set to **virtio**. |

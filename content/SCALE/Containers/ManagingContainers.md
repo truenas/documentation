@@ -116,7 +116,7 @@ USB and GPU devices are not supported in HA systems, and custom bridges are not 
 
 {{< hint type=warning title="Static IP Configuration Required" >}}
 Configure a static IP address in the container operating system.
-The address must be within the container network (the **IPv4 Network** or **IPv6 Network** on the **Settings** screen).
+For a NIC on the automatic bridge, the address must be within the container network (the **IPv4 Network** or **IPv6 Network** on the **Settings** screen). Do not use the first address in the network (for example, 172.200.0.1), which TrueNAS uses as the gateway. TrueNAS assigns the other IPv4 addresses to containers automatically without checking whether one is already in use, so a static address can end up shared with another container.
 Without a static IP, the container might receive a different address after a controller failover.
 
 Refer to your container operating system documentation for instructions on setting a static IP address.
