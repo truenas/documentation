@@ -284,6 +284,7 @@ The basic settings are always visible and configure essential container properti
 | **Autostart** | Sets the container to automatically start when the system boots. |
 | **Image** | Specifies the operating system image file for the container. |
 | **Pool** | Specifies a storage pool for the container. Only shows when a preferred pool is not configured in [Settings](#settings-screen). |
+| **Connect to network** | Adds a NIC attached to the bridge set in **Bridge** on the [Settings](#settings-screen) screen (*truenasbr0* when **Bridge** is set to **Automatic**). Selected by default. Leave disabled to create the container without network access. Only shows when adding a container. Note: NICs can be added or removed later on the [NIC Devices](#nic-devices-card) card.  |
 {{< /truetable >}}
 
 **Browse Catalog** opens the **Select Image** window showing available Linux image choices, and options to search or browse to locate a desired image.
