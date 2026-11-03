@@ -83,7 +83,7 @@ It balances I/O across interfaces without LACP, similar to MPIO for iSCSI.
 
 Session trunking requires:
 
-* TrueNAS 25.10 or later.
+* TrueNAS 24.10 or later.
 * A Linux client with kernel 5.17 or later.
 * Each TrueNAS interface on its own subnet.
 * An empty **Bind IP Addresses** setting on the [NFS service screen]({{< ref "/SCALE/SystemSettings/Services/NFSServiceScreen" >}}) so NFS listens on all addresses.
@@ -111,6 +111,7 @@ mount -t nfs -o vers=4.1,max_connect=2,hard,intr,timeo=200,retrans=6 <server-ip1
 
 If one path fails, the client continues on the remaining path.
 If both paths fail at the same time, such as during an HA failover, I/O pauses until the session re-establishes on the surviving controller.
+With these mount options, no data loss is expected.
 Enable spanning tree edge port (portfast) on switch ports connected directly to TrueNAS and client interfaces to shorten recovery after a link failure.
 
 See [Adding NFS Shares]({{< ref "/SCALE/Shares/NFS/AddingNFSShares" >}}) and the [NFS service screen]({{< ref "/SCALE/SystemSettings/Services/NFSServiceScreen" >}}) for more information.
@@ -123,6 +124,7 @@ For other ways to combine interfaces, see [LACP](#lacp) and [SMB Multichannel](#
 NFS over RDMA reduces CPU overhead and latency on systems with RDMA-capable network interface cards.
 To use it, select **Enable NFS over RDMA** on the [NFS service screen]({{< ref "/SCALE/SystemSettings/Services/NFSServiceScreen" >}}), then add `proto=rdma` to the client mount options.
 Session trunking works over RDMA.
+NFS over RDMA and NVMe-oF over RDMA can run at the same time on the same network adapters.
 
 ```
 mount -t nfs -o vers=4.1,max_connect=2,proto=rdma <server-ip1>:/export /mnt/data
@@ -132,7 +134,8 @@ mount -t nfs -o vers=4.1,max_connect=2,proto=rdma <server-ip2>:/export /mnt/data
 Configure the network switches for RDMA before you enable it:
 
 * Enable jumbo frames on every switch port and interface in the path.
-* Enable Priority Flow Control (PFC) on the priority that carries RDMA traffic, on all ports that carry RDMA traffic.
+* Enable Priority Flow Control (PFC) on the RoCE priority, on all switch ports that carry RDMA traffic. This is typically CoS/priority 3 with DSCP 26.
+* Place each TrueNAS interface and each client interface on its own VLAN with a local layer 3 gateway.
 
 See [Adding NFS Shares]({{< ref "/SCALE/Shares/NFS/AddingNFSShares" >}}) for more information.
 {{< /enterprise >}}
