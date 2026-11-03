@@ -153,6 +153,8 @@ The **USB Devices** card shows USB devices attached to the container, allowing h
 
 **Add** shows a list of available USB devices that can be attached to the container.
 
+USB devices appear in the list only if they are physically connected to the TrueNAS system, are not USB hubs, and provide the required information to TrueNAS (bus, device number, vendor ID, and product ID).
+
 ### GPU Devices Card
 
 The **GPU Devices** card shows GPU hardware attached to the container for graphics or computation acceleration.
