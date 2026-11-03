@@ -80,12 +80,11 @@ See [Setting Up SMB Multichannel]({{< ref "smbmultichannel" >}}) for more inform
 {{< enterprise >}}
 NFSv4.1 session trunking lets a Linux client use multiple TrueNAS IP addresses in a single NFS session.
 It balances I/O across interfaces without LACP, similar to MPIO for iSCSI.
-[CONFIRM: Enterprise-only status of session trunking over TCP.]
 
 Session trunking requires:
 
-* TrueNAS 25.10 or later. [CONFIRM: minimum version.]
-* A Linux client with a kernel that supports session trunking. [CONFIRM: minimum kernel version.]
+* TrueNAS 25.10 or later.
+* A Linux client with kernel 5.17 or later.
 * Each TrueNAS interface on its own subnet.
 * An empty **Bind IP Addresses** setting on the [NFS service screen]({{< ref "/SCALE/SystemSettings/Services/NFSServiceScreen" >}}) so NFS listens on all addresses.
 
@@ -113,6 +112,9 @@ mount -t nfs -o vers=4.1,max_connect=2,hard,intr,timeo=200,retrans=6 <server-ip1
 If one path fails, the client continues on the remaining path.
 If both paths fail at the same time, such as during an HA failover, I/O pauses until the session re-establishes on the surviving controller.
 Enable spanning tree edge port (portfast) on switch ports connected directly to TrueNAS and client interfaces to shorten recovery after a link failure.
+
+See [Adding NFS Shares]({{< ref "/SCALE/Shares/NFS/AddingNFSShares" >}}) and the [NFS service screen]({{< ref "/SCALE/SystemSettings/Services/NFSServiceScreen" >}}) for more information.
+For other ways to combine interfaces, see [LACP](#lacp) and [SMB Multichannel](#smb-multichannel).
 {{< /enterprise >}}
 
 ### NFS over RDMA
