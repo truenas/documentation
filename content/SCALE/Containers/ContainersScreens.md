@@ -138,7 +138,7 @@ The **Init Working Directory**, **Init User**, and **Init Group** also show when
 
 The **Delete Container** dialog asks for confirmation to delete the selected container and shows three options:
 * **Stop container before deleting** force-stops the container (no graceful shutdown) before deleting it. Required, and selected automatically, when the container is running or suspended.
-* **Delete child datasets, snapshots and clones** deletes any child datasets, snapshots, and clones associated with the container.
+* **Delete child datasets, snapshots and clones** also destroys the child datasets and snapshots of the container dataset, and any clones of those snapshots anywhere in the pool, and any snapshot holds, which can break a replication task. Required when the container dataset has child datasets or snapshots. This cannot be undone.
 * **Confirm** activates the **Delete** button.
 
 {{< trueimage src="/images/SCALE/Virtualization/DeleteContainerDialog.png" alt="Delete Container Dialog" id="Delete Container Dialog" >}}
@@ -243,7 +243,7 @@ The **Add NIC Device** and **Edit NIC Device** dialogs configure network interfa
 | **NIC Type** | Sets the NIC type. Options are *VirtIO* or *Intel e82585 (e1000)*. |
 | **Use Default Mac Address** | Sets TrueNAS to automatically assign a MAC address. Only available when adding a new NIC. |
 | **Mac Address** | Specifies a custom MAC address. Only shows while adding and when **Use Default Mac Address** is not selected. If editing a NIC, leave empty to use the default MAC address. |
-| **Trust Guest RX Filters** | Sets whether to trust guest OS receive filter settings for better performance. Shows when **NIC Type** is set to **virtio**. |
+| **Trust Guest RX Filters** | Sets whether to trust guest OS receive filter settings for better performance. Shows when **NIC Type** is set to **virtio**. Applies to a VirtIO NIC added from MACVLAN NICS. For a a NIC from a BRIDGED NINCs, TrueNAS rejects or ignores it. |
 {{< /truetable >}}
 
 **Add** or **Update** applies the NIC configuration.
