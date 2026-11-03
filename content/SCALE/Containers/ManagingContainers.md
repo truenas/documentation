@@ -475,7 +475,7 @@ To add a NIC:
    - Set **NIC Type** to the network interface type (virtio, macvlan, ipvlan, etc.).
    - (Create only) Select **Use Default Mac Address** to automatically assign a MAC address.
    - Enter a custom MAC address in **Mac Address**, or leave empty to use the default.
-   - (virtio only) Select **Trust Guest RX Filters** to trust the guest OS receive filter settings for better performance.
+   - (virtio only) Select **Trust Guest RX Filters** to trust the guest OS receive filter settings for better performance. Applies to a VirtIO NIC added from MACVLAN NICS. For a a NIC from a BRIDGED NINCs, TrueNAS rejects or ignores it.
 4. Click **Add** to attach the NIC to the container.
 
 To edit or delete an existing NIC:
