@@ -39,6 +39,7 @@ jump_to_buttons:
 Month DD, YYYY
 
 The TrueNAS team is pleased to release TrueNAS 25.10.8!
+This release updates the Linux kernel to address more than 1,600 upstream CVEs. It also fixes a dataset passphrase exposure in internal job arguments, NVMe over TCP I/O errors on large transfers, and SMB, rsync, Cloud Sync, TrueNAS Connect, and Apps issues.
 
 **Notable changes:**
 
