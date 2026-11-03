@@ -5,6 +5,8 @@ weight: 40
 tags:
  - network
  - iscsi
+ - nfs
+ - rdma
  - interfaces
 ---
 
@@ -72,6 +74,66 @@ LACP, being a lower-layer protocol, is less aware of the applications running ov
 These advantages can be more pronounced at higher network speeds, such as in 100G environments ([see below](#link-aggregation)).
 
 See [Setting Up SMB Multichannel]({{< ref "smbmultichannel" >}}) for more information.
+
+### NFS Session Trunking
+
+{{< enterprise >}}
+NFSv4.1 session trunking lets a Linux client use multiple TrueNAS IP addresses in a single NFS session.
+It balances I/O across interfaces without LACP, similar to MPIO for iSCSI.
+[CONFIRM: Enterprise-only status of session trunking over TCP.]
+
+Session trunking requires:
+
+* TrueNAS 25.10 or later. [CONFIRM: minimum version.]
+* A Linux client with a kernel that supports session trunking. [CONFIRM: minimum kernel version.]
+* Each TrueNAS interface on its own subnet.
+* An empty **Bind IP Addresses** setting on the [NFS service screen]({{< ref "/SCALE/SystemSettings/Services/NFSServiceScreen" >}}) so NFS listens on all addresses.
+
+To enable trunking, mount the same export through each TrueNAS IP address with the `max_connect` option.
+The client detects that both addresses belong to the same server and distributes I/O across both connections.
+
+```
+mount -t nfs -o vers=4.1,max_connect=2 <server-ip1>:/export /mnt/data
+mount -t nfs -o vers=4.1,max_connect=2 <server-ip2>:/export /mnt/data_trunk
+```
+
+{{< hint type=important >}}
+Do not use `nconnect` and `max_connect` together.
+In testing, the combination distributed I/O unevenly across paths.
+Use `max_connect` to balance traffic across multiple interfaces.
+Use `nconnect` to open multiple connections to a single interface.
+{{< /hint >}}
+
+To keep the client connected during path loss or a controller failover, add the `hard`, `intr`, `timeo=200`, and `retrans=6` options to the mount command.
+
+```
+mount -t nfs -o vers=4.1,max_connect=2,hard,intr,timeo=200,retrans=6 <server-ip1>:/export /mnt/data
+```
+
+If one path fails, the client continues on the remaining path.
+If both paths fail at the same time, such as during an HA failover, I/O pauses until the session re-establishes on the surviving controller.
+Enable spanning tree edge port (portfast) on switch ports connected directly to TrueNAS and client interfaces to shorten recovery after a link failure.
+{{< /enterprise >}}
+
+### NFS over RDMA
+
+{{< enterprise >}}
+NFS over RDMA reduces CPU overhead and latency on systems with RDMA-capable network interface cards.
+To use it, select **Enable NFS over RDMA** on the [NFS service screen]({{< ref "/SCALE/SystemSettings/Services/NFSServiceScreen" >}}), then add `proto=rdma` to the client mount options.
+Session trunking works over RDMA.
+
+```
+mount -t nfs -o vers=4.1,max_connect=2,proto=rdma <server-ip1>:/export /mnt/data
+mount -t nfs -o vers=4.1,max_connect=2,proto=rdma <server-ip2>:/export /mnt/data_trunk
+```
+
+Configure the network switches for RDMA before you enable it:
+
+* Enable jumbo frames on every switch port and interface in the path.
+* Enable Priority Flow Control (PFC) on the priority that carries RDMA traffic, on all ports that carry RDMA traffic.
+
+See [Adding NFS Shares]({{< ref "/SCALE/Shares/NFS/AddingNFSShares" >}}) for more information.
+{{< /enterprise >}}
 
 ## Network Traffic Segmentation
 
@@ -220,6 +282,12 @@ Optimized for Large Workloads:
 
 In scenarios involving substantial data transfers, such as large file copies or data-intensive applications, SMB Multichannel in a 100G environment can help optimize connections and adapt to the high-speed networking capabilities, leading to improved responsiveness and reduced transfer times.
 While SMB Multichannel itself is not specific to a particular network speed, its benefits become more pronounced and impactful in environments with higher bandwidth capacities, such as those provided by 100G networks.
+
+### RDMA
+
+At 100G and higher speeds, CPU overhead from network protocol processing can limit throughput.
+Remote Direct Memory Access (RDMA) reduces this overhead.
+See [NFS over RDMA](#nfs-over-rdma) for NFS configuration.
 
 ### Record Size Tuning
 
