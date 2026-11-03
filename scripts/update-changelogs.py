@@ -15,6 +15,7 @@ import csv
 import importlib.util
 import json
 import os
+import re
 import requests
 import sys
 from dataclasses import dataclass, field
@@ -67,6 +68,11 @@ def fetch_filter(filter_id, session=None):
             raise JiraError(f"filter {filter_id}: page was not last but gave no nextPageToken")
 
 
+def _version_order(name):
+    """Sort key that puts 25.10.3 before 25.10.10 and 27.0.0-BETA.1 before 27.0.0-RC.1."""
+    return [int(part) if part.isdigit() else part for part in re.split(r"(\d+)", name)]
+
+
 def _name(value):
     return value["name"] if value else ""
 
@@ -84,7 +90,9 @@ def issue_to_columns(issue):
         "Issue id": [issue["id"]],
         "Summary": [fields.get("summary") or ""],
         "Description": [fields.get("description") or ""],
-        "Fix versions": [v["name"] for v in fields.get("fixVersions") or []],
+        # the API returns these unsorted; the exports list them in ascending version order
+        "Fix versions": sorted((v["name"] for v in fields.get("fixVersions") or []),
+                               key=_version_order),
         "Status": [_name(fields.get("status"))],
         "Created": [format_jira_date(fields["created"]) if fields.get("created") else ""],
         "Updated": [format_jira_date(fields["updated"]) if fields.get("updated") else ""],
