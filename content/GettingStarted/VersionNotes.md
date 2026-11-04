@@ -66,7 +66,7 @@ This release updates the Linux kernel to address more than 1,600 upstream CVEs. 
 * Fixes rsync tasks that failed when the extra options contained quoted values ([NAS-143382](https://ixsystems.atlassian.net/browse/NAS-143382)).
   A change in 25.10.7 caused TrueNAS to use quoted values in the **Extra options** field literally. For example, `--rsync-path="sudo rsync"` was treated as a single command named `sudo rsync` and the task failed. TrueNAS now handles quoted values the same way as in 25.10.6.
 
-* Fixes Cloud Sync tasks that failed for Backblaze B2 credentials with leading or trailing spaces ([NAS-144662](https://ixsystems.atlassian.net/browse/NAS-144662)).
+* Fixes cloud sync tasks that failed for Backblaze B2 credentials with leading or trailing spaces ([NAS-144662](https://ixsystems.atlassian.net/browse/NAS-144662)).
   Spaces copied along with a Backblaze B2 key could cause an invalid authorization token error when TrueNAS verified the credential or ran the task. TrueNAS now removes leading and trailing spaces from credential values before it uses them.
 
 * Fixes certificate generation that failed when the certificate authority responded slowly ([NAS-144031](https://ixsystems.atlassian.net/browse/NAS-144031)).
