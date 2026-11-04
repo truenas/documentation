@@ -245,7 +245,7 @@ The **Add NIC Device** and **Edit NIC Device** dialogs configure network interfa
 | **NIC Type** | Sets the NIC type. Options are *VirtIO* or *Intel e82585 (e1000)*. |
 | **Use Default Mac Address** | Sets TrueNAS to automatically assign a MAC address. Only available when adding a new NIC. |
 | **Mac Address** | Specifies a custom MAC address. Only shows while adding and when **Use Default Mac Address** is not selected. If editing a NIC, leave empty to use the default MAC address. |
-| **Trust Guest RX Filters** | Sets whether to trust guest OS receive filter settings for better performance. Shows when **NIC Type** is set to **virtio**. Applies to a VirtIO NIC added from MACVLAN NICS. For a a NIC from a BRIDGED NINCs, TrueNAS rejects or ignores it. |
+| **Trust Guest RX Filters** | Sets whether to trust guest OS receive filter settings for better performance. Shows when **NIC Type** is set to **VirtIO**. Applies only to a VirtIO NIC added from **MACVLAN NICS**. For a NIC from **BRIDGED NICS**, TrueNAS rejects or ignores it. |
 {{< /truetable >}}
 
 **Add** or **Update** applies the NIC configuration.
@@ -367,8 +367,6 @@ USB devices found show as a selectable checkbox option. For example, **Virtual K
 
 USB devices pass through to the container. Devices are identified by the physical port they are plugged into.
 
-USB Devices are attached by physical port. 
-
 HA-capable systems cannot use USB passthrough.
 
 Each USB device can only be attached once per container.
@@ -402,7 +400,8 @@ Allows containers to perform specific privileged operations without granting ful
 {{< /truetable >}}
 
 {{< hint type=note >}}
-Device configuration (network interfaces, USB devices, GPU devices, and file system mounts) is performed after container creation using the detail cards on the **Containers** screen.  
+Device configuration (network interfaces, GPU devices, and file system mounts) is performed after container creation using the detail cards on the **Containers** screen.
+You can select USB devices in the advanced settings when you create the container, or add them afterward using the **USB Devices** card.
 See [Containers Cards](#containers-cards) for information on configuring devices.
 {{< /hint >}}
 

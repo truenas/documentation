@@ -377,8 +377,8 @@ Click **Delete** to open the **Delete Container** dialog.
 {{< trueimage src="/images/SCALE/Virtualization/DeleteContainerDialog.png" alt="Delete Container Dialog" id="Delete Container Dialog" >}}
 
 Select the options you want to enable.
-**Stop container before deleting** stops the container before it is deleted.
-**Delete child datasets, snapshots and clones** deletes any child datasets, snapshots, and clones associated with the container.
+**Stop container before deleting** force-stops the container (no graceful shutdown) before deleting it. Required, and selected automatically, when the container is running or suspended.
+**Delete child datasets, snapshots and clones** also destroys the child datasets and snapshots of the container dataset, any clones of those snapshots anywhere in the pool, and any snapshot holds, which can break a replication task. Required when the container dataset has child datasets or snapshots. This cannot be undone.
 
 Select **Confirm** to activate the **Delete** button.
 Click **Delete** to delete the container.
@@ -472,10 +472,10 @@ To add a NIC:
    {{< trueimage src="/images/SCALE/Virtualization/AddContainerNICDevice.png" alt="Add NIC Device" id="Add NIC Device" >}}
 
 3. Configure the NIC settings:
-   - Set **NIC Type** to the network interface type (virtio, macvlan, ipvlan, etc.).
+   - Set **NIC Type** to *VirtIO* or *Intel e82585 (e1000)*.
    - (Create only) Select **Use Default Mac Address** to automatically assign a MAC address.
    - Enter a custom MAC address in **Mac Address**, or leave empty to use the default.
-   - (virtio only) Select **Trust Guest RX Filters** to trust the guest OS receive filter settings for better performance. Applies to a VirtIO NIC added from MACVLAN NICS. For a a NIC from a BRIDGED NINCs, TrueNAS rejects or ignores it.
+   - (VirtIO only) Select **Trust Guest RX Filters** to trust the guest OS receive filter settings for better performance. Applies only to a VirtIO NIC added from **MACVLAN NICS**. For a NIC from **BRIDGED NICS**, TrueNAS rejects or ignores it.
 4. Click **Add** to attach the NIC to the container.
 
 To edit or delete an existing NIC:
