@@ -27,8 +27,7 @@ Containers start quickly, use fewer system resources than [virtual machines (VMs
 {{< hint type=note >}}
 Due to backend technology changes in TrueNAS 27, containers on the **Containers** screen require migration.
 Containers created in TrueNAS 25.04 or 25.10, whether using the **Instances** screen (25.04.0 and 25.04.1) or the **Containers** screen (25.04.2 and later), migrate automatically during the upgrade to TrueNAS 27.
-On TrueNAS Enterprise High Availability (HA) systems, containers do not migrate automatically.
-On non-HA TrueNAS Enterprise systems, containers migrate automatically when the Apps license feature is enabled, and do not when it is not enabled.
+Containers migrate automatically at the first boot after upgrading, except on HA-capable TrueNAS Enterprise systems.
 Contact [TrueNAS Enterprise Support](https://www.truenas.com/support/) if you have containers on a TrueNAS Enterprise system that does not migrate them.
 
 Legacy virtual machines displayed on the **Containers** screen in 25.10 are not migrated automatically.
@@ -502,8 +501,11 @@ Click **Shell** <span class="iconify" data-icon="mdi:console-line"></span> to op
 
 ## Migrating Containers from TrueNAS 25.10
 
-During the upgrade to TrueNAS 27, TrueNAS automatically migrates the containers that were running in TrueNAS 25.10.
+During the upgrade to TrueNAS 27, TrueNAS automatically migrates containers created in TrueNAS 25.04 or 25.10.
 See the note at the top of this article for the systems that do not migrate automatically.
+
+The migration runs once, during the first boot after the upgrade to TrueNAS 27, and does not retry.
+Containers on a passphrase-encrypted pool do not migrate, because the pool is still locked at that point.
 
 The migration moves each container from <file>*pool*/.ix-virt/containers/*container_name*</file> to <file>*pool*/.truenas_containers/containers/*container_name*</file>, and moves the image each container uses to <file>*pool*/.truenas_containers/images</file>.
 TrueNAS does not delete anything. Data that is not migrated stays in <file>.ix-virt</file>.
@@ -524,7 +526,11 @@ TrueNAS does not delete anything. Data that is not migrated stays in <file>.ix-v
 - Containers with an unreadable configuration.
 - Containers with a name that matches a container that already exists in the new format, for example after a previous incomplete migration attempt.
 - Containers when TrueNAS cannot resolve the source image.
+- Environment variables. To restore them, edit the container and add them again.
+- A privileged container keeps no privileged setting. It migrates with the **Default** ID mapping, which cannot be changed after the container is created.
 {{< /expand >}}
 
 After the upgrade, review the **Containers** screen and confirm each container migrated, and review the devices for each migrated container.
-Check the system log if a container does not appear.
+If a container does not appear, open **Jobs** after the first boot and check the container migration job.
+The job shows unreadable configurations, unsupported devices, and name conflicts, but only until the next reboot.
+The system log can contain additional information.
