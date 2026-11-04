@@ -166,7 +166,7 @@ TrueNAS supports GPU passthrough for containers with the following GPU vendors:
 {{< truetable >}}
 | GPU Vendor | Driver Requirements | Notes |
 |------------|---------------------|-------|
-| **NVIDIA** | Manual installation required | Supports Turing architecture and later. See [Advanced Settings Screen]({{< relref "/SCALE/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for driver installation details. |
+| **NVIDIA** | Manual installation required | Supports Turing architecture and later. See [Advanced Settings Screen]({{< relref "/SystemSettings/Advanced/AdvancedSettingsScreen.md#nvidia-drivers-card" >}}) for driver installation details. |
 | **Intel** | Native support | No additional driver installation required. |
 | **AMD** | Native support | No additional driver installation required. |
 {{< /truetable >}}
@@ -204,7 +204,7 @@ File system devices allow containers to read and write data to TrueNAS datasets 
 
 For existing filesystem devices, the <span class="material-icons">more_vert</span> actions menu includes options to **Edit** or **Delete** the filesystem device. **Edit** opens the **Edit Filesystem Device** screen. **Delete** opens the **Delete Item** dialog.
 
-See [Configuring Filesystem Devices]({{< relref "/SCALE/Containers/ManagingContainers.md#configuring-file-system-devices" >}}) in the Containers tutorial for configuration procedures.
+See [Configuring Filesystem Devices]({{< relref "/Containers/ManagingContainers.md#configuring-file-system-devices" >}}) in the Containers tutorial for configuration procedures.
 
 #### Delete Item Dialog
 
