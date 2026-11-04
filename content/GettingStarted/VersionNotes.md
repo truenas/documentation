@@ -36,7 +36,7 @@ jump_to_buttons:
 <div style="display: none;" id="release-tab-content-source">
   <div data-tab-id="25.10.8" data-tab-label="25.10.8">
 
-Month DD, YYYY
+November 5, 2026
 
 The TrueNAS team is pleased to release TrueNAS 25.10.8!
 This release updates the Linux kernel to address more than 1,600 upstream CVEs. It also fixes a dataset passphrase exposure in internal job arguments, NVMe over TCP I/O errors on large transfers, and SMB, rsync, Cloud Sync, TrueNAS Connect, and Apps issues.
