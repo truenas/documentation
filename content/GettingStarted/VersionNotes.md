@@ -8,7 +8,7 @@ related: false
 use_jump_to_buttons: true
 jump_to_buttons:
   - text: "Latest Changes"
-    anchor: "25.10.7"
+    anchor: "25.10.8"
     icon: "fiber-new"
   - text: "Known Issues"
     anchor: "known-issues"
@@ -34,7 +34,54 @@ jump_to_buttons:
 
 <!-- Hugo-processed content for release notes tab box -->
 <div style="display: none;" id="release-tab-content-source">
-  <div data-tab-id="25.10.7" data-tab-label="25.10.7">
+  <div data-tab-id="25.10.8" data-tab-label="25.10.8">
+
+November 5, 2026
+
+The TrueNAS team is pleased to release TrueNAS 25.10.8!
+This release updates the Linux kernel to address more than 1,600 upstream CVEs. It also fixes a dataset passphrase exposure in internal job arguments, NVMe over TCP I/O errors on large transfers, and SMB, rsync, Cloud Sync, TrueNAS Connect, and Apps issues.
+
+**Notable changes:**
+
+* Fixes an issue that exposed dataset passphrases in plain text in internal job arguments ([NAS-144783](https://ixsystems.atlassian.net/browse/NAS-144783)).
+  When a passphrase-encrypted dataset was unlocked from the web interface, the passphrase was stored unredacted in the arguments of an internal `zfs.dataset.bulk_process` job. TrueNAS now treats these arguments as secret so the passphrase no longer appears in job details.
+
+* Updates the Linux kernel to the latest 6.12 LTS release (v6.12.113) ([NAS-143852](https://ixsystems.atlassian.net/browse/NAS-143852), [NAS-144791](https://ixsystems.atlassian.net/browse/NAS-144791)).
+  This update fixes more than 1,600 upstream CVEs. Several of these are critical or high severity issues in components TrueNAS uses.
+  Key fixes include:
+
+  * NFS server: Fixes several use-after-free errors where the server freed client state while another operation still used it ([CVE-2026-89662](https://www.cve.org/CVERecord?id=CVE-2026-89662), [CVE-2026-89658](https://www.cve.org/CVERecord?id=CVE-2026-89658), [CVE-2026-89659](https://www.cve.org/CVERecord?id=CVE-2026-89659), [CVE-2026-89660](https://www.cve.org/CVERecord?id=CVE-2026-89660), [CVE-2026-90036](https://www.cve.org/CVERecord?id=CVE-2026-90036), [CVE-2026-90037](https://www.cve.org/CVERecord?id=CVE-2026-90037), and [CVE-2026-89708](https://www.cve.org/CVERecord?id=CVE-2026-89708)).
+  * NFS lock manager: Fixes a use-after-free error ([CVE-2026-89485](https://www.cve.org/CVERecord?id=CVE-2026-89485)).
+  * Kerberos-protected NFS: Fixes memory errors when the server processes malformed Kerberos messages ([CVE-2026-89551](https://www.cve.org/CVERecord?id=CVE-2026-89551) and [CVE-2026-89542](https://www.cve.org/CVERecord?id=CVE-2026-89542)).
+  * NVMe over TCP: Fixes missing length checks on data a host sends ([CVE-2026-89482](https://www.cve.org/CVERecord?id=CVE-2026-89482)) and a heap overflow in NVMe-oF authentication ([CVE-2026-98725](https://www.cve.org/CVERecord?id=CVE-2026-98725)).
+  * Network stack: Fixes errors in how IP fragments are queued ([CVE-2026-74662](https://www.cve.org/CVERecord?id=CVE-2026-74662)), BIG TCP aggregation ([CVE-2026-80725](https://www.cve.org/CVERecord?id=CVE-2026-80725)), an IPv4 checksum offset that a guest could use to corrupt host memory ([CVE-2026-99999](https://www.cve.org/CVERecord?id=CVE-2026-99999)), an IPv6 use-after-free error ([CVE-2025-40158](https://www.cve.org/CVERecord?id=CVE-2025-40158)), and an [IPv4 TCP use-after-free error](https://security.truenas.com/scale/impact-statements/cve-2026-98432-tcp-uaf/) (CVE-2026-98432).
+  * `io_uring`: Fixes a use-after-free error in a task the kernel runs for the submission queue ([CVE-2026-98858](https://www.cve.org/CVERecord?id=CVE-2026-98858)).
+
+* Fixes an issue where large NVMe over TCP transfers failed and caused I/O errors on connected hosts ([NAS-144298](https://ixsystems.atlassian.net/browse/NAS-144298)).
+  The NVMe over TCP target told hosts it had no limit on transfer size, but it rejected any single transfer larger than 4 MiB. Linux hosts that sent larger transfers received I/O errors, which could silently lose data on some file systems such as `ext4`. The target now reports a transfer size limit that hosts follow.
+
+* Fixes an error that prevented changes to SMB service settings when directory services are enabled ([NAS-143595](https://ixsystems.atlassian.net/browse/NAS-143595)).
+  An error in the check for NetBIOS alias changes caused any attempt to save a change on the SMB service screen to fail with the error `too many values to unpack (expected 2)`. SMB service settings now save as expected.
+
+* Fixes rsync tasks that failed when the extra options contained quoted values ([NAS-143382](https://ixsystems.atlassian.net/browse/NAS-143382)).
+  A change in 25.10.7 caused TrueNAS to use quoted values in the **Extra options** field literally. For example, `--rsync-path="sudo rsync"` was treated as a single command named `sudo rsync` and the task failed. TrueNAS now handles quoted values the same way as in 25.10.6.
+
+* Fixes cloud sync tasks that failed for Backblaze B2 credentials with leading or trailing spaces ([NAS-144662](https://ixsystems.atlassian.net/browse/NAS-144662)).
+  Spaces copied along with a Backblaze B2 key could cause an invalid authorization token error when TrueNAS verified the credential or ran the task. TrueNAS now removes leading and trailing spaces from credential values before it uses them.
+
+* Fixes certificate generation that failed when the certificate authority responded slowly ([NAS-144031](https://ixsystems.atlassian.net/browse/NAS-144031)).
+  Requests from TrueNAS to TrueNAS Connect timed out after 15 seconds, which was not always long enough when the certificate authority was slow. This caused certificate generation to fail. TrueNAS now waits up to 55 seconds for a response.
+
+* Fixes apps that kept an invalid NVIDIA GPU identifier after a GPU replacement ([NAS-142006](https://ixsystems.atlassian.net/browse/NAS-142006)).
+  When a GPU was replaced with a different card in the same slot, an app that used it kept the old card identifier and the app failed to start. TrueNAS now updates the stored identifier to match the installed card.
+  Edit and save the app, or redeploy it, to apply the updated identifier.
+
+<a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14737" target="_blank">TrueNAS 25.10.8 (Goldeye) Changelog</a> in Jira.
+
+  </div>
+  <div data-tab-id="25.10.1-25.10.7" data-tab-label="25.10.1 – 25.10.7">
+
+{{< expand "25.10.7 Notable Changes" "v" >}}
 
 September 2, 2026
 
@@ -91,8 +138,9 @@ The TrueNAS team is pleased to release TrueNAS 25.10.7!
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues?filter=14691" target="_blank">TrueNAS 25.10.7 (Goldeye) Changelog</a> in Jira.
 
-  </div>
-  <div data-tab-id="25.10.6" data-tab-label="25.10.6">
+{{< /expand >}}
+
+{{< expand "25.10.6 Notable Changes" "v" >}}
 
 August 12, 2026
 
@@ -133,8 +181,7 @@ This release updates the Linux kernel and NVIDIA GPU driver to address security 
 
 <a href="#full-changelog" target="_blank">Click here</a> to see the full 25.10 changelog or visit the <a href="https://ixsystems.atlassian.net/issues/?filter=14650" target="_blank">TrueNAS 25.10.6 (Goldeye) Changelog</a> in Jira.
 
-  </div>
-  <div data-tab-id="25.10.1-25.10.5" data-tab-label="25.10.1 – 25.10.5">
+{{< /expand >}}
 
 {{< expand "25.10.5 Notable Changes" "v" >}}
 
@@ -734,7 +781,7 @@ These are ongoing issues that can affect multiple versions in the 25.10 series.
 
   Workaround: After applying a new license, manually refresh the browser page to update the web interface.
 
-<a href="https://ixsystems.atlassian.net/issues?filter=14692" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
+<a href="https://ixsystems.atlassian.net/issues?filter=14736" target="_blank">See the latest status on Jira</a> for public issues discovered in 25.10 that are being resolved in a future TrueNAS release.
 
 See the [Release Notes](https://forums.truenas.com/c/release-notes/13) section of the TrueNAS forum for ongoing updates about known issues, investigations, and statistics about TrueNAS releases.
 

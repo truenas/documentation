@@ -1,0 +1,452 @@
+Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Project url,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Affects versions,Affects versions,Affects versions,Fix versions,Fix versions,Fix versions,Fix versions,Components,Due date,Votes,Labels,Labels,Labels,Description,Environment,Log Work,Log Work,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Inward issue link (Duplicate),Inward issue link (Duplicate),Inward issue link (Escalate),Inward issue link (Relates),Attachment,Attachment,Attachment,Attachment,Attachment,Custom field (Acceptance Criteria),Custom field (Actual Result),Custom field (Affected hardware),Custom field (Affected services),Custom field (Approvals),Custom field (Atlassian Project),Custom field (Attempts to pass),Custom field (Blocked Reason),Custom field (Category),Custom field (Checklist Progress),Custom field (Checklist Progress %),Custom field (Checklist Text (view-only)),Custom field (Competition Assessment),Custom field (Customer),Custom field (Department),Custom field (Department Assigned),Custom field (Development),Custom field (Effort to Implement (if applicable)),Custom field (Employee location),Custom field (Employment type),Custom field (Environment),Custom field (Epic Color),Custom field (Epic Name),Custom field (Epic Status),Custom field (Error Message (if applicable)),Custom field (Event Name),Custom field (Event Name),Custom field (Event count),Custom field (Event date),Custom field (Event location),Custom field (Expected Result),Custom field (External issue ID),Custom field (External issue ID),Custom field (Finance Approval),Custom field (Finance Approval)Id,Custom field (Focus Areas),Custom field (Frequency),Custom field (Goals),Custom field (Hardware Configuration),Custom field (Hardware Health),Custom field (Has Acceptance Criteria),Custom field (Image),Custom field (Impact),Custom field (Impact),Custom field (Incident manager),Custom field (Investigation reason),Custom field (Issue color),Custom field (Job title),Custom field (Last working day),Custom field (Locked forms),Custom field (Maintenance location),Custom field (Maintenance type),Custom field (Major incident),Custom field (Marquee or Strategic),Custom field (Merged after freeze),Custom field (Move count),Custom field (Move date),Custom field (Move from),Custom field (Move to),Custom field (Needs Automation),Custom field (Needs Design Doc),Custom field (Needs Merging),Custom field (Needs QA),Custom field (Open forms),Custom field (Pending reason),Custom field (Problem/Justification),Custom field (Project overview key),Custom field (Project overview status),Custom field (QA Status),Custom field (RT Activity),Custom field (RT Ends on Date),Custom field (RT Last Run),Custom field (RT Next Run),Custom field (RT Repeats),Custom field (RT Source Issue),Custom field (RT Starts on Date),Custom field (RTM Environment),Custom field (Rank),Custom field (Ready For Review?),Custom field (Reason for Blocked),Custom field (Reason for Closing),Custom field (Request Type),Custom field (Request language),Custom field (Request participants),Custom field (Requested by Department),Custom field (Resignation date),Custom field (Resolution),Custom field (Responders),Satisfaction rating,Custom field (Satisfaction date),Custom field (Sentiment),Custom field (Source),Custom field (Start date),Custom field (Start date),Custom field (Status pages),Custom field (Steps to Reproduce),Custom field (Story Points),Custom field (Story point estimate),Custom field (Submitted forms),Custom field (Support Ticket),Custom field (Support Ticket),Custom field (Target end),Custom field (Target start),Custom field (Team),Custom field (Testing System),Custom field (Testing System),Custom field (Time to approve normal change),Custom field (Time to close after resolution),Custom field (Time to first response),Custom field (Time to resolution),Custom field (Time to review normal change),Custom field (Total forms),Custom field (Urgency),Custom field (Vulnerability),Custom field (Work category),Custom field (Work item created forms),Custom field (Workaround),Custom field ([CHART] Date of First Response),Custom field ([CHART] Time in Status),Custom field (customfield_10080),Custom field (customfield_10160),Custom field (customfield_10181),Custom field (customfield_10185),Custom field (test_html),Comment,Comment,Comment,Comment,Comment,Status category,Status category changed
+Update 6.12 LTS kernel from v6.12.112 to v6.12.113,NAS-144791,163174,Defect,Done,NAS,TrueNAS,software,Triage Team,62615fd89506d6006fda6bfb,TrueNAS Project Bug and Feature request tracker,,High,Complete,Ameer,62967105a0eafd0069e82ebf,Bug Clerk,62615fd7fd06270069c12a76,Bug Clerk,62615fd7fd06270069c12a76,20/Oct/26 3:48 PM,02/Nov/26 3:16 PM,,21/Oct/26 3:22 PM,Master - TrueNAS SCALE,,,SCALE-25.10.8 (Goldeye),,,,Middleware,,0,IX_EMPLOYEE,triage_skipped,,"None PR: https://github.com/truenas/linux/pull/374
+
+* Updated the Linux kernel from v6.12.112 to the latest v6.12.113.
+* Fixes *171 CVEs*, 7 of which carry a published CVSS (2 CRITICAL, 5 HIGH). 114 land in code we don't build or never run.
+* One conflict, {{Makefile}}.
+* Also picks up the [NAS-144217|https://ixsystems.atlassian.net/browse/NAS-144217] nfsd fix [950d82c9fe26|https://github.com/truenas/linux/commit/950d82c9fe26], which is on release/25.10.8 as [5575cc489ea0|https://github.com/truenas/linux/commit/5575cc489ea0] but never reached truenas/linux-6.12.
+* [05b6106c6901|https://github.com/truenas/linux/commit/05b6106c6901] adapts {{truenas_streams.c}} to the new {{SMB2_open()}} signature from upstream [c928542bf9eb|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=c928542bf9eb], which broke its build. No behaviour change.
+
+h2. Highest priority
+
+||CVE||CVSS||Fix||Commit||
+|[CVE-2026-99999|https://nvd.nist.gov/vuln/detail/CVE-2026-99999]|9.3|ipv4: bad checksum offset from a guest corrupts host memory|[32a8b0adaa18|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=32a8b0adaa18]|
+|[CVE-2025-40158|https://nvd.nist.gov/vuln/detail/CVE-2025-40158]|8.1|ipv6: egress device used after free|[92803b826e40|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=92803b826e40]|
+|[CVE-2026-98432|https://nvd.nist.gov/vuln/detail/CVE-2026-98432]|unscored|ipv4: SYN IP options freed while a SYNACK still reads them|[11a03ce3c4a6|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=11a03ce3c4a6]|
+|[CVE-2026-98725|https://nvd.nist.gov/vuln/detail/CVE-2026-98725]|unscored|nvmet-auth: DH-CHAP challenge overflows the heap|[9d61131acd74|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=9d61131acd74]|
+|[CVE-2026-98850|https://nvd.nist.gov/vuln/detail/CVE-2026-98850]|unscored|af_packet: TX_RING byte count wraps and hits {{BUG()}}|[be12b221c030|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=be12b221c030]|
+|[CVE-2026-98858|https://nvd.nist.gov/vuln/detail/CVE-2026-98858]|unscored|io_uring: SQPOLL task work touches a freed ring|[42b3332efacf|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=42b3332efacf]|
+
+CVE-2026-99999 needs VM or app traffic that the host fragments, CVE-2026-98432 is reachable on any TCP service but needs a race, and CVE-2026-98725 matters only where NVMe-oF is configured. The other CRITICAL, [CVE-2026-89633|https://nvd.nist.gov/vuln/detail/CVE-2026-89633], needs TrueNAS to mount an SMB1 share from a hostile server. None of the 171 is in the CISA KEV catalog.
+
+One fix has a side effect: [a41c95ac90f2|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=a41c95ac90f2] (CVE-2026-93243) counts {{memfd_secret}} pages against the memlock limit, so a root {{memfd_secret}} user can get SIGBUS while {{perf record}} runs. Nothing in 25.10 uses {{memfd_secret}}, and the follow-up [78436f3882fb|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=78436f3882fb] is tagged for stable.
+
+h2. Testing
+
+* CI.
+* [Scale build|http://jenkins-eng-ci.cmb1.ixsystems.net:8080/job/release_2510/job/custom/25/console] and [API tests|http://jenkins-eng-ci.cmb1.ixsystems.net:8080/job/release_2510/job/api_tests/66/console].
+* API tests land at 53 failures out of 2643, none related to the kernel update.
+* Ran 6.12.113 beside a 6.12.112 VM. Configs, the module set and parameters, the ZFS and SCST module imports, sysctl and boot dmesg are identical.
+* ZFS (pools, ACLs, snapshots, send/recv, zvols), NFS v3 through v4.2 with delegations and locks, SMB with smbtorture and our stream xattrs, SCST iSCSI with persistent reservations, NVMe-oF, networking, disk hotplug, Docker and incus, and nested KVM all behave the same. Every difference traces to an upstream fix or an intended change.",,;21/Oct/26 3:22 PM;ug:1a630a36-4ba9-4f58-964b-d04d9d76e000;14400,,0,0,14400,,0,0,14400,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,0.0,,,,,,,,,,,,,,,,,,,Event Example,,,,,,,,Kristy Mao,712020:31726e18-f157-4558-94b1-012f6a300a75,,,,,,No,,,,,,,,,,,,,Standard,,,,,,,,,Yes,,,,,,Not Tested,,,,,,,,,0|i0jqh6:,,,,,,,,,,,,,,,,,,,,,,,,,,,VMware Virtual Machine,VMware Virtual Machine,,,,,,,,,,,,,3_*:*_1_*:*_0_*|*_10042_*:*_1_*:*_5573_*|*_10002_*:*_1_*:*_918337_*|*_10001_*:*_1_*:*_83010445,,,,,,21/Oct/26 2:52 PM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,21/Oct/26 3:23 PM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,,,,Done,21/Oct/26 3:22 PM
+Update kernel from v6.12.105 to v6.12.112,NAS-143852,161951,Defect,Done,NAS,TrueNAS,software,Triage Team,62615fd89506d6006fda6bfb,TrueNAS Project Bug and Feature request tracker,,High,Complete,Ameer,62967105a0eafd0069e82ebf,Bug Clerk,62615fd7fd06270069c12a76,Bug Clerk,62615fd7fd06270069c12a76,16/Sep/26 9:02 AM,02/Nov/26 3:15 PM,,05/Oct/26 11:20 AM,SCALE-25.10.8 (Goldeye),,,SCALE-25.10.8 (Goldeye),,,,Middleware,,0,hf_want,IX_EMPLOYEE,triage_skipped,"25.10.8 PR: https://github.com/truenas/linux/pull/356
+
+* Updated the Linux kernel from v6.12.105 to the latest v6.12.110.
+* Fixes *400 CVEs*, 202 of which carry a published CVSS (54 CRITICAL, 148 HIGH). 271 land in code we ship, 49 of the CRITICAL ones among them.
+* Three conflicts, {{Makefile}}, {{ntb_netdev.c}} and {{nvme.h}}. Two upstream *_ntb_netdev patches are reverted_*.
+
+h3. Highest priority
+
+||CVE||CVSS||Fix||Commit||
+|[CVE-2026-89485|https://nvd.nist.gov/vuln/detail/CVE-2026-89485]|9.8|lockd: next file not pinned across the lock drop in {{nlm_inspect_file()}}|[c24bdb7df2f3|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=c24bdb7df2f3]|
+|[CVE-2026-89662|https://nvd.nist.gov/vuln/detail/CVE-2026-89662]|9.8|nfsd: laundromat frees a lock owner while client teardown walks the table|[a6ead6fff3a7|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=a6ead6fff3a7]|
+|[CVE-2026-89688|https://nvd.nist.gov/vuln/detail/CVE-2026-89688]|9.8|nfsd: seqid_op replay drops the stateowner instead of the stateid|[69ed78b6b947|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=69ed78b6b947]|
+|[CVE-2026-89703|https://nvd.nist.gov/vuln/detail/CVE-2026-89703]|9.8|nfsd: {{SC_STATUS_FREED}} never set when dropping a revoked delegation stateid|[d832a0587528|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=d832a0587528]|
+|[CVE-2026-89551|https://nvd.nist.gov/vuln/detail/CVE-2026-89551]|9.8|SUNRPC: {{xdr_buf_trim()}} unsigned underflow on a short krb5 wrap token|[e6267cccd7b0|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=e6267cccd7b0]|
+|[CVE-2026-89542|https://nvd.nist.gov/vuln/detail/CVE-2026-89542]|9.8|SUNRPC: krb5 v2 unwrap reads EC and RRC before validating length|[dddcb0f4b7e2|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=dddcb0f4b7e2]|
+|[CVE-2026-89526|https://nvd.nist.gov/vuln/detail/CVE-2026-89526]|9.8|svcrdma: Read chunk position unbounded, the kvec split underflows|[5ab3f6d882fe|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=5ab3f6d882fe]|
+|[CVE-2026-89482|https://nvd.nist.gov/vuln/detail/CVE-2026-89482]|9.8|nvme-tcp: C2HData accepted on {{blk_rq_payload_bytes()}} alone|[b36161701cb3|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=b36161701cb3]|
+|[CVE-2026-74662|https://nvd.nist.gov/vuln/detail/CVE-2026-74662]|9.8|inet: frags queues published before the timer is armed|[39c6c4b267b6|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=39c6c4b267b6]|
+|[CVE-2026-80725|https://nvd.nist.gov/vuln/detail/CVE-2026-80725]|9.8|net/gro: BIG TCP aggregation criteria not properly validated|[03cb8cc2961f|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=03cb8cc2961f]|
+|[CVE-2026-74268|https://nvd.nist.gov/vuln/detail/CVE-2026-74268]|9.8|tcp: {{sock_ops}} cb flags not cleared before force-closing a child socket|[fe23d56e9266|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=fe23d56e9266]|
+|[CVE-2026-64216|https://nvd.nist.gov/vuln/detail/CVE-2026-64216]|9.8|netfs: use-after-free in {{netfs_unlock_abandoned_read_pages()}}|[d4ae8dba90b8|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=d4ae8dba90b8]|
+
+Mostly an NFS release. 30 of the 400 are in {{fs/nfsd}} and 18 in {{net/sunrpc}}. The svcrdma one needs NFS over RDMA, the krb5 pair need {{sec=krb5p}}. Nothing here is in CISA KEV.
+
+Worth naming despite having *no CVE*: [aaac783950b1|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=aaac783950b1], a heap out-of-bounds read in {{nvmet_auth_negotiate()}} that any NVMe-oF host can reach, and we build {{CONFIG_NVME_TARGET_AUTH=y}}.
+
+h3. Conflicts
+
+# *{{Makefile}}* is the usual version bump.
+
+# *{{ntb_netdev.c}}* needed two upstream patches reverted on the merge branch: [3f2a15f33f86|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=3f2a15f33f86] ""Preserve RX queue depth on allocation failure"" and [b4b41c08ebc2|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=b4b41c08ebc2] ""Count packets dropped on RX refill failure"", the second only because it edits the same lines as the first. 3f2a15f33f86 is *CVE-2026-74626*, already fixed here by our [cf34107b7604|https://github.com/truenas/linux/commit/cf34107b7604], which allocates the replacement first exactly as the CVE prescribes and also covers the short-frame and {{rx_copybreak}} paths upstream's version does not. b4b41c08ebc2 is counter naming only. [69c676d7b090|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=69c676d7b090] and [cfa58ae66a8c|https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/commit/?id=cfa58ae66a8c] stay applied, the latter making a full TX ring apply backpressure instead of dropping. {{ntb_transport.c}} did not conflict, so its three fixes land whole.
+
+# *{{nvme.h}}* collides because we carry the nvmet reservation feature, {{pr.c}} and its definitions, which upstream 6.12 lacks. Stable has now backported the same definitions as scaffolding for the auth fix above, appended at the same point, so both sides added a block into the same empty space. Resolved by taking upstream's block whole, a strict superset with identical values throughout. The only edit outside the header is one line in {{pr.c}} renaming {{NVME_PR_LOG_RESERVATOIN_PREEMPTED}} to {{NVME_PR_LOG_RESERVATOPM_PREEMPTED}}, both {{0x03}}.
+
+h3. Testing
+
+* CI.
+* [Scale Build|http://jenkins-eng-ci.cmb1.ixsystems.net:8080/job/release_2510/job/custom/12/console] currently building. API and sharing protocol tests pending, will add here once it completes.",,;16/Sep/26 9:02 AM;ug:1a630a36-4ba9-4f58-964b-d04d9d76e000;25200,;05/Oct/26 12:27 PM;ug:1a630a36-4ba9-4f58-964b-d04d9d76e000;21600,0,0,46800,,0,0,46800,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,0.0,,,,,,,,,,,,,,,,,,,Event Example,,,,,,,,Kristy Mao,712020:31726e18-f157-4558-94b1-012f6a300a75,,,,,,No,,,,,,,,,,,,,Standard,,,,,,,,,Yes,,,,,,Not Tested,,,,,,,,,0|i0jjsy:,,,,,,,,,,,,,,,,,,,,,,,,,,,VMware Virtual Machine,VMware Virtual Machine,,,,,,,,,,,,2026-10-03 14:02:13.214,3_*:*_2_*:*_1344530_*|*_10042_*:*_2_*:*_176692026_*|*_10002_*:*_1_*:*_1470704451_*|*_10001_*:*_2_*:*_523129,,,,,,16/Sep/26 9:04 AM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,"03/Oct/26 10:13 AM;62967105a0eafd0069e82ebf;[~accountid:60d31fa194692800700f3c5c] - Sure thing. Since 25.10.8 was not originally planned, I only updated the development branch about two weeks ago: [https://github.com/truenas/linux/pull/356#pullrequestreview-5213640026|https://github.com/truenas/linux/pull/356#pullrequestreview-5213640026].
+I was waiting for the 6.12.112 tag, which was released a few hours ago, and was planning to merge that next.",05/Oct/26 11:21 AM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,,,Done,05/Oct/26 11:20 AM
+TrueNAS 27.0.0-RC.1: nvmet_tcp advertises MDTS=0 but rejects large transfers,NAS-144298,162587,Bug,Done,NAS,TrueNAS,software,Triage Team,62615fd89506d6006fda6bfb,TrueNAS Project Bug and Feature request tracker,,High,Complete,Ameer,62967105a0eafd0069e82ebf,Aaron Hauck,712020:11fe83eb-7de1-41b5-bcb4-6c5f62b99d45,Aaron Hauck,712020:11fe83eb-7de1-41b5-bcb4-6c5f62b99d45,07/Oct/26 5:29 PM,30/Oct/26 12:53 PM,,30/Oct/26 12:52 PM,27.0.0-RC.1,Master - TrueNAS Nightlies,SCALE-25.10.8 (Goldeye),27.0.0,28.0.0-BETA.1,SCALE-25.10.8 (Goldeye),,Middleware,,1,COMMUNITY_USER,,,"Summary
+After upgrading from TrueNAS SCALE 25.10.7 to 27.0.0-RC.1, the kernel NVMe-oF TCP target (nvmet_tcp) advertises MDTS = 0 (no transfer size limit). It then rejects large transfers with status sct 0x0 / sc 0xf (Data SGL Length Invalid, DNR set), and the target logs nvmet_tcp: queue N: failed to map data. A Linux initiator follows the advertised MDTS, raises max_sectors_kb to 32768 and sends single I/Os of up to 32 MiB. All 137 failed I/Os still in the initiator's log were between 4.23 and 32 MiB.
+On the initiator, a host-mounted ext4 filesystem aborted its journal and remounted read-only, and writes in flight were lost. Severity: high. Data is lost silently on a supported block-sharing path, with no warning on the TrueNAS side apart from the kernel log.
+Environment
+The target is TrueNAS SCALE 27.0.0-RC.1, running as a KVM guest on the Proxmox host that is also the initiator. The two talk NVMe/TCP over a 10 GbE VLAN.
+Component
+Target (TrueNAS)
+Initiator (Proxmox VE)
+Version
+TrueNAS SCALE 27.0.0-RC.1, upgraded from 25.10.7 on 2026-10-07
+pve-manager 9.2.20
+Kernel
+6.18.52-production+truenas
+7.0.14-19-pve
+Tooling
+Kernel nvmet (nvmet.global.config: kernel: true, ana: false, rdma: false)
+nvme-cli 2.13, libnvme 1.13, native multipath (nvme_core.multipath=Y)
+Hardware
+KVM VM: 8 vCPU, 16 GiB RAM, AMD Ryzen AI 9 HX PRO 370 host. Pools on PCI-passthrough SATA controller and 2× NVMe.
+Same physical host
+Port
+TCP, IPv4, 4420. param_inline_data_size 16384, param_max_queue_size 1024, param_pi_enable 0
+24 I/O queues per controller
+Subsystems
+3 (nqn.2026-09.org.freenas.ctl:truenas-{nvme,hdd,ssd2}), attr_version 2.1, attr_model ""TrueNAS KVM VM""
+Connected to all 3
+Namespaces
+7 ZVOLs, 16K volblocksize, lz4, sync standard (on a mirror and a single-disk pool)
+Used as Proxmox VM disks and LXC rootfs (ext4 mounted on the host)
+Firmware revision reported
+fr 27.0.0-R
+
+Steps to reproduce
+The failure was observed under real workloads (an ext4 rootfs under docker pull). The isolated test in steps 4–5 has not yet been run on a scratch namespace.
+1. On TrueNAS 27.0.0-RC.1, create a ZVOL and share it over NVMe-oF TCP (kernel target) on port 4420.
+2. From a Linux initiator, connect with nvme connect -t tcp -a <target> -s 4420 -n <subnqn>.
+3. Check what the initiator negotiated: nvme id-ctrl /dev/nvmeX | grep mdts returns 0. /sys/block/nvmeXnY/queue/max_hw_sectors_kb is 2147483647, and max_sectors_kb is 32768.
+4. Issue one large direct write to the scratch namespace (this destroys data on it): dd if=/dev/zero of=/dev/nvmeXnY bs=16M count=4 oflag=direct.
+5. Expected failure: dd returns EIO. The initiator logs I/O Error (sct 0x0 / sc 0xf) DNR, and the target logs nvmet_tcp: queue N: failed to map data.
+6. Control: echo 1024 > /sys/block/nvmeXnY/queue/max_sectors_kb, plus the same on the hidden path device nvmeXcZnY, then repeat step 4. It succeeds.
+Expected vs actual behaviour
+
+Expected
+Actual
+Advertised limit
+MDTS set to the largest transfer the target can map, or no limit if it truly has none
+MDTS = 0 (unlimited)
+Large I/O (≥ 4.23 MiB observed)
+Completes, or the initiator never sends it because MDTS caps it
+Rejected with sc 0xf Data SGL Length Invalid, DNR set, so it is never retried
+Target log
+Silent, or a clear message naming the limit
+nvmet_tcp: queue N: failed to map data, 2,308 lines in ~25 minutes, no size given
+Small I/O
+Completes
+Completes
+Evidence
+The target advertises no limit, the initiator sizes its queue from that, and only multi-megabyte transfers fail. Small I/O on the same queues completes normally.
+Initiator, negotiated limits (identical on all three controllers):
+$ nvme id-ctrl /dev/nvme1 | grep -E '^(mdts|fr) '
+fr        : 27.0.0-R
+mdts      : 0
+$ cat /sys/block/nvme1n5/queue/{max_hw_sectors_kb,max_sectors_kb,max_segments}
+2147483647
+32768
+65535
+Initiator kernel log (first failure 10:23:45, ext4 abort 10:43:00):
+nvme1c1n5: I/O Cmd(0x1) @ LBA 156172288, 52168 blocks, I/O Error (sct 0x0 / sc 0xf) DNR
+I/O error, dev nvme1c1n5, sector 156172288 op 0x1:(WRITE) flags 0x2000800 phys_seg 5434 prio class 2
+EXT4-fs (nvme1n5): failed to convert unwritten extents to written extents -- potential data loss!  (inode 3284128, error -5)
+...
+nvme1c1n5: I/O Cmd(0x1) @ LBA 136049168, 38848 blocks, I/O Error (sct 0x0 / sc 0xf) DNR
+Buffer I/O error on dev nvme1n5, logical block 17006146, lost sync page write
+Aborting journal on device nvme1n5-8.
+EXT4-fs error (device nvme1n5): ext4_journal_check_start:86: comm dockerd: Detected aborted journal
+EXT4-fs (nvme1n5): Remounting filesystem read-only
+Target kernel log (2,308 lines, last at 10:48:00, none after the initiator cap was applied):
+nvmet_tcp: queue 21: failed to map data
+nvmet_tcp: queue 64: failed to map data
+nvmet_tcp: queue 19: failed to map data
+Failed I/Os by size (137 still in the initiator's ring buffer, 512-byte LBAs; every status was sct 0x0 / sc 0xf):
+Size
+Reads
+Writes
+4–8 MiB
+35
+6
+8–16 MiB
+20
+14
+16–24 MiB
+11
+7
+24–32 MiB
+6
+38
+Smallest failure 4.23 MiB, largest 32 MiB (the initiator's max_sectors_kb). The largest size that succeeds was not measured.
+Connection event before the failures: the target VM rebooted for the upgrade. At 07:34:46 all three controllers hit an admin keep-alive timeout, and they reconnected at 07:35:48 (attempt 5/60). Errors began at 10:23, under heavy writes.
+Analysis
+The target enforces a transfer-size limit that it does not advertise. This is our reading of the evidence; we have not traced the code.
+• failed to map data comes from the data-mapping step of nvmet_tcp, which runs before any I/O reaches the ZVOL. The pools stayed healthy (zpool status -x: all pools healthy) and no ZFS errors were logged.
+• sc 0xf with DNR means the target judged the request's data length invalid. A transient failure such as a failed allocation would more likely show as an internal error (sc 0x6) without DNR.
+• MDTS = 0 tells the host there is no limit, so the Linux initiator allows up to 32 MiB per request. Capping the initiator at 1 MiB stopped the errors immediately on both sides.
+• Regression: the same initiator, namespaces and workload ran from 2026-09-29 to 2026-10-07 on TrueNAS 25.10.7 without these errors. We did not record MDTS or max_sectors_kb under 25.10.7, so we can't say whether the advertised value changed or the target's internal limit did.
+Possible contributors to check: the 16 GiB RAM of the target VM (if the limit depends on memory), and the 16 KiB inline_data_size (it only applies to in-capsule data, so it probably isn't the cause).
+Impact
+One host filesystem went read-only and lost writes. Every other consumer of the target was exposed to the same failure.
+• Filesystem damage: the LXC rootfs (ext4 on the namespace) aborted its journal and remounted emergency_ro. Writes in flight were lost; ext4 named one file explicitly. e2fsck -f afterwards had to clear orphaned inodes and fix free block and inode counts.
+• Service impact: about 20 minutes of application failures, no container image pulls, and a full outage of the container host for the fsck.
+• No signal on the target: no alert, and nothing in the UI or the middleware. The only trace is a kernel log line that gives no size.
+• Wider exposure: VM disks on the same subsystems are exposed too. Inside a guest, the error surfaces as a guest-side I/O error.
+Workaround
+Capping the initiator at 1 MiB per request stops the failures. The target has logged no further errors since the cap was applied at about 10:53 on 2026-10-07.
+With native NVMe multipath, the limit must be set on the head device and on each hidden path device (nvmeXcYnZ). The block layer merges requests on the path device up to the path's own limit. Path devices emit no uevents, so a udev rule has to reach them through the head device's multipath/ links:
+# /etc/udev/rules.d/99-truenas-nvmeof-max-sectors.rules
+ACTION==""add|change"", SUBSYSTEM==""block"", ENV{DEVTYPE}==""disk"", KERNEL==""nvme*n*"", ATTRS{subsysnqn}==""nqn.2026-09.org.freenas.ctl:*"", ATTR{queue/max_sectors_kb}=""1024"", RUN+=""/bin/sh -c 'for q in /sys/block/%k/multipath/*/queue/max_sectors_kb; do [ -e $$q ] && echo 1024 > $$q; done'""
+1 MiB is a conservative choice. The largest size that still works was not established.
+Suggested fix and attachments
+The target should advertise its real limit, so that initiators never send a transfer it will reject.
+• Set MDTS on the TrueNAS NVMe-oF subsystems to the largest transfer nvmet_tcp can map, or lift the internal limit back to what 25.10.7 accepted.
+• Make the failed to map data log line include the requested length and the limit, and rate-limit it.
+• Consider surfacing repeated target-side I/O rejections as a TrueNAS alert.",,;30/Oct/26 8:49 AM;ug:1a630a36-4ba9-4f58-964b-d04d9d76e000;21600,,0,0,21600,,0,0,21600,,NAS-144431,NAS-144551,,,22/Oct/26 9:15 AM;712020:9b144a20-47e8-4688-a4ea-d3028fcbb7e3;408593f398bbfc2e90a9f7f53114a2d42131b5e9_2_690x228.png;https://ixsystems.atlassian.net/rest/api/3/attachment/content/114161,22/Oct/26 9:15 AM;712020:9b144a20-47e8-4688-a4ea-d3028fcbb7e3;65d8c6d1279c27e6600cc4e45f0d94b6e4122138_2_543x499.png;https://ixsystems.atlassian.net/rest/api/3/attachment/content/114162,22/Oct/26 9:15 AM;712020:9b144a20-47e8-4688-a4ea-d3028fcbb7e3;96c3ca5bde8e7134521f85b6467ba268eb7aba86_2_539x500.png;https://ixsystems.atlassian.net/rest/api/3/attachment/content/114163,15/Oct/26 2:18 PM;712020:9b144a20-47e8-4688-a4ea-d3028fcbb7e3;Screenshot From 2026-10-15 12-36-35.png;https://ixsystems.atlassian.net/rest/api/3/attachment/content/114075,22/Oct/26 9:15 AM;712020:9b144a20-47e8-4688-a4ea-d3028fcbb7e3;ffb0dada9adeb63060d50237586600d353b756ad_2_553x500.png;https://ixsystems.atlassian.net/rest/api/3/attachment/content/114160,,,,,ApprovalsCFValue{approvals=[]},,0.0,,,,,,,,,,,,,,,,,,,Event Example,,,,,,,,Kristy Mao,712020:31726e18-f157-4558-94b1-012f6a300a75,,,,,,No,,,,,,,,,,,,,Standard,,,,,,,,,Yes,,,,,,Not Tested,,,,,,,,,0|i0jmvm:,,,,,,,,,,,,,,,,,,,,,,,,,,,VMware Virtual Machine,VMware Virtual Machine,,,,,,,,,,,,2026-10-07 21:31:23.246,3_*:*_1_*:*_0_*|*_10042_*:*_1_*:*_1955995997_*|*_10001_*:*_1_*:*_6606208,,,,,,12/Oct/26 11:10 AM;627a8234694943006f34a4e7;Can second this issue in RC 27.1,"15/Oct/26 2:18 PM;712020:9b144a20-47e8-4688-a4ea-d3028fcbb7e3;Have similar issues with 27 Nightlies after Sept 01, 2026 release and 28 Nightlies for zvol NVMe-oF/TCP.
+
+In Ubuntu I was able to gain write access by disabling Journal:
+
+Edit /etc/fstab
+UUID=<uid of nvme mount> <dir of mount> ext4 defaults,nofail,_netdev 0 2
+
+sudo tune2fs -O ^has_journal /dev/<nvme device>
+
+Even though this will grant zvol access to the mount of existing ext4 formatted drive, read/write access to the direct drive will not work with error message below as with Benchmark testing.
+
+!Screenshot From 2026-10-15 12-36-35.png|width=662,alt=""Screenshot From 2026-10-15 12-36-35.png""!
+
+Even after gaining write permission, the NVMe-oF mount will run into error with susupended VM’s and other applications.
+
+Using a file instead of zvol for NVMe-oF/TCP will bypass the issue allowing read/writes normally.","22/Oct/26 9:15 AM;712020:9b144a20-47e8-4688-a4ea-d3028fcbb7e3;Not sure if this will help, but in TrueNAS 26.04.0-MASTER-20260202-020144 NVMe-oF/TCP zvol access appeared to be faster than current Nightly 26/27/28 zvol or file. Last know good access to zvol NVMe-oF/TCP was 26.0.0-MASTER-20260901-020200, though I did not test any incremental updates between then and the TrueNAS-26.0.0-MASTER+20260914-020141{color:#ffffff} {color}release. 
+
+I did notice substantial speed/performance differences between zvol & file in 26.0.0-MASTER-20260901-020200 where file out performed zvol by nearly 200 MB/s for read/writes. There was a very noticeable difference in practical copy/paste operations. 
+
+Tested via Ubuntu 26.04.1 LTS
+
+TrueNAS 26.04.0-MASTER-20260202-020144
+
+!ffb0dada9adeb63060d50237586600d353b756ad_2_553x500.png|width=250,alt=""image""!
+
+
+
+26.0.0-MASTER-20260901-020200 zvol NVMe-oF benchmarks.
+
+!65d8c6d1279c27e6600cc4e45f0d94b6e4122138_2_543x499.png|width=250,alt=""Screenshot From 2026-10-21 08-53-27""!
+
+28.0.0-MASTER+20261019-175231 file NVMe-oF benchmarks.
+
+!96c3ca5bde8e7134521f85b6467ba268eb7aba86_2_539x500.png|width=250,alt=""Screenshot From 2026-10-20 16-07-41""!
+
+
+
+28.0.0-MASTER-20261011-230237 file NVMe-oF syncronization of 2.2 TB between 2 pools, 16 thread operations.
+
+!408593f398bbfc2e90a9f7f53114a2d42131b5e9_2_690x228.png|width=250,alt=""Screenshot From 2026-10-15 14-39-00-B""!",30/Oct/26 12:53 PM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,,Done,30/Oct/26 12:52 PM
+Truenas 27 RC1 Baclblaze auth token error,NAS-144662,163014,Bug,Done,NAS,TrueNAS,software,Triage Team,62615fd89506d6006fda6bfb,TrueNAS Project Bug and Feature request tracker,,Medium,Complete,Vladimir Vinogradenko,60d3201794692800700f4222,Sam Yates,63a90105030d706ab0e3b6a0,Sam Yates,63a90105030d706ab0e3b6a0,17/Oct/26 5:04 AM,26/Oct/26 6:18 PM,,20/Oct/26 3:45 PM,27.0.0-RC.1,SCALE-25.10.7 (Goldeye),,27.0.0,28.0.0-BETA.1,N/A,SCALE-25.10.8 (Goldeye),Middleware,,0,COMMUNITY_USER,,,"Just updated to 27.0.0-RC.1 and backup jobs to Bacblaze B2 are failing with invalid auth token errors,.  Created a new key in B2, works in rclone from TrueNAS shell, but same key via GUI says verification failure.",,;20/Oct/26 1:16 PM;ug:32b28bc3-2e84-47b3-8618-1b813e3476d8;1800,,0,0,1800,,0,0,1800,,NAS-144072,NAS-144921,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,0.0,,,,,,,,,,,,,,,,,,,Event Example,,,,,,,,Kristy Mao,712020:31726e18-f157-4558-94b1-012f6a300a75,,,,,,No,,,,,,,,,,,,,Standard,,,,,,,,,Yes,,,,,,Not Tested,,,,,,,,,0|i0jpi2:,,,,,,,,,,,,,,,,,,,,,,,,,,,VMware Virtual Machine,VMware Virtual Machine,,,,,,,,,,,,2026-10-17 09:07:05.598,3_*:*_1_*:*_0_*|*_10042_*:*_1_*:*_271553928_*|*_10043_*:*_1_*:*_17092727_*|*_10001_*:*_1_*:*_324897,,,,,,"20/Oct/26 8:30 AM;60d3201794692800700f4222;[~accountid:63a90105030d706ab0e3b6a0]  can you please start the following in the shell
+
+{noformat}bash -c 'mkdir -p /tmp/caught; while :; do for f in /tmp/tmp????????; do if ln ""$f"" ""/tmp/caught/${f##*/}"" 2>/dev/null; then { while [ -e ""$f"" ]; do sleep 0.02; done; echo ""===== $f =====""; cat ""/tmp/caught/${f##*/}""; rm -f ""/tmp/caught/${f##*/}""; } & fi; done; sleep 0.02; done'{noformat}
+
+Then try to run the failing cloud sync task. It will print the {{rclone}} config that is created by TrueNAS in {{/tmp}} and you’ll be able to see if there are any offending options there.
+
+In another terminal you can run
+
+{noformat}while true; do ps ax | grep rclone | grep -v grep; sleep 0.02s; done{noformat}
+
+to see which {{rclone}} command middleware uses, there might be bad options there too.
+
+Hope this helps.","20/Oct/26 9:08 AM;63a90105030d706ab0e3b6a0;[~accountid:60d3201794692800700f4222] 
+
+Thanks.  It looks like it's adding a leading space to the account and key?
+
+Working shell rclone test config creds (with account and key obsfucated):
+
+[remote]
+type = b2
+account = 0021accountnumbershere008
+key = K00secretkeyhereDA
+
+
+
+rclone creds portion of config output captured in first command:
+
+[remote]
+type = b2
+account = """""" 0021accountnumbershere008""""""
+key = """""" K00secretkeyhereDA""""""",20/Oct/26 1:09 PM;60d3201794692800700f4222;[~accountid:63a90105030d706ab0e3b6a0] thank you!,20/Oct/26 3:45 PM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,,Done,20/Oct/26 3:45 PM
+rsync files after upgrade from  25.10.6 to 25.10.7,NAS-143382,161353,Bug,Done,NAS,TrueNAS,software,Triage Team,62615fd89506d6006fda6bfb,TrueNAS Project Bug and Feature request tracker,,Medium,Complete,Vladimir Vinogradenko,60d3201794692800700f4222,Dango,557058:8248464c-8e61-4c79-a39b-a3a97c043747,Dango,557058:8248464c-8e61-4c79-a39b-a3a97c043747,07/Sep/26 4:17 PM,26/Oct/26 10:37 AM,,02/Oct/26 11:45 AM,,,,27.0.0,28.0.0-BETA.1,SCALE-25.10.8 (Goldeye),,Middleware,,0,COMMUNITY_USER,hf_want,,"When running an rsync task in 25.10.7, I am getting this error: [EFAULT] rsync command returned 12 - STREAMIO. Check the logs for further information.
+
+Adding logs and -vvv to the job, I see this in the log:
+
+2026/09/07 12:52:27 [44337] rsync error: error in rsync protocol data stream (code 12) at io.c(232) [Receiver=3.2.7]
+2026/09/07 12:56:48 [49623] rsync: connection unexpectedly closed (0 bytes received so far) [Receiver]
+2026/09/07 12:56:48 [49623] rsync error: error in rsync protocol data stream (code 12) at io.c(232) [Receiver=3.2.7]
+2026/09/07 12:56:48 [49623] [Receiver] _exit_cleanup(code=12, file=io.c, line=232): about to call exit(12)
+
+
+
+On the remote server’s auth.log:
+
+2026-09-07T19:58:01.255338+00:00 [hostname] systemd-logind[960]: New session 569 of user [username].
+2026-09-07T19:58:01.419447+00:00 [hostname] sshd[1460566]: Received disconnect from [TrueNAS IP] port 55554:11: disconnected by user
+2026-09-07T19:58:01.419604+00:00 [hostname] sshd[1460566]: Disconnected from user ubuntu 108.89.31.210 port 55554
+2026-09-07T19:58:01.419637+00:00 [hostname] sshd[1460497]: pam_unix(sshd:session): session closed for user [username]
+2026-09-07T19:58:01.425355+00:00 [hostname] systemd-logind[960]: Session 569 logged out. Waiting for processes to exit.
+2026-09-07T19:58:01.426548+00:00 [hostname] systemd-logind[960]: Removed session 569.
+
+
+
+After rollback to 25.10.6. The job ran without any errors.
+
+
+
+There is little to no usable logs to troubleshoot the issue.",,;10/Sep/26 8:42 AM;ug:32b28bc3-2e84-47b3-8618-1b813e3476d8;2700,,0,0,2700,,0,0,2700,,,,NAS-143781,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,0.0,,,,,,,,,,,,,,,,,,,Event Example,,,,,,,,Kristy Mao,712020:31726e18-f157-4558-94b1-012f6a300a75,,,,,,No,,,,,,,,,,,,,Standard,,,,,,,,,Yes,,,,,,Not Tested,,,,,,,,,0|i0jgnm:,,,,,,,,,,,,,,,,,,,,,,,,,,,VMware Virtual Machine,VMware Virtual Machine,,,,,,,,,,,,2026-09-07 20:22:19.347,3_*:*_2_*:*_2996366_*|*_10042_*:*_1_*:*_70481777_*|*_10002_*:*_1_*:*_1971739482_*|*_10001_*:*_1_*:*_97760332,,,,,,"07/Sep/26 4:22 PM;62615fd7fd06270069c12a76;Thank you for submitting this TrueNAS Bug Report! So that we can quickly investigate your issue, please attach a Debug file and any other information related to this issue through our secure and private upload service below. Debug files can be generated in the UI by navigating to System -> General Settings -> Support -> Save Debug.
+
+https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153",07/Sep/26 4:33 PM;557058:8248464c-8e61-4c79-a39b-a3a97c043747;Debug file has been uploaded,08/Sep/26 10:51 AM;557058:8248464c-8e61-4c79-a39b-a3a97c043747;[~accountid:60d3201794692800700f4222] I accidently left some sensitive information in the ticket. Can you help me redact it?,09/Sep/26 3:51 PM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,02/Oct/26 11:45 AM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,Done,02/Oct/26 11:45 AM
+Dataset passphrase exposed in plaintext in core.get_jobs arguments of internal zfs.dataset.bulk_process (check_key) jobs,NAS-144783,163164,Bug,Done,NAS,TrueNAS,software,Triage Team,62615fd89506d6006fda6bfb,TrueNAS Project Bug and Feature request tracker,,Blocker,Complete,Vladimir Vinogradenko,60d3201794692800700f4222,Arnold Gossard,62bef2abd8658e0d491adbdf,Arnold Gossard,62bef2abd8658e0d491adbdf,20/Oct/26 1:03 PM,22/Oct/26 7:53 AM,,22/Oct/26 7:53 AM,SCALE-25.10.7 (Goldeye),,,SCALE-25.10.8 (Goldeye),,,,,,0,COMMUNITY_USER,,,"When a passphrase-encrypted dataset is unlocked from the web UI, the UI first calls pool.dataset.encryption_summary to validate the passphrase. That method spawns an internal zfs.dataset.bulk_process job with the check_key operation, and the passphrase is stored unredacted in that job’s arguments:
+
+1272 zfs.dataset.bulk_process [""check_key"", [[""<dataset>"", {""key"": null}]]]
+1274 zfs.dataset.bulk_process [""check_key"", [[""<dataset>"", {""key"": ""<PASSPHRASE IN CLEAR>""}]]]
+
+The parent job pool.dataset.unlock correctly masks the passphrase as ********. The redaction is therefore inconsistent: the secret is protected in the public job but leaked by the internal job created in the same flow.
+
+The entry stays in the in-memory job history, readable through core.get_jobs by FULL_ADMIN sessions, until middlewared restarts.
+
+Relevant code (25.10.7):
+
+middlewared/plugins/zfs_/dataset_encryption.py:187-188: @job() def bulk_process(self, job, name: str, params: list). The params argument is untyped, so no Secret redaction applies.
+middlewared/plugins/pool_/dataset_encryption_info.py:111: encryption_summary passes user-supplied keys/passphrases to bulk_process('check_key', ...).
+middlewared/plugins/pool_/dataset_encryption_info.py:190: sync_db_keys calls the same path daily with keys from the database. Hex keys of key-encrypted datasets are likely exposed the same way (not verified, no key-encrypted datasets on this system).
+
+Steps to reproduce
+
+Create or lock a passphrase-encrypted dataset.
+Unlock it from the web UI (Datasets → Unlock).
+Run midclt call core.get_jobs '[[""method"",""="",""zfs.dataset.bulk_process""]]'.
+Observe the passphrase in plaintext in arguments.
+
+Expected
+Passphrases and keys are redacted in all job arguments, including internal jobs, consistent with pool.dataset.unlock.
+
+Actual
+Passphrase visible in clear in zfs.dataset.bulk_process job arguments.
+
+Impact
+Low to medium. Only FULL_ADMIN sessions can read internal jobs, so this is not privilege escalation. However:
+
+Passphrases are deliberately not stored by TrueNAS. This bug makes a secret recoverable that is designed to be unrecoverable, even by an administrator.
+Reading job history is a routine, read-only diagnostic operation that users don’t treat as sensitive. Its output is routinely shared or forwarded: pasted into forum posts or support tickets, logged by monitoring scripts that record failed jobs, and increasingly consumed by AI assistants / MCP integrations with API or SSH access. In those cases the passphrase silently leaves the system and ends up in third-party transcripts and logs. This happened in practice while diagnosing an unrelated app upgrade failure with an AI agent.
+The same passphrase often protects copies outside the system (raw-replicated targets, offsite copies), so exposure is not limited to the local dataset.
+
+Suggested fix
+
+Type the params of zfs.dataset.bulk_process (or at least the check_key payload) with Secret fields, so the existing redaction mechanism applies.
+Or, more generally: redact arguments of internal jobs in core.get_jobs output for external clients by default, mirroring the existing raw_result behaviour for result.
+Or avoid passing the raw key into a job at all: perform check_key synchronously without job bookkeeping.
+
+Session ID: 4b740abf-0240-4527-a209-3769e3443069",,;21/Oct/26 10:08 AM;ug:32b28bc3-2e84-47b3-8618-1b813e3476d8;1800,,0,0,1800,,0,0,1800,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,0.0,,,,,,,,,,,,,,,,,,,Event Example,,,,,,,,Kristy Mao,712020:31726e18-f157-4558-94b1-012f6a300a75,,,,,,No,,,,,,,,,,,,,Standard,,,,,,,,,Yes,,,,,,Not Tested,,,,,,,,,0|i0jqey:,,,,,,,,,,,,,,,,,,,,,,,,,,,VMware Virtual Machine,VMware Virtual Machine,,,,,,,,,,,,2026-10-20 17:05:56.75,10042_*:*_1_*:*_75926354_*|*_10001_*:*_1_*:*_0,,,,,,22/Oct/26 7:53 AM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,,,,,Done,22/Oct/26 7:53 AM
+Raise the default TNC client timeout to 55 seconds on 25.10,NAS-144031,162155,Bug,Done,NAS,TrueNAS,software,Triage Team,62615fd89506d6006fda6bfb,TrueNAS Project Bug and Feature request tracker,,High,Complete,Caleb St. John,60d31fa194692800700f3c5c,Zack,60d3201cf6505400695a071f,Zack,60d3201cf6505400695a071f,22/Sep/26 3:23 PM,05/Oct/26 10:59 AM,,05/Oct/26 10:59 AM,SCALE-25.10.7 (Goldeye),,,SCALE-25.10.8 (Goldeye),,,,Middleware,,0,hf_want,IX_EMPLOYEE,triage_skipped,"Every call a 25.10 system makes to TrueNAS Connect's account service runs under the 15-second default in truenas_connect_utils. Only the websocket authenticator sets its own 30-second budget. The service often cannot answer the ACME read inside 15 seconds when the primary certificate authority is slow or hung. ZeroSSL's nonce endpoint takes 8 to 9 seconds of server time in normal operation, and the failover to Let's Encrypt on the service side is sized for a caller that waits 55 seconds. When the read times out the middleware marks certificate generation failed and does not retry, so the user's only path forward is to re-register and hope for the best, often with multiple failures in a row before abandoning adoption.
+
+Production data on 25.10 registrations that never sent a heartbeat, by week, against a baseline of about 5 percent before August:
+
+||Week of||25.10 registrations||25.10 never active||26.0 never active||
+|2026-08-06|169|6%|5%|
+|2026-08-13|103|34%|11%|
+|2026-08-20|36|74%|37%|
+|2026-08-27|60|64%|32%|
+|2026-09-03|169|13%|2%|
+|2026-09-10|111|33%|10%|
+
+Every backend change shipped or planned for this path is invisible to a 25.10 system until the client waits long enough for it, and enterprise adoption keeps 25.10 in the field into 2027. The change is truenas_connect_utils commit 10aa83b, on master since 2026-05-06 and in every 26.0 build, which raises the default in the request helper from 15 to 55 seconds. It is one line and cherry-picks onto stable/goldeye. 55 seconds sits above every TrueNAS Connect route deadline, under the 60-second gateway cutoff, and under the 120-second heartbeat interval. Without this change, TrueNAS Connect cannot be made reliable for 25.10 systems from the backend alone.",,;05/Oct/26 10:59 AM;ug:0672c7af-e0d3-4630-9e94-1e500d09260b;600,,0,0,600,,0,0,600,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,0.0,,,,,,,,,,,Low,,,,,,,,Event Example,,,,,,,,Kristy Mao,712020:31726e18-f157-4558-94b1-012f6a300a75,,,,,,No,,High,,,,,,,,,,,Standard,,,,,,,,,Yes,,,,,,Not Tested,,,,,,,,,0|i0jkwy:,,,,,,,,,,,,,,,,,,,,,,,,,,,VMware Virtual Machine,VMware Virtual Machine,,,,,,,,,,,,2026-09-22 19:28:54.066,10042_*:*_1_*:*_1107150804_*|*_10001_*:*_1_*:*_0,,,,,,"22/Sep/26 3:28 PM;62615fd7fd06270069c12a76;Thank you for submitting this TrueNAS Bug Report! So that we can quickly investigate your issue, please attach a Debug file and any other information related to this issue through our secure and private upload service below. Debug files can be generated in the UI by navigating to System -> General Settings -> Support -> Save Debug.
+
+https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153",05/Oct/26 10:59 AM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,,,,Done,05/Oct/26 10:59 AM
+Changing SMB settings fails with “too many values to unpack (expected 2)”,NAS-143595,161603,Bug,Done,NAS,TrueNAS,software,Triage Team,62615fd89506d6006fda6bfb,TrueNAS Project Bug and Feature request tracker,,High,Complete,Andrew Walker,60d31f98b1f93b0069a49a4b,"Pohle, Colin (DI AUT MO UMC DEV1)",712020:75240c32-3c09-4309-b4e3-e9bf80c9e6c2,"Pohle, Colin (DI AUT MO UMC DEV1)",712020:75240c32-3c09-4309-b4e3-e9bf80c9e6c2,11/Sep/26 3:29 AM,05/Oct/26 7:43 AM,,05/Oct/26 7:43 AM,SCALE-25.10.7 (Goldeye),,,SCALE-25.10.8 (Goldeye),,,,SMB,,0,COMMUNITY_USER,hf_want,,"Go to Services, try to change a setting for the SMB service (or even open it's options and just click ""Save"").
+
+The service settings should get changed. Instead the following error appears:
+too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File ""/usr/lib/python3/dist-packages/middlewared/api/base/server/ws_handler/rpc.py"", line 361, in process_method_call
+    result = await method.call(app, id_, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/lib/python3/dist-packages/middlewared/api/base/server/method.py"", line 57, in call
+    result = await self.middleware.call_with_audit(self.name, self.serviceobj, methodobj, params, app,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/lib/python3/dist-packages/middlewared/main.py"", line 956, in call_with_audit
+    result = await self._call(method, serviceobj, methodobj, params, app=app,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/lib/python3/dist-packages/middlewared/main.py"", line 773, in _call
+    return await methodobj(*prepared_call.args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/lib/python3/dist-packages/middlewared/service/config_service.py"", line 91, in update
+    rv = await self.middleware._call(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/lib/python3/dist-packages/middlewared/main.py"", line 773, in _call
+    return await methodobj(*prepared_call.args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/usr/lib/python3/dist-packages/middlewared/api/base/decorator.py"", line 108, in wrapped
+    result = await func(*args)
+             ^^^^^^^^^^^^^^^^^
+  File ""/usr/lib/python3/dist-packages/middlewared/plugins/smb.py"", line 612, in do_update
+    for idx, nbname in new['netbiosalias']:
+        ^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+
+The same also happens when trying to use `midclt call smb.update` on console.
+
+I already described the issue on the forums:
+https://forums.truenas.com/t/changing-smb-settings-fails-with-too-many-values-to-unpack-expected-2/67862
+
+Removing the netbios alias solves this but that's not possible while AD is enabled and disabling AD is no option in our environment as reenabling it may take hours or up to days before the user/group cache is rebuilt and share permissions work properly again. (Our forest is very large and there is sadly no option to filter for an OU.)
+
+Session ID: 81eabc0a-2fb8-4eeb-a1dc-10416a0059c1",,,,,,,,,,,,,,,NAS-141563,,,,,,,,,,ApprovalsCFValue{approvals=[]},,0.0,,,,,,,,,,,,,,,,,,,Event Example,,,,,,,,Kristy Mao,712020:31726e18-f157-4558-94b1-012f6a300a75,,,,,,No,,,,,,,,,,,,,Standard,,,,,,,,,Yes,,,,,,Not Tested,,,,,,,,,0|i0ji36:,,,,,,,,,,,,,,,,,,,,,,,,,,,VMware Virtual Machine,VMware Virtual Machine,,,,,,,,,,,,2026-09-11 07:34:40.541,10042_*:*_1_*:*_2088850332_*|*_10002_*:*_1_*:*_0,,,,,,"11/Sep/26 3:34 AM;62615fd7fd06270069c12a76;Thank you for submitting this TrueNAS Bug Report! So that we can quickly investigate your issue, please attach a Debug file and any other information related to this issue through our secure and private upload service below. Debug files can be generated in the UI by navigating to System -> General Settings -> Support -> Save Debug.
+
+https://ixsystems.atlassian.net/servicedesk/customer/portal/15/group/37/create/153",05/Oct/26 7:43 AM;60d31f98b1f93b0069a49a4b;Backported NAS-139267. github Pr is associated with that ticket rather than this one.,05/Oct/26 7:43 AM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,,,Done,05/Oct/26 7:43 AM
+Existing App keeps invalid NVIDIA GPU UUID after GPU replacement (TrueNAS SCALE 25.10.4),NAS-142006,159490,Bug,Done,NAS,TrueNAS,software,Triage Team,62615fd89506d6006fda6bfb,TrueNAS Project Bug and Feature request tracker,,Low,Complete,Muhammad,61815dc55800630069e7bff2,lucas compagnucci,712020:673b3995-45aa-47fb-ac50-fa1560d6eeb0,lucas compagnucci,712020:673b3995-45aa-47fb-ac50-fa1560d6eeb0,29/Jul/26 5:22 PM,02/Oct/26 11:39 AM,,02/Oct/26 11:39 AM,SCALE-25.10.4 (Goldeye),,,27.0.0-RC.1,28.0.0-BETA.1,SCALE-25.10.8 (Goldeye),,Apps,,0,COMMUNITY_USER,hf_want,ready_for_assignment,"Hello,
+
+I believe I found a bug related to NVIDIA GPU assignment in TrueNAS SCALE 25.10.4.
+
+Background
+
+My system was originally using an NVIDIA RTX 3080.
+
+I later replaced it with an NVIDIA RTX 3060 Ti.
+
+The NVIDIA driver was reinstalled correctly, and the new GPU is detected without any issues.
+
+The following commands report the correct GPU UUID:
+
+nvidia-smi -L
+midclt call app.gpu_choices
+
+Both report:
+
+GPU-899dd4a1-ac45-57c5-019a-08b06c7172d3
+Problem
+
+An existing Plex application (plex2) worked before the GPU replacement.
+
+After replacing the GPU, enabling GPU acceleration from the Apps UI causes the container to fail during startup with:
+
+failed to create shim task:
+failed to get device handle from UUID:
+Not Found
+
+Inspecting the application configuration shows that it still contains a different GPU UUID:
+
+""resources"": {
+  ""gpus"": {
+    ""nvidia_gpu_selection"": {
+      ""0000:02:00.0"": {
+        ""use_gpu"": true,
+        ""uuid"": ""GPU-00ef4f92-c70a-446a-8248-d61c7fac9f07""
+      }
+    }
+  }
+}
+
+That UUID does not exist anymore.
+
+Docker receives this stale UUID through DeviceRequests and NVIDIA_VISIBLE_DEVICES, causing container creation to fail.
+
+Additional observations
+Docker GPU support works correctly.
+docker run --gpus all ... nvidia-smi works correctly.
+The middleware correctly detects the current GPU and its UUID.
+Creating a new Plex application (plex3) and assigning the same GPU works perfectly.
+
+This suggests that existing application configurations may retain an obsolete GPU UUID after a GPU replacement, and editing the application from the UI does not refresh it with the current UUID.
+
+Expected behavior
+
+When an existing application is edited and an NVIDIA GPU is selected, the stored GPU UUID should be updated to match the current UUID reported by app.gpu_choices.
+
+I hope this information helps identify the issue.
+
+Thank you.
+
+Session ID: 5851e5db-6fce-49fa-b07e-8f880bc055dd",,;22/Aug/26 5:43 PM;ug:0e4a56b8-40ec-4c6e-a3d2-f38f6f2bb73e;10800,,0,0,10800,,0,0,10800,,,,,,,,,,,,,,,ApprovalsCFValue{approvals=[]},,0.0,,,,,,,,,,,,,,,,,,,Event Example,,,,,,,,Kristy Mao,712020:31726e18-f157-4558-94b1-012f6a300a75,,,,,,No,,,,,,,,,,,,,Standard,,,,,,,,,Yes,,,,,,Not Tested,,,,,,,,,0|i0j6ze:,,,,,,,,,,,,,,,,,,,,,,,,,,,VMware Virtual Machine,VMware Virtual Machine,,,,,,,,,,,,2026-07-29 21:25:10.832,3_*:*_2_*:*_518623_*|*_10042_*:*_1_*:*_1273522959_*|*_10002_*:*_1_*:*_4320689682_*|*_10001_*:*_1_*:*_425671,,,,,,13/Aug/26 11:23 AM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,02/Oct/26 11:39 AM;62615fd7fd06270069c12a76;This issue has now been closed. Comments made after this point may not be viewed by the TrueNAS Teams. Please open a new issue if you have found a problem or need to re-engage with the TrueNAS Engineering Teams.,,,,Done,02/Oct/26 11:39 AM
