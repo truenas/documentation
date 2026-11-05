@@ -3,8 +3,6 @@ title: "Community Tutorials"
 description: "Tutorials written by the open source TrueNAS Community about specific TrueNAS configurations and use cases."
 geekdocCollapseSection: true
 weight: 140
-aliases:
- - /scale/scaletutorials/communityrecommends/
 draft: true
 related: false
 ---

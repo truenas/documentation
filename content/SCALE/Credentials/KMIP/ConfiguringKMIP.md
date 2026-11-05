@@ -10,8 +10,6 @@ keywords:
 - nas storage 
 doctype: tutorial
 draft: true
-aliases:
- - /scale/scaletutorials/credentials/configuringkmipscale/
 ---
 
 
