@@ -612,21 +612,22 @@ After upgrading to a release that shows the **Virtual Machines** screen and the 
 
 8. Return to the **Virtual Machines** screen, click on the VM to expand it, then use the **Running** toggle to start it and verify it opens as expected and has network access.
 
-### Preparing to Upgrade to TrueNAS 26
+### Preparing to Upgrade to TrueNAS 27
 
 Legacy virtual machines created using the **Instances** screen in 25.04.0 and 25.04.1 are still shown on the **Containers** screen in 25.10.
-TrueNAS 26 removes them from the **Containers** screen entirely.
+TrueNAS 27 removes them from the **Containers** screen entirely.
 No migration tool, wizard, or notification exists to move them automatically.
 Complete the following steps while still running TrueNAS 25.10.
-None of these steps are available after upgrading to TrueNAS 26.
+None of these steps are available after upgrading to TrueNAS 27.
 
 {{< hint type=important >}}
-TrueNAS does not delete a legacy VM disk during the upgrade to 26.
+TrueNAS does not delete a legacy VM disk during the upgrade to 27.
 The disk remains on the pool, but TrueNAS does not preserve the VM configuration, UEFI variables, or Trusted Platform Module (TPM) state.
 {{< /hint >}}
 
 1. Go to **Containers**, and identify which instances are VMs.
-   Only VMs require this procedure. Containers migrate automatically during the upgrade to TrueNAS 26.
+   Only VMs require this procedure. Containers do not.
+   See [Containers]({{< ref "/scaletutorials/containers/" >}}) for which systems migrate containers automatically.
 
 2. Open each VM and record the CPU count, memory, disk size, network interface, MAC address, guest operating system, and secure boot setting.
    A screenshot of the VM configuration is sufficient. You need these values to re-create the VM after upgrading.
@@ -644,11 +645,11 @@ The disk remains on the pool, but TrueNAS does not preserve the VM configuration
 
 5. Go to **Datasets**, select the pool used by instances, and take a recursive snapshot.
 
-   The snapshot preserves a copy of the data. Recovering from the snapshot requires renaming datasets back by hand. There is no single rollback that undoes the procedure in [Migrating a Legacy VM Disk](https://www.truenas.com/docs/scale/26/virtualmachines/managingvms/#migrating-a-legacy-vm-disk) in the TrueNAS 26 documentation.
+   The snapshot preserves a copy of the data. Recovering from the snapshot requires renaming datasets back by hand. There is no single rollback that undoes the procedure in [Migrating a Legacy VM Disk](https://www.truenas.com/docs/scale/27/virtualmachines/managingvms/#migrating-a-legacy-vm-disk) in the TrueNAS 27 documentation.
 
-6. Upgrade to TrueNAS 26.
+6. Upgrade to TrueNAS 27.
 
-   After the upgrade, complete [Migrating a Legacy VM Disk](https://www.truenas.com/docs/scale/26/virtualmachines/managingvms/#migrating-a-legacy-vm-disk) in the TrueNAS 26 documentation to re-create the VM and attach the disk.
+   After the upgrade, complete [Migrating a Legacy VM Disk](https://www.truenas.com/docs/scale/27/virtualmachines/managingvms/#migrating-a-legacy-vm-disk) in the TrueNAS 27 documentation to re-create the VM and attach the disk.
 
 ## Virtual Machines Contents
 
