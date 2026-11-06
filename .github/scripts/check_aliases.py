@@ -40,7 +40,12 @@ for file in content_files:
 
             if data is None:
                 continue
-            aliases = data.get("aliases", [])
+            aliases = data.get("aliases") or []
+            # Hugo still writes an alias stub for a draft page, but the stub has no
+            # target URL (<meta http-equiv="refresh" content="0; url=">), so browsers
+            # reload it forever. Draft pages must not declare aliases.
+            if data.get("draft") is True and aliases:
+                violations.append(f"{file}: draft page declares aliases, which produce an endless-refresh stub. Remove the aliases while the page is draft: {', '.join(aliases)}")
             for alias in aliases:
                 if version_pattern.search(alias) and not any(pattern.match(alias) for pattern in exception_patterns):
                     violations.append(f"{file}: contains forbidden alias: {alias}")
@@ -49,7 +54,7 @@ for file in content_files:
         print(f"⚠️ Error reading {file}: {e}")
 
 if violations:
-    print("\n🚫 Forbidden versioned aliases found:")
+    print("\n🚫 Forbidden aliases found:")
     for v in violations:
         print(v)
     sys.exit(1)

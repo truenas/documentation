@@ -8,6 +8,9 @@ aliases:
  - /scale/scaletutorials/
  - /scale/scaleuireference/
  - /scale/scaleclireference/
+ # Community Tutorials is draft. Redirect its old URL here so it does not 404.
+ # When it leaves draft, move this alias back to content/SCALE/CommunityRecommends/_index.md.
+ - /scale/scaletutorials/communityrecommends/
 cascade:
   - _target:
     volume: "SCALE"
