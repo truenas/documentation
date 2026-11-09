@@ -10,6 +10,8 @@ Only configure network settings on controller 1! When ready, click **Sync to Pee
 
 {{< include file="/static/includes/EnterpriseHANetworkIPs.md" >}}
 
+{{< include file="/static/includes/HABondInterfaceWarning.md" >}}
+
 To configure network settings on controller 1:
 
 1. Disable the failover service.
