@@ -26,7 +26,7 @@ Selecting the TrueNAS UI **Shutdown** option on the power menu to shut down the 
 ## Shutting Down a TrueNAS HA System
 
 {{< hint type=hint >}}
-Disabling failover in the TrueNAS UI is not necessary, and only results in uncertainty as to which controller comes up as the active controller when you power up the HA system.
+Disabling failover in the TrueNAS UI is not necessary and only results in uncertainty as to which controller comes up as the active controller when you power up the HA system.
 {{< /hint >}}
 
 1. Sign into the IPMI connections to both the active and standby controllers.
@@ -47,5 +47,5 @@ After shutting down the TrueNAS System, use the IPMI remote controls to power up
 
 4. Wait for the TrueNAS UI to come up, then use the VIP IP address or hostname to log into the UI.
 
-5. Check the main dashboard to see which controller is active. Controller 1 should be the active contoller, but if not fail over the system and recheck to make sure it is the active controller.
+5. Check the main dashboard to see which controller is active. Controller 1 should be the active controller, but if not, fail over the system and recheck to make sure it is the active controller.
 
