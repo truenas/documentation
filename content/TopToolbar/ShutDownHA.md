@@ -14,24 +14,38 @@ doctype: tutorial
 This procedure applies to TrueNAS Enterprise High Availability (HA) systems only.
 {{< /enterprise >}}
 
-If you need to power down your TrueNAS Enterprise system with HA enabled, this is the procedure:
+Some TrueNAS models do not support using the UI **Shutdown** option on the power menu.
+Instead of shutting down the server, it only reboots.
 
-## Shut Down From the TrueNAS Web UI
+To shutdown a TrueNAS Enterprise HA system, log into the IPMI connections for each controller and use the Console Setup menu option to shutdown the system.
 
-![PowerButtonSCALE](/images/SCALE/Dashboard/PowerButtonSCALE.png "Power Button TrueNAS")
+Selecting the TrueNAS UI **Shutdown** option on the power menu to shut down the HA system only results in the system failing over to the standby controller.
 
-While logged into the TrueNAS Web UI using the virtual IP (VIP), click the power button in the top right corner of the screen.
+## Shutting Down the TrueNAS HA System
 
-1. Select **Shut Down** from the dropdown list.
+While logged into the TrueNAS Web UI using the virtual IP (VIP):
 
-2. This shuts down the active controller.
+1. Disable failover in the web UI. Go to **System > Advanced Settings > Failover**, click **Configure**, disable the failover option, and then click **Save**.
 
-3. The system fails over to the standby controller.
+2. Sign into the IPMI connections to both the active and standby controllers.
 
-4. When the TrueNAS Web UI login screen displays, log back in to the system. This logs you in to the standby controller.
+3. Shut down the standby controller using the Console Setup menu **Shutdown** option.
 
-5. Click the power button in the top right corner of the screen.
+4. Shut down the active controller.
 
-6. Select **Shut Down** from the dropdown list.
+## Powering Up the TrueNAS HA System
 
-7. This shuts down the standby controller.
+After shutting down the TrueNAS System, use the IPMI remote controls to power up the servers, starting with the active controller.
+
+1. Log in to the IPMI connections for both servers.
+
+2. Use the remote power control options to start the active controller.
+
+3. Use the remote power control options to start the standby controller.
+
+4. Wait for the TrueNAS UI to come up, then use the VIP IP address or hostname to log into the UI.
+
+5. Enable failover on the primary controller. Go to **System > Advanced Settings > Failover**, click **Configure**, enable failover, and click **Save**.
+
+6. Check the main dashboard to see which controller is active. If standby controller 2 is active, fail over to controller 1.
+
