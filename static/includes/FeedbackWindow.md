@@ -1,9 +1,11 @@
 &NewLine;
 
-TrueNAS provides two ways to send feedback and report a problem encountered with the system.
-
-To send feedback, click the Send Feedback {{< themed-icon src="/images/SCALE/Dashboard/FeedbackIcon.svg" alt="Feedback Icon" title="Feedback Icon" >}} icon on the top toolbar to open the **Send Feedback** window.
+To send feedback or report a problem encountered with the system, click the Send Feedback {{< themed-icon src="/images/SCALE/Dashboard/FeedbackIcon.svg" alt="Feedback Icon" title="Feedback Icon" >}} icon on the top toolbar to open the **Send Feedback** window.
 Alternatively, go to **System** > **General Settings** and click **File Ticket** on the **Support** card.
+
+The **Send Feedback** window can show a toggle with two options: **Rate this page** and **Report a bug**.
+The toggle only appears on stable releases.
+Nightly and pre-release builds (BETA, RC) open directly to the bug report form.
 
 ### Reporting an Issue
 
@@ -11,7 +13,7 @@ Use the **Send Feedback** to create an engineering ticket when a TrueNAS screen 
 This submits the ticket directly to the TrueNAS development team.
 Submitting a bug report requires a free [Atlassian account](https://id.atlassian.com/signup).
 
-{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackWindowCommunity.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
 
 {{< expand "Issue Reporting Example" "v" >}}
 Open the **Send Feedback** window see the fields to create an engineering ticket for system errors, bugs, or unexpected behavior.
@@ -48,7 +50,7 @@ Click **Login To Jira To Submit** to finish and submit the report.
 {{< enterprise >}}
 When an Enterprise license is applied to the system, the **Report a bug** screen includes additional environment and contact information fields for sending bug reports directly to the TrueNAS team.
 
-{{< trueimage src="/images/SCALE/Dashboard/SendFeedbackEnterprise.png" alt="Enterprise Send Feedback Window" id="Enterprise Send Feedback Window" >}}
+{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="Enterprise Send Feedback Window" id="Enterprise Send Feedback Window" >}}
 
 Filling out the entire form with precise details and accurate contact information ensures a prompt response from the TrueNAS Customer Support team.
 {{< /enterprise >}}
