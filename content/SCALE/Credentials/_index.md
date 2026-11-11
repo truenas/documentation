@@ -7,6 +7,12 @@ related: false
 aliases:
  - /scale/scaleuireference/credentials/
  - /scale/scaletutorials/credentials/
+ # KMIP is draft. Redirect its old URLs here so they do not 404.
+ # When KMIP leaves draft, move these four aliases back to the KMIP pages.
+ - /scale/credentials/kmip/
+ - /scale/scaletutorials/credentials/configuringkmipscale/
+ - /scale/scaleuireference/credentials/kmipscale/
+ - /scale/scaleclireference/system/clikmip/
 ---
 
 TrueNAS credential options are organized into screens to manage local users and groups, backup credentials (cloud and SSH), certificates, and directory services.
