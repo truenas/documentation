@@ -3,10 +3,14 @@
 
 The {{< themed-icon src="/images/SCALE/Dashboard/FeedbackIcon.svg" alt="Feedback Icon" title="Feedback Icon" >}} icon on the toolbar at the top of all UI screens, and the **File Ticket** button on the **System > General Settings > Support** card open the **Send Feedback** window. 
 
-Stable releases show a toggle with **Rate this page** and **Report a bug**.
-Nightly and pre-release builds (BETA, RC) show only the bug report form.
+Stable releases show a toggle at the top of the window with two options: **Rate this page** and **Report a bug**.
+Nightly and pre-release builds (BETA, RC) show only the bug report window.
 
-There are two versions of the **Send Feedback** window: community and Enterprise.
+The bug report window is different on Enterprise-licensed systems.
+
+#### Rate this Page
+
+Select **Rate this page** to rate the current TrueNAS screen and send comments to the TrueNAS development team.
 
 {{< trueimage src="/images/SCALE/Dashboard/FeedbackWindow.png" alt="Rate This Page" id="Rate This Page" >}}
 
@@ -21,9 +25,9 @@ There are two versions of the **Send Feedback** window: community and Enterprise
 {{< /truetable >}}
 {{< /expand >}}
 
-#### Send Feedback (Community Version)
+#### Report a Bug (Community)
 
-The **Send Feedback** window community version allows non-Enterprise users to submit bug reports and open Jira tickets if they have a Jira account.
+The community bug report window allows non-Enterprise users to submit bug reports and open Jira tickets if they have a Jira account.
 
 {{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
 
@@ -42,9 +46,9 @@ The **Send Feedback** window community version allows non-Enterprise users to su
 {{< /expand >}}
 
 {{< enterprise >}}
-#### Send Feedback (Enterprise Version)
+#### Report a Bug (Enterprise)
 
-The Enterprise version of the **Send Feedback** window includes contact, system, and other details required to support Enterprise customer reports. If the system is down or impacting a prodcution system please contact TrueNAS support directly.
+The Enterprise bug report window includes contact, system, and other details required to support Enterprise customer reports. If the system is down or impacting a prodcution system please contact TrueNAS support directly.
 
 {{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="Enterprise Send Feedback Window" id="Enterprise Send Feedback Window" >}}
 
