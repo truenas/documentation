@@ -5,7 +5,7 @@ Alternatively, go to **System** > **General Settings** and click **File Ticket**
 
 The **Send Feedback** window can show a toggle with two options: **Rate this page** and **Report a bug**.
 The toggle only appears on stable releases.
-Nightly and pre-release builds (BETA, RC) open directly to the bug report form.
+Nightly and pre-release builds (BETA, RC) open directly to the bug report window.
 
 ### Reporting an Issue
 
@@ -32,8 +32,8 @@ This helps ensure a speedy ticket resolution.
 Include system debug and screenshot files to speed up the issue resolution.
 Select **Attach debug**.
 To attach a screenshot of the current page, select **Take screenshot of the current page**.
-Or, before using this form, take screenshots of the screen, traceback or other error message, copy a log into a text file, or create any other file to attach.
-Open this form and attach those files by selecting **Attach additional images** and clicking **Choose File** to open a **File Explorer** window where you can browse to select the files you want to attach to the report.
+Or, before using this window, take screenshots of the screen, traceback or other error message, copy a log into a text file, or create any other file to attach.
+Open this window and attach those files by selecting **Attach additional images** and clicking **Choose File** to open a **File Explorer** window where you can browse to select the files you want to attach to the report.
 
 TrueNAS can show a list of existing Jira tickets with similar summaries.
 
@@ -52,5 +52,5 @@ When an Enterprise license is applied to the system, the **Report a bug** screen
 
 {{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="Enterprise Send Feedback Window" id="Enterprise Send Feedback Window" >}}
 
-Filling out the entire form with precise details and accurate contact information ensures a prompt response from the TrueNAS Customer Support team.
+Filling out all fields in this window with precise details and accurate contact information ensures a prompt response from the TrueNAS Customer Support team.
 {{< /enterprise >}}
