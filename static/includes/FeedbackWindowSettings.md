@@ -3,13 +3,29 @@
 
 The {{< themed-icon src="/images/SCALE/Dashboard/FeedbackIcon.svg" alt="Feedback Icon" title="Feedback Icon" >}} icon on the toolbar at the top of all UI screens, and the **File Ticket** button on the **System > General Settings > Support** card open the **Send Feedback** window. 
 
-There are two version of the **Send Feedback** window: community and Enterprise.
+Stable releases show a toggle with **Rate this page** and **Report a bug**.
+Nightly and pre-release builds (BETA, RC) show only the bug report form.
+
+There are two versions of the **Send Feedback** window: community and Enterprise.
+
+{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindow.png" alt="Rate This Page" id="Rate This Page" >}}
+
+{{< expand "Rate this page Settings" "v" >}}
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Select Rating** | Sets a star rating for the current TrueNAS screen. |
+| **Message** | Enter comments on features, usability, or suggestions for improvement. |
+| **Take screenshot of the current page** | Takes a screenshot of the currently active TrueNAS screen and attaches it to the review. |
+| **Attach additional images** | Opens a file browser to select additional images to attach to the review. |
+{{< /truetable >}}
+{{< /expand >}}
 
 #### Send Feedback (Community Version)
 
 The **Send Feedback** window community version allows non-Enterprise users to submit bug reports and open Jira tickets if they have a Jira account.
 
-{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackWindowCommunity.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
 
 **Login To Jira To Submit** opens a Jira login screen where you enter your Jira credentials so TrueNAS can create the ticket using your credentials. 
 
@@ -30,7 +46,7 @@ The **Send Feedback** window community version allows non-Enterprise users to su
 
 The Enterprise version of the **Send Feedback** window includes contact, system, and other details required to support Enterprise customer reports. If the system is down or impacting a prodcution system please contact TrueNAS support directly.
 
-{{< trueimage src="/images/SCALE/Dashboard/SendFeedbackEnterprise.png" alt="Enterprise Send Feedback Window" id="Enterprise Send Feedback Window" >}}
+{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="Enterprise Send Feedback Window" id="Enterprise Send Feedback Window" >}}
 
 **User Guide** opens the Documentation hub.
 
