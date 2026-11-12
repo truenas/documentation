@@ -18,8 +18,8 @@ Select **Rate this page** to rate the current TrueNAS screen and send comments t
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Select Rating** | (Required) Sets a star rating for the current TrueNAS screen. |
-| **Message** | Enter comments on features, usability, or suggestions for improvement. |
+| **Select Rating** | Sets the required star rating for the current TrueNAS screen. |
+| **Message** | Specifies comments on features, usability, or suggestions for improvement. |
 | **Take screenshot of the current page** | Takes a screenshot of the currently active TrueNAS screen and attaches it to the review. |
 | **Attach additional images** | Opens a file browser to select additional images to attach to the review. |
 {{< /truetable >}}
@@ -38,8 +38,8 @@ TrueNAS then creates the ticket under your account.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Subject** | (Required) Brief statement or description of the issue being reported. This becomes the title for the Jira ticket. For example, *Traceback received when pressing Save*. |
-| **Message** | (Required) Specifies a full description of the nature of the issue encountered, steps taken before the issue occurred, and the result or steps taken. Provides examples of what to enter. Populates the Jira ticket description field after clicking **Login to Jira to Submit**. |
+| **Subject** | Specifies a required brief statement or description of the issue being reported. This becomes the title for the Jira ticket. For example, *Traceback received when pressing Save*. |
+| **Message** | Specifies a required full description of the nature of the issue encountered, steps taken before the issue occurred, and the result or steps taken. Provides examples of what to enter. Populates the Jira ticket description field after clicking **Login to Jira to Submit**. |
 | **Attach debug** | Downloads a system debug and attaches it to a Jira ticket in the **Private Attachment Area** for TrueNAS, which provides a secure way for users to submit confidential but required data included in the debug file. |
 | **Take screenshot of the current page** | Takes a screenshot of the currently active TrueNAS screen and attaches it to the ticket created. |
 | **Attach additional images** | Opens a file browser to select additional files or screenshots to attach to the ticket. Allowed files are screenshots, video files, or other files (logs, etc) to further clarify the issue reported. |
@@ -63,15 +63,15 @@ The Enterprise bug report window includes contact, system, and other details req
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | (Required) Specifies the Enterprise contact person reporting the issue or the person TrueNAS should contact regarding the reported issue. |
-| **Phone** | (Required) Specifies the phone number for the contact person. |
-| **Email** | (Required) Specifies the email for the contact person. |
+| **Name** | Specifies the required Enterprise contact person reporting the issue or the person TrueNAS should contact regarding the reported issue. |
+| **Phone** | Specifies the required phone number for the contact person. |
+| **Email** | Specifies the required email for the contact person. |
 | **CC** | Specifies any additional email addresses to receive follow-up communication regarding the reported issue. |
-| **Type** | (Required) Specifies the type of issue being reported. For problems use the default **Bug** as the type setting. |
-| **Environment** | (Required) Specifies the environment the system operates in. Select **Production** for systems in production environments rather than test systems. |
-| **Criticality** | (Required) Sets the level of importance for the ticket. For example, production systems in a down state are critical where others might only require the inquiry level. For downed systems impacting production please contact support directly! |
-| **Subject** | (Required) Brief statement or description of the issue being reported. This becomes the title for the Jira ticket. |
-| **Message** | (Required) Specifies a full description of the nature of the issue encountered, steps taken before the issue occurred, and the result or steps taken. Provides examples of what to enter. Populates the Jira ticket description field after clicking **Login to Jira to Submit**. |
+| **Type** | Specifies the required type of issue being reported. For problems use the default **Bug** as the type setting. |
+| **Environment** | Specifies the required environment the system operates in. Select **Production** for systems in production environments rather than test systems. |
+| **Criticality** | Sets the required level of importance for the ticket. For example, production systems in a down state are critical where others might only require the inquiry level. For downed systems impacting production please contact support directly! |
+| **Subject** | Specifies the required brief statement or description of the issue being reported. This becomes the title for the Jira ticket. |
+| **Message** | Specifies a required full description of the nature of the issue encountered, steps taken before the issue occurred, and the result or steps taken. Provides examples of what to enter. Populates the Jira ticket description field after clicking **Login to Jira to Submit**. |
 | **Attach debug** | Downloads a system debug and attaches it to a Jira ticket in the **Private Attachment Area** for TrueNAS, which provides a secure way for users to submit confidential but required data included in the debug file. |
 | **Take screenshot of the current page** | Takes a screenshot of the currently active TrueNAS screen and attaches it to the ticket created. |
 | **Attach additional images** | Opens a file browser to select additional files or screenshots to attach to the ticket. Allowed files are screenshots, video files, or other files (logs, etc) to further clarify the issue reported. |
