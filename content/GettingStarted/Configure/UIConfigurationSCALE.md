@@ -64,6 +64,8 @@ DHCP is only available for a single interface; all other physical interfaces mus
 
 TrueNAS allows configuring virtual network interfaces such as a [bridge]({{< ref "SettingUpBridge" >}}), link aggregate (LAGG), or virtual LAN (VLAN) interface.
 
+{{< include file="/static/includes/HABondInterfaceWarning.md" >}}
+
 You can use the Console Setup menu or TrueNAS UI to configure network interfaces.
 We recommend using the web UI **Network** screen to [add or change network interfaces or aliases]({{< ref "/SCALETutorials/Network/Interfaces" >}}), set up virtual interfaces such as a link aggregate [LAGG]({{< ref "SettingUpLAGG" >}}) or virtual LAN [VLAN]({{< ref "SettingUpVLAN" >}}), and change or [configure global network settings]({{< ref "ManagingGlobalConfig" >}}).
 
