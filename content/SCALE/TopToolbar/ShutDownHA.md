@@ -19,17 +19,17 @@ This procedure applies to TrueNAS Enterprise High Availability (HA) systems only
 Some TrueNAS models do not support using the UI **Shutdown** option on the power menu.
 Instead of shutting down the server, it only reboots.
 
-To shutdown a TrueNAS Enterprise HA system, log into the IPMI connections for each controller and use the Console Setup menu option to shutdown the system.
+To shut down a TrueNAS Enterprise HA system, log into the IPMI connections for each controller and use the Console Setup menu option to shut down the system.
 
-Selecting the TrueNAS UI **Shutdown** option on the power menu to shut down the HA system only results in the system failing over to the standby controller.
+Selecting the TrueNAS UI **Shutdown** option in the power menu to shut down the HA system only causes the system to fail over to the standby controller.
 
 ## Shutting Down a TrueNAS HA System
 
 {{< hint type=hint >}}
-Disabling failover in the TrueNAS UI is not necessary and only results in uncertainty as to which controller comes up as the active controller when you power up the HA system.
+Disabling failover in the TrueNAS UI is unnecessary and only creates uncertainty about which controller comes up as the active controller when you power up the HA system.
 {{< /hint >}}
 
-1. Sign into the IPMI connections to both the active and standby controllers.
+1. Sign in to the IPMI connections to both the active and standby controllers.
 
 2. Shut down the standby controller using the Console Setup menu **Shutdown** option.
 
