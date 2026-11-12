@@ -1,6 +1,6 @@
 &NewLine;
 
-To send feedback or report a problem encountered with the system, click the Send Feedback {{< themed-icon src="/images/SCALE/Dashboard/FeedbackIcon.svg" alt="Feedback Icon" title="Feedback Icon" >}} icon on the top toolbar to open the **Send Feedback** window.
+To send feedback or report a problem encountered with the system, click the **Send Feedback** {{< themed-icon src="/images/SCALE/Dashboard/FeedbackIcon.svg" alt="Feedback Icon" title="Feedback Icon" >}} icon on the top toolbar to open the **Send Feedback** window.
 Alternatively, go to **System** > **General Settings** and click **File Ticket** on the **Support** card.
 
 On stable releases, the **Send Feedback** window shows a toggle with two options: **Rate this page** and **Report a bug**.
