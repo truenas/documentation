@@ -3,6 +3,8 @@ title: "S3 Object Storage"
 description: "Tutorials and reference information for S3 object storage buckets in TrueNAS."
 geekdocCollapseSection: true
 weight: 55
+aliases:
+ - /shares/s3/
 tags:
 - s3
 - object storage

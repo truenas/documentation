@@ -2,6 +2,8 @@
 title: "Configuring S3 Object Storage"
 description: "Provides instructions to configure the S3 service, create S3 access keys, and add S3 buckets in TrueNAS."
 weight: 10
+aliases:
+ - /shares/configurings3/
 tags:
 - s3
 - object storage
