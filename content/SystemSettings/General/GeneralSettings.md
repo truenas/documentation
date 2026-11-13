@@ -34,8 +34,9 @@ After adding a license, the option changes to **Update License**.
 
 **Save Debug** starts a download of the system debug file.
 
-**File Ticket** opens the [**Send Feedback**](#sending-feedback) window with two options.
-These setting options allow you to report a system bug or to send TrueNAS feedback on the UI. Feedback goes to the TrueNAS development team.
+**File Ticket** opens the [**Send Feedback**](#sending-feedback) window.
+Use it to report a system bug or, on stable releases, to rate the current page.
+Feedback goes to the TrueNAS development team.
 
 Enterprise-licensed systems display a contextual banner based on the system support tier and contract status.
 Silver/Gold tier systems with proactive support not yet configured show a **Set up Proactive Support** banner with an **Enable** button.

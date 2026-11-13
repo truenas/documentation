@@ -1,23 +1,24 @@
 &NewLine;
 
-TrueNAS provides two ways to send feedback and report a problem encountered with the system.
-
-To send feedback, click the Send Feedback {{< themed-icon src="/images/SCALE/Dashboard/FeedbackIcon.svg" alt="Feedback Icon" title="Feedback Icon" >}} icon on the top toolbar to open the **Send Feedback** window.
+To send feedback or report a problem encountered with the system, click the **Send Feedback** {{< themed-icon src="/images/SCALE/Dashboard/FeedbackIcon.svg" alt="Feedback Icon" title="Feedback Icon" >}} icon on the top toolbar to open the **Send Feedback** window.
 Alternatively, go to **System** > **General Settings** and click **File Ticket** on the **Support** card.
+
+On stable releases, the **Send Feedback** window shows a toggle with two options: **Rate this page** and **Report a bug**.
+Nightly and pre-release builds (BETA, RC) open directly to the bug report window.
 
 ### Reporting an Issue
 
-Use the **Send Feedback** to create an engineering ticket when a TrueNAS screen or feature is not working as intended.
+Use the **Send Feedback** window to create an engineering ticket when a TrueNAS screen or feature is not working as intended.
 This submits the ticket directly to the TrueNAS development team.
 Submitting a bug report requires a free [Atlassian account](https://id.atlassian.com/signup).
 
-{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackWindowCommunity.png" alt="Send Feedback Window" id="Send Feedback Window" >}}
+{{< trueimage src="/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png" alt="Send Feedback window showing the Rate this page and Report a bug toggle and the bug report fields" id="Send Feedback Window" >}}
 
 {{< expand "Issue Reporting Example" "v" >}}
-Open the **Send Feedback** window see the fields to create an engineering ticket for system errors, bugs, or unexpected behavior.
+Open the **Send Feedback** window to see the fields to create an engineering ticket for system errors, bugs, or unexpected behavior.
 For example, report a bug where a middleware error and traceback occurred while saving a configuration change.
 
-Bug reports are created in the publicly visible [TrueNAS Jira project](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/).
+Bug reports create tickets in the publicly visible [TrueNAS Jira project](https://ixsystems.atlassian.net/jira/software/c/projects/NAS/).
 
 Enter a descriptive summary in the **Subject**.
 For example, if a configuration change does not update after clicking **Save** and you get an error message or traceback after attempting the change, enter *XYZ setting fails to save with a traceback* in **Subject**.
@@ -30,15 +31,15 @@ This helps ensure a speedy ticket resolution.
 Include system debug and screenshot files to speed up the issue resolution.
 Select **Attach debug**.
 To attach a screenshot of the current page, select **Take screenshot of the current page**.
-Or, before using this form, take screenshots of the screen, traceback or other error message, copy a log into a text file, or create any other file to attach.
-Open this form and attach those files by selecting **Attach additional images** and clicking **Choose File** to open a **File Explorer** window where you can browse to select the files you want to attach to the report.
+Or, before using this window, take screenshots of the screen, traceback or other error message, copy a log into a text file, or create any other file to attach.
+Open this window and attach those files by selecting **Attach additional images** and clicking **Choose File** to open a **File Explorer** window where you can browse to select the files you want to attach to the report.
 
 TrueNAS can show a list of existing Jira tickets with similar summaries.
 
 {{< trueimage src="/images/SCALE/SystemSettings/ReportSimilarIssues.png" alt="Similar Issues Reported" id="Similar Issues Reported" >}}
 
 When there is an existing ticket about the issue, consider clicking on that ticket and leaving a comment instead of creating a new one.
-Duplicate tickets are closed in favor of consolidating feedback into one report.
+TrueNAS closes duplicate tickets to consolidate feedback into one report.
 
 Click **Login To Jira To Submit** to finish and submit the report.
 {{< /expand >}}
@@ -46,9 +47,9 @@ Click **Login To Jira To Submit** to finish and submit the report.
 ### Reporting an Issue - Enterprise Licensed Systems
 
 {{< enterprise >}}
-When an Enterprise license is applied to the system, the **Report a bug** screen includes additional environment and contact information fields for sending bug reports directly to the TrueNAS team.
+When the system has an Enterprise license, the **Report a bug** screen includes additional environment and contact information fields for sending bug reports directly to the TrueNAS team.
 
-{{< trueimage src="/images/SCALE/Dashboard/SendFeedbackEnterprise.png" alt="Enterprise Send Feedback Window" id="Enterprise Send Feedback Window" >}}
+{{< trueimage src="/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png" alt="Enterprise Send Feedback window showing contact, environment, and bug report fields" id="Enterprise Send Feedback Window" >}}
 
-Filling out the entire form with precise details and accurate contact information ensures a prompt response from the TrueNAS Customer Support team.
+Filling out all fields in this window with precise details and accurate contact information ensures a prompt response from the TrueNAS Customer Support team.
 {{< /enterprise >}}
