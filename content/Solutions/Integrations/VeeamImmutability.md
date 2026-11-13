@@ -41,7 +41,7 @@ For more detailed information on Veeam Immutability, see [How Immutability Works
 
 * A TrueNAS system license that includes S3 versioning.
   Object lock requires versioning, which is a licensed feature.
-  See [Licensed S3 Features]({{< ref "/SCALE/Shares/S3/_index.md#licensed-s3-features" >}}).
+  See [Licensed S3 Features]({{< ref "/SCALE/Shares/S3ObjectStorage/_index.md#licensed-s3-features" >}}).
 * A dataset on TrueNAS to hold the bucket dataset, for example *tank/s3*.
 * Veeam Backup & Replication installed on a Windows server.
   The Veeam Software Appliance does not support the object storage repository type.
@@ -50,7 +50,7 @@ For more detailed information on Veeam Immutability, see [How Immutability Works
 ## Configuring TrueNAS S3 Object Storage for Veeam
 
 Configure the S3 service, create an access key for Veeam, and add an object-locked bucket for the backup repository.
-See [Configuring S3 Object Storage]({{< ref "ConfiguringS3" >}}) for detailed instructions on each task.
+See [Configuring S3 Object Storage]({{< ref "ConfiguringS3ObjectStorage" >}}) for detailed instructions on each task.
 
 1. Configure the S3 service.
    Go to **Shares**, click the <span class="material-icons">more_vert</span> icon on the **Object Storage (S3) Buckets** card, and then select **Config Service**.
