@@ -205,12 +205,21 @@
     return parts.length ? parts.join('/') + '/' : '';
   }
 
+  // Which kind of book a book segment is, so a bare book index only maps to the same kind of book.
+  var BOOK_KIND = { scaletutorials: 'tutorials', coretutorials: 'tutorials', scaleuireference: 'ui', uireference: 'ui', scaleclireference: 'cli' };
+
   // The path as written, with the book segment stripped, and with each of the target's books added.
+  // A bare book index (nothing after the book segment) maps only to the target's book of the same kind.
   function variants(rel, target) {
     var out = [];
     function add(v) { if (v && out.indexOf(v) === -1) { out.push(v); } }
     var base = stripBook(rel);
     add(norm(rel));
+    if (!base) {
+      var kind = BOOK_KIND[norm(rel).split('/')[0]];
+      (BOOKS[target.product] || []).forEach(function (b) { if (kind && BOOK_KIND[b] === kind) { add(norm(b + '/')); } });
+      return out;
+    }
     add(base);
     (BOOKS[target.product] || []).forEach(function (b) { add(norm(b + '/' + base)); });
     return out;
@@ -375,10 +384,13 @@
     var loc = deps.location || window.location;
     var storage = getStorage(deps);
 
+    var landingUrl = null;
+
     return loadRegistry(fetchFn, deps).then(function (registry) {
       var target = null;
       registry.versions.forEach(function (v) { if (v.id === targetId) { target = v; } });
       if (!target) { return; }
+      landingUrl = target.roots[0];
 
       var cur = parseLocation(loc.pathname, registry);
       var source = cur.version;
@@ -402,6 +414,9 @@
         }
         loc.assign(url);
       });
+    }).catch(function () {
+      // Never leave the reader on the source page with a relabelled button: go to the target's landing page.
+      if (landingUrl) { try { loc.assign(landingUrl); } catch (e) { /* nothing more to do */ } }
     });
   }
 

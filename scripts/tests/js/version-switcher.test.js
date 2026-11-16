@@ -412,3 +412,33 @@ test('loadRegistry: the served registry becomes the default for parseLocation, l
   _resetCaches();
   assert.equal(parseLocation('/docs/nightly/a/').version, null);
 });
+
+// ---- final-review fixes -----------------------------------------------------------------
+
+test('resolve: a bare book index never resolves to an unrelated article through another book', () => {
+  const target = idx({ 'x/': ['scaleclireference/'] });
+  const r = resolve('scaletutorials/', byId('25.10'), byId('27'), null, target);
+  assert.deepEqual(r, { url: '/docs/scale/27/', tier: 'landing' });
+});
+
+test('resolve: a bare book index maps to the same kind of book, and to itself within SCALE', () => {
+  const same = resolve('scaletutorials/', byId('25.10'), byId('25.04'), null, idx({ 'scaletutorials/': [] }));
+  assert.deepEqual(same, { url: '/docs/scale/25.04/scaletutorials/', tier: 'same' });
+  const books = idx({ 'scaletutorials/': [], 'scaleuireference/': [] });
+  const tut = resolve('coretutorials/', byId('13.0'), byId('25.10'), null, books);
+  assert.deepEqual(tut, { url: '/docs/scale/25.10/scaletutorials/', tier: 'same' });
+  const ui = resolve('uireference/', byId('13.0'), byId('25.10'), null, books);
+  assert.deepEqual(ui, { url: '/docs/scale/25.10/scaleuireference/', tier: 'same' });
+  const cli = resolve('scaleclireference/', byId('25.04'), byId('13.0'), null, idx({ 'coretutorials/': [], 'uireference/': [] }));
+  assert.equal(cli.tier, 'landing');
+});
+
+test('switchVersion: an unexpected error while navigating falls back to the landing page', async () => {
+  const loc = {
+    pathname: SRC, assigned: [], assign(u) { this.assigned.push(u); },
+    get hash() { throw new Error('boom'); },
+  };
+  const maps = { '/docs/scale/25.10/pagemap.json': SRC_MAP, '/docs/scale/27/pagemap.json': T27_MAP };
+  await switchVersion('27', { fetch: mkFetch(maps), location: loc, storage: mkStorage(), ...T });
+  assert.deepEqual(loc.assigned, ['/docs/scale/27/']);
+});

@@ -149,6 +149,19 @@
     }).join('');
   }
 
+  // Used only if js/version-switcher.js did not load: a plain menu so the reader can still switch versions.
+  function fallbackLabel(id) {
+    return id === 'nightly' ? '28' : (id === 'archive' ? 'Archive' : id);
+  }
+
+  function fallbackMenuHtml(menu) {
+    var ids = menu === 'TrueCommand' ? ['3.0', 'archive'] : ['nightly', '27', '25.10', '25.04', '13.0', 'archive'];
+    return '<div class="truenas-version-group">' + ids.map(function (id) {
+      return '<div class="truenas-dropdown-item" onclick="selectVersion(\'' + id + '\')" id="version-' +
+        id.replace(/\./g, '') + '">' + fallbackLabel(id) + '</div>';
+    }).join('') + '</div>';
+  }
+
   function selectProduct(product) {
     var productButton = document.getElementById('productButton');
     var versionButton = document.getElementById('versionButton');
@@ -174,8 +187,8 @@
     versionDropdown.style.display = 'none';
     versionDropdown.innerHTML = '';
 
-    if ((product === 'TrueNAS' || product === 'TrueCommand') && hasSwitcher()) {
-      versionDropdown.innerHTML = versionMenuHtml(product);
+    if (product === 'TrueNAS' || product === 'TrueCommand') {
+      versionDropdown.innerHTML = hasSwitcher() ? versionMenuHtml(product) : fallbackMenuHtml(product);
     }
 
     versionDropdown.style.display = 'block';
@@ -188,7 +201,7 @@
     var versionButton = document.getElementById('versionButton');
     versionButton.dataset.versionId = id;
 
-    var label = id;
+    var label = fallbackLabel(id);
     if (hasSwitcher()) {
       ['TrueNAS', 'TrueCommand'].forEach(function (menu) {
         window.VersionSwitcher.dropdownItems(menu).forEach(function (item) {
