@@ -80,8 +80,8 @@
 
   var ADHOC_RE = /^\/docs\/(scale|core|truecommand)\/(\d+(?:\.\d+)?)\//;
 
-  function adhocVersion(root, id) {
-    return { id: id, label: 'Archive', product: 'archive', roots: [root], pagemap: null, sitemap: null, keyPrefix: '', menus: [], group: 'archive', adhoc: true };
+  function adhocVersion(root, id, family) {
+    return { id: id, label: 'Archive', product: 'archive', family: family, roots: [root], pagemap: null, sitemap: null, keyPrefix: '', menus: [], group: 'archive', adhoc: true };
   }
 
   function parseLocation(pathname, registry) {
@@ -106,7 +106,7 @@
 
     var m = ADHOC_RE.exec(p);
     if (m && m[0].length > bestRoot.length) {
-      return { version: adhocVersion(m[0], m[2]), rel: norm(p.slice(m[0].length)) };
+      return { version: adhocVersion(m[0], m[2], m[1]), rel: norm(p.slice(m[0].length)) };
     }
     if (!best) { return { version: null, rel: norm(p) }; }
     return { version: best, rel: norm(p.slice(bestRoot.length)) };
@@ -259,7 +259,199 @@
     return out('', 'landing');
   }
 
-  return {
+  // ---- loading and navigation -------------------------------------------------
+
+  var REGISTRY_URL = '/docs/versions.json';
+  var NOTICE_KEY = 'versionSwitcherNotice';
+  var DEFAULT_TIMEOUT = 3000;
+  var registryPromise = null;
+  var indexPromises = {};
+
+  function _resetCaches() {
+    registryPromise = null;
+    indexPromises = {};
+  }
+
+  function defaultFetch() {
+    if (typeof fetch === 'function') { return fetch.bind(typeof window !== 'undefined' ? window : undefined); }
+    return function () { return Promise.reject(new Error('no fetch')); };
+  }
+
+  // Fetch and parse inside one timeout, so neither a stalled request nor a stalled body hangs the switcher.
+  function fetchParsed(fetchFn, url, ms, kind) {
+    return new Promise(function (resolvePromise, rejectPromise) {
+      var done = false;
+      var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+      var timer = setTimeout(function () {
+        if (done) { return; }
+        done = true;
+        if (controller) { controller.abort(); }
+        rejectPromise(new Error('timeout'));
+      }, ms);
+      function finish(fn, value) {
+        if (done) { return; }
+        done = true;
+        clearTimeout(timer);
+        fn(value);
+      }
+      Promise.resolve()
+        .then(function () { return fetchFn(url, controller ? { signal: controller.signal } : undefined); })
+        .then(function (res) {
+          if (!res || !res.ok) { throw new Error('HTTP ' + (res && res.status)); }
+          return kind === 'text' ? res.text() : res.json();
+        })
+        .then(function (value) { finish(resolvePromise, value); }, function (err) { finish(rejectPromise, err); });
+    });
+  }
+
+  function validRegistry(r) {
+    return !!r && r.v === 1 && Array.isArray(r.versions) && r.versions.length > 0 &&
+      r.versions.every(function (v) { return v && v.id && Array.isArray(v.roots) && v.roots.length > 0; });
+  }
+
+  function loadRegistry(fetchFn, opts) {
+    if (registryPromise) { return registryPromise; }
+    var ms = (opts && opts.timeoutMs) || DEFAULT_TIMEOUT;
+    registryPromise = fetchParsed(fetchFn || defaultFetch(), REGISTRY_URL, ms, 'json').then(
+      function (r) { return validRegistry(r) ? r : DEFAULT_REGISTRY; },
+      function () { return DEFAULT_REGISTRY; }
+    );
+    return registryPromise;
+  }
+
+  // Page map first, then the sitemap; null when neither is usable. Failures are not cached.
+  function loadIndex(version, fetchFn, opts) {
+    var key = [version.id, version.pagemap, version.sitemap].join('|');
+    if (indexPromises[key]) { return indexPromises[key]; }
+    var f = fetchFn || defaultFetch();
+    var ms = (opts && opts.timeoutMs) || DEFAULT_TIMEOUT;
+
+    function fromPagemap() {
+      if (!version.pagemap) { return Promise.resolve(null); }
+      return fetchParsed(f, version.pagemap, ms, 'json')
+        .then(function (d) { return d && d.pages ? buildIndex(d, version) : null; })
+        .catch(function () { return null; });
+    }
+    function fromSitemap() {
+      if (!version.sitemap) { return Promise.resolve(null); }
+      return fetchParsed(f, version.sitemap, ms, 'text')
+        .then(function (text) {
+          var urls = [];
+          var re = /<loc>\s*([^<\s]+)\s*<\/loc>/g;
+          var m;
+          while ((m = re.exec(text)) !== null) { urls.push(m[1]); }
+          return urls.length ? indexFromSitemap(urls, version) : null;
+        })
+        .catch(function () { return null; });
+    }
+
+    var p = fromPagemap().then(function (index) { return index || fromSitemap(); }).then(function (index) {
+      if (!index) { delete indexPromises[key]; }
+      return index;
+    });
+    indexPromises[key] = p;
+    return p;
+  }
+
+  function getStorage(deps) {
+    if (deps && deps.storage) { return deps.storage; }
+    try { return typeof window !== 'undefined' ? window.sessionStorage : null; } catch (e) { return null; }
+  }
+
+  function safeSet(storage, key, value) {
+    try { if (storage) { storage.setItem(key, value); } } catch (e) { /* storage may be blocked */ }
+  }
+
+  function switchVersion(targetId, deps) {
+    deps = deps || {};
+    var fetchFn = deps.fetch || defaultFetch();
+    var loc = deps.location || window.location;
+    var storage = getStorage(deps);
+
+    return loadRegistry(fetchFn, deps).then(function (registry) {
+      var target = null;
+      registry.versions.forEach(function (v) { if (v.id === targetId) { target = v; } });
+      if (!target) { return; }
+
+      var cur = parseLocation(loc.pathname, registry);
+      var source = cur.version;
+      if (source && source.id === target.id) { return; }
+
+      var landing = target.roots[0];
+      var comparable = target.product === 'truenas' || target.product === 'core';
+      if (!source || !comparable || source.product === 'truecommand' || source.family === 'truecommand' || cur.rel === '') {
+        loc.assign(landing);
+        return;
+      }
+
+      return Promise.all([loadIndex(source, fetchFn, deps), loadIndex(target, fetchFn, deps)]).then(function (indexes) {
+        if (!indexes[1]) { loc.assign(landing); return; }
+        var result = resolve(cur.rel, source, target, indexes[0], indexes[1]);
+        var url = result.url;
+        if (result.tier === 'same' || result.tier === 'moved') {
+          url += loc.hash || '';
+        } else {
+          safeSet(storage, NOTICE_KEY, JSON.stringify({ tier: result.tier, label: target.label }));
+        }
+        loc.assign(url);
+      });
+    });
+  }
+
+  // Shown on the destination page after a parent or landing fallback.
+  function showPendingNotice(deps) {
+    deps = deps || {};
+    var storage = getStorage(deps);
+    var doc = deps.document || (typeof document !== 'undefined' ? document : null);
+    if (!storage || !doc || !doc.body) { return; }
+
+    var raw;
+    try {
+      raw = storage.getItem(NOTICE_KEY);
+      if (raw !== null && raw !== undefined) { storage.removeItem(NOTICE_KEY); }
+    } catch (e) { return; }
+    if (!raw) { return; }
+
+    var notice;
+    try { notice = JSON.parse(raw); } catch (e) { return; }
+    var text = null;
+    if (notice.tier === 'parent') { text = 'Showing the closest match in version ' + notice.label; }
+    if (notice.tier === 'landing') { text = 'That article is not in version ' + notice.label + '; showing the version home page'; }
+    if (!text) { return; }
+
+    var box = doc.createElement('div');
+    box.setAttribute('role', 'status');
+    box.textContent = text;
+    box.style.position = 'fixed';
+    box.style.bottom = '16px';
+    box.style.left = '16px';
+    box.style.right = '16px';
+    box.style.maxWidth = '480px';
+    box.style.padding = '10px 40px 10px 14px';
+    box.style.background = '#1f2d3d';
+    box.style.color = '#fff';
+    box.style.borderRadius = '6px';
+    box.style.fontSize = '14px';
+    box.style.zIndex = '10000';
+    box.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
+
+    var close = doc.createElement('button');
+    close.textContent = '×';
+    close.setAttribute('aria-label', 'Dismiss');
+    close.style.position = 'absolute';
+    close.style.top = '4px';
+    close.style.right = '8px';
+    close.style.background = 'none';
+    close.style.border = 'none';
+    close.style.color = '#fff';
+    close.style.fontSize = '20px';
+    close.style.cursor = 'pointer';
+    close.addEventListener('click', function () { box.remove(); });
+    box.appendChild(close);
+    doc.body.appendChild(box);
+  }
+
+  var api = {
     GROUP_ORDER: GROUP_ORDER,
     BOOKS: BOOKS,
     DEFAULT_REGISTRY: DEFAULT_REGISTRY,
@@ -269,6 +461,22 @@
     buildIndex: buildIndex,
     indexFromSitemap: indexFromSitemap,
     resolve: resolve,
-    _norm: norm
+    loadRegistry: loadRegistry,
+    loadIndex: loadIndex,
+    switchVersion: switchVersion,
+    showPendingNotice: showPendingNotice,
+    _resetCaches: _resetCaches
   };
+
+  // In the browser: warm the registry now and show any pending notice once the page is ready.
+  if (typeof window !== 'undefined' && typeof document !== 'undefined' && !(typeof module === 'object' && module.exports)) {
+    loadRegistry();
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () { showPendingNotice(); });
+    } else {
+      showPendingNotice();
+    }
+  }
+
+  return api;
 }));

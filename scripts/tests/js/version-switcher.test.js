@@ -209,3 +209,194 @@ test('resolve: pre-cutover nightly target uses its canonical root and ignores hu
   const r = resolve('storage/pools/', byId('27'), nightly, null, target);
   assert.deepEqual(r, { url: '/docs/scale/storage/pools/', tier: 'same' });
 });
+
+// ---- loading, navigation, notice (Task 3) -------------------------------------------
+
+const { loadRegistry, loadIndex, switchVersion, showPendingNotice, _resetCaches } = VS;
+
+function mkFetch(routes, log) {
+  return async (url) => {
+    if (log) { log.push(url); }
+    const r = routes[url];
+    if (r === undefined) { return { ok: false, status: 404 }; }
+    if (r === 'hang') { return new Promise(() => {}); }
+    if (r === 'reject') { throw new Error('network down'); }
+    if (r.raw !== undefined) { return { ok: true, json: async () => JSON.parse(r.raw), text: async () => r.raw }; }
+    if (r.text !== undefined) { return { ok: true, text: async () => r.text }; }
+    return { ok: true, json: async () => r };
+  };
+}
+function mkLocation(pathname, hash = '', search = '') {
+  return { pathname, hash, search, assigned: [], assign(u) { this.assigned.push(u); } };
+}
+function mkStorage(throwing = false) {
+  const m = new Map();
+  return {
+    m,
+    getItem(k) { if (throwing) { throw new Error('blocked'); } return m.has(k) ? m.get(k) : null; },
+    setItem(k, v) { if (throwing) { throw new Error('blocked'); } m.set(k, String(v)); },
+    removeItem(k) { if (throwing) { throw new Error('blocked'); } m.delete(k); },
+  };
+}
+function mkDocument() {
+  const mk = () => ({ children: [], style: {}, attrs: {}, listeners: {}, textContent: '',
+    appendChild(c) { this.children.push(c); return c; }, setAttribute(k, v) { this.attrs[k] = v; },
+    addEventListener(t, f) { this.listeners[t] = f; }, remove() { this.removed = true; } });
+  const body = mk();
+  return { body, createElement: () => mk() };
+}
+const SRC = '/docs/scale/25.10/scaletutorials/storage/pools/';
+const SRC_MAP = { v: 1, pages: { 'scaletutorials/storage/pools/': [] } };
+const T27_MAP = { v: 1, pages: { 'storage/pools/': [], 'storage/': [] } };
+const T = { timeoutMs: 50 };
+
+test.beforeEach(() => _resetCaches());
+
+test('switchVersion: canonical URL from the target page map; source and target maps fetched', async () => {
+  const log = [];
+  const loc = mkLocation(SRC);
+  const fetchFn = mkFetch({ '/docs/scale/25.10/pagemap.json': SRC_MAP, '/docs/scale/27/pagemap.json': T27_MAP }, log);
+  await switchVersion('27', { fetch: fetchFn, location: loc, storage: mkStorage(), ...T });
+  assert.deepEqual(loc.assigned, ['/docs/scale/27/storage/pools/']);
+  assert.ok(log.includes('/docs/scale/25.10/pagemap.json') && log.includes('/docs/scale/27/pagemap.json'));
+});
+
+test('switchVersion: a registry served from /docs/versions.json is used', async () => {
+  const registry = { v: 1, hubSections: [], versions: [
+    mkVersion('nightly', 'truenas', '/docs/nightly/', { pagemap: '/docs/nightly/pagemap.json' }),
+    mkVersion('27', 'truenas', '/docs/scale/27/', { pagemap: '/docs/scale/27/pagemap.json' }),
+  ] };
+  const loc = mkLocation('/docs/nightly/storage/pools/');
+  const fetchFn = mkFetch({ '/docs/versions.json': registry, '/docs/nightly/pagemap.json': { v: 1, pages: { 'storage/pools/': [] } }, '/docs/scale/27/pagemap.json': T27_MAP });
+  await switchVersion('27', { fetch: fetchFn, location: loc, storage: mkStorage(), ...T });
+  assert.deepEqual(loc.assigned, ['/docs/scale/27/storage/pools/']);
+});
+
+test('switchVersion: malformed or failing registry falls back to the embedded default', async () => {
+  for (const reg of [{ raw: '{{not json' }, 'reject', { v: 2, versions: [] }, { v: 1, versions: [] }]) {
+    _resetCaches();
+    const loc = mkLocation(SRC);
+    const fetchFn = mkFetch({ '/docs/versions.json': reg, '/docs/scale/25.10/pagemap.json': SRC_MAP, '/docs/scale/27/pagemap.json': T27_MAP });
+    await switchVersion('27', { fetch: fetchFn, location: loc, storage: mkStorage(), ...T });
+    assert.deepEqual(loc.assigned, ['/docs/scale/27/storage/pools/']);
+  }
+});
+
+test('switchVersion: missing target page map falls back to its sitemap', async () => {
+  const loc = mkLocation(SRC);
+  const sitemap = { text: '<urlset><url><loc>https://www.truenas.com/docs/scale/27/storage/pools/</loc></url></urlset>' };
+  await switchVersion('27', { fetch: mkFetch({ '/docs/scale/27/sitemap.xml': sitemap }), location: loc, storage: mkStorage(), ...T });
+  assert.deepEqual(loc.assigned, ['/docs/scale/27/storage/pools/']);
+});
+
+test('switchVersion: malformed page map JSON is a failure, not an exception', async () => {
+  const loc = mkLocation(SRC);
+  await switchVersion('27', { fetch: mkFetch({ '/docs/scale/27/pagemap.json': { raw: '<<<' } }), location: loc, storage: mkStorage(), ...T });
+  assert.deepEqual(loc.assigned, ['/docs/scale/27/']);
+});
+
+test('switchVersion: every fetch rejecting or hanging ends on the landing page', async () => {
+  for (const mode of ['reject', 'hang']) {
+    _resetCaches();
+    const loc = mkLocation(SRC);
+    const routes = { '/docs/versions.json': mode, '/docs/scale/25.10/pagemap.json': mode, '/docs/scale/27/pagemap.json': mode, '/docs/scale/25.10/sitemap.xml': mode, '/docs/scale/27/sitemap.xml': mode };
+    await switchVersion('27', { fetch: mkFetch(routes), location: loc, storage: mkStorage(), ...T });
+    assert.deepEqual(loc.assigned, ['/docs/scale/27/']);
+  }
+});
+
+test('switchVersion: CORE 13.0 to 27 resolves through both page maps, and back', async () => {
+  const core = { v: 1, pages: { 'coretutorials/storage/pools/': [] } };
+  const loc = mkLocation('/docs/core/13.0/coretutorials/storage/pools/');
+  await switchVersion('27', { fetch: mkFetch({ '/docs/core/13.0/pagemap.json': core, '/docs/scale/27/pagemap.json': T27_MAP }), location: loc, storage: mkStorage(), ...T });
+  assert.deepEqual(loc.assigned, ['/docs/scale/27/storage/pools/']);
+  _resetCaches();
+  const back = mkLocation('/docs/scale/27/storage/pools/');
+  await switchVersion('13.0', { fetch: mkFetch({ '/docs/core/13.0/pagemap.json': core, '/docs/scale/27/pagemap.json': T27_MAP }), location: back, storage: mkStorage(), ...T });
+  assert.deepEqual(back.assigned, ['/docs/core/13.0/coretutorials/storage/pools/']);
+});
+
+test('switchVersion: TrueCommand and Archive go straight to the landing page without page maps', async () => {
+  for (const [id, root] of [['3.0', '/docs/truecommand/3.0/'], ['archive', '/docs/archive/']]) {
+    _resetCaches();
+    const log = [];
+    const loc = mkLocation(SRC);
+    await switchVersion(id, { fetch: mkFetch({}, log), location: loc, storage: mkStorage(), ...T });
+    assert.deepEqual(loc.assigned, [root]);
+    assert.ok(!log.some((u) => /pagemap|sitemap/.test(u)), log.join(','));
+  }
+});
+
+test('switchVersion: hash kept on same/moved matches, dropped on parent; query never forwarded', async () => {
+  const maps = { '/docs/scale/25.10/pagemap.json': SRC_MAP, '/docs/scale/27/pagemap.json': T27_MAP };
+  const same = mkLocation(SRC, '#sec', '?q=1');
+  await switchVersion('27', { fetch: mkFetch(maps), location: same, storage: mkStorage(), ...T });
+  assert.deepEqual(same.assigned, ['/docs/scale/27/storage/pools/#sec']);
+  _resetCaches();
+  const parent = mkLocation('/docs/scale/25.10/scaletutorials/storage/other-page/', '#sec', '?q=1');
+  await switchVersion('27', { fetch: mkFetch(maps), location: parent, storage: mkStorage(), ...T });
+  assert.deepEqual(parent.assigned, ['/docs/scale/27/storage/']);
+});
+
+test('switchVersion: same version or a page outside any root', async () => {
+  const same = mkLocation(SRC);
+  await switchVersion('25.10', { fetch: mkFetch({}), location: same, storage: mkStorage(), ...T });
+  assert.deepEqual(same.assigned, []);
+  const outside = mkLocation('/docs/contributing/');
+  await switchVersion('27', { fetch: mkFetch({}), location: outside, storage: mkStorage(), ...T });
+  assert.deepEqual(outside.assigned, ['/docs/scale/27/']);
+});
+
+test('switchVersion: a version landing page goes to the target landing page', async () => {
+  const loc = mkLocation('/docs/scale/25.10/');
+  await switchVersion('27', { fetch: mkFetch({ '/docs/scale/27/pagemap.json': T27_MAP }), location: loc, storage: mkStorage(), ...T });
+  assert.deepEqual(loc.assigned, ['/docs/scale/27/']);
+});
+
+test('switchVersion: parent and landing write a notice, same and moved do not; throwing storage is tolerated', async () => {
+  const maps = { '/docs/scale/25.10/pagemap.json': SRC_MAP, '/docs/scale/27/pagemap.json': T27_MAP };
+  const s1 = mkStorage();
+  await switchVersion('27', { fetch: mkFetch(maps), location: mkLocation(SRC), storage: s1, ...T });
+  assert.equal(s1.m.size, 0);
+  _resetCaches();
+  const s2 = mkStorage();
+  await switchVersion('27', { fetch: mkFetch(maps), location: mkLocation('/docs/scale/25.10/scaletutorials/storage/nope/'), storage: s2, ...T });
+  assert.deepEqual(JSON.parse(s2.m.get('versionSwitcherNotice')), { tier: 'parent', label: '27' });
+  _resetCaches();
+  const s3 = mkStorage();
+  await switchVersion('27', { fetch: mkFetch(maps), location: mkLocation('/docs/scale/25.10/scaletutorials/zzz/nope/'), storage: s3, ...T });
+  assert.deepEqual(JSON.parse(s3.m.get('versionSwitcherNotice')), { tier: 'landing', label: '27' });
+  _resetCaches();
+  const loc = mkLocation(SRC);
+  await switchVersion('27', { fetch: mkFetch(maps), location: loc, storage: mkStorage(true), ...T });
+  assert.deepEqual(loc.assigned, ['/docs/scale/27/storage/pools/']);
+});
+
+test('showPendingNotice: renders one dismissible notice and clears the key', () => {
+  const doc = mkDocument();
+  const storage = mkStorage();
+  storage.setItem('versionSwitcherNotice', JSON.stringify({ tier: 'parent', label: '27' }));
+  showPendingNotice({ document: doc, storage });
+  assert.equal(doc.body.children.length, 1);
+  assert.match(doc.body.children[0].textContent, /Showing the closest match in version 27/);
+  assert.equal(storage.m.size, 0);
+  storage.setItem('versionSwitcherNotice', JSON.stringify({ tier: 'landing', label: '25.10' }));
+  const doc2 = mkDocument();
+  showPendingNotice({ document: doc2, storage });
+  assert.match(doc2.body.children[0].textContent, /That article is not in version 25\.10; showing the version home page/);
+  const doc3 = mkDocument();
+  showPendingNotice({ document: doc3, storage });
+  assert.equal(doc3.body.children.length, 0);
+});
+
+test('loadIndex: returns null when neither page map nor sitemap exists', async () => {
+  assert.equal(await loadIndex(byId('27'), mkFetch({}), T), null);
+  assert.equal(await loadIndex(byId('archive'), mkFetch({}), T), null);
+});
+
+test('loadRegistry: valid registry is returned, invalid falls back', async () => {
+  const good = { v: 1, hubSections: [], versions: [mkVersion('x', 'truenas', '/docs/x/')] };
+  assert.deepEqual(await loadRegistry(mkFetch({ '/docs/versions.json': good }), T), good);
+  _resetCaches();
+  assert.deepEqual(await loadRegistry(mkFetch({}), T), DEFAULT_REGISTRY);
+});
