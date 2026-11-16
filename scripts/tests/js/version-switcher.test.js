@@ -400,3 +400,14 @@ test('loadRegistry: valid registry is returned, invalid falls back', async () =>
   _resetCaches();
   assert.deepEqual(await loadRegistry(mkFetch({}), T), DEFAULT_REGISTRY);
 });
+
+test('loadRegistry: the served registry becomes the default for parseLocation, labelFor and dropdownItems', async () => {
+  const served = { v: 1, hubSections: [], versions: [{ ...mkVersion('nightly', 'truenas', '/docs/nightly/'), label: '28', menus: ['TrueNAS'], group: 'next' }] };
+  assert.equal(parseLocation('/docs/nightly/a/').version, null);
+  await loadRegistry(mkFetch({ '/docs/versions.json': served }), T);
+  assert.equal(parseLocation('/docs/nightly/a/').version.id, 'nightly');
+  assert.equal(labelFor('/docs/nightly/a/'), '28');
+  assert.deepEqual(dropdownItems('TrueNAS').map((i) => i.id), ['nightly']);
+  _resetCaches();
+  assert.equal(parseLocation('/docs/nightly/a/').version, null);
+});

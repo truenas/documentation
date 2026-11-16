@@ -84,8 +84,11 @@
     return { id: id, label: 'Archive', product: 'archive', family: family, roots: [root], pagemap: null, sitemap: null, keyPrefix: '', menus: [], group: 'archive', adhoc: true };
   }
 
+  // The registry the page is using: the embedded default until a served one has loaded.
+  var activeRegistry = DEFAULT_REGISTRY;
+
   function parseLocation(pathname, registry) {
-    registry = registry || DEFAULT_REGISTRY;
+    registry = registry || activeRegistry;
     var p = withSlash(pathname);
     var hub = registry.hubSections || [];
     var best = null;
@@ -119,7 +122,7 @@
   }
 
   function dropdownItems(menu, registry) {
-    registry = registry || DEFAULT_REGISTRY;
+    registry = registry || activeRegistry;
     var items = [];
     registry.versions.forEach(function (v, i) {
       if (v.menus && v.menus.indexOf(menu) !== -1) {
@@ -270,6 +273,7 @@
   function _resetCaches() {
     registryPromise = null;
     indexPromises = {};
+    activeRegistry = DEFAULT_REGISTRY;
   }
 
   function defaultFetch() {
@@ -315,7 +319,10 @@
     registryPromise = fetchParsed(fetchFn || defaultFetch(), REGISTRY_URL, ms, 'json').then(
       function (r) { return validRegistry(r) ? r : DEFAULT_REGISTRY; },
       function () { return DEFAULT_REGISTRY; }
-    );
+    ).then(function (registry) {
+      activeRegistry = registry;
+      return registry;
+    });
     return registryPromise;
   }
 
