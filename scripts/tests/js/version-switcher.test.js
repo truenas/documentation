@@ -96,9 +96,10 @@ test('dropdownItems: a latest entry is first in the TrueNAS menu', () => {
   assert.equal(items[0].label, 'Latest');
 });
 
-test('versions.json is a copy of the embedded default registry', () => {
-  const file = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../static/versions.json'), 'utf8'));
-  assert.deepEqual(file, DEFAULT_REGISTRY);
+// static/versions.json lives on the branch that publishes the hub root; version branches rely on the embedded default.
+const REGISTRY_FILE = path.join(__dirname, '../../../static/versions.json');
+test('versions.json is a copy of the embedded default registry', { skip: !fs.existsSync(REGISTRY_FILE) && 'no static/versions.json on this branch' }, () => {
+  assert.deepEqual(JSON.parse(fs.readFileSync(REGISTRY_FILE, 'utf8')), DEFAULT_REGISTRY);
 });
 
 // ---- indexes ---------------------------------------------------------------------
