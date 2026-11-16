@@ -23,7 +23,13 @@ timeout = "70s"
 name = "The TrueNAS team and Community"
 
 [outputs]
+home = ["HTML","RSS","PageMap"]
 section = ["HTML","RSS","print"]
+[outputFormats.PageMap]
+mediaType = "application/json"
+baseName = "pagemap"
+isPlainText = true
+notAlternative = true
 [outputFormats.PRINT]
 baseName = "index"
 isHTML = true
