@@ -23,7 +23,13 @@ timeout = "30s"
 name = "iXsystems and TrueNAS Users"
 
 [outputs]
+home = ["HTML","RSS","PageMap"]
 section = ["HTML","RSS","print"]
+[outputFormats.PageMap]
+mediaType = "application/json"
+baseName = "pagemap"
+isPlainText = true
+notAlternative = true
 [outputFormats.PRINT]
 baseName = "index"
 isHTML = true

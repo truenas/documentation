@@ -1,0 +1,26 @@
+{{- /*
+  Page map for the version switcher (DOCS-2800).
+  Keys and aliases are paths relative to this build's site root, lowercase, with a trailing slash,
+  so the file does not depend on where the build is served (scale/, nightly/, 28/ ...).
+*/ -}}
+{{- $home := .Site.Home.Permalink -}}
+{{- $pages := dict -}}
+{{- range .Site.Pages -}}
+  {{- if and .Permalink (ne .Type "redirect") (not (or (in .Permalink "/tags/") (in .Permalink "/book/") (in .Permalink "/archive/") (in .Permalink "/volume/"))) -}}
+    {{- $rel := lower (strings.TrimPrefix $home .Permalink) -}}
+    {{- if $rel -}}
+      {{- $aliases := slice -}}
+      {{- range .Aliases -}}
+        {{- $a := lower . -}}
+        {{- if not (strings.HasPrefix $a "/") -}}{{- $a = path.Join $rel $a -}}{{- end -}}
+        {{- $a = strings.Trim $a "/" -}}
+        {{- /* Hugo writes *.html aliases as files, not directories, so they are not URL stubs */ -}}
+        {{- if and $a (not (findRE `\.html?$` $a)) -}}
+          {{- $aliases = $aliases | append (printf "%s/" $a) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $pages = merge $pages (dict $rel $aliases) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- jsonify (dict "v" 1 "root" (urls.Parse $home).Path "pages" $pages) -}}
