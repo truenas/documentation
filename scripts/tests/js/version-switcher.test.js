@@ -226,6 +226,27 @@ test('resolve: a stem that would be empty or tiny is never matched', () => {
   assert.notEqual(r.tier, 'moved');
 });
 
+// An alias into a UI-reference page only records combined paths; it must not beat the tutorial section.
+const POOLS_TARGET = () => idx({ 'scaletutorials/storage/': [], 'scaleuireference/storage/': ['scaleuireference/storage/pools/'] });
+
+test('resolve: a bookless source ignores an alias hit in the UI reference and uses the tutorial section', () => {
+  const r = resolve('storage/pools/', byId('27'), byId('25.10'), null, POOLS_TARGET());
+  assert.deepEqual(r, { url: '/docs/scale/25.10/scaletutorials/storage/', tier: 'parent' });
+});
+
+test('resolve: a source that is clearly UI reference keeps the alias hit in the UI reference', () => {
+  const fromBook = resolve('uireference/storage/pools/', byId('13.0'), byId('25.10'), null, POOLS_TARGET());
+  assert.deepEqual(fromBook, { url: '/docs/scale/25.10/scaleuireference/storage/', tier: 'moved' });
+  const fromName = resolve('storage/poolsscreen/', byId('27'), byId('25.10'), null,
+    idx({ 'scaletutorials/storage/': [], 'scaleuireference/storage/': ['scaleuireference/storage/poolsscreen/'] }));
+  assert.deepEqual(fromName, { url: '/docs/scale/25.10/scaleuireference/storage/', tier: 'moved' });
+});
+
+test('resolve: an alias hit in a book-less target is unaffected', () => {
+  const r = resolve('scaletutorials/storage/pools/', byId('25.10'), byId('27'), null, idx({ 'storage/newname/': ['storage/pools/'] }));
+  assert.deepEqual(r, { url: '/docs/scale/27/storage/newname/', tier: 'moved' });
+});
+
 test('resolve: nearest existing parent', () => {
   const nearest = resolve('a/b/c/', byId('25.10'), byId('27'), null, idx({ 'a/': [], 'a/b/': [] }));
   assert.deepEqual(nearest, { url: '/docs/scale/27/a/b/', tier: 'parent' });
