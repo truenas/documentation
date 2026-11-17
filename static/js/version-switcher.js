@@ -263,6 +263,11 @@
       return out;
     }
     add(base);
+    // Sections named for their product (coresecurityreports, scalesecurityreports) pair across products.
+    var targetPrefix = target.product === 'core' ? 'core' : target.product === 'truenas' ? 'scale' : '';
+    var parts = base.split('/');
+    var named = /^(core|scale)(.+)$/.exec(parts[0]);
+    if (targetPrefix && named) { parts[0] = targetPrefix + named[2]; add(norm(parts.join('/'))); }
     (BOOKS[target.product] || []).forEach(function (b) { add(norm(b + '/' + base)); });
     return out;
   }
