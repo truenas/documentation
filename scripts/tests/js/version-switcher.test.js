@@ -181,6 +181,51 @@ test('resolve: unique last segment in target -> moved; two candidates -> not use
   assert.equal(two.url, '/docs/scale/27/x/');
 });
 
+// Renamed articles: the 27 rewrite dropped the "scale" / "screen" suffixes and added no aliases.
+test('resolve: 27 -> 25.10, a renamed article (suffix dropped) matches by name stem, not the parent', () => {
+  const target = idx({ 'scaletutorials/storage/': [], 'scaletutorials/storage/importpoolscale/': [], 'scaleuireference/storage/': [] });
+  const r = resolve('storage/pools/importpool/', byId('27'), byId('25.10'), null, target);
+  assert.deepEqual(r, { url: '/docs/scale/25.10/scaletutorials/storage/importpoolscale/', tier: 'moved' });
+});
+
+test('resolve: 25.10 -> 27, the same renamed article in the other direction', () => {
+  const target = idx({ 'storage/': [], 'storage/pools/importpool/': [] });
+  const r = resolve('scaletutorials/storage/importpoolscale/', byId('25.10'), byId('27'), null, target);
+  assert.deepEqual(r, { url: '/docs/scale/27/storage/pools/importpool/', tier: 'moved' });
+});
+
+test('resolve: stem match needs a shared topic segment, else it falls to the parent', () => {
+  const target = idx({ 'scaletutorials/': [], 'scaletutorials/credentials/importpoolscale/': [] });
+  const r = resolve('storage/pools/importpool/', byId('27'), byId('25.10'), null, target);
+  assert.equal(r.tier, 'landing');
+});
+
+test('resolve: stem match is not tried when the target has pages with the exact name', () => {
+  const target = idx({ 'storage/': [], 'storage/x/pools/': [], 'other/pools/': [], 'storage/poolsscale/': [] });
+  const r = resolve('coretutorials/storage/pools/', byId('13.0'), byId('27'), null, target);
+  assert.deepEqual(r, { url: '/docs/scale/27/storage/', tier: 'parent' });
+});
+
+test('resolve: two stem matches in different books -> the source book kind decides', () => {
+  const target = idx({ 'scaletutorials/credentials/kmipscale/': [], 'scaleuireference/credentials/kmipscreen/': [] });
+  const fromTutorial = resolve('coretutorials/credentials/kmip/', byId('13.0'), byId('25.10'), null, target);
+  assert.equal(fromTutorial.url, '/docs/scale/25.10/scaletutorials/credentials/kmipscale/');
+  const fromUi = resolve('uireference/credentials/kmip/', byId('13.0'), byId('25.10'), null, target);
+  assert.equal(fromUi.url, '/docs/scale/25.10/scaleuireference/credentials/kmipscreen/');
+});
+
+test('resolve: a source name ending in screen prefers the UI book when it has no book of its own', () => {
+  const target = idx({ 'scaletutorials/credentials/kmipscale/': [], 'scaleuireference/credentials/kmipscreen/': [] });
+  const r = resolve('credentials/kmip/kmipscreen/', byId('27'), byId('25.10'), null, target);
+  assert.equal(r.url, '/docs/scale/25.10/scaleuireference/credentials/kmipscreen/');
+});
+
+test('resolve: a stem that would be empty or tiny is never matched', () => {
+  const target = idx({ 'a/scale/': [], 'a/b/': [] });
+  const r = resolve('a/screen/', byId('27'), byId('25.10'), null, target);
+  assert.notEqual(r.tier, 'moved');
+});
+
 test('resolve: nearest existing parent', () => {
   const nearest = resolve('a/b/c/', byId('25.10'), byId('27'), null, idx({ 'a/': [], 'a/b/': [] }));
   assert.deepEqual(nearest, { url: '/docs/scale/27/a/b/', tier: 'parent' });
