@@ -264,6 +264,15 @@
 
   document.addEventListener('DOMContentLoaded', updateProductVersionOptions);
 
+  // Back/forward can restore this page from the browser cache with the label selectVersion set before
+  // it navigated away. Scripts do not re-run on a restore, so recompute the labels from the URL.
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+      updateDropdownPlaceholderText();
+      updateProductVersionOptions();
+    }
+  });
+
   // Once the served registry (/docs/versions.json) has loaded, refresh the labels and menu from it.
   if (hasSwitcher()) {
     window.VersionSwitcher.loadRegistry().then(function () {
