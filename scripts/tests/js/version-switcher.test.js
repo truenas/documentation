@@ -290,6 +290,28 @@ test('buildIndex: titles are optional, normalised and keyed like the pages', () 
   assert.equal(buildIndex({ v: 1, pages: { 'a/': [] } }, { keyPrefix: '' }).titleOf('a/'), null);
 });
 
+// Sections named for their product (coresecurityreports / scalesecurityreports) pair across CORE and SCALE.
+test('resolve: CORE security reports index -> SCALE security reports index', () => {
+  const r = resolve('coresecurityreports/', byId('13.0'), byId('27'), null, idx({ 'scalesecurityreports/': [] }));
+  assert.deepEqual(r, { url: '/docs/scale/27/scalesecurityreports/', tier: 'same' });
+});
+
+test('resolve: a CORE-only security advisory falls to the SCALE security reports index, not the landing page', () => {
+  const r = resolve('coresecurityreports/smb1advisory/', byId('13.0'), byId('27'), null, idx({ 'scalesecurityreports/': [] }));
+  assert.deepEqual(r, { url: '/docs/scale/27/scalesecurityreports/', tier: 'parent' });
+});
+
+test('resolve: SCALE security reports -> CORE security reports, and a same-named advisory carries over', () => {
+  const target = idx({ 'coresecurityreports/': [], 'coresecurityreports/smb1advisory/': [] });
+  assert.equal(resolve('scalesecurityreports/', byId('25.10'), byId('13.0'), null, target).url, '/docs/core/13.0/coresecurityreports/');
+  assert.equal(resolve('scalesecurityreports/smb1advisory/', byId('25.10'), byId('13.0'), null, target).url, '/docs/core/13.0/coresecurityreports/smb1advisory/');
+});
+
+test('resolve: SCALE to SCALE leaves a product-named section alone', () => {
+  const r = resolve('scalesecurityreports/', byId('25.10'), byId('27'), null, idx({ 'scalesecurityreports/': [] }));
+  assert.deepEqual(r, { url: '/docs/scale/27/scalesecurityreports/', tier: 'same' });
+});
+
 test('resolve: nearest existing parent', () => {
   const nearest = resolve('a/b/c/', byId('25.10'), byId('27'), null, idx({ 'a/': [], 'a/b/': [] }));
   assert.deepEqual(nearest, { url: '/docs/scale/27/a/b/', tier: 'parent' });
