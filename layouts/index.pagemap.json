@@ -2,9 +2,12 @@
   Page map for the version switcher (DOCS-2800).
   Keys and aliases are paths relative to this build's site root, lowercase, with a trailing slash,
   so the file does not depend on where the build is served (scale/, nightly/, 28/ ...).
+  "titles" (optional) maps the same keys to the lowercase page title, so the switcher can find the
+  same article under a different name.
 */ -}}
 {{- $home := .Site.Home.Permalink -}}
 {{- $pages := dict -}}
+{{- $titles := dict -}}
 {{- range .Site.Pages -}}
   {{- if and .Permalink (ne .Type "redirect") (not (or (in .Permalink "/tags/") (in .Permalink "/book/") (in .Permalink "/archive/") (in .Permalink "/volume/"))) -}}
     {{- $rel := lower (strings.TrimPrefix $home .Permalink) -}}
@@ -20,7 +23,9 @@
         {{- end -}}
       {{- end -}}
       {{- $pages = merge $pages (dict $rel $aliases) -}}
+      {{- $title := strings.TrimSpace (lower (replaceRE `\s+` " " (.Title | plainify))) -}}
+      {{- if $title -}}{{- $titles = merge $titles (dict $rel $title) -}}{{- end -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
-{{- jsonify (dict "v" 1 "root" (urls.Parse $home).Path "pages" $pages) -}}
+{{- jsonify (dict "v" 1 "root" (urls.Parse $home).Path "pages" $pages "titles" $titles) -}}

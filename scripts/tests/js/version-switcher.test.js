@@ -247,6 +247,49 @@ test('resolve: an alias hit in a book-less target is unaffected', () => {
   assert.deepEqual(r, { url: '/docs/scale/27/storage/newname/', tier: 'moved' });
 });
 
+// Titles: the page map may carry the article titles, so the same title finds the same article.
+const idxT = (pages, titles, version) => buildIndex({ v: 1, root: '/', pages, titles }, version || mkVersion('t', 'truenas', '/t/'));
+
+test('resolve: the same unique title in the target is the same article -> moved', () => {
+  const source = idxT({ 'credentials/certificates/managingcertificates/': [] }, { 'credentials/certificates/managingcertificates/': 'managing certificates' });
+  const target = idxT(
+    { 'scaletutorials/credentials/certificates/': [], 'scaletutorials/credentials/certificates/certificatesscale/': [] },
+    { 'scaletutorials/credentials/certificates/certificatesscale/': 'managing certificates' });
+  const r = resolve('credentials/certificates/managingcertificates/', byId('27'), byId('25.10'), source, target);
+  assert.deepEqual(r, { url: '/docs/scale/25.10/scaletutorials/credentials/certificates/certificatesscale/', tier: 'moved' });
+});
+
+test('resolve: a title match in another topic is not used', () => {
+  const source = idxT({ 'a/b/oldname/': [] }, { 'a/b/oldname/': 'managing certificates' });
+  const target = idxT({ 'scaletutorials/a/': [], 'scaletutorials/x/y/newname/': [] }, { 'scaletutorials/x/y/newname/': 'managing certificates' });
+  const r = resolve('a/b/oldname/', byId('27'), byId('25.10'), source, target);
+  assert.deepEqual(r, { url: '/docs/scale/25.10/scaletutorials/a/', tier: 'parent' });
+});
+
+test('resolve: two target pages with the title are ranked by topic, an unresolved tie is not used', () => {
+  const source = idxT({ 'a/b/oldname/': [] }, { 'a/b/oldname/': 'same title' });
+  const ranked = idxT({ 'scaletutorials/a/': [], 'scaletutorials/a/b/n1/': [], 'scaletutorials/a/n2/': [] },
+    { 'scaletutorials/a/b/n1/': 'same title', 'scaletutorials/a/n2/': 'same title' });
+  assert.equal(resolve('a/b/oldname/', byId('27'), byId('25.10'), source, ranked).url, '/docs/scale/25.10/scaletutorials/a/b/n1/');
+  const tie = idxT({ 'scaletutorials/a/': [], 'scaletutorials/a/b/n1/': [], 'scaletutorials/a/b/n2/': [] },
+    { 'scaletutorials/a/b/n1/': 'same title', 'scaletutorials/a/b/n2/': 'same title' });
+  assert.deepEqual(resolve('a/b/oldname/', byId('27'), byId('25.10'), source, tie), { url: '/docs/scale/25.10/scaletutorials/a/', tier: 'parent' });
+});
+
+test('resolve: page maps without titles still work, and a missing source index skips titles', () => {
+  const noTitles = idx({ 'scaletutorials/a/': [], 'scaletutorials/a/b/newname/': [] });
+  assert.equal(resolve('a/b/oldname/', byId('27'), byId('25.10'), idx({ 'a/b/oldname/': [] }), noTitles).tier, 'parent');
+  const withTitles = idxT({ 'scaletutorials/a/': [], 'scaletutorials/a/b/newname/': [] }, { 'scaletutorials/a/b/newname/': 'x title' });
+  assert.equal(resolve('a/b/oldname/', byId('27'), byId('25.10'), null, withTitles).tier, 'parent');
+});
+
+test('buildIndex: titles are optional, normalised and keyed like the pages', () => {
+  const withKeyPrefix = buildIndex({ v: 1, pages: { 'scale/a/b/': [], 'contributing/x/': [] }, titles: { 'scale/a/b/': '  Managing  Certificates ', 'contributing/x/': 'x' } }, { keyPrefix: 'scale/' });
+  assert.equal(withKeyPrefix.titleOf('a/b/'), 'managing certificates');
+  assert.equal(withKeyPrefix.titleOf('x/'), null);
+  assert.equal(buildIndex({ v: 1, pages: { 'a/': [] } }, { keyPrefix: '' }).titleOf('a/'), null);
+});
+
 test('resolve: nearest existing parent', () => {
   const nearest = resolve('a/b/c/', byId('25.10'), byId('27'), null, idx({ 'a/': [], 'a/b/': [] }));
   assert.deepEqual(nearest, { url: '/docs/scale/27/a/b/', tier: 'parent' });
