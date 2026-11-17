@@ -312,6 +312,88 @@ test('resolve: SCALE to SCALE leaves a product-named section alone', () => {
   assert.deepEqual(r, { url: '/docs/scale/27/scalesecurityreports/', tier: 'same' });
 });
 
+// CORE organises its docs by the old menu names; a curated section map pairs them with SCALE sections.
+test('resolve: CORE section with no same-named SCALE page -> the mapped SCALE section (parent)', () => {
+  const target = idx({ 'systemsettings/services/': [], 'systemsettings/': [] });
+  const r = resolve('coretutorials/services/configuringssh/', byId('13.0'), byId('27'), null, target);
+  assert.deepEqual(r, { url: '/docs/scale/27/systemsettings/services/', tier: 'parent' });
+});
+
+test('resolve: the mapped section is found under the target\'s books too', () => {
+  const target = idx({ 'scaletutorials/systemsettings/services/': [], 'scaleuireference/systemsettings/services/': [] });
+  const r = resolve('coretutorials/services/configuringssh/', byId('13.0'), byId('25.10'), null, target);
+  assert.deepEqual(r, { url: '/docs/scale/25.10/scaletutorials/systemsettings/services/', tier: 'parent' });
+  const ui = resolve('uireference/services/sshscreen/', byId('13.0'), byId('25.10'), null, target);
+  assert.equal(ui.url, '/docs/scale/25.10/scaleuireference/systemsettings/services/');
+});
+
+test('resolve: a pair that names one article maps to it (snapshots); AFP lands on its migration page as a closest match', () => {
+  const snap = resolve('coretutorials/storage/snapshots/', byId('13.0'), byId('27'), null, idx({ 'datasets/snapshots/': [], 'datasets/': [] }));
+  assert.deepEqual(snap, { url: '/docs/scale/27/datasets/snapshots/', tier: 'moved' });
+  const afp = resolve('coretutorials/sharing/afpshare/', byId('13.0'), byId('27'), null, idx({ 'shares/afpmigration/': [], 'shares/': [] }));
+  assert.deepEqual(afp, { url: '/docs/scale/27/shares/afpmigration/', tier: 'parent' });
+});
+
+test('resolve: the longest section prefix wins', () => {
+  const target = idx({ 'shares/': [], 'shares/smb/': [], 'shares/smb/addsmbshare/': [] });
+  const r = resolve('coretutorials/sharing/smb/somethingelse/', byId('13.0'), byId('27'), null, target);
+  assert.deepEqual(r, { url: '/docs/scale/27/shares/smb/', tier: 'parent' });
+});
+
+test('resolve: inside the mapped section, a name stem or the title still finds the article', () => {
+  const stem = resolve('coretutorials/tasks/creatingscrubtasks/', byId('13.0'), byId('27'), null,
+    idx({ 'dataprotection/': [], 'dataprotection/creatingscrubtasksscale/': [] }));
+  assert.equal(stem.url, '/docs/scale/27/dataprotection/creatingscrubtasksscale/');
+  const source = idxT({ 'coretutorials/tasks/oldname/': [] }, { 'coretutorials/tasks/oldname/': 'same title' });
+  const target = idxT({ 'dataprotection/': [], 'dataprotection/newname/': [] }, { 'dataprotection/newname/': 'same title' });
+  assert.equal(resolve('coretutorials/tasks/oldname/', byId('13.0'), byId('27'), source, target).url, '/docs/scale/27/dataprotection/newname/');
+});
+
+test('resolve: SCALE -> CORE uses the reverse of the section map', () => {
+  const target = idx({ 'coretutorials/services/': [], 'coretutorials/': [] });
+  const r = resolve('systemsettings/services/sshservice/', byId('27'), byId('13.0'), null, target);
+  assert.deepEqual(r, { url: '/docs/core/13.0/coretutorials/services/', tier: 'parent' });
+});
+
+test('resolve: the section map is not applied between SCALE versions', () => {
+  const r = resolve('scaletutorials/services/foo/', byId('25.10'), byId('27'), null, idx({ 'systemsettings/services/': [] }));
+  assert.equal(r.tier, 'landing');
+});
+
+test('resolve: a mapped section missing from the target falls back to the plain parent walk', () => {
+  const r = resolve('coretutorials/services/configuringssh/', byId('13.0'), byId('27'), null, idx({ 'services/': [] }));
+  assert.deepEqual(r, { url: '/docs/scale/27/services/', tier: 'parent' });
+});
+
+test('resolve: a UI-reference source falls to the UI-reference parent, a tutorial source to the tutorial parent', () => {
+  const target = idx({ 'scaletutorials/a/': [], 'scaleuireference/a/': [] });
+  assert.equal(resolve('scaleuireference/a/b/c/', byId('25.04'), byId('25.10'), null, target).url, '/docs/scale/25.10/scaleuireference/a/');
+  assert.equal(resolve('scaletutorials/a/b/c/', byId('25.04'), byId('25.10'), null, target).url, '/docs/scale/25.10/scaletutorials/a/');
+  assert.equal(resolve('a/b/c/', byId('27'), byId('25.10'), null, target).url, '/docs/scale/25.10/scaletutorials/a/');
+});
+
+test('resolve: a loose section pair (a broader page) is a parent with the notice, an exact pair is moved', () => {
+  const target = idx({ 'systemsettings/advanced/': [], 'systemsettings/services/': [], 'systemsettings/': [] });
+  const loose = resolve('coretutorials/tasks/creatingcronjobs/', byId('13.0'), byId('27'), null, target);
+  assert.deepEqual(loose, { url: '/docs/scale/27/systemsettings/advanced/', tier: 'parent' });
+  const exact = resolve('uireference/services/', byId('13.0'), byId('27'), null, target);
+  assert.deepEqual(exact, { url: '/docs/scale/27/systemsettings/services/', tier: 'moved' });
+});
+
+test('resolve: SMB share screens map to the SMB shares section', () => {
+  const r = resolve('uireference/sharing/smbsharescreen/', byId('13.0'), byId('27'), null, idx({ 'shares/smb/': [], 'shares/': [] }));
+  assert.equal(r.url, '/docs/scale/27/shares/smb/');
+});
+
+test('resolve: SCALE datasets pages map to CORE\'s storage/pools pages and back', () => {
+  const core = idx({ 'coretutorials/storage/pools/': [], 'coretutorials/storage/pools/datasets/': [], 'coretutorials/storage/pools/zvols/': [], 'coretutorials/storage/pools/storageencryption/': [] });
+  assert.equal(resolve('datasets/zvols/addmanagezvols/', byId('27'), byId('13.0'), null, core).url, '/docs/core/13.0/coretutorials/storage/pools/zvols/');
+  assert.equal(resolve('datasets/encryption/', byId('27'), byId('13.0'), null, core).url, '/docs/core/13.0/coretutorials/storage/pools/storageencryption/');
+  assert.equal(resolve('datasets/managingdatasets/', byId('27'), byId('13.0'), null, core).url, '/docs/core/13.0/coretutorials/storage/pools/datasets/');
+  const scale = idx({ 'datasets/': [], 'datasets/zvols/': [] });
+  assert.deepEqual(resolve('coretutorials/storage/pools/zvols/', byId('13.0'), byId('27'), null, scale), { url: '/docs/scale/27/datasets/zvols/', tier: 'moved' });
+});
+
 test('resolve: nearest existing parent', () => {
   const nearest = resolve('a/b/c/', byId('25.10'), byId('27'), null, idx({ 'a/': [], 'a/b/': [] }));
   assert.deepEqual(nearest, { url: '/docs/scale/27/a/b/', tier: 'parent' });
