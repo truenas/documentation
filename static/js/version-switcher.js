@@ -26,6 +26,68 @@
     core: ['coretutorials', 'uireference']
   };
 
+  // CORE organises its docs by the old menu names, SCALE by its reorganised sections. Each pair maps a
+  // CORE path prefix to the SCALE path prefix that replaced it (book segments stripped, longest prefix
+  // wins). Between CORE and SCALE only. The reverse direction uses the first pair listed for each SCALE
+  // prefix, so list the preferred CORE counterpart first. A third element of 1 marks a loose pair: the
+  // SCALE page is broader than the CORE article, so it is shown as the closest match, not the article.
+  var SECTION_PAIRS = [
+    ['accounts/users/', 'credentials/users/'], ['accounts/groups/', 'credentials/groups/'], ['accounts/', 'credentials/'],
+    ['settingupusersandgroups/', 'credentials/users/'],
+    ['directoryservices/', 'credentials/directoryservices/'],
+    ['jailspluginsvms/virtualmachines/', 'virtualmachines/'], ['jailspluginsvms/plugins/', 'apps/', 1], ['jailspluginsvms/jails/', 'containers/', 1],
+    ['services/', 'systemsettings/services/'],
+    ['sharing/afpshare/', 'shares/afpmigration/', 1], ['sharing/afpsharescreen/', 'shares/afpmigration/', 1],
+    ['sharing/iscsi/', 'shares/iscsi/'], ['sharing/smb/', 'shares/smb/'], ['sharing/smbsharescreen/', 'shares/smb/'],
+    ['sharing/nfsshare/', 'shares/nfs/'], ['sharing/nfssharescreen/', 'shares/nfs/'],
+    ['sharing/webdavshare/', 'shares/webshare/', 1], ['sharing/webdavsharescreen/', 'shares/webshare/', 1],
+    ['sharing/', 'shares/'],
+    ['storage/pools/datasets/', 'datasets/'], ['storage/pools/datasetsscreen/', 'datasets/datasetsscreens/'],
+    ['storage/pools/zvols/', 'datasets/zvols/'], ['storage/pools/zvolsscreen/', 'datasets/zvols/'],
+    ['storage/pools/permissions/', 'datasets/permissions/'], ['storage/pools/storageencryption/', 'datasets/encryption/'],
+    ['storage/pools/corequotascreens/', 'datasets/quotas/'],
+    ['storage/snapshots/', 'datasets/snapshots/'], ['storage/snapshotsscreen/', 'datasets/snapshots/'],
+    ['storage/vmware-snapshots/', 'dataprotection/vmware/'], ['storage/vmware-snapshotsscreen/', 'dataprotection/vmware/'],
+    ['storage/importdisk/', 'storage/disks/', 1], ['storage/sed/', 'storage/disks/sed/'], ['storage/disksscreens/', 'storage/disks/', 1],
+    ['topmenu/alerts/', 'toptoolbar/alerts/'], ['topmenu/taskmanager/', 'toptoolbar/jobsscreens/'], ['topmenu/uipreferences/', 'toptoolbar/settings/'], ['topmenu/', 'toptoolbar/'],
+    ['settinguipreferences/', 'toptoolbar/settings/'], ['usingtaskmanager/', 'toptoolbar/jobsscreens/'],
+    ['system/general/', 'systemsettings/general/'], ['system/advanced/', 'systemsettings/advanced/'],
+    ['system/update/', 'systemsettings/update/'], ['updatingtruenas/', 'systemsettings/update/'], ['truenasupgrades/', 'systemsettings/update/'],
+    ['system/bootscreen/', 'systemsettings/boot/'],
+    ['system/certificates/', 'credentials/certificates/'], ['system/cas/', 'credentials/certificates/'], ['system/acmedns/', 'credentials/certificates/'],
+    ['system/kmip/', 'credentials/kmip/'],
+    ['system/2fa/', 'systemsettings/advanced/manageglobal2fa/'],
+    ['system/alertservices/', 'toptoolbar/alerts/'], ['system/alertsettings/', 'toptoolbar/alerts/'],
+    ['system/cloudcredentials/', 'credentials/backupcredentials/', 1], ['system/sshconnections/', 'credentials/backupcredentials/', 1], ['system/sshkeypairs/', 'credentials/backupcredentials/', 1],
+    ['system/email/', 'systemsettings/general/', 1], ['system/ntpservers/', 'systemsettings/general/', 1], ['system/support/', 'systemsettings/general/', 1],
+    ['system/reporting/', 'reporting/'],
+    ['system/tunables/', 'systemsettings/advanced/', 1], ['system/systemdataset/', 'systemsettings/advanced/', 1],
+    ['system/viewenclosure/', 'systemsettings/enclosurescreens/'],
+    ['system/', 'systemsettings/'],
+    ['systemconfiguration/configuringacmedns/', 'credentials/certificates/'], ['systemconfiguration/creatingcasandcertificates/', 'credentials/certificates/'],
+    ['systemconfiguration/configuringkmip/', 'credentials/kmip/'],
+    ['systemconfiguration/configuringsshconnections/', 'credentials/backupcredentials/', 1],
+    ['systemconfiguration/configuringthesystememail/', 'systemsettings/general/', 1], ['systemconfiguration/usingconfigurationbackups/', 'systemsettings/general/', 1],
+    ['systemconfiguration/configuringtunables/', 'systemsettings/advanced/', 1], ['systemconfiguration/settingthesystemdataset/', 'systemsettings/advanced/', 1],
+    ['systemconfiguration/usingtwofactorauthentication/', 'systemsettings/advanced/manageglobal2fa/'],
+    ['systemconfiguration/creatingalerts/', 'toptoolbar/alerts/'],
+    ['systemconfiguration/managingbootenvironments/', 'systemsettings/boot/'], ['systemconfiguration/mirroringthebootpool/', 'systemsettings/boot/', 1],
+    ['systemconfiguration/viewingenclosures/', 'systemsettings/enclosurescreens/'],
+    ['systemconfiguration/', 'systemsettings/'],
+    ['tasks/cloudsynctasks/', 'dataprotection/cloudsynctasks/'], ['tasks/creatingcloudsynctasks/', 'dataprotection/cloudsynctasks/'], ['tasks/googledrivesync/', 'dataprotection/cloudsynctasks/', 1],
+    ['tasks/creatingcronjobs/', 'systemsettings/advanced/', 1], ['tasks/cronjobs/', 'systemsettings/advanced/', 1],
+    ['tasks/creatinginitshutdownscripts/', 'systemsettings/advanced/', 1], ['tasks/initshutdownscripts/', 'systemsettings/advanced/', 1],
+    ['tasks/advancedscheduler/', 'systemsettings/advanced/', 1], ['tasks/usingadvancedscheduler/', 'systemsettings/advanced/', 1],
+    ['tasks/creatingperiodicsnapshottasks/', 'dataprotection/periodicsnapshottasks/'], ['tasks/periodicsnapshottasks/', 'dataprotection/periodicsnapshottasks/'],
+    ['tasks/creatingreplicationtasks/', 'dataprotection/replication/'], ['tasks/replicationtasks/', 'dataprotection/replication/'],
+    ['tasks/creatingrsynctasks/', 'dataprotection/rsync/'], ['tasks/rsync/', 'dataprotection/rsync/'],
+    ['tasks/resilverpriority/', 'storage/', 1], ['tasks/usingresilverpriority/', 'storage/', 1],
+    ['tasks/', 'dataprotection/'],
+    ['reportinggraphs/', 'reporting/'],
+    ['shell/', 'systemsettings/shell/'], ['usingshell/', 'systemsettings/shell/'], ['changingdefaultshell/', 'systemsettings/shell/'],
+    ['managingtlsciphers/', 'systemsettings/advanced/', 1]
+  ];
+
   function entry(id, label, product, root, extra) {
     var base = {
       id: id,
@@ -252,7 +314,13 @@
 
   // The path as written, with the book segment stripped, and with each of the target's books added.
   // A bare book index (nothing after the book segment) maps only to the target's book of the same kind.
-  function variants(rel, target) {
+  // The target's books, those of the wanted kind first so a UI source meets the UI parent first.
+  function booksFor(target, kind) {
+    var books = (BOOKS[target.product] || []).slice();
+    return books.filter(function (b) { return BOOK_KIND[b] === kind; }).concat(books.filter(function (b) { return BOOK_KIND[b] !== kind; }));
+  }
+
+  function variants(rel, target, kind) {
     var out = [];
     function add(v) { if (v && out.indexOf(v) === -1) { out.push(v); } }
     var base = stripBook(rel);
@@ -268,7 +336,7 @@
     var parts = base.split('/');
     var named = /^(core|scale)(.+)$/.exec(parts[0]);
     if (targetPrefix && named) { parts[0] = targetPrefix + named[2]; add(norm(parts.join('/'))); }
-    (BOOKS[target.product] || []).forEach(function (b) { add(norm(b + '/' + base)); });
+    booksFor(target, kind).forEach(function (b) { add(norm(b + '/' + base)); });
     return out;
   }
 
@@ -322,6 +390,30 @@
     return title ? pickBest(targetIndex.byTitle(title), rel, base) : null;
   }
 
+  // The path in the other product's layout, or null: CORE <-> SCALE only, by the longest matching prefix.
+  var REVERSE_PAIRS = null;
+  function sectionPairs(towardsCore) {
+    if (!towardsCore) { return SECTION_PAIRS; }
+    if (!REVERSE_PAIRS) {
+      var seen = {};
+      REVERSE_PAIRS = [];
+      SECTION_PAIRS.forEach(function (p) {
+        if (!seen[p[1]]) { seen[p[1]] = true; REVERSE_PAIRS.push([p[1], p[0]]); }
+      });
+    }
+    return REVERSE_PAIRS;
+  }
+
+  function mapSection(base, source, target) {
+    var pair = source.product + '>' + target.product;
+    if (pair !== 'core>truenas' && pair !== 'truenas>core') { return null; }
+    var best = null;
+    sectionPairs(pair === 'truenas>core').forEach(function (p) {
+      if (base.indexOf(p[0]) === 0 && (!best || p[0].length > best[0].length)) { best = p; }
+    });
+    return best ? { path: best[1] + base.slice(best[0].length), loose: !!best[2] } : null;
+  }
+
   function resolve(rel, source, target, sourceIndex, targetIndex) {
     var r = norm(rel);
     var base = stripBook(r);
@@ -331,13 +423,13 @@
     function out(key, tier) { return { url: landing + key, tier: tier }; }
 
     // Tier 1 and 2: the path itself (a hit through the target's aliases counts as moved).
-    var hit = lookup(variants(r, target), targetIndex, sameKind);
+    var hit = lookup(variants(r, target, kind), targetIndex, sameKind);
     if (hit) { return out(hit.key, hit.canonical ? 'same' : 'moved'); }
 
     // Tier 2: the source page's own alias history, then a unique page name in the target.
     var aliases = sourceIndex ? sourceIndex.aliasesOf(r) : [];
     for (var i = 0; i < aliases.length; i++) {
-      hit = lookup(variants(aliases[i], target), targetIndex, sameKind);
+      hit = lookup(variants(aliases[i], target, kind), targetIndex, sameKind);
       if (hit) { return out(hit.key, 'moved'); }
     }
     var slug = lastSegment(base);
@@ -348,11 +440,27 @@
     var titled = titleMatch(r, base, sourceIndex, targetIndex);
     if (titled) { return out(titled, 'moved'); }
 
+    // Tier 2/3 across products: the same article, or its section, by the curated section map.
+    var section = mapSection(base, source, target);
+    if (section) {
+      var mapped = section.path;
+      hit = lookup(variants(mapped, target, kind), targetIndex, sameKind);
+      if (hit && hit.canonical) { return out(hit.key, section.loose ? 'parent' : 'moved'); }
+      var inSection = renamedMatch(r, mapped, targetIndex) || titleMatch(r, mapped, sourceIndex, targetIndex);
+      if (inSection) { return out(inSection, 'moved'); }
+      var mparts = mapped.split('/').filter(Boolean);
+      while (mparts.length > 1) {
+        mparts.pop();
+        hit = lookup(variants(mparts.join('/') + '/', target, kind), targetIndex);
+        if (hit) { return out(hit.key, 'parent'); }
+      }
+    }
+
     // Tier 3: nearest existing parent.
     var parts = base.split('/').filter(Boolean);
     while (parts.length > 1) {
       parts.pop();
-      hit = lookup(variants(parts.join('/') + '/', target), targetIndex);
+      hit = lookup(variants(parts.join('/') + '/', target, kind), targetIndex);
       if (hit) { return out(hit.key, 'parent'); }
     }
 
