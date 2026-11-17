@@ -51,6 +51,18 @@ class PageMapTests(unittest.TestCase):
                 self.assertTrue(path.endswith("/"), path)
             self.assertFalse(any(f"/{part}" in f"/{key}" for part in EXCLUDED), key)
 
+    def test_titles_are_optional_but_consistent(self):
+        data = load_pagemap()
+        titles = data.get("titles", {})
+        self.assertIsInstance(titles, dict)
+        self.assertTrue(set(titles) <= set(data["pages"]), "titles for pages that are not in the map")
+        for key, title in titles.items():
+            self.assertIsInstance(title, str, key)
+            self.assertEqual(title, title.lower().strip(), key)
+            self.assertNotIn("  ", title, key)
+        # Nearly every page has a title; a build that lost them would silently disable title matching.
+        self.assertGreater(len(titles), 0.9 * len(data["pages"]), "most pages should carry a title")
+
     def test_every_alias_stub_is_in_pagemap(self):
         data = load_pagemap()
         root = urlparse(data["root"]).path.rstrip("/") + "/"

@@ -83,6 +83,10 @@
     return s.length >= 4 ? s : '';
   }
 
+  function normTitle(t) {
+    return typeof t === 'string' ? t.replace(/\s+/g, ' ').replace(/^ | $/g, '').toLowerCase() : '';
+  }
+
   // ---- location ---------------------------------------------------------------
 
   var ADHOC_RE = /^\/docs\/(scale|core|truecommand)\/(\d+(?:\.\d+)?)\//;
@@ -149,7 +153,10 @@
     var aliasesByCanon = Object.create(null);
     var bySlug = Object.create(null);
     var byStem = Object.create(null);
+    var titleOfKey = Object.create(null);
+    var byTitle = Object.create(null);
     var pages = (pagemap && pagemap.pages) || {};
+    var titles = (pagemap && pagemap.titles) || {};
 
     Object.keys(pages).forEach(function (key) {
       var k = norm(key);
@@ -163,6 +170,11 @@
       (bySlug[slug] = bySlug[slug] || []).push(k);
       var stem = stemOf(slug);
       if (stem) { (byStem[stem] = byStem[stem] || []).push(k); }
+      var title = normTitle(titles[key]);
+      if (title) {
+        titleOfKey[k] = title;
+        (byTitle[title] = byTitle[title] || []).push(k);
+      }
       var list = aliasesByCanon[k] = aliasesByCanon[k] || [];
       (pages[key] || []).forEach(function (alias) {
         var a = norm(alias);
@@ -193,6 +205,14 @@
       byStem: function (slug) {
         var stem = stemOf(slug);
         return stem && byStem[stem] ? byStem[stem].slice() : [];
+      },
+      titleOf: function (rel) {
+        var c = resolveKey(rel);
+        return c && titleOfKey[c] ? titleOfKey[c] : null;
+      },
+      byTitle: function (title) {
+        var t = normTitle(title);
+        return t && byTitle[t] ? byTitle[t].slice() : [];
       }
     };
   }
@@ -263,14 +283,9 @@
     return null;
   }
 
-  // Same article under a renamed page: no page of the target has this name, but exactly one has the
-  // same name once the old suffixes are dropped, in the same topic. Several candidates are ranked by
-  // shared topic segments, then by book kind, and an unresolved tie is not used.
-  function renamedMatch(rel, base, targetIndex) {
-    var slug = lastSegment(base);
-    if (!slug || targetIndex.hasSlug(slug)) { return null; }
-    var cands = targetIndex.byStem(slug);
-    if (!cands.length) { return null; }
+  // Choose one of several candidate pages for the article: only candidates in the same topic, ranked by
+  // how many topic segments they share, then by book kind. An unresolved tie is not used.
+  function pickBest(cands, rel, base) {
     var topic = base.split('/').filter(Boolean).slice(0, -1);
     var wanted = wantedKind(rel);
     var best = [];
@@ -286,6 +301,20 @@
       if (kind.length) { best = kind; }
     }
     return best.length === 1 ? best[0] : null;
+  }
+
+  // Same article under a renamed page: no page of the target has this name, but some have the same
+  // name once the old suffixes are dropped.
+  function renamedMatch(rel, base, targetIndex) {
+    var slug = lastSegment(base);
+    if (!slug || targetIndex.hasSlug(slug)) { return null; }
+    return pickBest(targetIndex.byStem(slug), rel, base);
+  }
+
+  // Same article under a different name: the target has a page with the same title.
+  function titleMatch(rel, base, sourceIndex, targetIndex) {
+    var title = sourceIndex && sourceIndex.titleOf ? sourceIndex.titleOf(rel) : null;
+    return title ? pickBest(targetIndex.byTitle(title), rel, base) : null;
   }
 
   function resolve(rel, source, target, sourceIndex, targetIndex) {
@@ -311,6 +340,8 @@
     if (unique) { return out(unique, 'moved'); }
     var renamed = slug ? renamedMatch(r, base, targetIndex) : null;
     if (renamed) { return out(renamed, 'moved'); }
+    var titled = titleMatch(r, base, sourceIndex, targetIndex);
+    if (titled) { return out(titled, 'moved'); }
 
     // Tier 3: nearest existing parent.
     var parts = base.split('/').filter(Boolean);
