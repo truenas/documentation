@@ -223,6 +223,13 @@
   // Which kind of book a book segment is, so a bare book index only maps to the same kind of book.
   var BOOK_KIND = { scaletutorials: 'tutorials', coretutorials: 'tutorials', scaleuireference: 'ui', uireference: 'ui', scaleclireference: 'cli' };
 
+  // Which kind of book the reader is coming from: the source's own book, else its name (…screen
+  // pages are UI reference), else tutorials, whose content the section pages resemble most.
+  function wantedKind(rel) {
+    var n = norm(rel);
+    return BOOK_KIND[n.split('/')[0]] || (/screens?$/.test(lastSegment(stripBook(n))) ? 'ui' : 'tutorials');
+  }
+
   // The path as written, with the book segment stripped, and with each of the target's books added.
   // A bare book index (nothing after the book segment) maps only to the target's book of the same kind.
   function variants(rel, target) {
@@ -241,7 +248,9 @@
   }
 
   // Look the candidates up in an index: canonical hits first, then alias hits.
-  function lookup(cands, index) {
+  // An alias hit only records that paths were combined, so one that lands in a book of another kind
+  // than the reader's (accept) is skipped and the later tiers decide.
+  function lookup(cands, index, accept) {
     var i, hit;
     for (i = 0; i < cands.length; i++) {
       hit = index.resolve(cands[i]);
@@ -249,7 +258,7 @@
     }
     for (i = 0; i < cands.length; i++) {
       hit = index.resolve(cands[i]);
-      if (hit !== null) { return { key: hit, canonical: false }; }
+      if (hit !== null && (!accept || accept(hit))) { return { key: hit, canonical: false }; }
     }
     return null;
   }
@@ -263,7 +272,7 @@
     var cands = targetIndex.byStem(slug);
     if (!cands.length) { return null; }
     var topic = base.split('/').filter(Boolean).slice(0, -1);
-    var wanted = BOOK_KIND[norm(rel).split('/')[0]] || (/screens?$/.test(slug) ? 'ui' : 'tutorials');
+    var wanted = wantedKind(rel);
     var best = [];
     var bestShared = 0;
     cands.forEach(function (k) {
@@ -283,16 +292,18 @@
     var r = norm(rel);
     var base = stripBook(r);
     var landing = target.roots[0];
+    var kind = wantedKind(r);
+    function sameKind(key) { var k = BOOK_KIND[key.split('/')[0]]; return !k || k === kind; }
     function out(key, tier) { return { url: landing + key, tier: tier }; }
 
     // Tier 1 and 2: the path itself (a hit through the target's aliases counts as moved).
-    var hit = lookup(variants(r, target), targetIndex);
+    var hit = lookup(variants(r, target), targetIndex, sameKind);
     if (hit) { return out(hit.key, hit.canonical ? 'same' : 'moved'); }
 
     // Tier 2: the source page's own alias history, then a unique page name in the target.
     var aliases = sourceIndex ? sourceIndex.aliasesOf(r) : [];
     for (var i = 0; i < aliases.length; i++) {
-      hit = lookup(variants(aliases[i], target), targetIndex);
+      hit = lookup(variants(aliases[i], target), targetIndex, sameKind);
       if (hit) { return out(hit.key, 'moved'); }
     }
     var slug = lastSegment(base);
