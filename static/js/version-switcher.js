@@ -76,6 +76,13 @@
     return parts.length ? parts[parts.length - 1] : '';
   }
 
+  // The name of an article without the suffixes older releases appended ("importpoolscale" and
+  // "importpool" are the same article). Too-short results are not used.
+  function stemOf(slug) {
+    var s = String(slug || '').toLowerCase().replace(/(screens|screen|scale)$/, '');
+    return s.length >= 4 ? s : '';
+  }
+
   // ---- location ---------------------------------------------------------------
 
   var ADHOC_RE = /^\/docs\/(scale|core|truecommand)\/(\d+(?:\.\d+)?)\//;
@@ -141,6 +148,7 @@
     var aliasToCanon = Object.create(null);
     var aliasesByCanon = Object.create(null);
     var bySlug = Object.create(null);
+    var byStem = Object.create(null);
     var pages = (pagemap && pagemap.pages) || {};
 
     Object.keys(pages).forEach(function (key) {
@@ -153,6 +161,8 @@
       canon[k] = true;
       var slug = lastSegment(k);
       (bySlug[slug] = bySlug[slug] || []).push(k);
+      var stem = stemOf(slug);
+      if (stem) { (byStem[stem] = byStem[stem] || []).push(k); }
       var list = aliasesByCanon[k] = aliasesByCanon[k] || [];
       (pages[key] || []).forEach(function (alias) {
         var a = norm(alias);
@@ -178,6 +188,11 @@
       uniqueBySlug: function (slug) {
         var list = bySlug[String(slug || '').toLowerCase()];
         return list && list.length === 1 ? list[0] : null;
+      },
+      hasSlug: function (slug) { return !!bySlug[String(slug || '').toLowerCase()]; },
+      byStem: function (slug) {
+        var stem = stemOf(slug);
+        return stem && byStem[stem] ? byStem[stem].slice() : [];
       }
     };
   }
@@ -239,6 +254,31 @@
     return null;
   }
 
+  // Same article under a renamed page: no page of the target has this name, but exactly one has the
+  // same name once the old suffixes are dropped, in the same topic. Several candidates are ranked by
+  // shared topic segments, then by book kind, and an unresolved tie is not used.
+  function renamedMatch(rel, base, targetIndex) {
+    var slug = lastSegment(base);
+    if (!slug || targetIndex.hasSlug(slug)) { return null; }
+    var cands = targetIndex.byStem(slug);
+    if (!cands.length) { return null; }
+    var topic = base.split('/').filter(Boolean).slice(0, -1);
+    var wanted = BOOK_KIND[norm(rel).split('/')[0]] || (/screens?$/.test(slug) ? 'ui' : 'tutorials');
+    var best = [];
+    var bestShared = 0;
+    cands.forEach(function (k) {
+      var segs = stripBook(k).split('/').filter(Boolean).slice(0, -1);
+      var shared = segs.filter(function (x) { return topic.indexOf(x) !== -1; }).length;
+      if (topic.length && !shared) { return; }
+      if (shared > bestShared) { bestShared = shared; best = [k]; } else if (shared === bestShared) { best.push(k); }
+    });
+    if (best.length > 1) {
+      var kind = best.filter(function (k) { return BOOK_KIND[k.split('/')[0]] === wanted; });
+      if (kind.length) { best = kind; }
+    }
+    return best.length === 1 ? best[0] : null;
+  }
+
   function resolve(rel, source, target, sourceIndex, targetIndex) {
     var r = norm(rel);
     var base = stripBook(r);
@@ -258,6 +298,8 @@
     var slug = lastSegment(base);
     var unique = slug ? targetIndex.uniqueBySlug(slug) : null;
     if (unique) { return out(unique, 'moved'); }
+    var renamed = slug ? renamedMatch(r, base, targetIndex) : null;
+    if (renamed) { return out(renamed, 'moved'); }
 
     // Tier 3: nearest existing parent.
     var parts = base.split('/').filter(Boolean);
