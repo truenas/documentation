@@ -1,0 +1,125 @@
+{
+  "v": 1,
+  "hubSections": [
+    "contributing",
+    "references",
+    "solutions",
+    "softwarestatus",
+    "software-status",
+    "hardware",
+    "search",
+    "archive",
+    "core",
+    "truecommand",
+    "scale",
+    "nightly"
+  ],
+  "versions": [
+    {
+      "id": "nightly",
+      "label": "28",
+      "product": "truenas",
+      "roots": [
+        "/docs/nightly/"
+      ],
+      "pagemap": "/docs/nightly/pagemap.json",
+      "sitemap": "/docs/nightly/sitemap.xml",
+      "keyPrefix": "",
+      "menus": [
+        "TrueNAS"
+      ],
+      "group": "next"
+    },
+    {
+      "id": "27",
+      "label": "27",
+      "product": "truenas",
+      "roots": [
+        "/docs/scale/27/"
+      ],
+      "pagemap": "/docs/scale/27/pagemap.json",
+      "sitemap": "/docs/scale/27/sitemap.xml",
+      "keyPrefix": "",
+      "menus": [
+        "TrueNAS"
+      ],
+      "group": "next"
+    },
+    {
+      "id": "25.10",
+      "label": "25.10",
+      "product": "truenas",
+      "roots": [
+        "/docs/scale/25.10/"
+      ],
+      "pagemap": "/docs/scale/25.10/pagemap.json",
+      "sitemap": "/docs/scale/25.10/sitemap.xml",
+      "keyPrefix": "",
+      "menus": [
+        "TrueNAS"
+      ],
+      "group": "current"
+    },
+    {
+      "id": "25.04",
+      "label": "25.04",
+      "product": "truenas",
+      "roots": [
+        "/docs/scale/25.04/"
+      ],
+      "pagemap": "/docs/scale/25.04/pagemap.json",
+      "sitemap": "/docs/scale/25.04/sitemap.xml",
+      "keyPrefix": "",
+      "menus": [
+        "TrueNAS"
+      ],
+      "group": "previous"
+    },
+    {
+      "id": "13.0",
+      "label": "13.0",
+      "product": "core",
+      "roots": [
+        "/docs/core/13.0/"
+      ],
+      "pagemap": "/docs/core/13.0/pagemap.json",
+      "sitemap": "/docs/core/13.0/sitemap.xml",
+      "keyPrefix": "",
+      "menus": [
+        "TrueNAS"
+      ],
+      "group": "previous"
+    },
+    {
+      "id": "3.0",
+      "label": "3.0",
+      "product": "truecommand",
+      "roots": [
+        "/docs/truecommand/3.0/"
+      ],
+      "pagemap": "/docs/truecommand/3.0/pagemap.json",
+      "sitemap": "/docs/truecommand/3.0/sitemap.xml",
+      "keyPrefix": "",
+      "menus": [
+        "TrueCommand"
+      ],
+      "group": "current"
+    },
+    {
+      "id": "archive",
+      "label": "Archive",
+      "product": "archive",
+      "roots": [
+        "/docs/archive/"
+      ],
+      "pagemap": null,
+      "sitemap": null,
+      "keyPrefix": "",
+      "menus": [
+        "TrueNAS",
+        "TrueCommand"
+      ],
+      "group": "archive"
+    }
+  ]
+}
