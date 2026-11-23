@@ -277,6 +277,8 @@
 /images/SCALE/Dashboard/DashboardSystemInfoWidgetGeneric.png
 /images/SCALE/Dashboard/EmailWidget.png
 /images/SCALE/Dashboard/FeedbackIcon.png
+/images/SCALE/Dashboard/FeedbackWindow.png
+/images/SCALE/Dashboard/FeedbackWindowEnterpriseBugReport.png
 /images/SCALE/Dashboard/GlobalSearchDocs.png
 /images/SCALE/Dashboard/GlobalSearchElementResult.png
 /images/SCALE/Dashboard/GlobalSearchQuery.png
@@ -287,9 +289,7 @@
 /images/SCALE/Dashboard/JobsFailed.png
 /images/SCALE/Dashboard/JobsMenu.png
 /images/SCALE/Dashboard/JobsScreen.png
-/images/SCALE/Dashboard/PowerButtonSCALE.png
 /images/SCALE/Dashboard/PreferencesScreen.png
-/images/SCALE/Dashboard/SendFeedbackEnterprise.png
 /images/SCALE/Dashboard/TNCLoginScreen.png
 /images/SCALE/Dashboard/TopToolbar.png
 /images/SCALE/Dashboard/TrueCommandCloudConnectSCALE.png
@@ -910,6 +910,7 @@
 /images/SCALE/SystemSettings/SaveConfigurationWindow.png
 /images/SCALE/SystemSettings/ScrubBootPoolNowSCALE.png
 /images/SCALE/SystemSettings/SecurityFIPSSTIGRestartDialog.png
+/images/SCALE/SystemSettings/SendFeedbackReportABugWindow.png
 /images/SCALE/SystemSettings/ServicesNFSSettingsScreen.png
 /images/SCALE/SystemSettings/ServicesSCALE.png
 /images/SCALE/SystemSettings/ServicesSSHBasicSettingsGenOptionsSCALE.png
@@ -973,7 +974,8 @@
 /images/SCALE/Virtualization/CreateVirtualMachineOperatingSystemSettings.png
 /images/SCALE/Virtualization/CreateVirtualMachinesDisksSettings.png
 /images/SCALE/Virtualization/CreateVirtualMachinesNetworkInterfaceSettings.png
-/images/SCALE/Virtualization/DeleteInstance.png
+/images/SCALE/Virtualization/DeleteContainerDialog.png
+/images/SCALE/Virtualization/DeleteItemDialog.png
 /images/SCALE/Virtualization/DeleteNicDialog.png
 /images/SCALE/Virtualization/DeleteVMDevice.png
 /images/SCALE/Virtualization/DeleteVirtualMachineDialog.png
@@ -1014,6 +1016,7 @@
 /js/csv-changelog-table.js
 /js/main-fbb9c8b0.bundle.min.js
 /js/mermaid-a7635370.bundle.min.js
+/js/version-switcher.js
 /js/visio-download.js
 /printview/scale/index.html
 /printview/scale/gettingstarted/index.html
@@ -1066,6 +1069,7 @@
 /scale/credentials/groups/index.html
 /scale/credentials/groups/localgroupsscreens/
 /scale/credentials/groups/managelocalgroups/
+/scale/credentials/kmip/
 /scale/credentials/localgroups/
 /scale/credentials/localgroupsscreens/
 /scale/credentials/manageusers/
@@ -1251,6 +1255,7 @@
 /scale/scalesecurityreports/index.html
 /scale/scaletutorials/index.html
 /scale/scaletutorials/apps/
+/scale/scaletutorials/communityrecommends/index.html
 /scale/scaletutorials/configreportsscale/
 /scale/scaletutorials/containers/
 /scale/scaletutorials/credentials/
@@ -1286,9 +1291,9 @@
 /scale/shares/nvme-of/configuringnvmeof/
 /scale/shares/nvme-of/managing-nvme-of-subsystems/
 /scale/shares/nvme-of/nvme-of-screens/
-/scale/shares/s3/index.html
-/scale/shares/s3/configurings3/
-/scale/shares/s3/s3bucketsscreens/
+/scale/shares/s3objectstorage/index.html
+/scale/shares/s3objectstorage/configurings3objectstorage/
+/scale/shares/s3objectstorage/s3bucketsscreens/
 /scale/shares/sharesscreens/
 /scale/shares/smb/index.html
 /scale/shares/smb/addmanagesmbshares/
@@ -1409,6 +1414,7 @@
 /scale/virtualmachines/virtualmachinesscreens/
 /scalenext-releasenotes/
 /scaleuireference/
+/shares/
 /tags/2fa/page/
 /tags/accounts/index.html
 /tags/accounts/page/
@@ -1559,7 +1565,6 @@
 /tags/namespaces/index.html
 /tags/namespaces/page/
 /tags/network/page/1/
-/tags/nfs/index.html
 /tags/nfs/page/
 /tags/nqn/index.html
 /tags/nqn/page/
@@ -1593,7 +1598,6 @@
 /tags/quotas/index.html
 /tags/quotas/page/
 /tags/raidz/page/
-/tags/rdma/index.html
 /tags/rdma/page/
 /tags/remote/page/
 /tags/remote-direct-memory-access/index.html
