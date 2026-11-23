@@ -170,7 +170,9 @@ While TrueNAS is designed for and ever-evolving towards increased user friendlin
 
 * **WebDAV**: WebDAV (Web Distributed Authoring and Versioning) is an extension of the Hypertext Transfer Protocol (HTTP) that allows clients to perform remote Web content authoring operations.
 
+<!-- DOCS-2693 KMIP returned to draft for TrueNAS 27; reintroduce in TrueNAS 28
 * **KMIP**: The Key Management Interoperability Protocol (KMIP) is an extensible client/server communication protocol for the storage and maintenance of keys, certificates, and secret objects.
+-->
 
 * **Kerberos**: Kerberos is a computer-network authentication protocol designed by MIT that works on the basis of tickets to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner.
 
