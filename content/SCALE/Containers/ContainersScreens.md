@@ -1,14 +1,14 @@
 ---
 title: "Containers Screens"
-description: "Provides information on the Containers screens and settings to add containers or virtual machines (VMs) to your TrueNAS system."
+description: "Provides information on the Containers screens and settings to add containers to your TrueNAS system."
 weight: 50
 aliases:
  - /scale/scaleuireference/containersscreens/
  - /docs/scale/scaleuireference/instancesscreens/
 tags:
- - vm
- - container
- - instances
+ - containers
+ - gpus
+ - usbs
 doctype: reference
 ---
 
@@ -125,14 +125,14 @@ The **Details for *Container*** cards show information and configuration options
 
 ### General Info Card
 
-The **General Info** card shows container configuration details including **Description**, **Autostart**, **Dataset**, **CPU Set**, **Container Time**, **Shutdown Timeout**, **Init Process** command, and **Capabilities Policy**.
+The **General Info** card shows container configuration details including **Description**, **Autostart**, **Dataset**, **CPU Set**, **Memory Limit**, **Container Time**, **Shutdown Timeout**, **Init Process** command, and **Capabilities Policy**.
 The **Init Working Directory**, **Init User**, and **Init Group** also show when configured.
 
 {{< trueimage src="/images/SCALE/Virtualization/GeneralInfoWidget.png" alt="General Info Card" id="General Info Card" >}}
 
 **[Delete](#delete-container-dialog)** opens the **Delete Container** dialog.
 
-**[Edit](#edit-container-screen)** opens an **Edit Container: *Container*** configuration screen populated with editable settings also found on the install wizard screen for the container.
+**[Edit](#edit-container-screen)** opens an **Edit Container: *Container*** configuration screen populated with editable settings also found on the **Add Container** screen.
 
 #### Delete Container Dialog
 
@@ -151,7 +151,7 @@ The **USB Devices** card shows USB devices attached to the container, allowing h
 
 {{< trueimage src="/images/SCALE/Virtualization/DevicesWidget.png" alt="USB Devices Card" id="USB Devices Card" >}}
 
-**Add** shows a list of available USB devices that can be attached to the container.
+**Add** shows a list of available USB devices that can be attached to the container. **Add** offers the by port and by vendor and product ID options. It is disabled while the container is running.
 
 USB devices appear in the list only if they are physically connected to the TrueNAS system, are not USB hubs, and provide the required information to TrueNAS (bus, device number, vendor ID, and product ID).
 
@@ -242,7 +242,7 @@ The **Add NIC Device** and **Edit NIC Device** dialogs configure network interfa
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **NIC Type** | Sets the NIC type. Options are *VirtIO* or *Intel e82585 (e1000)*. |
+| **NIC Type** | Sets the NIC type. Options are *VirtIO* or *Intel e82545 (e1000)*. |
 | **Use Default Mac Address** | Sets TrueNAS to automatically assign a MAC address. Only available when adding a new NIC. |
 | **Mac Address** | Specifies a custom MAC address. Only shows while adding and when **Use Default Mac Address** is not selected. If editing a NIC, leave empty to use the default MAC address. |
 | **Trust Guest RX Filters** | Sets whether to trust guest OS receive filter settings for better performance. Shows when **NIC Type** is set to **VirtIO**. Applies only to a VirtIO NIC added from **MACVLAN NICS**. For a NIC from **BRIDGED NICS**, TrueNAS rejects or ignores it. |
@@ -279,7 +279,7 @@ The basic settings are always visible and configure essential container properti
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Specifies a required name for the container. Names consist of upper or lower case alphanumeric or allowed special characters. |
+| **Name** | Specifies a required name for the container. Names must be a valid hostname of up to 100 total characters: 1-63 characters per hostname section, using only letters, digits and hyphens within each section, and can include dots to separate the sections. A hostname section cannot start or end with a hyphen. Names cannot be an IPv4 address, which is four sections of numbers (1 to 3 digits each) separated by dots, such as 192.168.1.10. Other names made of numbers, such as 123 or 10.20.30, are accepted. |
 | **Description** | Specifies an optional description about the container or how it is used. |
 | **Autostart** | Sets the container to automatically start when the system boots. |
 | **Image** | Specifies the operating system image file for the container. |
@@ -318,6 +318,18 @@ The **CPU Configuration** settings bind the container to specific CPU cores.
 | **CPU Set** | Specifies CPU core numbers to allocate to the container (e.g., *0,1,2* or *0-3*). Leave blank to allow the container access to all host CPU cores. |
 {{< /truetable >}}
 
+{{< trueimage src="/images/SCALE/Virtualization/AddContainerAdvanced2.png" alt="Add Container Advanced Options - Part 2" id="Add Container Advanced Options - Part 2" >}}
+
+#### Memory Configuration
+
+The **Memory Configuration** section has one setting.
+
+{{< truetable >}}
+| Setting | Description |
+|---------|-------------|
+| **Memory Limit (MiB)** | Sets a hard memory limit for the container to the value entered. When left blank, no limit is set. Changes apply the next time the container starts. |
+{{< /truetable >}}
+
 #### Time Configuration
 
 The **Time Configuration** settings control container time zone and shutdown behavior.
@@ -326,12 +338,14 @@ The **Time Configuration** settings control container time zone and shutdown beh
 | Setting | Description |
 |---------|-------------|
 | **Container Time** | Sets the time zone for the container. **Local** uses the host system time. **UTC** uses Coordinated Universal Time. |
-| **Shutdown Timeout** | Specifies the number of seconds to wait for the container to shut down gracefully before forcing termination. Default is 30 seconds. |
+| **Shutdown Timeout (seconds)** | Specifies the number of seconds to wait for the container to shut down gracefully before forcing termination. Default is 30 seconds, and the range is 5 to 300. |
 {{< /truetable >}}
+
+{{< trueimage src="/images/SCALE/Virtualization/AddContainerAdvanced3.png" alt="Add Container Advanced Options - Part 3" id="Add Container Advanced Options - Part 3" >}}
 
 #### Init Process
 
-The **Init Process** settings configure the initialization process for the container.  
+The **Init Process** settings configure the initialization process for the container. 
 
 {{< truetable >}}
 | Setting | Description |
@@ -341,8 +355,6 @@ The **Init Process** settings configure the initialization process for the conta
 | **Init User** | Specifies the user to run the init process as. |
 | **Init Group** | Specifies the group to run the init process as. |
 {{< /truetable >}}
-
-{{< trueimage src="/images/SCALE/Virtualization/AddContainerAdvanced2.png" alt="Add Container Advanced Options - Part 2" id="Add Container Advanced Options - Part 2" >}}
 
 #### Environment Variables
 
@@ -356,6 +368,8 @@ The **Environment Variables** settings configure optional environment variables 
 | **Name** | Specifies the environment variable name (e.g., *PATH*, *HOME*). |
 | **Value** | Specifies the value for the environment variable. |
 {{< /truetable >}}
+
+{{< trueimage src="/images/SCALE/Virtualization/AddContainerAdvanced4.png" alt="Add Container Advanced Options - Part 4" id="Add Container Advanced Options - Part 4" >}}
 
 #### USB Devices
 
@@ -380,6 +394,7 @@ This setting is available at container creation only and cannot be changed after
 | Setting | Description |
 |---------|-------------|
 | **ID Map Type** | Sets the UID/GID mapping mode for the container from the options:<ul><li>**Default** (Recommended) - Maps the container root (UID 0) to the unprivileged host user **truenas_container_unpriv_root** (UID 2147000001). All other container UIDs are offset by the same amount (e.g., container UID 1000 becomes host UID 2147001001). Provides security isolation while allowing normal container operations.</li><li>**Isolated** - Uses the same offset as default but shifts the base further by a per-container slice value, ensuring no two containers share host UID ranges. Use when multiple containers access the same host datasets and non-overlapping UID ranges are required. TrueNAS automatically assigns a unique slice if none is specified.</li><li>**Privileged** - Applies no UID/GID mapping. Container UIDs map directly to the same UIDs on the host. Container root (UID 0) becomes host root. Use only when an application explicitly requires direct UID mapping.</li></ul> |
+| **ID Map Slice** | Sets the offset value when thee ID map is set to **Isolated**. Range is 1 to 999. Shows after setting **ID Map Type** to **Isolated**. |
 {{< /truetable >}}
 
 {{< hint type=warning title="Privileged ID Mapping Warning" >}}
@@ -409,9 +424,11 @@ See [Containers Cards](#containers-cards) for information on configuring devices
 
 The **Edit Container: *Container*** screen includes most settings from the **[Add Container Screen](#add-container-screen)** except **Image**, **Pool**, **USB Devices**, and **ID Map Type**.
 
-Settings available in edit mode include **Name**, **Description**, **Autostart**, and these **Advanced Options**: **CPU Configuration**, **Time Configuration**, **Init Process**, **Environment Variables**, and **Capabilities**.  
+Settings available in edit mode include **Name**, **Description**, **Autostart**, and these **Advanced Options**: **CPU Configuration**, **Memory Configuration**, **Time Configuration**, **Init Process**, **Environment Variables**, and **Capabilities**. Use the [USB Devices card](#usb-devices-card) to add or edit a USB device for an existing container.
 
 Note that the **Init Process** command field cannot be changed after creation, but **Init Working Directory**, **Init User**, and **Init Group** remain editable.
+
+The container can only be renamed while it is stopped.
 
 Device, disk, network, and other settings are configured via the [Containers Cards](#containers-cards) on the **Containers** screen.
 
