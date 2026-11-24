@@ -18,6 +18,15 @@ This tutorial outlines how to join TrueNAS to an Entra ID without an on-premises
 {{< /hint >}}
 
 {{< include file="/static/includes/ThirdPartyIntegration.md" >}}
+{{< hint type=warning title="Third-Party Costs" >}}
+Microsoft Entra Domain Services pricing is based on SKU tier, which is selected based on auth load and object counts. These are guidelines for selecting a SKU, not hard limits.
+Pricing can be obtained through the Azure Pricing Calculator or a sales representative. The following links offer general pricing information:
+
+* [Azure pricing page](https://azure.microsoft.com/en-us/pricing/details/microsoft-entra-ds/)
+* [Microsoft Security pricing page](https://www.microsoft.com/en-us/security/pricing/microsoft-entra-ds)
+
+Please refer to Microsoft web resources or contact a Microsoft sales representative to discuss the best option for your use case before deploying this in your TrueNAS system.
+{{< /hint >}}
 
 ## Preparing Entra Domain Services
 
