@@ -1,5 +1,5 @@
 <script src="//code.jquery.com/jquery-3.5.0.min.js"></script>
-<script src="{{ "/js/capacity.js" | relURL }}"></script>
+<script src="{{ "js/capacity.js" | relURL }}"></script>
 
 <table class="inputs">
     <tr>
@@ -665,8 +665,8 @@
 <!-- Linkable Tab Box Container -->
 <div id="capacity-tabs-container"></div>
 
-<script src="/js/linkable-tabs.js?v=4.8"></script>
-<script src="/js/linkable-tabs-init.js"></script>
+<script src="{{ "js/linkable-tabs.js?v=4.8" | relURL }}"></script>
+<script src="{{ "js/linkable-tabs-init.js" | relURL }}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Wait for capacity calculator to initialize before setting up tabs

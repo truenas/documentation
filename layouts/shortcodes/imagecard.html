@@ -1,9 +1,10 @@
-<a class="section-box" href="{{ .Get "link" }}">
+{{- $link := partial "rooturl.html" (.Get "link") -}}
+<a class="section-box" href="{{ $link }}">
   <div class="box-image">
     {{ with .Get "icon" }}
       <span class="material-icons prod-card-icon" aria-label="{{ $.Get "title" | plainify }} Documentation Page">{{ . }}</span>
     {{ else }}
-      <img class="prod-card-img" src="{{ .Get "image" }}" aria-label="{{ .Get "title" | plainify }} Documentation Page">
+      <img class="prod-card-img" src="{{ partial "rooturl.html" (.Get "image") }}" aria-label="{{ .Get "title" | plainify }} Documentation Page">
     {{ end }}
   </div>
   <div class="section-tab-content ixprods">

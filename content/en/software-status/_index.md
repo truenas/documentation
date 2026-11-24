@@ -42,7 +42,7 @@ jump_to_buttons:
     <p class="lead mt-3">Choose the right TrueNAS version by balancing your need for new features against operational risk tolerance. These recommendations are regularly updated after extensive testing across diverse deployments.</p>
   </div>
   <div class="col-lg-5 d-none d-lg-block text-end ps-lg-4">
-    <img src="/images/truenas-logo-mark.png" alt="Software Status" class="img-fluid" style="max-width: 300px;">
+    <img src="{{< relurl "images/truenas-logo-mark.png" >}}" alt="Software Status" class="img-fluid" style="max-width: 300px;">
   </div>
 </div>
 {{% /blocks/cover %}}
@@ -56,7 +56,7 @@ jump_to_buttons:
 <div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
   <div class="enterprise-support-notice" style="display: flex; align-items: center; gap: 2rem; padding: 1rem; border: 1px solid var(--accent-color); border-radius: 8px; background-color: var(--accent-color-lite);">
     <div style="flex-shrink: 0;">
-      <img src="/images/open-enterprise-storage--logo-full-color-rgb-large.png" alt="TrueNAS Enterprise" style="max-width: 150px; height: auto;">
+      <img src="{{< relurl "images/open-enterprise-storage--logo-full-color-rgb-large.png" >}}" alt="TrueNAS Enterprise" style="max-width: 150px; height: auto;">
     </div>
     <div style="flex-grow: 1; font-size: 0.95rem;">
       <p style="margin-top: 0;">* We recommend the default Mission Critical update profile for all TrueNAS Enterprise systems.</p>
@@ -144,9 +144,9 @@ Users can find additional help through the [TrueNAS Community Forums](https://ww
 <!-- Linkable Tab Box -->
 <div id="component-tabs-container"></div>
 
-<script src="/js/linkable-tabs.js?v=4.8"></script>
-<script src="/js/linkable-tabs-init.js"></script>
-<script src="/js/jump-to-button-fix.js"></script>
+<script src="{{< relurl "js/linkable-tabs.js?v=4.8" >}}"></script>
+<script src="{{< relurl "js/linkable-tabs-init.js" >}}"></script>
+<script src="{{< relurl "js/jump-to-button-fix.js" >}}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     initializeHugoTabs('release-tab-content-source', 'component-tabs-container', 'user-types');

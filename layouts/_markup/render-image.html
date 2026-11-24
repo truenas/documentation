@@ -1,0 +1,4 @@
+{{- /* Same base-path handling as render-link.html, for images such as /images/Hardware/... */ -}}
+{{- $dest := .Destination -}}
+{{- $dest = partial "rooturl.html" $dest -}}
+<img src="{{ $dest | safeURL }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }}>

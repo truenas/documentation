@@ -58,6 +58,6 @@ related: false
 
 * <a href="https://www.truenas.com/docs/files/MiniGen2PRN.pdf" download>FreeNAS Mini (Gen 2) PRN</a>: Official TrueNAS Product Retirement Notice for FreeNAS Mini (Gen 2) systems.
 * <a href="https://truenas.com/docs/files/MiniFamily2.0.pdf" download>Mini Family 2.0 Basic Setup Guide</a>: Deployment Guide for FreeNAS Mini (Gen 2) Products.
-* <a href="/hardware/legacyhardware/miniseries/freenasminibmcwatchdog/">ASRock Rack C2750D4I BMC Watchdog Issue</a>: Notice about firmware issue with BMC on impacted FreeNAS Mini systems.
-* <a href="/hardware/legacyhardware/miniseries/freenasminiclocksignals/">FreeNAS Mini Motherboard Clock Signal Issue</a>: Notice about motherboard clock signal issue impacting FreeNAS Mini systems.
-* <a href="/hardware/legacyhardware/miniseries/freenasminiheattroubleshoot/">Troubleshooting Heat Issues</a>: How to diagnose and address overheat issues with FreeNAS Mini systems.
+* <a href="{{< relurl "hardware/legacyhardware/miniseries/freenasminibmcwatchdog/" >}}">ASRock Rack C2750D4I BMC Watchdog Issue</a>: Notice about firmware issue with BMC on impacted FreeNAS Mini systems.
+* <a href="{{< relurl "hardware/legacyhardware/miniseries/freenasminiclocksignals/" >}}">FreeNAS Mini Motherboard Clock Signal Issue</a>: Notice about motherboard clock signal issue impacting FreeNAS Mini systems.
+* <a href="{{< relurl "hardware/legacyhardware/miniseries/freenasminiheattroubleshoot/" >}}">Troubleshooting Heat Issues</a>: How to diagnose and address overheat issues with FreeNAS Mini systems.

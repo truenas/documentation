@@ -11,4 +11,4 @@ related: false
 
 * <a href="https://www.truenas.com/docs/files/FreeNASCertifiedPRN.pdf" download>FreeNAS Certified PRN</a>: Official TrueNAS Product Retirement Notice for the FreeNAS Certified system.
 * <a href="https://www.truenas.com/docs/files/FNCertifiedBSGv2_7.pdf" download>Basic Setup Guide</a>: Deployment guide for FreeNAS Certified systems.
-* <a href="/hardware/legacyhardware/fncertified/multipath/">FNC is Changing to Wide Porting</a>: Notice of change to wide porting for FreeNAS Certified systems.
+* <a href="{{< relurl "hardware/legacyhardware/fncertified/multipath/" >}}">FNC is Changing to Wide Porting</a>: Notice of change to wide porting for FreeNAS Certified systems.

@@ -12,7 +12,7 @@ related: false
 ## TrueNAS Z-Series Document Archive
 
 * <a href="https://www.truenas.com/docs/files/ZseriesBSGv1_0.pdf" download>Z-Series Basic Setup & Deployment Guide</a>: Deployment instructions for Z-Series systems.
-* <a href="/hardware/legacyhardware/zseries/zseriesnode/">Replacing a Z-Series Node</a>: Instructions for replacing a Z-Series node (storage controller).
+* <a href="{{< relurl "hardware/legacyhardware/zseries/zseriesnode/" >}}">Replacing a Z-Series Node</a>: Instructions for replacing a Z-Series node (storage controller).
 * <a href="https://www.truenas.com/docs/files/ZseriesSatadomReplacev1_0.pdf" download>Z-Series Boot Device Replacement Guide</a>: Instructions for replacing a Z-Series SATADOM boot device.
 * <a href="https://truenas.com/docs/files/z-series-sov.pdf" download>Statement of Volatility</a>: Official Statement of Volatility for Z-Series systems.
 

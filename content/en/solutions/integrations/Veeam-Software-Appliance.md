@@ -58,9 +58,9 @@ The goal for this appliance image is smoother, more secure, and easily accessibl
 <!-- Linkable Tab Box -->
 <div id="requirements-tabs-container"></div>
 
-<script src="/js/linkable-tabs.js?v=4.8"></script>
-<script src="/js/linkable-tabs-init.js"></script>
-<script src="/js/jump-to-button-fix.js"></script>
+<script src="{{< relurl "js/linkable-tabs.js?v=4.8" >}}"></script>
+<script src="{{< relurl "js/linkable-tabs-init.js" >}}"></script>
+<script src="{{< relurl "js/jump-to-button-fix.js" >}}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     initializeHugoTabs('requirements-tab-content-source', 'requirements-tabs-container');
@@ -209,9 +209,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- Linkable Tab Box -->
 <div id="install-tabs-container"></div>
 
-<script src="/js/linkable-tabs.js"></script>
-<script src="/js/linkable-tabs-init.js"></script>
-<script src="/js/jump-to-button-fix.js"></script>
+<script src="{{< relurl "js/linkable-tabs.js" >}}"></script>
+<script src="{{< relurl "js/linkable-tabs-init.js" >}}"></script>
+<script src="{{< relurl "js/jump-to-button-fix.js" >}}"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     initializeHugoTabs('installation-tab-content-source', 'install-tabs-container');

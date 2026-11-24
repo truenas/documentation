@@ -2,11 +2,14 @@
 {{- $type := .Get "type" -}}
 {{- $language := .Get "language" -}}
 {{- $options := .Get "options" -}}
+{{- /* Raw HTML in included files uses root-absolute asset paths; prefix them with the site base path (/docs/). */ -}}
+{{- $base := (urls.Parse site.BaseURL).Path | default "/" -}}
+{{- $fix := printf "${1}=\"%s${2}/" $base -}}
 
 {{- if $language -}}
   {{- highlight ($file | readFile) $language (default "linenos=table" $options) -}}
 {{- else if eq $type "html" -}}
-  {{- $file | readFile | safeHTML -}}
+  {{- $file | readFile | replaceRE `(src|href)="/(images|favicons?|js|css)/` $fix | safeHTML -}}
 {{- else -}}
-  {{- $file | readFile | $.Page.RenderString -}}
+  {{- $file | readFile | replaceRE `(src|href)="/(images|favicons?|js|css)/` $fix | $.Page.RenderString -}}
 {{- end -}}

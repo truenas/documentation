@@ -1,6 +1,6 @@
 {{ $baseLink := .Get "link" }}
 {{ $baseLinkNoExt := strings.TrimSuffix ".pdf" $baseLink }}
-{{ $image := .Get "image" }}
+{{ $image := partial "rooturl.html" (.Get "image") }}
 {{ $title := .Get "title" }}
 {{ $descr := .Get "descr" }}
 

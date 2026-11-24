@@ -57,7 +57,7 @@ Begin outlining the procedure steps.
 The first step is typically to log in to the system and go to a location like **System > General**.
 Including a screenshot is a good way for the reader to confirm they are in the correct location and to get more context.
 
-{{\< trueimage src="/images/SCALE/imagename.png" alt="Image Name Text" id="Image Name Text" >}}
+{{\< trueimage src="{{< relurl "images/SCALE/imagename.png" >}}" alt="Image Name Text" id="Image Name Text" >}}
 
 {{\< hint type="danger" >}}
 Danger, information, and warnings admonition boxes include information about common errors that are made during the procedure.

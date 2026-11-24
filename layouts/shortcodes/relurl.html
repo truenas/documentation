@@ -1,0 +1,2 @@
+{{- /* Base-path-aware URL for raw HTML in content: {{< relurl "images/x.png" >}}. Give the path without a leading slash. */ -}}
+{{- strings.TrimPrefix "/" (.Get 0) | relURL -}}

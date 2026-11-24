@@ -1,0 +1,7 @@
+{{- /*
+  Root-absolute markdown links (/hardware/...) point at the host root. The hub is served under a base path
+  (https://www.truenas.com/docs/), so prefix them with it. relURL needs the leading slash removed to add the path.
+*/ -}}
+{{- $dest := .Destination -}}
+{{- $dest = partial "rooturl.html" $dest -}}
+<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>

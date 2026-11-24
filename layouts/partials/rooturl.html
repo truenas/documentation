@@ -1,0 +1,8 @@
+{{- /* Base-path-aware form of a root-absolute path. "/hardware/" becomes "/docs/hardware/" under https://www.truenas.com/docs/.
+       Anything else (absolute URLs, relative paths, paths already carrying the base path) is returned unchanged. */ -}}
+{{- $dest := . -}}
+{{- $base := (urls.Parse site.BaseURL).Path | default "/" -}}
+{{- if and (strings.HasPrefix $dest "/") (not (strings.HasPrefix $dest "//")) (not (strings.HasPrefix $dest $base)) -}}
+  {{- $dest = strings.TrimPrefix "/" $dest | relURL -}}
+{{- end -}}
+{{- return $dest -}}

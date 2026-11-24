@@ -197,7 +197,7 @@ Or use the `trueimage` shortcode in your article to link to the image and define
 You can also use HTML to link to an image file that is relative to the site `/static/` directory:
 
 ```
-<img src="/images/network-interfaces.png" width='700px'>
+<img src="{{< relurl "images/network-interfaces.png" >}}" width='700px'>
 ```
 
 {{< /expand >}}
