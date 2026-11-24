@@ -506,3 +506,79 @@ div.draid-grid-table-container::-webkit-scrollbar-track { background: transparen
 .td-content a {
   overflow-wrap: anywhere;
 }
+
+/* ---- Mobile and tablet usability (the Docsy hub counterpart of DOCS-2829 on the product docs) ---- */
+
+/* The navbar list (docs hub menu, theme toggle, search buttons) is a no-wrap row that ran to ~630px
+   wide on a phone. Let it wrap inside the screen. */
+@media (max-width: 767.98px) {
+  #main_navbar {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    overflow: visible !important;
+  }
+  #main_navbar .navbar-nav {
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    align-items: center;
+    width: 100% !important;
+    gap: .25rem;
+  }
+  #main_navbar .navbar-nav .nav-link {
+    padding-left: .4rem;
+    padding-right: .4rem;
+  }
+  #main_navbar .navbar-nav > li,
+  #main_navbar .navbar-nav > .enhanced-search-buttons {
+    flex: 0 1 auto !important;
+    width: auto !important;
+    min-width: 0;
+  }
+  .enhanced-search-buttons {
+    flex-wrap: nowrap;
+    gap: .25rem;
+    margin: 0 !important;
+  }
+  /* 44px minimum touch target on the controls in that row */
+  #main_navbar .nav-link,
+  .enhanced-search-buttons button,
+  .enhanced-search-buttons a {
+    min-height: 44px;
+  }
+}
+
+/* Page text sat against the left edge of the screen (row gutters without a container). */
+@media (max-width: 767.98px) {
+  .td-main main {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Images, embeds and wide tables stay inside the page (raw <img> in includes had no max-width). */
+.td-main main img,
+.td-main main video,
+.td-main main iframe {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 800px) {
+  .td-main main table:not(.lntable):not(.highlight) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Software Status: the enterprise support notice is an inline flex row whose logo ignored its 150px cap
+   (a global max-width: 100% !important wins over the inline style) and pushed the page to ~630px wide. */
+@media (max-width: 800px) {
+  .enterprise-support-notice {
+    flex-wrap: wrap;
+  }
+  .enterprise-support-notice img {
+    max-width: 150px !important;
+  }
+}
