@@ -28,7 +28,7 @@ Click <i class="material-icons" aria-hidden="true" title="Configure">edit</i> to
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Identifier** | Required. Type a description for the UPS device. You can use alphanumeric, period (.), comma (,), hyphen (-), and underscore (_) characters. |
+| **Identifier** | Required. Type a description for the UPS device. You can use alphanumeric, period (.), hyphen (-), and underscore (_) characters. |
 | **UPS Mode** | Select the either **Master** or **Slave** mode from the dropdown list. Select **Master** if the UPS is plugged directly into the system serial port, or **Slave** to shut down this system before the master system. **Slave** displays the **Remote Hostname** and **Remote Port** fields, and removes the **Driver** field. The UPS remains the last item to shut down. See the [Network UPS Tools Overview](https://networkupstools.org/docs/user-manual.chunked/ar01s02.html#_monitoring_client). |
 | **Remote Host** | Required. Enter a valid IP address for the remote UPS master system. This field displays only when **UPS Mode** is set to **Slave**. |
 | **Remote Port** | Required. Enter the open network port number of the UPS master system. The default port is 3493. This field displays only when **UPS Mode** is set to **Slave**. |
