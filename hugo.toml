@@ -1,4 +1,4 @@
-baseURL = "https://docs.truenas.com/"
+baseURL = "https://www.truenas.com/docs/"
 title = "TrueNAS Documentation Hub"
 languageCode = "en-us"
 defaultContentLanguage = "en"
