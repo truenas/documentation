@@ -31,7 +31,7 @@ aliases:
 {{% blocks/section color="light" type="row" %}}
 <div class="row justify-content-center g-4">
 
-{{% blocks/feature icon="image:icons/tn-icon-black.png" title="TrueNAS" url="https://www.truenas.com/docs/" %}}
+{{% blocks/feature icon="image:icons/tn-icon-black.png" title="TrueNAS" url="https://www.truenas.com/docs/scale/27/" %}}
 Complete guides, tutorials, and references for TrueNAS Community Edition and Enterprise deployments
 {{% /blocks/feature %}}
 
@@ -76,12 +76,23 @@ Version recommendations, release schedules, upgrade paths, and download links
 Implementation guides and best practices for common deployment scenarios
 {{% /blocks/feature %}}
 
+{{% blocks/feature icon="material:library_books" title="References" url="references/" %}}
+Technical specifications, glossaries, and supplementary documentation resources
+{{% /blocks/feature %}}
+
+</div>
+<div class="row justify-content-center g-4">
+
 {{% blocks/feature icon="material:handshake" title="Contributing" url="contributing/" %}}
 Join the community and contribute to TrueNAS documentation and open source projects
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="material:library_books" title="References" url="references/" %}}
-Technical specifications, glossaries, and supplementary documentation resources
+{{% blocks/feature icon="material:history" title="Documentation Archive" url="archive/" %}}
+Documentation for previous TrueNAS releases that are no longer maintained
+{{% /blocks/feature %}}
+
+{{% blocks/feature icon="material:forum" title="Community Forums" url="https://forums.truenas.com/" %}}
+Community discussion is another way to learn about your system and get help from other users
 {{% /blocks/feature %}}
 
 </div>
