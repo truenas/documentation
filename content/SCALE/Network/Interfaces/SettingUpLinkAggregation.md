@@ -59,6 +59,9 @@ To set up a link aggregation, go to **Network**, click **Add** on the **Interfac
    **FAST** sets the timeout rate at one per second, even after synchronization. **FAST** allows for rapid detection of faults.
    {{< /expand >}}
    {{< expand "FAILOVER" "v" >}}
+
+   {{< include file="/static/includes/HABondInterfaceWarning.md" >}}
+   
    Select **FAILOVER** to send traffic through the primary interface of the group. If the primary interface fails, traffic diverts to the next available interface in the bond group.
    {{< /expand >}}
    {{< expand "LOADBALANCE" "v" >}}
