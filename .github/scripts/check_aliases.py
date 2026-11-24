@@ -13,7 +13,7 @@ exception_patterns = [
 ]
 
 # Get list of changed files compared to the base branch
-base_branch = f"origin/{os.environ.get('GITHUB_BASE_REF', 'master')}"
+base_branch = f"origin/{os.environ.get('GITHUB_BASE_REF', 'nightly')}"
 result = subprocess.run(
     ["git", "diff", "--name-only", base_branch],
     stdout=subprocess.PIPE,
