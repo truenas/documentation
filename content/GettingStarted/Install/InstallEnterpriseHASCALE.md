@@ -2,7 +2,6 @@
 title: "Installing TrueNAS Enterprise (HA)"
 description: "Provides a sequential process to complete the installation of a TrueNAS Enterprise (HA) dual controller NAS system using an iso file and the TrueNAS UI."
 weight: 16
-aliases:
 tags:
 - install
 - enterprise

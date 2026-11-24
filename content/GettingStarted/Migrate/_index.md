@@ -3,11 +3,6 @@ title: "Migrating from CORE"
 description: "Instructions for migrating from FreeBSD TrueNAS CORE to Linux-based TrueNAS versions."
 geekdocCollapseSection: true
 weight: 40
-aliases:
- - /scale/gettingstarted/migrate/scalezfsflagremoval/
- - /scale/gettingstarted/migrate/componentnaming/
- - /scale/gettingstarted/migrate/migratingfromcore/
- - /scale/gettingstarted/migrate/migrateprep/
 tags:
 - migrate
 related: false

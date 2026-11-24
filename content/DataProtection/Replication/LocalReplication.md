@@ -3,7 +3,7 @@ title: "Setting Up a Local Replication Task"
 description: "Provides instructions on adding a replication task using different pools or datasets on the same TrueNAS system."
 weight: 10
 aliases:
- - /scale/scaletutorials/dataprotection/replication/localreplicationscale/
+  - /scaletutorials/dataprotection/replication/localreplicationscale/
 tags:
 - replication
 - backup

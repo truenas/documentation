@@ -3,8 +3,8 @@ title: "Managing Global 2FA (Two-Factor Authentication)"
 description: "Provides information on setting up and managing global two-factor authentication, and logging in with it enabled."
 weight: 90
 aliases:
- - /scale/scaletutorials/systemsettings/advanced/manageglobal2fascale/
- - /scale/scaletutorials/credentials/2fascale
+  - /scaletutorials/systemsettings/advanced/manageglobal2fascale/
+  - /scaletutorials/credentials/2fascale/
 tags:
  - 2fa
  - ssh

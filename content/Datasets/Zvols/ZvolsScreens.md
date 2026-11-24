@@ -3,9 +3,9 @@ title: "Zvols Screen"
 description: "Provides information on the settings and functions found on the Zvol screens and cards."
 weight: 50
 aliases:
- - /scale/scaleuireference/datasets/zvolsscreensscale/
- - /scale/scaleuireference/storage/datasets/zvolsscreensscale/
- - /scale/datasets/zvolsscreens/
+  - /scaleuireference/datasets/zvolsscreensscale/
+  - /scaleuireference/storage/datasets/zvolsscreensscale/
+  - /datasets/zvolsscreens/
 tags:
  - zvol
  - storage

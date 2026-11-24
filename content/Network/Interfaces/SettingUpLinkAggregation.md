@@ -3,8 +3,8 @@ title: "Setting Up a Link Aggregation"
 description: "Provides instructions on setting up a link aggregation (bond) interface."
 weight: 20
 aliases:
- - /scale/scaletutorials/network/interfaces/settinguplagg/
- - /scale/network/interfaces/settinguplagg/
+  - /scaletutorials/network/interfaces/settinguplagg/
+  - /network/interfaces/settinguplagg/
 tags:
 - network
 - interfaces

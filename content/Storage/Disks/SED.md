@@ -3,8 +3,8 @@ title: "Managing Self-Encrypting Drives (SED)"
 description: "Covers self-encrypting drives, including supported specifications, implementing and managing SEDs in TrueNAS, and managing SED passwords and data."
 weight: 40
 aliases:
- - /scale/scaletutorials/storage/disks/sedscale/
- - /scale/scaletutorials/storage/sedscale/
+  - /scaletutorials/storage/disks/sedscale/
+  - /scaletutorials/storage/sedscale/
 tags:
 - sed
 - disks

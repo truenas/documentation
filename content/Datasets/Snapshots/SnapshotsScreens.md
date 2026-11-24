@@ -3,11 +3,11 @@ title: "Snapshots Screens"
 description: "Provides information on the settings and functions found on the Snapshots screen."
 weight: 50
 aliases:
- - /scale/scaleuireference/datasets/snapshotsscreens/
- - /scale/scaleuireference/storage/datasets/snapshotsscreens/
- - /scale/scaleclireference/storage/clisnapshot/
- - /scale/datasets/snapshotsscreens/
- - /scale/scaleuireference/storage/snapshotsscale/
+  - /scaleuireference/datasets/snapshotsscreens/
+  - /scaleuireference/storage/datasets/snapshotsscreens/
+  - /scaleclireference/storage/clisnapshot/
+  - /datasets/snapshotsscreens/
+  - /scaleuireference/storage/snapshotsscale/
 tags:
 - snapshots
 - datasets

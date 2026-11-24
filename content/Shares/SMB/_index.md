@@ -8,8 +8,7 @@ tags:
 - shares
 related: false
 aliases:
- - /scale/scaletutorials/shares/smb/
- - /scale/scaleuireference/shares/smb/
+  - /scaletutorials/shares/smb/
 ---
 
 

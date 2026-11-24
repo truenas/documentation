@@ -3,8 +3,6 @@ title: "Boot"
 description: "Information on managing TrueNAS boot environments."
 geekdocCollapseSection: true
 weight: 40
-aliases:
- - /scale/systemsettings/boot/
 related: false
 ---
 

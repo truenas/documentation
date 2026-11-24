@@ -4,11 +4,11 @@ description: "Tutorials to create and manage datasets in TrueNAS."
 geekdocCollapseSection: true
 weight: 6
 aliases:
- - /scale/scaletutorials/datasets/
- - /scale/scaleuireference/datasets/
- - /scale/scaletutorials/storage/datasets/
- - /scale/scaletutorials/storage/datasets/importingdata/
- - /scale/scaletutorials/storage/datasets/datasetsscale/
+  - /scaletutorials/datasets/
+  - /scaleuireference/datasets/
+  - /scaletutorials/storage/datasets/
+  - /scaletutorials/storage/datasets/importingdata/
+  - /scaletutorials/storage/datasets/datasetsscale/
 related: false
 ---
 

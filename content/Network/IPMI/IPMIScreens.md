@@ -3,9 +3,9 @@ title: "IPMI Screens"
 description: "Provides information on the Network screen IPMI widget and configuration screen."
 weight: 50
 aliases:
- - /scale/scaleuireference/network/ipmiscreens/
- - /scale/scaleclireference/service/cliipmi/
- - /scale/network/ipmiscreens/
+  - /scaleuireference/network/ipmiscreens/
+  - /scaleclireference/service/cliipmi/
+  - /network/ipmiscreens/
 tags:
 - network
 - ipmi

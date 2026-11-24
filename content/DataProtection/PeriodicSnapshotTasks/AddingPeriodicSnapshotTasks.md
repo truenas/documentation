@@ -3,8 +3,7 @@ title: "Adding Periodic Snapshot Tasks"
 description: "Provides instructions on creating periodic snapshot tasks in TrueNAS."
 weight: 20
 aliases:
- - /scale/scaletutorials/dataprotection/periodicsnapshottasksscale/
- - /scale/dataprotection/periodicsnapshottasks/
+  - /scaletutorials/dataprotection/periodicsnapshottasksscale/
 tags:
 - snapshots
 - replication

@@ -3,7 +3,7 @@ title: "Configuring NVMe-oF"
 description: "Provides instructions to configure the NVMe-oF service and add NVMe-oF subsystems in TrueNAS."
 weight: 10
 aliases:
- - /scale/scaletutorials/shares/nvme-of/
+  - /scaletutorials/shares/nvme-of/
 tags:
 - nvme-of
 - nvme

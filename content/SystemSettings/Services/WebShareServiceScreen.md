@@ -8,7 +8,7 @@ tags:
 - shares
 doctype: reference
 aliases:
- - /scale/scaleuireference/systemsettings/services/webshareservicescreen/
+  - /scaleuireference/systemsettings/services/webshareservicescreen/
 ---
 
 

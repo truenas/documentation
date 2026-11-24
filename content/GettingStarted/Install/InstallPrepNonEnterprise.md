@@ -2,7 +2,6 @@
 title: "Preparing for TrueNAS UI Configuration"
 description: "Provides information on what you need to complete the TrueNAS configuration using the TrueNAS UI."
 weight: 5
-aliases:
 tags:
 - install
 - migrate

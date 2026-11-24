@@ -3,7 +3,7 @@ title: "WebShare Shares Screens"
 description: "Provides information on WebShare share screens and settings."
 weight: 20
 aliases:
- - /scale/scaleuireference/shares/websharesharesscreens/
+  - /scaleuireference/shares/websharesharesscreens/
 tags:
 - webshare
 - data sharing

@@ -6,8 +6,8 @@ tags:
  - vm
  - gpu
 aliases:
- - /scale/scaletutorials/virtualmachines/addmanagevmdevicesscale/
- - /scale/scaletutorials/virtualization/addmanagevmdevicesscale/
+  - /scaletutorials/virtualmachines/addmanagevmdevicesscale/
+  - /scaletutorials/virtualization/addmanagevmdevicesscale/
 keywords:
 - nas data storage
 - software storage solutions

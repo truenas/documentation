@@ -3,8 +3,8 @@ title: "Configuring Static Routes"
 description: "Provides instructions on configuring a static route using the TrueNAS web UI."
 weight: 20
 aliases:
- - /scale/scaletutorials/network/configurestaticroutes/
- - /scale/network/configurestaticroutes/
+  - /scaletutorials/network/configurestaticroutes/
+  - /network/configurestaticroutes/
 tags:
 - network
 - staticroutes

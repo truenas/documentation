@@ -3,7 +3,7 @@ title: "Fibre Channel Screens"
 description: "Provides information on iSCSI Fibre Channel screens and settings."
 weight: 60
 aliases:
- - /scale/scaleuireference/shares/fibrechannelscreens/
+  - /scaleuireference/shares/fibrechannelscreens/
 tags:
 - iscsi
 - shares

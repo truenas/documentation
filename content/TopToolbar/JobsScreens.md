@@ -5,8 +5,8 @@ weight: 50
 tags:
 - tasks
 aliases:
- - /scale/scaleuireference/jobsscreens/
- - /scale/scaleuireference/toptoolbar/jobsscreens/
+  - /scaleuireference/jobsscreens/
+  - /scaleuireference/toptoolbar/jobsscreens/
 doctype: reference
 ---
 

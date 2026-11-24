@@ -5,8 +5,8 @@ geekdocCollapseSection: true
 weight: 20
 related: false
 aliases:
- - /scale/scaletutorials/systemsettings/general/
- - /scale/scaleuireference/systemsettings/general/
+  - /scaletutorials/systemsettings/general/
+  - /scaleuireference/systemsettings/general/
 ---
 
 TrueNAS General Settings provide options for GUI configuration, localization, NTP servers, support licensing, and email configuration.
