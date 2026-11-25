@@ -1,6 +1,6 @@
 ---
 title: "Adding a License and Proactive Support"
-description: "Provides instructions for TrueNAS Enterprise users to add their system license and set up proactive support."
+description: "Provides instructions for TrueNAS Enterprise and Community users to add their system license and set up Enterprise proactive support."
 weight: 20
 aliases:
  - /scale/scaletutorials/systemsettings/general/addlicenseproactivesupport/
@@ -14,15 +14,15 @@ doctype: tutorial
 ---
 
 
-As of the TrueNAS 26.0 release, licenses are available to all TrueNAS users and customers. License availability is provided to:
+As of the TrueNAS 27.0 release, licenses are available to all TrueNAS users and customers. License availability is provided to:
 * TrueNAS Enterprise customers - Systems provided by TrueNAS and managed through TrueNAS Support.
 * TrueNAS Community users - Systems not provided by TrueNAS, and with licenses obtained through TrueNAS Connect accounts.
 
 TrueNAS Connect obtains a required system fingerprint from a TrueNAS Community system. This fingerprint is used to generate the license.
-TrueNAS Commnity versions show the fingerprint option on the **Support** card on the **General Settings** screen.
+TrueNAS Community versions show the fingerprint option on the **Support** card on the **General Settings** screen.
 
 {{< enterprise >}}
-All Enterprise system show the licensed features on the **Support** card on the **General Settings** screen.
+All Enterprise systems show the licensed features on the **Support** card on the **General Settings** screen.
 
 Enterprise users with questions or issues should contact TrueNAS Support through the Customer Service Portal.
 
