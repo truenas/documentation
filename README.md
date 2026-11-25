@@ -1,3 +1,5 @@
+> **This is the `nightly` branch.** It holds the documentation for the TrueNAS release in development and publishes to <https://www.truenas.com/docs/nightly/>. The unversioned hub lives on [`main`](https://github.com/truenas/documentation/tree/main), and each released version has its own branch. See the [README on `main`](https://github.com/truenas/documentation/blob/main/README.md) for the full branch guide.
+
 <p align="center">
  <a href="https://discord.gg/Q3St5fPETd"><img alt="Join Discord" src="https://badgen.net/discord/members/Q3St5fPETd/?icon=discord&label=Join%20the%20TrueNAS%20Community" /></a>
  <a href="https://forums.truenas.com/"><img alt="Join Forums" src="https://badgen.net/badge/Forums/Post%20Now//purple" /></a>
