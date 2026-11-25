@@ -97,6 +97,27 @@ document.addEventListener('DOMContentLoaded', function() {
             gdocPage.style.opacity = '1';
         }
     });
+
+    // When the screen grows past the mobile breakpoint (for example, rotating a tablet
+    // or resizing the window) the slide-in drawers no longer apply. Close them and clear
+    // the inline styles above so the page is not left dimmed or shifted.
+    var desktopQuery = window.matchMedia('(min-width: 68.0625rem)');
+    function resetDrawers(e) {
+        if (!e.matches) { return; }
+        menuControl.checked = false;
+        sidebarControl.checked = false;
+        gdocPage.style.removeProperty('opacity');
+        gdocPage.style.removeProperty('margin-right');
+        gdocPage.style.removeProperty('transition');
+        sidebarRight.style.removeProperty('transform');
+        sidebarRight.style.removeProperty('display');
+        sidebarRight.style.removeProperty('transition');
+    }
+    if (desktopQuery.addEventListener) {
+        desktopQuery.addEventListener('change', resetDrawers);
+    } else if (desktopQuery.addListener) {
+        desktopQuery.addListener(resetDrawers); // older Safari
+    }
 });
 </script>
 <!-- End sticky main_navbar -->
