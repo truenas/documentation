@@ -1,21 +1,33 @@
-# TrueNAS Documentation Hub (`main`)
+<p align="center">
+ <a href="https://discord.gg/Q3St5fPETd"><img alt="Join Discord" src="https://badgen.net/discord/members/Q3St5fPETd/?icon=discord&label=Join%20the%20TrueNAS%20Community" /></a>
+ <a href="https://forums.truenas.com/"><img alt="Join Forums" src="https://badgen.net/badge/Forums/Post%20Now//purple" /></a>
+ <a href="https://jira.ixsystems.com"><img alt="File Issue" src="https://badgen.net/badge/Jira/File%20Issue//red?icon=jira" /></a>
+</p>
 
-This branch holds the documentation hub: the content that is not tied to one TrueNAS release. It is built with Hugo and the Docsy theme.
+# TrueNAS Documentation
 
-## Branch name = published path
+Welcome to the TrueNAS documentation repository. The files here build the TrueNAS Documentation Hub at <https://www.truenas.com/docs/>. Software documentation is released under the Creative Commons license (see [LICENSE.md](LICENSE.md)).
 
-Each branch of this repository publishes to the URL that matches its name. To find where a change belongs, look at the URL of the page you are editing.
+Fixes and improvements are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) and the [contributing guide](https://www.truenas.com/docs/contributing/) first, then pick the branch that matches the page you want to change.
 
-| Branch | Published at | Content |
+## Which branch do I edit?
+
+Each branch publishes to the URL that matches its name. Look at the address of the page you are editing, then open your pull request against that branch.
+
+| Branch | Published at | Use it for |
 |---|---|---|
-| `main` | `truenas.com/docs/` (the root) | This hub |
-| `nightly` | `truenas.com/docs/nightly/` | The release in development |
-| `27` | `truenas.com/docs/scale/27/` | TrueNAS 27 |
-| `25.10`, `25.04`, ... | `truenas.com/docs/scale/<version>/` | Earlier TrueNAS releases |
-| `13.3`, `13.0` | `truenas.com/docs/core/<version>/` | TrueNAS CORE |
-| `3.0`, `2.3` | `truenas.com/docs/truecommand/<version>/` | TrueCommand |
+| [`main`](https://github.com/truenas/documentation/tree/main) | `truenas.com/docs/` | The hub: Solutions, References, Contributing, Software Status, Hardware. This branch. |
+| [`nightly`](https://github.com/truenas/documentation/tree/nightly) | `truenas.com/docs/nightly/` | The TrueNAS release in development. New features and unreleased content. |
+| [`27`](https://github.com/truenas/documentation/tree/27) | `truenas.com/docs/scale/27/` | TrueNAS 27 |
+| [`25.10`](https://github.com/truenas/documentation/tree/25.10) | `truenas.com/docs/scale/25.10/` | TrueNAS 25.10 |
+| [`25.04`](https://github.com/truenas/documentation/tree/25.04) | `truenas.com/docs/scale/25.04/` | TrueNAS 25.04 |
+| [`24.10`](https://github.com/truenas/documentation/tree/24.10) and earlier | `truenas.com/docs/scale/<version>/` | Older TrueNAS releases. 24.04, 23.10 and 22.12 are frozen and not rebuilt. |
+| [`13.3`](https://github.com/truenas/documentation/tree/13.3), [`13.0`](https://github.com/truenas/documentation/tree/13.0) | `truenas.com/docs/core/<version>/` | TrueNAS CORE |
+| [`3.0`](https://github.com/truenas/documentation/tree/3.0), [`2.3`](https://github.com/truenas/documentation/tree/2.3) | `truenas.com/docs/truecommand/<version>/` | TrueCommand |
 
-Open pull requests against the branch you are editing. `main` is the default branch.
+If a correction applies to more than one release, make it on the newest branch that has the problem and say in the pull request which older versions need it too.
+
+`main` is the default branch. A page about one specific release does not belong here; it belongs on `nightly` or on that release's branch.
 
 ## What is here
 
