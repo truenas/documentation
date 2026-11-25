@@ -70,9 +70,9 @@ The **Delete Virtual Machine** dialog shows options when deleting the VM and rem
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Delete Virtual Machine Data** | Removes the data associated with this virtual machine. When selected, displays a list of disk and raw file devices to delete. Deleting a VM results in data loss if the data is not backed up. Do not select this option to keep the VM data intact. |
+| **Delete Virtual Machine Data** | Removes the data associated with this virtual machine. When selected, shows a list of disk and raw file devices to delete. Deleting a VM results in data loss if the data is not backed up. Do not select this option to keep the VM data intact. |
 | **Force Delete**| Ignores the virtual machine status during the delete operation. Do not select this option to prevent deleting the VM when it is still active or the state is undefined. |
-| **Enter *vmname* below to confirm** | Blank text entry field to manually enter the name of the VM to delete. This must match the name shown in the dialog. |
+| **Enter *vmname* below to confirm** | Specifies the name of the VM to delete. This must match the name shown in the dialog. |
 {{< /truetable >}}
 
 ### Clone Virtual Machine Dialog
@@ -110,13 +110,13 @@ The **Edit** screen **General Settings** specifies the basic settings for a VM. 
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Name** | Required. Enter an alphanumeric name for the virtual machine. |
-| **Description** | Enter a description (optional). |
-| **System Clock** | Select the VM system time from the dropdown list. Options are **Local** or **UTC**. The default is **Local**. |
-| **Boot Method** | Select the boot method option from the dropdown list. Select **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
+| **Name** | Specifies a required alphanumeric name for the virtual machine. |
+| **Description** |Specifieds and optional a description of the VM, such as its use, location, operating system, etc. |
+| **System Clock** | Sets the VM system time from the dropdown list. Options are **Local** or **UTC**. The default is **Local**. |
+| **Boot Method** | Sets the boot method option from the dropdown list. Select **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
 | **Shutdown Timeout** | Enter the time, in seconds, the system waits for the VM to cleanly shut down. During the shutdown, the system powers off the VM after the shutdown timeout entered expires. |
-| **Start on Boot** | Select to start this VM when the system boots. |
-| **Enable Hyper-V Enlightenments** | Shows for VMs set for Windows OS. KVM implements Hyper-V Enlightenments for Windows guests. These features make Windows think they are running on a Hyper-V-compatible hypervisor and use Hyper-V-specific features. In some cases, enabling these enlightenments might improve the usability and performance for the guest. |
+| **Start on Boot** | Sets the VM to start when the system boots. |
+| **Enable Hyper-V Enlightenments** | Sets a VM with the Windows operating system to use this function. KVM implements Hyper-V Enlightenments for Windows guests. These features make Windows think they are running on a Hyper-V-compatible hypervisor and use Hyper-V-specific features. In some cases, enabling these enlightenments might improve the usability and performance for the guest. Only shows for VMs set for Windows OS. |
 | **Enable Secure Boot** | Turns on the secure boot function in TrueNAS. Only available when using the wizard to create a new VM; it is not available on the edit screen. Some operating systems, like Windows 11, might not require secure boot. |
 | **Enable Trusted Platform Module (TPM)** | Turns on the Trusted Platform Module (TPM) for enhanced security features in TrueNAS. TPM provides hardware-based cryptographic security functions. Some operating systems, like Windows 11, might require enabling this option. |
 {{< /truetable >}}
@@ -149,7 +149,7 @@ The <span class="material-icons">more_vert</span> at the right of each device ro
 
 * **Edit** - Opens the **Edit *type* Device** screen where *type* is the device type selected.
   Settings vary based on the type of device selected in **Device Type**. See **[Add Device](#devices-add-screens)** screen.
-  **Device Type** only displays on the **Add Device** screens.
+  **Device Type** only shows on the **Add Device** screens.
 
 * **Delete** - Opens the **Delete Device** dialog. **Force Delete** in this dialog deletes the device even if it is currently in use.
 
@@ -174,19 +174,19 @@ The **Operating System** settings specify the VM operating system type, the time
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Guest Operating System** | (Required) Sets the operating system for the VM operating system to the option selected on the dropdown list. Options are **Windows**, which adds the **Enable Hyper-V Enlightenments** option. **Linux**, and **FreeBSD**. |
-| **Enable Hyper-V Enlightenments** | Only shows when **Guest Operating System** is set to **Windows**. When enabled, the VM emulates a Hyper-V-compatible hypervisor for the Windows guest operating system and makes some Hyper-V-specific features available. |
-| **Name** | (Required) Text entry field that accepts manual or copy/paste entry of a name for the VM that consists of alphanumeric characters. |
-| **Description** | (Optional) Text entry field that accepts manual or copy/paste entry of a brief description about the VM. For example, the type of OS for the VM or the purpose of the VM. |
-| **System Clock** | (Required) Sets the VM system clock to the option selected on the dropdown list. Options are: **Local**, which uses the TrueNAS SCALE system clock setting, or **UTC**, which uses the Coordinated Universal Time clock. The default is **Local**. |
-| **Boot Method** | (Required) Sets the boot method to the option selected on the dropdown list. Options are: **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
+| **Guest Operating System** | Sets the required operating system for the VM operating system to the option selected on the dropdown list. Options are **Windows**, which adds the **Enable Hyper-V Enlightenments** option. **Linux**, and **FreeBSD**. |
+| **Enable Hyper-V Enlightenments** | Sets a VM with the Windows OS to emulate a Hyper-V-compatible hypervisor for the Windows guest operating system and makes some Hyper-V-specific features available. Only shows when **Guest Operating System** is set to **Windows**. |
+| **Name** | Specifies a required name for the VM that consists of alphanumeric characters. |
+| **Description** | Specifies an optional brief description about the VM. For example, the type of OS for the VM or the purpose of the VM. |
+| **System Clock** | Sets the required VM system clock to the option selected on the dropdown list. Options are: **Local**, which uses the TrueNAS SCALE system clock setting, or **UTC**, which uses the Coordinated Universal Time clock. The default is **Local**. |
+| **Boot Method** | Sets the required boot method to the option selected on the dropdown list. Options are: **UEFI** for newer operating systems or **Legacy BIOS** for older operating systems that only support BIOS booting. |
 | **Enable Secure Boot** | Sets the VM to verify boot components using digital signatures. This prevents unauthorized code from running during startup and is required for Windows 11 and some Linux distributions. |
 | **Enable Trusted Platform Module (TPM)** | Sets TrueNAS to provide a virtual TPM 2.0 device for the VM. This enables hardware-based security functions, including secure key storage and cryptographic operations. Required for Windows 11. |
-| **Shutdown Timeout** | Text entry field that accepts manual entry of a time in seconds that the system waits for the VM to cleanly shut down. During system shutdown, the system powers off after the shutdown timeout for the VM expires. |
+| **Shutdown Timeout** | Specifies a time in seconds that the system waits for the VM to cleanly shut down. During system shutdown, the system powers off after the shutdown timeout for the VM expires. |
 | **Start on Boot** | Sets the VM to automatically start after restarting the system or when it is rebooted. Selected by default. |
 | **Enable Display (VNC)** | Enables a VNC display (Virtual Network Computing) remote connection. VNC is the default display type when adding a VM. Requires UEFI booting. Selected by default. |
-| **Bind** | Shows when **Enable Display** is selected. Sets an IP address to use for remote VNC sessions. Note that this setting only applies when using a VNC client other than the TrueNAS WebUI. |
-| **Password** | (Required)  Displays when **Enable Display** is selected.Enter a password to secure access to the VM. Enter this when logging into the VNC display. |
+| **Bind** | Sets an IP address to use for remote VNC sessions. Note that this setting only applies when using a VNC client other than the TrueNAS WebUI. Shows when **Enable Display** is selected. |
+| **Password** |  Specifies a required password to secure access to the VM. Shows when **Enable Display** is selected. Enter this when logging into the VNC display. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -207,14 +207,14 @@ The **Disks** settings specify how virtual disks are added. Options are creating
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Create new disk image** | Shows settings to create a new zvol on an existing dataset to use as a virtual hard drive for the VM. Displays the **Select Disk Type**, **Zvol Location**, and **Size** fields. |
-| **Use existing disk image** | Shows settings to select an existing zvol for the VM. Displays the **Select Disk Type** and **Select Existing Zvol** fields. |
-| **Import Image** | Checkbox option to import an existing disk image file and convert it to a zvol for VM use. When you select this option, the **Image Source** field displays. Supports QCOW2, QED, RAW, VDI, VHDX, and VMDK formats with automatic format detection. |
-| **Image Source** | (Required) Displays when you select **Import Image**. Browse to and select the source disk image file to import. The system automatically detects the image format from the file. |
+| **Create new disk image** | Shows settings to create a new zvol on an existing dataset to use as a virtual hard drive for the VM. Shows the **Select Disk Type**, **Zvol Location**, and **Size** fields. |
+| **Use existing disk image** | Shows settings to select an existing zvol for the VM. Shows the **Select Disk Type** and **Select Existing Zvol** fields. |
+| **Import Image** | Imports an existing disk image file and converts it to a zvol for VM use. When selected the **Image Source** field shows. Supports QCOW2, QED, RAW, VDI, VHDX, and VMDK formats with automatic format detection. |
+| **Image Source** | Sets the sorce of the required disk image file to import. The system automatically detects the image format from the file. Shows when you select **Import Image**. |
 | **Select Disk Type** | Sets the disk type to the option selected on the dropdown list. Options are **AHCI** or **VirtIO**. Select **AHCI** for Windows VMs. **VirtIO** requires a guest OS that supports VirtIO paravirtualized network drivers. |
-| **Select Existing Zvol** | (Required) Shows after selecting **Use existing disk image**. Sets the disk to the existing zvol selected from the dropdown list. |
-| **Zvol Location** | (Required) Shows a dropdown list of datasets to select as the location where the system creates a new zvol. When you select **Import Image**, this specifies the destination dataset for the converted zvol. When you select **Create new disk image**, this specifies where the system creates the new zvol. |
-| **Size** | (Required) Shows when **Create new disk image** is selected. Allocates space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. |
+| **Select Existing Zvol** | Sets the required disk to the existing zvol selected from the dropdown list. Shows after selecting **Use existing disk image**. |
+| **Zvol Location** | Specifies the required destination dataset for the converted zvol after you select **Import Image**. Shows a dropdown list of datasets to select as the location where the system creates a new zvol. After selecting **Create new disk image**, this specifies where the system creates the new zvol. |
+| **Size** | Allocates required space for the new zvol. (Examples: 500 KiB, 500M, 2 TB). Units smaller than MiB are not allowed. Shows when **Create new disk image** is selected. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -229,7 +229,7 @@ The **Network Interface** settings specify the network adapter type, MAC address
 | Setting | Description |
 |---------|-------------|
 | **Adapter Type** | Sets the adapter type to the option selected on the dropdown list. Options are:<ul><li>**Intel e82545 (e1000)** - Emulates the same Intel Ethernet card and provides compatibility with most operating systems.</li><li>**VirtIO** - Provides better performance when the operating system installed in the VM supports VirtIO para-virtualized network drivers.</li></ul> |
-| **Mac Address** | Shows the MAC address automatically entered by TrueNAS. Enter the desired address into the field to override the randomized MAC address. |
+| **Mac Address** | Specifies the desired address to override the randomized MAC address. Shows the MAC address automatically entered by TrueNAS. |
 | **Attach NIC** | Sets the network interface to associate with the VM to the option selected on the dropdown list. Options include physical interfaces and any [bridge interfaces]({{< ref "ContainerNASBridge" >}}) configured on the system. Attach a bridge interface if the VM needs to communicate with the TrueNAS host, for example to reach a share on this system. |
 | **Trust Guest Filters** | Enables and allows the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Enabling **Trust Guest Filters** has security risks because it allows the virtual server to change its MAC address and so receive all frames delivered to this address. Disabled by default. |
 {{< /truetable >}}
@@ -245,8 +245,8 @@ The **Installation Media** settings specify the location of the operating system
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Choose Installation Media Image** | Shows two fields, the mount path field and a file browser field directly below it. Sets the mount path to what is selected in the file browser field. To collapse the file branch, click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
-| **Upload New Image File** | Opens the **Upload Image File** dialog, where you browse to, and select the image file location on the local system or a network location available to your TrueNAS system. **Choose File** sets the file location and activates **UpLoad**.  |
+| **Choose Installation Media Image** | Sets the mount path to what is selected in the file browser field. Shows two fields, the mount path field and a file browser field directly below it. To collapse the file branch, click on the <i class="fa fa-caret-right" aria-hidden="true"></i> to the left of **/mnt**. |
+| **Upload New Image File** | Sets the image file location on the local system or a network location available to your TrueNAS system. Opens the **Upload Image File** dialog. **Choose File** sets the file location and activates **UpLoad**.  |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -258,9 +258,9 @@ The **Installation Media** settings specify the location of the operating system
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **ISO save location** | Enter the path or browse to the location where you want to install the image file. |
-| **Choose File** | Click to save the path populated in the **ISO save location** field. |
-| **Upload** | Click to upload the file selected in the **ISO save location** field. |
+| **ISO save location** | Specifies the location where you want to install the image file. |
+| **Choose File** | Saves the path populated in the **ISO save location** field. |
+| **Upload** | Uploads the file selected in the **ISO save location** field. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -302,8 +302,8 @@ VM network interface card settings show when **Device Type** is set to **NIC**.
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Adapter Type** | (Required) Sets the emulator type to the option selected in the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. **VirtIO** provides better performance for systems with VirtIO paravirtualized network driver support. |
-| **MAC Address** | Shows the default auto-generated random MAC address the VM receives. Enter a custom address to override the default. |
+| **Adapter Type** | Sets the required emulator type to the option selected in the dropdown list. Emulating an **Intel e82545 (e1000)** Ethernet card provides compatibility with most operating systems. **VirtIO** provides better performance for systems with VirtIO paravirtualized network driver support. |
+| **MAC Address** | Specifies a custom address to override the default. Shows the default auto-generated random MAC address the VM receives. |
 | **Generate** | Generates a new randomized address in **MAC Address**. |
 | **NIC To attach** | Sets the network interface to associate with the VM to the option selected on the dropdown list. Options include physical interfaces and any [bridge interfaces]({{< ref "ContainerNASBridge" >}}) configured on the system. |
 | **Trust Guest Filters** | Allows the virtual server to change its MAC address. As a consequence, the virtual server can join multicast groups. The ability to join multicast groups is a prerequisite for the IPv6 Neighbor Discovery Protocol (NDP).<br>Setting **Trust Guest Filters** to "yes" has security risks because it allows the virtual server to change its MAC address and receive all frames delivered to this address. The default setting is not enabled. |
@@ -338,10 +338,10 @@ SPICE clients are available from the [SPICE Protocol site](https://www.spice-spa
 | Setting | Description |
 |---------|-------------|
 | **Display Type** | Sets a new display device type to the option selected. <br>When a VM is created without a display device, the **Display Type** options are **VNC** or **SPICE**. When the VM is created with the display device set to the default **VNC**, only the **SPICE** option shows on the dropdown list. <br>TrueNAS allows creating two display devices, one from the VM creation wizard, which uses the default **VNC** display, and a second through the **Add Device** screen with the **Device Type** set to **Display**. Only **SPICE** shows when adding the second display device. |
-| **Port** | Text field that accepts manual or copy/paste entry of a port number. Can be set to **0**, left empty for TrueNAS to assign a port when the VM is started, or set to a fixed preferred port number. |
+| **Port** | Specifies a port number clients use to connect to the display, If left empty, TrueNAS to assigns a port when the VM is started. The accepted port range is 5900 to 65535. |
 | **Resolution** | Sets the screen resolution for the VM display session to the option selected on the dropdown list. |
-| **Bind** | Sets the IP address used for the SPICE display sessions to the option selected on the dropdown list. Options include the default **0.0.0.0**, **::**, **::1**, IP addresses obtained from your network, and the TrueNAS primary interface. |
-| **Password** | Text field that accepts manual or copy/paste entry of a password, that is eight characters in length, that TrueNAS automatically passes to the remote display session. |
+| **Bind** | Sets the IP address used for the SPICE display sessions to the option selected on the dropdown list. Options include **127.0.0.1**, **0.0.0.0**, **::**, **::1**, or IP addresses obtained from your network. |
+| **Password** | Specifies a password, that is eight characters in length, that TrueNAS automatically passes to the remote display session. |
 | **Web Interface** | Enables connecting to the SPICE web interface, and shows the **Web Port** field. |
 | **Web Port** | Sets the web console port for browser-based access to the VM display. |
 {{< /truetable >}}
@@ -355,10 +355,10 @@ Shows the raw file settings, including file location, size, disk sector size, an
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Raw File** | Shows two fields. A file browser field and a blank field that populates with what is selected in the file browser directly below it. Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to expand or collapse the directory branches as you browse to and select the location of the file on the system. |
+| **Raw File** | Specifies the location of the file. Shows two fields: a file browser field and a blank field that populates with what is selected in the file browser directly below it. Use the <iconify-icon icon="bxs:right-arrow"></iconify-icon> to the left of <iconify-icon icon="bxs:folder"></iconify-icon>**/mnt** to expand or collapse the directory branches as you browse to and select the location of the file on the system. |
 | **Disk sector size** | Sets the disk sector size to the option selected on the dropdown list. Options are **Default**, which uses the ZFS volume values, **512**, or **4096**. Setting a sector size changes both the logical and physical sector size. |
 | **Mode** | Sets the drive type to the option selected on the dropdown list. Options are: <ul><li>**AHCI** - Emulates an AHCI hard disk for better software compatibility.</li><li>**VirtIO** - Uses paravirtualized drivers and can provide better performance, but the operating system installed in the VM must support VirtIO disk devices.</li></ul>. |
-| **Raw filesize** | Text field that accepts manual entry of a number for the size of the file in GiB. |
+| **Raw filesize** | Specifies number for the size of the file. A number without a unit of measure defaults to MiB. |
 {{< /truetable >}}
 {{< /expand >}}
 
@@ -384,7 +384,7 @@ Shows the USB passthrough device setting when **Device Type** is set to **USB Pa
 {{< truetable >}}
 | Setting | Description |
 |---------|-------------|
-| **Controller Type** | (Required) Sets the controller to the option selected on the dropdown list. Options are: **piix3-uhci**, **piix4-uhci**, **ehci**, **ich9-ehci1**, **vt82c686b-uhci**, **pci-ohci**, **nec-xhci**, **qemu-xhci**. |
+| **Controller Type** | Sets the required controller as the option selected on the dropdown list. Options are: **piix3-uhci**, **piix4-uhci**, **ehci**, **ich9-ehci1**, **vt82c686b-uhci**, **pci-ohci**, **nec-xhci**, **qemu-xhci**. |
 | **Device** | Sets the device to the option manually entered or selected on the dropdown list of options. Selecting **Specify custom** shows the **Vendor ID** and **Product ID** fields. |
 {{< /truetable >}}
 {{< /expand >}}

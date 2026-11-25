@@ -28,7 +28,7 @@ Clicking the **Running** toggle for a stopped VM restarts it, or you can click o
 To access the devices for a VM, click on the VM row on the **Virtual Machines** screen to expand the VM, then click on **Devices** to open the **Devices** screen showing the devices for the selected VM.
 
 Click **Add** to create a new device.
-To edit an existing device, click on the <span class="material-icons">more_vert</span> at the right of each device row, click **Edit** to open the **Edit Device** screen.
+To edit an existing device, click on the <span class="material-icons">more_vert</span> at the right of each device row, then click **Edit** to open the **Edit Device** screen.
 Click **Delete** to open a delete confirmation dialog.
 
 ### Editing a Device
@@ -37,16 +37,16 @@ After selecting the VM row on the **Virtual Machines** list and clicking on **De
 Devices added when you create the VM show by default. You can add additional or edit existing devices.
 
 Click on the <span class="material-icons">more_vert</span> at the right of the device row.
-Options for each device show. A disk device shows four options: **Edit**, **Delete**, **Details**, and **Export to Image**.
+Options for each device are shown. A disk device shows four options: **Edit**, **Delete**, **Details**, and **Export to Image**.
 Other device types do not include the export option.
 
-Click *Edit** to open the **Edit Device** screen.
-The screen settings change based on the device type selected.
-For example, when editing a disk (example provided below), you can change the type of virtual hard disk, the storage volume to use, or change the boot order for the device.
+Click **Edit** to open the **Edit Device** screen.
+The screen settings change based on the selected device type.
+For example, when editing a disk (example provided below), you can change the type of virtual hard disk, the storage volume to use, or the boot order for the device.
 
 Stop the VM on the **Virtual Machines** screen, click on **Devices** to open the **Devices** screen for that VM, and then click **Edit**.
 The procedure below describes editing a disk device.
-Steps below are optional. Change them based on your use case.
+The steps below are optional. Change them based on your use case.
 
 {{< trueimage src="/images/SCALE/Virtualization/EditDeviceDiskScreen.png" alt="Edit Device VM Disk" id="Edit Device VM Disk" >}}
 
@@ -67,12 +67,12 @@ Steps below are optional. Change them based on your use case.
 {{< expand "To edit display type or bind address after creating a VM" "v" >}}
 Go to **Virtual Machines**, locate the VM you want to modify, and click on it to expand it.
 Click <i class="material-icons" aria-hidden="true" title="Devices">device_hub</i> **Devices** to open the **Devices** screen associated with the VM.
-Click the <span class="material-icons">more_vert</span> icon at the right of the display device and click on **Edit** to open the **Edit Device** screen for that display device.
+Click the <span class="material-icons">more_vert</span> icon at the right of the display device, and click on **Edit** to open the **Edit Device** screen for that display device.
 Select the IP address or other option on the **Bind** dropdown.
 
 You can assign a port number to your display device or use the default port number associated with the device.
 
-You can add a second display device to have a VNC and SPICE display associated with the VM, but only one display device can be active at one time.
+You can add a second display device to have a VNC and SPICE display associated with the VM, but only one display device can be active at a time.
 Adding a second display device assigns a different default port number to the second display device.
 {{< /expand >}}
 
@@ -89,9 +89,10 @@ To delete a device:
    {{< trueimage src="/images/SCALE/Virtualization/DeleteVMDevice.png" alt="Delete Virtual Machine Device" id="Delete Virtual Machine Device" >}}
 
 3. (Optional) Select **Force Delete** to remove the device even if it is currently in use.
-4. For a disk device, select **Delete zvol device** to also delete the underlying zvol, then type the zvol name shown in the field that appears to confirm.
+4. Select **Delete zvol device** to also delete the underlying zvol when the device is a disk.
+   After enabling this option, type the zvol name shown in the field that appears to confirm.
    For a raw file device, select **Delete raw file** to also delete the underlying raw disk file.
-   Leave these deselected to remove the device but keep its underlying zvol or raw file.
+   Leave these disabled to remove the device but keep its underlying zvol or raw file.
 5. Click **Delete Device**.
 
 ### Changing the Device Order
@@ -155,7 +156,7 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
 3. Select the hard disk emulation type from the **Mode** dropdown list.
    Select **AHCI** for better software compatibility, or **VirtIO** for better performance if the guest OS installed in the VM supports VirtIO disk devices.
 4. Select the sector size in bytes in **Disk Sector Size**.
-   Leave set to **Default** or select either **512** or **4096** from the dropdown list.
+   Leave it set to **Default** or select either **512** or **4096** from the dropdown list.
    **Default** uses the ZFS volume values.
 5. Enter a new number that represents where in the boot sequence you want to place this device in **Device Order**.
    The lower the number, the higher the device is in the boot sequence.
@@ -233,7 +234,8 @@ After stopping the VM and clicking **Devices** to open the **Devices** screen:
    Select the display type on the dropdown list. (VNC is recommended).
    To add a second display device, repeat this procedure and select **SPICE** (the only option for the second display device).
 3. Enter a fixed port number in **Port**.
-   To allow TrueNAS to assign the port after restarting the VM, set the value to zero (leave the field empty).
+   A port value must be in the 5900 to 65535 range.
+   To allow TrueNAS to assign the port after restarting the VM, leave the field empty (which is null in the API).
 4. Specify the display session settings:
    a. Select the screen resolution to use for the display from the **Resolution** dropdown.
    b. Select an IP address for the display device to use in **Bind**. The default is **0.0.0.0**.
