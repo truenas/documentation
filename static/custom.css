@@ -3911,3 +3911,152 @@ pre.gdoc-mermaid.mermaid.mermaid_sizing {
 #TrueNASHeader .mobile-submenu-link:hover { color: #0095d5 !important; text-decoration: none !important; }
 [color-mode="dark"] #TrueNASHeader .mobile-submenu-link:hover { color: #0095d5 !important; }
 :root[color-theme=light] #TrueNASHeader .mobile-submenu-link:hover { color: #0095d5 !important; }
+
+/* ========== DOCS-2829: MOBILE & TABLET USABILITY ========== */
+/* Kept at the end of the file so these rules win the cascade over the earlier
+   header, footer, and docs-nav rules without rewriting them. */
+
+/* Footer: the negative gutter margins made it wider than the screen below 992px */
+@media screen and (max-width: 991px) {
+  .gdoc-footer {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+}
+
+/* Docs navigation bar (title, Product, Version, search buttons, theme toggle) */
+@media screen and (max-width: 800px) {
+  .docsnav {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  /* The theme override forces nowrap, which pushed the row to ~510px wide */
+  .docsnav .truenas-menubar {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 8px !important;
+    box-sizing: border-box;
+  }
+  #productButton,
+  #productDropdown,
+  #versionButton,
+  #versionDropdown {
+    width: auto;
+    min-width: 7rem;
+  }
+  .docsnav .truenas-docsnav-menuitem {
+    flex: 0 1 auto;
+  }
+  .docsnav-search-container {
+    margin-left: 0;
+    margin-right: 0;
+    flex: 0 1 auto;
+  }
+  /* 44px minimum touch target */
+  .docsnav-search-btn,
+  .truenas-docsnav-menubutton {
+    min-height: 44px;
+  }
+  #gdoc-color-theme {
+    flex: 0 0 auto;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  /* Hamburger/back buttons for the left navigation */
+  #leftnavbutton {
+    display: inline-flex;
+    align-items: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .docshome {
+    font-size: 1.5rem;
+  }
+  .docsnav-search-btn {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  /* Keep the back-to-top button inside the screen */
+  .scrollToTopBtn {
+    right: 12px;
+    bottom: 20px;
+  }
+}
+
+/* Wide tables scroll inside their own box instead of stretching the page */
+@media screen and (max-width: 800px) {
+  .gdoc-markdown table:not(.lntable):not(.highlight) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gdoc-markdown img,
+  .gdoc-markdown video,
+  .gdoc-markdown iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Reclaim horizontal space on phones (desktop gutters are 2.25rem/1.5rem) */
+@media screen and (max-width: 600px) {
+  .gdoc-page {
+    padding-left: 1rem;
+    padding-right: 1.75rem; /* clears the fixed Feedback tab on the right edge */
+  }
+}
+
+/* Sticky bar: the full two-row header covered about a quarter of a phone
+   screen, so collapse it to a single compact row while scrolling */
+@media screen and (max-width: 800px) {
+  #sitenav.sticky {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0;
+    padding: .25rem .5rem;
+  }
+  #sitenav.sticky #stickymenu {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+  }
+  #sitenav.sticky #leftnavbutton {
+    order: -1;
+    padding: 0 .5rem !important;
+  }
+  #sitenav.sticky .docshome {
+    display: none;
+  }
+  #sitenav.sticky .docsnav {
+    padding-top: 0;
+  }
+  #sitenav.sticky .docsnav .truenas-menubar {
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+  }
+  #sitenav.sticky #productButton,
+  #sitenav.sticky #versionButton {
+    min-width: 0;
+    padding: 8px 6px;
+    font-size: 15px;
+  }
+  /* Icon-only search buttons while sticky; labels remain in the unpinned header */
+  #sitenav.sticky .docsnav-search-btn span {
+    display: none;
+  }
+  #sitenav.sticky .docsnav-search-container {
+    margin: 0 2px;
+  }
+}
+/* ========== END DOCS-2829 ========== */
