@@ -2,9 +2,9 @@
 title: "Network Screen"
 description: "Describes the screens and fields in the TrueNAS Network section."
 weight: 90
-aliases: 
- - /scale/scaleuireference/network/
- - /scale/scaleclireference/network/
+aliases:
+  - /scaleuireference/network/
+  - /scaleclireference/network/
 tags:
 related: false
 doctype: reference

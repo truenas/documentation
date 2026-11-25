@@ -3,8 +3,6 @@ title: "Audit"
 description: "Information on reviewing and managing TrueNAS audit logs."
 geekdocCollapseSection: true
 weight: 80
-aliases:
- - /scale/systemsettings/audit/
 related: false
 ---
 

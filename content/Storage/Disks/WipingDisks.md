@@ -3,8 +3,8 @@ title: "Wiping a Disk"
 description: "Provides instructions for wiping a disk."
 weight: 20
 aliases:
- - /scale/scaletutorials/storage/disks/wipingdisks/
- - /scale/scaletutorials/storage/pools/disks/wipingdisks/
+  - /scaletutorials/storage/disks/wipingdisks/
+  - /scaletutorials/storage/pools/disks/wipingdisks/
 tags:
 - disks
 keywords:

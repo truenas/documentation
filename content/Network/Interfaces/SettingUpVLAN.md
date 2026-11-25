@@ -3,7 +3,7 @@ title: "Setting Up a Network VLAN "
 description: "Provides instructions on setting up a network VLAN interface."
 weight: 30
 aliases:
- - /scale/scaletutorials/network/interfaces/settingupvlan/
+  - /scaletutorials/network/interfaces/settingupvlan/
 tags:
 - network
 - interfaces

@@ -3,7 +3,7 @@ title: "Setting Up SMB Multichannel"
 description: "Provides information on setting up SMB multichannel."
 weight: 70
 aliases:
- - /scale/scaletutorials/shares/smb/smbmultichannel/
+  - /scaletutorials/shares/smb/smbmultichannel/
 tags:
  - smb
 doctype: tutorial

@@ -9,7 +9,7 @@ tags:
 - block shares
 doctype: tutorial
 aliases:
- - /scale/scaletutorials/shares/iscsi/settingupfibrechannel/
+  - /scaletutorials/shares/iscsi/settingupfibrechannel/
 ---
 
 

@@ -3,14 +3,13 @@ title: "TrueNAS 28 (Early)"
 geekdocCollapseSection: true
 weight: 20
 aliases:
- - /scale/devnotes/
- - /scale/introduction/
- - /scale/scaletutorials/
- - /scale/scaleuireference/
- - /scale/scaleclireference/
+  - /devnotes/
+  - /introduction/
+  - /scaletutorials/
+  - /scaleuireference/
  # Community Tutorials is draft. Redirect its old URL here so it does not 404.
  # When it leaves draft, move this alias back to content/SCALE/CommunityRecommends/_index.md.
- - /scale/scaletutorials/communityrecommends/
+  - /scaletutorials/communityrecommends/
 cascade:
   - _target:
     volume: "SCALE"

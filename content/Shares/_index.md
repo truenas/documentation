@@ -3,10 +3,9 @@ title: "Shares"
 description: "Tutorials to configure the various data sharing features in TrueNAS."
 geekdocCollapseSection: true
 aliases:
- - /scale/scaleclireference/sharing/
- - /scale/scaleuireference/shares/
- - /scale/scaletutorials/shares/
- - /scale/shares/
+  - /scaleclireference/sharing/
+  - /scaleuireference/shares/
+  - /scaletutorials/shares/
 weight: 7
 tags:
 - shares

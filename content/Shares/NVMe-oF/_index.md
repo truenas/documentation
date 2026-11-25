@@ -5,7 +5,7 @@ geekdocCollapseSection: true
 weight: 50
 related: false
 aliases:
- - /scale/scaleuireference/shares/nvme-of/
+  - /scaleuireference/shares/nvme-of/
 tags:
 - nvme-of
 - nvme

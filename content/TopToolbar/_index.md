@@ -4,8 +4,7 @@ description: "Tutorials about options available from the TrueNAS top toolbar."
 geekdocCollapseSection: true
 weight: 3
 aliases:
- - /scale/scaletutorials/toptoolbar/
- - /scale/scaleuireference/toptoolbar/
+  - /scaletutorials/toptoolbar/
 tags:
 - tasks
 - toolbar

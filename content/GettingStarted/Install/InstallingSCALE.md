@@ -3,7 +3,7 @@ title: "Installing TrueNAS"
 description: "Provides the TrueNAS iso file installation instructions for physical hardware and virtual machines. Describes the iso verification process using an OpenPGP encryption application."
 weight: 15
 aliases:
- - /scale/gettingstarted/installingscale/
+  - /gettingstarted/installingscale/
 tags:
 - install
 - update

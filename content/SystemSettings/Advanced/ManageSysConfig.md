@@ -3,8 +3,8 @@ title: "Managing the System Configuration"
 description: "Provides information on downloading your TrueNAS configuration to back up system settings, uploading a new configuration file, and resetting back to default settings."
 weight: 15
 aliases:
- - /scale/scaletutorials/systemsettings/advanced/managesysconfig/
- - /scale/scaletutorials/systemsettings/general/managesysconfigscale/
+  - /scaletutorials/systemsettings/advanced/managesysconfig/
+  - /scaletutorials/systemsettings/general/managesysconfigscale/
 tags:
  - backup
  - settings

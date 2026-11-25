@@ -4,11 +4,7 @@ description: "Tutorials to configure the various directory service credentials."
 geekdocCollapseSection: true
 weight: 60
 aliases:
- - /scale/scaletutorials/credentials/directoryservices/
- - /scale/credentials/directoryservices/activedirectoryscale/
- - /scale/credentials/directoryservices/ldapscale/
- - /scale/credentials/directoryservices/idmapscale/
- - /scale/credentials/directoryservices/kerberosscale/
+  - /scaletutorials/credentials/directoryservices/
 related: false
 keywords:
 - enterprise data storage

@@ -8,8 +8,7 @@ tags:
 - shares
 related: false
 aliases:
- - /scale/scaleuireference/shares/nfs/
- - /scale/scaletutorials/shares/nfs/
+  - /scaletutorials/shares/nfs/
 ---
 
 Unix (NFS) shares allow TrueNAS to share data with Unix-like operating systems and other NFS-compatible clients.

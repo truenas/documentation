@@ -3,7 +3,7 @@ title: "Isolating GPU for VMs"
 description: "Provides information on isolating Graphics Processing Units (GPU) installed in your system."
 weight: 80
 aliases:
- - /scale/scaletutorials/systemsettings/advanced/managegpuscale/
+  - /scaletutorials/systemsettings/advanced/managegpuscale/
 tags:
  - gpu
  - vm

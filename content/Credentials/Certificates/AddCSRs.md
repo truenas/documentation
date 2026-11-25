@@ -3,7 +3,7 @@ title: "Managing Certificate Signing Requests"
 description: "Provides basic instructions on adding and managing certificate signing requests (CSRs) in TrueNAS."
 weight: 20
 aliases:
- - /scale/scaletutorials/credentials/certificates/addcsrsscale/
+  - /scaletutorials/credentials/certificates/addcsrsscale/
 tags:
  - certificates
  - csr

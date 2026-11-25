@@ -4,8 +4,8 @@ description: "Articles with instructions to manage, replace, and wipe disks."
 geekdocCollapseSection: true
 weight: 30
 aliases:
- - /scale/scaletutorials/storage/pools/disks/
- - /scale/scaletutorials/storage/disks/managingdisks/
+  - /scaletutorials/storage/pools/disks/
+  - /scaletutorials/storage/disks/managingdisks/
 tags:
  - disks
 keywords:

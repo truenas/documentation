@@ -4,8 +4,8 @@ description: "Tutorials and UI reference to configure Linux containers in TrueNA
 geekdocCollapseSection: true
 weight: 11
 aliases:
- - /scale/scaletutorials/containers/
- - /scale/scaletutorials/instances/
+  - /scaletutorials/containers/
+  - /scaletutorials/instances/
 tags:
 - container
 - instances

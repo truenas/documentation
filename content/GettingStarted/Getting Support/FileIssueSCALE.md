@@ -2,7 +2,6 @@
 title: "Providing Feedback in TrueNAS"
 description: "Provides information on using TrueNAS UI to file an issue ticket in Jira."
 weight: 20
-aliases:
 tags:
 - support
 ---

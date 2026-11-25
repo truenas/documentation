@@ -3,8 +3,8 @@ title: "Setting Up an Encrypted Replication Task"
 description: "Provides instructions on adding a replication task to a remote system and using encryption."
 weight: 10
 aliases:
- - /scale/scaletutorials/dataprotection/replication/advancedreplication/replicationwithencryptionscale/
- - /scale/scaletutorials/dataprotection/replication/replicationwithencryptionscale/
+  - /scaletutorials/dataprotection/replication/advancedreplication/replicationwithencryptionscale/
+  - /scaletutorials/dataprotection/replication/replicationwithencryptionscale/
 tags:
 - replication
 - backup

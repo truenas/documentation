@@ -9,9 +9,8 @@ keywords:
 - nas storage software
 - enterprise storage system
 aliases:
- - /scale/scaleuireference/toptoolbar/
- - /scale/scaleuireference/scaletopbar/
- - /contributing/issuereporting/prereleaseuserfeedback/
+  - /scaleuireference/toptoolbar/
+  - /scaleuireference/scaletopbar/
 weight: 40
 doctype: reference
 ---

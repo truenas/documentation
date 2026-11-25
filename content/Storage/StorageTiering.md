@@ -2,7 +2,6 @@
 title: "Storage Tiering"
 description: "Provides information on setting up Storage Tiering."
 weight: 30 
-aliases:
 tags:
 - pools
 - storage
@@ -28,7 +27,7 @@ Users can also transparently migrate datasets between tiers without breaking sha
 To use tiering, you must configure and activate the TrueNAS Storage Tiering feature, create a fusion pool, create a dataset in the fusion pool, then create shares for tiering use. 
 
 {{< hint type=tip title="Using Preexisting Pools" >}}
-If your goal is to consolidate SSD drives from one pool into another pool as part of enabling Storage Tiering, follow the [Storage Tiering Migration Guide]({{< ref "/SCALE/Storage/Pools/StorageTieringPoolMigration" >}}) instead. That procedure adds tiering-specific preflight items, a topology change to the Pool A special class, and a third phase covering tier migration jobs.
+If your goal is to consolidate SSD drives from one pool into another pool as part of enabling Storage Tiering, follow the [Storage Tiering Migration Guide]({{< ref "/Storage/Pools/StorageTieringPoolMigration" >}}) instead. That procedure adds tiering-specific preflight items, a topology change to the Pool A special class, and a third phase covering tier migration jobs.
 {{< /hint >}}
 
 ## Configuring Tiering
@@ -36,14 +35,14 @@ If your goal is to consolidate SSD drives from one pool into another pool as par
 {{< hint type=note title="Datasets with a Custom Special Small Blocks Threshold" >}}
 On a preexisting pool, a dataset can have the ZFS `special_small_blocks` property set to a non-zero value lower than the dataset record size. TrueNAS assigns a dataset to the performance tier only when the threshold is greater than or equal to the record size, so it flags these datasets as regular.
 
-Review these datasets before you enable tiering. For a dataset you want in the regular tier, click **Edit** on the dataset and set [**Use Metadata (Special) VDEVs**]({{< ref "/SCALE/Datasets/DatasetsScreens.md#other-options-section" >}}) to **Off**. This changes only where TrueNAS writes new data, so [contact support](https://www.truenas.com/support/) to move data that is already on the special vdev. After tiering is on, this setting no longer displays on the dataset **Edit** screen, and you change the threshold through the [**Change Storage Tier**](#changing-storage-tiers) action.
+Review these datasets before you enable tiering. For a dataset you want in the regular tier, click **Edit** on the dataset and set [**Use Metadata (Special) VDEVs**]({{< ref "/Datasets/DatasetsScreens.md#other-options-section" >}}) to **Off**. This changes only where TrueNAS writes new data, so [contact support](https://www.truenas.com/support/) to move data that is already on the special vdev. After tiering is on, this setting no longer displays on the dataset **Edit** screen, and you change the threshold through the [**Change Storage Tier**](#changing-storage-tiers) action.
 {{< /hint >}}
 
 Go to **Storage** and click **Tiering**.
 
 {{< trueimage src="/images/SCALE/Storage/TieringScreen.png" alt="Tiering Screen" id="Tiering Screen" >}}
 
-Enter your desired values for [**Max Concurrent Jobs** and **Max Used Percentage**]({{< ref "/SCALE/Storage/StorageDashboardScreens" >}}), then select **Enable** and click **Save**
+Enter your desired values for [**Max Concurrent Jobs** and **Max Used Percentage**]({{< ref "/Storage/StorageDashboardScreens" >}}), then select **Enable** and click **Save**
 
 {{< hint type=caution title="Shares are locked to a single dataset" >}}
 After tiering is on, SMB shares and WebShares stop following nested datasets. Each share exposes only its own dataset, and any child datasets under it are no longer visible to clients through that share. Create a separate share for each dataset you want to expose.
@@ -65,7 +64,7 @@ After you enable tiering and create a fusion pool, you can see your Performance 
 
 {{< trueimage src="/images/SCALE/Storage/TieringUsage.png" alt="Storage Dashboard Tiering Usage" id="Storage Dashboard Tiering Usage" >}}
 
-For more general information and best practices on fusion pools, see [Creating Fusion Pools]({{< ref "/SCALE/Storage/Pools/CreatingFusionPools" >}}).
+For more general information and best practices on fusion pools, see [Creating Fusion Pools]({{< ref "/Storage/Pools/CreatingFusionPools" >}}).
 
 {{< hint type=note title="L2ARC and ZFS-Intent Log" >}}
 With tiering active, TrueNAS uses L2ARC for the regular tier data and, unless specifically configured, uses the ZFS intent log (ZIL) for the performance tier.
@@ -73,7 +72,7 @@ With tiering active, TrueNAS uses L2ARC for the regular tier data and, unless sp
 
 ## Creating Datasets for Tiering
 
-Go to **Datasets**, select the fusion pool you created, and click **Add Dataset**. [Enter the values you want for the dataset configuration]({{< ref "/SCALE/Datasets/ManagingDatasets.md" >}}) and save it.
+Go to **Datasets**, select the fusion pool you created, and click **Add Dataset**. [Enter the values you want for the dataset configuration]({{< ref "/Datasets/ManagingDatasets.md" >}}) and save it.
 
 After you create a dataset, the **Details** card shows which storage tier the dataset is on. 
 
@@ -88,7 +87,7 @@ For example, you can have one share and dataset for regular tier cold storage on
 
 ### Creating an SMB Share for Tiering
 
-Go to **Shares > Windows (SMB) Shares** and click **Add**. Select a share purpose and select the dataset you created for tiering as the path. After you [configure the rest of the share settings]({{< ref "/SCALE/Shares/SMB/AddManageSMBShares" >}}), click **Save**.
+Go to **Shares > Windows (SMB) Shares** and click **Add**. Select a share purpose and select the dataset you created for tiering as the path. After you [configure the rest of the share settings]({{< ref "/Shares/SMB/AddManageSMBShares" >}}), click **Save**.
 
 **Storage Tier** on the **Windows (SMB) Shares** card and the **Shares > SMB** screen shows the tier level of the dataset: performance or regular.
 
@@ -96,7 +95,7 @@ Go to **Shares > Windows (SMB) Shares** and click **Add**. Select a share purpos
 
 ### Creating an NFS Share for Tiering
 
-Go to **Shares > UNIX (NFS) Shares** and click **Add**. Select the dataset you created for tiering as the path. After you [configure the rest of the share settings]({{< ref "/SCALE/Shares/NFS/AddingNFSShares" >}}), click **Save**.
+Go to **Shares > UNIX (NFS) Shares** and click **Add**. Select the dataset you created for tiering as the path. After you [configure the rest of the share settings]({{< ref "/Shares/NFS/AddingNFSShares" >}}), click **Save**.
 
 **Storage Tier** on the **UNIX (NFS) Shares** card and the **Shares > NFS** screen shows the tier level of the dataset: performance or regular.
 
@@ -114,6 +113,6 @@ To change storage tiers from the SMB or NFS shares screens, click <span class="m
 
 When you change storage tiers, you can select whether you want to migrate existing data to the new storage tier. This can take some time to complete depending on the amount of data in the dataset.
 
-Migration progress shows on the **Data Migration** card. To abort in-progress tier migrations, click **Abort**. If you close the **Data Migration** card, find the active migration in the [**Running Jobs** window]({{< ref "/SCALE/TopToolbar/JobsScreens" >}}) to see the job status again.
+Migration progress shows on the **Data Migration** card. To abort in-progress tier migrations, click **Abort**. If you close the **Data Migration** card, find the active migration in the [**Running Jobs** window]({{< ref "/TopToolbar/JobsScreens" >}}) to see the job status again.
 
 {{< trueimage src="/images/SCALE/Storage/TierMigrationInProgress.png" alt="Tier Migration In Progress" id="Tier Migration In Progress" >}}

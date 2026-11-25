@@ -5,7 +5,7 @@ weight: 1
 no_print: "true"
 related: false
 aliases:
- - /scale/gettingstarted/printview/
+  - /gettingstarted/printview/
 ---
 
 <meta http-equiv="Refresh" content="0; url='/printview/scale/gettingstarted/'" />

@@ -3,9 +3,8 @@ title: "SSH Screens"
 description: "Provides information on the SSH Connections and SSH Keypairs screens, widgets, and settings."
 weight: 40
 aliases:
- - /scale/scaleuireference/credentials/backupcredentials/sshcredentialscreens/
- - /scale/scaleclireference/system/clikeychaincredential/
- - /scale/scaleclireference/task/cloudsync/clicredential/
+  - /scaleuireference/credentials/backupcredentials/sshcredentialscreens/
+  - /scaleclireference/system/clikeychaincredential/
 tags:
  - ssh
  - credentials

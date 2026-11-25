@@ -8,7 +8,7 @@ tags:
 - iscsi
 doctype: reference
 aliases:
- - /scale/scaleuireference/systemsettings/services/iscsiservicesscreen/
+  - /scaleuireference/systemsettings/services/iscsiservicesscreen/
 ---
 
 

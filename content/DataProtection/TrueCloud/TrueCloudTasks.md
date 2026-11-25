@@ -11,9 +11,9 @@ keywords:
 - data protection
 - data backup and recovery
 aliases:
- - /scale/scaletutorials/dataprotection/truecloudtasks/
- - /scale/dataprotection/cloudsynctasks/addstorjcloudsynctask/
- - /scale/dataprotection/truecloudtasks/
+  - /scaletutorials/dataprotection/truecloudtasks/
+  - /dataprotection/cloudsynctasks/addstorjcloudsynctask/
+  - /dataprotection/truecloudtasks/
 doctype: tutorial
 ---
 

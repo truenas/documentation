@@ -4,7 +4,7 @@ description: "Describes the top-level Settings options in TrueNAS."
 geekdocCollapseSection: true
 weight: 2
 aliases:
- - /scale/scaleuireference/toptoolbar/settings/
+  - /scaleuireference/toptoolbar/settings/
 tags:
 - settings
 - toolbar
