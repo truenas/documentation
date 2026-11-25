@@ -394,7 +394,7 @@ This setting is available at container creation only and cannot be changed after
 | Setting | Description |
 |---------|-------------|
 | **ID Map Type** | Sets the UID/GID mapping mode for the container from the options:<ul><li>**Default** (Recommended) - Maps the container root (UID 0) to the unprivileged host user **truenas_container_unpriv_root** (UID 2147000001). All other container UIDs are offset by the same amount (e.g., container UID 1000 becomes host UID 2147001001). Provides security isolation while allowing normal container operations.</li><li>**Isolated** - Uses the same offset as default but shifts the base further by a per-container slice value, ensuring no two containers share host UID ranges. Use when multiple containers access the same host datasets and non-overlapping UID ranges are required. TrueNAS automatically assigns a unique slice if none is specified.</li><li>**Privileged** - Applies no UID/GID mapping. Container UIDs map directly to the same UIDs on the host. Container root (UID 0) becomes host root. Use only when an application explicitly requires direct UID mapping.</li></ul> |
-| **ID Map Slice** | Sets the offset value when thee ID map is set to **Isolated**. Range is 1 to 999. Shows after setting **ID Map Type** to **Isolated**. |
+| **ID Map Slice** | Sets the offset value when the ID map is set to **Isolated**. Range is 1 to 999. Shows after setting **ID Map Type** to **Isolated**. |
 {{< /truetable >}}
 
 {{< hint type=warning title="Privileged ID Mapping Warning" >}}
